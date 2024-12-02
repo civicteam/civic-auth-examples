@@ -1,0 +1,10 @@
+{
+  "extends": "./vite.json",
+  "compilerOptions": {
+    "target": "es2022",
+    "module": "NodeNext",
+    "sourceMap": true,
+    "moduleResolution": "NodeNext"
+  },
+  "include": ["src", "vite.config.ts", "tailwind.config.cjs", "postcss.config.cjs"]
+}
