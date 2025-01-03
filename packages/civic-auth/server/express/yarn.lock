@@ -3,13 +3,12 @@
 
 
 "@civic/auth@*":
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/@civic/auth/-/auth-0.1.2.tgz#a788603b0141f20c4c4bf7e1026e7324bb967894"
-  integrity sha512-ARSzQ/1drvtI4bfznwQFMFByNojS1CfcFRceY/P80MBrsMYiFBwC72dlWovekpIgVEDQLVPPIE1/MOwSne5aGg==
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/@civic/auth/-/auth-0.1.5.tgz#b3236f732fb8b300f9baa15e3410b806a4572038"
+  integrity sha512-PLqjFrTatjqUnOyTtymBWETP3WKJq9H5e3m5iluN8DYOlQEm2zFjHlUt1EW/K1I64g0TVs7YMpCctc+1LyPfzA==
   dependencies:
-    "@tanstack/react-query" "^5.56.2"
-    clsx "^2.1.1"
     debug "^4.3.7"
+    eventemitter3 "^5.0.1"
     jose "^5.9.4"
     oslo "^1.2.1"
     picomatch "^4.0.2"
@@ -244,18 +243,6 @@
     "@node-rs/bcrypt-win32-ia32-msvc" "1.9.0"
     "@node-rs/bcrypt-win32-x64-msvc" "1.9.0"
 
-"@tanstack/query-core@5.62.2":
-  version "5.62.2"
-  resolved "https://registry.yarnpkg.com/@tanstack/query-core/-/query-core-5.62.2.tgz#4eef3201422f246788fb41d01662c2dea3136d9a"
-  integrity sha512-LcwVcC5qpsDpHcqlXUUL5o9SaOBwhNkGeV+B06s0GBoyBr8FqXPuXT29XzYXR36lchhnerp6XO+CWc84/vh7Zg==
-
-"@tanstack/react-query@^5.56.2":
-  version "5.62.2"
-  resolved "https://registry.yarnpkg.com/@tanstack/react-query/-/react-query-5.62.2.tgz#fbcb8f991ddcf484ce7968fb58bb4790d6c98cd3"
-  integrity sha512-fkTpKKfwTJtVPKVR+ag7YqFgG/7TRVVPzduPAUF9zRCiiA8Wu305u+KJl8rCrh98Qce77vzIakvtUyzWLtaPGA==
-  dependencies:
-    "@tanstack/query-core" "5.62.2"
-
 "@tsconfig/node10@^1.0.7":
   version "1.0.11"
   resolved "https://registry.yarnpkg.com/@tsconfig/node10/-/node10-1.0.11.tgz#6ee46400685f130e278128c7b38b7e031ff5b2f2"
@@ -486,11 +473,6 @@ chokidar@^3.5.2:
   optionalDependencies:
     fsevents "~2.3.2"
 
-clsx@^2.1.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/clsx/-/clsx-2.1.1.tgz#eed397c9fd8bd882bfb18deab7102049a2f32999"
-  integrity sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==
-
 concat-map@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
@@ -615,6 +597,11 @@ etag@~1.8.1:
   version "1.8.1"
   resolved "https://registry.yarnpkg.com/etag/-/etag-1.8.1.tgz#41ae2eeb65efa62268aebfea83ac7d79299b0887"
   integrity sha512-aIL5Fx7mawVa300al2BnEE4iNvo1qETxLrPI/o05L7z6go7fCw1J6EQmbK4FmJ2AS7kgVF/KEZWufBfdClMcPg==
+
+eventemitter3@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-5.0.1.tgz#53f5ffd0a492ac800721bb42c66b841de96423c4"
+  integrity sha512-GWkBvjiSZK87ELrYOSESUYeVIc9mvLLf/nXalMOS5dYrgZq9o5OVkbZAVM06CVxYsCwH9BDZFPlQTlPA1j4ahA==
 
 express@^4.18.2:
   version "4.21.1"

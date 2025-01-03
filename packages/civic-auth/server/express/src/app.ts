@@ -6,7 +6,9 @@ import {
   isLoggedIn,
   getUser,
   buildLoginUrl,
-} from '@civic/auth/server';
+  buildLogoutRedirectUrl,
+  refreshTokens,
+} from "@civic/auth/server";
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -23,6 +25,7 @@ app.use(cookieParser());
 const config = {
   clientId: process.env.CLIENT_ID!,
   redirectUrl: `http://localhost:${PORT}/auth/callback`,
+  postLogoutRedirectUrl: `http://localhost:${PORT}/auth/logoutcallback`,
 };
 
 // Tell Civic how to get cookies from your node server
@@ -39,6 +42,12 @@ class ExpressCookieStorage extends CookieStorage {
 
   async set(key: string, value: string): Promise<void> {
     this.res.cookie(key, value, this.settings);
+  }
+
+  async clear(): Promise<void> {
+    for (const key in this.req.cookies) {
+      this.res.clearCookie(key);
+    }
   }
 }
 
@@ -77,6 +86,25 @@ app.use('/admin', authMiddleware);
 app.get('/admin/hello', async (req: Request, res: Response) => {
   const user = await getUser(req.storage);
   res.send(`Hello, ${user?.name}!`);
+});
+
+app.get("/admin/refresh", async (req: Request, res: Response) => {
+  await refreshTokens(req.storage, config);
+  res.send("Tokens refreshed");
+});
+
+// Build the logout URL and redirect to it
+app.get("/auth/logout", async (req: Request, res: Response) => {
+  const url = await buildLogoutRedirectUrl(config, req.storage);
+  res.redirect(url.toString());
+});
+
+// Handle post-logout callback and clear session
+app.get("/auth/logoutcallback", async (req: Request, res: Response) => {
+  const { state } = req.query as { state: string };
+  console.log(`Logout-callback: state=${state}`);
+  await req.storage.clear();
+  res.redirect("/");
 });
 
 // Start the Express server

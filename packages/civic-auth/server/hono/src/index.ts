@@ -5,6 +5,7 @@ import {
   isLoggedIn,
   getUser,
   buildLoginUrl,
+  buildLogoutRedirectUrl,
   refreshTokens
 } from '@civic/auth/server';
 import { serve } from '@hono/node-server';
@@ -79,6 +80,29 @@ app.get('/admin/hello', async (c) => {
 app.get('/admin/refresh', async (c) => {
   await refreshTokens(c.get('storage'), config);
   c.text('Tokens refreshed');
+});
+
+// Build the logout URL and redirect to it
+app.get('/auth/logout', async (c) => {
+  const url = await buildLogoutRedirectUrl({
+    ...config,
+    postLogoutRedirectUrl: `http://localhost:${PORT}/auth/logoutcallback`,
+  }, c.get('storage'));
+  return c.redirect(url.toString());
+});
+
+// Handle post-logout callback and clear session
+app.get('/auth/logoutcallback', async (c) => {
+  const state = c.req.query('state');
+  console.log(`Logout-callback: state=${state}`);
+
+  // clear all cookies
+  const allCookies = getCookie(c);
+  for (const key in allCookies) {
+    setCookie(c, key, '', { maxAge: 0 });
+  }
+
+  return c.redirect('/');
 });
 
 serve({

@@ -6,6 +6,7 @@ import {
   isLoggedIn,
   getUser,
   buildLoginUrl,
+  buildLogoutRedirectUrl,
   refreshTokens,
 } from '@civic/auth/server';
 import Fastify, { FastifyReply, FastifyRequest } from 'fastify';
@@ -26,8 +27,8 @@ const PORT = env.PORT ? parseInt(env.PORT) : 3000;
 
 const config = {
   clientId: process.env.CLIENT_ID!,
-  redirectUrl: `http://localhost:${PORT}/auth/callback`
-}
+  redirectUrl: `http://localhost:${PORT}/auth/callback`,
+};
 
 // Map fastify cookies to the Storage interface
 class FastifyCookieStorage extends CookieStorage {
@@ -47,9 +48,9 @@ class FastifyCookieStorage extends CookieStorage {
     fastify.log.info({ action: 'set_cookie', key, valueLength: value.length });
     const cookieOptions = {
       ...this.settings,
-      path: '/'
+      path: '/',
     };
-    
+
     try {
       this.reply.setCookie(key, value, cookieOptions);
       fastify.log.info(`Cookie ${key} set successfully`);
@@ -58,11 +59,18 @@ class FastifyCookieStorage extends CookieStorage {
       throw error;
     }
   }
+
+  async clear(): Promise<void> {
+    const cookies = this.request.cookies;
+    for (const key in cookies) {
+      this.reply.clearCookie(key);
+    }
+  }
 }
 
 // Register plugins with await
 await fastify.register(fastifyCookie, {
-  secret: env.COOKIE_SECRET || "my-secret"
+  secret: env.COOKIE_SECRET || 'my-secret',
 });
 
 // Attach storage to each request
@@ -128,6 +136,25 @@ fastify.get('/admin/refresh', async (request, reply) => {
     fastify.log.error(error);
     return reply.status(500).send({ error: 'Failed to refresh tokens' });
   }
+});
+
+// Build the logout URL and redirect to it
+fastify.get('/auth/logout', async (request, reply) => {
+  const url = await buildLogoutRedirectUrl({
+    ...config,
+    postLogoutRedirectUrl: `http://localhost:${PORT}/auth/logoutcallback`,
+  }, request.storage);
+  return reply.redirect(url.toString());
+});
+
+// Handle post-logout callback and clear session
+fastify.get<{
+  Querystring: { state: string }
+}>('/auth/logoutcallback', async (request, reply) => {
+  const { state } = request.query;
+  console.log(`Logout-callback: state=${state}`);
+  await request.storage.clear();
+  return reply.redirect('/');
 });
 
 try {
