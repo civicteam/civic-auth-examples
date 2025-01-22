@@ -5,6 +5,8 @@ on: [push, pull_request]
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      CLIENT_ID: bc915ff0-9e27-4a09-96a9-963649f9b025
     defaults:
       run:
         working-directory: ./
@@ -26,9 +28,29 @@ jobs:
       - name: Build
         run: yarn build
         
-      - name: Start dev server
-        run: >
-          yarn dev & npx wait-on 
-          http://localhost:3000 
-          http://localhost:3006 
-        timeout-minutes: 3
+      - name: Start the nextjs example app
+        uses: JarvusInnovations/background-action@v1.0.7
+        with:
+          run: yarn dev &
+          working-directory: packages/civic-auth/nextjs
+          wait-on: http://localhost:3000
+          wait-for: 60s
+          log-output-if: true
+
+      - name: Start the reactjs example app
+        uses: JarvusInnovations/background-action@v1.0.7
+        with:
+          run: yarn dev &
+          working-directory: packages/civic-auth/reactjs
+          wait-on: http://localhost:3006
+          wait-for: 60s
+          log-output-if: true
+
+      - name: Start the express example app
+        uses: JarvusInnovations/background-action@v1.0.7
+        with:
+          run: yarn dev &
+          working-directory: packages/civic-auth/server/express
+          wait-on: http://localhost:3007
+          wait-for: 60s
+          log-output-if: true
