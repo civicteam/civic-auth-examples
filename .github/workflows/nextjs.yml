@@ -29,12 +29,6 @@ jobs:
       - name: Start dev server
         uses: JarvusInnovations/background-action@v1.0.7  
         with:
-          run: >
-            yarn dev & npx wait-on 
-            http://localhost:3000 
-            http://localhost:3006 
-            http://localhost:3007 
-            http://localhost:3008 
-            http://localhost:3009 
-            http://localhost:3010
-        timeout-minutes: 3
+          run: yarn dev &
+          wait-on: http://localhost:3000,http://localhost:3006,http://localhost:3007,http://localhost:3008,http://localhost:3009,http://localhost:3010
+          wait-for: 120s
