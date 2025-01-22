@@ -26,11 +26,9 @@ jobs:
       - name: Build
         run: yarn build
         
-      - name: Start apps
-        uses: JarvusInnovations/background-action@v1.0.7
-        with:
-          run: yarn dev &
-          wait-on: http://localhost:3000
-          wait-for: 120s
-          tail: true
-          log-output: stdout,stderr
+      - name: Start dev server
+        run: >
+          yarn dev & npx wait-on 
+          http://localhost:3000 
+          http://localhost:3006 
+        timeout-minutes: 3
