@@ -66,5 +66,7 @@ jobs:
 
       - name: Start the hono example app
         working-directory: ./packages/civic-auth/server/hono  
-        run: yarn dev & npx wait-on http://localhost:3009
+        run: |
+          bun add @hono/node-server
+          yarn dev & npx wait-on http://localhost:3009
         timeout-minutes: 1
