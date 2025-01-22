@@ -1,0 +1,25 @@
+name: Express Build and Dev
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: packages/civic-auth/server/fastify
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: Install dependencies'
+        shell: bash
+        run: yarn install --frozen-lockfile
+
+      - name: Start dev server
+        run: yarn dev & npx wait-on http://localhost:3008
+        timeout-minutes: 2
