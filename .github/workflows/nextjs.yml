@@ -1,4 +1,4 @@
-name: NextJS Build and Dev
+name: Build and run example apps
 
 on: [push, pull_request]
 
@@ -52,5 +52,23 @@ jobs:
           run: yarn dev &
           working-directory: packages/civic-auth/server/express
           wait-on: http://localhost:3007
+          wait-for: 60s
+          log-output-if: true
+
+      - name: Start the fastify example app
+        uses: JarvusInnovations/background-action@v1.0.7
+        with:
+          run: yarn dev &
+          working-directory: packages/civic-auth/server/fastify
+          wait-on: http://localhost:3008
+          wait-for: 60s
+          log-output-if: true
+
+      - name: Start the hono example app
+        uses: JarvusInnovations/background-action@v1.0.7
+        with:
+          run: yarn dev &
+          working-directory: packages/civic-auth/server/hono
+          wait-on: http://localhost:3009
           wait-for: 60s
           log-output-if: true
