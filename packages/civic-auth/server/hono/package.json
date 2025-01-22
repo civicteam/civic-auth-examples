@@ -3,7 +3,7 @@
   "type": "module",
   "description": "A sample hono app with Civic Auth",
   "scripts": {
-    "dev": "PORT=3009 ./node_modules/.bin/tsx watch src/index.ts"
+    "dev": "PORT=${PORT:-3009} bun run src/index.ts --watch"
   },
   "dependencies": {
     "@civic/auth": "*",
