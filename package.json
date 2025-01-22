@@ -1,6 +1,21 @@
 {
+    "private": true,
+    "workspaces": [
+    "packages/civic-auth/**"
+  ],
     "scripts": {
       "build": "turbo run build",
       "dev": "turbo run dev"
-    }
+    },
+    "packageManager": "yarn@1.22.22",
+    "resolutions": {
+        "next": "15.0.3",
+        "react": "19.0.0-rc-66855b96-20241106",
+        "react-dom": "19.0.0-rc-66855b96-20241106",
+        "vite": "6.0.1"
+    },
+    "devDependencies": {
+    "vite": "6.0.1",
+    "@vitejs/plugin-react": "^4.3.4"
   }
+}

@@ -3,7 +3,7 @@
   "type": "module",
   "description": "A sample hono app with Civic Auth",
   "scripts": {
-    "dev": "tsx watch src/index.ts --port 3009"
+    "dev": "PORT=3009 tsx watch src/index.ts"
   },
   "dependencies": {
     "@civic/auth": "*",
