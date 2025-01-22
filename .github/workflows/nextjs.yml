@@ -10,6 +10,9 @@ jobs:
         working-directory: ./
     steps:
       - uses: actions/checkout@v4
+
+      - name: Install Bun (used to run the examples)
+        uses: oven-sh/setup-bun@v2
       
       - name: Setup Node.js
         uses: actions/setup-node@v4
