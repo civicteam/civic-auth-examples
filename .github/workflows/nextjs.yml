@@ -30,5 +30,6 @@ jobs:
         uses: JarvusInnovations/background-action@v1.0.7  
         with:
           run: yarn dev &
-          wait-on: http://localhost:3000,http://localhost:3006,http://localhost:3007,http://localhost:3008,http://localhost:3009,http://localhost:3010
+          working-directory: ./
+          wait-on: http://localhost:3000
           wait-for: 120s
