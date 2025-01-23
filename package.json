@@ -1,7 +1,8 @@
 {
     "private": true,
     "workspaces": [
-    "packages/civic-auth/**"
+    "packages/civic-auth/**",
+    "packages/civic-auth-web3/wagmi/**"
   ],
     "scripts": {
       "build": "turbo run build",
