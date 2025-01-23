@@ -105,6 +105,16 @@ jobs:
           yarn dev & npx wait-on http://localhost:3009
         timeout-minutes: 1
 
+      - name: Start the wagmi example app
+        uses: JarvusInnovations/background-action@v1.0.7
+        with:
+          run: yarn dev &
+          working-directory: packages/civic-auth-web3/wagmi
+          wait-on: http://localhost:3010
+          wait-for: 60s
+          log-output-if: true
+
+
       # - name: Set up cypress e2e tests for client-auth lib in example app
         # uses: ./.github/actions/test-e2e
         # with:
