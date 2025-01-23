@@ -3,7 +3,41 @@ name: Build and run example apps
 on: [push, pull_request]
 
 jobs:
+  check-version:
+    runs-on: ubuntu-latest
+    outputs:
+      version_changed: ${{ env.version_changed }}
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Check Versions
+        id: check-version
+        run: |
+          BETA_VERSION=$(npm view @civic/auth@beta version)
+          PROD_VERSION=$(npm view @civic/auth version)
+          
+          echo "Beta version: $BETA_VERSION"
+          echo "Production version: $PROD_VERSION"
+          
+          if [ -f .civic-versions ]; then
+            PREV_VERSIONS=$(cat .civic-versions)
+            PREV_BETA=$(echo "$PREV_VERSIONS" | head -n1)
+            PREV_PROD=$(echo "$PREV_VERSIONS" | tail -n1)
+            
+            if [ "$BETA_VERSION" != "$PREV_BETA" ] || [ "$PROD_VERSION" != "$PREV_PROD" ]; then
+              echo "version_changed=true" >> $GITHUB_ENV
+              echo "Changed from:"
+              echo "Beta: $PREV_BETA -> $BETA_VERSION"
+              echo "Prod: $PREV_PROD -> $PROD_VERSION"
+            fi
+          fi
+          
+          echo "$BETA_VERSION" > .civic-versions
+          echo "$PROD_VERSION" >> .civic-versions
+
   build:
+    needs: check-version
+    if: needs.check-version.outputs.version_changed == 'true'
     runs-on: ubuntu-latest
     env:
       CLIENT_ID: bc915ff0-9e27-4a09-96a9-963649f9b025
