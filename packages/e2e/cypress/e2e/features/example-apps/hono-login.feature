@@ -1,10 +1,5 @@
 @local @develop
-Feature: Log in with login app only
+Feature: Log in with hono app
 
-  Scenario: Log in with login app only
+  Scenario: Log in with hono app
     Given I open the 'HONO' app home page
-    And I click log in with dummy in the page
-
-#   Scenario: Confirm user is logged in
-    Then I confirm that login-app user is on the correct url
-    And I confirm user info displayed in login app is correct

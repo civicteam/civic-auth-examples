@@ -15,3 +15,17 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+
+// Alternatively you can use CommonJS syntax:
+// require('./commands')
+
+Cypress.on('uncaught:exception', (err) => {
+  // Check if the error message contains "Minified React error #419"
+  if (err.message.includes('Minified React error #419')) {
+    // Return false to prevent Cypress from failing the test
+    return false;
+  }
+
+  // Let other errors fail the test
+  return true;
+});

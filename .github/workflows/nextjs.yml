@@ -70,3 +70,39 @@ jobs:
           bun add @hono/node-server
           yarn dev & npx wait-on http://localhost:3009
         timeout-minutes: 1
+
+      # - name: Set up cypress e2e tests for client-auth lib in example app
+        # uses: ./.github/actions/test-e2e
+        # with:
+        #   dummy-oidc-server: http://localhost:9090
+        #   npm-token: ${{ secrets.NPM_TOKEN }}
+        #   aws-access-key-id: ${{ secrets.DEV_AWS_ACCESS_KEY_ID }}
+        #   aws-secret-access-key: ${{ secrets.DEV_AWS_SECRET_ACCESS_KEY }}
+        #   github-ssh-key: ${{ secrets.CIVIC_LOG_GITHUB_DEPLOY_KEY }}
+
+      - name: Run Local Cypress example app e2e tests
+        id: cypress
+        uses: cypress-io/github-action@v6
+        with:
+          working-directory: packages/e2e
+          command: yarn cypress run --env stage=${{ env.stage }},tags=${{ env.CYPRESS_TEST_TAG }}
+          browser: electron
+          install: true
+          wait-on: 'http://localhost:3000,http://localhost:3006,http://localhost:3007,http://localhost:3008,http://localhost:3009'
+          wait-on-timeout: 60
+          record: true
+        env:
+          stage: local
+          VITE_STAGE: local
+          NEXT_JS_BASE_URL: 'http://localhost:3000'
+          REACT_BASE_URL: 'http://localhost:3006'
+          EXPRESS_BASE_URL: 'http://localhost:3007'
+          FASTIFY_BASE_URL: 'http://localhost:3008'
+          HONO_BASE_URL: 'http://localhost:3009'
+          WAGMI_BASE_URL: 'http://localhost:3010'
+          SERVER_URL: 'http://localhost:3001'
+          LOGIN_APP_URL: 'http://localhost:3004'
+          DUMMY_APP_URL: 'http://localhost:9090'
+          SAMPLE_REACT_JS_URL: 'http://localhost:3030'
+          SAMPLE_NEXT_JS_URL: 'http://localhost:3000'
+          CYPRESS_TEST_TAG: '@local'
