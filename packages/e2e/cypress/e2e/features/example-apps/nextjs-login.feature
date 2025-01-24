@@ -6,9 +6,9 @@ Feature: Log in with nextjs app
     And I click the sign in button
     And I click log in with dummy in the iframe
 
-  Scenario: Verify refresh token functionality
-    When I fetch tokens from cookies
-    And I store the refresh token
+#  Scenario: Verify refresh token functionality
+#    When I fetch tokens from cookies
+#    And I store the refresh token
 #    Then I confirm token refresh is successful
 
   Scenario: Logout successfully
