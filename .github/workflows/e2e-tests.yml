@@ -130,7 +130,7 @@ jobs:
         with:
           working-directory: packages/e2e
           command: yarn cypress run --env stage=${{ env.stage }},tags=${{ env.CYPRESS_TEST_TAG }} --record
-          browser: electron
+          browser: chrome
           install: true
           wait-on: 'http://localhost:3000,http://localhost:3006,http://localhost:3007,http://localhost:3008,http://localhost:3009'
           wait-on-timeout: 60
