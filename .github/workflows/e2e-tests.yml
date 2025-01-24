@@ -153,21 +153,49 @@ jobs:
           payload: |
             {
               "channel": "#build",
-              "text": "Release Successful",
+              "text": "(THIS IS A TEST) Release Successful - Please complete tests",
               "blocks": [
                 {
-                  "type": "section",
+                  "type": "header",
                   "text": {
-                    "type": "mrkdwn",
-                    "text": "*(THIS IS A TEST) Release Successful* :white_check_mark:\nPlease complete the following tests:"
+                    "type": "plain_text",
+                    "text": "Release Successful ✅",
+                    "emoji": true
                   }
                 },
                 {
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "• [ ] Test 1\n• [ ] Test 2"
+                    "text": "*Please complete the following tests:*"
                   }
+                },
+                {
+                  "type": "actions",
+                  "elements": [
+                    {
+                      "type": "button",
+                      "text": {
+                        "type": "plain_text",
+                        "text": "Test 1",
+                        "emoji": true
+                      },
+                      "style": "primary",
+                      "value": "test1_complete",
+                      "action_id": "test1_button"
+                    },
+                    {
+                      "type": "button",
+                      "text": {
+                        "type": "plain_text",
+                        "text": "Test 2",
+                        "emoji": true
+                      },
+                      "style": "primary",
+                      "value": "test2_complete",
+                      "action_id": "test2_button"
+                    }
+                  ]
                 }
               ]
             }
