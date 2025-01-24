@@ -32,8 +32,12 @@ const queryClient = new QueryClient();
 const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
-      <WagmiProvider config={wagmiConfig}>
-        <CivicAuthProvider clientId={CLIENT_ID} >
+      <WagmiProvider config={wagmiConfig as any}>
+      <CivicAuthProvider
+        clientId={CLIENT_ID}
+        config={{ oauthServer: 'https://auth-dev.civic.com/oauth/' }}
+        nonce={'1234567890'}
+      >
           <AppContent />
         </CivicAuthProvider>
       </WagmiProvider>

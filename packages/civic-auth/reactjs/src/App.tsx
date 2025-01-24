@@ -5,6 +5,8 @@ const App = () => {
   return (
       <CivicAuthProvider
         clientId={CLIENT_ID}
+        config={{ oauthServer: 'https://auth-dev.civic.com/oauth/' }}
+        nonce={'1234567890'}
       >
         <UserButton/>
       </CivicAuthProvider>

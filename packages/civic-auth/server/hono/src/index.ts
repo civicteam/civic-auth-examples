@@ -20,7 +20,7 @@ const PORT = process.env.PORT ?  parseInt(process.env.PORT) : 3000;
 const config = {
   clientId: process.env.CLIENT_ID!,
   redirectUrl: `http://localhost:${PORT}/auth/callback`,
-  oauthServer: process.env.OAUTH_SERVER ?? "https://auth.civic.com/oauth",
+  oauthServer: process.env.OAUTH_SERVER ?? "https://auth-dev.civic.com/oauth",
 }
 
 // Map hono cookies to the CookieStorage interface

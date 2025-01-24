@@ -40,7 +40,7 @@ jobs:
     # if: needs.check-version.outputs.version_changed == 'true'
     runs-on: ubuntu-latest
     env:
-      CLIENT_ID: bc915ff0-9e27-4a09-96a9-963649f9b025
+      CLIENT_ID: fd3452e4-b20e-4055-893b-859668befad4
     defaults:
       run:
         working-directory: ./

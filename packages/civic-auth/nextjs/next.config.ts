@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
 };
 const withCivicAuth = createCivicAuthPlugin({
   clientId: `${process.env.CLIENT_ID}`,
+  oauthServer: "https://auth-dev.civic.com/oauth"
 });
 
 export default withCivicAuth(nextConfig);

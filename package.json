@@ -1,7 +1,11 @@
 {
     "private": true,
     "workspaces": [
-    "packages/civic-auth/**",
+    "packages/civic-auth/nextjs/**",
+    "packages/civic-auth/reactjs/**",
+    "packages/civic-auth/server/express/**",
+    "packages/civic-auth/server/fastify/**",
+    "packages/civic-auth/server/hono/**",
     "packages/civic-auth-web3/wagmi/**"
   ],
     "scripts": {

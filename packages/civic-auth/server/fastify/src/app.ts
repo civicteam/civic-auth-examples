@@ -26,7 +26,8 @@ const PORT = env.PORT ? parseInt(env.PORT) : 3000;
 
 const config = {
   clientId: process.env.CLIENT_ID!,
-  redirectUrl: `http://localhost:${PORT}/auth/callback`
+  oauthServer: "https://auth-dev.civic.com/oauth",
+  redirectUrl: `http://localhost:${PORT}/auth/callback`,
 }
 
 // Map fastify cookies to the Storage interface
