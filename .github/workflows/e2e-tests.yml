@@ -154,10 +154,41 @@ jobs:
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
         with:
-          channel-id: 'C0Z13E3GC'
-          slack-message: |
-            *Release Status Check* :rocket:
-            • Status: *(THIS IS A TEST) Release Successful* :white_check_mark:
-            • Required Tests:
-              - [ ] Test 1
-              - [ ] Test 2
+          channel-id: 'build'
+          payload: |
+            {
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "*Release Status Check* :rocket:\n*(THIS IS A TEST) Release Successful* :white_check_mark:"
+                  }
+                },
+                {
+                  "type": "actions",
+                  "elements": [
+                    {
+                      "type": "button",
+                      "text": {
+                        "type": "plain_text",
+                        "text": "✓ Test 1"
+                      },
+                      "style": "primary",
+                      "value": "test1",
+                      "action_id": "mark_test1"
+                    },
+                    {
+                      "type": "button",
+                      "text": {
+                        "type": "plain_text",
+                        "text": "✓ Test 2"
+                      },
+                      "style": "primary",
+                      "value": "test2",
+                      "action_id": "mark_test2"
+                    }
+                  ]
+                }
+              ]
+            }
