@@ -129,7 +129,7 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           working-directory: packages/e2e
-          command: yarn cypress run --record
+          command: npx cypress run --browser chrome --record
           browser: chrome
           install: true
           wait-on: 'http://localhost:3000,http://localhost:3006,http://localhost:3007,http://localhost:3008,http://localhost:3009'
