@@ -179,14 +179,21 @@ jobs:
                         "value": "test1",
                         "text": {
                           "type": "plain_text",
-                          "text": "Test 1"
+                          "text": "Log in/log out with google (existing account)"
                         }
                       },
                       {
                         "value": "test2",
                         "text": {
                           "type": "plain_text",
-                          "text": "Test 2"
+                          "text": "Log in/log out with google (new account)"
+                        }
+                      },
+                                            {
+                        "value": "test3",
+                        "text": {
+                          "type": "plain_text",
+                          "text": "Log in with account #1, log out, then log in with account #2"
                         }
                       }
                     ]
