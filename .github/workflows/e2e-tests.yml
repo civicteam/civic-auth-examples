@@ -149,55 +149,13 @@ jobs:
       - name: Send Slack Notification
         if: always()
         uses: slackapi/slack-github-action@v1.27.0
-        with:
-          payload: |
-            {
-              "channel": "#build",
-              "text": "(THIS IS A TEST) Release Successful - Please complete tests",
-              "blocks": [
-                {
-                  "type": "header",
-                  "text": {
-                    "type": "plain_text",
-                    "text": "Release Successful ✅",
-                    "emoji": true
-                  }
-                },
-                {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": "*Please complete the following tests:*"
-                  }
-                },
-                {
-                  "type": "actions",
-                  "elements": [
-                    {
-                      "type": "button",
-                      "text": {
-                        "type": "plain_text",
-                        "text": "Test 1",
-                        "emoji": true
-                      },
-                      "style": "primary",
-                      "value": "test1_complete",
-                      "action_id": "test1_button"
-                    },
-                    {
-                      "type": "button",
-                      "text": {
-                        "type": "plain_text",
-                        "text": "Test 2",
-                        "emoji": true
-                      },
-                      "style": "primary",
-                      "value": "test2_complete",
-                      "action_id": "test2_button"
-                    }
-                  ]
-                }
-              ]
-            }
         env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+        with:
+          channel-id: 'C0Z13E3GC'
+          slack-message: |
+            *Release Status Check* :rocket:
+            • Status: *(THIS IS A TEST) Release Successful* :white_check_mark:
+            • Required Tests:
+              - [ ] Test 1
+              - [ ] Test 2
