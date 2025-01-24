@@ -8,7 +8,7 @@
 
 #  Scenario: Verify refresh token functionality
 #    When I fetch tokens from cookies
-#   And I store the refresh token
+#    And I store the refresh token
 #    Then I confirm token refresh is successful
 
 #  Scenario: Logout successfully

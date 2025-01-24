@@ -14,7 +14,10 @@ Given('I open the {string} app home page', (appType: string) => {
   cy.clearAllCookies();
   cy.clearAllSessionStorage();
   cy.clearAllLocalStorage();
-  cy.visit(Cypress.env(`${appType}_BASE_URL`))
+  cy.visit(Cypress.env(`${appType}_BASE_URL`), {
+    retryOnNetworkFailure: true,
+    timeout: 10000
+  })
 
   cy.wait('@authRequest').its('response.statusCode').should('eq', 200);
 });

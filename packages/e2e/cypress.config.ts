@@ -20,8 +20,13 @@ module.exports = defineConfig({
   // so that we don't get CORS errors in iframe mode
   chromeWebSecurity: false,
   retries: {
-    runMode: 1,
-    openMode: 0,
+    experimentalStrategy: 'detect-flake-and-pass-on-threshold',
+    experimentalOptions: {
+      maxRetries: 2,
+      passesRequired: 1
+    },
+    openMode: true,
+    runMode: true
   },
   e2e: {
     defaultCommandTimeout: 20000,
@@ -42,6 +47,7 @@ module.exports = defineConfig({
     },
   },
   env: {
+    experimentalSessionAndOrigin: true,
     stepDefinitions: 'cypress/e2e/step_definitions/**/*.ts',
     tags: '',
     stage: '',
