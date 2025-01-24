@@ -152,10 +152,10 @@ jobs:
         with:
           payload: |
             {
+              "channel": "#build",
               "blocks": [
                 {
                   "type": "section",
-                  "channel": "#build",
                   "text": {
                     "type": "mrkdwn",
                     "text": "*(THIS IS A TEST) Release Successful* :white_check_mark:\nPlease complete the following tests:"
