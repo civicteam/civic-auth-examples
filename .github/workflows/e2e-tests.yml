@@ -129,15 +129,14 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           working-directory: packages/e2e
-          command: yarn cypress run --env stage=${{ env.stage }},tags=${{ env.CYPRESS_TEST_TAG }} --record
+          command: yarn cypress run --record
           browser: chrome
           install: true
           wait-on: 'http://localhost:3000,http://localhost:3006,http://localhost:3007,http://localhost:3008,http://localhost:3009'
           wait-on-timeout: 60
           record: true
         env:
-          stage: local
-          VITE_STAGE: local
+          CLIENT_ID: d30112c5-55a2-4a93-9ac7-3cca6b72557e
           NEXT_JS_BASE_URL: 'http://localhost:3000'
           REACT_BASE_URL: 'http://localhost:3006'
           EXPRESS_BASE_URL: 'http://localhost:3007'
