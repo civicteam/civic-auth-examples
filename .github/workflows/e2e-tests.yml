@@ -41,6 +41,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       CLIENT_ID: d30112c5-55a2-4a93-9ac7-3cca6b72557e
+      VITE_CLIENT_ID: d30112c5-55a2-4a93-9ac7-3cca6b72557e
     defaults:
       run:
         working-directory: ./
@@ -136,7 +137,6 @@ jobs:
           wait-on-timeout: 60
           record: true
         env:
-          CLIENT_ID: d30112c5-55a2-4a93-9ac7-3cca6b72557e
           NEXT_JS_BASE_URL: 'http://localhost:3000'
           REACT_BASE_URL: 'http://localhost:3006'
           EXPRESS_BASE_URL: 'http://localhost:3007'
