@@ -147,7 +147,7 @@ jobs:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
 
       - name: Send Slack Notification
-        if: failure()
+        if: always()
         uses: slackapi/slack-github-action@v1.27.0
         with:
           payload: |
