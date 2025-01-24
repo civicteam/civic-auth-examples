@@ -12,7 +12,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 module.exports = defineConfig({
-  projectId: 'bf2w3z',
+  projectId: "cmyigw",
   // Uncomment if the 'rerun' isn't working as expected
   // videosFolder: 'cypress/videos',
   // video: true,

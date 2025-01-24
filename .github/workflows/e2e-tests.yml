@@ -124,12 +124,12 @@ jobs:
         #   aws-secret-access-key: ${{ secrets.DEV_AWS_SECRET_ACCESS_KEY }}
         #   github-ssh-key: ${{ secrets.CIVIC_LOG_GITHUB_DEPLOY_KEY }}
 
-      - name: Run Local Cypress example app e2e tests
+      - name: Run Cypress example app e2e tests
         id: cypress
         uses: cypress-io/github-action@v6
         with:
           working-directory: packages/e2e
-          command: yarn cypress run --env stage=${{ env.stage }},tags=${{ env.CYPRESS_TEST_TAG }}
+          command: yarn cypress run --env stage=${{ env.stage }},tags=${{ env.CYPRESS_TEST_TAG }} --record
           browser: electron
           install: true
           wait-on: 'http://localhost:3000,http://localhost:3006,http://localhost:3007,http://localhost:3008,http://localhost:3009'
@@ -144,9 +144,5 @@ jobs:
           FASTIFY_BASE_URL: 'http://localhost:3008'
           HONO_BASE_URL: 'http://localhost:3009'
           WAGMI_BASE_URL: 'http://localhost:3010'
-          SERVER_URL: 'http://localhost:3001'
-          LOGIN_APP_URL: 'http://localhost:3004'
-          DUMMY_APP_URL: 'http://localhost:9090'
-          SAMPLE_REACT_JS_URL: 'http://localhost:3030'
-          SAMPLE_NEXT_JS_URL: 'http://localhost:3000'
           CYPRESS_TEST_TAG: '@local'
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
