@@ -162,33 +162,35 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "*Release Status Check* :rocket:\n*(THIS IS A TEST) Release Successful* :white_check_mark:"
+                    "text": "*(THIS IS A TEST) Release Successful* :white_check_mark:"
                   }
                 },
                 {
-                  "type": "actions",
-                  "elements": [
-                    {
-                      "type": "button",
-                      "text": {
-                        "type": "plain_text",
-                        "text": "✓ Test 1"
+                  "type": "section",
+                  "text": {
+                    "type": "plain_text",
+                    "text": "Please complete the following tests:"
+                  },
+                  "accessory": {
+                    "type": "checkboxes",
+                    "action_id": "release_tests",
+                    "options": [
+                      {
+                        "value": "test1",
+                        "text": {
+                          "type": "plain_text",
+                          "text": "Test 1"
+                        }
                       },
-                      "style": "primary",
-                      "value": "test1",
-                      "action_id": "mark_test1"
-                    },
-                    {
-                      "type": "button",
-                      "text": {
-                        "type": "plain_text",
-                        "text": "✓ Test 2"
-                      },
-                      "style": "primary",
-                      "value": "test2",
-                      "action_id": "mark_test2"
-                    }
-                  ]
+                      {
+                        "value": "test2",
+                        "text": {
+                          "type": "plain_text",
+                          "text": "Test 2"
+                        }
+                      }
+                    ]
+                  }
                 }
               ]
             }
