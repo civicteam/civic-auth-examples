@@ -153,6 +153,7 @@ jobs:
           payload: |
             {
               "channel": "#build",
+              "text": "Release Successful",
               "blocks": [
                 {
                   "type": "section",
