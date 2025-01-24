@@ -154,7 +154,7 @@ jobs:
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
         with:
-          channel-id: 'build'
+          channel-id: 'C0Z13E3GC'
           payload: |
             {
               "blocks": [
