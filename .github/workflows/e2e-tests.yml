@@ -145,3 +145,30 @@ jobs:
           WAGMI_BASE_URL: 'http://localhost:3010'
           CYPRESS_TEST_TAG: '@local'
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+
+      - name: Send Slack Notification
+        if: failure()
+        uses: slackapi/slack-github-action@v1.27.0
+        with:
+          payload: |
+            {
+              "blocks": [
+                {
+                  "type": "section",
+                  "channel": "#build",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "*(THIS IS A TEST) Release Successful* :white_check_mark:\nPlease complete the following tests:"
+                  }
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "• [ ] Test 1\n• [ ] Test 2"
+                  }
+                }
+              ]
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
