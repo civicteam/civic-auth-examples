@@ -148,6 +148,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+      - name: Get branch
+        id: get-branch
+        run: |
+          git fetch --all
+          source_branch=$(git branch -a --contains ${{ github.event.deployment.ref }} | tail -n1 | sed 's/^[ \t]*//')
+          echo "Branch containing deployment: $source_branch"
+          echo "SOURCE_BRANCH=${source_branch#remotes/origin/*}" >> $GITHUB_ENV
+          
       - name: Send Slack Notification
         if: always()
         uses: slackapi/slack-github-action@v1.27.0
