@@ -162,7 +162,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "<!subteam^S012Q4F3TRB> (this is test, please ignore for now) Civic Auth Released to Production :white_check_mark:"
+                    "text": "Embedded Wallet Released to Production :white_check_mark:"
                   }
                 },
                 {
@@ -189,11 +189,39 @@ jobs:
                           "text": "Log in/log out with google (new account)"
                         }
                       },
-                                            {
+                      {
                         "value": "test3",
                         "text": {
                           "type": "plain_text",
-                          "text": "Log in with account #1 > log out > log in with account #2"
+                          "text": "Airdrop to embedded wallet"
+                        }
+                      },
+                      {
+                        "value": "test4",
+                        "text": {
+                          "type": "plain_text",
+                          "text": "Send message"
+                        }
+                      },
+                      {
+                        "value": "test5",
+                        "text": {
+                          "type": "plain_text",
+                          "text": "Send Transaction"
+                        }
+                      },
+                      {
+                        "value": "test6",
+                        "text": {
+                          "type": "plain_text",
+                          "text": "Get captcha/uniqueness/liveness passes"
+                        }
+                      },
+                      {
+                        "value": "test7",
+                        "text": {
+                          "type": "plain_text",
+                          "text": "Log in with account #1 > send message/transaction > log out > log in with account #2 > send message/transaction "
                         }
                       }
                     ]
@@ -203,7 +231,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "Report any issues seen in this slack thread"
+                    "text": "Report any issues encountered in this slack thread"
                   }
                 }
               ]
