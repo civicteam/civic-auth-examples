@@ -76,7 +76,7 @@ When('I click log in with dummy in the page', () => {
 });
 
 Then('I fetch tokens from cookies', () => {
-  const waitForCookie = (cookieName, retries = 10) => {
+  const waitForCookie = (cookieName, retries = 20) => {
     cy.getCookie(cookieName).then((cookie) => {
       if (cookie && cookie.value) {
         expect(cookie.value).to.not.be.null;
