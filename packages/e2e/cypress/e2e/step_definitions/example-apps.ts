@@ -94,6 +94,40 @@ Then('I fetch tokens from cookies', () => {
   waitForCookie('timestamp');
 });
 
+Then('I fetch tokens from local storage', () => {
+  const tokenKeys = ['access_token', 'refresh_token', 'timestamp'];
+
+  // Function to wait for a local storage value to be set initially
+  function waitForLocalStorageToBeSet(key: string) {
+    return cy.waitUntil(() => {
+      return cy.window().then((window) => {
+        const currentValue = window.localStorage.getItem(key);
+        const isSet = currentValue !== null;
+        console.log(`Waiting for ${key} to be set: Current Value:`, currentValue, 'Set:', isSet);
+        return isSet; // Return true when the value is set
+      });
+    }, {
+      timeout: 60000, // 60 seconds
+      interval: 1000   // Check every 1000ms
+    });
+  }
+
+  // Wait for each token to be set and then fetch them
+  cy.window().then(async (window) => {
+    const tokens: Record<string, string | null> = {};
+
+    for (const key of tokenKeys) {
+      await waitForLocalStorageToBeSet(key); // Wait for the key to be set
+      const value = window.localStorage.getItem(key);
+      tokens[key] = value; // Capture the token value
+      console.log(`Fetched ${key}:`, tokens[key]);
+    }
+
+    console.log('All tokens fetched:', tokens);
+  });
+});
+
+
 let storedRefreshToken: string;
 
 When('I store the refresh token', () => {
@@ -103,16 +137,24 @@ When('I store the refresh token', () => {
   });
 });
 
+When('I store the refresh token from local storage', () => {
+  cy.window().then((win) => {
+    const refreshToken = win.localStorage.getItem('refresh_token');
+    storedRefreshToken = refreshToken;
+    expect(storedRefreshToken).to.not.be.empty;
+  });
+ });
+
+
 Then('I confirm token refresh is successful', () => {
-  cy.wait(3000)
   cy.request({
     method: 'POST',
-    url: 'https://auth-dev.civic.com/oauth',
+    url: 'http://auth-dev.civic.com/oauth/token',
     form: true,
     body: {
       grant_type: 'refresh_token',
       refresh_token: storedRefreshToken,
-      client_id: 'demo-client-1'
+      client_id: 'd30112c5-55a2-4a93-9ac7-3cca6b72557e'
     }
   }).then((response) => {
     expect(response.status).to.eq(200);
@@ -134,6 +176,22 @@ When('I confirm successful logout', () => {
   cy.get(sampleApp.signInButton)
     .should('have.text', 'Sign in')
     .should('not.be.disabled');
+});
+
+Then('I confirm token refresh fails after logout', () => {
+  cy.request({
+    method: 'POST',
+    url: 'http://auth-dev.civic.com/oauth/token',
+    form: true,
+    body: {
+      grant_type: 'refresh_token',
+      refresh_token: storedRefreshToken,
+      client_id: 'demo-client-1'
+    },
+    failOnStatusCode: false
+  }).then((response) => {
+    expect(response.status).to.eq(400);
+  });
 });
 
 
