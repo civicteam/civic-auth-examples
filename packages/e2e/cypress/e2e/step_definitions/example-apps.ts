@@ -149,12 +149,12 @@ When('I store the refresh token from local storage', () => {
 Then('I confirm token refresh is successful', () => {
   cy.request({
     method: 'POST',
-    url: 'http://auth-dev.civic.com/oauth/token',
+    url: 'https://auth-dev.civic.com/oauth/token',
     form: true,
     body: {
       grant_type: 'refresh_token',
       refresh_token: storedRefreshToken,
-      client_id: 'd30112c5-55a2-4a93-9ac7-3cca6b72557e'
+      client_id: 'example-repo-client-id'
     }
   }).then((response) => {
     expect(response.status).to.eq(200);
@@ -181,12 +181,12 @@ When('I confirm successful logout', () => {
 Then('I confirm token refresh fails after logout', () => {
   cy.request({
     method: 'POST',
-    url: 'http://auth-dev.civic.com/oauth/token',
+    url: 'https://auth-dev.civic.com/oauth/token',
     form: true,
     body: {
       grant_type: 'refresh_token',
       refresh_token: storedRefreshToken,
-      client_id: 'demo-client-1'
+      client_id: 'example-repo-client-id'
     },
     failOnStatusCode: false
   }).then((response) => {

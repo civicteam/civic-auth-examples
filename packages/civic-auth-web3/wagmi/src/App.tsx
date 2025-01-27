@@ -25,6 +25,21 @@ const wagmiConfig = createConfig({
   ],
 });
 
+const config = {
+  endpoints: {
+    wallet: process.env.NEXT_PUBLIC_WALLET_API_BASE_URL,
+    rpcs: {
+      11155111: process.env.NEXT_PUBLIC_SEPOLIA_RPC,
+    },
+  },
+  turnkey: {
+    serverSignUrl: process.env.NEXT_PUBLIC_WALLET_API_BASE_URL
+      ? `${process.env.NEXT_PUBLIC_WALLET_API_BASE_URL}/proxy`
+      : undefined,
+    defaultOrganizationId: process.env.NEXT_PUBLIC_TURNKEY_ORGANIZATION_ID,
+  },
+};
+
 // Wagmi requires react-query
 const queryClient = new QueryClient();
 
