@@ -41,6 +41,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       CLIENT_ID: prod-demo-client-1
+      VITE_CLIENT_ID: prod-demo-client-1
       OAUTH_SERVER: https://auth.civic.com/oauth
     defaults:
       run:
