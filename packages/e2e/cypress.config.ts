@@ -22,7 +22,7 @@ module.exports = defineConfig({
   retries: {
     experimentalStrategy: 'detect-flake-and-pass-on-threshold',
     experimentalOptions: {
-      maxRetries: 2,
+      maxRetries: 1,
       passesRequired: 1
     },
     openMode: true,
@@ -57,9 +57,5 @@ module.exports = defineConfig({
     FASTIFY_BASE_URL: 'http://localhost:3008',
     HONO_BASE_URL: 'http://localhost:3009',
     WAGMI_BASE_URL: 'http://localhost:3010',
-    OAUTH_SERVER_URL: {
-      dev: 'https://auth-dev.civic.com/oauth',
-      prod: 'https://auth.civic.com/oauth'
-    }
   },
 });

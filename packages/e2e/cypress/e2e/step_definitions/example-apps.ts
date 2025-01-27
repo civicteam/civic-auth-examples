@@ -147,15 +147,21 @@ When('I store the refresh token from local storage', () => {
 
 
 Then('I confirm token refresh is successful', () => {
+  const stage = Cypress.env('stage');
+  const clientId = stage === 'prod' ? 'prod-demo-client-1' : 'example-repo-client-id';
+  const oauthServer = stage === 'prod' 
+    ? 'https://auth.civic.com/oauth'
+    : 'https://auth-dev.civic.com/oauth';
+
   cy.request({
     method: 'POST',
-    url: 'https://auth.civic.com/oauth/token',
+    url: `${oauthServer}/token`,
     form: true,
     body: {
       grant_type: 'refresh_token',
       refresh_token: storedRefreshToken,
-      client_id: 'prod-demo-client-1'
-    }
+      client_id: clientId
+    },
   }).then((response) => {
     expect(response.status).to.eq(200);
     expect(response.body).to.have.property('access_token');
@@ -181,10 +187,13 @@ When('I confirm successful logout', () => {
 Then('I confirm token refresh fails after logout', () => {
   const stage = Cypress.env('stage');
   const clientId = stage === 'prod' ? 'prod-demo-client-1' : 'example-repo-client-id';
+  const oauthServer = stage === 'prod' 
+    ? 'https://auth.civic.com/oauth'
+    : 'https://auth-dev.civic.com/oauth';
   
   cy.request({
     method: 'POST',
-    url: `${Cypress.env('OAUTH_SERVER_URL')[stage]}/token`,
+    url: `${oauthServer}/token`,
     form: true,
     body: {
       grant_type: 'refresh_token',
@@ -196,7 +205,6 @@ Then('I confirm token refresh fails after logout', () => {
     expect(response.status).to.eq(400);
   });
 });
-
 
 Then('I confirm that login-app user is on the correct url', () => {
   cy.url().should('match', new RegExp(`${Cypress.env('LOGIN_APP_URL')}/user`));
