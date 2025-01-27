@@ -1,4 +1,4 @@
-name: Build and run example apps
+name: Build and run example apps using prod endpoints
 
 on: [push, pull_request]
 
@@ -40,8 +40,8 @@ jobs:
     # if: needs.check-version.outputs.version_changed == 'true'
     runs-on: ubuntu-latest
     env:
-      CLIENT_ID: example-repo-client-id
-      VITE_CLIENT_ID: example-repo-client-id
+      CLIENT_ID: prod-demo-client-1
+      OAUTH_SERVER: https://auth.civic.com/oauth
     defaults:
       run:
         working-directory: ./
@@ -115,22 +115,12 @@ jobs:
           wait-for: 60s
           log-output-if: true
 
-
-      # - name: Set up cypress e2e tests for client-auth lib in example app
-        # uses: ./.github/actions/test-e2e
-        # with:
-        #   dummy-oidc-server: http://localhost:9090
-        #   npm-token: ${{ secrets.NPM_TOKEN }}
-        #   aws-access-key-id: ${{ secrets.DEV_AWS_ACCESS_KEY_ID }}
-        #   aws-secret-access-key: ${{ secrets.DEV_AWS_SECRET_ACCESS_KEY }}
-        #   github-ssh-key: ${{ secrets.CIVIC_LOG_GITHUB_DEPLOY_KEY }}
-
       - name: Run Cypress example app e2e tests
         id: cypress
         uses: cypress-io/github-action@v6
         with:
           working-directory: packages/e2e
-          command: npx cypress run --browser chrome --record
+          command: npx cypress run --env stage=prod --browser chrome --record
           browser: chrome
           install: true
           wait-on: 'http://localhost:3000,http://localhost:3006,http://localhost:3007,http://localhost:3008,http://localhost:3009'
@@ -143,5 +133,19 @@ jobs:
           FASTIFY_BASE_URL: 'http://localhost:3008'
           HONO_BASE_URL: 'http://localhost:3009'
           WAGMI_BASE_URL: 'http://localhost:3010'
-          CYPRESS_TEST_TAG: '@local'
+          CYPRESS_TEST_TAG: '@prod'
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+
+      - name: Send Slack Notification on Failure
+        if: always()
+        uses: slackapi/slack-github-action@v1.27.0
+        with:
+          payload: |
+            {
+              "channel": "#build",
+              "text": "<!subteam^S012Q4F3TRB> Example repo Cypress develop tests failed in ${{ github.repository }}.\n\n
+              These tests are run after new beta and prod versions of civic/auth and civic/auth-web3, so there may be an issue with the new version(s). Check the recording of the test failure here https://cloud.cypress.io/projects/cmyigw/runs.\n\nAlternatively, see the full GitHub Actions run details here ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}.",
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK

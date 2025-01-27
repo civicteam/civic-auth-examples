@@ -1,4 +1,4 @@
-@local @develop
+@dev @prod
 Feature: Log in with reactjs app
 
   Scenario: Log in with reactjs app

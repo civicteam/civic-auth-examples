@@ -26,7 +26,7 @@ const PORT = env.PORT ? parseInt(env.PORT) : 3000;
 
 const config = {
   clientId: process.env.CLIENT_ID!,
-  oauthServer: "https://auth-dev.civic.com/oauth",
+  oauthServer: process.env.OAUTH_SERVER!,
   redirectUrl: `http://localhost:${PORT}/auth/callback`,
 }
 

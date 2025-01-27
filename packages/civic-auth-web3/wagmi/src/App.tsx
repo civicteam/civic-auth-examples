@@ -14,6 +14,8 @@ import { mainnet, sepolia } from "wagmi/chains";
 const CLIENT_ID = import.meta.env.VITE_CLIENT_ID;
 if (!CLIENT_ID) throw new Error('CLIENT_ID is required');
 
+const OAUTH_SERVER = import.meta.env.OAUTH_SERVER;
+
 const wagmiConfig = createConfig({
   chains: [ mainnet, sepolia ],
   transports: {
@@ -50,7 +52,7 @@ const App = () => {
       <WagmiProvider config={wagmiConfig as any}>
       <CivicAuthProvider
         clientId={CLIENT_ID}
-        config={{ oauthServer: 'https://auth-dev.civic.com/oauth/' }}
+        config={{ oauthServer: OAUTH_SERVER }}
         nonce={'1234567890'}
       >
           <AppContent />

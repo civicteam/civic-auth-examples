@@ -1,4 +1,4 @@
-@local @develop
+@dev @prod
 Feature: Log in with wagmi app
 
   Scenario: Log in with wagmi app

@@ -1,4 +1,4 @@
-@local @develop
+@dev @prod
 Feature: Log in with nextjs app
 
   Scenario: Log in with nextjs app

@@ -1,9 +1,10 @@
-@local @develop
+@dev @prod
 Feature: Log in with express app
 
   Scenario: Log in with express app
     Given I open the 'EXPRESS' server app home page
     And I click log in with dummy in the page
+    When I fetch tokens from cookies
 
 #  Scenario: Verify refresh token functionality
 #    When I fetch tokens from cookies
