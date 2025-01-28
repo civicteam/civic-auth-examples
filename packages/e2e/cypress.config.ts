@@ -47,7 +47,6 @@ module.exports = defineConfig({
     },
   },
   env: {
-    experimentalSessionAndOrigin: true,
     stepDefinitions: 'cypress/e2e/step_definitions/**/*.ts',
     tags: '',
     stage: '',

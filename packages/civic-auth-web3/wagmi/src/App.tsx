@@ -52,7 +52,7 @@ const App = () => {
       <WagmiProvider config={wagmiConfig as any}>
       <CivicAuthProvider
         clientId={CLIENT_ID}
-        config={{ oauthServer: OAUTH_SERVER }}
+        config={{ oauthServer: OAUTH_SERVER || 'https://auth-dev.civic.com/oauth', }}
         nonce={'1234567890'}
       >
           <AppContent />

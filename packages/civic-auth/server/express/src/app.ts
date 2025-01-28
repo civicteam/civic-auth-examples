@@ -22,7 +22,7 @@ app.use(cookieParser());
 
 const config = {
   clientId: process.env.CLIENT_ID!,
-  oauthServer: process.env.OAUTH_SERVER!,
+  oauthServer: process.env.OAUTH_SERVER || 'https://auth-dev.civic.com/oauth',
   redirectUrl: `http://localhost:${PORT}/auth/callback`,
 };
 
