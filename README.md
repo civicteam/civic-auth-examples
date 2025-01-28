@@ -15,7 +15,7 @@ The repository includes the following samples:
     * [Wagmi](packages/civic-auth-web3/wagmi): reference implementation of a simple Wagmi app integration with Civic Auth Web3 SDK.
 
 * **Start apps**:
-Before running, be sure to set the environment variables in .env files for each app. You can find 
+Before running, be sure to set the client id in .env files for each app. You can find 
 examples in the .env.example files
     from the root:
     ```yarn install```
@@ -25,10 +25,7 @@ examples in the .env.example files
 * **Running cypress tests**:
     ```cd packages/e2e```:
     ```yarn install```
-    Dev
-    ```yarn cypress open --env stage=dev --browser chrome```
-    Production
-    ```yarn cypress open --env stage=prod --browser chrome```
+    ```yarn cypress open --browser chrome```
 
 
 

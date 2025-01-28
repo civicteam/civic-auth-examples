@@ -1,4 +1,3 @@
-@dev @prod
 Feature: Log in with hono app
 
   Scenario: Log in with hono app

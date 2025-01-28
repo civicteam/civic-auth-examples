@@ -48,8 +48,7 @@ module.exports = defineConfig({
   },
   env: {
     stepDefinitions: 'cypress/e2e/step_definitions/**/*.ts',
-    tags: '',
-    stage: '',
+    clientId: process.env.CYPRESS_CLIENT_ID,
     NEXT_JS_BASE_URL: 'http://localhost:3000',
     REACT_BASE_URL: 'http://localhost:3006',
     EXPRESS_BASE_URL: 'http://localhost:3007',

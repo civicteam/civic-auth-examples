@@ -1,4 +1,3 @@
-@dev @prod
 Feature: Log in with fastify app
 
   Scenario: Log in with fastify app

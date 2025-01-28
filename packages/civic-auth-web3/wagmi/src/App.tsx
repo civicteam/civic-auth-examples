@@ -14,8 +14,6 @@ import { mainnet, sepolia } from "wagmi/chains";
 const CLIENT_ID = import.meta.env.VITE_CLIENT_ID;
 if (!CLIENT_ID) throw new Error('CLIENT_ID is required');
 
-const VITE_OAUTH_SERVER = import.meta.env.VITE_OAUTH_SERVER;
-
 const wagmiConfig = createConfig({
   chains: [ mainnet, sepolia ],
   transports: {
@@ -27,21 +25,6 @@ const wagmiConfig = createConfig({
   ],
 });
 
-const config = {
-  endpoints: {
-    wallet: process.env.NEXT_PUBLIC_WALLET_API_BASE_URL,
-    rpcs: {
-      11155111: process.env.NEXT_PUBLIC_SEPOLIA_RPC,
-    },
-  },
-  turnkey: {
-    serverSignUrl: process.env.NEXT_PUBLIC_WALLET_API_BASE_URL
-      ? `${process.env.NEXT_PUBLIC_WALLET_API_BASE_URL}/proxy`
-      : undefined,
-    defaultOrganizationId: process.env.NEXT_PUBLIC_TURNKEY_ORGANIZATION_ID,
-  },
-};
-
 // Wagmi requires react-query
 const queryClient = new QueryClient();
 
@@ -52,7 +35,6 @@ const App = () => {
       <WagmiProvider config={wagmiConfig as any}>
       <CivicAuthProvider
         clientId={CLIENT_ID}
-        config={{ oauthServer: VITE_OAUTH_SERVER || 'https://auth-dev.civic.com/oauth', }}
         nonce={'1234567890'}
       >
           <AppContent />

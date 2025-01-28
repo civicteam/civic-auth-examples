@@ -1,4 +1,3 @@
-@dev @prod
 Feature: Log in with express app
 
   Scenario: Log in with express app
