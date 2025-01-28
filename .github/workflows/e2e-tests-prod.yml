@@ -43,6 +43,7 @@ jobs:
       CLIENT_ID: prod-demo-client-1
       VITE_CLIENT_ID: prod-demo-client-1
       OAUTH_SERVER: https://auth.civic.com/oauth
+      VITE_OAUTH_SERVER: https://auth.civic.com/oauth
     defaults:
       run:
         working-directory: ./
@@ -72,9 +73,6 @@ jobs:
           wait-on: http://localhost:3000
           wait-for: 60s
           log-output-if: true
-        env:
-          CLIENT_ID: prod-demo-client-1
-          OAUTH_SERVER: https://auth.civic.com/oauth
 
       - name: Start the reactjs example app
         uses: JarvusInnovations/background-action@v1.0.7
@@ -84,9 +82,6 @@ jobs:
           wait-on: http://localhost:3006
           wait-for: 60s
           log-output-if: true
-        env:
-          VITE_CLIENT_ID: prod-demo-client-1
-          VITE_OAUTH_SERVER: https://auth.civic.com/oauth
 
       - name: Start the express example app
         uses: JarvusInnovations/background-action@v1.0.7
@@ -96,9 +91,6 @@ jobs:
           wait-on: http://localhost:3007
           wait-for: 60s
           log-output-if: true
-        env:
-          CLIENT_ID: prod-demo-client-1
-          OAUTH_SERVER: https://auth.civic.com/oauth
 
       - name: Start the fastify example app
         uses: JarvusInnovations/background-action@v1.0.7
@@ -108,9 +100,6 @@ jobs:
           wait-on: http://localhost:3008
           wait-for: 60s
           log-output-if: true
-        env:
-          CLIENT_ID: prod-demo-client-1
-          OAUTH_SERVER: https://auth.civic.com/oauth
 
       - name: Start the hono example app
         working-directory: ./packages/civic-auth/server/hono  
@@ -118,9 +107,6 @@ jobs:
           bun add @hono/node-server
           yarn dev & npx wait-on http://localhost:3009
         timeout-minutes: 1
-        env:
-          CLIENT_ID: prod-demo-client-1
-          OAUTH_SERVER: https://auth.civic.com/oauth
 
       - name: Start the wagmi example app
         uses: JarvusInnovations/background-action@v1.0.7
@@ -130,9 +116,6 @@ jobs:
           wait-on: http://localhost:3010
           wait-for: 60s
           log-output-if: true
-        env:
-          VITE_CLIENT_ID: prod-demo-client-1
-          VITE_OAUTH_SERVER: https://auth.civic.com/oauth
 
       - name: Run Cypress example app e2e prod tests
         id: cypress
