@@ -1,6 +1,10 @@
 name: Build and run example apps using prod endpoints
 
-on: [push, pull_request]
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  push:
+  pull_request:
 
 jobs:
   check-version:
