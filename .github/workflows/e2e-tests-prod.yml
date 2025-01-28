@@ -86,7 +86,7 @@ jobs:
           log-output-if: true
         env:
           VITE_CLIENT_ID: prod-demo-client-1
-          OAUTH_SERVER: https://auth.civic.com/oauth
+          VITE_OAUTH_SERVER: https://auth.civic.com/oauth
 
       - name: Start the express example app
         uses: JarvusInnovations/background-action@v1.0.7
@@ -132,7 +132,7 @@ jobs:
           log-output-if: true
         env:
           VITE_CLIENT_ID: prod-demo-client-1
-          OAUTH_SERVER: https://auth.civic.com/oauth
+          VITE_OAUTH_SERVER: https://auth.civic.com/oauth
 
       - name: Run Cypress example app e2e prod tests
         id: cypress
