@@ -11,6 +11,11 @@ Feature: Log in with wagmi app
     And I store the refresh token from local storage
     Then I confirm token refresh is successful
 
+  Scenario: Creating and connecting the wallet
+    Given I create the embedded wallet
+    When I connect the embedded wallet
+    Then The embedded wallet is connected
+
   Scenario: Logout successfully
     When I click the logout button
     Then I confirm successful logout

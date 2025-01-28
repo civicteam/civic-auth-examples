@@ -206,6 +206,18 @@ Then('I confirm token refresh fails after logout', () => {
   });
 });
 
+When('I create the embedded wallet', () => {
+  cy.contains('button', 'Create Wallet', { timeout: 20000 }).should('be.visible').click()
+});
+
+When('I connect the embedded wallet', () => {
+  cy.contains('button', 'Connect Wallet', { timeout: 20000 }).should('be.visible').click()
+});
+
+When('The embedded wallet is connected', () => {
+  cy.contains('Wallet is connected', { timeout: 20000 }).should('be.visible')
+});
+
 Then('I confirm that login-app user is on the correct url', () => {
   cy.url().should('match', new RegExp(`${Cypress.env('LOGIN_APP_URL')}/user`));
 });
