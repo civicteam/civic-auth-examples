@@ -154,7 +154,7 @@ Then('I confirm token refresh is successful', () => {
     body: {
       grant_type: 'refresh_token',
       refresh_token: storedRefreshToken,
-      client_id: 'prod-demo-client-1'
+      client_id: Cypress.env('clientId')
     },
   }).then((response) => {
     expect(response.status).to.eq(200);
@@ -186,7 +186,7 @@ Then('I confirm token refresh fails after logout', () => {
     body: {
       grant_type: 'refresh_token',
       refresh_token: storedRefreshToken,
-      client_id: 'prod-demo-client-1'
+      client_id: Cypress.env('clientId')
     },
     failOnStatusCode: false
   }).then((response) => {
