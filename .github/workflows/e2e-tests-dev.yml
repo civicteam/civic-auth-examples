@@ -50,8 +50,8 @@ jobs:
             echo "$WEB3_PROD_VERSION" >> .civic-versions
 
   build:
-    # needs: check-version
-    # if: needs.check-version.outputs.version_changed == 'true'
+    needs: check-version
+    if: needs.check-version.outputs.version_changed == 'true'
     runs-on: ubuntu-latest
     env:
       CLIENT_ID: example-repo-client-id
