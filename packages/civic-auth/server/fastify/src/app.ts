@@ -7,6 +7,7 @@ import {
   getUser,
   buildLoginUrl,
   refreshTokens,
+  buildLogoutRedirectUrl,
 } from '@civic/auth/server';
 import Fastify, { FastifyReply, FastifyRequest } from 'fastify';
 import fastifyCookie from '@fastify/cookie';
@@ -27,9 +28,9 @@ const PORT = env.PORT ? parseInt(env.PORT) : 3000;
 const config = {
   clientId: process.env.CLIENT_ID!,
   redirectUrl: `http://localhost:${PORT}/auth/callback`,
-}
+  postLogoutRedirectUrl: `http://localhost:${PORT}/auth/logoutcallback`,
+};
 
-// Map fastify cookies to the Storage interface
 class FastifyCookieStorage extends CookieStorage {
   constructor(private request: FastifyRequest, private reply: FastifyReply) {
     super({
@@ -58,20 +59,24 @@ class FastifyCookieStorage extends CookieStorage {
       throw error;
     }
   }
+
+  async clear(): Promise<void> {
+    const cookies = this.request.cookies;
+    for (const key in cookies) {
+      this.reply.clearCookie(key, { path: '/' });
+    }
+  }
 }
 
-// Register plugins with await
 await fastify.register(fastifyCookie, {
   secret: env.COOKIE_SECRET || "my-secret"
 });
 
-// Attach storage to each request
 fastify.decorateRequest('storage', null);
 fastify.addHook('preHandler', async (request, reply) => {
   request.storage = new FastifyCookieStorage(request, reply);
 });
 
-// Authentication hook for protected routes
 fastify.addHook('preHandler', async (request, reply) => {
   if (!request.url.includes('/admin')) return;
 
@@ -81,11 +86,11 @@ fastify.addHook('preHandler', async (request, reply) => {
   }
 });
 
-// Routes
 fastify.get('/', async (request, reply) => {
-  fastify.log.info('Starting login process');
+  if (await isLoggedIn(request.storage)) {
+    return reply.redirect('/admin/hello');
+  }
   const url = await buildLoginUrl(config, request.storage);
-  fastify.log.info(`Redirecting to: ${url.toString()}`);
   return reply.redirect(url.toString());
 });
 
@@ -113,10 +118,17 @@ fastify.get<{
 fastify.get('/admin/hello', async (request, reply) => {
   try {
     const user = await getUser(request.storage);
-    return `Hello, ${user?.name}!`;
+    reply.type('text/html');
+    return `
+      <html>
+        <body>
+          <h1>Hello, ${user?.name}!</h1>
+          <button onclick="window.location.href='/auth/logout'">Logout</button>
+        </body>
+      </html>
+    `;
   } catch (error) {
-    fastify.log.error(error);
-    return reply.status(500).send({ error: 'Failed to get user info' });
+    fastify.log.error('Failed to get user info', error);
   }
 });
 
@@ -125,8 +137,30 @@ fastify.get('/admin/refresh', async (request, reply) => {
     await refreshTokens(request.storage, config);
     return 'Tokens refreshed';
   } catch (error) {
-    fastify.log.error(error);
-    return reply.status(500).send({ error: 'Failed to refresh tokens' });
+    fastify.log.error('Refresh error:', error);
+  }
+});
+
+fastify.get('/auth/logout', async (request, reply) => {
+  try {
+    const url = await buildLogoutRedirectUrl(config, request.storage);
+    return reply.redirect(url.toString());
+  } catch (error) {
+    fastify.log.error('Logout error:', error);
+    throw error;
+  }
+});
+
+fastify.get<{
+  Querystring: { state: string };
+}>('/auth/logoutcallback', async (request, reply) => {
+  try {
+    const { state } = request.query;
+    fastify.log.info(`Logout callback - state: ${state}`);
+    await request.storage.clear();
+    return reply.redirect('/');
+  } catch (error) {
+    fastify.log.error('Logout callback error:', error);
   }
 });
 

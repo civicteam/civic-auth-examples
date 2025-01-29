@@ -75,7 +75,7 @@ jobs:
         with:
           node-version: '20'
           
-      - name: Install dependencies'
+      - name: Install dependencies
         shell: bash
         run: yarn install --frozen-lockfile
         

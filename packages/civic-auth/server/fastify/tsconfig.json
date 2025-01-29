@@ -13,6 +13,6 @@
     "allowJs": true,
     "resolveJsonModule": true
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "../express/src/login.tsx"],
   "exclude": ["node_modules"]
 }
