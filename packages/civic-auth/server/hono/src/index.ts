@@ -40,14 +40,12 @@ class HonoCookieStorage extends CookieStorage {
 
 const app = new Hono();
 
-// Debug middleware to log all cookies
 app.use('*', async (c, next) => {
   const storage = new HonoCookieStorage(c);
   c.set('storage', storage);
   await next();
 });
 
-// Login endpoint
 app.get('/', async (c) => {
   if (await isLoggedIn(c.get('storage'))) {
     return c.redirect('/admin/hello');
@@ -56,7 +54,6 @@ app.get('/', async (c) => {
   return c.redirect(url.toString());
 });
 
-// Callback endpoint
 app.get('/auth/callback', async (c) => {
   const code = c.req.query('code');
   const state = c.req.query('state');
@@ -75,7 +72,6 @@ app.get('/auth/callback', async (c) => {
   return c.redirect('/admin/hello');
 });
 
-// Logout endpoint
 app.get('/auth/logout', async (c) => {
   const storage = c.get('storage') as HonoCookieStorage;
   
@@ -83,7 +79,6 @@ app.get('/auth/logout', async (c) => {
   return c.redirect(url.toString());
 });
 
-// Logout callback endpoint
 app.get('/auth/logoutcallback', async (c) => {
   const storage = c.get('storage') as HonoCookieStorage;
   const authCookies = ['access_token', 'refresh_token', 'id_token', 'code_verifier'];
@@ -93,7 +88,6 @@ app.get('/auth/logoutcallback', async (c) => {
   return c.redirect('/');
 });
 
-// Auth middleware for admin routes
 app.use('/admin/*', async (c, next) => {
   if (!await isLoggedIn(c.get('storage'))) {
     return c.text('Unauthorized', 401);
@@ -101,7 +95,6 @@ app.use('/admin/*', async (c, next) => {
   return next();
 });
 
-// Protected admin route
 app.get('/admin/hello', async (c) => {
   const user = await getUser(c.get('storage'));
   return c.html(`
