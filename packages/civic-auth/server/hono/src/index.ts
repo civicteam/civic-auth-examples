@@ -1,5 +1,5 @@
 import { Context } from 'hono';
-import { getCookie, setCookie } from 'hono/cookie';
+import { getCookie, setCookie, deleteCookie } from 'hono/cookie';
 import { serve } from '@hono/node-server';
 import { Hono } from 'hono';
 import {
@@ -17,7 +17,7 @@ const PORT = process.env.PORT ? parseInt(process.env.PORT) : 3000;
 const config = {
   clientId: process.env.CLIENT_ID!,
   redirectUrl: `http://localhost:${PORT}/auth/callback`,
-  postLogoutRedirectUrl: `http://localhost:${PORT}/`,
+  postLogoutRedirectUrl: `http://localhost:${PORT}/auth/logoutcallback`
 };
 
 class HonoCookieStorage extends CookieStorage {
@@ -33,25 +33,18 @@ class HonoCookieStorage extends CookieStorage {
     setCookie(this.c, key, value);
   }
 
-  async clear(): Promise<void> {
-    const cookies = this.c.req.cookie();
-    for (const key in cookies) {
-      setCookie(this.c, key, '', { 
-        path: '/',
-        maxAge: 0,
-        expires: new Date(0)
-      });
-    }
+  async delete(key: string): void {
+    deleteCookie(this.c, key);
   }
 }
 
 const app = new Hono();
 
-// Middleware to attach CookieStorage to each request
+// Debug middleware to log all cookies
 app.use('*', async (c, next) => {
-  const storage = new HonoCookieStorage(c)
+  const storage = new HonoCookieStorage(c);
   c.set('storage', storage);
-  return next();
+  await next();
 });
 
 // Login endpoint
@@ -65,35 +58,59 @@ app.get('/', async (c) => {
 
 // Callback endpoint
 app.get('/auth/callback', async (c) => {
-  const code = c.req.query('code') as string;
-  const state = c.req.query('state') as string;
+  const code = c.req.query('code');
+  const state = c.req.query('state');
 
-  await resolveOAuthAccessCode(code, state, c.get('storage'), config);
+  if (!code || !state) {
+    return c.text('Invalid callback parameters', 400);
+  }
+
+  try {
+    await resolveOAuthAccessCode(code, state, c.get('storage'), config);
+  } catch (error) {
+    console.error('Error resolving OAuth code:', error);
+    return c.text('Authentication error', 500);
+  }
+
   return c.redirect('/admin/hello');
 });
 
+// Logout endpoint
 app.get('/auth/logout', async (c) => {
-  const url = await buildLogoutRedirectUrl(config, c.get('storage'));
+  const storage = c.get('storage') as HonoCookieStorage;
+  
+  const url = await buildLogoutRedirectUrl(config, storage);
   return c.redirect(url.toString());
 });
 
+// Logout callback endpoint
 app.get('/auth/logoutcallback', async (c) => {
-  await c.get('storage').clear();
+  const storage = c.get('storage') as HonoCookieStorage;
+  const authCookies = ['access_token', 'refresh_token', 'id_token', 'code_verifier'];
+  for (const cookie of authCookies) {
+    await storage.delete(cookie);
+  }
   return c.redirect('/');
 });
 
+// Auth middleware for admin routes
 app.use('/admin/*', async (c, next) => {
-  if (!isLoggedIn(c.get('storage'))) return c.text('Unauthorized', 401);
+  if (!await isLoggedIn(c.get('storage'))) {
+    return c.text('Unauthorized', 401);
+  }
   return next();
 });
 
+// Protected admin route
 app.get('/admin/hello', async (c) => {
   const user = await getUser(c.get('storage'));
   return c.html(`
     <html>
       <body>
         <h1>Hello, ${user?.name}!</h1>
-        <button onclick="window.location.href='/auth/logout'">Logout</button>
+        <form action="/auth/logout" method="GET">
+          <button type="submit">Logout</button>
+        </form>
       </body>
     </html>
   `);
@@ -101,7 +118,7 @@ app.get('/admin/hello', async (c) => {
 
 serve({
   fetch: app.fetch,
-  port: PORT,
+  port: PORT
 });
 
 console.log(`Server is running on http://localhost:${PORT}`);
