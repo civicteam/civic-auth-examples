@@ -54,8 +54,6 @@ When('I click log in with dummy in the iframe', () => {
       })
 
     getBody().find('button').contains('Log in with Dummy').click();
-
-    // cy.get('@open').should('have.been.calledWithMatch', new RegExp(`${Cypress.env('DUMMY_APP_URL')}/auth\\?.*`));
   });
 });
 
@@ -73,6 +71,50 @@ When('I click log in with dummy in the page', () => {
   cy.contains('button', 'Log in with Dummy')
     .should('be.visible')
     .click();
+});
+
+When('I click log in with dummy in the server app page', () => {
+  cy.intercept('GET', '/auth/callback*', (req) => {
+    const nowInSeconds = Math.floor(Date.now() / 1000);
+    const expiresInSeconds = nowInSeconds + 60; // 1 minute from now
+    const expires = new Date(expiresInSeconds * 1000).toUTCString();
+
+    const mockJwt = {
+      alg: 'RS256',
+      typ: 'JWT',
+      kid: 'civic-auth-token-signer-key'
+    };
+
+    const mockPayload = {
+      sub: 'test-user',
+      exp: expiresInSeconds,
+      iat: nowInSeconds
+    };
+
+    const mockToken = `${btoa(JSON.stringify(mockJwt))}.${btoa(JSON.stringify(mockPayload))}.mocksignature`;
+    
+    req.reply({
+      statusCode: 302,
+      headers: {
+        'location': '/admin/hello',
+        'content-length': '0',
+        'set-cookie': `id_token=${mockToken}; Path=/; Expires=${expires}; HttpOnly; SameSite=Lax`,
+        'date': new Date().toUTCString()
+      },
+      body: ''
+    });
+  }).as('authCallback');
+
+  cy.contains('button', 'Log in with Dummy')
+    .should('be.visible')
+    .click();
+
+  cy.wait('@authCallback', { timeout: 30000 });
+});
+
+Then('I am logged in and redirected to the {string} hello page', (appType: string) => {
+  cy.url().should('include', Cypress.env(`${appType}_BASE_URL`) + '/admin/hello');
+  cy.contains('Hello').should('be.visible');
 });
 
 Then('I fetch tokens from cookies', () => {
