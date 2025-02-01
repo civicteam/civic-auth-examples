@@ -7,7 +7,7 @@
   "private": "true",
   "scripts": {
     "start": "bun run src/app.ts",
-    "dev": "PORT=${PORT:-3000} bun run src/app.ts --watch"
+    "dev": "PORT=${PORT:-3008} bun run src/app.ts --watch"
   },
   "dependencies": {
     "@civic/auth": "*",

@@ -1,11 +1,10 @@
 {
   "name": "civic-auth-web3-wagmi-example",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
+    "dev": "vite --port 3010",
     "lint": "biome check .",
     "preview": "vite preview"
   },

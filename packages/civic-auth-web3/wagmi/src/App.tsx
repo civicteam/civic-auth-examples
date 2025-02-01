@@ -32,8 +32,11 @@ const queryClient = new QueryClient();
 const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
-      <WagmiProvider config={wagmiConfig}>
-        <CivicAuthProvider clientId={CLIENT_ID} >
+      <WagmiProvider config={wagmiConfig as any}>
+      <CivicAuthProvider
+        clientId={CLIENT_ID}
+        nonce={'1234567890'}
+      >
           <AppContent />
         </CivicAuthProvider>
       </WagmiProvider>

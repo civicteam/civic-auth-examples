@@ -1,0 +1,24 @@
+{
+    "$schema": "https://turbo.build/schema.json",
+    "tasks": {
+        "build": {
+          "dependsOn": ["^build"],
+          "env": ["CLIENT_ID"],
+          "inputs": ["$TURBO_DEFAULT$", ".env*"],
+          "outputs": [".next/**", "!.next/cache/**", "dist/**"]
+        },
+        "dev": {
+            "dependsOn": ["^build"],
+            "cache": false,
+            "persistent": true
+        },
+        "start:nextjs": {
+            "cache": false,
+            "persistent": true
+        },
+        "start:app2": {
+            "cache": false,
+            "persistent": true
+        }
+    }
+}

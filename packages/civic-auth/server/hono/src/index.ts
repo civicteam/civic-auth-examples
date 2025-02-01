@@ -1,89 +1,117 @@
-import type { AuthStorage } from '@civic/auth';
+import { Context } from 'hono';
+import { getCookie, setCookie, deleteCookie } from 'hono/cookie';
+import { serve } from '@hono/node-server';
+import { Hono } from 'hono';
 import {
   CookieStorage,
   resolveOAuthAccessCode,
   isLoggedIn,
   getUser,
   buildLoginUrl,
-  refreshTokens
+  buildLogoutRedirectUrl,
 } from '@civic/auth/server';
-import { serve } from '@hono/node-server';
-import { type Context, Hono } from 'hono';
-import { getCookie, setCookie } from 'hono/cookie';
 import "dotenv/config";
 
-type Variables = { storage: AuthStorage };
-
-export const app = new Hono<{ Variables: Variables }>();
-const PORT = process.env.PORT ?  parseInt(process.env.PORT) : 3000;
+const PORT = process.env.PORT ? parseInt(process.env.PORT) : 3000;
 
 const config = {
   clientId: process.env.CLIENT_ID!,
   redirectUrl: `http://localhost:${PORT}/auth/callback`,
-  oauthServer: process.env.OAUTH_SERVER ?? "https://auth.civic.com/oauth",
-}
+  postLogoutRedirectUrl: `http://localhost:${PORT}/auth/logoutcallback`
+};
 
-// Map hono cookies to the CookieStorage interface
 class HonoCookieStorage extends CookieStorage {
   constructor(private c: Context) {
     super();
   }
 
-  async get(key: string): Promise<string | null> {
-    return Promise.resolve(getCookie(this.c, key) ?? null);
+  async get(key: string) {
+    return getCookie(this.c, key) ?? null;
   }
 
-  async set(key: string, value: string): Promise<void> {
+  async set(key: string, value: string): void {
     setCookie(this.c, key, value);
+  }
+
+  async delete(key: string): void {
+    deleteCookie(this.c, key);
   }
 }
 
-// Middleware to attach CookieStorage to each request
+const app = new Hono();
+
 app.use('*', async (c, next) => {
-  const storage = new HonoCookieStorage(c)
+  const storage = new HonoCookieStorage(c);
   c.set('storage', storage);
-  return next();
+  await next();
 });
 
-// Endpoint to trigger redirect to Civic Auth OAuth server
 app.get('/', async (c) => {
+  if (await isLoggedIn(c.get('storage'))) {
+    return c.redirect('/admin/hello');
+  }
   const url = await buildLoginUrl(config, c.get('storage'));
-
   return c.redirect(url.toString());
 });
 
-// Endpoint to handle OAuth callback and resolve access code
 app.get('/auth/callback', async (c) => {
-  const code = c.req.query('code') as string
-  const state = c.req.query('state') as string
+  const code = c.req.query('code');
+  const state = c.req.query('state');
 
-  // Resolve OAuth access code and set session
-  await resolveOAuthAccessCode(code, state, c.get('storage'), config);
+  if (!code || !state) {
+    return c.text('Invalid callback parameters', 400);
+  }
+
+  try {
+    await resolveOAuthAccessCode(code, state, c.get('storage'), config);
+  } catch (error) {
+    console.error('Error resolving OAuth code:', error);
+    return c.text('Authentication error', 500);
+  }
+
   return c.redirect('/admin/hello');
 });
 
-// Authentication middleware to protect routes
-// Apply to /admin routes
-app.use('/admin/*', async (c, next) => {
-  if (!(await isLoggedIn(c.get('storage')))) return c.text('Unauthorized', 401);
+app.get('/auth/logout', async (c) => {
+  const storage = c.get('storage') as HonoCookieStorage;
+  
+  const url = await buildLogoutRedirectUrl(config, storage);
+  return c.redirect(url.toString());
+});
 
+app.get('/auth/logoutcallback', async (c) => {
+  const storage = c.get('storage') as HonoCookieStorage;
+  const authCookies = ['access_token', 'refresh_token', 'id_token', 'code_verifier'];
+  for (const cookie of authCookies) {
+    await storage.delete(cookie);
+  }
+  return c.redirect('/');
+});
+
+app.use('/admin/*', async (c, next) => {
+  if (!await isLoggedIn(c.get('storage'))) {
+    return c.text('Unauthorized', 401);
+  }
   return next();
 });
 
-// Protected route to get logged-in user information
 app.get('/admin/hello', async (c) => {
   const user = await getUser(c.get('storage'));
-  return c.text(`Hello, ${user?.name}!`);
-});
-
-app.get('/admin/refresh', async (c) => {
-  await refreshTokens(c.get('storage'), config);
-  c.text('Tokens refreshed');
+  return c.html(`
+    <html>
+      <body>
+        <h1>Hello, ${user?.name}!</h1>
+        <form action="/auth/logout" method="GET">
+          <button type="submit">Logout</button>
+        </form>
+      </body>
+    </html>
+  `);
 });
 
 serve({
   fetch: app.fetch,
-  port: PORT,
+  port: PORT
 });
 
 console.log(`Server is running on http://localhost:${PORT}`);
