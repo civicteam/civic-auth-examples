@@ -1,0 +1,230 @@
+/* Import Inter font which is similar to Civic's font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+/* Set global font */
+body, 
+.wallet-adapter-button,
+.wallet-adapter-modal-title,
+.wallet-adapter-modal-list-item,
+.wallet-adapter-dropdown-list-item {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+}
+
+/* Style the wallet menu items as buttons with Civic-like styling */
+.wallet-adapter-dropdown-list-item {
+  display: inline-block !important;
+  background-color: #181c20 !important; /* Dark background like Civic */
+  color: white !important;
+  padding: 8px 16px !important;
+  margin: 4px 2px !important;
+  border-radius: 8px !important; /* More rounded corners like Civic UI */
+  text-align: left !important; /* Changed from center to left */
+  text-decoration: none !important;
+  cursor: pointer !important;
+  transition: background-color 0.3s !important;
+  border: 1px solid #2c3036 !important; /* Subtle border */
+  font-weight: 500 !important; /* Medium weight for buttons */
+  font-size: 14px !important;
+  letter-spacing: -0.01em !important;
+}
+
+/* Wallet adapter button with Civic styling */
+.wallet-adapter-button {
+  background-color: #181c20 !important;
+  color: white !important;
+  border-radius: 8px !important;
+  border: 1px solid #2c3036 !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  letter-spacing: -0.01em !important;
+  padding: 10px 16px !important;
+  text-align: left !important; /* Added left alignment */
+}
+
+/* Style the modal title like Civic */
+.wallet-adapter-modal-title {
+  color: white !important;
+  font-weight: 600 !important;
+  font-size: 18px !important;
+  letter-spacing: -0.02em !important;
+  text-align: left !important; /* Changed from center to left */
+}
+
+/* Style the modal list items */
+.wallet-adapter-modal-list-item {
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  text-align: left !important; /* Added left alignment */
+}
+
+/* Style the wallet adapter modal content */
+.wallet-adapter-modal-wrapper {
+  background-color: #181c20 !important;
+  border-radius: 12px !important;
+  border: 1px solid #2c3036 !important;
+  font-family: 'Inter', sans-serif !important;
+}
+
+/* Remove previous centering styles and add left alignment */
+.wallet-adapter-modal-container {
+  display: block !important; /* Changed from flex */
+  text-align: left !important;
+}
+
+/* Style the wallet name text */
+.wallet-adapter-button-list-item-text {
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  text-align: left !important; /* Added left alignment */
+}
+
+/* Style the wallet logos to be consistent size */
+.wallet-adapter-modal-list li button img,
+.wallet-adapter-button img {
+  height: 20px !important;
+  width: auto !important;
+  margin-right: 8px !important;
+}
+
+/* Improve layout alignment */
+.wallet-adapter-button {
+  margin: 0 10px 10px 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important; /* Changed to start alignment */
+  min-width: 140px !important;
+}
+
+/* Fix wallet adapter modal wallet list alignment */
+.wallet-adapter-modal-list {
+  display: block !important; /* Changed from flex */
+  padding: 20px !important;
+  text-align: left !important;
+}
+
+.wallet-adapter-modal-list li {
+  list-style-type: none !important;
+  text-align: left !important;
+}
+
+/* Improve wallet list item style */
+.wallet-adapter-modal-list-item {
+  display: block !important; /* Changed from flex */
+  text-align: left !important;
+  border-radius: 8px !important;
+  padding: 12px 20px !important;
+  transition: background-color 0.2s ease !important;
+  border: 1px solid #2c3036 !important;
+}
+
+/* Remove bullets and align wallet list items */
+.wallet-adapter-modal-list li::before,
+.wallet-adapter-modal ul li::before {
+  display: none !important;
+}
+
+/* Better button positioning */
+.wallet-adapter-dropdown {
+  display: inline-block !important;
+  position: relative !important;
+  vertical-align: middle !important;
+  text-align: left !important;
+}
+
+/* Improve change wallet button position */
+button:has(> span:contains("Change wallet")) {
+  margin-top: 10px !important;
+  margin-left: 0 !important;
+  text-align: left !important;
+}
+
+/* Clean up wallet modal title alignment */
+.wallet-adapter-modal-title {
+  margin: 0 0 20px 0 !important;
+  padding: 20px 20px 0 20px !important;
+  text-align: left !important;
+}
+
+/* Wallet Adapter Dropdown Styles */
+.wallet-adapter-dropdown {
+    position: relative !important;
+    display: inline-block !important;
+    width: auto !important;
+    text-align: left !important;
+  }
+  
+  /* Button Styling */
+  .wallet-adapter-button.wallet-adapter-button-trigger {
+    background-color: #181c20 !important;
+    color: white !important;
+    border-radius: 8px !important;
+    border: 1px solid #2c3036 !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    letter-spacing: -0.01em !important;
+    padding: 10px 16px !important;
+    text-align: left !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    min-width: 140px !important;
+    margin: 0 10px 10px 0 !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+    cursor: pointer !important;
+    transition: background-color 0.3s !important;
+  }
+  
+  .wallet-adapter-button.wallet-adapter-button-trigger:hover {
+    background-color: #2c3036 !important;
+  }
+  
+  /* Dropdown List Styling */
+  .wallet-adapter-dropdown-list {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    z-index: 10 !important;
+    min-width: 140px !important;
+    background-color: #181c20 !important;
+    border: 1px solid #2c3036 !important;
+    border-radius: 8px !important;
+    padding: 0 !important;
+    margin-top: 5px !important;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1) !important;
+    display: block !important;
+    text-align: left !important;
+  }
+  
+  /* Hide the dropdown by default when not active */
+  .wallet-adapter-dropdown-list.false {
+    display: none !important;
+  }
+  
+  /* Dropdown List Item Styling */
+  .wallet-adapter-dropdown-list-item {
+    padding: 10px 16px !important;
+    color: white !important;
+    text-align: left !important;
+    font-size: 14px !important;
+    font-family: 'Inter', sans-serif !important;
+    cursor: pointer !important;
+    transition: background-color 0.2s !important;
+    border-bottom: 1px solid #2c3036 !important;
+  }
+  
+  .wallet-adapter-dropdown-list-item:last-child {
+    border-bottom: none !important;
+  }
+  
+  .wallet-adapter-dropdown-list-item:hover {
+    background-color: #2c3036 !important;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 480px) {
+    .wallet-adapter-button.wallet-adapter-button-trigger,
+    .wallet-adapter-dropdown-list {
+      width: 100% !important;
+      max-width: 300px !important;
+    }
+  }
