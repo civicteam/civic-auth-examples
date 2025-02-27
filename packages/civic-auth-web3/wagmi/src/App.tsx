@@ -7,7 +7,8 @@ import {
   http,
   useBalance,
 } from 'wagmi';
-import { embeddedWallet, userHasWallet } from '@civic/auth-web3';
+import { userHasWallet } from '@civic/auth-web3';
+import { embeddedWallet } from '@civic/auth-web3/wagmi';
 import { CivicAuthProvider, UserButton, useUser } from '@civic/auth-web3/react';
 import { mainnet, sepolia } from "wagmi/chains";
 
@@ -51,7 +52,7 @@ const AppContent = () => {
   const { isConnected } = useAccount();
   const balance = useBalance({
     address: userHasWallet(userContext)
-      ? userContext.walletAddress as `0x${string}` : undefined,
+      ? userContext.ethereum.address as `0x${string}` : undefined,
   });
 
   // A function to connect an existing civic embedded wallet
@@ -79,7 +80,7 @@ const AppContent = () => {
           }
           {userHasWallet(userContext) &&
             <>
-              <p>Wallet address: {userContext.walletAddress}</p>
+              <p>Wallet address: {userContext.ethereum.address}</p>
               <p>Balance: {
                 balance?.data
                   ? `${(BigInt(balance.data.value) / BigInt(1e18)).toString()} ${balance.data.symbol}`

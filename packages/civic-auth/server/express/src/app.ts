@@ -46,6 +46,10 @@ class ExpressCookieStorage extends CookieStorage {
       this.res.clearCookie(key);
     }
   }
+
+  async delete(key: string): Promise<void> {
+    this.res.clearCookie(key);
+  }
 }
 
 app.use((req: Request, res: Response, next: NextFunction) => {
