@@ -3,31 +3,17 @@ import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 import { useState, useEffect } from "react";
 import { useUser, UserButton } from "@civic/auth-web3/react";
 import { userHasWallet } from "@civic/auth-web3";
+import { PublicKey } from "@solana/web3.js";
 
-// A simple hook to get the wallet's balance in lamports
-const useBalance = () => {
-  const [balance, setBalance] = useState<number>();
-  const { connection } = useConnection();
-  const { publicKey } = useWallet();
-
-  useEffect(() => {
-    if (publicKey) {
-      connection.getBalance(publicKey).then(setBalance);
-    }
-  }, [publicKey, connection]);
-
-  return balance;
-};
-
-// Separate component for the app content that needs access to hooks
 const App = () => {
-  // Get the Solana wallet balance
-  const balance = useBalance();
-  // Get the Solana address
-  const { publicKey } = useWallet();
-  // Get the Civic user context
   const userContext = useUser();
-  // Track authentication state manually
+  
+  const { connection } = useConnection();
+  const { publicKey, connected, connect } = useWallet();
+  
+  // State for balances and auth
+  const [externalBalance, setExternalBalance] = useState<number | undefined>();
+  const [civicBalance, setCivicBalance] = useState<number | null>(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   
   // Update authentication state whenever userContext changes
@@ -35,9 +21,60 @@ const App = () => {
     if (userContext) {
       setIsAuthenticated(userContext.authStatus === "authenticated");
       console.log("User Context:", userContext);
-      console.log("Wallet Adapter PublicKey:", publicKey?.toString());
     }
-  }, [userContext, publicKey]);
+  }, [userContext]);
+
+  // Effect to fetch external wallet balance
+  useEffect(() => {
+    const fetchExternalBalance = async () => {
+      if (publicKey) {
+        try {
+          const balance = await connection.getBalance(publicKey);
+          setExternalBalance(balance);
+        } catch (error) {
+          console.error("Error fetching external wallet balance:", error);
+          setExternalBalance(undefined);
+        }
+      }
+    };
+    
+    fetchExternalBalance();
+  }, [publicKey, connection]);
+
+  // Effect to fetch Civic wallet balance
+  useEffect(() => {
+    const fetchCivicBalance = async () => {
+      if (userHasWallet(userContext) && userContext.solana?.address) {
+        try {
+          const walletPublicKey = new PublicKey(userContext.solana.address);
+          const walletBalance = await connection.getBalance(walletPublicKey);
+          setCivicBalance(walletBalance);
+        } catch (error) {
+          console.error("Error fetching Civic wallet balance:", error);
+          setCivicBalance(null);
+        }
+      }
+    };
+    
+    fetchCivicBalance();
+  }, [userContext, connection]);
+
+  // Connect the embedded Civic wallet
+  const connectExistingWallet = async () => {
+    try {
+      await connect();
+      console.log("Connected to wallet");
+    } catch (error) {
+      console.error("Error connecting wallet:", error);
+    }
+  };
+
+  // Create a Civic wallet if the user doesn't have one
+  const createWallet = () => {
+    if (userContext.user && !userHasWallet(userContext)) {
+      return userContext.createWallet().then(connectExistingWallet);
+    }
+  };
 
   return (
     <div style={{ padding: "20px" }}>
@@ -49,16 +86,30 @@ const App = () => {
       </div>
 
       {isAuthenticated ? (
-        <>
-          {publicKey ? (
-            <div>
-              <p>Wallet address: {publicKey.toString()}</p>
-              <p>Balance: {balance !== undefined ? `${balance / 1e9} SOL` : "Loading..."}</p>
-            </div>
+        <div>
+          {!userHasWallet(userContext) ? (
+            <p><button onClick={createWallet}>Connect Wallet</button></p>
           ) : (
-            <p>Please connect a wallet using the "Select Wallet" button above.</p>
+            <>
+              <h3>Civic Embedded Wallet</h3>
+              <p>Wallet address: {userContext.solana?.address}</p>
+              <p>Balance: {
+                civicBalance !== null
+                  ? `${(civicBalance / 1e9).toFixed(9)} SOL`
+                  : 'Loading...'
+              }</p>
+              <p>External wallet: {connected ? 'Connected' : 'Not connected'}</p>
+              
+              {publicKey && (
+                <>
+                  <h3>Connected External Wallet</h3>
+                  <p>Wallet address: {publicKey.toString()}</p>
+                  <p>Balance: {externalBalance !== undefined ? `${externalBalance / 1e9} SOL` : "Loading..."}</p>
+                </>
+              )}
+            </>
           )}
-        </>
+        </div>
       ) : (
         <p>Please sign in with Civic to use this application.</p>
       )}
