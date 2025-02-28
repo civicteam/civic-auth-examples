@@ -23,7 +23,7 @@ app.use(cookieParser());
 const config = {
   clientId: process.env.CLIENT_ID!,
   redirectUrl: `http://localhost:${PORT}/auth/callback`,
-  postLogoutRedirectUrl: `http://localhost:${PORT}/auth/logoutcallback`,
+  postLogoutRedirectUrl: `http://localhost:${PORT}/`,
 };
 
 class ExpressCookieStorage extends CookieStorage {
@@ -58,9 +58,6 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 });
 
 app.get('/', async (req: Request, res: Response) => {
-  if (await isLoggedIn(req.storage)) {
-    return res.redirect('/admin/hello');
-  }
   const url = await buildLoginUrl(config, req.storage);
   res.redirect(url.toString());
 });

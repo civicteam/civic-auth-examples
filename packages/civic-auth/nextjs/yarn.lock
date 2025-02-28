@@ -84,10 +84,9 @@
     "@babel/helper-string-parser" "^7.25.9"
     "@babel/helper-validator-identifier" "^7.25.9"
 
-"@civic/auth@*":
-  version "0.3.4"
-  resolved "https://registry.yarnpkg.com/@civic/auth/-/auth-0.3.4.tgz#7da5ac71c6aa265e79efb938801b39f777b75728"
-  integrity sha512-nkQ6ODDL6Kq4pJUnBQDyeX4Q8KuxF9zWoJOTCbdofB2Cbod+PZ5Q9rmcFiely7i1gToZuq0iv4r3UvQbld1cFQ==
+"@civic/auth@file:../../../../civic-auth/packages/civic-auth-client/civic-auth-0.3.5-alpha-0.0.1.tgz":
+  version "0.3.5-alpha-0.0.1"
+  resolved "file:../../../../civic-auth/packages/civic-auth-client/civic-auth-0.3.5-alpha-0.0.1.tgz#9ae1b2fd0ff516a04847888e7aafef3cb4c9ab6c"
   dependencies:
     "@emotion/react" "^11.14.0"
     "@iframe-resizer/react" "^5.3.3"

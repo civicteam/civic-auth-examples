@@ -17,7 +17,7 @@ const PORT = process.env.PORT ? parseInt(process.env.PORT) : 3000;
 const config = {
   clientId: process.env.CLIENT_ID!,
   redirectUrl: `http://localhost:${PORT}/auth/callback`,
-  postLogoutRedirectUrl: `http://localhost:${PORT}/auth/logoutcallback`
+  postLogoutRedirectUrl: `http://localhost:${PORT}/`,
 };
 
 class HonoCookieStorage extends CookieStorage {
@@ -47,52 +47,26 @@ app.use('*', async (c, next) => {
 });
 
 app.get('/', async (c) => {
-  if (await isLoggedIn(c.get('storage'))) {
-    return c.redirect('/admin/hello');
-  }
   const url = await buildLoginUrl(config, c.get('storage'));
   return c.redirect(url.toString());
 });
 
 app.get('/auth/callback', async (c) => {
-  const code = c.req.query('code');
-  const state = c.req.query('state');
+  const code = c.req.query('code') as string
+  const state = c.req.query('state') as string
 
-  if (!code || !state) {
-    return c.text('Invalid callback parameters', 400);
-  }
-
-  try {
-    await resolveOAuthAccessCode(code, state, c.get('storage'), config);
-  } catch (error) {
-    console.error('Error resolving OAuth code:', error);
-    return c.text('Authentication error', 500);
-  }
-
+  await resolveOAuthAccessCode(code, state, c.get('storage'), config);
   return c.redirect('/admin/hello');
 });
 
 app.get('/auth/logout', async (c) => {
-  const storage = c.get('storage') as HonoCookieStorage;
-  
-  const url = await buildLogoutRedirectUrl(config, storage);
-  return c.redirect(url.toString());
-});
-
-app.get('/auth/logoutcallback', async (c) => {
-  const storage = c.get('storage') as HonoCookieStorage;
-  const authCookies = ['access_token', 'refresh_token', 'id_token', 'code_verifier'];
-  for (const cookie of authCookies) {
-    await storage.delete(cookie);
+  try {
+    const url = await buildLogoutRedirectUrl(config, c.get('storage'));
+    return c.redirect(url.toString());
+  } catch (error) {
+    console.error('Logout error:', error);
+    return c.text(`Logout failed: ${error.message}`, 500);
   }
-  return c.redirect('/');
-});
-
-app.use('/admin/*', async (c, next) => {
-  if (!await isLoggedIn(c.get('storage'))) {
-    return c.text('Unauthorized', 401);
-  }
-  return next();
 });
 
 app.get('/admin/hello', async (c) => {
