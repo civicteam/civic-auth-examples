@@ -77,7 +77,7 @@ jobs:
           
       - name: Install dependencies
         shell: bash
-        run: yarn install --frozen-lockfile
+        run: yarn install
         
       - name: Build
         run: yarn build
@@ -96,7 +96,7 @@ jobs:
         with:
           run: yarn dev &
           working-directory: packages/civic-auth/reactjs
-          wait-on: http://localhost:3006
+          wait-on: http://localhost:3001
           wait-for: 60s
           log-output-if: true
 
@@ -105,7 +105,7 @@ jobs:
         with:
           run: yarn dev &
           working-directory: packages/civic-auth/server/express
-          wait-on: http://localhost:3007
+          wait-on: http://localhost:3002
           wait-for: 60s
           log-output-if: true
 
@@ -114,7 +114,7 @@ jobs:
         with:
           run: yarn dev &
           working-directory: packages/civic-auth/server/fastify
-          wait-on: http://localhost:3008
+          wait-on: http://localhost:3003
           wait-for: 60s
           log-output-if: true
 
@@ -122,7 +122,7 @@ jobs:
         working-directory: ./packages/civic-auth/server/hono  
         run: |
           bun add @hono/node-server
-          yarn dev & npx wait-on http://localhost:3009
+          yarn dev & npx wait-on http://localhost:3004
         timeout-minutes: 1
 
       - name: Start the wagmi example app
@@ -130,7 +130,16 @@ jobs:
         with:
           run: yarn dev &
           working-directory: packages/civic-auth-web3/wagmi
-          wait-on: http://localhost:3010
+          wait-on: http://localhost:3005
+          wait-for: 60s
+          log-output-if: true
+
+      - name: Start the solana example app
+        uses: JarvusInnovations/background-action@v1.0.7
+        with:
+          run: yarn dev &
+          working-directory: packages/civic-auth-web3/solana
+          wait-on: http://localhost:3006
           wait-for: 60s
           log-output-if: true
 
@@ -142,16 +151,17 @@ jobs:
           command: yarn cypress run --browser chrome --record
           browser: chrome
           install: true
-          wait-on: 'http://localhost:3000,http://localhost:3006,http://localhost:3007,http://localhost:3008,http://localhost:3009'
+          wait-on: 'http://localhost:3000,http://localhost:3001,http://localhost:3002,http://localhost:3003,http://localhost:3004,http://localhost:3005,http://localhost:3006'
           wait-on-timeout: 60
           record: true
         env:
           NEXT_JS_BASE_URL: 'http://localhost:3000'
-          REACT_BASE_URL: 'http://localhost:3006'
-          EXPRESS_BASE_URL: 'http://localhost:3007'
-          FASTIFY_BASE_URL: 'http://localhost:3008'
-          HONO_BASE_URL: 'http://localhost:3009'
-          WAGMI_BASE_URL: 'http://localhost:3010'
+          REACT_BASE_URL: 'http://localhost:3001'
+          EXPRESS_BASE_URL: 'http://localhost:3002'
+          FASTIFY_BASE_URL: 'http://localhost:3003'
+          HONO_BASE_URL: 'http://localhost:3004'
+          WAGMI_BASE_URL: 'http://localhost:3005'
+          SOLANA_BASE_URL: 'http://localhost:3006'
           CYPRESS_TEST_TAG: '@prod'
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
 
@@ -161,7 +171,7 @@ jobs:
         with:
           payload: |
               {
-                "channel": "#dev",
+                "channel": "#build",
                 "text": "Example repo Cypress tests failed in civicteam/civic-auth-examples.\n\nThese tests are run after new beta and prod versions of civic/auth and civic/auth-web3, so there may be an issue with the new version(s). Check the recording of the test failure here https://cloud.cypress.io/projects/cmyigw/runs.\n\n Alternatively, see the full GitHub Actions run details here ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}.",
               }
         env:

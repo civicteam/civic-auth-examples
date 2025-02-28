@@ -1,14 +1,16 @@
+
 import { CivicAuthProvider, UserButton } from "@civic/auth/react";
 
 const CLIENT_ID = import.meta.env.VITE_CLIENT_ID;
-const App = () => {
+
+function App() {
   return (
-      <CivicAuthProvider
-        clientId={CLIENT_ID}
-      >
-        <UserButton/>
-      </CivicAuthProvider>
-  );
+    <CivicAuthProvider clientId={CLIENT_ID}>
+      <UserButton />
+    </CivicAuthProvider>
+  )
 }
 
 export default App;
+
+
