@@ -1,17 +1,17 @@
 {
     "private": true,
     "workspaces": [
-    "packages/civic-auth/nextjs/**",
-    "packages/civic-auth/reactjs/**",
-    "packages/civic-auth/server/express/**",
-    "packages/civic-auth/server/fastify/**",
-    "packages/civic-auth/server/hono/**",
-    "packages/civic-auth-web3/wagmi/**",
-    "packages/civic-auth-web3/solana/**"
-  ],
+        "packages/civic-auth/nextjs/**",
+        "packages/civic-auth/reactjs/**",
+        "packages/civic-auth/server/express/**",
+        "packages/civic-auth/server/fastify/**",
+        "packages/civic-auth/server/hono/**",
+        "packages/civic-auth-web3/wagmi/**",
+        "packages/civic-auth-web3/solana/**"
+    ],
     "scripts": {
-      "build": "turbo run build",
-      "dev": "turbo run dev"
+        "build": "turbo run build",
+        "dev": "turbo run dev"
     },
     "packageManager": "yarn@1.22.22",
     "resolutions": {
@@ -21,8 +21,8 @@
         "vite": "6.0.1"
     },
     "devDependencies": {
+        "@vitejs/plugin-react": "^4.3.4",
         "turbo": "latest",
-        "vite": "6.0.1",
-        "@vitejs/plugin-react": "^4.3.4"
-  }
+        "vite": "6.0.1"
+    }
 }
