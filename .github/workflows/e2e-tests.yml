@@ -98,6 +98,8 @@ jobs:
           wait-on: http://localhost:3000/
           wait-for: 60s
           log-output-if: true
+        env:
+          CLIENT_ID: prod-demo-client-1
 
       - name: Start the reactjs example app
         uses: JarvusInnovations/background-action@v1.0.7
