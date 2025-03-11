@@ -75,11 +75,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          
-      - name: Install dependencies
-        shell: bash
-        working-directory: ./
-        run: yarn install
 
       - name: Force upgrade civic/auth and civic/auth-web3
         shell: bash
