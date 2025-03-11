@@ -95,7 +95,7 @@ jobs:
         with:
           run: yarn dev &
           working-directory: packages/civic-auth/nextjs
-          wait-on: http://localhost:3000
+          wait-on: http://localhost:3000/
           wait-for: 60s
           log-output-if: true
 
@@ -104,7 +104,7 @@ jobs:
         with:
           run: yarn dev &
           working-directory: packages/civic-auth/reactjs
-          wait-on: http://localhost:3001
+          wait-on: http://localhost:3001/
           wait-for: 60s
           log-output-if: true
 
@@ -113,7 +113,7 @@ jobs:
         with:
           run: yarn dev &
           working-directory: packages/civic-auth/server/express
-          wait-on: http://localhost:3002
+          wait-on: http://localhost:3002/
           wait-for: 60s
           log-output-if: true
 
@@ -122,7 +122,7 @@ jobs:
         with:
           run: yarn dev &
           working-directory: packages/civic-auth/server/fastify
-          wait-on: http://localhost:3003
+          wait-on: http://localhost:3003/
           wait-for: 60s
           log-output-if: true
 
@@ -130,7 +130,7 @@ jobs:
         working-directory: ./packages/civic-auth/server/hono  
         run: |
           bun add @hono/node-server
-          yarn dev & npx wait-on http://localhost:3004
+          yarn dev & npx wait-on http://localhost:3004/
         timeout-minutes: 1
 
       - name: Start the wagmi example app
@@ -138,7 +138,7 @@ jobs:
         with:
           run: yarn dev &
           working-directory: packages/civic-auth-web3/wagmi
-          wait-on: http://localhost:3005
+          wait-on: http://localhost:3005/
           wait-for: 60s
           log-output-if: true
 
@@ -147,7 +147,7 @@ jobs:
         with:
           run: yarn dev &
           working-directory: packages/civic-auth-web3/solana
-          wait-on: http://localhost:3006
+          wait-on: http://localhost:3006/
           wait-for: 60s
           log-output-if: true
 
