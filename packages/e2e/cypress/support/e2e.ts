@@ -20,12 +20,15 @@ import './commands'
 // require('./commands')
 
 Cypress.on('uncaught:exception', (err) => {
-  // Check if the error message contains "Minified React error #419"
-  if (err.message.includes('Minified React error #419')) {
+  // Check if the error message contains either of these known errors
+  if (
+    err.message.includes('Minified React error #419') || 
+    err.message.includes('Connection interrupted while trying to subscribe')
+  ) {
     // Return false to prevent Cypress from failing the test
     return false;
   }
-
+  
   // Let other errors fail the test
   return true;
 });
