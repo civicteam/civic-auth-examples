@@ -190,7 +190,7 @@ jobs:
           payload: |
             {
               "channel": "#build",
-              "text": "<@U01ABC123DE> IGNORE. THIS IS A TEST Example repo Cypress tests failed in civicteam/civic-auth-examples.\n\nThese tests are run after new beta and prod versions of civic/auth and civic/auth-web3, so there may be an issue with the new version(s). Check the recording of the test failure here https://cloud.cypress.io/projects/cmyigw/runs.\n\n Alternatively, see the full GitHub Actions run details here ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}."
+              "text": "<@UCBGV5J12> IGNORE. THIS IS A TEST Example repo Cypress tests failed in civicteam/civic-auth-examples.\n\nThese tests are run after new beta and prod versions of civic/auth and civic/auth-web3, so there may be an issue with the new version(s). Check the recording of the test failure here https://cloud.cypress.io/projects/cmyigw/runs.\n\n Alternatively, see the full GitHub Actions run details here ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}."
             }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
