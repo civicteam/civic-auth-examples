@@ -89,7 +89,7 @@ jobs:
       - name: Start the nextjs example app
         uses: JarvusInnovations/background-action@v1.0.7
         with:
-          run: yarn install && yarn build && yarn dev &
+          run: yarn dev &
           working-directory: packages/civic-auth/nextjs
           wait-on: http-get://localhost:3000
           wait-for: 120s
