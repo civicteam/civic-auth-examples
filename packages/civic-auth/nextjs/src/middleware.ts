@@ -1,20 +1,15 @@
-import { authMiddleware } from '@civic/auth/nextjs/middleware';
-import { NextRequest } from 'next/server';
+import { authMiddleware } from '@civic/auth/nextjs/middleware'
 
-// Create a custom middleware wrapper function for debugging
-const customMiddleware = (req: NextRequest) => {
-  // Log headers and cookies
-  console.log('Auth headers:', JSON.stringify(req.headers));
-  console.log('Auth cookies:', req.cookies);
-  
-  // Then call the original auth middleware
-  return authMiddleware()(req);
-};
-
-export default customMiddleware;
+export default authMiddleware();
 
 export const config = {
+  // include the paths you wish to secure here
   matcher: [
+    /*
+     * Match all request paths except those starting with:
+     * - _next (static files)
+     * - favicon.ico, sitemap.xml, robots.txt
+     */
     '/((?!_next|favicon.ico|sitemap.xml|robots.txt).*)',
   ],
-};
+}
