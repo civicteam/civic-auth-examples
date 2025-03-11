@@ -85,12 +85,13 @@ jobs:
         working-directory: ./
         run: yarn build
         
+      # There is a CI only error happening when running yarn dev here. The error is No valid token found - redirecting to "http://localhost:3000/"
       - name: Start the nextjs example app
         uses: JarvusInnovations/background-action@v1.0.7
         with:
           run: yarn install && yarn build && yarn dev &
           working-directory: packages/civic-auth/nextjs
-          wait-on: http://localhost:3000/
+          wait-on: http-get://localhost:3000
           wait-for: 120s
           log-output-if: true
 
