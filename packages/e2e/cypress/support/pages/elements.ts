@@ -6,10 +6,6 @@ export const dummyApp = {
 
 };
 
-export const sampleApp = {
-  signInButton: '[data-testid="sign-in-button"]',
-};
-
 export const exampleAppHome = {
   selectNewTabOrPopup: '[data-testid="radio-mode-popup"]',
   selectIframe: '[data-testid="radio-mode-iframe"]',
@@ -19,7 +15,9 @@ export const exampleAppHome = {
   userDataField: '[data-testid="userDataField"]',
   forwardedTokensField: '[data-testid="forwardedTokensField"]',
   button: 'button',
-  signInButton: '[data-testid="sign-in-button"]'
+  signInButton: '[data-testid="sign-in-button"]',
+  selectWalletButton: '.wallet-adapter-button.wallet-adapter-button-trigger',
+  civicWalletButton: '.wallet-adapter-button'
 }
 
 export const loginApp = {

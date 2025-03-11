@@ -1,6 +1,7 @@
 /// <reference types="cypress" />
 import { Given, When, Then } from '@badeball/cypress-cucumber-preprocessor';
-import { loginApp, sampleApp } from '../../support/pages/elements';
+import { exampleAppHome } from '../../support/pages/elements';
+import 'cypress-iframe';
 
 Given('I open the {string} app home page', (appType: string) => {
   cy.intercept('**/.well-known/openid-configuration', (req) => {
@@ -30,17 +31,35 @@ Given('I open the {string} server app home page', (appType: string) => {
 });
 
 Then('I click the sign in button', () => {
-  cy.get(sampleApp.signInButton)
+  cy.get(exampleAppHome.signInButton)
     .should('have.text', 'Sign in')
     .should('not.be.disabled');
 
-  cy.get(sampleApp.signInButton)
+  cy.get(exampleAppHome.signInButton)
+    .should('be.visible')
+    .click();
+});
+
+Then('I click the select wallet button', () => {
+  cy.get(exampleAppHome.selectWalletButton)
+    .should('have.text', 'Select Wallet')
+    .should('not.be.disabled');
+
+  cy.get(exampleAppHome.selectWalletButton)
+    .should('be.visible')
+    .click();
+});
+
+Then('I click the civic wallet button', () => {
+  cy.get(exampleAppHome.civicWalletButton).contains('Civic WalletDetected')
+    .should('not.be.disabled');
+
+  cy.get(exampleAppHome.civicWalletButton).contains('Civic WalletDetected')
     .should('be.visible')
     .click();
 });
 
 When('I click log in with dummy in the iframe', () => {
-
   cy.enter('#civic-auth-iframe').then(getBody => {
     cy.get('#civic-auth-iframe')
       .its('0.contentWindow')
@@ -71,6 +90,38 @@ When('I click log in with dummy in the page', () => {
   cy.contains('button', 'Log in with Dummy')
     .should('be.visible')
     .click();
+});
+
+When('I confirm provider is visible on the page', () => {
+  cy.window().then(win => {
+    cy.stub(win, 'open').callsFake((url, target) => {
+      expect(target).to.match(/civic-popup-/);
+      // return null to simulate the popup being blocked
+      // the civic-auth SDK should handle this and redirect
+      return null;
+    }).as('open');
+  })
+
+  // Step 2: Trigger the action that opens the popup
+  cy.contains('button', 'Google')
+    .should('be.visible')
+});
+
+When('I confirm provider is visible in iframe', () => {
+  cy.enter('#civic-auth-iframe').then(getBody => {
+    cy.get('#civic-auth-iframe')
+      .its('0.contentWindow')
+      .then(iframeWin => {
+        cy.stub(iframeWin, 'open').callsFake((url, target) => {
+          expect(target).to.match(/civic-popup-/);
+          // return null to simulate the popup being blocked
+          // the civic-auth SDK should handle this and redirect
+          return null;
+        }).as('open');
+      })
+
+    getBody().find('button').contains('Google').should('be.visible');
+  });
 });
 
 When('I click log in with dummy in the server app page', () => {
@@ -215,7 +266,7 @@ When('I click the logout button', () => {
 });
 
 When('I confirm successful logout', () => {
-  cy.get(sampleApp.signInButton)
+  cy.get(exampleAppHome.signInButton)
     .should('have.text', 'Sign in')
     .should('not.be.disabled');
 });
