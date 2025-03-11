@@ -78,13 +78,16 @@ jobs:
           
       - name: Install dependencies
         shell: bash
+        working-directory: ./
         run: yarn install
 
       - name: Force upgrade civic/auth and civic/auth-web3
         shell: bash
+        working-directory: ./
         run: yarn upgrade @civic/auth @civic/auth-web3 --latest
         
       - name: Build
+        working-directory: ./
         run: yarn build
         
       - name: Start the nextjs example app
