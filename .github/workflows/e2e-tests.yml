@@ -1,61 +1,62 @@
 name: Build and run example apps using prod endpoints
 
 on:
-  schedule:
-    - cron: '*/30 * * * *'
   push:
-  pull_request:
+  # schedule:
+  #   - cron: '*/30 * * * *'
+  # push:
+  # pull_request:
 
 jobs:
-  check-version:
-      runs-on: ubuntu-latest
-      outputs:
-        version_changed: ${{ env.version_changed }}
-      steps:
-        - uses: actions/checkout@v4
+  # check-version:
+  #     runs-on: ubuntu-latest
+  #     outputs:
+  #       version_changed: ${{ env.version_changed }}
+  #     steps:
+  #       - uses: actions/checkout@v4
         
-        - name: Check Versions
-          id: check-version
-          run: |
-            AUTH_BETA_VERSION=$(npm view @civic/auth@beta version)
-            AUTH_PROD_VERSION=$(npm view @civic/auth version)
-            WEB3_BETA_VERSION=$(npm view @civic/auth-web3@beta version)
-            WEB3_PROD_VERSION=$(npm view @civic/auth-web3 version)
+  #       - name: Check Versions
+  #         id: check-version
+  #         run: |
+  #           AUTH_BETA_VERSION=$(npm view @civic/auth@beta version)
+  #           AUTH_PROD_VERSION=$(npm view @civic/auth version)
+  #           WEB3_BETA_VERSION=$(npm view @civic/auth-web3@beta version)
+  #           WEB3_PROD_VERSION=$(npm view @civic/auth-web3 version)
             
-            echo "Auth Beta version: $AUTH_BETA_VERSION"
-            echo "Auth Production version: $AUTH_PROD_VERSION"
-            echo "Web3 Beta version: $WEB3_BETA_VERSION"
-            echo "Web3 Production version: $WEB3_PROD_VERSION"
+  #           echo "Auth Beta version: $AUTH_BETA_VERSION"
+  #           echo "Auth Production version: $AUTH_PROD_VERSION"
+  #           echo "Web3 Beta version: $WEB3_BETA_VERSION"
+  #           echo "Web3 Production version: $WEB3_PROD_VERSION"
             
-            if [ -f .civic-versions ]; then
-              PREV_VERSIONS=$(cat .civic-versions)
-              PREV_AUTH_BETA=$(echo "$PREV_VERSIONS" | sed -n '1p')
-              PREV_AUTH_PROD=$(echo "$PREV_VERSIONS" | sed -n '2p')
-              PREV_WEB3_BETA=$(echo "$PREV_VERSIONS" | sed -n '3p')
-              PREV_WEB3_PROD=$(echo "$PREV_VERSIONS" | sed -n '4p')
+  #           if [ -f .civic-versions ]; then
+  #             PREV_VERSIONS=$(cat .civic-versions)
+  #             PREV_AUTH_BETA=$(echo "$PREV_VERSIONS" | sed -n '1p')
+  #             PREV_AUTH_PROD=$(echo "$PREV_VERSIONS" | sed -n '2p')
+  #             PREV_WEB3_BETA=$(echo "$PREV_VERSIONS" | sed -n '3p')
+  #             PREV_WEB3_PROD=$(echo "$PREV_VERSIONS" | sed -n '4p')
               
-              if [ "$AUTH_BETA_VERSION" != "$PREV_AUTH_BETA" ] || \
-                [ "$AUTH_PROD_VERSION" != "$PREV_AUTH_PROD" ] || \
-                [ "$WEB3_BETA_VERSION" != "$PREV_WEB3_BETA" ] || \
-                [ "$WEB3_PROD_VERSION" != "$PREV_WEB3_PROD" ]; then
-                echo "version_changed=true" >> $GITHUB_ENV
-                echo "Changed from:"
-                echo "Auth Beta: $PREV_AUTH_BETA -> $AUTH_BETA_VERSION"
-                echo "Auth Prod: $PREV_AUTH_PROD -> $AUTH_PROD_VERSION"
-                echo "Web3 Beta: $PREV_WEB3_BETA -> $WEB3_BETA_VERSION"
-                echo "Web3 Prod: $PREV_WEB3_PROD -> $WEB3_PROD_VERSION"
-              fi
-            fi
+  #             if [ "$AUTH_BETA_VERSION" != "$PREV_AUTH_BETA" ] || \
+  #               [ "$AUTH_PROD_VERSION" != "$PREV_AUTH_PROD" ] || \
+  #               [ "$WEB3_BETA_VERSION" != "$PREV_WEB3_BETA" ] || \
+  #               [ "$WEB3_PROD_VERSION" != "$PREV_WEB3_PROD" ]; then
+  #               echo "version_changed=true" >> $GITHUB_ENV
+  #               echo "Changed from:"
+  #               echo "Auth Beta: $PREV_AUTH_BETA -> $AUTH_BETA_VERSION"
+  #               echo "Auth Prod: $PREV_AUTH_PROD -> $AUTH_PROD_VERSION"
+  #               echo "Web3 Beta: $PREV_WEB3_BETA -> $WEB3_BETA_VERSION"
+  #               echo "Web3 Prod: $PREV_WEB3_PROD -> $WEB3_PROD_VERSION"
+  #             fi
+  #           fi
             
-            # Write new versions to file
-            echo "$AUTH_BETA_VERSION" > .civic-versions
-            echo "$AUTH_PROD_VERSION" >> .civic-versions
-            echo "$WEB3_BETA_VERSION" >> .civic-versions
-            echo "$WEB3_PROD_VERSION" >> .civic-versions
+  #           # Write new versions to file
+  #           echo "$AUTH_BETA_VERSION" > .civic-versions
+  #           echo "$AUTH_PROD_VERSION" >> .civic-versions
+  #           echo "$WEB3_BETA_VERSION" >> .civic-versions
+  #           echo "$WEB3_PROD_VERSION" >> .civic-versions
 
   build:
-    needs: check-version
-    if: needs.check-version.outputs.version_changed == 'true'
+    # needs: check-version
+    # if: needs.check-version.outputs.version_changed == 'true'
     runs-on: ubuntu-latest
     env:
       CLIENT_ID: ${{ secrets.CLIENT_ID }}
