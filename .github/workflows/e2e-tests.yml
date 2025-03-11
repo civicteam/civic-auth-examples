@@ -1,58 +1,73 @@
 name: Build and run example apps using prod endpoints
 
 on:
+  schedule:
+    - cron: '*/30 * * * *'
   push:
-  # schedule:
-  #   - cron: '*/30 * * * *'
-  # push:
-  # pull_request:
+  pull_request:
 
 jobs:
   # check-version:
-  #     runs-on: ubuntu-latest
-  #     outputs:
-  #       version_changed: ${{ env.version_changed }}
-  #     steps:
-  #       - uses: actions/checkout@v4
-        
-  #       - name: Check Versions
-  #         id: check-version
-  #         run: |
-  #           AUTH_BETA_VERSION=$(npm view @civic/auth@beta version)
-  #           AUTH_PROD_VERSION=$(npm view @civic/auth version)
-  #           WEB3_BETA_VERSION=$(npm view @civic/auth-web3@beta version)
-  #           WEB3_PROD_VERSION=$(npm view @civic/auth-web3 version)
+  #   runs-on: ubuntu-latest
+  #   outputs:
+  #     version_changed: ${{ steps.check-version.outputs.version_changed }}
+  #   steps:
+  #     - uses: actions/checkout@v4
+      
+  #     - name: Check Versions
+  #       id: check-version
+  #       run: |
+  #         # Default to false
+  #         echo "version_changed=false" >> $GITHUB_OUTPUT
+          
+  #         AUTH_BETA_VERSION=$(npm view @civic/auth@beta version)
+  #         AUTH_PROD_VERSION=$(npm view @civic/auth version)
+  #         WEB3_BETA_VERSION=$(npm view @civic/auth-web3@beta version)
+  #         WEB3_PROD_VERSION=$(npm view @civic/auth-web3 version)
+          
+  #         echo "Auth Beta version: $AUTH_BETA_VERSION"
+  #         echo "Auth Production version: $AUTH_PROD_VERSION"
+  #         echo "Web3 Beta version: $WEB3_BETA_VERSION"
+  #         echo "Web3 Production version: $WEB3_PROD_VERSION"
+          
+  #         if [ -f .civic-versions ]; then
+  #           PREV_VERSIONS=$(cat .civic-versions)
+  #           PREV_AUTH_BETA=$(echo "$PREV_VERSIONS" | sed -n '1p')
+  #           PREV_AUTH_PROD=$(echo "$PREV_VERSIONS" | sed -n '2p')
+  #           PREV_WEB3_BETA=$(echo "$PREV_VERSIONS" | sed -n '3p')
+  #           PREV_WEB3_PROD=$(echo "$PREV_VERSIONS" | sed -n '4p')
             
-  #           echo "Auth Beta version: $AUTH_BETA_VERSION"
-  #           echo "Auth Production version: $AUTH_PROD_VERSION"
-  #           echo "Web3 Beta version: $WEB3_BETA_VERSION"
-  #           echo "Web3 Production version: $WEB3_PROD_VERSION"
+  #           # Always echo previous versions for confirmation
+  #           echo "Previous versions:"
+  #           echo "Auth Beta: $PREV_AUTH_BETA"
+  #           echo "Auth Prod: $PREV_AUTH_PROD"
+  #           echo "Web3 Beta: $PREV_WEB3_BETA"
+  #           echo "Web3 Prod: $PREV_WEB3_PROD"
             
-  #           if [ -f .civic-versions ]; then
-  #             PREV_VERSIONS=$(cat .civic-versions)
-  #             PREV_AUTH_BETA=$(echo "$PREV_VERSIONS" | sed -n '1p')
-  #             PREV_AUTH_PROD=$(echo "$PREV_VERSIONS" | sed -n '2p')
-  #             PREV_WEB3_BETA=$(echo "$PREV_VERSIONS" | sed -n '3p')
-  #             PREV_WEB3_PROD=$(echo "$PREV_VERSIONS" | sed -n '4p')
-              
-  #             if [ "$AUTH_BETA_VERSION" != "$PREV_AUTH_BETA" ] || \
-  #               [ "$AUTH_PROD_VERSION" != "$PREV_AUTH_PROD" ] || \
-  #               [ "$WEB3_BETA_VERSION" != "$PREV_WEB3_BETA" ] || \
-  #               [ "$WEB3_PROD_VERSION" != "$PREV_WEB3_PROD" ]; then
-  #               echo "version_changed=true" >> $GITHUB_ENV
-  #               echo "Changed from:"
-  #               echo "Auth Beta: $PREV_AUTH_BETA -> $AUTH_BETA_VERSION"
-  #               echo "Auth Prod: $PREV_AUTH_PROD -> $AUTH_PROD_VERSION"
-  #               echo "Web3 Beta: $PREV_WEB3_BETA -> $WEB3_BETA_VERSION"
-  #               echo "Web3 Prod: $PREV_WEB3_PROD -> $WEB3_PROD_VERSION"
-  #             fi
+  #           if [ "$AUTH_BETA_VERSION" != "$PREV_AUTH_BETA" ] || \
+  #             [ "$AUTH_PROD_VERSION" != "$PREV_AUTH_PROD" ] || \
+  #             [ "$WEB3_BETA_VERSION" != "$PREV_WEB3_BETA" ] || \
+  #             [ "$WEB3_PROD_VERSION" != "$PREV_WEB3_PROD" ]; then
+  #             echo "version_changed=true" >> $GITHUB_OUTPUT
+  #             echo "Changed from:"
+  #             echo "Auth Beta: $PREV_AUTH_BETA -> $AUTH_BETA_VERSION"
+  #             echo "Auth Prod: $PREV_AUTH_PROD -> $AUTH_PROD_VERSION"
+  #             echo "Web3 Beta: $PREV_WEB3_BETA -> $WEB3_BETA_VERSION"
+  #             echo "Web3 Prod: $PREV_WEB3_PROD -> $WEB3_PROD_VERSION"
+  #           else
+  #             echo "No version changes detected"
   #           fi
-            
-  #           # Write new versions to file
-  #           echo "$AUTH_BETA_VERSION" > .civic-versions
-  #           echo "$AUTH_PROD_VERSION" >> .civic-versions
-  #           echo "$WEB3_BETA_VERSION" >> .civic-versions
-  #           echo "$WEB3_PROD_VERSION" >> .civic-versions
+  #         else
+  #           # If the file doesn't exist, it's the first run, so we consider it changed
+  #           echo "First run - no previous versions file found"
+  #           echo "version_changed=true" >> $GITHUB_OUTPUT
+  #         fi
+          
+  #         # Write new versions to file
+  #         echo "$AUTH_BETA_VERSION" > .civic-versions
+  #         echo "$AUTH_PROD_VERSION" >> .civic-versions
+  #         echo "$WEB3_BETA_VERSION" >> .civic-versions
+  #         echo "$WEB3_PROD_VERSION" >> .civic-versions
 
   build:
     # needs: check-version
@@ -168,15 +183,15 @@ jobs:
           SOLANA_BASE_URL: 'http://localhost:3006'
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
 
-      # - name: Send Slack Notification on Failure
-      #   if: failure()
-      #   uses: slackapi/slack-github-action@v1.27.0
-      #   with:
-      #     payload: |
-      #         {
-      #           "channel": "#build",
-      #           "text": "Example repo Cypress tests failed in civicteam/civic-auth-examples.\n\nThese tests are run after new beta and prod versions of civic/auth and civic/auth-web3, so there may be an issue with the new version(s). Check the recording of the test failure here https://cloud.cypress.io/projects/cmyigw/runs.\n\n Alternatively, see the full GitHub Actions run details here ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}.",
-      #         }
-      #   env:
-      #     SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-      #     SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+      - name: Send Slack Notification on Failure
+        if: always()
+        uses: slackapi/slack-github-action@v1.27.0
+        with:
+          payload: |
+              {
+                "channel": "#build",
+                "text": "Example repo Cypress tests failed in civicteam/civic-auth-examples.\n\nThese tests are run after new beta and prod versions of civic/auth and civic/auth-web3, so there may be an issue with the new version(s). Check the recording of the test failure here https://cloud.cypress.io/projects/cmyigw/runs.\n\n Alternatively, see the full GitHub Actions run details here ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}.",
+              }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
