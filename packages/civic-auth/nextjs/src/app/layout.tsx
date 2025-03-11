@@ -1,11 +1,6 @@
 import { CivicAuthProvider } from "@civic/auth/nextjs";
-import type { ReactNode } from 'react';
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body>
@@ -14,5 +9,5 @@ export default function RootLayout({
         </CivicAuthProvider>
       </body>
     </html>
-  );
+  )
 }

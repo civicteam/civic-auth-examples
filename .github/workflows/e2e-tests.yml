@@ -85,14 +85,14 @@ jobs:
         working-directory: ./
         run: yarn build
         
-      # - name: Start the nextjs example app
-      #   uses: JarvusInnovations/background-action@v1.0.7
-      #   with:
-      #     run: yarn dev &
-      #     working-directory: packages/civic-auth/nextjs
-      #     wait-on: http://localhost:3000/
-      #     wait-for: 60s
-      #     log-output-if: true
+      - name: Start the nextjs example app
+        uses: JarvusInnovations/background-action@v1.0.7
+        with:
+          run: yarn dev &
+          working-directory: packages/civic-auth/nextjs
+          wait-on: http://localhost:3000/
+          wait-for: 60s
+          log-output-if: true
 
       - name: Start the reactjs example app
         uses: JarvusInnovations/background-action@v1.0.7
