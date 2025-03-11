@@ -79,6 +79,10 @@ jobs:
       - name: Install dependencies
         shell: bash
         run: yarn install
+
+      - name: Force upgrade civic/auth and civic/auth-web3
+        shell: bash
+        run: yarn upgrade @civic/auth @civic/auth-web3 --latest
         
       - name: Build
         run: yarn build
@@ -91,8 +95,6 @@ jobs:
           wait-on: http://localhost:3000
           wait-for: 60s
           log-output-if: true
-        env:
-          CLIENT_ID: ${{ secrets.CLIENT_ID }}
 
       - name: Start the reactjs example app
         uses: JarvusInnovations/background-action@v1.0.7
@@ -102,8 +104,6 @@ jobs:
           wait-on: http://localhost:3001
           wait-for: 60s
           log-output-if: true
-        env:
-          VITE_CLIENT_ID: ${{ secrets.CLIENT_ID }}
 
       - name: Start the express example app
         uses: JarvusInnovations/background-action@v1.0.7
@@ -113,9 +113,6 @@ jobs:
           wait-on: http://localhost:3002
           wait-for: 60s
           log-output-if: true
-        env:
-          CLIENT_ID: ${{ secrets.CLIENT_ID }}
-
 
       - name: Start the fastify example app
         uses: JarvusInnovations/background-action@v1.0.7
@@ -125,8 +122,6 @@ jobs:
           wait-on: http://localhost:3003
           wait-for: 60s
           log-output-if: true
-        env:
-          CLIENT_ID: ${{ secrets.CLIENT_ID }}
 
       - name: Start the hono example app
         working-directory: ./packages/civic-auth/server/hono  
@@ -134,8 +129,6 @@ jobs:
           bun add @hono/node-server
           yarn dev & npx wait-on http://localhost:3004
         timeout-minutes: 1
-        env:
-          CLIENT_ID: ${{ secrets.CLIENT_ID }}
 
       - name: Start the wagmi example app
         uses: JarvusInnovations/background-action@v1.0.7
@@ -145,8 +138,6 @@ jobs:
           wait-on: http://localhost:3005
           wait-for: 60s
           log-output-if: true
-        env:
-          VITE_CLIENT_ID: ${{ secrets.CLIENT_ID }}
 
       - name: Start the solana example app
         uses: JarvusInnovations/background-action@v1.0.7
@@ -156,8 +147,6 @@ jobs:
           wait-on: http://localhost:3006
           wait-for: 60s
           log-output-if: true
-        env:
-          VITE_CLIENT_ID: ${{ secrets.CLIENT_ID }}
 
       - name: Run Cypress example app e2e prod tests
         id: cypress
