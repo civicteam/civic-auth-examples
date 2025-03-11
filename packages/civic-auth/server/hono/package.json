@@ -7,7 +7,7 @@
     "dev": "PORT=${PORT:-3004} NODE_PATH=../../node_modules bun run src/index.ts --watch"
   },
   "dependencies": {
-    "@civic/auth": "0.3.8-beta.0",
+    "@civic/auth": "*",
     "@hono/node-server": "^1.13.7",
     "dotenv": "^16.4.6",
     "hono": "^4.6.12"
