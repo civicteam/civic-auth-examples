@@ -13,7 +13,9 @@ jobs:
       version_changed: ${{ steps.check-version.outputs.version_changed }}
     steps:
       - uses: actions/checkout@v4
-      
+        with:
+          token: ${{ secrets.GH_PAT }}
+          
       - name: Check Versions
         id: check-version
         run: |
@@ -68,6 +70,15 @@ jobs:
           echo "$AUTH_PROD_VERSION" >> .civic-versions
           echo "$WEB3_BETA_VERSION" >> .civic-versions
           echo "$WEB3_PROD_VERSION" >> .civic-versions
+      
+      - name: Commit and push if versions changed
+        if: steps.check-version.outputs.version_changed == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add .civic-versions
+          git commit -m "Update .civic-versions file [skip ci]" || echo "No changes to commit"
+          git push
 
   build:
     needs: check-version
