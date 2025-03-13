@@ -8,7 +8,7 @@ import {
   useBalance,
 } from 'wagmi';
 import { userHasWallet } from '@civic/auth-web3';
-import { embeddedWallet } from '@civic/auth-web3/wagmi';
+import { embeddedWallet, useAutoConnect } from '@civic/auth-web3/wagmi';
 import { CivicAuthProvider, UserButton, useUser } from '@civic/auth-web3/react';
 import { mainnet, sepolia } from "wagmi/chains";
 
@@ -50,23 +50,17 @@ const AppContent = () => {
   const userContext = useUser();
   const { connect, connectors } = useConnect();
   const { isConnected } = useAccount();
+  useAutoConnect();
   const balance = useBalance({
     address: userHasWallet(userContext)
       ? userContext.ethereum.address as `0x${string}` : undefined,
   });
 
-  // A function to connect an existing civic embedded wallet
-  const connectExistingWallet = () => { 
-    return connect({
-      connector: connectors?.[0],
-    });
-  };
-
   // A function that creates the wallet if the user doesn't have one already
   const createWallet = () => {
     if (userContext.user && !userHasWallet(userContext)) {
-      // Once the wallet is created, we can connect it straight away
-      return userContext.createWallet().then(connectExistingWallet);
+      return userContext.createWallet();
+      // No need to manually connect after creation - useAutoConnect will handle this
     }
   };
 
@@ -87,7 +81,7 @@ const AppContent = () => {
                   : 'Loading...'
               }</p>
               {isConnected ? <p>Wallet is connected</p> : (
-                <button onClick={connectExistingWallet}>Connect Wallet</button>
+                <p>Connecting wallet automatically...</p>
               )}
             </>
           }
