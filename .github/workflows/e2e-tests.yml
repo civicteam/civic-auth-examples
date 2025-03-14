@@ -189,7 +189,7 @@ jobs:
           working-directory: packages/e2e
           command: pnpm cypress run --browser chrome --record
           browser: chrome
-          install: true
+          install: false
           wait-on: 'http://localhost:3000,http://localhost:3001,http://localhost:3002,http://localhost:3003,http://localhost:3004,http://localhost:3005,http://localhost:3006'
           wait-on-timeout: 60
           record: true
