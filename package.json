@@ -15,6 +15,9 @@
         "dev": "turbo run dev"
     },
     "packageManager": "pnpm@9.11.0",
+    "engines": {
+      "node": "20.x"
+    },
     "devDependencies": {
         "@vitejs/plugin-react": "^4.3.4",
         "turbo": "latest",
