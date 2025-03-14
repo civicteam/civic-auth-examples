@@ -5,15 +5,14 @@ A minimal Express.js application demonstrating integration with **Civic Auth** f
 
 ## 🚀 Prerequisites
 
-- **Yarn**: Ensure you have _Yarn_ installed.
 - **Civic Auth Account**: Obtain your `CLIENT_ID` from the [Civic Auth Dashboard](https://auth.civic.com/dashboard).
 
 ## 🛠 Installation
 
-Install Dependencies using _Yarn_
+Install Dependencies using pnpm
 
 ```bash
-yarn install
+pnpm install
 ```
 
 ## 🔧 Configuration
@@ -30,10 +29,10 @@ SESSION_SECRET=your_secure_session_secret
 
 ## 🏃 Running the App
 
-Start the Express server using _Yarn_:
+Start the Express server using pnpm:
 
 ```bash
-yarn start
+pnpm start
 ```
 
 The server will start on `http://localhost:3000`.

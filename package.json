@@ -7,17 +7,14 @@
         "packages/civic-auth/server/fastify/**",
         "packages/civic-auth/server/hono/**",
         "packages/civic-auth-web3/wagmi/**",
-        "packages/civic-auth-web3/solana/**"
+        "packages/civic-auth-web3/solana/**",
+        "packages/e2e/**"
     ],
     "scripts": {
         "build": "turbo run build",
         "dev": "turbo run dev"
     },
-    "packageManager": "yarn@1.22.22",
-    "resolutions": {
-        "@civic/auth-web3": "*",
-        "@civic/auth": "*"
-    },
+    "packageManager": "pnpm@9.11.0",
     "devDependencies": {
         "@vitejs/plugin-react": "^4.3.4",
         "turbo": "latest",

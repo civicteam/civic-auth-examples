@@ -1,19 +1,18 @@
-```markdown
 # CivicAuth Hono Example App
 
 A minimal Hono application demonstrating integration with **Civic Auth** for user authentication using OAuth 2.0 and PKCE. This example includes endpoints to initiate authentication, handle callbacks, and access protected routes.
 
 ## 🚀 Prerequisites
 
-- **Yarn**: Ensure you have _Yarn_ installed.
+- **pnpm**: Ensure you have _pnpm_ installed.
 - **Civic Auth Account**: Obtain your `CLIENT_ID` from the [Civic Auth Dashboard](https://auth.civic.com/dashboard).
 
 ## 🛠 Installation
 
-Install Dependencies using _Yarn_
+Install Dependencies using _pnpm_
 
 ```bash
-yarn install
+pnpm install
 ```
 
 ## 🔧 Configuration
@@ -29,10 +28,10 @@ SESSION_SECRET=your_secure_session_secret
 
 ## 🏃 Running the App
 
-Start the hono server using _Yarn_:
+Start the hono server using _pnpm_:
 
 ```bash
-yarn dev
+pnpm dev
 ```
 
 The server will start on `http://localhost:3000`.

@@ -18,14 +18,14 @@ The repository includes the following samples:
 Before running, be sure to set the client id in .env files for each app. You can find 
 examples in the .env.example files
     from the root:
-    ```yarn install```
-    ```yarn build```
-    ```yarn dev```
+    ```pnpm install```
+    ```pnpm build```
+    ```pnpm dev```
 
 * **Running cypress tests**:
     ```cd packages/e2e```:
-    ```yarn install```
-    ```yarn cypress open --browser chrome```
+    ```pnpm install```
+    ```pnpm cypress open --browser chrome```
 
 
 

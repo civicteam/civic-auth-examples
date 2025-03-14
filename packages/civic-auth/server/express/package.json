@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node dist/app.js",
     "dev": "PORT=3002 NODE_OPTIONS=\"--loader ts-node/esm\" nodemon src/app.ts",
-    "predev": "yarn build",
+    "predev": "pnpm build",
     "build": "tsc"
   },
   "dependencies": {

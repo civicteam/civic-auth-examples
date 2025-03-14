@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --port 3005",
+    "build": "tsc -b && vite build",
     "lint": "biome check .",
     "preview": "vite preview"
   },
