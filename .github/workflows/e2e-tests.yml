@@ -11,11 +11,13 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       version_changed: ${{ steps.check-version.outputs.version_changed }}
+      auth_latest: ${{ steps.check-version.outputs.auth_latest }}
+      web3_latest: ${{ steps.check-version.outputs.web3_latest }}
     steps:
       - uses: actions/checkout@v4
         with:
           token: ${{ secrets.GH_PAT }}
-          
+
       - name: Check Versions
         id: check-version
         run: |
@@ -32,6 +34,18 @@ jobs:
           echo "Web3 Beta version: $WEB3_BETA_VERSION"
           echo "Web3 Production version: $WEB3_PROD_VERSION"
           
+          # Determine latest versions by comparing beta vs production
+          # Using sort -V for version comparison
+          AUTH_LATEST=$(echo -e "$AUTH_BETA_VERSION\n$AUTH_PROD_VERSION" | sort -V | tail -n 1)
+          WEB3_LATEST=$(echo -e "$WEB3_BETA_VERSION\n$WEB3_PROD_VERSION" | sort -V | tail -n 1)
+          
+          echo "Auth Latest version: $AUTH_LATEST"
+          echo "Web3 Latest version: $WEB3_LATEST"
+          
+          # Set outputs for use in subsequent steps
+          echo "auth_latest=$AUTH_LATEST" >> $GITHUB_OUTPUT
+          echo "web3_latest=$WEB3_LATEST" >> $GITHUB_OUTPUT
+          
           if [ -f .civic-versions ]; then
             PREV_VERSIONS=$(cat .civic-versions)
             PREV_AUTH_BETA=$(echo "$PREV_VERSIONS" | sed -n '1p')
@@ -46,16 +60,19 @@ jobs:
             echo "Web3 Beta: $PREV_WEB3_BETA"
             echo "Web3 Prod: $PREV_WEB3_PROD"
             
-            if [ "$AUTH_BETA_VERSION" != "$PREV_AUTH_BETA" ] || \
-              [ "$AUTH_PROD_VERSION" != "$PREV_AUTH_PROD" ] || \
-              [ "$WEB3_BETA_VERSION" != "$PREV_WEB3_BETA" ] || \
-              [ "$WEB3_PROD_VERSION" != "$PREV_WEB3_PROD" ]; then
+            # Determine previous latest versions
+            PREV_AUTH_LATEST=$(echo -e "$PREV_AUTH_BETA\n$PREV_AUTH_PROD" | sort -V | tail -n 1)
+            PREV_WEB3_LATEST=$(echo -e "$PREV_WEB3_BETA\n$PREV_WEB3_PROD" | sort -V | tail -n 1)
+            
+            echo "Previous latest versions:"
+            echo "Auth: $PREV_AUTH_LATEST"
+            echo "Web3: $PREV_WEB3_LATEST"
+            
+            if [ "$AUTH_LATEST" != "$PREV_AUTH_LATEST" ] || [ "$WEB3_LATEST" != "$PREV_WEB3_LATEST" ]; then
               echo "version_changed=true" >> $GITHUB_OUTPUT
               echo "Changed from:"
-              echo "Auth Beta: $PREV_AUTH_BETA -> $AUTH_BETA_VERSION"
-              echo "Auth Prod: $PREV_AUTH_PROD -> $AUTH_PROD_VERSION"
-              echo "Web3 Beta: $PREV_WEB3_BETA -> $WEB3_BETA_VERSION"
-              echo "Web3 Prod: $PREV_WEB3_PROD -> $WEB3_PROD_VERSION"
+              echo "Auth: $PREV_AUTH_LATEST -> $AUTH_LATEST"
+              echo "Web3: $PREV_WEB3_LATEST -> $WEB3_LATEST"
             else
               echo "No version changes detected"
             fi
@@ -102,80 +119,113 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install
-        shell: bash
-        working-directory: ./
-        run: yarn install
-
-      - name: Force upgrade civic/auth and civic/auth-web3
-        shell: bash
-        working-directory: ./
-        run: yarn upgrade @civic/auth @civic/auth-web3 --latest
-        
-      - name: Build
-        working-directory: ./
-        run: yarn build
-        
-      - name: Start the nextjs example app
-        uses: JarvusInnovations/background-action@v1.0.7
-        with:
-          run: yarn dev &
-          working-directory: packages/civic-auth/nextjs
-          wait-on: http-get://localhost:3000
-          wait-for: 120s
-          log-output-if: true
-
-      - name: Start the reactjs example app
-        uses: JarvusInnovations/background-action@v1.0.7
-        with:
-          run: yarn dev &
-          working-directory: packages/civic-auth/reactjs
-          wait-on: http://localhost:3001/
-          wait-for: 60s
-          log-output-if: true
-
-      - name: Start the express example app
-        uses: JarvusInnovations/background-action@v1.0.7
-        with:
-          run: yarn dev &
-          working-directory: packages/civic-auth/server/express
-          wait-on: http://localhost:3002/
-          wait-for: 60s
-          log-output-if: true
-
-      - name: Start the fastify example app
-        uses: JarvusInnovations/background-action@v1.0.7
-        with:
-          run: yarn dev &
-          working-directory: packages/civic-auth/server/fastify
-          wait-on: http://localhost:3003/
-          wait-for: 60s
-          log-output-if: true
-
-      - name: Start the hono example app
-        working-directory: ./packages/civic-auth/server/hono  
+      - name: Create installation script
+        env:
+          AUTH_LATEST: ${{ needs.check-version.outputs.auth_latest }}
+          WEB3_LATEST: ${{ needs.check-version.outputs.web3_latest }}
         run: |
+          cat > install-and-start.sh << 'EOF'
+          #!/bin/bash
+          
+          # Function to install and start an application
+          install_and_start() {
+            local dir="$1"
+            local package="$2"
+            local version="$3"
+            local port="$4"
+            
+            echo "Installing $package@$version in $dir"
+            cd "$dir" || exit 1
+            
+            yarn add "$package@$version"
+            yarn install && yarn build
+            
+            cd "$GITHUB_WORKSPACE" || exit 1
+          }
+          
+          # Auth package installations
+          install_and_start "packages/civic-auth/nextjs" "@civic/auth" "$AUTH_LATEST" "3000"
+          install_and_start "packages/civic-auth/reactjs" "@civic/auth" "$AUTH_LATEST" "3001"
+          install_and_start "packages/civic-auth/server/express" "@civic/auth" "$AUTH_LATEST" "3002"
+          install_and_start "packages/civic-auth/server/fastify" "@civic/auth" "$AUTH_LATEST" "3003"
+          install_and_start "packages/civic-auth/server/hono" "@civic/auth" "$AUTH_LATEST" "3004"
+          
+          # Web3 package installations
+          install_and_start "packages/civic-auth-web3/solana/next14-no-wallet-adapter" "@civic/auth-web3" "$WEB3_LATEST" "3005"
+          install_and_start "packages/civic-auth-web3/solana/next14-wallet-adapter" "@civic/auth-web3" "$WEB3_LATEST" "3006"
+          install_and_start "packages/civic-auth-web3/solana/next15-turbopack-no-wallet-adapter" "@civic/auth-web3" "$WEB3_LATEST" "3007"
+          install_and_start "packages/civic-auth-web3/solana/next15-turbopack-wallet-adapter" "@civic/auth-web3" "$WEB3_LATEST" "3008"
+          install_and_start "packages/civic-auth-web3/solana/vite-no-wallet-adapter" "@civic/auth-web3" "$WEB3_LATEST" "3009"
+          install_and_start "packages/civic-auth-web3/solana/vite-wallet-adapter" "@civic/auth-web3" "$WEB3_LATEST" "3010"
+          install_and_start "packages/civic-auth-web3/wagmi" "@civic/auth-web3" "$WEB3_LATEST" "3011"
+          EOF
+          
+          chmod +x install-and-start.sh
+          ./install-and-start.sh
+
+      - name: Start all example apps
+        run: |
+          # Start nextjs example app
+          cd packages/civic-auth/nextjs && yarn dev &
+          cd $GITHUB_WORKSPACE
+          
+          # Start reactjs example app
+          cd packages/civic-auth/reactjs && yarn dev &
+          cd $GITHUB_WORKSPACE
+          
+          # Start express example app
+          cd packages/civic-auth/server/express && yarn dev &
+          cd $GITHUB_WORKSPACE
+          
+          # Start fastify example app
+          cd packages/civic-auth/server/fastify && yarn dev &
+          cd $GITHUB_WORKSPACE
+          
+          # Start hono example app
+          cd packages/civic-auth/server/hono
           bun add @hono/node-server
-          yarn dev & npx wait-on http://localhost:3004/
-        timeout-minutes: 1
-
-      - name: Start the wagmi example app
-        uses: JarvusInnovations/background-action@v1.0.7
-        with:
-          run: yarn dev &
-          working-directory: packages/civic-auth-web3/wagmi
-          wait-on: http://localhost:3005/
-          wait-for: 60s
-          log-output-if: true
-
-      - name: Start the solana example app
-        uses: JarvusInnovations/background-action@v1.0.7
-        with:
-          run: yarn dev &
-          working-directory: packages/civic-auth-web3/solana
-          wait-on: http://localhost:3006/
-          wait-for: 60s
-          log-output-if: true
+          yarn dev &
+          cd $GITHUB_WORKSPACE
+          
+          # Start Solana Next.js example apps
+          cd packages/civic-auth-web3/solana/next14-no-wallet-adapter && yarn dev &
+          cd $GITHUB_WORKSPACE
+          
+          cd packages/civic-auth-web3/solana/next14-wallet-adapter && yarn dev &
+          cd $GITHUB_WORKSPACE
+          
+          cd packages/civic-auth-web3/solana/next15-turbopack-no-wallet-adapter && yarn dev &
+          cd $GITHUB_WORKSPACE
+          
+          cd packages/civic-auth-web3/solana/next15-turbopack-wallet-adapter && yarn dev &
+          cd $GITHUB_WORKSPACE
+          
+          # Start Solana Vite example apps
+          cd packages/civic-auth-web3/solana/vite-no-wallet-adapter && yarn dev &
+          cd $GITHUB_WORKSPACE
+          
+          cd packages/civic-auth-web3/solana/vite-wallet-adapter && yarn dev &
+          cd $GITHUB_WORKSPACE
+          
+          # Start Wagmi example app
+          cd packages/civic-auth-web3/wagmi && yarn dev &
+          cd $GITHUB_WORKSPACE
+          
+          # Wait for all servers to be ready
+          npx wait-on \
+            http://localhost:3000 \
+            http://localhost:3001 \
+            http://localhost:3002 \
+            http://localhost:3003 \
+            http://localhost:3004 \
+            http://localhost:3005 \
+            http://localhost:3006 \
+            http://localhost:3007 \
+            http://localhost:3008 \
+            http://localhost:3009 \
+            http://localhost:3010 \
+            http://localhost:3011 \
+            --timeout 120000
 
       - name: Run Cypress example app e2e prod tests
         id: cypress
@@ -185,8 +235,6 @@ jobs:
           command: yarn cypress run --browser chrome --record
           browser: chrome
           install: true
-          wait-on: 'http://localhost:3000,http://localhost:3001,http://localhost:3002,http://localhost:3003,http://localhost:3004,http://localhost:3005,http://localhost:3006'
-          wait-on-timeout: 60
           record: true
         env:
           NEXT_JS_BASE_URL: 'http://localhost:3000'
@@ -194,8 +242,13 @@ jobs:
           EXPRESS_BASE_URL: 'http://localhost:3002'
           FASTIFY_BASE_URL: 'http://localhost:3003'
           HONO_BASE_URL: 'http://localhost:3004'
-          WAGMI_BASE_URL: 'http://localhost:3005'
-          SOLANA_BASE_URL: 'http://localhost:3006'
+          SOLANA_NEXT14_NO_WA_BASE_URL: 'http://localhost:3005'
+          SOLANA_NEXT14_WA_BASE_URL: 'http://localhost:3006'
+          SOLANA_NEXT15_NO_WA_BASE_URL: 'http://localhost:3007'
+          SOLANA_NEXT15_WA_BASE_URL: 'http://localhost:3008'
+          SOLANA_VITE_NO_WA_BASE_URL: 'http://localhost:3009'
+          SOLANA_VITE_WA_BASE_URL: 'http://localhost:3010'
+          WAGMI_BASE_URL: 'http://localhost:3011'
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
 
       - name: Send Slack Notification on Failure
