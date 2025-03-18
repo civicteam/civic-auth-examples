@@ -1,20 +1,19 @@
 import { env } from 'bun';
 import {
-  Storage,
   CookieStorage,
-  resolveOAuthAccessCode,
-  isLoggedIn,
-  getUser,
-  buildLoginUrl,
-  refreshTokens,
-  buildLogoutRedirectUrl,
+  CivicAuth
 } from '@civic/auth/server';
 import Fastify, { FastifyReply, FastifyRequest } from 'fastify';
 import fastifyCookie from '@fastify/cookie';
+import dotenv from 'dotenv';
 
+dotenv.config();
+
+// Extend Fastify types to include our storage and civicAuth properties
 declare module 'fastify' {
   export interface FastifyRequest {
-    storage: Storage;
+    storage: CookieStorage;
+    civicAuth: CivicAuth;
   }
 }
 
@@ -28,13 +27,13 @@ const PORT = env.PORT ? parseInt(env.PORT) : 3000;
 const config = {
   clientId: process.env.CLIENT_ID!,
   redirectUrl: `http://localhost:${PORT}/auth/callback`,
-  postLogoutRedirectUrl: `http://localhost:${PORT}/auth/logoutcallback`,
+  postLogoutRedirectUrl: `http://localhost:${PORT}/`,
 };
 
 class FastifyCookieStorage extends CookieStorage {
   constructor(private request: FastifyRequest, private reply: FastifyReply) {
     super({
-      secure: false, // Set to true in production
+      secure: process.env.NODE_ENV === "production",
     });
   }
 
@@ -66,31 +65,37 @@ class FastifyCookieStorage extends CookieStorage {
       this.reply.clearCookie(key, { path: '/' });
     }
   }
+
+  async delete(key: string): Promise<void> {
+    this.reply.clearCookie(key, { path: '/' });
+  }
 }
 
 await fastify.register(fastifyCookie, {
   secret: env.COOKIE_SECRET || "my-secret"
 });
 
+// Decorate request with storage and civicAuth
 fastify.decorateRequest('storage', null);
+fastify.decorateRequest('civicAuth', null);
+
+// Add storage and civicAuth to each request
 fastify.addHook('preHandler', async (request, reply) => {
   request.storage = new FastifyCookieStorage(request, reply);
+  request.civicAuth = new CivicAuth(request.storage, config);
 });
 
+// Auth middleware for /admin routes
 fastify.addHook('preHandler', async (request, reply) => {
   if (!request.url.includes('/admin')) return;
 
-  const loggedIn = await isLoggedIn(request.storage);
-  if (!loggedIn) {
+  if (!request.civicAuth.isLoggedIn()) {
     return reply.status(401).send({ error: 'Unauthorized' });
   }
 });
 
 fastify.get('/', async (request, reply) => {
-  if (await isLoggedIn(request.storage)) {
-    return reply.redirect('/admin/hello');
-  }
-  const url = await buildLoginUrl(config, request.storage);
+  const url = await request.civicAuth.buildLoginUrl();
   return reply.redirect(url.toString());
 });
 
@@ -102,7 +107,7 @@ fastify.get<{
     const { code, state } = request.query;
     fastify.log.info(`Processing OAuth callback - Code: ${code}, State: ${state}`);
 
-    await resolveOAuthAccessCode(code, state, request.storage, config);
+    await request.civicAuth.resolveOAuthAccessCode(code, state);
     fastify.log.info('OAuth code resolved successfully');
 
     return reply.redirect('/admin/hello');
@@ -117,7 +122,7 @@ fastify.get<{
 
 fastify.get('/admin/hello', async (request, reply) => {
   try {
-    const user = await getUser(request.storage);
+    const user = await request.civicAuth.getUser();
     reply.type('text/html');
     return `
       <html>
@@ -132,18 +137,9 @@ fastify.get('/admin/hello', async (request, reply) => {
   }
 });
 
-fastify.get('/admin/refresh', async (request, reply) => {
-  try {
-    await refreshTokens(request.storage, config);
-    return 'Tokens refreshed';
-  } catch (error) {
-    fastify.log.error('Refresh error:', error);
-  }
-});
-
 fastify.get('/auth/logout', async (request, reply) => {
   try {
-    const url = await buildLogoutRedirectUrl(config, request.storage);
+    const url = await request.civicAuth.buildLogoutRedirectUrl();
     return reply.redirect(url.toString());
   } catch (error) {
     fastify.log.error('Logout error:', error);
