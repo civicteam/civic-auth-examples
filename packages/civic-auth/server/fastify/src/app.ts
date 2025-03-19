@@ -9,13 +9,6 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-// Extend Fastify types to include our storage and civicAuth properties
-declare module 'fastify' {
-  export interface FastifyRequest {
-    storage: CookieStorage;
-    civicAuth: CivicAuth;
-  }
-}
 
 const fastify = Fastify({ 
   logger: true,
@@ -71,13 +64,21 @@ class FastifyCookieStorage extends CookieStorage {
   }
 }
 
+// Extend Fastify types to include our storage and civicAuth properties
+declare module 'fastify' {
+  export interface FastifyRequest {
+    storage: FastifyCookieStorage;
+    civicAuth: CivicAuth;
+  }
+}
+
 await fastify.register(fastifyCookie, {
   secret: env.COOKIE_SECRET || "my-secret"
 });
 
 // Decorate request with storage and civicAuth
-fastify.decorateRequest('storage', null);
-fastify.decorateRequest('civicAuth', null);
+fastify.decorateRequest('storage', {} as FastifyCookieStorage);
+fastify.decorateRequest('civicAuth', {} as CivicAuth);
 
 // Add storage and civicAuth to each request
 fastify.addHook('preHandler', async (request, reply) => {
@@ -123,6 +124,8 @@ fastify.get<{
 fastify.get('/admin/hello', async (request, reply) => {
   try {
     const user = await request.civicAuth.getUser();
+    if (!user) return reply.redirect("/");
+
     reply.type('text/html');
     return `
       <html>
