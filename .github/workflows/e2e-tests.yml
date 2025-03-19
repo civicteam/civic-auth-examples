@@ -98,8 +98,8 @@ jobs:
           git push
 
   build:
-    needs: check-version
-    if: needs.check-version.outputs.version_changed == 'true'
+    # needs: check-version
+    # if: needs.check-version.outputs.version_changed == 'true'
     runs-on: ubuntu-latest
     env:
       CLIENT_ID: ${{ secrets.CLIENT_ID }}
