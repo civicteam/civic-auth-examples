@@ -118,100 +118,131 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+          cache: 'yarn'
 
-      - name: Create installation script
+      # Simplified installation script - just install packages
+      - name: Install Packages
         env:
           AUTH_LATEST: ${{ needs.check-version.outputs.auth_latest }}
           WEB3_LATEST: ${{ needs.check-version.outputs.web3_latest }}
         run: |
-          cat > install-and-start.sh << 'EOF'
-          #!/bin/bash
-          
-          # Function to install and start an application
-          install_and_start() {
+          # Function to install packages in a directory
+          install_packages() {
             local dir="$1"
             local package="$2"
             local version="$3"
-            local port="$4"
             
-            echo "Installing $package@$version in $dir"
+            echo "📦 Installing $package@$version in $dir"
             cd "$dir" || exit 1
             
+            # Add the specific package version
             yarn add "$package@$version"
-            yarn install && yarn build
+            
+            # Install all dependencies and build
+            yarn install
+            yarn build
             
             cd "$GITHUB_WORKSPACE" || exit 1
           }
           
           # Auth package installations
-          install_and_start "packages/civic-auth/nextjs" "@civic/auth" "$AUTH_LATEST" "3000"
-          install_and_start "packages/civic-auth/reactjs" "@civic/auth" "$AUTH_LATEST" "3001"
-          install_and_start "packages/civic-auth/server/express" "@civic/auth" "$AUTH_LATEST" "3002"
-          install_and_start "packages/civic-auth/server/fastify" "@civic/auth" "$AUTH_LATEST" "3003"
-          install_and_start "packages/civic-auth/server/hono" "@civic/auth" "$AUTH_LATEST" "3004"
+          install_packages "packages/civic-auth/nextjs" "@civic/auth" "$AUTH_LATEST"
+          install_packages "packages/civic-auth/reactjs" "@civic/auth" "$AUTH_LATEST"
+          install_packages "packages/civic-auth/server/express" "@civic/auth" "$AUTH_LATEST"
+          install_packages "packages/civic-auth/server/fastify" "@civic/auth" "$AUTH_LATEST"
+          install_packages "packages/civic-auth/server/hono" "@civic/auth" "$AUTH_LATEST"
           
           # Web3 package installations
-          install_and_start "packages/civic-auth-web3/solana/next14-no-wallet-adapter" "@civic/auth-web3" "$WEB3_LATEST" "3005"
-          install_and_start "packages/civic-auth-web3/solana/next14-wallet-adapter" "@civic/auth-web3" "$WEB3_LATEST" "3006"
-          install_and_start "packages/civic-auth-web3/solana/next15-turbopack-no-wallet-adapter" "@civic/auth-web3" "$WEB3_LATEST" "3007"
-          install_and_start "packages/civic-auth-web3/solana/next15-turbopack-wallet-adapter" "@civic/auth-web3" "$WEB3_LATEST" "3008"
-          install_and_start "packages/civic-auth-web3/solana/vite-no-wallet-adapter" "@civic/auth-web3" "$WEB3_LATEST" "3009"
-          install_and_start "packages/civic-auth-web3/solana/vite-wallet-adapter" "@civic/auth-web3" "$WEB3_LATEST" "3010"
-          install_and_start "packages/civic-auth-web3/wagmi" "@civic/auth-web3" "$WEB3_LATEST" "3011"
-          EOF
+          install_packages "packages/civic-auth-web3/solana/next14-no-wallet-adapter" "@civic/auth-web3" "$WEB3_LATEST"
+          install_packages "packages/civic-auth-web3/solana/next14-wallet-adapter" "@civic/auth-web3" "$WEB3_LATEST"
+          install_packages "packages/civic-auth-web3/solana/next15-turbopack-no-wallet-adapter" "@civic/auth-web3" "$WEB3_LATEST"
+          install_packages "packages/civic-auth-web3/solana/next15-turbopack-wallet-adapter" "@civic/auth-web3" "$WEB3_LATEST"
+          install_packages "packages/civic-auth-web3/solana/vite-no-wallet-adapter" "@civic/auth-web3" "$WEB3_LATEST"
+          install_packages "packages/civic-auth-web3/solana/vite-wallet-adapter" "@civic/auth-web3" "$WEB3_LATEST"
+          install_packages "packages/civic-auth-web3/wagmi" "@civic/auth-web3" "$WEB3_LATEST"
           
-          chmod +x install-and-start.sh
-          ./install-and-start.sh
-
-      - name: Start all example apps
-        run: |
-          # Start nextjs example app
-          cd packages/civic-auth/nextjs && yarn dev &
-          cd $GITHUB_WORKSPACE
-          
-          # Start reactjs example app
-          cd packages/civic-auth/reactjs && yarn dev &
-          cd $GITHUB_WORKSPACE
-          
-          # Start express example app
-          cd packages/civic-auth/server/express && yarn dev &
-          cd $GITHUB_WORKSPACE
-          
-          # Start fastify example app
-          cd packages/civic-auth/server/fastify && yarn dev &
-          cd $GITHUB_WORKSPACE
-          
-          # Start hono example app
+          # Special handling for hono (additional dependency)
           cd packages/civic-auth/server/hono
           bun add @hono/node-server
-          yarn dev &
           cd $GITHUB_WORKSPACE
+      
+      # Add specific debugging for start commands
+      - name: Start Applications
+        run: |
+          # Function to start applications with health check
+          start_app() {
+            local name="$1"
+            local dir="$2"
+            local port="$3"
+            local start_cmd="$4"
+            
+            echo "🚀 Starting $name on port $port"
+            cd "$dir" || exit 1
+            
+            # Start the app with nohup to run in background
+            nohup $start_cmd > "$name.log" 2>&1 &
+            
+            cd "$GITHUB_WORKSPACE" || exit 1
+          }
           
-          # Start Solana Next.js example apps
-          cd packages/civic-auth-web3/solana/next14-no-wallet-adapter && yarn dev &
-          cd $GITHUB_WORKSPACE
+          # Start all applications
+          start_app "nextjs" "packages/civic-auth/nextjs" "3000" "yarn dev"
+          start_app "reactjs" "packages/civic-auth/reactjs" "3001" "yarn dev"
+          start_app "express" "packages/civic-auth/server/express" "3002" "yarn dev"
+          start_app "fastify" "packages/civic-auth/server/fastify" "3003" "yarn dev"
+          start_app "hono" "packages/civic-auth/server/hono" "3004" "yarn dev"
+          start_app "solana-next14-no-wa" "packages/civic-auth-web3/solana/next14-no-wallet-adapter" "3005" "yarn dev"
+          start_app "solana-next14-wa" "packages/civic-auth-web3/solana/next14-wallet-adapter" "3006" "yarn dev"
+          start_app "solana-next15-no-wa" "packages/civic-auth-web3/solana/next15-turbopack-no-wallet-adapter" "3007" "yarn dev"
+          start_app "solana-next15-wa" "packages/civic-auth-web3/solana/next15-turbopack-wallet-adapter" "3008" "yarn dev"
+          start_app "solana-vite-no-wa" "packages/civic-auth-web3/solana/vite-no-wallet-adapter" "3009" "yarn dev"
+          start_app "solana-vite-wa" "packages/civic-auth-web3/solana/vite-wallet-adapter" "3010" "yarn dev"
+          start_app "wagmi" "packages/civic-auth-web3/wagmi" "3011" "yarn dev"
           
-          cd packages/civic-auth-web3/solana/next14-wallet-adapter && yarn dev &
-          cd $GITHUB_WORKSPACE
+          # Give some time for initial startup before checking
+          echo "⏳ Waiting 30 seconds for initial startup..."
+          sleep 30
           
-          cd packages/civic-auth-web3/solana/next15-turbopack-no-wallet-adapter && yarn dev &
-          cd $GITHUB_WORKSPACE
+          # Show running processes
+          echo "🔍 Running Node.js processes:"
+          ps aux | grep node
           
-          cd packages/civic-auth-web3/solana/next15-turbopack-wallet-adapter && yarn dev &
-          cd $GITHUB_WORKSPACE
-          
-          # Start Solana Vite example apps
-          cd packages/civic-auth-web3/solana/vite-no-wallet-adapter && yarn dev &
-          cd $GITHUB_WORKSPACE
-          
-          cd packages/civic-auth-web3/solana/vite-wallet-adapter && yarn dev &
-          cd $GITHUB_WORKSPACE
-          
-          # Start Wagmi example app
-          cd packages/civic-auth-web3/wagmi && yarn dev &
-          cd $GITHUB_WORKSPACE
-          
-          # Wait for all servers to be ready
+          # Periodically check if services are responding before wait-on
+          for i in {1..5}; do
+            echo "🔄 Checking application status (attempt $i)..."
+            
+            for port in 3000 3001 3002 3003 3004 3005 3006 3007 3008 3009 3010 3011; do
+              if curl -s http://localhost:$port > /dev/null; then
+                echo "✅ Service on port $port is responding"
+              else
+                echo "❌ Service on port $port is not responding"
+                
+                # For failing Next.js apps, show the logs
+                if [[ $port -eq 3000 || ($port -ge 3005 && $port -le 3008) ]]; then
+                  case $port in
+                    3000) log="nextjs.log" ;;
+                    3005) log="solana-next14-no-wa.log" ;;
+                    3006) log="solana-next14-wa.log" ;;
+                    3007) log="solana-next15-no-wa.log" ;;
+                    3008) log="solana-next15-wa.log" ;;
+                  esac
+                  
+                  echo "📜 Last 20 lines of $log:"
+                  tail -20 $log
+                fi
+              fi
+            done
+            
+            # Wait before next check
+            if [ $i -lt 5 ]; then
+              echo "⏳ Waiting 15 seconds before next check..."
+              sleep 15
+            fi
+          done
+
+      - name: Run wait-on with increased timeout
+        run: |
+          # Wait for all servers to be ready with increased timeout
           npx wait-on \
             http://localhost:3000 \
             http://localhost:3001 \
@@ -225,7 +256,8 @@ jobs:
             http://localhost:3009 \
             http://localhost:3010 \
             http://localhost:3011 \
-            --timeout 120000
+            --timeout 300000 \
+            --verbose
 
       - name: Run Cypress example app e2e prod tests
         id: cypress
