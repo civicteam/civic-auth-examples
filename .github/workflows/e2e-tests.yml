@@ -98,8 +98,8 @@ jobs:
           git push
 
   build:
-    # needs: check-version
-    # if: needs.check-version.outputs.version_changed == 'true'
+    needs: check-version
+    if: needs.check-version.outputs.version_changed == 'true'
     runs-on: ubuntu-latest
     env:
       CLIENT_ID: ${{ secrets.CLIENT_ID }}
@@ -254,10 +254,10 @@ jobs:
             echo "🔄 Checking application status (attempt $i)..."
             
             for port in 3000 3001 3002 3003 3004 3005 3006 3007 3008 3009 3010 3011; do
-              if curl -s http://localhost:$port > /dev/null; then
-                echo "✅ Service on port $port is responding"
+              if curl -s -o /dev/null -w "%{http_code}" http://localhost:$port | grep -q "200\|301\|302\|404"; then
+                echo "✅ Service on port $port is responding with HTTP status"
               else
-                echo "❌ Service on port $port is not responding"
+                echo "❌ Service on port $port is not responding with valid HTTP status"
                 
                 # For failing Next.js apps, show the logs
                 if [[ $port -eq 3000 || ($port -ge 3005 && $port -le 3008) ]]; then
@@ -286,18 +286,18 @@ jobs:
         run: |
           # Wait for all servers to be ready with increased timeout
           npx wait-on \
-            http://localhost:3000 \
-            http://localhost:3001 \
-            http://localhost:3002 \
-            http://localhost:3003 \
-            http://localhost:3004 \
-            http://localhost:3005 \
-            http://localhost:3006 \
-            http://localhost:3007 \
-            http://localhost:3008 \
-            http://localhost:3009 \
-            http://localhost:3010 \
-            http://localhost:3011 \
+            http-get://localhost:3000 \
+            http-get://localhost:3001 \
+            http-get://localhost:3002 \
+            http-get://localhost:3003 \
+            http-get://localhost:3004 \
+            http-get://localhost:3005 \
+            http-get://localhost:3006 \
+            http-get://localhost:3007 \
+            http-get://localhost:3008 \
+            http-get://localhost:3009 \
+            http-get://localhost:3010 \
+            http-get://localhost:3011 \
             --timeout 300000 \
             --verbose
 

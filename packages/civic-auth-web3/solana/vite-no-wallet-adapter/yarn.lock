@@ -229,12 +229,12 @@
   resolved "https://registry.yarnpkg.com/@biomejs/cli-win32-x64/-/cli-win32-x64-1.9.4.tgz#4c7afa90e3970213599b4095e62f87e5972b2340"
   integrity sha512-8Y5wMhVIPaWe6jw2H+KlEm4wP/f7EW3810ZLmDlrEEy5KvBsb9ECEfu/kMWD484ijfQ8+nIi0giMgu9g1UAuuA==
 
-"@civic/auth-web3@0.4.7-beta.11":
-  version "0.4.7-beta.11"
-  resolved "https://registry.yarnpkg.com/@civic/auth-web3/-/auth-web3-0.4.7-beta.11.tgz#5ab77efe83134066805e5ed8f8d2a5c3e33a0884"
-  integrity sha512-i74PW6J0Vs4Vw/j+90ik4ibHSWQyGk6NqfeysP+9HdRLPIGj888eQabg2CokdE9XrVMbMtSt4rnNIZA0j5k2XQ==
+"@civic/auth-web3@0.5.0-beta.0":
+  version "0.5.0-beta.0"
+  resolved "https://registry.yarnpkg.com/@civic/auth-web3/-/auth-web3-0.5.0-beta.0.tgz#da50ea8ca8e221c54ae6b972109744f9b03bba3a"
+  integrity sha512-hAs18FvUKfrqZjcMBM2VL/4ihosENpxnDgPSlA2Jzh0vqiALB8GVWea1n/u8p6shqoySNOyLyHNlIaDjsab/uA==
   dependencies:
-    "@civic/auth" "^0.3.8"
+    "@civic/auth" "0.4.1"
     "@noble/hashes" "^1.5.0"
     "@solana/wallet-adapter-base" "^0.9.23"
     "@solana/wallet-standard-features" "^1.3.0"
@@ -249,10 +249,10 @@
     tslib "^2.7.0"
     viem "^2.21.44"
 
-"@civic/auth@^0.3.8":
-  version "0.3.8"
-  resolved "https://registry.yarnpkg.com/@civic/auth/-/auth-0.3.8.tgz#bf2a82e15b20e9a2997c408e781b285e9cac87a1"
-  integrity sha512-LBH9VuhXGJY+jAiJYEn+UTlivB5f4zb2Q31YkPPYx9K7NHlye7J4GOdMX2DCixKuLjU6h50qi6YZbKZJWCvftA==
+"@civic/auth@0.4.1":
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/@civic/auth/-/auth-0.4.1.tgz#eeec49da9b1cd8ed57e2b665a8765bcf5d40a336"
+  integrity sha512-kdQRMBoTp1NmDvT4mza9E018GdU/4UWt0YjJD24VgmOlcMuJgfyYaB0eM1M7PDct8XxeNzoxEneSuAbGlgFVcw==
   dependencies:
     "@emotion/react" "^11.14.0"
     "@iframe-resizer/react" "^5.3.3"
