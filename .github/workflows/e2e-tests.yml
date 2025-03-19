@@ -118,7 +118,49 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'yarn'
+
+      # Check directory structure before installing
+      - name: Check Repository Structure
+        run: |
+          echo "📁 Checking repository structure"
+          
+          # Check root directories
+          ls -la ./packages/
+
+          # Check auth package directories
+          DIRS=(
+            "packages/civic-auth/nextjs"
+            "packages/civic-auth/reactjs"
+            "packages/civic-auth/server/express"
+            "packages/civic-auth/server/fastify"
+            "packages/civic-auth/server/hono"
+            "packages/civic-auth-web3/solana/next14-no-wallet-adapter"
+            "packages/civic-auth-web3/solana/next14-wallet-adapter"
+            "packages/civic-auth-web3/solana/next15-turbopack-no-wallet-adapter"
+            "packages/civic-auth-web3/solana/next15-turbopack-wallet-adapter"
+            "packages/civic-auth-web3/solana/vite-no-wallet-adapter"
+            "packages/civic-auth-web3/solana/vite-wallet-adapter"
+            "packages/civic-auth-web3/wagmi"
+          )
+          
+          for dir in "${DIRS[@]}"; do
+            if [ -d "$dir" ]; then
+              echo "✅ $dir exists"
+              if [ -f "$dir/package.json" ]; then
+                echo "   📄 package.json found"
+                # Check if dev script exists
+                if grep -q '"dev":' "$dir/package.json"; then
+                  echo "   ✅ dev script found"
+                else
+                  echo "   ❌ dev script NOT found"
+                fi
+              else
+                echo "   ❌ package.json NOT found"
+              fi
+            else
+              echo "❌ $dir does NOT exist"
+            fi
+          done
 
       # Simplified installation script - just install packages
       - name: Install Packages
