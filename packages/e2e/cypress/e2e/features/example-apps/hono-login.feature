@@ -1,7 +1,7 @@
-Feature: Confirm hono app builds and loads correctly
+Feature: Log in with hono app
 
-  Scenario: Confirm hono app builds and loads correctly
+  Scenario: Log in with hono app
     Given I open the 'HONO' server app home page
+    When I click log in with dummy in the server app page
+    Then I am logged in and redirected to the 'HONO' hello page
     And I confirm provider is visible on the page
-
-

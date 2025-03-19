@@ -1,22 +1,24 @@
-import express, { Request, Response, NextFunction } from 'express';
-import cookieParser from 'cookie-parser';
-import {
-  CookieStorage,
-  resolveOAuthAccessCode,
-  isLoggedIn,
-  getUser,
-  buildLoginUrl,
-  buildLogoutRedirectUrl,
-} from '@civic/auth/server';
-import dotenv from 'dotenv';
+import express, { Request, Response, NextFunction } from "express";
+import cookieParser from "cookie-parser";
+import { CookieStorage, CivicAuth } from "@civic/auth/server";
+import dotenv from "dotenv";
 
 dotenv.config();
 
-import 'dotenv/config';
+import "dotenv/config";
 
+// Extend the Express Request type to include our civicAuth property
+declare global {
+  namespace Express {
+    interface Request {
+      storage: ExpressCookieStorage;
+      civicAuth: CivicAuth;
+    }
+  }
+}
 
 const app = express();
-const PORT = process.env.PORT ?  parseInt(process.env.PORT) : 3000;
+const PORT = process.env.PORT ? parseInt(process.env.PORT) : 3000;
 
 app.use(cookieParser());
 
@@ -27,7 +29,10 @@ const config = {
 };
 
 class ExpressCookieStorage extends CookieStorage {
-  constructor(private req: Request, private res: Response) {
+  constructor(
+    private req: Request,
+    private res: Response
+  ) {
     super({
       secure: process.env.NODE_ENV === "production",
     });
@@ -54,31 +59,37 @@ class ExpressCookieStorage extends CookieStorage {
 
 app.use((req: Request, res: Response, next: NextFunction) => {
   req.storage = new ExpressCookieStorage(req, res);
+  // Create and attach the civicAuth instance
+  req.civicAuth = new CivicAuth(req.storage, config);
   next();
 });
 
-app.get('/', async (req: Request, res: Response) => {
-  const url = await buildLoginUrl(config, req.storage);
+app.get("/", async (req: Request, res: Response) => {
+  const url = await req.civicAuth.buildLoginUrl();
   res.redirect(url.toString());
 });
 
-app.get('/auth/callback', async (req: Request, res: Response) => {
+app.get("/auth/callback", async (req: Request, res: Response) => {
   const { code, state } = req.query as { code: string; state: string };
 
-  await resolveOAuthAccessCode(code, state, req.storage, config);
-  res.redirect('/admin/hello');
+  await req.civicAuth.resolveOAuthAccessCode(code, state);
+  res.redirect("/admin/hello");
 });
 
-const authMiddleware = async (req: Request, res: Response, next: NextFunction) => {
-  if (!isLoggedIn(req.storage)) return res.status(401).send('Unauthorized');
+const authMiddleware = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  if (!req.civicAuth.isLoggedIn()) return res.status(401).send("Unauthorized");
   next();
 };
 
-app.use('/admin', authMiddleware);
+app.use("/admin", authMiddleware);
 
-app.get('/admin/hello', async (req: Request, res: Response) => {
-  const user = await getUser(req.storage);
-  res.setHeader('Content-Type', 'text/html');
+app.get("/admin/hello", async (req: Request, res: Response) => {
+  const user = await req.civicAuth.getUser();
+  res.setHeader("Content-Type", "text/html");
   res.send(`
     <html>
       <body>
@@ -89,16 +100,16 @@ app.get('/admin/hello', async (req: Request, res: Response) => {
   `);
 });
 
-app.get('/auth/logout', async (req: Request, res: Response) => {
-  const url = await buildLogoutRedirectUrl(config, req.storage);
+app.get("/auth/logout", async (req: Request, res: Response) => {
+  const url = await req.civicAuth.buildLogoutRedirectUrl();
   res.redirect(url.toString());
 });
 
-app.get('/auth/logoutcallback', async (req: Request, res: Response) => {
+app.get("/auth/logoutcallback", async (req: Request, res: Response) => {
   const { state } = req.query as { state: string };
   console.log(`Logout-callback: state=${state}`);
   await req.storage.clear();
-  res.redirect('/');
+  res.redirect("/");
 });
 
 app.listen(PORT, () => {

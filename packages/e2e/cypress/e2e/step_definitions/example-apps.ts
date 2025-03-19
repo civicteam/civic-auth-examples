@@ -156,9 +156,11 @@ When('I click log in with dummy in the server app page', () => {
     });
   }).as('authCallback');
 
-  cy.contains('button', 'Log in with Dummy')
-    .should('be.visible')
-    .click();
+  cy.get('[data-testid="civic-login-oidc-button-dummy"]').should('be.visible').click();
+
+  // cy.contains('button', 'Log in with Dummy')
+  //   .should('be.visible')
+  //   .click();
 
   cy.wait('@authCallback', { timeout: 30000 });
 });
