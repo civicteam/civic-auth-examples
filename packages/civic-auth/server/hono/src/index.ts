@@ -20,7 +20,7 @@ const PORT = process.env.PORT ? parseInt(process.env.PORT) : 3000;
 
 const config = {
   clientId: process.env.CLIENT_ID!,
-  // oauthServer: process.env.AUTH_SERVER!,
+  oauthServer: process.env.AUTH_SERVER!,
   redirectUrl: `http://localhost:${PORT}/auth/callback`,
   postLogoutRedirectUrl: `http://localhost:${PORT}/`,
 };
