@@ -59,6 +59,11 @@ Then('I click the civic wallet button', () => {
     .click();
 });
 
+Then('I confirm I am logged in', () => {
+  cy.get('#civic-dropdown-container').contains('button', 'Ghost').should('be.visible');
+});
+
+
 When('I click log in with dummy in the iframe', () => {
   cy.enter('#civic-auth-iframe').then(getBody => {
     cy.get('#civic-auth-iframe')
@@ -72,7 +77,9 @@ When('I click log in with dummy in the iframe', () => {
         }).as('open');
       })
 
-    getBody().find('button').contains('Log in with Dummy').click();
+      getBody().find('[data-testid="civic-login-oidc-button-dummy"]').click();
+
+    // getBody().find('button').contains('Log in with Dummy').click();
   });
 });
 
@@ -85,11 +92,12 @@ When('I click log in with dummy in the page', () => {
       return null;
     }).as('open');
   })
+  cy.get('[data-testid="civic-login-oidc-button-dummy"]').should('be.visible').click();
 
-  // Step 2: Trigger the action that opens the popup
-  cy.contains('button', 'Log in with Dummy')
-    .should('be.visible')
-    .click();
+  // // Step 2: Trigger the action that opens the popup
+  // cy.contains('button', 'Log in with Dummy')
+  //   .should('be.visible')
+  //   .click();
 });
 
 When('I confirm provider is visible on the page', () => {
@@ -156,9 +164,11 @@ When('I click log in with dummy in the server app page', () => {
     });
   }).as('authCallback');
 
-  cy.contains('button', 'Log in with Dummy')
-    .should('be.visible')
-    .click();
+  cy.get('[data-testid="civic-login-oidc-button-dummy"]').should('be.visible').click();
+
+  // cy.contains('button', 'Log in with Dummy')
+  //   .should('be.visible')
+  //   .click();
 
   cy.wait('@authCallback', { timeout: 30000 });
 });

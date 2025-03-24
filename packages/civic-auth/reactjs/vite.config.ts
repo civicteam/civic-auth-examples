@@ -4,7 +4,7 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   plugins: [],
   server: {
-    port: 3006,
+    port: 3001,
     host: '0.0.0.0'
   },
 })

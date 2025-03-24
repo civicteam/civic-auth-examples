@@ -1,5 +1,6 @@
-Feature: Confirm fastify app builds and loads correctly
+Feature: Log in with fastify app
 
-  Scenario: Confirm fastify app builds and loads correctly
+  Scenario: Log in with fastify app
     Given I open the 'FASTIFY' server app home page
-    And I confirm provider is visible on the page
+    When I click log in with dummy in the server app page
+    Then I am logged in and redirected to the 'FASTIFY' hello page
