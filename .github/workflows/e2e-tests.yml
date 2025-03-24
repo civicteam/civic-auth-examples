@@ -105,6 +105,10 @@ jobs:
       CLIENT_ID: ${{ secrets.CLIENT_ID }}
       VITE_CLIENT_ID: ${{ secrets.CLIENT_ID }}
       CYPRESS_CLIENT_ID: ${{ secrets.CLIENT_ID }}
+      AUTH_SERVER: ${{ secrets.AUTH_SERVER }}
+      VITE_AUTH_SERVER: ${{ secrets.AUTH_SERVER }}
+      NEXT_PUBLIC_WALLET_API_BASE_URL: ${{ secrets.NEXT_PUBLIC_WALLET_API_BASE_URL }}
+      VITE_WALLET_API_BASE_URL: ${{ secrets.VITE_WALLET_API_BASE_URL }}
     defaults:
       run:
         working-directory: ./
@@ -301,29 +305,29 @@ jobs:
             --timeout 300000 \
             --verbose
 
-      # - name: Run Cypress example app e2e prod tests
-      #   id: cypress
-      #   uses: cypress-io/github-action@v6
-      #   with:
-      #     working-directory: packages/e2e
-      #     command: yarn cypress run --browser chrome --record
-      #     browser: chrome
-      #     install: true
-      #     record: true
-      #   env:
-      #     NEXT_JS_BASE_URL: 'http://localhost:3000'
-      #     REACT_BASE_URL: 'http://localhost:3001'
-      #     EXPRESS_BASE_URL: 'http://localhost:3002'
-      #     FASTIFY_BASE_URL: 'http://localhost:3003'
-      #     HONO_BASE_URL: 'http://localhost:3004'
-      #     SOLANA_NEXT14_NO_WA_BASE_URL: 'http://localhost:3005'
-      #     SOLANA_NEXT14_WA_BASE_URL: 'http://localhost:3006'
-      #     SOLANA_NEXT15_NO_WA_BASE_URL: 'http://localhost:3007'
-      #     SOLANA_NEXT15_WA_BASE_URL: 'http://localhost:3008'
-      #     SOLANA_VITE_NO_WA_BASE_URL: 'http://localhost:3009'
-      #     SOLANA_VITE_WA_BASE_URL: 'http://localhost:3010'
-      #     WAGMI_BASE_URL: 'http://localhost:3011'
-      #     CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+      - name: Run Cypress example app e2e prod tests
+        id: cypress
+        uses: cypress-io/github-action@v6
+        with:
+          working-directory: packages/e2e
+          command: yarn cypress run --browser chrome --record
+          browser: chrome
+          install: true
+          record: true
+        env:
+          NEXT_JS_BASE_URL: 'http://localhost:3000'
+          REACT_BASE_URL: 'http://localhost:3001'
+          EXPRESS_BASE_URL: 'http://localhost:3002'
+          FASTIFY_BASE_URL: 'http://localhost:3003'
+          HONO_BASE_URL: 'http://localhost:3004'
+          SOLANA_NEXT14_NO_WA_BASE_URL: 'http://localhost:3005'
+          SOLANA_NEXT14_WA_BASE_URL: 'http://localhost:3006'
+          SOLANA_NEXT15_TURBO_NO_WA_BASE_URL: 'http://localhost:3007'
+          SOLANA_NEXT15_TURBO_WA_BASE_URL: 'http://localhost:3008'
+          SOLANA_VITE_NO_WA_BASE_URL: 'http://localhost:3009'
+          SOLANA_VITE_WA_BASE_URL: 'http://localhost:3010'
+          WAGMI_BASE_URL: 'http://localhost:3011'
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
 
       # - name: Send Slack Notification on Failure
       #   if: failure()

@@ -1,6 +1,9 @@
-Feature: Confirm wagmi app builds and loads correctly
+Feature: Confirm wagmi without wallet adapter logs in and shows balance
 
-  Scenario: Confirm wagmi app builds and loads correctly
+  Scenario: Confirm wagmi without wallet adapter logs in and shows balance
     Given I open the 'WAGMI' app home page
-    And I click the sign in button
-    And I confirm provider is visible in iframe
+    When I click the sign in button
+    And I click log in with dummy in the iframe
+
+  Scenario: Verify login
+    Then I confirm ethereum login without wallet adapter

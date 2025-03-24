@@ -42,7 +42,7 @@ const App = () => {
       {address && (
         <div>
           <p>Wallet address: {address}</p>
-          <p>Balance: {balance ? `${balance / 1e9} SOL` : "Loading..."}</p>
+          <p>Balance: {balance !== null && balance !== undefined ? `${balance / 1e9} SOL` : "Loading..."}</p>
         </div>
       )}
     </>

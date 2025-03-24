@@ -29,7 +29,7 @@ const Wallet = () => {
         {publicKey && (
             <div>
               <p>Wallet address: {publicKey.toString()}</p>
-              <p>Balance: {balance ? `${balance / 1e9} SOL` : "Loading..."}</p>
+              <p>Balance: {balance !== null && balance !== undefined ? `${balance / 1e9} SOL` : "Loading..."}</p>
             </div>
         )}
       </>
