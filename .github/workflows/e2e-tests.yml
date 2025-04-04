@@ -2,7 +2,7 @@ name: Build and run example apps using prod endpoints
 
 on:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '0 0 * * *'  # Run daily at midnight UTC
   push:
   pull_request:
 
@@ -10,7 +10,10 @@ jobs:
   check-version:
     runs-on: ubuntu-latest
     outputs:
+<<<<<<< HEAD
       version_changed: ${{ steps.check-version.outputs.version_changed }}
+=======
+>>>>>>> origin
       auth_latest: ${{ steps.check-version.outputs.auth_latest }}
       web3_latest: ${{ steps.check-version.outputs.web3_latest }}
     steps:
@@ -21,9 +24,6 @@ jobs:
       - name: Check Versions
         id: check-version
         run: |
-          # Default to false
-          echo "version_changed=false" >> $GITHUB_OUTPUT
-          
           AUTH_BETA_VERSION=$(npm view @civic/auth@beta version)
           AUTH_PROD_VERSION=$(npm view @civic/auth version)
           WEB3_BETA_VERSION=$(npm view @civic/auth-web3@beta version)
@@ -38,6 +38,7 @@ jobs:
           # Using sort -V for version comparison
           AUTH_LATEST=$(echo -e "$AUTH_BETA_VERSION\n$AUTH_PROD_VERSION" | sort -V | tail -n 1)
           WEB3_LATEST=$(echo -e "$WEB3_BETA_VERSION\n$WEB3_PROD_VERSION" | sort -V | tail -n 1)
+<<<<<<< HEAD
           
           echo "Auth Latest version: $AUTH_LATEST"
           echo "Web3 Latest version: $WEB3_LATEST"
@@ -81,25 +82,32 @@ jobs:
             echo "First run - no previous versions file found"
             echo "version_changed=true" >> $GITHUB_OUTPUT
           fi
+=======
+>>>>>>> origin
           
-          # Write new versions to file
+          echo "Auth Latest version: $AUTH_LATEST"
+          echo "Web3 Latest version: $WEB3_LATEST"
+          
+          # Set outputs for use in subsequent steps
+          echo "auth_latest=$AUTH_LATEST" >> $GITHUB_OUTPUT
+          echo "web3_latest=$WEB3_LATEST" >> $GITHUB_OUTPUT
+          
+          # Write new versions to file for reference
           echo "$AUTH_BETA_VERSION" > .civic-versions
           echo "$AUTH_PROD_VERSION" >> .civic-versions
           echo "$WEB3_BETA_VERSION" >> .civic-versions
           echo "$WEB3_PROD_VERSION" >> .civic-versions
       
-      - name: Commit and push if versions changed
-        if: steps.check-version.outputs.version_changed == 'true'
+      - name: Commit and push version file
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add .civic-versions
-          git commit -m "Update .civic-versions file [skip ci]" || echo "No changes to commit"
+          git commit -m "Update .civic-versions file for daily test [skip ci]" || echo "No changes to commit"
           git push
 
   build:
     needs: check-version
-    if: needs.check-version.outputs.version_changed == 'true'
     runs-on: ubuntu-latest
     env:
       CLIENT_ID: ${{ secrets.CLIENT_ID }}
