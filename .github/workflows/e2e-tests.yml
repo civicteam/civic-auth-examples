@@ -10,12 +10,10 @@ jobs:
   check-version:
     runs-on: ubuntu-latest
     outputs:
-<<<<<<< HEAD
       version_changed: ${{ steps.check-version.outputs.version_changed }}
-=======
->>>>>>> origin
       auth_latest: ${{ steps.check-version.outputs.auth_latest }}
       web3_latest: ${{ steps.check-version.outputs.web3_latest }}
+      
     steps:
       - uses: actions/checkout@v4
         with:
@@ -38,7 +36,6 @@ jobs:
           # Using sort -V for version comparison
           AUTH_LATEST=$(echo -e "$AUTH_BETA_VERSION\n$AUTH_PROD_VERSION" | sort -V | tail -n 1)
           WEB3_LATEST=$(echo -e "$WEB3_BETA_VERSION\n$WEB3_PROD_VERSION" | sort -V | tail -n 1)
-<<<<<<< HEAD
           
           echo "Auth Latest version: $AUTH_LATEST"
           echo "Web3 Latest version: $WEB3_LATEST"
@@ -82,8 +79,6 @@ jobs:
             echo "First run - no previous versions file found"
             echo "version_changed=true" >> $GITHUB_OUTPUT
           fi
-=======
->>>>>>> origin
           
           echo "Auth Latest version: $AUTH_LATEST"
           echo "Web3 Latest version: $WEB3_LATEST"
