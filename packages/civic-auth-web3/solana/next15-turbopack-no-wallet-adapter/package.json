@@ -3,14 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev --turbopack --port 3007",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "@civic/auth-web3": "*",
-    "next": "15.2.2",
+    "next": "^15.2.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
