@@ -22,7 +22,7 @@ const config = {
   clientId: process.env.CLIENT_ID!,
   oauthServer: process.env.AUTH_SERVER!,
   redirectUrl: `http://localhost:${PORT}/auth/callback`,
-  postLogoutRedirectUrl: `http://localhost:${PORT}/`,
+  postLogoutRedirectUrl: `http://localhost:${PORT}/auth/logoutcallback`,
 };
 
 class HonoCookieStorage extends CookieStorage {
@@ -119,6 +119,7 @@ app.get('/auth/logoutcallback', async (c) => {
 app.get('/admin/hello', async (c) => {
   try {
     const user = await c.get('civicAuth').getUser();
+    if (!user) return c.redirect("/");
     return c.html(`
       <html>
         <body>
