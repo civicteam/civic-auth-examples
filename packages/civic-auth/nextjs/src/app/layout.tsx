@@ -1,13 +1,25 @@
-import { CivicAuthProvider } from "@civic/auth/nextjs";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+import { Providers } from "./providers";
+
+const inter = Inter({ subsets: ["latin"] });
+
+export const metadata: Metadata = {
+  title: "Civic Authorization Service",
+  description: "Authorization service for external resources",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <html lang="en">
-      <body>
-        <CivicAuthProvider>
-          {children}
-        </CivicAuthProvider>
+    <html suppressHydrationWarning lang="en">
+      <body className={inter.className}>
+        <Providers>{children}</Providers>
       </body>
     </html>
-  )
+  );
 }
