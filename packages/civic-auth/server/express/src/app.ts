@@ -26,7 +26,7 @@ const config = {
   clientId: process.env.CLIENT_ID!,
   oauthServer: process.env.AUTH_SERVER!,
   redirectUrl: `http://localhost:${PORT}/auth/callback`,
-  postLogoutRedirectUrl: `http://localhost:${PORT}/`,
+  postLogoutRedirectUrl: `http://localhost:${PORT}/auth/logoutcallback`,
 };
 
 class ExpressCookieStorage extends CookieStorage {
@@ -90,6 +90,9 @@ app.use("/admin", authMiddleware);
 
 app.get("/admin/hello", async (req: Request, res: Response) => {
   const user = await req.civicAuth.getUser();
+  if (!user) return res.redirect("/");
+
+  console.log("User:", user);
   res.setHeader("Content-Type", "text/html");
   res.send(`
     <html>
