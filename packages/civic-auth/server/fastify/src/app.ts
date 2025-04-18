@@ -68,6 +68,8 @@ class FastifyCookieStorage extends CookieStorage {
 // Extend Fastify types to include our storage and civicAuth properties
 declare module 'fastify' {
   export interface FastifyRequest {
+    _storage: FastifyCookieStorage;
+    _civicAuth: CivicAuth;
     storage: FastifyCookieStorage;
     civicAuth: CivicAuth;
   }
@@ -77,9 +79,24 @@ await fastify.register(fastifyCookie, {
   secret: env.COOKIE_SECRET || "my-secret"
 });
 
-// Decorate request with storage and civicAuth
-fastify.decorateRequest('storage', {} as FastifyCookieStorage);
-fastify.decorateRequest('civicAuth', {} as CivicAuth);
+// Decorate request with storage and civicAuth using getter/setter pattern
+fastify.decorateRequest('storage', {
+  getter: function(this: FastifyRequest) {
+    return this._storage;
+  },
+  setter: function(this: FastifyRequest, val: FastifyCookieStorage) {
+    this._storage = val;
+  }
+});
+
+fastify.decorateRequest('civicAuth', {
+  getter: function(this: FastifyRequest) {
+    return this._civicAuth;
+  },
+  setter: function(this: FastifyRequest, val: CivicAuth) {
+    this._civicAuth = val;
+  }
+});
 
 // Add storage and civicAuth to each request
 fastify.addHook('preHandler', async (request, reply) => {
