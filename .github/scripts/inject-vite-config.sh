@@ -35,24 +35,35 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-# Now, append the correct constants after the import line using the temp file
-echo "   Appending new const declarations..."
-sed -i.bak -e '/import.*@civic\/auth-web3/a \
-const CLIENT_ID = import.meta.env.VITE_CLIENT_ID;\
-const AUTH_SERVER = import.meta.env.VITE_AUTH_SERVER;\
-const WALLET_API_BASE_URL = import.meta.env.VITE_WALLET_API_BASE_URL;' "$SED_TMP" 
+# Now find the last import line and append the constants after it
+echo "   Appending new const declarations after imports..."
+LAST_IMPORT_LINE=$(grep -n "^import" "$SED_TMP" | tail -n 1 | cut -d: -f1)
 
-if [ $? -ne 0 ]; then
-    echo "   ❌ Error appending new const definitions to $TARGET_FILE"
-    # Restore original file from backup created by the append sed -i.bak
-    [ -f "${TARGET_FILE}.bak" ] && mv "${TARGET_FILE}.bak" "$TARGET_FILE"
-    exit 1
+if [ -z "$LAST_IMPORT_LINE" ]; then
+    # No import found, add at the beginning
+    LAST_IMPORT_LINE=0
 fi
 
+# Create a temporary file with the first part (before and including the last import)
+head -n "$LAST_IMPORT_LINE" "$SED_TMP" > "$SED_TMP.head"
+
+# Create a temporary file with the rest of the file (after the last import)
+tail -n +$((LAST_IMPORT_LINE + 1)) "$SED_TMP" > "$SED_TMP.tail"
+
+# Create the combined file with constants in between
+cat "$SED_TMP.head" > "$SED_TMP.new"
+echo "" >> "$SED_TMP.new"
+echo "const CLIENT_ID = import.meta.env.VITE_CLIENT_ID;" >> "$SED_TMP.new"
+echo "const AUTH_SERVER = import.meta.env.VITE_AUTH_SERVER;" >> "$SED_TMP.new"
+echo "const WALLET_API_BASE_URL = import.meta.env.VITE_WALLET_API_BASE_URL;" >> "$SED_TMP.new"
+echo "" >> "$SED_TMP.new"
+cat "$SED_TMP.tail" >> "$SED_TMP.new"
+
 # Replace original file with the fully corrected temp file
-mv "$SED_TMP" "$TARGET_FILE" || { echo "❌ Error replacing original file with corrected constants"; exit 1; }
-rm -f "${TARGET_FILE}.bak" # Clean up backup from the append step
-# SED_TMP is now the main file, trap will clean remaining temp files
+mv "$SED_TMP.new" "$TARGET_FILE" || { echo "❌ Error replacing original file with corrected constants"; exit 1; }
+
+# Clean up temporary files
+rm -f "$SED_TMP.head" "$SED_TMP.tail" "$SED_TMP"
 
 # --- Handle block replacement using split/cat --- 
 
@@ -68,10 +79,21 @@ fi
 
 echo "   Found start pattern on line: $START_LINE"
 
-# Define the end line of the block to be replaced (start + 2 lines = 3 total lines)
-BLOCK_END_LINE=$((START_LINE + 2))
+# Find the closing bracket of CivicAuthProvider
+END_LINE=$(tail -n +"$START_LINE" "$TARGET_FILE" | grep -n ">$" | head -n 1 | cut -d: -f1)
+if [ -z "$END_LINE" ]; then
+  # Try with a different pattern for the closing bracket
+  END_LINE=$(tail -n +"$START_LINE" "$TARGET_FILE" | grep -n ">" | head -n 1 | cut -d: -f1)
+  if [ -z "$END_LINE" ]; then
+    echo "   ❌ Error: Could not find end pattern '>' for CivicAuthProvider."
+    exit 1
+  fi
+fi
+
+# Calculate the actual line number in the file
+END_LINE=$((START_LINE + END_LINE - 1))
 # Define the start line of the content after the block
-SUFFIX_START_LINE=$((BLOCK_END_LINE + 1))
+SUFFIX_START_LINE=$((END_LINE + 1))
 
 # Create temporary files (relying on trap for cleanup)
 PART1_TMP=$(mktemp)
