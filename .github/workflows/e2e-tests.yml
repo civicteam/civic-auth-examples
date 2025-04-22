@@ -5,6 +5,7 @@ on:
     - cron: '0 0 * * *'  # Run daily at midnight UTC
   push:
   pull_request:
+  workflow_dispatch:
 
 jobs:
   check-version:
@@ -125,6 +126,27 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+
+      # Inject dynamic configuration into Next.js config files
+      - name: Inject Next.js Config
+        run: |
+          chmod +x .github/scripts/inject-next-config.sh
+          .github/scripts/inject-next-config.sh
+
+      # Inject dynamic configuration into Vite source files
+      - name: Inject Vite Config
+        run: |
+          chmod +x .github/scripts/inject-vite-config.sh
+          chmod +x .github/scripts/inject-reactjs-config.sh
+          
+          echo "Injecting block into vite-no-wallet-adapter..."
+          .github/scripts/inject-vite-config.sh "packages/civic-auth-web3/solana/vite-no-wallet-adapter/src/main.tsx"
+          echo "Injecting block into vite-wallet-adapter..."
+          .github/scripts/inject-vite-config.sh "packages/civic-auth-web3/solana/vite-wallet-adapter/src/main.tsx"
+          echo "Injecting block into wagmi..."
+          .github/scripts/inject-vite-config.sh "packages/civic-auth-web3/wagmi/src/App.tsx"
+          echo "Injecting block into reactjs..."
+          .github/scripts/inject-reactjs-config.sh "packages/civic-auth/reactjs/src/App.tsx"
 
       # Check directory structure before installing
       - name: Check Repository Structure
