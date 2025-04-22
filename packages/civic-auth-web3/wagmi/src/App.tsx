@@ -11,12 +11,9 @@ import { userHasWallet } from '@civic/auth-web3';
 import { embeddedWallet } from '@civic/auth-web3/wagmi';
 import { CivicAuthProvider, UserButton, useUser } from '@civic/auth-web3/react';
 import { mainnet, sepolia } from "wagmi/chains";
-import { auth } from "@civic/auth-web3/nextjs/middleware";
 
 const CLIENT_ID = import.meta.env.VITE_CLIENT_ID;
-const AUTH_SERVER = import.meta.env.VITE_AUTH_SERVER;
 if (!CLIENT_ID) throw new Error('CLIENT_ID is required');
-const WALLET_API_BASE_URL = import.meta.env.VITE_WALLET_API_BASE_URL;
 
 
 const wagmiConfig = createConfig({
@@ -40,8 +37,6 @@ const App = () => {
       <WagmiProvider config={wagmiConfig as any}>
       <CivicAuthProvider 
           clientId={CLIENT_ID} 
-          config={{ oauthServer: AUTH_SERVER }}
-          endpoints={{ wallet: WALLET_API_BASE_URL }}
           >
           <AppContent />
         </CivicAuthProvider>

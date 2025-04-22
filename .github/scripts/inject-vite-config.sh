@@ -10,25 +10,56 @@ if [ -z "$1" ]; then
 fi
 TARGET_FILE="$1"
 
-echo "🔍 Performing exact block replacement in $TARGET_FILE using split/cat with extra checks..."
+echo "🔍 Fixing constants and block in $TARGET_FILE using sed + split/cat..."
 
-# --- Handle specific file with block replacement --- 
+# --- Ensure correct const definitions --- 
 
 if [ ! -f "$TARGET_FILE" ]; then
   echo "   ⚠️ Error: Target file not found - $TARGET_FILE"
   exit 1
 fi
 
-echo "   Processing target file: $TARGET_FILE..."
+echo "   Ensuring const definitions..."
+SED_TMP=$(mktemp)
+# Setup trap for all temp files used later as well
+trap 'rm -f "$SED_TMP" "$PART1_TMP" "$PART2_TMP" "$FINAL_TMP"' EXIT
 
-# Find the starting line number
-# Use standard grep for portability, ensure pattern does not contain regex metachars accidentally
+# Delete existing const lines and insert new ones after the import
+# Use standard grep -q check before deleting to avoid error if const not present
+if grep -q '^const CLIENT_ID = ' "$TARGET_FILE"; then
+  sed -e '/^const CLIENT_ID = /d' "$TARGET_FILE" > "$SED_TMP" && mv "$SED_TMP" "$TARGET_FILE"
+fi
+if grep -q '^const AUTH_SERVER = ' "$TARGET_FILE"; then
+  sed -e '/^const AUTH_SERVER = /d' "$TARGET_FILE" > "$SED_TMP" && mv "$SED_TMP" "$TARGET_FILE"
+fi
+if grep -q '^const WALLET_API_BASE_URL = ' "$TARGET_FILE"; then
+  sed -e '/^const WALLET_API_BASE_URL = /d' "$TARGET_FILE" > "$SED_TMP" && mv "$SED_TMP" "$TARGET_FILE"
+fi
+
+# Append the correct constants after the import line
+# Assume an import line with @civic/auth-web3 exists
+sed -i.bak -e '/import.*@civic\/auth-web3/a \
+const CLIENT_ID = import.meta.env.VITE_CLIENT_ID;\
+const AUTH_SERVER = import.meta.env.VITE_AUTH_SERVER;\
+const WALLET_API_BASE_URL = import.meta.env.VITE_WALLET_API_BASE_URL;' "$TARGET_FILE"
+
+if [ $? -ne 0 ]; then
+    echo "   ❌ Error fixing const definitions in $TARGET_FILE"
+    [ -f "${TARGET_FILE}.bak" ] && mv "${TARGET_FILE}.bak" "$TARGET_FILE"
+    exit 1
+fi
+rm -f "${TARGET_FILE}.bak" # Clean up backup
+# SED_TMP will be cleaned by trap
+
+# --- Handle block replacement using split/cat --- 
+
+echo "   Processing block replacement for target file: $TARGET_FILE..."
+
+# Find the starting line number (AFTER const fix)
 START_LINE=$(grep -n '<CivicAuthProvider' "$TARGET_FILE" | head -n 1 | cut -d: -f1)
 
 if [ -z "$START_LINE" ]; then
-  echo "   ❌ Error: Could not find start pattern '<CivicAuthProvider' in $TARGET_FILE"
-  # Exit 0 here maybe, if it's okay for some files not to match?
-  # For now, let's exit with error if the specific pattern isn't found.
+  echo "   ❌ Error: Could not find start pattern '<CivicAuthProvider' in $TARGET_FILE after fixing constants."
   exit 1 
 fi
 
@@ -39,13 +70,10 @@ BLOCK_END_LINE=$((START_LINE + 2))
 # Define the start line of the content after the block
 SUFFIX_START_LINE=$((BLOCK_END_LINE + 1))
 
-# Create temporary files
+# Create temporary files (relying on trap for cleanup)
 PART1_TMP=$(mktemp)
 PART2_TMP=$(mktemp)
 FINAL_TMP=$(mktemp)
-
-# Ensure cleanup on exit
-trap 'rm -f "$PART1_TMP" "$PART2_TMP" "$FINAL_TMP"' EXIT
 
 # Extract part 1 (before the block)
 PREFIX_END_LINE=$((START_LINE - 1))
@@ -54,7 +82,6 @@ if [ "$PREFIX_END_LINE" -gt 0 ]; then
   head -n "$PREFIX_END_LINE" "$TARGET_FILE" > "$PART1_TMP" || { echo "❌ Error running head"; exit 1; }
 else
   echo "   No prefix lines to extract."
-  # Ensure PART1_TMP is empty if START_LINE is 1
   > "$PART1_TMP"
 fi
 
@@ -66,7 +93,7 @@ tail -n +"$SUFFIX_START_LINE" "$TARGET_FILE" > "$PART2_TMP" || { echo "❌ Error
 echo "   Reconstructing file..."
 cat "$PART1_TMP" > "$FINAL_TMP" || { echo "❌ Error cat part1"; exit 1; }
 
-# Append the Replacement Block using a Here Document
+# Append the Replacement Block using a Here Document (Includes endpoints)
 cat << EOF >> "$FINAL_TMP" || { echo "❌ Error cat here-doc"; exit 1; }
     <CivicAuthProvider 
       clientId={CLIENT_ID} 
@@ -89,4 +116,4 @@ else
 fi
 # Trap will clean up remaining temp files
 
-echo "✅ Exact block replacement complete for $TARGET_FILE." 
+echo "✅ Vite config const and block replacement complete for $TARGET_FILE." 
