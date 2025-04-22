@@ -24,32 +24,35 @@ SED_TMP=$(mktemp)
 # Setup trap for all temp files used later as well
 trap 'rm -f "$SED_TMP" "$PART1_TMP" "$PART2_TMP" "$FINAL_TMP"' EXIT
 
-# Delete existing const lines and insert new ones after the import
-# Use standard grep -q check before deleting to avoid error if const not present
-if grep -q '^const CLIENT_ID = ' "$TARGET_FILE"; then
-  sed -e '/^const CLIENT_ID = /d' "$TARGET_FILE" > "$SED_TMP" && mv "$SED_TMP" "$TARGET_FILE"
-fi
-if grep -q '^const AUTH_SERVER = ' "$TARGET_FILE"; then
-  sed -e '/^const AUTH_SERVER = /d' "$TARGET_FILE" > "$SED_TMP" && mv "$SED_TMP" "$TARGET_FILE"
-fi
-if grep -q '^const WALLET_API_BASE_URL = ' "$TARGET_FILE"; then
-  sed -e '/^const WALLET_API_BASE_URL = /d' "$TARGET_FILE" > "$SED_TMP" && mv "$SED_TMP" "$TARGET_FILE"
+# Delete ALL existing const lines first in one pass
+echo "   Deleting existing const declarations..."
+sed -e '/^const CLIENT_ID = /d' \
+    -e '/^const AUTH_SERVER = /d' \
+    -e '/^const WALLET_API_BASE_URL = /d' "$TARGET_FILE" > "$SED_TMP"
+
+if [ $? -ne 0 ]; then
+    echo "   ❌ Error deleting existing const definitions from $TARGET_FILE"
+    exit 1
 fi
 
-# Append the correct constants after the import line
-# Assume an import line with @civic/auth-web3 exists
+# Now, append the correct constants after the import line using the temp file
+echo "   Appending new const declarations..."
 sed -i.bak -e '/import.*@civic\/auth-web3/a \
 const CLIENT_ID = import.meta.env.VITE_CLIENT_ID;\
 const AUTH_SERVER = import.meta.env.VITE_AUTH_SERVER;\
-const WALLET_API_BASE_URL = import.meta.env.VITE_WALLET_API_BASE_URL;' "$TARGET_FILE"
+const WALLET_API_BASE_URL = import.meta.env.VITE_WALLET_API_BASE_URL;' "$SED_TMP" 
 
 if [ $? -ne 0 ]; then
-    echo "   ❌ Error fixing const definitions in $TARGET_FILE"
+    echo "   ❌ Error appending new const definitions to $TARGET_FILE"
+    # Restore original file from backup created by the append sed -i.bak
     [ -f "${TARGET_FILE}.bak" ] && mv "${TARGET_FILE}.bak" "$TARGET_FILE"
     exit 1
 fi
-rm -f "${TARGET_FILE}.bak" # Clean up backup
-# SED_TMP will be cleaned by trap
+
+# Replace original file with the fully corrected temp file
+mv "$SED_TMP" "$TARGET_FILE" || { echo "❌ Error replacing original file with corrected constants"; exit 1; }
+rm -f "${TARGET_FILE}.bak" # Clean up backup from the append step
+# SED_TMP is now the main file, trap will clean remaining temp files
 
 # --- Handle block replacement using split/cat --- 
 
