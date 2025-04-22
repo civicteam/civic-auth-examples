@@ -126,6 +126,12 @@ jobs:
         with:
           node-version: '20'
 
+      # Inject dynamic configuration into Next.js config files
+      - name: Inject Next.js Config
+        run: |
+          chmod +x .github/scripts/inject-next-config.sh
+          .github/scripts/inject-next-config.sh
+
       # Check directory structure before installing
       - name: Check Repository Structure
         run: |
