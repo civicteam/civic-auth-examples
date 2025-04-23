@@ -10,9 +10,7 @@ export const Providers = ({ children }: { children: React.ReactNode }) => {
         <ConnectionProvider endpoint={clusterApiUrl("devnet")}>
             <WalletProvider wallets={[]} autoConnect>
                 <WalletModalProvider>
-                    <CivicAuthProvider
-                        endpoints={{ wallet: process.env.NEXT_PUBLIC_WALLET_API_BASE_URL }}
-                    >
+                    <CivicAuthProvider>
                         <WalletMultiButton />
                         {children}
                     </CivicAuthProvider>
