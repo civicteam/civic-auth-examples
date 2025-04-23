@@ -21,7 +21,7 @@ if (!fs.existsSync(absolutePath)) {
 
 const clientIdRegex = /(\s*)(clientId:\s*(?:[`'"]?\s*\$\{process\.env\.CLIENT_ID\}\s*[`'"]?)?)/;
 const oauthServerRegex = /oauthServer:/;
-const callbackUrlRegex = /callbackUrl:/;
+const callbackUrlRegex = /callbackUrl:|redirectUrl:/;
 
 try {
   let content = fs.readFileSync(absolutePath, 'utf8');
@@ -57,16 +57,9 @@ try {
       // 3. Insert using splice
       const oauthLine = indentation + 'oauthServer: `' + '${process.env.AUTH_SERVER}`' + ',';
       
-      // Conditionally add callbackUrl based on file path
-      if (filePath !== 'packages/civic-auth/nextjs/next.config.ts') {
-        const callbackLine = `${indentation}callbackUrl: \`http://localhost:\${PORT}/api/auth/callback\``;
-        lines.splice(clientIdIndex + 1, 0, oauthLine, callbackLine); 
-        console.log(`   Injected oauthServer and callbackUrl into ${filePath}`);
-      } else {
-        // Only inject oauthServer for the specific next.config.ts file
-        lines.splice(clientIdIndex + 1, 0, oauthLine);
-        console.log(`   Injected oauthServer (only) into ${filePath}`);
-      }
+      // Only inject oauthServer, don't modify the existing callback/redirect URLs
+      lines.splice(clientIdIndex + 1, 0, oauthLine);
+      console.log(`   Injected oauthServer into ${filePath}`);
 
       inserted = true;
       modified = true; // Mark as modified if inserted
