@@ -47,7 +47,7 @@
   dependencies:
     "@babel/types" "^7.26.10"
 
-"@babel/runtime@^7.12.5", "@babel/runtime@^7.18.3", "@babel/runtime@^7.26.7":
+"@babel/runtime@^7.12.5", "@babel/runtime@^7.18.3":
   version "7.26.10"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.26.10.tgz#a07b4d8fa27af131a633d7b3524db803eb4764c2"
   integrity sha512-2WJMeRQPHKSPemqk/awGrAiuFfzBmOIPXKizAsVhWH9YJqLZ0H+HS4c8loHGgW6utJ3E/ejXQUsiGaQy2NZ9Fw==
@@ -84,13 +84,13 @@
     "@babel/helper-string-parser" "^7.25.9"
     "@babel/helper-validator-identifier" "^7.25.9"
 
-"@civic/auth@0.4.0-beta.0":
-  version "0.4.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@civic/auth/-/auth-0.4.0-beta.0.tgz#4c91a33570bc7769800f35337d2aa5413bf0ea03"
-  integrity sha512-C+sWCJ244Jnq/5OEIdktzoF4BF5plo/zFRAda8ghkMrQUQLzY+PNFd8a9GLvAvEbW8Tga7KOex1jylNbtdYlLw==
+"@civic/auth@0.4.7":
+  version "0.4.7"
+  resolved "https://registry.yarnpkg.com/@civic/auth/-/auth-0.4.7.tgz#3c1b3e04aab7ca637728e96b94e2fb0da6a1dbc2"
+  integrity sha512-W9XYw/TBqHG8YRvvePzL3hG5xtn2tjnFfL2lbnhgTBNG87ccN7prZN3Yz/Cc/4gVfCQegd8j6HFb5fEWFeBx8w==
   dependencies:
+    "@civic/iframe-resizer" "0.1.2"
     "@emotion/react" "^11.14.0"
-    "@iframe-resizer/react" "^5.3.3"
     debug "^4.3.7"
     eventemitter3 "^5.0.1"
     jose "^5.9.4"
@@ -99,6 +99,11 @@
     ts-deepmerge "^7.0.2"
     usehooks-ts "^3.1.0"
     uuid "^10.0.0"
+
+"@civic/iframe-resizer@0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@civic/iframe-resizer/-/iframe-resizer-0.1.2.tgz#181279c0a815d3fdc5b8e024da7874cc1154593f"
+  integrity sha512-aAtwNWCk8karz3PRvqLskerkxJjaBYHX/q0ZmYpF2j74b/R8ZWG8R5hkrMmMTBWTHdhifssdfGR6aozTCWmcFA==
 
 "@cspotcode/source-map-support@^0.8.0":
   version "0.8.1"
@@ -208,19 +213,6 @@
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.4.0.tgz#5e13fac887f08c44f76b0ccaf3370eb00fec9bb6"
   integrity sha512-snKqtPW01tN0ui7yu9rGv69aJXr/a/Ywvl11sUjNtEcRc+ng/mQriFL0wLXMef74iHa/EkftbDzU9F8iFbH+zg==
-
-"@iframe-resizer/core@5.3.3":
-  version "5.3.3"
-  resolved "https://registry.yarnpkg.com/@iframe-resizer/core/-/core-5.3.3.tgz#d03fe7c27be44d456aafa9b4c3a80d8a8757356c"
-  integrity sha512-DnR8PwoG5Nmv8Xgzop39cIRMeOg3bLsvsApw+LlKqfmN6I8miUAlFXB+vpuYm62l/jWjaQ6r8sTsvBHBof8Esg==
-
-"@iframe-resizer/react@^5.3.3":
-  version "5.3.3"
-  resolved "https://registry.yarnpkg.com/@iframe-resizer/react/-/react-5.3.3.tgz#f11097ada32547ffabb57c067358dbdc29ebd7db"
-  integrity sha512-UwlRHy8ZY/ap6ytNRdQ7RgWQOhmi3SWjexVBuuvIpHVq6ofSEUYkctNBUYrscAdFNWVq5+KasJBpJSLnCrZsjQ==
-  dependencies:
-    "@babel/runtime" "^7.26.7"
-    "@iframe-resizer/core" "5.3.3"
 
 "@jridgewell/gen-mapping@^0.3.5":
   version "0.3.8"

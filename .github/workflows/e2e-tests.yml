@@ -34,9 +34,29 @@ jobs:
           echo "Web3 Production version: $WEB3_PROD_VERSION"
           
           # Determine latest versions by comparing beta vs production
-          # Using sort -V for version comparison
-          AUTH_LATEST=$(echo -e "$AUTH_BETA_VERSION\n$AUTH_PROD_VERSION" | sort -V | tail -n 1)
-          WEB3_LATEST=$(echo -e "$WEB3_BETA_VERSION\n$WEB3_PROD_VERSION" | sort -V | tail -n 1)
+          # First check if beta version is higher without considering the beta suffix
+          AUTH_BETA_BASE=$(echo $AUTH_BETA_VERSION | sed 's/-beta.*//')
+          AUTH_PROD_BASE=$AUTH_PROD_VERSION
+          
+          WEB3_BETA_BASE=$(echo $WEB3_BETA_VERSION | sed 's/-beta.*//')
+          WEB3_PROD_BASE=$WEB3_PROD_VERSION
+          
+          # Compare base versions first (without beta suffix)
+          if [[ $(echo -e "$AUTH_BETA_BASE\n$AUTH_PROD_BASE" | sort -V | tail -n 1) == "$AUTH_BETA_BASE" && "$AUTH_BETA_BASE" != "$AUTH_PROD_BASE" ]]; then
+            # Beta base version is newer than production
+            AUTH_LATEST=$AUTH_BETA_VERSION
+          else
+            # Production version is newer or same base version
+            AUTH_LATEST=$AUTH_PROD_VERSION
+          fi
+          
+          if [[ $(echo -e "$WEB3_BETA_BASE\n$WEB3_PROD_BASE" | sort -V | tail -n 1) == "$WEB3_BETA_BASE" && "$WEB3_BETA_BASE" != "$WEB3_PROD_BASE" ]]; then
+            # Beta base version is newer than production
+            WEB3_LATEST=$WEB3_BETA_VERSION
+          else
+            # Production version is newer or same base version
+            WEB3_LATEST=$WEB3_PROD_VERSION
+          fi
           
           echo "Auth Latest version: $AUTH_LATEST"
           echo "Web3 Latest version: $WEB3_LATEST"
@@ -60,8 +80,28 @@ jobs:
             echo "Web3 Prod: $PREV_WEB3_PROD"
             
             # Determine previous latest versions
-            PREV_AUTH_LATEST=$(echo -e "$PREV_AUTH_BETA\n$PREV_AUTH_PROD" | sort -V | tail -n 1)
-            PREV_WEB3_LATEST=$(echo -e "$PREV_WEB3_BETA\n$PREV_WEB3_PROD" | sort -V | tail -n 1)
+            PREV_AUTH_BETA_BASE=$(echo $PREV_AUTH_BETA | sed 's/-beta.*//')
+            PREV_AUTH_PROD_BASE=$PREV_AUTH_PROD
+            
+            PREV_WEB3_BETA_BASE=$(echo $PREV_WEB3_BETA | sed 's/-beta.*//')
+            PREV_WEB3_PROD_BASE=$PREV_WEB3_PROD
+            
+            # Compare base versions first (without beta suffix)
+            if [[ $(echo -e "$PREV_AUTH_BETA_BASE\n$PREV_AUTH_PROD_BASE" | sort -V | tail -n 1) == "$PREV_AUTH_BETA_BASE" && "$PREV_AUTH_BETA_BASE" != "$PREV_AUTH_PROD_BASE" ]]; then
+              # Beta base version is newer than production
+              PREV_AUTH_LATEST=$PREV_AUTH_BETA
+            else
+              # Production version is newer or same base version
+              PREV_AUTH_LATEST=$PREV_AUTH_PROD
+            fi
+            
+            if [[ $(echo -e "$PREV_WEB3_BETA_BASE\n$PREV_WEB3_PROD_BASE" | sort -V | tail -n 1) == "$PREV_WEB3_BETA_BASE" && "$PREV_WEB3_BETA_BASE" != "$PREV_WEB3_PROD_BASE" ]]; then
+              # Beta base version is newer than production
+              PREV_WEB3_LATEST=$PREV_WEB3_BETA
+            else
+              # Production version is newer or same base version
+              PREV_WEB3_LATEST=$PREV_WEB3_PROD
+            fi
             
             echo "Previous latest versions:"
             echo "Auth: $PREV_AUTH_LATEST"
