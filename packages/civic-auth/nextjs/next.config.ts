@@ -6,7 +6,8 @@ const nextConfig: NextConfig = {
 };
 
 const withCivicAuth = createCivicAuthPlugin({
-  clientId: `${process.env.CLIENT_ID}`
+  clientId: `${process.env.CLIENT_ID}`,
+  callbackUrl: '/api/myCustomCivicRoute'
 });
 
 export default withCivicAuth(nextConfig)
