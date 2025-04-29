@@ -2,12 +2,12 @@ import { createCivicAuthPlugin } from "@civic/auth/nextjs"
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  basePath: process.env.BASE_PATH || '',
 };
 
 const withCivicAuth = createCivicAuthPlugin({
   clientId: `${process.env.CLIENT_ID}`,
-  callbackUrl: '/api/myCustomCivicRoute'
+  basePath: process.env.BASE_PATH || '',
 });
 
 export default withCivicAuth(nextConfig)
