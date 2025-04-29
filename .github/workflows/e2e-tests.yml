@@ -321,13 +321,17 @@ jobs:
           # Periodically check if services are responding before wait-on
           for i in {1..5}; do
             echo "🔄 Checking application status (attempt $i)..."
-            
+            all_responding=true
+
             for port in 3000 3001 3002 3003 3004 3005 3006 3007 3008 3009 3010 3011; do
-              if curl -s -o /dev/null -w "%{http_code}" http://localhost:$port | grep -q "200\|301\|302\|404"; then
-                echo "✅ Service on port $port is responding with HTTP status"
+              http_code=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:$port)
+              
+              if echo "$http_code" | grep -qE "200|301|302|404"; then
+                echo "✅ Service on port $port is responding with HTTP status $http_code"
               else
-                echo "❌ Service on port $port is not responding with valid HTTP status"
-                
+                echo "❌ Service on port $port is not responding with valid HTTP status (got $http_code)"
+                all_responding=false
+
                 # For failing Next.js apps, show the logs
                 if [[ $port -eq 3000 || ($port -ge 3005 && $port -le 3008) ]]; then
                   case $port in
@@ -337,19 +341,23 @@ jobs:
                     3007) log="solana-next15-no-wa.log" ;;
                     3008) log="solana-next15-wa.log" ;;
                   esac
-                  
                   echo "📜 Last 20 lines of $log:"
                   tail -20 $log
                 fi
               fi
             done
-            
-            # Wait before next check
+
+            if $all_responding; then
+              echo "🎉 All services are responding correctly. Exiting early."
+              break
+            fi
+
             if [ $i -lt 5 ]; then
               echo "⏳ Waiting 15 seconds before next check..."
               sleep 15
             fi
           done
+
 
       - name: Run wait-on with increased timeout
         run: |
