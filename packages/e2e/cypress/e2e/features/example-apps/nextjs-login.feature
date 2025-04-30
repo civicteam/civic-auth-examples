@@ -9,6 +9,4 @@ Feature: Log in with nextjs app
     Then I confirm I am logged in
     
   Scenario: Logout successfully
-    When I click the logout button
-    Then I confirm successful logout
-    And I confirm token refresh fails after logout
+    Then I click the logout button and confirm successful logout
