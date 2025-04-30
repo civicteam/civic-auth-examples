@@ -5,7 +5,7 @@
   "main": "dist/app.js",
   "type": "module",
   "scripts": {
-    "start": "node dist/app.js",
+    "start": "PORT=${PORT:-3002} node dist/app.js",
     "dev": "PORT=3002 NODE_OPTIONS=\"--loader ts-node/esm\" nodemon src/app.ts",
     "predev": "yarn build",
     "build": "tsc"

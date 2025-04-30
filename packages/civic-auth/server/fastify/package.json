@@ -6,9 +6,9 @@
   "type": "module",
   "private": "true",
   "scripts": {
-    "start": "bun run src/app.ts",
-    "build": "bun build src/app.ts --target bun",
-    "dev": "PORT=${PORT:-3003} bun run src/app.ts --watch"
+    "start": "PORT=${PORT:-3003} node dist/app.js",
+    "dev": "PORT=${PORT:-3003} NODE_OPTIONS=\"--loader ts-node/esm\" nodemon src/app.ts",
+    "build": "tsc --outDir dist"
   },
   "dependencies": {
     "@civic/auth": "*",

@@ -7,7 +7,7 @@
     "dev": "vite --port 3001",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview --port 3001"
   },
   "dependencies": {
     "@civic/auth": "*",

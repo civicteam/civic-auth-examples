@@ -297,18 +297,18 @@ jobs:
           }
           
           # Start all applications
-          start_app "nextjs" "packages/civic-auth/nextjs" "3000" "yarn dev"
-          start_app "reactjs" "packages/civic-auth/reactjs" "3001" "yarn dev"
-          start_app "express" "packages/civic-auth/server/express" "3002" "yarn dev"
-          start_app "fastify" "packages/civic-auth/server/fastify" "3003" "yarn dev"
-          start_app "hono" "packages/civic-auth/server/hono" "3004" "yarn dev"
-          start_app "solana-next14-no-wa" "packages/civic-auth-web3/solana/next14-no-wallet-adapter" "3005" "yarn dev"
-          start_app "solana-next14-wa" "packages/civic-auth-web3/solana/next14-wallet-adapter" "3006" "yarn dev"
-          start_app "solana-next15-no-wa" "packages/civic-auth-web3/solana/next15-turbopack-no-wallet-adapter" "3007" "yarn dev"
-          start_app "solana-next15-wa" "packages/civic-auth-web3/solana/next15-turbopack-wallet-adapter" "3008" "yarn dev"
-          start_app "solana-vite-no-wa" "packages/civic-auth-web3/solana/vite-no-wallet-adapter" "3009" "yarn dev"
-          start_app "solana-vite-wa" "packages/civic-auth-web3/solana/vite-wallet-adapter" "3010" "yarn dev"
-          start_app "wagmi" "packages/civic-auth-web3/wagmi" "3011" "yarn dev"
+          start_app "nextjs" "packages/civic-auth/nextjs" "3000" "yarn start"
+          start_app "reactjs" "packages/civic-auth/reactjs" "3001" "yarn preview"
+          start_app "express" "packages/civic-auth/server/express" "3002" "yarn start"
+          start_app "fastify" "packages/civic-auth/server/fastify" "3003" "yarn start"
+          start_app "hono" "packages/civic-auth/server/hono" "3004" "yarn start"
+          start_app "solana-next14-no-wa" "packages/civic-auth-web3/solana/next14-no-wallet-adapter" "3005" "yarn start"
+          start_app "solana-next14-wa" "packages/civic-auth-web3/solana/next14-wallet-adapter" "3006" "yarn start"
+          start_app "solana-next15-no-wa" "packages/civic-auth-web3/solana/next15-turbopack-no-wallet-adapter" "3007" "yarn start"
+          start_app "solana-next15-wa" "packages/civic-auth-web3/solana/next15-turbopack-wallet-adapter" "3008" "yarn start"
+          start_app "solana-vite-no-wa" "packages/civic-auth-web3/solana/vite-no-wallet-adapter" "3009" "yarn preview"
+          start_app "solana-vite-wa" "packages/civic-auth-web3/solana/vite-wallet-adapter" "3010" "yarn preview"
+          start_app "wagmi" "packages/civic-auth-web3/wagmi" "3011" "yarn preview"
           
           # Give some time for initial startup before checking
           echo "⏳ Waiting 30 seconds for initial startup..."
