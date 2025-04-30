@@ -27,7 +27,12 @@ Given('I open the {string} server app home page', (appType: string) => {
   cy.clearAllCookies();
   cy.clearAllSessionStorage();
   cy.clearAllLocalStorage();
-  cy.visit(Cypress.env(`${appType}_BASE_URL`))
+  cy.visit(Cypress.env(`${appType}_BASE_URL`), {
+    headers: {
+      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+      'Origin': 'http://localhost:3002'
+    }
+  });
 });
 
 Then('I click the sign in button', () => {
@@ -267,7 +272,8 @@ Then('I confirm token refresh is successful', () => {
 
 When('I click the logout button', () => {
   // First click the dropdown container
-  cy.get('#civic-dropdown-container').contains('Ghost').click();
+  cy.get('#civic-dropdown-container').contains('button', 'Ghost').should('be.visible').click();
+  cy.wait(1000);
   
   // Then find and click the Logout button within the dropdown
   cy.get('#civic-dropdown-container')
