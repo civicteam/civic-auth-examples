@@ -64,6 +64,13 @@
   dependencies:
     regenerator-runtime "^0.14.0"
 
+"@babel/runtime@^7.27.0":
+  version "7.27.0"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.27.0.tgz#fbee7cf97c709518ecc1f590984481d5460d4762"
+  integrity sha512-VtPOkrdPHZsKc/clNqyi9WUA8TINkZ4cGk63UUE3u4pmB2k+ZMQRDuIOagv8UVd6j7k0T3+RRIb7beKTebNbcw==
+  dependencies:
+    regenerator-runtime "^0.14.0"
+
 "@babel/template@^7.26.9":
   version "7.26.9"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.26.9.tgz#4577ad3ddf43d194528cff4e1fa6b232fa609bb2"
@@ -94,12 +101,12 @@
     "@babel/helper-string-parser" "^7.25.9"
     "@babel/helper-validator-identifier" "^7.25.9"
 
-"@civic/auth-web3@0.5.4":
-  version "0.5.4"
-  resolved "https://registry.yarnpkg.com/@civic/auth-web3/-/auth-web3-0.5.4.tgz#f2c2764b34a439ca116163a739ce234b887997f3"
-  integrity sha512-O3NqGbpUN7gfG5jyFCRgiKGgzQtEsOFOSGKZwp45AMTb7NWEEeQoZhhe3iLjvDtAUHEP9stjbpeeNg7QtisIbg==
+"@civic/auth-web3@0.4.7-beta.11":
+  version "0.4.7-beta.11"
+  resolved "https://registry.yarnpkg.com/@civic/auth-web3/-/auth-web3-0.4.7-beta.11.tgz#5ab77efe83134066805e5ed8f8d2a5c3e33a0884"
+  integrity sha512-i74PW6J0Vs4Vw/j+90ik4ibHSWQyGk6NqfeysP+9HdRLPIGj888eQabg2CokdE9XrVMbMtSt4rnNIZA0j5k2XQ==
   dependencies:
-    "@civic/auth" "0.4.7"
+    "@civic/auth" "^0.3.8"
     "@noble/hashes" "^1.5.0"
     "@solana/wallet-adapter-base" "^0.9.23"
     "@solana/wallet-standard-features" "^1.3.0"
@@ -114,13 +121,13 @@
     tslib "^2.7.0"
     viem "^2.21.44"
 
-"@civic/auth@0.4.7":
-  version "0.4.7"
-  resolved "https://registry.yarnpkg.com/@civic/auth/-/auth-0.4.7.tgz#3c1b3e04aab7ca637728e96b94e2fb0da6a1dbc2"
-  integrity sha512-W9XYw/TBqHG8YRvvePzL3hG5xtn2tjnFfL2lbnhgTBNG87ccN7prZN3Yz/Cc/4gVfCQegd8j6HFb5fEWFeBx8w==
+"@civic/auth@^0.3.8":
+  version "0.3.8"
+  resolved "https://registry.yarnpkg.com/@civic/auth/-/auth-0.3.8.tgz#bf2a82e15b20e9a2997c408e781b285e9cac87a1"
+  integrity sha512-LBH9VuhXGJY+jAiJYEn+UTlivB5f4zb2Q31YkPPYx9K7NHlye7J4GOdMX2DCixKuLjU6h50qi6YZbKZJWCvftA==
   dependencies:
-    "@civic/iframe-resizer" "0.1.2"
     "@emotion/react" "^11.14.0"
+    "@iframe-resizer/react" "^5.3.3"
     debug "^4.3.7"
     eventemitter3 "^5.0.1"
     jose "^5.9.4"
@@ -129,11 +136,6 @@
     ts-deepmerge "^7.0.2"
     usehooks-ts "^3.1.0"
     uuid "^10.0.0"
-
-"@civic/iframe-resizer@0.1.2":
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/@civic/iframe-resizer/-/iframe-resizer-0.1.2.tgz#181279c0a815d3fdc5b8e024da7874cc1154593f"
-  integrity sha512-aAtwNWCk8karz3PRvqLskerkxJjaBYHX/q0ZmYpF2j74b/R8ZWG8R5hkrMmMTBWTHdhifssdfGR6aozTCWmcFA==
 
 "@emnapi/core@^0.45.0":
   version "0.45.0"
@@ -352,6 +354,22 @@
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/retry/-/retry-0.4.2.tgz#1860473de7dfa1546767448f333db80cb0ff2161"
   integrity sha512-xeO57FpIu4p1Ri3Jq/EXq4ClRm86dVF2z/+kvFnyqVYRavTZmaFaUBbWCOuuTh0o/g7DSsk6kc2vrS4Vl5oPOQ==
+
+"@iframe-resizer/core@5.4.6":
+  version "5.4.6"
+  resolved "https://registry.yarnpkg.com/@iframe-resizer/core/-/core-5.4.6.tgz#f4e61e408e17dba82721548bb33ee7071328d6f6"
+  integrity sha512-LfBQ2hyZuGEuAUpj5SENgFlmaNT1LugXdJzQKyIGP8Q+mpcd3ltciXa5qDur362Y0GQMgej8mD+XrEuRj5IAsQ==
+  dependencies:
+    auto-console-group "1.2.9"
+
+"@iframe-resizer/react@^5.3.3":
+  version "5.4.6"
+  resolved "https://registry.yarnpkg.com/@iframe-resizer/react/-/react-5.4.6.tgz#c146644012cdb55857e5b00e9de4138065917ede"
+  integrity sha512-1iBnUmwSL/077UrBONVln5+lKt0nP9bObXUvVzpeQTfjwcwbRJACYfFyWtB4CX9IPdxr+kiXyl5+Gd2E1I+Jhg==
+  dependencies:
+    "@babel/runtime" "^7.27.0"
+    "@iframe-resizer/core" "5.4.6"
+    auto-console-group "1.2.9"
 
 "@img/sharp-darwin-arm64@0.33.5":
   version "0.33.5"
@@ -1532,6 +1550,11 @@ async-function@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/async-function/-/async-function-1.0.0.tgz#509c9fca60eaf85034c6829838188e4e4c8ffb2b"
   integrity sha512-hsU18Ae8CDTR6Kgu9DYf0EbCr/a5iGL0rytQDobUcdpYOKokk8LEjVphnXkDkgpi0wYVsqrXuP0bZxJaTqdgoA==
+
+auto-console-group@1.2.9:
+  version "1.2.9"
+  resolved "https://registry.yarnpkg.com/auto-console-group/-/auto-console-group-1.2.9.tgz#a3ccc1befcc23e10866d0c1ce456d769c305b803"
+  integrity sha512-YGJqZByv1SFIq8viTpKFmI0eNHIoa9hllKP3487VbIN4zjRcsKKoouu2TiQ189oscvwCSKTndfAe6wf6izbSMA==
 
 available-typed-arrays@^1.0.7:
   version "1.0.7"
