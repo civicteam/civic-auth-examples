@@ -9,4 +9,5 @@ Feature: Log in with reactjs app
     Then I confirm I am logged in
     
   Scenario: Logout successfully
-    Then I click the logout button and confirm successful logout
+    When I click the logout button
+    Then I confirm successful logout

@@ -9,4 +9,4 @@ Feature: Log in with nextjs app
     Then I confirm I am logged in
     
   Scenario: Logout successfully
-    Then I click the logout button and confirm successful logout
+    Then I click the logout button and confirm successful logout from nextjs app

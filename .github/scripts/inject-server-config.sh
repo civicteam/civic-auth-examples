@@ -31,7 +31,7 @@ for CONFIG_FILE in "${CONFIG_FILES[@]}"; do
 
   echo "   Injecting config via Node.js script..."
   # Call the Node.js script to perform the injection
-  node "$NODE_SCRIPT" "$CONFIG_FILE" "$CLIENT_ID" "$AUTH_SERVER"
+  node "$NODE_SCRIPT" "$CONFIG_FILE"
   NODE_EXIT_CODE=$?
 
   # Check Node script exit code
@@ -41,7 +41,7 @@ for CONFIG_FILE in "${CONFIG_FILES[@]}"; do
   elif [ $NODE_EXIT_CODE -eq 2 ]; then
     echo "❌ Error: Node script reported pattern not found in $CONFIG_FILE."
     exit 1
-  elif [ $NODE_EXIT_CODE -ne 0 ]; then # Catch any other non-zero exit code
+  elif [ $NODE_EXIT_CODE -ne 0 ]; then
     echo "❌ Error: Node script failed for $CONFIG_FILE with exit code $NODE_EXIT_CODE."
     exit 1
   fi

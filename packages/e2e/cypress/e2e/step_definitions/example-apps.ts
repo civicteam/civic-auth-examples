@@ -270,7 +270,7 @@ Then('I confirm token refresh is successful', () => {
   });
 });
 
-When('I click the logout button and confirm successful logout', () => {
+When('I click the logout button and confirm successful logout from nextjs app', () => {
   // Intercept the logout callback
   cy.intercept('GET', '**/api/auth/logoutcallback**').as('logoutCallback');
 
@@ -288,6 +288,23 @@ When('I click the logout button and confirm successful logout', () => {
     expect(interception.response?.statusCode).to.eq(200);
     cy.log('Logout callback completed successfully');
   });
+});
+
+When('I click the logout button', () => {
+  // First click the dropdown container
+  cy.get('#civic-dropdown-container').contains('button', 'Ghost').should('be.visible').click();
+  cy.wait(1000);
+  
+  // Then find and click the Logout button within the dropdown
+  cy.get('#civic-dropdown-container')
+    .contains('button', 'Logout')
+    .click();
+});
+
+When('I confirm successful logout', () => {
+  cy.get(exampleAppHome.signInButton)
+    .should('have.text', 'Sign in')
+    .should('not.be.disabled');
 });
 
 Then('I confirm token refresh fails after logout', () => {

@@ -188,6 +188,12 @@ jobs:
           echo "Injecting block into reactjs..."
           .github/scripts/inject-reactjs-config.sh "packages/civic-auth/reactjs/src/App.tsx"
 
+      # Inject dynamic configuration into server config files
+      - name: Inject Server Config
+        run: |
+          chmod +x .github/scripts/inject-server-config.sh
+          .github/scripts/inject-server-config.sh
+
       # Check directory structure before installing
       - name: Check Repository Structure
         run: |
