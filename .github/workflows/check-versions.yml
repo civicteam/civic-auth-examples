@@ -7,6 +7,11 @@ on:
   pull_request:
   workflow_dispatch:
   workflow_call:
+    inputs:
+      token:
+        description: 'GitHub token for checkout'
+        required: true
+        type: string
 
 jobs:
   check-version:
