@@ -65,6 +65,9 @@ jobs:
       - name: Yarn build
         run: yarn build
 
+      - name: Install wait-on
+        run: yarn global add wait-on
+
       - name: Start App
         run: yarn start &
 
