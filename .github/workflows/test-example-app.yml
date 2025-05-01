@@ -46,6 +46,13 @@ jobs:
         with:
           token: ${{ secrets.GH_PAT }}
 
+      - name: Install Bun
+        if: contains(inputs.project-path, 'hono')
+        run: |
+          curl -fsSL https://bun.sh/install | bash
+          echo 'export BUN_INSTALL="$HOME/.bun"' >> $GITHUB_ENV
+          echo 'export PATH="$BUN_INSTALL/bin:$PATH"' >> $GITHUB_ENV
+
       - name: Cache Yarn packages
         uses: actions/cache@v4
         with:
