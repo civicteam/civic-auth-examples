@@ -8,8 +8,57 @@ on:
   workflow_dispatch:
 
 jobs:
+  check-version:
+    uses: ./.github/workflows/check-versions.yml
+
+  job-nextjs-example-app:
+    name: "Nextjs example app"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app.yml
+    with:
+      project-path: packages/civic-auth/nextjs
+      cypress-spec: cypress/e2e/features/example-apps/nextjs-login.feature
+    secrets: inherit
+
+  job-reactjs-example-app:
+    name: "Reactjs example app"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app.yml
+    with:
+      project-path: packages/civic-auth/reactjs
+      cypress-spec: cypress/e2e/features/example-apps/reactjs-login.feature
+    secrets: inherit
+
+  job-express-example-app:
+    name: "Express example app"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app.yml
+    with:
+      project-path: packages/civic-auth/server/express
+      cypress-spec: cypress/e2e/features/example-apps/express-login.feature
+    secrets: inherit
+
+  job-fastify-example-app:
+    name: "Fastify example app"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app.yml
+    with:
+      project-path: packages/civic-auth/server/fastify
+      cypress-spec: cypress/e2e/features/example-apps/fastify-login.feature
+    secrets: inherit
+
+  job-hono-example-app:
+    name: "Hono example app"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app.yml
+    with:
+      project-path: packages/civic-auth/server/hono
+      cypress-spec: cypress/e2e/features/example-apps/hono-login.feature
+    secrets: inherit
+
   job-next-14-webpack-solana-wallet-adapter:
     name: "Next14 webpack Solana wallet adapter"
+    needs: check-version
     uses: ./.github/workflows/test-example-app.yml
     with:
       project-path: packages/civic-auth-web3/solana/next14-wallet-adapter
@@ -18,6 +67,7 @@ jobs:
 
   job-next-14-solana-no-wallet-adapter:
     name: "Next14 webpack Solana No wallet adapter"
+    needs: check-version
     uses: ./.github/workflows/test-example-app.yml
     with:
       project-path: packages/civic-auth-web3/solana/next14-no-wallet-adapter
@@ -26,6 +76,7 @@ jobs:
 
   job-next-15-turbopack-solana-wallet-adapter:
     name: "Next15 webpack Solana wallet adapter (Turbopack)"
+    needs: check-version
     uses: ./.github/workflows/test-example-app.yml
     with:
       project-path: packages/civic-auth-web3/solana/next15-wallet-adapter
@@ -35,8 +86,55 @@ jobs:
 
   job-next-15-webpack-solana-wallet-adapter:
     name: "Next15 webpack Solana wallet adapter (Webpack)"
+    needs: check-version
     uses: ./.github/workflows/test-example-app.yml
     with:
       project-path: packages/civic-auth-web3/solana/next15-wallet-adapter
-      cypress-spec: cypress/e2e/features/example-apps/solana-next15-turbopack-wa-login.feature
+      cypress-spec: cypress/e2e/features/example-apps/solana-next15-wa-login.feature
+    secrets: inherit
+
+  job-next-15-turbopack-no-solana-wallet-adapter:
+    name: "Next15 webpack Solana wallet adapter (Turbopack)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app.yml
+    with:
+      project-path: packages/civic-auth-web3/solana/next15-no-wallet-adapter
+      cypress-spec: cypress/e2e/features/example-apps/solana-next15-turbopack-no-wa-login.feature
+      build-command: "yarn build-turbopack"
+    secrets: inherit
+
+  job-next-15-webpack-no-solana-wallet-adapter:
+    name: "Next15 webpack Solana wallet adapter (Webpack)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app.yml
+    with:
+      project-path: packages/civic-auth-web3/solana/next15-no-wallet-adapter
+      cypress-spec: cypress/e2e/features/example-apps/solana-next15-no-wa-login.feature
+    secrets: inherit
+
+  job-vite-solana-wallet-adapter:
+    name: "Vite solana wallet adapter"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app.yml
+    with:
+      project-path: packages/civic-auth-web3/solana/vite-wallet-adapter
+      cypress-spec: cypress/e2e/features/example-apps/solana-vite-wa-login.feature
+    secrets: inherit
+
+  job-vite-no-solana-wallet-adapter:
+    name: "Vite no solana wallet adapter"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app.yml
+    with:
+      project-path: packages/civic-auth-web3/solana/vite-no-wallet-adapter
+      cypress-spec: cypress/e2e/features/example-apps/solana-vite-no-wa-login.feature
+    secrets: inherit
+
+  job-vite-wagmi-example-app:
+    name: "Vite wagmi example app"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app.yml
+    with:
+      project-path: packages/civic-auth-web3/wagmi
+      cypress-spec: cypress/e2e/features/example-apps/wagmi-login.feature
     secrets: inherit
