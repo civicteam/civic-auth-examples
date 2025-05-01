@@ -16,10 +16,27 @@ jobs:
       cypress-spec: cypress/e2e/features/example-apps/solana-next14-wa-login.feature
     secrets: inherit
 
-  job-next-14-no-wallet-adapter:
+  job-next-14-solana-no-wallet-adapter:
     name: "Next14 webpack Solana No wallet adapter"
     uses: ./.github/workflows/test-example-app.yml
     with:
       project-path: packages/civic-auth-web3/solana/next14-no-wallet-adapter
       cypress-spec: cypress/e2e/features/example-apps/solana-next14-no-wa-login.feature
+    secrets: inherit
+
+  job-next-15-turbopack-solana-wallet-adapter:
+    name: "Next15 webpack Solana wallet adapter (Turbopack)"
+    uses: ./.github/workflows/test-example-app.yml
+    with:
+      project-path: packages/civic-auth-web3/solana/next15-wallet-adapter
+      cypress-spec: cypress/e2e/features/example-apps/solana-next15-turbopack-wa-login.feature
+      build-command: "yarn build-turbopack"
+    secrets: inherit
+
+  job-next-15-webpack-solana-wallet-adapter:
+    name: "Next15 webpack Solana wallet adapter (Webpack)"
+    uses: ./.github/workflows/test-example-app.yml
+    with:
+      project-path: packages/civic-auth-web3/solana/next15-wallet-adapter
+      cypress-spec: cypress/e2e/features/example-apps/solana-next15-turbopack-wa-login.feature
     secrets: inherit

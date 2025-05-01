@@ -9,6 +9,10 @@ on:
       cypress-spec:
         required: true
         type: string
+      build-command:
+        required: false
+        type: string
+        default: yarn build
     secrets:
       CLIENT_ID:
         required: true
