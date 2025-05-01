@@ -270,7 +270,7 @@ jobs:
   # Send a notification if any job fails
   slack-notification:
     name: "Send Slack notification on failure"
-    if: failure()
+    if: always() && !success()
     runs-on: ubuntu-latest
     steps:
       - name: Send Slack Notification
