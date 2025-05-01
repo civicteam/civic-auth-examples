@@ -11,6 +11,7 @@ jobs:
   check-version:
     uses: ./.github/workflows/check-versions.yml
 
+  # Production jobs
   job-nextjs-example-app:
     name: "Nextjs example app"
     needs: check-version
@@ -94,7 +95,7 @@ jobs:
     secrets: inherit
 
   job-next-15-turbopack-no-solana-wallet-adapter:
-    name: "Next15 webpack Solana wallet adapter (Turbopack)"
+    name: "Next15 webpack no Solana wallet adapter (Turbopack)"
     needs: check-version
     uses: ./.github/workflows/test-example-app.yml
     with:
@@ -104,7 +105,7 @@ jobs:
     secrets: inherit
 
   job-next-15-webpack-no-solana-wallet-adapter:
-    name: "Next15 webpack Solana wallet adapter (Webpack)"
+    name: "Next15 webpack no Solana wallet adapter (Webpack)"
     needs: check-version
     uses: ./.github/workflows/test-example-app.yml
     with:
@@ -134,6 +135,133 @@ jobs:
     name: "Vite wagmi example app"
     needs: check-version
     uses: ./.github/workflows/test-example-app.yml
+    with:
+      project-path: packages/civic-auth-web3/wagmi
+      cypress-spec: cypress/e2e/features/example-apps/wagmi-login.feature
+    secrets: inherit
+
+  # Development jobs
+  job-nextjs-example-app-dev:
+    name: "Nextjs example app (Dev Mode)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-dev.yml
+    with:
+      project-path: packages/civic-auth/nextjs
+      cypress-spec: cypress/e2e/features/example-apps/nextjs-login.feature
+    secrets: inherit
+
+  job-reactjs-example-app-dev:
+    name: "Reactjs example app (Dev Mode)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-dev.yml
+    with:
+      project-path: packages/civic-auth/reactjs
+      cypress-spec: cypress/e2e/features/example-apps/reactjs-login.feature
+    secrets: inherit
+
+  job-express-example-app-dev:
+    name: "Express example app (Dev Mode)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-dev.yml
+    with:
+      project-path: packages/civic-auth/server/express
+      cypress-spec: cypress/e2e/features/example-apps/express-login.feature
+    secrets: inherit
+
+  job-fastify-example-app-dev:
+    name: "Fastify example app (Dev Mode)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-dev.yml
+    with:
+      project-path: packages/civic-auth/server/fastify
+      cypress-spec: cypress/e2e/features/example-apps/fastify-login.feature
+    secrets: inherit
+
+  job-hono-example-app-dev:
+    name: "Hono example app (Dev Mode)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-dev.yml
+    with:
+      project-path: packages/civic-auth/server/hono
+      cypress-spec: cypress/e2e/features/example-apps/hono-login.feature
+    secrets: inherit
+
+  job-next-14-webpack-solana-wallet-adapter-dev:
+    name: "Next14 webpack Solana wallet adapter (Dev Mode)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-dev.yml
+    with:
+      project-path: packages/civic-auth-web3/solana/next14-wallet-adapter
+      cypress-spec: cypress/e2e/features/example-apps/solana-next14-wa-login.feature
+    secrets: inherit
+
+  job-next-14-solana-no-wallet-adapter-dev:
+    name: "Next14 webpack Solana No wallet adapter (Dev Mode)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-dev.yml
+    with:
+      project-path: packages/civic-auth-web3/solana/next14-no-wallet-adapter
+      cypress-spec: cypress/e2e/features/example-apps/solana-next14-no-wa-login.feature
+    secrets: inherit
+
+  job-next-15-turbopack-solana-wallet-adapter-dev:
+    name: "Next15 webpack Solana wallet adapter (Turbopack Dev Mode)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-dev.yml
+    with:
+      project-path: packages/civic-auth-web3/solana/next15-wallet-adapter
+      cypress-spec: cypress/e2e/features/example-apps/solana-next15-turbopack-wa-login.feature
+    secrets: inherit
+
+  job-next-15-webpack-solana-wallet-adapter-dev:
+    name: "Next15 webpack Solana wallet adapter (Webpack Dev Mode)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-dev.yml
+    with:
+      project-path: packages/civic-auth-web3/solana/next15-wallet-adapter
+      cypress-spec: cypress/e2e/features/example-apps/solana-next15-wa-login.feature
+    secrets: inherit
+
+  job-next-15-turbopack-no-solana-wallet-adapter-dev:
+    name: "Next15 webpack no Solana wallet adapter (Turbopack Dev Mode)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-dev.yml
+    with:
+      project-path: packages/civic-auth-web3/solana/next15-no-wallet-adapter
+      cypress-spec: cypress/e2e/features/example-apps/solana-next15-turbopack-no-wa-login.feature
+    secrets: inherit
+
+  job-next-15-webpack-no-solana-wallet-adapter-dev:
+    name: "Next15 webpack no Solana wallet adapter (Webpack Dev Mode)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-dev.yml
+    with:
+      project-path: packages/civic-auth-web3/solana/next15-no-wallet-adapter
+      cypress-spec: cypress/e2e/features/example-apps/solana-next15-no-wa-login.feature
+    secrets: inherit
+
+  job-vite-solana-wallet-adapter-dev:
+    name: "Vite solana wallet adapter (Dev Mode)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-dev.yml
+    with:
+      project-path: packages/civic-auth-web3/solana/vite-wallet-adapter
+      cypress-spec: cypress/e2e/features/example-apps/solana-vite-wa-login.feature
+    secrets: inherit
+
+  job-vite-no-solana-wallet-adapter-dev:
+    name: "Vite no solana wallet adapter (Dev Mode)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-dev.yml
+    with:
+      project-path: packages/civic-auth-web3/solana/vite-no-wallet-adapter
+      cypress-spec: cypress/e2e/features/example-apps/solana-vite-no-wa-login.feature
+    secrets: inherit
+
+  job-vite-wagmi-example-app-dev:
+    name: "Vite wagmi example app (Dev Mode)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-dev.yml
     with:
       project-path: packages/civic-auth-web3/wagmi
       cypress-spec: cypress/e2e/features/example-apps/wagmi-login.feature

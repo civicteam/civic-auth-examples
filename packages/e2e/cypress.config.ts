@@ -49,17 +49,5 @@ module.exports = defineConfig({
   env: {
     stepDefinitions: 'cypress/e2e/step_definitions/**/*.ts',
     clientId: process.env.CYPRESS_CLIENT_ID,
-    NEXT_JS_BASE_URL: 'http://localhost:3000',
-    REACT_BASE_URL: 'http://localhost:3001',
-    EXPRESS_BASE_URL: 'http://localhost:3002',
-    FASTIFY_BASE_URL: 'http://localhost:3003',
-    HONO_BASE_URL: 'http://localhost:3004',
-    SOLANA_NEXT14_NO_WA_BASE_URL: 'http://localhost:3005',
-    SOLANA_NEXT14_WA_BASE_URL: 'http://localhost:3006',
-    SOLANA_NEXT15_TURBO_NO_WA_BASE_URL: 'http://localhost:3007',
-    SOLANA_NEXT15_TURBO_WA_BASE_URL: 'http://localhost:3008',
-    SOLANA_VITE_NO_WA_BASE_URL: 'http://localhost:3009',
-    SOLANA_VITE_WA_BASE_URL: 'http://localhost:3010',
-    WAGMI_BASE_URL: 'http://localhost:3011',
   },
 });

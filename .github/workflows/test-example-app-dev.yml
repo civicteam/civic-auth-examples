@@ -1,0 +1,77 @@
+name: Reusable Build and Test Example App (Dev Mode)
+
+on:
+  workflow_call:
+    inputs:
+      project-path:
+        required: true
+        type: string
+      cypress-spec:
+        required: true
+        type: string
+    secrets:
+      CLIENT_ID:
+        required: true
+      AUTH_SERVER:
+        required: true
+      NEXT_PUBLIC_WALLET_API_BASE_URL:
+        required: true
+      VITE_WALLET_API_BASE_URL:
+        required: true
+      GH_PAT:
+        required: true
+      CYPRESS_RECORD_KEY:
+        required: true
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    env:
+      CLIENT_ID: ${{ secrets.CLIENT_ID }}
+      VITE_CLIENT_ID: ${{ secrets.CLIENT_ID }}
+      CYPRESS_CLIENT_ID: ${{ secrets.CLIENT_ID }}
+      AUTH_SERVER: ${{ secrets.AUTH_SERVER }}
+      VITE_AUTH_SERVER: ${{ secrets.AUTH_SERVER }}
+      NEXT_PUBLIC_WALLET_API_BASE_URL: ${{ secrets.NEXT_PUBLIC_WALLET_API_BASE_URL }}
+      VITE_WALLET_API_BASE_URL: ${{ secrets.VITE_WALLET_API_BASE_URL }}
+    defaults:
+      run:
+        working-directory: ${{ inputs.project-path }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT }}
+
+      - name: Install Bun
+        if: contains(inputs.project-path, 'hono')
+        run: |
+          curl -fsSL https://bun.sh/install | bash
+          echo "BUN_INSTALL=$HOME/.bun" >> $GITHUB_ENV
+          echo "$HOME/.bun/bin" >> $GITHUB_PATH
+
+      - name: Cache Yarn packages
+        uses: actions/cache@v4
+        with:
+          path: ${{ inputs.project-path }}/node_modules
+          key: node-modules-${{ runner.os }}-${{ hashFiles(format('{0}/yarn.lock', inputs.project-path)) }}-${{ hashFiles(format('{0}/package.json', inputs.project-path)) }}
+
+      - name: Yarn install
+        run: yarn install
+
+      - name: Start App in Dev Mode
+        run: yarn dev &
+
+      - name: Wait for app to start
+        run: npx wait-on http-get://localhost:3000 --timeout 300000
+
+      - name: Run Cypress Tests
+        id: cypress
+        uses: cypress-io/github-action@v6
+        with:
+          working-directory: packages/e2e
+          spec: ${{ inputs.cypress-spec }}
+          browser: chrome
+          install: true
+          record: true
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }} 
