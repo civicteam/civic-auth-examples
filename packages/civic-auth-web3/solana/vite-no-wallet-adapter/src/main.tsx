@@ -11,6 +11,7 @@ globalThis.Buffer = Buffer;
 
 const CLIENT_ID = import.meta.env.VITE_CLIENT_ID;
 const AUTH_SERVER = import.meta.env.VITE_AUTH_SERVER || "https://auth.civic.com/oauth";
+const WALLET_API_BASE_URL = import.meta.env.VITE_WALLET_API_BASE_URL;
 if (!CLIENT_ID) throw new Error("CLIENT_ID is required");
 // const PORT = process.env.PORT ? parseInt(process.env.PORT) : 3000;
 // const PORT = process.env.PORT ? parseInt(process.env.PORT) : 3000;
@@ -20,8 +21,9 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   // Wrap the content with the necessary providers to give access to hooks: solana wallet adapter & civic auth provider
     <CivicAuthProvider 
       clientId={CLIENT_ID}
-      // oauthServer is not necessary for production.
-      config={{ oauthServer: AUTH_SERVER }}
+      // oauthServer and wallet are not necessary for production.
+      config={{ oauthServer: AUTH_SERVER || 'https://auth.civic.com/oauth'}}
+      endpoints={{ wallet: WALLET_API_BASE_URL }}
     >
       <App />
     </CivicAuthProvider>

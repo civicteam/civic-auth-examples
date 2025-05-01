@@ -12,7 +12,10 @@ globalThis.Buffer = Buffer;
 
 const CLIENT_ID = import.meta.env.VITE_CLIENT_ID;
 if (!CLIENT_ID) throw new Error("CLIENT_ID is required");
+
+// AUTH_SERVER and WALLET_API_BASE_URL are not necessary for production.
 const AUTH_SERVER = import.meta.env.VITE_AUTH_SERVER || "https://auth.civic.com/oauth";
+const WALLET_API_BASE_URL = import.meta.env.VITE_WALLET_API_BASE_URL;
 
 const endpoint = clusterApiUrl("devnet");
 
@@ -23,8 +26,10 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <WalletProvider wallets={[]} autoConnect>
       <WalletModalProvider>
         <CivicAuthProvider 
-          config={{ oauthServer: AUTH_SERVER }}
           clientId={CLIENT_ID} 
+          // oauthServer and wallet are not necessary for production.
+          config={{ oauthServer: AUTH_SERVER || 'https://auth.civic.com/oauth'}}
+          endpoints={{ wallet: WALLET_API_BASE_URL }}
         >
           <App />
         </CivicAuthProvider>
