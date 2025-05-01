@@ -3,13 +3,13 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "dev": "vite --port 3010",
+    "dev": "vite --port 3000",
     "build": "vite build",
     "lint": "biome check ",
-    "preview": "vite preview"
+    "start": "vite preview --port 3000"
   },
   "dependencies": {
-    "@civic/auth-web3": "0.5.4",
+    "@civic/auth-web3": "*",
     "@solana/wallet-adapter-react-ui": "^0.9.35",
     "@solana/web3.js": "^1.98.0",
     "react": "^18.3.1",

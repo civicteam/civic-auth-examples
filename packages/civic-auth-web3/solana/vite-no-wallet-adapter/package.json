@@ -3,15 +3,17 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "dev": "vite --port 3009",
+    "dev": "vite --port 3000",
     "build": "vite build",
     "lint": "biome check ",
-    "preview": "vite preview"
+    "start": "vite preview --port 3000"
   },
   "dependencies": {
     "@civic/auth-web3": "*",
     "@solana/web3.js": "^1.98.0",
     "dotenv": "^16.0.3",
+    "iframe-resizer-react": "^5.1.5",
+    "prop-types": "^15.8.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "types": "^0.1.1"

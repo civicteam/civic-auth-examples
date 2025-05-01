@@ -1,7 +1,6 @@
 Feature: Log in with nextjs app
-
   Scenario: Log in with nextjs app
-    Given I open the 'NEXT_JS' app home page
+    Given I open the app home page
     And I click the sign in button
     And I click log in with dummy in the iframe
 
