@@ -6,7 +6,7 @@
     "dev": "vite --port 3000",
     "build": "vite build",
     "lint": "biome check ",
-    "preview": "vite preview"
+    "start": "vite preview --port 3000"
   },
   "dependencies": {
     "@civic/auth-web3": "*",

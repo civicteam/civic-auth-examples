@@ -50,8 +50,8 @@ jobs:
         if: contains(inputs.project-path, 'hono')
         run: |
           curl -fsSL https://bun.sh/install | bash
-          echo 'export BUN_INSTALL="$HOME/.bun"' >> $GITHUB_ENV
-          echo 'export PATH="$BUN_INSTALL/bin:$PATH"' >> $GITHUB_ENV
+          echo "BUN_INSTALL=$HOME/.bun" >> $GITHUB_ENV
+          echo "$HOME/.bun/bin" >> $GITHUB_PATH
 
       - name: Cache Yarn packages
         uses: actions/cache@v4
@@ -64,9 +64,6 @@ jobs:
 
       - name: Yarn build
         run: yarn build
-
-      - name: Install wait-on
-        run: yarn global add wait-on
 
       - name: Start App
         run: yarn start &
