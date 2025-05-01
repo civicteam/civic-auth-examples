@@ -266,3 +266,22 @@ jobs:
       project-path: packages/civic-auth-web3/wagmi
       cypress-spec: cypress/e2e/features/example-apps/wagmi-login.feature
     secrets: inherit
+
+  # Send a notification if any job fails
+  slack-notification:
+    name: "Send Slack notification on failure"
+    needs: [job-nextjs-example-app, job-reactjs-example-app, job-express-example-app, job-fastify-example-app, job-hono-example-app, job-next-14-webpack-solana-wallet-adapter, job-next-14-solana-no-wallet-adapter, job-next-15-turbopack-solana-wallet-adapter, job-next-15-webpack-solana-wallet-adapter, job-next-15-turbopack-no-solana-wallet-adapter, job-next-15-webpack-no-solana-wallet-adapter, job-vite-solana-wallet-adapter, job-vite-no-solana-wallet-adapter, job-vite-wagmi-example-app, job-nextjs-example-app-dev, job-reactjs-example-app-dev, job-express-example-app-dev, job-fastify-example-app-dev, job-hono-example-app-dev, job-next-14-webpack-solana-wallet-adapter-dev, job-next-14-solana-no-wallet-adapter-dev, job-next-15-turbopack-solana-wallet-adapter-dev, job-next-15-webpack-solana-wallet-adapter-dev, job-next-15-turbopack-no-solana-wallet-adapter-dev, job-next-15-webpack-no-solana-wallet-adapter-dev, job-vite-solana-wallet-adapter-dev, job-vite-no-solana-wallet-adapter-dev, job-vite-wagmi-example-app-dev]
+    if: failure()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Slack Notification
+        uses: slackapi/slack-github-action@v1.27.0
+        with:
+          payload: |
+            {
+              "channel": "#build",
+              "text": "<!subteam^S012Q4F3TRB> <@UCBGV5J12> Example repo Cypress tests failed in civicteam/civic-auth-examples.\n\nThese tests are run after new beta and prod versions of civic/auth and civic/auth-web3, so there may be an issue with the new version(s). Check the recording of the test failure here https://cloud.cypress.io/projects/cmyigw/runs.\n\n Alternatively, see the full GitHub Actions run details here ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}."
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
