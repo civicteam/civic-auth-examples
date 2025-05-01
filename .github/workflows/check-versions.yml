@@ -90,52 +90,6 @@ jobs:
           echo "$WEB3_BETA_VERSION" >> .civic-versions
           echo "$WEB3_PROD_VERSION" >> .civic-versions
 
-      - name: Update package.json files
-        if: steps.check-version.outputs.version_changed == 'true'
-        run: |
-          # Function to update package.json
-          update_package_json() {
-            local file=$1
-            local package=$2
-            local version=$3
-            
-            if [ -f "$file" ]; then
-              # Check if package is in dependencies or devDependencies
-              if grep -q "\"$package\":" "$file"; then
-                # Get the current version
-                CURRENT_VERSION=$(grep "\"$package\":" "$file" | sed -E 's/.*"([^"]+)".*/\1/')
-                
-                # Only update if the version is different
-                if [ "$CURRENT_VERSION" != "$version" ]; then
-                  # Update version in package.json
-                  sed -i "s/\"$package\": \".*\"/\"$package\": \"$version\"/" "$file"
-                  echo "Updated $package from $CURRENT_VERSION to $version in $file"
-                else
-                  echo "Skipping $package in $file - already at version $version"
-                fi
-              fi
-            fi
-          }
-
-          # Find all package.json files
-          find . -name "package.json" | while read -r file; do
-            # Skip node_modules
-            if [[ "$file" != *"node_modules"* ]]; then
-              # Check which packages are used in this file
-              if grep -q "\"@civic/auth\":" "$file"; then
-                update_package_json "$file" "@civic/auth" "$AUTH_LATEST"
-              fi
-              if grep -q "\"@civic/auth-web3\":" "$file"; then
-                update_package_json "$file" "@civic/auth-web3" "$WEB3_LATEST"
-              fi
-            fi
-          done
-
-      - name: Update yarn.lock
-        if: steps.check-version.outputs.version_changed == 'true'
-        run: |
-          yarn install
-      
       - name: Commit and push changes
         if: steps.check-version.outputs.version_changed == 'true'
         run: |
