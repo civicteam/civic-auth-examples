@@ -3,14 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack --port 3007",
-    "build": "next build",
+    "dev": "next dev --turbopack --port 3008",
+    "build": "WEBPACK_ENABLE_SOLANA_WALLET_ADAPTER=true next build",
+    "build-webpack": "next build",
+    "build-turbopack": "next build --turbopack",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "@civic/auth-web3": "*",
-    "next": "^15.2.3",
+    "@solana/wallet-adapter-react-ui": "^0.9.35",
+    "next": "^15.3.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
