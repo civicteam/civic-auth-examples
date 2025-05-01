@@ -6,6 +6,7 @@ const PORT = process.env.PORT ? parseInt(process.env.PORT) : 3000;
 const withCivicAuth = createCivicAuthPlugin({
     clientId: `${process.env.CLIENT_ID}`,
     enableSolanaWalletAdapter: true,
+    oauthServer: process.env.AUTH_SERVER || 'https://auth.civic.com/oauth',
 });
 
 export default withCivicAuth(nextConfig);

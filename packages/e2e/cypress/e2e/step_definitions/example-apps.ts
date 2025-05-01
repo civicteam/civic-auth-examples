@@ -3,7 +3,7 @@ import { Given, When, Then } from '@badeball/cypress-cucumber-preprocessor';
 import { exampleAppHome } from '../../support/pages/elements';
 import 'cypress-iframe';
 
-Given('I open the {string} app home page', (appType: string) => {
+Given('I open the app home page', (appType: string) => {
   cy.intercept('**/.well-known/openid-configuration', (req) => {
     req.reply((res) => {
       if (res.statusCode === 200) {
@@ -15,7 +15,7 @@ Given('I open the {string} app home page', (appType: string) => {
   cy.clearAllCookies();
   cy.clearAllSessionStorage();
   cy.clearAllLocalStorage();
-  cy.visit(Cypress.env(`${appType}_BASE_URL`), {
+  cy.visit('http://localhost:3000', {
     retryOnNetworkFailure: true,
     timeout: 10000
   })

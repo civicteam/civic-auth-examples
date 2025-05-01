@@ -12,6 +12,7 @@ globalThis.Buffer = Buffer;
 
 const CLIENT_ID = import.meta.env.VITE_CLIENT_ID;
 if (!CLIENT_ID) throw new Error("CLIENT_ID is required");
+const AUTH_SERVER = import.meta.env.VITE_AUTH_SERVER || "https://auth.civic.com/oauth";
 
 const endpoint = clusterApiUrl("devnet");
 
@@ -22,6 +23,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <WalletProvider wallets={[]} autoConnect>
       <WalletModalProvider>
         <CivicAuthProvider 
+          config={{ oauthServer: AUTH_SERVER }}
           clientId={CLIENT_ID} 
         >
           <App />
