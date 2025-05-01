@@ -9,48 +9,17 @@ on:
 
 jobs:
   job-next-14-webpack-solana-wallet-adapter:
-    name: Solana Next14 Wallet Adapter
-    runs-on: ubuntu-latest
-    env:
-      CLIENT_ID: ${{ secrets.CLIENT_ID }}
-      VITE_CLIENT_ID: ${{ secrets.CLIENT_ID }}
-      CYPRESS_CLIENT_ID: ${{ secrets.CLIENT_ID }}
-      AUTH_SERVER: ${{ secrets.AUTH_SERVER }}
-      VITE_AUTH_SERVER: ${{ secrets.AUTH_SERVER }}
-      NEXT_PUBLIC_WALLET_API_BASE_URL: ${{ secrets.NEXT_PUBLIC_WALLET_API_BASE_URL }}
-      VITE_WALLET_API_BASE_URL: ${{ secrets.VITE_WALLET_API_BASE_URL }}
-    defaults:
-      run:
-        working-directory: packages/civic-auth-web3/solana/next14-wallet-adapter
-    steps: 
-      - uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GH_PAT }}
-      - name: Cache Yarn packages
-        uses: actions/cache@v4
-        with:
-          path: packages/civic-auth-web3/solana/next14-wallet-adapter/node_modules
-          key: node-modules-${{ runner.os }}-${{ hashFiles(' packages/civic-auth-web3/solana/next14-wallet-adapter/yarn.lock') }}-${{ hashFiles(' packages/civic-auth-web3/solana/next14-wallet-adapter/package.json') }}
-      - name: "Yarn install"
-        shell: bash
-        run: yarn install
-      - name: "Yarn Build"
-        shell: bash
-        run: yarn build
-      - name: "Yarn Start"
-        shell: bash
-        run: yarn start &
-      - name: "Wait for app to start"
-        shell: bash
-        run: npx wait-on http-get://localhost:3000 --timeout 300000
-      - name: Run Cypress example app e2e prod tests
-        id: cypress
-        uses: cypress-io/github-action@v6
-        with:
-          working-directory: packages/e2e
-          spec: "cypress/e2e/features/example-apps/solana-next14-wa-login.feature"
-          browser: chrome
-          install: true
-          record: true
-        env:
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+    name: "Next14 webpack Solana wallet adapter"
+    uses: ./.github/workflows/test-example-app.yml
+    with:
+      project-path: packages/civic-auth-web3/solana/next14-wallet-adapter
+      cypress-spec: cypress/e2e/features/example-apps/solana-next14-wa-login.feature
+    secrets: inherit
+
+  job-next-14-no-wallet-adapter:
+    name: "Next14 webpack Solana No wallet adapter"
+    uses: ./.github/workflows/test-example-app.yml
+    with:
+      project-path: packages/civic-auth-web3/solana/next14-no-wallet-adapter
+      cypress-spec: cypress/e2e/features/example-apps/solana-next14-no-wa-login.feature
+    secrets: inherit
