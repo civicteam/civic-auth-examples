@@ -5,28 +5,10 @@ on:
     workflows: ["Build and run example apps using latest sdk versions"]
     types:
       - completed
-    branches: ['**']  # Match all branches
 
 jobs:
-  debug-workflow-run:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Dump GitHub context
-        env:
-          GITHUB_CONTEXT: ${{ toJSON(github) }}
-        run: echo "$GITHUB_CONTEXT"
-      
-      - name: Debug workflow run info
-        run: |
-          echo "Workflow run conclusion: ${{ github.event.workflow_run.conclusion }}"
-          echo "Workflow run status: ${{ github.event.workflow_run.status }}"
-          echo "Workflow name: ${{ github.event.workflow_run.name }}"
-          echo "Workflow ID: ${{ github.event.workflow_run.id }}"
-          echo "Workflow URL: ${{ github.event.workflow_run.html_url }}"
-
   send-slack-notification:
     runs-on: ubuntu-latest
-    needs: debug-workflow-run
     if: ${{ github.event.workflow_run.conclusion == 'failure' }}
     steps:
       - name: Send Slack Notification
