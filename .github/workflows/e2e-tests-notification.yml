@@ -9,7 +9,7 @@ on:
 jobs:
   send-slack-notification:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Send Slack Notification
         uses: slackapi/slack-github-action@v1.27.0
