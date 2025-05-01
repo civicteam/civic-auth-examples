@@ -10,8 +10,6 @@ on:
 jobs:
   check-version:
     uses: ./.github/workflows/check-versions.yml
-    with:
-      token: ${{ github.token }}
 
   job-nextjs-example-app:
     name: "Nextjs example app"

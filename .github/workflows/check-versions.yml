@@ -7,11 +7,6 @@ on:
   pull_request:
   workflow_dispatch:
   workflow_call:
-    inputs:
-      token:
-        description: 'GitHub token for checkout'
-        required: true
-        type: string
 
 jobs:
   check-version:
@@ -24,7 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GH_PAT }}
+          token: ${{ github.token }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
