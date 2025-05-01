@@ -142,7 +142,7 @@ jobs:
 
   # Development jobs
   job-nextjs-example-app-dev:
-    name: "Nextjs example app (Dev Mode)"
+    name: "(Dev Mode) Nextjs example app"
     needs: check-version
     uses: ./.github/workflows/test-example-app-dev.yml
     with:
@@ -151,7 +151,7 @@ jobs:
     secrets: inherit
 
   job-reactjs-example-app-dev:
-    name: "Reactjs example app (Dev Mode)"
+    name: "(Dev Mode) Reactjs example app"
     needs: check-version
     uses: ./.github/workflows/test-example-app-dev.yml
     with:
@@ -160,7 +160,7 @@ jobs:
     secrets: inherit
 
   job-express-example-app-dev:
-    name: "Express example app (Dev Mode)"
+    name: "(Dev Mode) Express example app"
     needs: check-version
     uses: ./.github/workflows/test-example-app-dev.yml
     with:
@@ -169,7 +169,7 @@ jobs:
     secrets: inherit
 
   job-fastify-example-app-dev:
-    name: "Fastify example app (Dev Mode)"
+    name: "(Dev Mode) Fastify example app"
     needs: check-version
     uses: ./.github/workflows/test-example-app-dev.yml
     with:
@@ -178,7 +178,7 @@ jobs:
     secrets: inherit
 
   job-hono-example-app-dev:
-    name: "Hono example app (Dev Mode)"
+    name: "(Dev Mode) Hono example app"
     needs: check-version
     uses: ./.github/workflows/test-example-app-dev.yml
     with:
@@ -187,7 +187,7 @@ jobs:
     secrets: inherit
 
   job-next-14-webpack-solana-wallet-adapter-dev:
-    name: "Next14 webpack Solana wallet adapter (Dev Mode)"
+    name: "(Dev Mode) Next14 webpack Solana wallet adapter"
     needs: check-version
     uses: ./.github/workflows/test-example-app-dev.yml
     with:
@@ -196,7 +196,7 @@ jobs:
     secrets: inherit
 
   job-next-14-solana-no-wallet-adapter-dev:
-    name: "Next14 webpack Solana No wallet adapter (Dev Mode)"
+    name: "(Dev Mode) Next14 webpack Solana No wallet adapter"
     needs: check-version
     uses: ./.github/workflows/test-example-app-dev.yml
     with:
@@ -205,7 +205,7 @@ jobs:
     secrets: inherit
 
   job-next-15-turbopack-solana-wallet-adapter-dev:
-    name: "Next15 webpack Solana wallet adapter (Turbopack Dev Mode)"
+    name: "(Dev Mode) Next15 webpack Solana wallet adapter (Turbopack)"
     needs: check-version
     uses: ./.github/workflows/test-example-app-dev.yml
     with:
@@ -214,7 +214,7 @@ jobs:
     secrets: inherit
 
   job-next-15-webpack-solana-wallet-adapter-dev:
-    name: "Next15 webpack Solana wallet adapter (Webpack Dev Mode)"
+    name: "(Dev Mode) Next15 Solana wallet adapter (Webpack)"
     needs: check-version
     uses: ./.github/workflows/test-example-app-dev.yml
     with:
@@ -223,7 +223,7 @@ jobs:
     secrets: inherit
 
   job-next-15-turbopack-no-solana-wallet-adapter-dev:
-    name: "Next15 webpack no Solana wallet adapter (Turbopack Dev Mode)"
+    name: "(Dev Mode) Next15 webpack no Solana wallet adapter (Turbopack)"
     needs: check-version
     uses: ./.github/workflows/test-example-app-dev.yml
     with:
@@ -232,7 +232,7 @@ jobs:
     secrets: inherit
 
   job-next-15-webpack-no-solana-wallet-adapter-dev:
-    name: "Next15 webpack no Solana wallet adapter (Webpack Dev Mode)"
+    name: "(Dev Mode) Next15 webpack no Solana wallet adapter (Webpack)"
     needs: check-version
     uses: ./.github/workflows/test-example-app-dev.yml
     with:
@@ -241,7 +241,7 @@ jobs:
     secrets: inherit
 
   job-vite-solana-wallet-adapter-dev:
-    name: "Vite solana wallet adapter (Dev Mode)"
+    name: "(Dev Mode) Vite solana wallet adapter"
     needs: check-version
     uses: ./.github/workflows/test-example-app-dev.yml
     with:
@@ -250,7 +250,7 @@ jobs:
     secrets: inherit
 
   job-vite-no-solana-wallet-adapter-dev:
-    name: "Vite no solana wallet adapter (Dev Mode)"
+    name: "(Dev Mode) Vite no solana wallet adapter"
     needs: check-version
     uses: ./.github/workflows/test-example-app-dev.yml
     with:
@@ -259,7 +259,7 @@ jobs:
     secrets: inherit
 
   job-vite-wagmi-example-app-dev:
-    name: "Vite wagmi example app (Dev Mode)"
+    name: " (Dev Mode) Vite wagmi example app"
     needs: check-version
     uses: ./.github/workflows/test-example-app-dev.yml
     with:
