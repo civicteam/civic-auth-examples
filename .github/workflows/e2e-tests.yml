@@ -6,7 +6,7 @@ on:
   push:
   pull_request:
   workflow_dispatch:
-
+    
 jobs:
   check-version:
     uses: ./.github/workflows/check-versions.yml
