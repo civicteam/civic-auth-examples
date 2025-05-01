@@ -20,6 +20,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   // Wrap the content with the necessary providers to give access to hooks: solana wallet adapter & civic auth provider
     <CivicAuthProvider 
       clientId={CLIENT_ID}
+      // oauthServer is not necessary for production.
       config={{ oauthServer: AUTH_SERVER }}
     >
       <App />
