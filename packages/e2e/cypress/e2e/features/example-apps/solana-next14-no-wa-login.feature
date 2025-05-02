@@ -1,4 +1,4 @@
-Feature: Confirm solana next15 without wallet adapter logs in and shows balance
+Feature: Confirm solana next14 without wallet adapter logs in and shows balance
 
   Scenario: Confirm solana next14 without wallet adapter logs in and shows balance
     Given I open the app home page
