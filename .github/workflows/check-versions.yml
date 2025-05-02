@@ -1,11 +1,6 @@
 name: Check Package Versions
 
 on:
-  schedule:
-    - cron: '0 0 * * *'  # Run daily at midnight UTC
-  push:
-  pull_request:
-  workflow_dispatch:
   workflow_call:
 
 jobs:
