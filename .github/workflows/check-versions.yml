@@ -1,11 +1,6 @@
 name: Check Package Versions
 
 on:
-  schedule:
-    - cron: '0 0 * * *'  # Run daily at midnight UTC
-  push:
-  pull_request:
-  workflow_dispatch:
   workflow_call:
 
 jobs:
@@ -97,4 +92,7 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git add .
           git commit -m "Update package versions to latest [skip ci]"
+          # Pull with rebase to incorporate any changes made to the remote while this job was running
+          git pull --rebase origin main
+          # Push changes
           git push 
