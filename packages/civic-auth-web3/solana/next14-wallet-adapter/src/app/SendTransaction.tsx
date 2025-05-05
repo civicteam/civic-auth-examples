@@ -21,9 +21,7 @@ const SendTransaction = () => {
     : undefined;
   const { connection } = useConnection();
 
-  const [recipientAddress, setReceipientAddress] = useState<string>(
-    "6GyYxtn4tQPgGS3WhZeeLeC6TqsNUSKqfZLH1MUhAoGe"
-  );
+  const [recipientAddress, setRecipientAddress] = useState<string | null>(null);
   const [solAmountToSend, setSolAmountToSend] = useState<number>(0.01);
   const [busySendingSol, setBusySendingSol] = useState(false);
   const [txSignature, setTxSignature] = useState<string | null>(null);
@@ -31,6 +29,9 @@ const SendTransaction = () => {
   const sendSol = useCallback(async () => {
     if (!userHasWallet(userContext) || !wallet) {
       throw new Error("No wallet found");
+    }
+    if (!recipientAddress || !solAmountToSend) {
+      throw Error("recipient address and SOL amount have to be set");
     }
     setBusySendingSol(true);
 
@@ -91,7 +92,7 @@ const SendTransaction = () => {
           type="text"
           className="bg-white text-black"
           id="recipient"
-          onChange={(evt) => setReceipientAddress(evt.target.value)}
+          onChange={(evt) => setRecipientAddress(evt.target.value)}
         />
         <button
           className={`mt-2 rounded px-4 py-2 text-white 

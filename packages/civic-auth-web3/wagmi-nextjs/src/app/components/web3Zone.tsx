@@ -15,7 +15,7 @@ function Web3U({
   const { isConnected, address, chain } = useAccount();
   const user = useUser();
   const isLoading = user.isLoading || walletCreationInProgress;
-  const [receipientAddress, setReceipientAddress] = useState<string | null>(null);
+  const [receipientAddress, setRecipientAddress] = useState<string | null>(null);
   const [ethToSend, setEthToSend] = useState<number | null>(0.001);
     const [busySendingEth, setBusySendingEth] = useState(false);
 
@@ -73,7 +73,7 @@ function Web3U({
         <div className="flex flex-col" >
             <span>Send ETH to wallet:</span>
             ETH to send: <input type="number" className="bg-white text-black" placeholder="0.001" id="amount" onChange={(evt) => setEthToSend(parseFloat(evt.target.value))} />
-            Recipient address: <input type="text" className="bg-white text-black" placeholder="0x..." id="recipient" onChange={(evt) => setReceipientAddress(evt.target.value)} />
+            Recipient address: <input type="text" className="bg-white text-black" placeholder="0x..." id="recipient" onChange={(evt) => setRecipientAddress(evt.target.value)} />
             <button
                className={`mt-2 rounded px-4 py-2 text-white 
                 ${!receipientAddress || !ethToSend || busySendingEth 
