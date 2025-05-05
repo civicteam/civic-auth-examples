@@ -92,7 +92,6 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git add .
           git commit -m "Update package versions to latest [skip ci]"
-          # Pull with rebase to incorporate any changes made to the remote while this job was running
-          git pull --rebase origin main
-          # Push changes
-          git push 
+          # Instead of rebasing (which can cause conflicts), try to push directly
+          # If that fails, fetch and merge instead of rebasing
+          git push || (git fetch && git merge --no-edit origin/main && git push) 
