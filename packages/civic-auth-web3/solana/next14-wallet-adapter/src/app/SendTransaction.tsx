@@ -2,10 +2,9 @@
 
 import { useConnection } from "@solana/wallet-adapter-react";
 import { useUser } from "@civic/auth-web3/react";
-import { userHasWallet, Web3UserContextType } from "@civic/auth-web3";
+import { userHasWallet } from "@civic/auth-web3";
 
 import {
-  Connection,
   LAMPORTS_PER_SOL,
   PublicKey,
   SystemProgram,
@@ -57,7 +56,7 @@ const SendTransaction = () => {
     await connection.confirmTransaction({ signature, ...blockhash });
     setBusySendingSol(false);
     console.log("Sent transaction with signature", signature);
-  }, [wallet, connection, recipientAddress, solAmountToSend]);
+  }, [wallet, connection, recipientAddress, solAmountToSend, userContext]);
 
   if (!userContext.user) {
     return (
