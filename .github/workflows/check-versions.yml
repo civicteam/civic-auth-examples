@@ -90,8 +90,6 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add .
-          git commit -m "Update package versions to latest [skip ci]"
-          # Instead of rebasing (which can cause conflicts), try to push directly
-          # If that fails, fetch and merge instead of rebasing
-          git push || (git fetch && git merge --no-edit origin/main && git push) 
+          git add .civic-versions
+          git commit -m "Update .civic-versions file for daily test [skip ci]" || echo "No changes to commit"
+          git push 
