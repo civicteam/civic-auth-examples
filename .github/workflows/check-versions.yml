@@ -90,9 +90,6 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add .
-          git commit -m "Update package versions to latest [skip ci]"
-          # Pull with rebase to incorporate any changes made to the remote while this job was running
-          git pull --rebase origin main
-          # Push changes
+          git add .civic-versions
+          git commit -m "Update .civic-versions file for daily test [skip ci]" || echo "No changes to commit"
           git push 
