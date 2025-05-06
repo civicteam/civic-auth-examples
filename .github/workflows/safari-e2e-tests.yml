@@ -2,7 +2,9 @@ name: Build and run example apps in Safari
 
 on:
   schedule:
-    - cron: '0 12 * * *'  # Run daily at noon UTC (different time than regular tests)
+    - cron: '0 0 * * *'  # Run daily at midnight UTC
+  push:
+  pull_request:
   workflow_dispatch:
     
 jobs:
