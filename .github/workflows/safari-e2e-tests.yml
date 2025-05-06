@@ -1,0 +1,153 @@
+name: Build and run example apps in Safari
+
+on:
+  schedule:
+    - cron: '0 12 * * *'  # Run daily at noon UTC (different time than regular tests)
+  workflow_dispatch:
+    
+jobs:
+  check-version:
+    uses: ./.github/workflows/check-versions.yml
+
+  # Production jobs with Safari browser
+  job-nextjs-example-app-safari:
+    name: "Nextjs example app (Safari)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app.yml
+    with:
+      project-path: packages/civic-auth/nextjs
+      cypress-spec: cypress/e2e/features/example-apps/nextjs-login.feature
+      browser: safari
+    secrets: inherit
+
+  job-reactjs-example-app-safari:
+    name: "Reactjs example app (Safari)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app.yml
+    with:
+      project-path: packages/civic-auth/reactjs
+      cypress-spec: cypress/e2e/features/example-apps/reactjs-login.feature
+      browser: safari
+    secrets: inherit
+
+  job-express-example-app-safari:
+    name: "Express example app (Safari)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app.yml
+    with:
+      project-path: packages/civic-auth/server/express
+      cypress-spec: cypress/e2e/features/example-apps/express-login.feature
+      browser: safari
+    secrets: inherit
+
+  job-fastify-example-app-safari:
+    name: "Fastify example app (Safari)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app.yml
+    with:
+      project-path: packages/civic-auth/server/fastify
+      cypress-spec: cypress/e2e/features/example-apps/fastify-login.feature
+      browser: safari
+    secrets: inherit
+
+  job-hono-example-app-safari:
+    name: "Hono example app (Safari)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app.yml
+    with:
+      project-path: packages/civic-auth/server/hono
+      cypress-spec: cypress/e2e/features/example-apps/hono-login.feature
+      browser: safari
+    secrets: inherit
+
+  job-next-14-webpack-solana-wallet-adapter-safari:
+    name: "Next14 webpack Solana wallet adapter (Safari)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app.yml
+    with:
+      project-path: packages/civic-auth-web3/solana/next14-wallet-adapter
+      cypress-spec: cypress/e2e/features/example-apps/solana-next14-wa-login.feature
+      browser: safari
+    secrets: inherit
+
+  job-next-14-solana-no-wallet-adapter-safari:
+    name: "Next14 webpack Solana No wallet adapter (Safari)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app.yml
+    with:
+      project-path: packages/civic-auth-web3/solana/next14-no-wallet-adapter
+      cypress-spec: cypress/e2e/features/example-apps/solana-next14-no-wa-login.feature
+      browser: safari
+    secrets: inherit
+
+  job-next-15-turbopack-solana-wallet-adapter-safari:
+    name: "Next15 webpack Solana wallet adapter (Turbopack) (Safari)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app.yml
+    with:
+      project-path: packages/civic-auth-web3/solana/next15-wallet-adapter
+      cypress-spec: cypress/e2e/features/example-apps/solana-next15-turbopack-wa-login.feature
+      build-command: "yarn build-turbopack"
+      browser: safari
+    secrets: inherit
+
+  job-next-15-webpack-solana-wallet-adapter-safari:
+    name: "Next15 webpack Solana wallet adapter (Webpack) (Safari)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app.yml
+    with:
+      project-path: packages/civic-auth-web3/solana/next15-wallet-adapter
+      cypress-spec: cypress/e2e/features/example-apps/solana-next15-wa-login.feature
+      browser: safari
+    secrets: inherit
+
+  job-next-15-turbopack-no-solana-wallet-adapter-safari:
+    name: "Next15 webpack no Solana wallet adapter (Turbopack) (Safari)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app.yml
+    with:
+      project-path: packages/civic-auth-web3/solana/next15-no-wallet-adapter
+      cypress-spec: cypress/e2e/features/example-apps/solana-next15-turbopack-no-wa-login.feature
+      build-command: "yarn build-turbopack"
+      browser: safari
+    secrets: inherit
+
+  job-next-15-webpack-no-solana-wallet-adapter-safari:
+    name: "Next15 webpack no Solana wallet adapter (Webpack) (Safari)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app.yml
+    with:
+      project-path: packages/civic-auth-web3/solana/next15-no-wallet-adapter
+      cypress-spec: cypress/e2e/features/example-apps/solana-next15-no-wa-login.feature
+      browser: safari
+    secrets: inherit
+
+  job-vite-solana-wallet-adapter-safari:
+    name: "Vite solana wallet adapter (Safari)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app.yml
+    with:
+      project-path: packages/civic-auth-web3/solana/vite-wallet-adapter
+      cypress-spec: cypress/e2e/features/example-apps/solana-vite-wa-login.feature
+      browser: safari
+    secrets: inherit
+
+  job-vite-no-solana-wallet-adapter-safari:
+    name: "Vite no solana wallet adapter (Safari)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app.yml
+    with:
+      project-path: packages/civic-auth-web3/solana/vite-no-wallet-adapter
+      cypress-spec: cypress/e2e/features/example-apps/solana-vite-no-wa-login.feature
+      browser: safari
+    secrets: inherit
+
+  job-vite-wagmi-example-app-safari:
+    name: "Vite wagmi example app (Safari)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app.yml
+    with:
+      project-path: packages/civic-auth-web3/wagmi
+      cypress-spec: cypress/e2e/features/example-apps/wagmi-login.feature
+      browser: safari
+    secrets: inherit 
