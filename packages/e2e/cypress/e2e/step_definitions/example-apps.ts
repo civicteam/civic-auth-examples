@@ -40,6 +40,16 @@ Then('I click the sign in button', () => {
     .click();
 });
 
+Then('I click the custom sign in button', () => {
+  cy.get(exampleAppHome.customSignInButton)
+    .should('have.text', 'Sign in (Custom)')
+    .should('not.be.disabled');
+
+  cy.get(exampleAppHome.customSignInButton)
+    .should('be.visible')
+    .click();
+});
+
 Then('I click the select wallet button', () => {
   cy.get(exampleAppHome.selectWalletButton)
     .should('have.text', 'Select Wallet')
