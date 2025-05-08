@@ -15,6 +15,7 @@ export const exampleAppHome = {
   userDataField: '[data-testid="userDataField"]',
   forwardedTokensField: '[data-testid="forwardedTokensField"]',
   button: 'button',
+  customSignInButton: 'button:contains("Sign in (Custom)")',
   signInButton: '[data-testid="sign-in-button"]',
   selectWalletButton: '.wallet-adapter-button.wallet-adapter-button-trigger',
   civicWalletButton: '.wallet-adapter-button'
