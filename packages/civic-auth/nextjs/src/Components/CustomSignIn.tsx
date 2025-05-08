@@ -34,7 +34,6 @@ export default function CustomSignIn() {
             textAlign: "center",
             color: "#6b7280",
           }}
-          data-testid="sign-in-standalone-custom-button"
         >
           Sign in (Custom)
         </button>
