@@ -10,6 +10,8 @@ const withCivicAuth = createCivicAuthPlugin({
   // oauthServer is not necessary for production.
   oauthServer: process.env.AUTH_SERVER || 'https://auth.civic.com/oauth',
   basePath: process.env.BASE_PATH || '',
+  // Set the loginSuccessUrl to send your users to a specific route after login. If not set, users will go to the root of your app.
+  //loginSuccessUrl: '/customSuccessRoute',
 });
 
 export default withCivicAuth(nextConfig)
