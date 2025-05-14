@@ -3,7 +3,7 @@ import { Given, When, Then } from '@badeball/cypress-cucumber-preprocessor';
 import { exampleAppHome } from '../../support/pages/elements';
 import 'cypress-iframe';
 
-Given('I open the app home page', (appType: string) => {
+Given('I open the app home page', () => {
   cy.intercept('**/.well-known/openid-configuration', (req) => {
     req.reply((res) => {
       if (res.statusCode === 200) {
@@ -23,7 +23,7 @@ Given('I open the app home page', (appType: string) => {
   cy.wait('@authRequest').its('response.statusCode').should('eq', 200);
 });
 
-Given('I open the server app home page', (appType: string) => {
+Given('I open the server app home page', () => {
   cy.clearAllCookies();
   cy.clearAllSessionStorage();
   cy.clearAllLocalStorage();
@@ -190,7 +190,7 @@ When('I click log in with dummy in the server app page', () => {
   cy.wait('@authCallback', { timeout: 30000 });
 });
 
-Then('I am logged in and redirected to the hello page', (appType: string) => {
+Then('I am logged in and redirected to the hello page', () => {
   cy.url().should('include', '/admin/hello');
   cy.contains('Hello').should('be.visible');
 });
