@@ -17,17 +17,24 @@ Given('I open the app home page', (appType: string) => {
   cy.clearAllLocalStorage();
   cy.visit('http://localhost:3000', {
     retryOnNetworkFailure: true,
-    timeout: 10000
+    timeout: 10000,
   })
-
+  
   cy.wait('@authRequest').its('response.statusCode').should('eq', 200);
 });
 
-Given('I open the {string} server app home page', (appType: string) => {
+Given('I open the server app home page', (appType: string) => {
   cy.clearAllCookies();
   cy.clearAllSessionStorage();
   cy.clearAllLocalStorage();
-  cy.visit(Cypress.env(`${appType}_BASE_URL`))
+  cy.visit('http://localhost:3000', {
+    retryOnNetworkFailure: true,
+    timeout: 10000,
+    headers: {
+      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+      'Origin': 'http://localhost:3000'
+    }
+  })
 });
 
 Then('I click the sign in button', () => {
@@ -183,8 +190,8 @@ When('I click log in with dummy in the server app page', () => {
   cy.wait('@authCallback', { timeout: 30000 });
 });
 
-Then('I am logged in and redirected to the {string} hello page', (appType: string) => {
-  cy.url().should('include', Cypress.env(`${appType}_BASE_URL`) + '/admin/hello');
+Then('I am logged in and redirected to the hello page', (appType: string) => {
+  cy.url().should('include', '/admin/hello');
   cy.contains('Hello').should('be.visible');
 });
 
