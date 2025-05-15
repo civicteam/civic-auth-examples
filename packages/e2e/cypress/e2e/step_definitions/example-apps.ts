@@ -80,7 +80,7 @@ Then('I confirm I am logged in', () => {
   cy.get('#civic-dropdown-container').contains('button', 'Ghost').should('be.visible');
 });
 
-// This scenario is triggered by starting the app with the environment variable LOGIN_SUCCESS_URL set to a custom route.
+// This scenario is triggered by starting the civic-auth/nextjs app with the environment variable LOGIN_SUCCESS_URL set to a custom route.
 // The /customSuccessRoute one is available in the nextjs sample app.
 Then('I confirm the custom loginSuccessUrl is loaded', () => {
   cy.url().should('include', '/customSuccessRoute');
