@@ -6,6 +6,8 @@ Feature: Log in with nextjs app
 
   Scenario: Verify login
     Then I confirm I am logged in
+    # Because we have not set the LOGIN_SUCCESS_URL env var:
+    And I confirm the custom loginSuccessUrl is NOT loaded
     
   Scenario: Logout successfully
     When I click the logout button
