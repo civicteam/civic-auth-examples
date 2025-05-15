@@ -80,6 +80,18 @@ Then('I confirm I am logged in', () => {
   cy.get('#civic-dropdown-container').contains('button', 'Ghost').should('be.visible');
 });
 
+// This scenario is triggered by starting the civic-auth/nextjs app with the environment variable LOGIN_SUCCESS_URL set to a custom route.
+// The /customSuccessRoute one is available in the nextjs sample app.
+Then('I confirm the custom loginSuccessUrl is loaded', () => {
+  cy.url().should('include', '/customSuccessRoute');
+  cy.get('[data-testid="loginSuccessUrlHeader"]').should('be.visible').click();
+});
+
+Then('I confirm the custom loginSuccessUrl is NOT loaded', () => {
+  cy.url().should('not.include', '/customSuccessRoute');
+  cy.get('[data-testid="loginSuccessUrlHeader"]').should('not.exist');
+});
+
 
 When('I click log in with dummy in the iframe', () => {
   cy.enter('#civic-auth-iframe').then(getBody => {

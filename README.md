@@ -27,6 +27,8 @@ examples in the .env.example files
     ```yarn install```
     ```yarn cypress open --browser chrome```
 
+Note: One particular test, `nextjs-loginSuccessUrl.feature`, won't work unless the NextJS app is started with the `LOGIN_SUCCESS_URL` env var set to `"/customSuccessRoute"`. CI does this in the `test-login-success-url.yml` job, which specifically runs that spec.
+
 
 
 
