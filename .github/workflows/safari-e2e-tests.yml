@@ -22,15 +22,15 @@ jobs:
       browser: webkit
     secrets: inherit
 
-  # job-reactjs-example-app-safari:
-  #   name: "Reactjs example app (Safari)"
-  #   needs: check-version
-  #   uses: ./.github/workflows/test-example-app-playwright.yml
-  #   with:
-  #     project-path: packages/civic-auth/reactjs
-  #     playwright-spec: playwright/tests/reactjs-login.spec.ts
-  #     browser: webkit
-  #   secrets: inherit
+  job-reactjs-example-app-safari:
+    name: "Reactjs example app (Safari)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-playwright.yml
+    with:
+      project-path: packages/civic-auth/reactjs
+      playwright-spec: playwright/tests/reactjs-login.spec.ts
+      browser: webkit
+    secrets: inherit
 
   # job-express-example-app-safari:
   #   name: "Express example app (Safari)"
