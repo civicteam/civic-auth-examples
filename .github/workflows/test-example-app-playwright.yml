@@ -93,6 +93,10 @@ jobs:
           # Install remaining dependencies
           yarn install
 
+      - name: Install Playwright CLI
+        working-directory: packages/e2e
+        run: yarn add -D @playwright/test
+
       - name: Install Playwright browsers
         working-directory: packages/e2e
         run: yarn playwright install --with-deps
