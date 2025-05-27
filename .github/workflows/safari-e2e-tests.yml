@@ -32,124 +32,124 @@ jobs:
       browser: webkit
     secrets: inherit
 
-  # job-express-example-app-safari:
-  #   name: "Express example app (Safari)"
-  #   needs: check-version
-  #   uses: ./.github/workflows/test-example-app-playwright.yml
-  #   with:
-  #     project-path: packages/civic-auth/server/express
-  #     playwright-spec: playwright/tests/express-login.spec.ts
-  #     browser: webkit
-  #   secrets: inherit
+  job-express-example-app-safari:
+    name: "Express example app (Safari)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-playwright.yml
+    with:
+      project-path: packages/civic-auth/server/express
+      playwright-spec: playwright/tests/express-login.spec.ts
+      browser: webkit
+    secrets: inherit
 
-  # job-fastify-example-app-safari:
-  #   name: "Fastify example app (Safari)"
-  #   needs: check-version
-  #   uses: ./.github/workflows/test-example-app-playwright.yml
-  #   with:
-  #     project-path: packages/civic-auth/server/fastify
-  #     playwright-spec: playwright/tests/fastify-login.spec.ts
-  #     browser: webkit
-  #   secrets: inherit
+  job-fastify-example-app-safari:
+    name: "Fastify example app (Safari)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-playwright.yml
+    with:
+      project-path: packages/civic-auth/server/fastify
+      playwright-spec: playwright/tests/fastify-login.spec.ts
+      browser: webkit
+    secrets: inherit
 
-  # job-hono-example-app-safari:
-  #   name: "Hono example app (Safari)"
-  #   needs: check-version
-  #   uses: ./.github/workflows/test-example-app-playwright.yml
-  #   with:
-  #     project-path: packages/civic-auth/server/hono
-  #     playwright-spec: playwright/tests/hono-login.spec.ts
-  #     browser: webkit
-  #   secrets: inherit
+  job-hono-example-app-safari:
+    name: "Hono example app (Safari)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-playwright.yml
+    with:
+      project-path: packages/civic-auth/server/hono
+      playwright-spec: playwright/tests/hono-login.spec.ts
+      browser: webkit
+    secrets: inherit
 
-  # job-next-14-webpack-solana-wallet-adapter-safari:
-  #   name: "Next14 webpack Solana wallet adapter (Safari)"
-  #   needs: check-version
-  #   uses: ./.github/workflows/test-example-app-playwright.yml
-  #   with:
-  #     project-path: packages/civic-auth-web3/solana/next14-wallet-adapter
-  #     playwright-spec: playwright/tests/solana-next14-wa-login.spec.ts
-  #     browser: webkit
-  #   secrets: inherit
+  job-next-14-webpack-solana-wallet-adapter-safari:
+    name: "Next14 webpack Solana wallet adapter (Safari)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-playwright.yml
+    with:
+      project-path: packages/civic-auth-web3/solana/next14-wallet-adapter
+      playwright-spec: playwright/tests/solana-next14-wa-login.spec.ts
+      browser: webkit
+    secrets: inherit
 
-  # job-next-14-solana-no-wallet-adapter-safari:
-  #   name: "Next14 webpack Solana No wallet adapter (Safari)"
-  #   needs: check-version
-  #   uses: ./.github/workflows/test-example-app-playwright.yml
-  #   with:
-  #     project-path: packages/civic-auth-web3/solana/next14-no-wallet-adapter
-  #     playwright-spec: playwright/tests/solana-next14-no-wa-login.spec.ts
-  #     browser: webkit
-  #   secrets: inherit
+  job-next-14-solana-no-wallet-adapter-safari:
+    name: "Next14 webpack Solana No wallet adapter (Safari)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-playwright.yml
+    with:
+      project-path: packages/civic-auth-web3/solana/next14-no-wallet-adapter
+      playwright-spec: playwright/tests/solana-next14-no-wa-login.spec.ts
+      browser: webkit
+    secrets: inherit
 
-  # job-next-15-turbopack-solana-wallet-adapter-safari:
-  #   name: "Next15 webpack Solana wallet adapter (Turbopack) (Safari)"
-  #   needs: check-version
-  #   uses: ./.github/workflows/test-example-app-playwright.yml
-  #   with:
-  #     project-path: packages/civic-auth-web3/solana/next15-wallet-adapter
-  #     playwright-spec: playwright/tests/solana-next15-turbopack-wa-login.spec.ts
-  #     build-command: "yarn build-turbopack"
-  #     browser: webkit
-  #   secrets: inherit
+  job-next-15-turbopack-solana-wallet-adapter-safari:
+    name: "Next15 webpack Solana wallet adapter (Turbopack) (Safari)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-playwright.yml
+    with:
+      project-path: packages/civic-auth-web3/solana/next15-wallet-adapter
+      playwright-spec: playwright/tests/solana-next15-turbopack-wa-login.spec.ts
+      build-command: "yarn build-turbopack"
+      browser: webkit
+    secrets: inherit
 
-  # job-next-15-webpack-solana-wallet-adapter-safari:
-  #   name: "Next15 webpack Solana wallet adapter (Webpack) (Safari)"
-  #   needs: check-version
-  #   uses: ./.github/workflows/test-example-app-playwright.yml
-  #   with:
-  #     project-path: packages/civic-auth-web3/solana/next15-wallet-adapter
-  #     playwright-spec: playwright/tests/solana-next15-wa-login.spec.ts
-  #     browser: webkit
-  #   secrets: inherit
+  job-next-15-webpack-solana-wallet-adapter-safari:
+    name: "Next15 webpack Solana wallet adapter (Webpack) (Safari)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-playwright.yml
+    with:
+      project-path: packages/civic-auth-web3/solana/next15-wallet-adapter
+      playwright-spec: playwright/tests/solana-next15-wa-login.spec.ts
+      browser: webkit
+    secrets: inherit
 
-  # job-next-15-turbopack-no-solana-wallet-adapter-safari:
-  #   name: "Next15 webpack no Solana wallet adapter (Turbopack) (Safari)"
-  #   needs: check-version
-  #   uses: ./.github/workflows/test-example-app-playwright.yml
-  #   with:
-  #     project-path: packages/civic-auth-web3/solana/next15-no-wallet-adapter
-  #     playwright-spec: playwright/tests/solana-next15-turbopack-no-wa-login.spec.ts
-  #     build-command: "yarn build-turbopack"
-  #     browser: webkit
-  #   secrets: inherit
+  job-next-15-turbopack-no-solana-wallet-adapter-safari:
+    name: "Next15 webpack no Solana wallet adapter (Turbopack) (Safari)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-playwright.yml
+    with:
+      project-path: packages/civic-auth-web3/solana/next15-no-wallet-adapter
+      playwright-spec: playwright/tests/solana-next15-turbopack-no-wa-login.spec.ts
+      build-command: "yarn build-turbopack"
+      browser: webkit
+    secrets: inherit
 
-  # job-next-15-webpack-no-solana-wallet-adapter-safari:
-  #   name: "Next15 webpack no Solana wallet adapter (Webpack) (Safari)"
-  #   needs: check-version
-  #   uses: ./.github/workflows/test-example-app-playwright.yml
-  #   with:
-  #     project-path: packages/civic-auth-web3/solana/next15-no-wallet-adapter
-  #     playwright-spec: playwright/tests/solana-next15-no-wa-login.spec.ts
-  #     browser: webkit
-  #   secrets: inherit
+  job-next-15-webpack-no-solana-wallet-adapter-safari:
+    name: "Next15 webpack no Solana wallet adapter (Webpack) (Safari)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-playwright.yml
+    with:
+      project-path: packages/civic-auth-web3/solana/next15-no-wallet-adapter
+      playwright-spec: playwright/tests/solana-next15-no-wa-login.spec.ts
+      browser: webkit
+    secrets: inherit
 
-  # job-vite-solana-wallet-adapter-safari:
-  #   name: "Vite solana wallet adapter (Safari)"
-  #   needs: check-version
-  #   uses: ./.github/workflows/test-example-app-playwright.yml
-  #   with:
-  #     project-path: packages/civic-auth-web3/solana/vite-wallet-adapter
-  #     playwright-spec: playwright/tests/solana-vite-wa-login.spec.ts
-  #     browser: webkit
-  #   secrets: inherit
+  job-vite-solana-wallet-adapter-safari:
+    name: "Vite solana wallet adapter (Safari)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-playwright.yml
+    with:
+      project-path: packages/civic-auth-web3/solana/vite-wallet-adapter
+      playwright-spec: playwright/tests/solana-vite-wa-login.spec.ts
+      browser: webkit
+    secrets: inherit
 
-  # job-vite-no-solana-wallet-adapter-safari:
-  #   name: "Vite no solana wallet adapter (Safari)"
-  #   needs: check-version
-  #   uses: ./.github/workflows/test-example-app-playwright.yml
-  #   with:
-  #     project-path: packages/civic-auth-web3/solana/vite-no-wallet-adapter
-  #     playwright-spec: playwright/tests/solana-vite-no-wa-login.spec.ts
-  #     browser: webkit
-  #   secrets: inherit
+  job-vite-no-solana-wallet-adapter-safari:
+    name: "Vite no solana wallet adapter (Safari)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-playwright.yml
+    with:
+      project-path: packages/civic-auth-web3/solana/vite-no-wallet-adapter
+      playwright-spec: playwright/tests/solana-vite-no-wa-login.spec.ts
+      browser: webkit
+    secrets: inherit
 
-  # job-vite-wagmi-example-app-safari:
-  #   name: "Vite wagmi example app (Safari)"
-  #   needs: check-version
-  #   uses: ./.github/workflows/test-example-app-playwright.yml
-  #   with:
-  #     project-path: packages/civic-auth-web3/wagmi
-  #     playwright-spec: playwright/tests/wagmi-login.spec.ts
-  #     browser: webkit
-  #   secrets: inherit 
+  job-vite-wagmi-example-app-safari:
+    name: "Vite wagmi example app (Safari)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-playwright.yml
+    with:
+      project-path: packages/civic-auth-web3/wagmi
+      playwright-spec: playwright/tests/wagmi-login.spec.ts
+      browser: webkit
+    secrets: inherit 
