@@ -13,6 +13,10 @@ on:
         required: false
         type: string
         default: yarn build
+      browser:
+        required: false
+        type: string
+        default: chrome
     secrets:
       CLIENT_ID:
         required: true
@@ -107,7 +111,7 @@ jobs:
         with:
           working-directory: packages/e2e
           spec: ${{ inputs.cypress-spec }}
-          browser: chrome
+          browser: ${{ inputs.browser }}
           install: true
           record: true
         env:

@@ -19,6 +19,7 @@ module.exports = defineConfig({
   videoCompression: true,
   // so that we don't get CORS errors in iframe mode
   chromeWebSecurity: false,
+  experimentalWebKitSupport: true,
   retries: {
     experimentalStrategy: 'detect-flake-and-pass-on-threshold',
     experimentalOptions: {
