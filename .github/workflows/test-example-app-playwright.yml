@@ -57,8 +57,10 @@ jobs:
       - name: Cache Yarn packages
         uses: actions/cache@v4
         with:
-          path: ${{ inputs.project-path }}/node_modules
-          key: node-modules-${{ runner.os }}-${{ hashFiles(format('{0}/yarn.lock', inputs.project-path)) }}-${{ hashFiles(format('{0}/package.json', inputs.project-path)) }}
+          path: |
+            ${{ inputs.project-path }}/node_modules
+            packages/e2e/node_modules
+          key: node-modules-${{ runner.os }}-${{ hashFiles(format('{0}/yarn.lock', inputs.project-path)) }}-${{ hashFiles(format('{0}/package.json', inputs.project-path)) }}-${{ hashFiles('packages/e2e/package.json') }}
 
       - name: Yarn install with latest Civic packages
         run: |
@@ -92,10 +94,6 @@ jobs:
           
           # Install remaining dependencies
           yarn install
-
-      - name: Install Playwright CLI
-        working-directory: packages/e2e
-        run: yarn add -D @playwright/test
 
       - name: Install Playwright browsers
         working-directory: packages/e2e
