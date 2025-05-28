@@ -1,4 +1,4 @@
-name: Reusable Build and Test Example App
+name: Test Example Apps with Safari Browser (WebKit)
 
 on:
   workflow_call:
@@ -6,7 +6,7 @@ on:
       project-path:
         required: true
         type: string
-      cypress-spec:
+      playwright-spec:
         required: true
         type: string
       build-command:
@@ -16,7 +16,7 @@ on:
       browser:
         required: false
         type: string
-        default: chrome
+        default: webkit
     secrets:
       CLIENT_ID:
         required: true
@@ -28,8 +28,6 @@ on:
         required: true
       GH_PAT:
         required: true
-      CYPRESS_RECORD_KEY:
-        required: true
 
 jobs:
   build-and-test:
@@ -37,7 +35,6 @@ jobs:
     env:
       CLIENT_ID: ${{ secrets.CLIENT_ID }}
       VITE_CLIENT_ID: ${{ secrets.CLIENT_ID }}
-      CYPRESS_CLIENT_ID: ${{ secrets.CLIENT_ID }}
       AUTH_SERVER: ${{ secrets.AUTH_SERVER }}
       VITE_AUTH_SERVER: ${{ secrets.AUTH_SERVER }}
       NEXT_PUBLIC_WALLET_API_BASE_URL: ${{ secrets.NEXT_PUBLIC_WALLET_API_BASE_URL }}
@@ -60,8 +57,10 @@ jobs:
       - name: Cache Yarn packages
         uses: actions/cache@v4
         with:
-          path: ${{ inputs.project-path }}/node_modules
-          key: node-modules-${{ runner.os }}-${{ hashFiles(format('{0}/yarn.lock', inputs.project-path)) }}-${{ hashFiles(format('{0}/package.json', inputs.project-path)) }}
+          path: |
+            ${{ inputs.project-path }}/node_modules
+            packages/e2e/node_modules
+          key: node-modules-${{ runner.os }}-${{ hashFiles(format('{0}/yarn.lock', inputs.project-path)) }}-${{ hashFiles(format('{0}/package.json', inputs.project-path)) }}-${{ hashFiles('packages/e2e/package.json') }}
 
       - name: Yarn install with latest Civic packages
         run: |
@@ -96,23 +95,32 @@ jobs:
           # Install remaining dependencies
           yarn install
 
+      - name: Install Playwright CLI
+        working-directory: packages/e2e
+        run: yarn add -D @playwright/test
+
+      - name: Install Playwright browsers
+        working-directory: packages/e2e
+        run: yarn playwright install --with-deps
+
       - name: Yarn build
         run: yarn build
 
       - name: Start App
-        run: yarn start &
+        run: yarn dev &
 
       - name: Wait for app to start
         run: npx wait-on http-get://localhost:3000 --timeout 300000
 
-      - name: Run Cypress Tests
-        id: cypress
-        uses: cypress-io/github-action@v6
+      - name: Run Playwright Tests
+        working-directory: packages/e2e
+        run: yarn playwright test ${{ inputs.playwright-spec }} --project=${{ inputs.browser }}
+
+      - name: Upload Playwright Report
+        if: always()
+        uses: actions/upload-artifact@v4
         with:
-          working-directory: packages/e2e
-          spec: ${{ inputs.cypress-spec }}
-          browser: ${{ inputs.browser }}
-          install: true
-          record: true
-        env:
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          name: playwright-report-${{ github.run_id }}
+          path: packages/e2e/playwright-report/
+          retention-days: 30
+          overwrite: true 

@@ -2,7 +2,7 @@ name: E2E Tests Notification
 
 on:
   workflow_run:
-    workflows: ["Build and run example apps using latest sdk versions"]
+    workflows: ["Build and run example apps using latest sdk versions", "Build and run example apps in Safari"]
     types:
       - completed
 

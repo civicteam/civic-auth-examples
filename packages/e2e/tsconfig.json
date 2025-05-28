@@ -4,6 +4,8 @@
     "lib": ["ESNext", "dom"],
     "types": ["cypress", "node"],
     "strict": true,
+    "moduleResolution": "nodenext",
+    "module": "NodeNext",
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
