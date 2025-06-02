@@ -120,7 +120,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: playwright-report-${{ github.run_id }}
+          name: playwright-report-${{ github.job }}-${{ github.run_id }}
           path: packages/e2e/playwright-report/
           retention-days: 30
           overwrite: true 

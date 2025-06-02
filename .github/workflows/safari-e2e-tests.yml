@@ -83,7 +83,7 @@ jobs:
     secrets: inherit
 
   job-next-15-turbopack-solana-wallet-adapter-safari:
-    name: "Next15 webpack Solana wallet adapter (Turbopack) (Safari)"
+    name: "Next15 turbopack Solana wallet adapter (Safari)"
     needs: check-version
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
@@ -94,7 +94,7 @@ jobs:
     secrets: inherit
 
   job-next-15-webpack-solana-wallet-adapter-safari:
-    name: "Next15 webpack Solana wallet adapter (Webpack) (Safari)"
+    name: "Next15 webpack Solana wallet adapter (Safari)"
     needs: check-version
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
@@ -104,7 +104,7 @@ jobs:
     secrets: inherit
 
   job-next-15-turbopack-no-solana-wallet-adapter-safari:
-    name: "Next15 webpack no Solana wallet adapter (Turbopack) (Safari)"
+    name: "Next15 turbopack no Solana wallet adapter (Safari)"
     needs: check-version
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
@@ -115,7 +115,7 @@ jobs:
     secrets: inherit
 
   job-next-15-webpack-no-solana-wallet-adapter-safari:
-    name: "Next15 webpack no Solana wallet adapter (Webpack) (Safari)"
+    name: "Next15 webpack no Solana wallet adapter (Safari)"
     needs: check-version
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
