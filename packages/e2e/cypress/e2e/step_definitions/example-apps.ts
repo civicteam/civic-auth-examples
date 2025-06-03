@@ -80,6 +80,14 @@ Then('I confirm I am logged in', () => {
   cy.get('#civic-dropdown-container').contains('button', 'Ghost').should('be.visible');
 });
 
+Then('I confirm vanilla js I am logged in', () => {
+  cy.get('#userInfo')
+    .should('have.class', 'show');
+  cy.get('#userName')
+    .should('be.visible')
+    .should('not.be.empty');
+});
+
 // This scenario is triggered by starting the civic-auth/nextjs app with the environment variable LOGIN_SUCCESS_URL set to a custom route.
 // The /customSuccessRoute one is available in the nextjs sample app.
 Then('I confirm the custom loginSuccessUrl is loaded', () => {
@@ -304,10 +312,25 @@ When('I click the logout button', () => {
     .click();
 });
 
+When('I click the vanilla js logout button', () => {
+  cy.get('#logoutButton')
+    .should('have.text', 'Sign Out')
+    .should('not.be.disabled');
+
+  cy.get('#logoutButton')
+    .should('be.visible')
+    .click();
+});
+
 When('I confirm successful logout', () => {
   cy.get(exampleAppHome.signInButton)
     .should('have.text', 'Sign in')
     .should('not.be.disabled');
+});
+
+When('I confirm vanilla js successful logout', () => {
+  cy.get('#userInfo')
+    .should('not.have.class', 'show');
 });
 
 Then('I confirm token refresh fails after logout', () => {
@@ -345,5 +368,25 @@ Then('I confirm that login-app user is on the correct url', () => {
 Then('I confirm that login-app user is redirected to the dashboard home', () => {
   cy.url().should('include', `${Cypress.env('LOGIN_APP_URL')}/dashboard/api/session?redirectTo=%2Fhome`);
   cy.url().should('include', `${Cypress.env('LOGIN_APP_URL')}/dashboard/home/new-account`);
+});
+
+Then('I click the embedded sign in button', () => {
+  cy.get('#loginButton')
+    .should('have.text', 'Sign In (Embedded)')
+    .should('not.be.disabled');
+
+  cy.get('#loginButton')
+    .should('be.visible')
+    .click();
+});
+
+Then('I click the modal sign in button', () => {
+  cy.get('#loginModalButton')
+    .should('have.text', 'Sign In (Modal)')
+    .should('not.be.disabled');
+
+  cy.get('#loginModalButton')
+    .should('be.visible')
+    .click();
 });
 

@@ -67,6 +67,17 @@ jobs:
       cypress-spec: cypress/e2e/features/example-apps/hono-login.feature
     secrets: inherit
 
+  job-vanillajs-example-app:
+    name: "VanillaJS example app"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app.yml
+    with:
+      project-path: packages/civic-auth/vanillajs
+      cypress-spec: |
+        cypress/e2e/features/example-apps/vanillajs-login.feature
+        cypress/e2e/features/example-apps/vanillajs-modal-login.feature
+    secrets: inherit
+
   job-next-14-webpack-solana-wallet-adapter:
     name: "Next14 webpack Solana wallet adapter"
     needs: check-version
@@ -206,6 +217,17 @@ jobs:
     with:
       project-path: packages/civic-auth/server/hono
       cypress-spec: cypress/e2e/features/example-apps/hono-login.feature
+    secrets: inherit
+
+  job-vanillajs-example-app-dev:
+    name: "(Dev Mode) VanillaJS example app"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-dev.yml
+    with:
+      project-path: packages/civic-auth/vanillajs
+      cypress-spec: |
+        cypress/e2e/features/example-apps/vanillajs-login.feature
+        cypress/e2e/features/example-apps/vanillajs-modal-login.feature
     secrets: inherit
 
   job-next-14-webpack-solana-wallet-adapter-dev:
