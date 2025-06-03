@@ -3,6 +3,12 @@ import { CivicAuth, AuthenticationEvents, AuthEvent } from '@civic/auth/vanillaj
 let authClient;
 let events;
 
+// Helper function to ensure URL ends with trailing slash
+const normalizeAuthServerUrl = (url) => {
+    if (!url) return undefined;
+    return url.endsWith('/') ? url : `${url}/`;
+};
+
 // UI Helper functions
 const showUserInfo = (user) => {
     console.log("showUserInfo", user);
@@ -34,7 +40,7 @@ const initializeAuth = async () => {
 
         authClient = await CivicAuth.create({
             clientId: import.meta.env.VITE_CLIENT_ID || "demo-client-1",
-            oauthServerBaseUrl: import.meta.env.VITE_AUTH_SERVER ?? undefined,
+            oauthServerBaseUrl: normalizeAuthServerUrl(import.meta.env.VITE_AUTH_SERVER),
             events: events,
         });
         
@@ -55,8 +61,9 @@ document.getElementById("loginButton").addEventListener("click", async () => {
     try {
         // Reinitialize with embedded mode
         authClient = await CivicAuth.create({
-            clientId: import.meta.env.VITE_CLIENT_ID || "demo-client-1",
-            oauthServerBaseUrl: import.meta.env.VITE_AUTH_SERVER ?? undefined,
+            clientId: import.meta.env.VITE_CLIENT_ID,
+            // Auth server is not required for production
+            oauthServerBaseUrl: normalizeAuthServerUrl(import.meta.env.VITE_AUTH_SERVER),
             targetContainerElement: document.getElementById("authContainer"),
             iframeDisplayMode: "embedded",
             events: events,
@@ -75,8 +82,9 @@ document.getElementById("loginModalButton").addEventListener("click", async () =
     try {
         // Reinitialize with modal mode
         authClient = await CivicAuth.create({
-            clientId: import.meta.env.VITE_CLIENT_ID || "demo-client-1",
-            oauthServerBaseUrl: import.meta.env.VITE_AUTH_SERVER ?? undefined,
+            clientId: import.meta.env.VITE_CLIENT_ID,
+            // Auth server is not required for production
+            oauthServerBaseUrl: normalizeAuthServerUrl(import.meta.env.VITE_AUTH_SERVER),
             events: events,
         });
         
