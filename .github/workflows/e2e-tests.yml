@@ -150,6 +150,14 @@ jobs:
       cypress-spec: cypress/e2e/features/example-apps/wagmi-login.feature
     secrets: inherit
 
+  job-wagmi-nextjs-example-app:
+    name: "Wagmi nextjs example app"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app.yml
+    with:
+      project-path: packages/civic-auth-web3/wagmi-nextjs
+      cypress-spec: cypress/e2e/features/example-apps/wagmi-login.feature
+    secrets: inherit
   # Development jobs
   job-nextjs-example-app-dev:
     name: "(Dev Mode) Nextjs example app"
@@ -278,5 +286,14 @@ jobs:
     uses: ./.github/workflows/test-example-app-dev.yml
     with:
       project-path: packages/civic-auth-web3/wagmi
+      cypress-spec: cypress/e2e/features/example-apps/wagmi-login.feature
+    secrets: inherit
+
+  job-wagmi-nextjs-example-app-dev:
+    name: " (Dev Mode) Wagmi nextjs example app"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-dev.yml
+    with:
+      project-path: packages/civic-auth-web3/wagmi-nextjs
       cypress-spec: cypress/e2e/features/example-apps/wagmi-login.feature
     secrets: inherit

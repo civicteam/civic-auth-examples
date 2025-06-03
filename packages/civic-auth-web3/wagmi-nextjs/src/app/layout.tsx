@@ -28,7 +28,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-         <main className="via-cyan-indigo-50 relative h-screen w-screen">
+         <main className="relative h-screen w-screen">
           <Providers>{children}</Providers>
         </main>
       </body>
