@@ -68,9 +68,17 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth/vanillajs
-      playwright-spec: |
-        playwright/tests/vanillajs-login.spec.ts
-        playwright/tests/vanillajs-modal-login.spec.ts
+      playwright-spec: playwright/tests/vanillajs-login.spec.ts
+      browser: webkit
+    secrets: inherit
+
+  job-vanillajs-modal-example-app-safari:
+    name: "VanillaJS Modal example app (Safari)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-playwright.yml
+    with:
+      project-path: packages/civic-auth/vanillajs
+      playwright-spec: playwright/tests/vanillajs-modal-login.spec.ts
       browser: webkit
     secrets: inherit
 
