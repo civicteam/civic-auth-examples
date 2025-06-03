@@ -62,6 +62,18 @@ jobs:
       browser: webkit
     secrets: inherit
 
+  job-vanillajs-example-app-safari:
+    name: "VanillaJS example app (Safari)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-playwright.yml
+    with:
+      project-path: packages/civic-auth/vanillajs
+      playwright-spec: |
+        playwright/tests/vanillajs-login.spec.ts
+        playwright/tests/vanillajs-modal-login.spec.ts
+      browser: webkit
+    secrets: inherit
+
   job-next-14-webpack-solana-wallet-adapter-safari:
     name: "Next14 webpack Solana wallet adapter (Safari)"
     needs: check-version
