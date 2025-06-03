@@ -153,3 +153,13 @@ jobs:
       playwright-spec: playwright/tests/wagmi-login.spec.ts
       browser: webkit
     secrets: inherit 
+
+  job-wagmi-nextjs-example-app-safari:
+    name: "Wagmi nextjs example app (Safari)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-playwright.yml
+    with:
+      project-path: packages/civic-auth-web3/wagmi-nextjs
+      playwright-spec: playwright/tests/wagmi-nextjs-login.spec.ts
+      browser: webkit
+    secrets: inherit
