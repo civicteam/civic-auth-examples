@@ -1,7 +1,4 @@
-import { CivicAuth, AuthenticationEvents, AuthEvent } from '@civic/auth/vanillajs';
-
-let authClient;
-let events;
+import { CivicAuth } from '@civic/auth/vanillajs';
 
 // UI Helper functions
 const showUserInfo = (user) => {
@@ -19,26 +16,14 @@ const hideUserInfo = () => {
     userInfoDiv.classList.remove('show');
 };
 
-// Initialize auth client
-const initializeAuth = async () => {
+// Check if user is already authenticated on page load
+const checkAuthStatus = async () => {
     try {
-        // Set up events for logout functionality
-        events = new AuthenticationEvents();
-        events.on(AuthEvent.SIGN_OUT_COMPLETE, () => {
-            console.log("Logout completed");
-            hideUserInfo();
-        });
-        events.on(AuthEvent.SIGN_OUT_ERROR, (error) => {
-            console.error("Logout failed:", error);
-        });
-
-        authClient = await CivicAuth.create({
+        const authClient = await CivicAuth.create({
             clientId: import.meta.env.VITE_CLIENT_ID || "demo-client-1",
             oauthServerBaseUrl: import.meta.env.VITE_AUTH_SERVER ?? undefined,
-            events: events,
         });
         
-        // Check if user is already authenticated
         const isAuthenticated = await authClient.isAuthenticated();
         if (isAuthenticated) {
             const { user } = await authClient.getCurrentUser();
@@ -46,20 +31,18 @@ const initializeAuth = async () => {
             console.log("User already authenticated:", user);
         }
     } catch (error) {
-        console.error("Failed to initialize auth:", error);
+        console.error("Failed to check auth status:", error);
     }
 };
 
 // Sign in with embedded iframe
 document.getElementById("loginButton").addEventListener("click", async () => {
     try {
-        // Reinitialize with embedded mode
-        authClient = await CivicAuth.create({
+        const authClient = await CivicAuth.create({
             clientId: import.meta.env.VITE_CLIENT_ID || "demo-client-1",
             oauthServerBaseUrl: import.meta.env.VITE_AUTH_SERVER ?? undefined,
             targetContainerElement: document.getElementById("authContainer"),
             iframeDisplayMode: "embedded",
-            events: events,
         });
         
         const { user } = await authClient.startAuthentication();
@@ -73,11 +56,10 @@ document.getElementById("loginButton").addEventListener("click", async () => {
 // Sign in with modal
 document.getElementById("loginModalButton").addEventListener("click", async () => {
     try {
-        // Reinitialize with modal mode
-        authClient = await CivicAuth.create({
+        const authClient = await CivicAuth.create({
             clientId: import.meta.env.VITE_CLIENT_ID || "demo-client-1",
             oauthServerBaseUrl: import.meta.env.VITE_AUTH_SERVER ?? undefined,
-            events: events,
+            displayMode: "modal"
         });
         
         const { user } = await authClient.startAuthentication();
@@ -91,12 +73,18 @@ document.getElementById("loginModalButton").addEventListener("click", async () =
 // Sign out
 document.getElementById("logoutButton").addEventListener("click", async () => {
     try {
-        await authClient?.logout();
+        const authClient = await CivicAuth.create({
+            clientId: import.meta.env.VITE_CLIENT_ID || "demo-client-1",
+            oauthServerBaseUrl: import.meta.env.VITE_AUTH_SERVER ?? undefined,
+        });
+        
+        await authClient.logout();
+        hideUserInfo();
         console.log("Logged out successfully");
     } catch (error) {
         console.error("Logout failed:", error);
     }
 });
 
-// Initialize on page load
-initializeAuth(); 
+// Check authentication status on page load
+checkAuthStatus(); 
