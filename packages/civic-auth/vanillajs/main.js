@@ -4,10 +4,6 @@ let authClient;
 let events;
 
 // Helper function to ensure URL ends with trailing slash
-const normalizeAuthServerUrl = (url) => {
-    if (!url) return undefined;
-    return url.endsWith('/') ? url : `${url}/`;
-};
 
 // UI Helper functions
 const showUserInfo = (user) => {
@@ -41,7 +37,7 @@ const initializeAuth = async () => {
         authClient = await CivicAuth.create({
             clientId: import.meta.env.VITE_CLIENT_ID,
             // Auth server is not required for production
-            oauthServerBaseUrl: normalizeAuthServerUrl(import.meta.env.VITE_AUTH_SERVER),
+            oauthServerBaseUrl: import.meta.env.VITE_AUTH_SERVER,
             events: events,
         });
         
@@ -64,7 +60,7 @@ document.getElementById("loginButton").addEventListener("click", async () => {
         authClient = await CivicAuth.create({
             clientId: import.meta.env.VITE_CLIENT_ID,
             // Auth server is not required for production
-            oauthServerBaseUrl: normalizeAuthServerUrl(import.meta.env.VITE_AUTH_SERVER),
+            oauthServerBaseUrl: import.meta.env.VITE_AUTH_SERVER,
             targetContainerElement: document.getElementById("authContainer"),
             iframeDisplayMode: "embedded",
             events: events,
@@ -85,7 +81,7 @@ document.getElementById("loginModalButton").addEventListener("click", async () =
         authClient = await CivicAuth.create({
             clientId: import.meta.env.VITE_CLIENT_ID,
             // Auth server is not required for production
-            oauthServerBaseUrl: normalizeAuthServerUrl(import.meta.env.VITE_AUTH_SERVER),
+            oauthServerBaseUrl: import.meta.env.VITE_AUTH_SERVER,
             events: events,
         });
         
