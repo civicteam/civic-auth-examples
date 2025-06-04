@@ -39,7 +39,8 @@ const initializeAuth = async () => {
         });
 
         authClient = await CivicAuth.create({
-            clientId: import.meta.env.VITE_CLIENT_ID || "demo-client-1",
+            clientId: import.meta.env.VITE_CLIENT_ID,
+            // Auth server is not required for production
             oauthServerBaseUrl: normalizeAuthServerUrl(import.meta.env.VITE_AUTH_SERVER),
             events: events,
         });
