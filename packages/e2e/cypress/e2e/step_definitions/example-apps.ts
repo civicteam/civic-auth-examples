@@ -68,10 +68,10 @@ Then('I click the select wallet button', () => {
 });
 
 Then('I click the civic wallet button', () => {
-  cy.get(exampleAppHome.civicWalletButton).contains('Civic WalletDetected')
+  cy.get(exampleAppHome.civicWalletButton).contains('Login via CivicDetected')
     .should('not.be.disabled');
 
-  cy.get(exampleAppHome.civicWalletButton).contains('Civic WalletDetected')
+  cy.get(exampleAppHome.civicWalletButton).contains('Login via CivicDetected')
     .should('be.visible')
     .click();
 });
