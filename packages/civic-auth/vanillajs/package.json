@@ -1,5 +1,6 @@
 {
   "name": "client-auth-vanilla",
+  "version": "0.1.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -9,7 +10,7 @@
     "start": "vite preview --port 3000"
   },
   "dependencies": {
-    "@civic/auth": "*"
+    "@civic/auth": "^0.7.0"
   },
   "devDependencies": {
     "vite": "^5.0.0"

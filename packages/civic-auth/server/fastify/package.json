@@ -11,7 +11,7 @@
     "dev": "PORT=${PORT:-3000} bun run src/app.ts --watch"
   },
   "dependencies": {
-    "@civic/auth": "*",
+    "@civic/auth": "^0.7.0",
     "@fastify/cookie": "^11.0.1",
     "bun": "^1.2.5",
     "dotenv": "^16.4.7",
