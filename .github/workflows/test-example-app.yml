@@ -61,7 +61,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ${{ inputs.project-path }}/node_modules
-          key: node-modules-${{ runner.os }}-${{ hashFiles(format('{0}/yarn.lock', inputs.project-path)) }}-${{ hashFiles(format('{0}/package.json', inputs.project-path)) }}
+          key: node-modules-${{ runner.os }}-${{ hashFiles(format('{0}/package.json', inputs.project-path)) }}
 
       - name: Yarn install with latest Civic packages
         run: |
