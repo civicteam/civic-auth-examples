@@ -7,8 +7,6 @@ on:
         required: true
       AUTH_SERVER:
         required: true
-      GH_PAT:
-        required: true
       CYPRESS_RECORD_KEY:
         required: true
 
@@ -26,7 +24,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GH_PAT }}
+          token: ${{ github.token }}
 
       - name: Cache Yarn packages
         uses: actions/cache@v4
