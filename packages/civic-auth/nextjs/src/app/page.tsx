@@ -1,9 +1,11 @@
-import { getUser } from "@civic/auth/nextjs";
+"use client";
+
 import { UserButton } from "@civic/auth/react";
 import CustomSignIn from "../Components/CustomSignIn";
+import { useUser } from "@civic/auth/react";
 
-export default async function Home() {
-  const user = await getUser();
+export default function Home() {
+  const { user } = useUser();
 
   return (
     <main>
