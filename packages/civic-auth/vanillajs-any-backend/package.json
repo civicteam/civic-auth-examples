@@ -1,0 +1,17 @@
+{
+  "name": "client-auth-vanilla",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port ${PORT:-5174}",
+    "build": "vite build",
+    "preview": "vite preview --port ${PORT:-5174}",
+    "start": "vite preview --port ${PORT:-5174}"
+  },
+  "dependencies": {
+    "@civic/auth": "0.9.0-beta.1"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}
