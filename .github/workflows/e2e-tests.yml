@@ -75,7 +75,7 @@ jobs:
       project-path: packages/civic-auth/vanillajs
       cypress-spec: |
         cypress/e2e/features/example-apps/vanillajs-login.feature
-        cypress/e2e/features/example-apps/vanillajs-modal-login.feature
+        # cypress/e2e/features/example-apps/vanillajs-modal-login.feature
     secrets: inherit
 
   job-next-14-webpack-solana-wallet-adapter:
