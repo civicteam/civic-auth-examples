@@ -9,27 +9,27 @@
 /* Begin PBXBuildFile section */
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */; };
-		463816543F4BDCC971B508D5 /* libPods-civicauthmobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DEFBD7A42D599C675E45486 /* libPods-civicauthmobile.a */; };
-		9FD85FFA880537023F3901CB /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD62176D992F8D9AFD9F94B /* ExpoModulesProvider.swift */; };
+		6E3BEDBC8B272523E5C8EA0E /* libPods-civicauth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBFC629890D9E5685305F474 /* libPods-civicauth.a */; };
+		6F53C79BB1B2EF62A7C8A4F0 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BAAA678F1B8EB3C2A6E4AB /* ExpoModulesProvider.swift */; };
 		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
-		E6B5C22493BBE0D1AA83AD58 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = B195E7CA05F4995D73205A79 /* PrivacyInfo.xcprivacy */; };
+		C940BD1EDD17BC4593CFAC68 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 5BCC5761A0A16C019B5610D1 /* PrivacyInfo.xcprivacy */; };
 		F11748422D0307B40044C1D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11748412D0307B40044C1D9 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		13B07F961A680F5B00A75B9A /* civicauthmobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = civicauthmobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = civicauthmobile/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = civicauthmobile/Info.plist; sourceTree = "<group>"; };
-		2DEFBD7A42D599C675E45486 /* libPods-civicauthmobile.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-civicauthmobile.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A7EA875900A65CDCD6E1AE66 /* Pods-civicauthmobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-civicauthmobile.release.xcconfig"; path = "Target Support Files/Pods-civicauthmobile/Pods-civicauthmobile.release.xcconfig"; sourceTree = "<group>"; };
-		AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = civicauthmobile/SplashScreen.storyboard; sourceTree = "<group>"; };
-		B195E7CA05F4995D73205A79 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = civicauthmobile/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* civicauth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = civicauth.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = civicauth/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = civicauth/Info.plist; sourceTree = "<group>"; };
+		46EA0DB66BF6B5776E40AE7D /* Pods-civicauth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-civicauth.release.xcconfig"; path = "Target Support Files/Pods-civicauth/Pods-civicauth.release.xcconfig"; sourceTree = "<group>"; };
+		5BCC5761A0A16C019B5610D1 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = civicauth/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = civicauth/SplashScreen.storyboard; sourceTree = "<group>"; };
 		BB2F792C24A3F905000567C9 /* Expo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Expo.plist; sourceTree = "<group>"; };
-		CAD62176D992F8D9AFD9F94B /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-civicauthmobile/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
-		E964E834031BD6E34D9C50A4 /* Pods-civicauthmobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-civicauthmobile.debug.xcconfig"; path = "Target Support Files/Pods-civicauthmobile/Pods-civicauthmobile.debug.xcconfig"; sourceTree = "<group>"; };
+		DBFC629890D9E5685305F474 /* libPods-civicauth.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-civicauth.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		F11748412D0307B40044C1D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = civicauthmobile/AppDelegate.swift; sourceTree = "<group>"; };
-		F11748442D0722820044C1D9 /* civicauthmobile-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "civicauthmobile-Bridging-Header.h"; path = "civicauthmobile/civicauthmobile-Bridging-Header.h"; sourceTree = "<group>"; };
+		F11748412D0307B40044C1D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = civicauth/AppDelegate.swift; sourceTree = "<group>"; };
+		F11748442D0722820044C1D9 /* civicauth-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "civicauth-Bridging-Header.h"; path = "civicauth/civicauth-Bridging-Header.h"; sourceTree = "<group>"; };
+		F8BAAA678F1B8EB3C2A6E4AB /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-civicauth/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
+		FBBC68187CE5EC8060FD7C98 /* Pods-civicauth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-civicauth.debug.xcconfig"; path = "Target Support Files/Pods-civicauth/Pods-civicauth.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,43 +37,58 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				463816543F4BDCC971B508D5 /* libPods-civicauthmobile.a in Frameworks */,
+				6E3BEDBC8B272523E5C8EA0E /* libPods-civicauth.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		13B07FAE1A68108700A75B9A /* civicauthmobile */ = {
+		13B07FAE1A68108700A75B9A /* civicauth */ = {
 			isa = PBXGroup;
 			children = (
 				F11748412D0307B40044C1D9 /* AppDelegate.swift */,
-				F11748442D0722820044C1D9 /* civicauthmobile-Bridging-Header.h */,
+				F11748442D0722820044C1D9 /* civicauth-Bridging-Header.h */,
 				BB2F792B24A3F905000567C9 /* Supporting */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */,
-				B195E7CA05F4995D73205A79 /* PrivacyInfo.xcprivacy */,
+				5BCC5761A0A16C019B5610D1 /* PrivacyInfo.xcprivacy */,
 			);
-			name = civicauthmobile;
+			name = civicauth;
+			sourceTree = "<group>";
+		};
+		1B02E3303F6B6E2FED705762 /* ExpoModulesProviders */ = {
+			isa = PBXGroup;
+			children = (
+				3BF8830A9DF0495DD9F08093 /* civicauth */,
+			);
+			name = ExpoModulesProviders;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				2DEFBD7A42D599C675E45486 /* libPods-civicauthmobile.a */,
+				DBFC629890D9E5685305F474 /* libPods-civicauth.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		72F6CEAB062A462D844EBB24 /* Pods */ = {
+		3BF8830A9DF0495DD9F08093 /* civicauth */ = {
 			isa = PBXGroup;
 			children = (
-				E964E834031BD6E34D9C50A4 /* Pods-civicauthmobile.debug.xcconfig */,
-				A7EA875900A65CDCD6E1AE66 /* Pods-civicauthmobile.release.xcconfig */,
+				F8BAAA678F1B8EB3C2A6E4AB /* ExpoModulesProvider.swift */,
 			);
-			name = Pods;
+			name = civicauth;
+			sourceTree = "<group>";
+		};
+		43858A4AE7FEB686BDAD6A4F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FBBC68187CE5EC8060FD7C98 /* Pods-civicauth.debug.xcconfig */,
+				46EA0DB66BF6B5776E40AE7D /* Pods-civicauth.release.xcconfig */,
+			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -87,12 +102,12 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* civicauthmobile */,
+				13B07FAE1A68108700A75B9A /* civicauth */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
-				72F6CEAB062A462D844EBB24 /* Pods */,
-				D7D79214664700CCB1CED218 /* ExpoModulesProviders */,
+				43858A4AE7FEB686BDAD6A4F /* Pods */,
+				1B02E3303F6B6E2FED705762 /* ExpoModulesProviders */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -102,7 +117,7 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* civicauthmobile.app */,
+				13B07F961A680F5B00A75B9A /* civicauth.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -113,48 +128,32 @@
 				BB2F792C24A3F905000567C9 /* Expo.plist */,
 			);
 			name = Supporting;
-			path = civicauthmobile/Supporting;
-			sourceTree = "<group>";
-		};
-		D7D79214664700CCB1CED218 /* ExpoModulesProviders */ = {
-			isa = PBXGroup;
-			children = (
-				EE1202B3A6F44F65C1B51084 /* civicauthmobile */,
-			);
-			name = ExpoModulesProviders;
-			sourceTree = "<group>";
-		};
-		EE1202B3A6F44F65C1B51084 /* civicauthmobile */ = {
-			isa = PBXGroup;
-			children = (
-				CAD62176D992F8D9AFD9F94B /* ExpoModulesProvider.swift */,
-			);
-			name = civicauthmobile;
+			path = civicauth/Supporting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		13B07F861A680F5B00A75B9A /* civicauthmobile */ = {
+		13B07F861A680F5B00A75B9A /* civicauth */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "civicauthmobile" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "civicauth" */;
 			buildPhases = (
 				08A4A3CD28434E44B6B9DE2E /* [CP] Check Pods Manifest.lock */,
-				7859C50CEEC43B79858FE0BB /* [Expo] Configure project */,
+				EE48878F53831DCE2EBDEE9F /* [Expo] Configure project */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				800E24972A6A228C8D4807E9 /* [CP] Copy Pods Resources */,
-				045CFE54970E79CB48D2C6DE /* [CP] Embed Pods Frameworks */,
+				56B44EB3E4C2E7BBBC4C212E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = civicauthmobile;
-			productName = civicauthmobile;
-			productReference = 13B07F961A680F5B00A75B9A /* civicauthmobile.app */;
+			name = civicauth;
+			productName = civicauth;
+			productReference = 13B07F961A680F5B00A75B9A /* civicauth.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -170,7 +169,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "civicauthmobile" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "civicauth" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -183,7 +182,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* civicauthmobile */,
+				13B07F861A680F5B00A75B9A /* civicauth */,
 			);
 		};
 /* End PBXProject section */
@@ -196,7 +195,7 @@
 				BB2F792D24A3F905000567C9 /* Expo.plist in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */,
-				E6B5C22493BBE0D1AA83AD58 /* PrivacyInfo.xcprivacy in Resources */,
+				C940BD1EDD17BC4593CFAC68 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,24 +217,6 @@
 			shellPath = /bin/sh;
 			shellScript = "if [[ -f \"$PODS_ROOT/../.xcode.env\" ]]; then\n  source \"$PODS_ROOT/../.xcode.env\"\nfi\nif [[ -f \"$PODS_ROOT/../.xcode.env.local\" ]]; then\n  source \"$PODS_ROOT/../.xcode.env.local\"\nfi\n\n# The project root by default is one level up from the ios directory\nexport PROJECT_ROOT=\"$PROJECT_DIR\"/..\n\nif [[ \"$CONFIGURATION\" = *Debug* ]]; then\n  export SKIP_BUNDLING=1\nfi\nif [[ -z \"$ENTRY_FILE\" ]]; then\n  # Set the entry JS file using the bundler's entry resolution.\n  export ENTRY_FILE=\"$(\"$NODE_BINARY\" -e \"require('expo/scripts/resolveAppEntry')\" \"$PROJECT_ROOT\" ios absolute | tail -n 1)\"\nfi\n\nif [[ -z \"$CLI_PATH\" ]]; then\n  # Use Expo CLI\n  export CLI_PATH=\"$(\"$NODE_BINARY\" --print \"require.resolve('@expo/cli', { paths: [require.resolve('expo/package.json')] })\")\"\nfi\nif [[ -z \"$BUNDLE_COMMAND\" ]]; then\n  # Default Expo CLI command for bundling\n  export BUNDLE_COMMAND=\"export:embed\"\nfi\n\n# Source .xcode.env.updates if it exists to allow\n# SKIP_BUNDLING to be unset if needed\nif [[ -f \"$PODS_ROOT/../.xcode.env.updates\" ]]; then\n  source \"$PODS_ROOT/../.xcode.env.updates\"\nfi\n# Source local changes to allow overrides\n# if needed\nif [[ -f \"$PODS_ROOT/../.xcode.env.local\" ]]; then\n  source \"$PODS_ROOT/../.xcode.env.local\"\nfi\n\n`\"$NODE_BINARY\" --print \"require('path').dirname(require.resolve('react-native/package.json')) + '/scripts/react-native-xcode.sh'\"`\n\n";
 		};
-		045CFE54970E79CB48D2C6DE /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-civicauthmobile/Pods-civicauthmobile-frameworks.sh",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/hermes-engine/Pre-built/hermes.framework/hermes",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/hermes.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-civicauthmobile/Pods-civicauthmobile-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		08A4A3CD28434E44B6B9DE2E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -251,31 +232,30 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-civicauthmobile-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-civicauth-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7859C50CEEC43B79858FE0BB /* [Expo] Configure project */ = {
+		56B44EB3E4C2E7BBBC4C212E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-civicauth/Pods-civicauth-frameworks.sh",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/hermes-engine/Pre-built/hermes.framework/hermes",
 			);
-			name = "[Expo] Configure project";
-			outputFileListPaths = (
-			);
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/hermes.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# This script configures Expo modules and generates the modules provider file.\nbash -l -c \"./Pods/Target\\ Support\\ Files/Pods-civicauthmobile/expo-configure-project.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-civicauth/Pods-civicauth-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		800E24972A6A228C8D4807E9 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -283,7 +263,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-civicauthmobile/Pods-civicauthmobile-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-civicauth/Pods-civicauth-resources.sh",
 				"${PODS_CONFIGURATION_BUILD_DIR}/EXApplication/ExpoApplication_privacy.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/EXConstants/EXConstants.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/EXConstants/ExpoConstants_privacy.bundle",
@@ -314,8 +294,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-civicauthmobile/Pods-civicauthmobile-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-civicauth/Pods-civicauth-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		EE48878F53831DCE2EBDEE9F /* [Expo] Configure project */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[Expo] Configure project";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# This script configures Expo modules and generates the modules provider file.\nbash -l -c \"./Pods/Target\\ Support\\ Files/Pods-civicauth/expo-configure-project.sh\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -325,7 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F11748422D0307B40044C1D9 /* AppDelegate.swift in Sources */,
-				9FD85FFA880537023F3901CB /* ExpoModulesProvider.swift in Sources */,
+				6F53C79BB1B2EF62A7C8A4F0 /* ExpoModulesProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,18 +333,19 @@
 /* Begin XCBuildConfiguration section */
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E964E834031BD6E34D9C50A4 /* Pods-civicauthmobile.debug.xcconfig */;
+			baseConfigurationReference = FBBC68187CE5EC8060FD7C98 /* Pods-civicauth.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = civicauthmobile/civicauthmobile.entitlements;
+				CODE_SIGN_ENTITLEMENTS = civicauth/civicauth.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M4BX3R82J5;
 				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"FB_SONARKIT_ENABLED=1",
 				);
-				INFOPLIST_FILE = civicauthmobile/Info.plist;
+				INFOPLIST_FILE = civicauth/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -358,9 +358,9 @@
 					"-lc++",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.anonymous.civic-auth-mobile";
-				PRODUCT_NAME = civicauthmobile;
-				SWIFT_OBJC_BRIDGING_HEADER = "civicauthmobile/civicauthmobile-Bridging-Header.h";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.civic.civic-auth";
+				PRODUCT_NAME = civicauth;
+				SWIFT_OBJC_BRIDGING_HEADER = "civicauth/civicauth-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -370,13 +370,14 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A7EA875900A65CDCD6E1AE66 /* Pods-civicauthmobile.release.xcconfig */;
+			baseConfigurationReference = 46EA0DB66BF6B5776E40AE7D /* Pods-civicauth.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = civicauthmobile/civicauthmobile.entitlements;
+				CODE_SIGN_ENTITLEMENTS = civicauth/civicauth.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
-				INFOPLIST_FILE = civicauthmobile/Info.plist;
+				DEVELOPMENT_TEAM = M4BX3R82J5;
+				INFOPLIST_FILE = civicauth/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -389,9 +390,9 @@
 					"-lc++",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.anonymous.civic-auth-mobile";
-				PRODUCT_NAME = civicauthmobile;
-				SWIFT_OBJC_BRIDGING_HEADER = "civicauthmobile/civicauthmobile-Bridging-Header.h";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.civic.civic-auth";
+				PRODUCT_NAME = civicauth;
+				SWIFT_OBJC_BRIDGING_HEADER = "civicauth/civicauth-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -453,10 +454,7 @@
 				LIBRARY_SEARCH_PATHS = "$(SDKROOT)/usr/lib/swift\"$(inherited)\"";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
@@ -511,10 +509,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = "$(SDKROOT)/usr/lib/swift\"$(inherited)\"";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
@@ -525,7 +520,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "civicauthmobile" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "civicauth" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -534,7 +529,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "civicauthmobile" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "civicauth" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,
