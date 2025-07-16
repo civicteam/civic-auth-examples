@@ -108,11 +108,16 @@ export const AuthProvider = ({
             finalConfig.redirectUri,
           );
 
-          await WebBrowser.openAuthSessionAsync(
+          const result = await WebBrowser.openAuthSessionAsync(
             endSessionUrl.toString(),
             finalConfig.redirectUri,
           );
-          dispatch({ type: "SIGN_OUT" });
+          
+          // Only sign out if the session was completed successfully
+          // If the user cancels (result.type === 'cancel'), we don't sign them out
+          if (result.type === 'success') {
+            dispatch({ type: "SIGN_OUT" });
+          }
         } catch (e) {
           console.warn(e);
         }

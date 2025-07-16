@@ -1,4 +1,4 @@
-package com.anonymous.civicauthmobile
+package com.civic.civicauth
 
 import android.app.Application
 import android.content.res.Configuration

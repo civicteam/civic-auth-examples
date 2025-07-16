@@ -1,16 +1,16 @@
 {
   "expo": {
-    "name": "civic-auth-mobile",
-    "slug": "civic-auth-mobile",
+    "name": "civic-auth",
+    "slug": "civic-auth",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "civicauthmobile",
+    "scheme": "civicauth",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.anonymous.civic-auth-mobile"
+      "bundleIdentifier": "com.civic.civic-auth"
     },
     "android": {
       "adaptiveIcon": {
@@ -18,7 +18,7 @@
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
-      "package": "com.civic.civicauthmobile"
+      "package": "com.civic.civicauth"
     },
     "web": {
       "bundler": "metro",
