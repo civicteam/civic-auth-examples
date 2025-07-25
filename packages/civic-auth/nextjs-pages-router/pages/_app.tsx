@@ -8,7 +8,10 @@ export default function App({ Component, pageProps }: AppProps) {
   const clientId = process.env.NEXT_PUBLIC_CIVIC_CLIENT_ID!;
   
   return (
-    <CivicAuthProvider clientId={clientId}>
+    <CivicAuthProvider 
+      clientId={clientId}
+      redirectUrl={`http://localhost:3001/api/auth/callback`}
+    >
       <Component {...pageProps} />
     </CivicAuthProvider>
   )

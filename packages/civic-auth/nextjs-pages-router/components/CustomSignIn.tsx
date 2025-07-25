@@ -2,8 +2,12 @@
 import { useUser } from "@civic/auth/react";
 import { useCallback } from "react";
 
-export default function CustomSignIn() {
-  const { signIn, user } = useUser();
+interface CustomSignInProps {
+  user: any;
+}
+
+export default function CustomSignIn({ user }: CustomSignInProps) {
+  const { signIn } = useUser();
 
   const doSignIn = useCallback(() => {
     console.log("[Pages Router] Starting sign-in process");
