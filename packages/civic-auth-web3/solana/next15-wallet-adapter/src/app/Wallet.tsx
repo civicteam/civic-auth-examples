@@ -2,17 +2,17 @@
 
 import { useState, useEffect } from "react";
 import { useConnection, useWallet } from "@solana/wallet-adapter-react";
-import { Transaction, SystemProgram, LAMPORTS_PER_SOL } from "@solana/web3.js";
 import bs58 from "bs58";
 import nacl from "tweetnacl";
 
 const Wallet = () => {
   const { connection } = useConnection();
-  const { publicKey, signTransaction } = useWallet();
+  const { publicKey, signMessage } = useWallet();
   const [balance, setBalance] = useState<number>();
   const [signing, setSigning] = useState(false);
-  const [signedTransaction, setSignedTransaction] = useState<Transaction>();
-  const [txSignature, setTxSignature] = useState<string>();
+  const [message] = useState("Hello, World!");
+  const [signedMessage, setSignedMessage] = useState<Uint8Array>();
+  const [signature, setSignature] = useState<string>();
   const [verifying, setVerifying] = useState(false);
   const [verificationResult, setVerificationResult] = useState<string>();
 
@@ -23,55 +23,42 @@ const Wallet = () => {
     }
   }, [connection, publicKey]);
 
-  const handleSignTransaction = async () => {
-    if (!publicKey || !signTransaction) return;
+  const handleSignMessage = async () => {
+    if (!publicKey || !signMessage) return;
 
     try {
       setSigning(true);
-      setTxSignature(undefined);
+      setSignature(undefined);
       setVerificationResult(undefined);
-      setSignedTransaction(undefined);
+      setSignedMessage(undefined);
 
-      // Create a simple self-transfer transaction
-      const transaction = new Transaction().add(
-        SystemProgram.transfer({
-          fromPubkey: publicKey,
-          toPubkey: publicKey,
-          lamports: 0.001 * LAMPORTS_PER_SOL,
-        })
-      );
-
-      // Set recent blockhash
-      const { blockhash } = await connection.getLatestBlockhash();
-      transaction.recentBlockhash = blockhash;
-      transaction.feePayer = publicKey;
-
-      // Sign the transaction
-      const signedTx = await signTransaction(transaction);
-      setSignedTransaction(signedTx);
+      // Convert message to bytes
+      const messageBytes = new TextEncoder().encode(message);
       
-      // Get signature
-      const signature = signedTx.signatures[0];
-      const signatureBase58 = bs58.encode(signature);
-      setTxSignature(signatureBase58);
+      // Sign the message
+      const signedBytes = await signMessage(messageBytes);
+      setSignedMessage(signedBytes);
+      
+      // Convert signature to base58
+      const signatureBase58 = bs58.encode(signedBytes);
+      setSignature(signatureBase58);
     } catch (error) {
-      console.error("Error signing transaction:", error);
+      console.error("Error signing message:", error);
     } finally {
       setSigning(false);
     }
   };
 
   const handleVerifySignature = async () => {
-    if (!signedTransaction || !publicKey) return;
+    if (!signedMessage || !publicKey) return;
 
     try {
       setVerifying(true);
 
-      const signature = signedTransaction.signatures[0];
-      const message = signedTransaction.serializeMessage();
+      const messageBytes = new TextEncoder().encode(message);
       const isValid = nacl.sign.detached.verify(
-        message,
-        signature,
+        messageBytes,
+        signedMessage,
         publicKey.toBytes()
       );
       
@@ -96,10 +83,14 @@ const Wallet = () => {
         <p><strong>Wallet:</strong> {publicKey.toString()}</p>
         <p><strong>Balance:</strong> {balance !== undefined ? `${balance / 1e9} SOL` : "Loading..."}</p>
       </div>
+
+      <div style={{ marginBottom: '20px' }}>
+        <p><strong>Message to sign:</strong> "{message}"</p>
+      </div>
       
       <button
-        onClick={handleSignTransaction}
-        disabled={signing || !signTransaction}
+        onClick={handleSignMessage}
+        disabled={signing || !signMessage}
         style={{
           padding: '12px 24px',
           backgroundColor: signing ? '#ccc' : '#0070f3',
@@ -110,10 +101,10 @@ const Wallet = () => {
           fontSize: '16px'
         }}
       >
-        {signing ? 'Signing...' : 'Sign Test Transaction'}
+        {signing ? 'Signing...' : 'Sign Message'}
       </button>
 
-      {txSignature && (
+      {signature && (
         <div style={{ marginTop: '20px' }}>
           <div style={{ 
             padding: '12px', 
@@ -122,7 +113,7 @@ const Wallet = () => {
             marginBottom: '10px'
           }}>
             <p style={{ margin: 0, wordBreak: 'break-all', fontSize: '14px' }}>
-              <strong>Signature:</strong> {txSignature}
+              <strong>Signature:</strong> {signature}
             </p>
           </div>
           
@@ -154,10 +145,6 @@ const Wallet = () => {
               {verificationResult}
             </div>
           )}
-          
-          <p style={{ fontSize: '14px', color: '#666', marginTop: '10px' }}>
-            Transaction signed but not submitted to blockchain
-          </p>
         </div>
       )}
     </div>
