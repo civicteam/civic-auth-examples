@@ -87,9 +87,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace 'com.anonymous.civicauthmobile'
+    namespace 'com.civic.civicauth'
     defaultConfig {
-        applicationId 'com.anonymous.civicauthmobile'
+        applicationId 'com.civic.civicauth'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

@@ -1,4 +1,4 @@
-package com.anonymous.civicauthmobile
+package com.civic.civicauth
 import expo.modules.splashscreen.SplashScreenManager
 
 import android.os.Build
