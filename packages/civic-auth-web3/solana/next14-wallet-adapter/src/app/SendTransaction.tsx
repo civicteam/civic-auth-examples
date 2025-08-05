@@ -2,13 +2,16 @@
 
 import { useConnection } from "@solana/wallet-adapter-react";
 import { useUser } from "@civic/auth-web3/react";
-import { userHasWallet } from "@civic/auth-web3";
+import { ExistingWeb3UserContext, userHasWallet } from "@civic/auth-web3";
 
 import {
+  Blockhash,
   LAMPORTS_PER_SOL,
   PublicKey,
   SystemProgram,
   Transaction,
+  TransactionMessage,
+  VersionedTransaction,
 } from "@solana/web3.js";
 import { useCallback, useState } from "react";
 
@@ -25,6 +28,45 @@ const SendTransaction = () => {
   const [busySendingSol, setBusySendingSol] = useState(false);
   const [txSignature, setTxSignature] = useState<string | null>(null);
 
+  const buildV0Tx = (
+    userContext: ExistingWeb3UserContext,
+    recipientAddress: PublicKey,
+    blockhash: { blockhash: Blockhash; lastValidBlockHeight: number }
+  ) => {
+    // Create instructions
+    const instruction = SystemProgram.transfer({
+      fromPubkey: userContext.solana.wallet.publicKey!,
+      toPubkey: new PublicKey(recipientAddress),
+      lamports: solAmountToSend * LAMPORTS_PER_SOL,
+    });
+
+    // Use TransactionMessage to build a v0 transaction
+    const messageV0 = new TransactionMessage({
+      payerKey: userContext.solana.wallet.publicKey!,
+      recentBlockhash: blockhash.blockhash,
+      instructions: [instruction],
+    }).compileToV0Message(); // 🔄 This compiles it to a v0 message
+
+    return new VersionedTransaction(messageV0);
+  };
+
+  const buildLegacyTx = (
+    userContext: ExistingWeb3UserContext,
+    recipientAddress: PublicKey,
+    blockhash: { blockhash: Blockhash; lastValidBlockHeight: number }
+  ) => {
+    return new Transaction({
+      ...blockhash,
+      feePayer: userContext.solana.wallet.publicKey,
+    }).add(
+      SystemProgram.transfer({
+        fromPubkey: userContext.solana.wallet.publicKey!,
+        toPubkey: recipientAddress,
+        lamports: solAmountToSend * LAMPORTS_PER_SOL,
+      })
+    );
+  };
+
   const sendSol = useCallback(async () => {
     if (!userHasWallet(userContext) || !wallet) {
       throw new Error("No wallet found");
@@ -38,18 +80,22 @@ const SendTransaction = () => {
       throw new Error("No wallet found");
     }
 
+    let transaction: Transaction | VersionedTransaction;
     const blockhash = await connection.getLatestBlockhash();
-
-    const transaction = new Transaction({
-      ...blockhash,
-      feePayer: userContext.solana.wallet.publicKey,
-    }).add(
-      SystemProgram.transfer({
-        fromPubkey: userContext.solana.wallet.publicKey,
-        toPubkey: new PublicKey(recipientAddress),
-        lamports: solAmountToSend * LAMPORTS_PER_SOL,
-      })
-    );
+    if (process.env.NEXT_PUBLIC_USE_V0_TX === "true") {
+      console.log("Using v0 transaction");
+      transaction = buildV0Tx(
+        userContext,
+        new PublicKey(recipientAddress),
+        blockhash
+      );
+    } else {
+      transaction = buildLegacyTx(
+        userContext,
+        new PublicKey(recipientAddress),
+        blockhash
+      );
+    }
 
     const signature = await wallet.sendTransaction(transaction, connection);
     setTxSignature(signature);
