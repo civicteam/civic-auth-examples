@@ -9,7 +9,7 @@
     "start": "PORT=${PORT:-3000} NODE_PATH=../../node_modules bun run dist/index.js"
   },
   "dependencies": {
-    "@civic/auth": "^0.9.5",
+    "@civic/auth": "*",
     "@hono/node-server": "^1.13.7",
     "dotenv": "^16.4.6",
     "hono": "^4.6.12"

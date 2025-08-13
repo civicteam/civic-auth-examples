@@ -60,8 +60,23 @@ echo "Found ${#PROJECT_DIRS[@]} projects to update for $PKG_NAME ($VERSION)."
 for dir in "${PROJECT_DIRS[@]}"; do
   printf "\n==> Updating %s\n" "$dir"
   pushd "$dir" >/dev/null
-  echo "yarn add $PKG_NAME@$VERSION"
-  yarn add "$PKG_NAME@$VERSION"
+  # Capture current spec (so we can preserve "*" if that's the chosen policy)
+  CURRENT_SPEC=$(node -e "const p=require('./package.json'); const k='${PKG_NAME}'; const s=(p.dependencies&&p.dependencies[k])||(p.devDependencies&&p.devDependencies[k])||''; process.stdout.write(s);")
+
+  if [[ "$VERSION" == "latest" ]]; then
+    echo "yarn upgrade $PKG_NAME"
+    yarn upgrade "$PKG_NAME"
+  else
+    echo "yarn add $PKG_NAME@$VERSION"
+    yarn add "$PKG_NAME@$VERSION"
+    # If the project previously used '*' keep it that way in package.json while retaining the new lockfile resolution
+    if [[ "$CURRENT_SPEC" == "*" ]]; then
+      ESCAPED_NAME=${PKG_NAME//\//\\/}
+      perl -0777 -i -pe "s/(\"${ESCAPED_NAME}\"\s*:\s*)\"[^\"]+\"/
+\${1}\"*\"/g" package.json
+      echo "Restored ${PKG_NAME} spec to '*' in package.json"
+    fi
+  fi
   popd >/dev/null
 done
 
