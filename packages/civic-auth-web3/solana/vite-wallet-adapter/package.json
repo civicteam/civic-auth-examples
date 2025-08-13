@@ -9,7 +9,7 @@
     "start": "vite preview --port 3000"
   },
   "dependencies": {
-    "@civic/auth-web3": "*",
+    "@civic/auth-web3": "0.7.2",
     "@solana/wallet-adapter-react-ui": "^0.9.35",
     "@solana/web3.js": "^1.98.0",
     "react": "^18.3.1",
@@ -24,5 +24,6 @@
     "buffer": "^6.0.3",
     "typescript": "^5.4.5",
     "vite": "^5.2.11"
-  }
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }

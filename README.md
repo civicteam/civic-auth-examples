@@ -33,3 +33,32 @@ Note: One particular test, `nextjs-loginSuccessUrl.feature`, won't work unless t
 
 
 
+## Updating Civic packages across all samples
+
+Use the helper script to update `@civic/auth` and `@civic/auth-web3` wherever they are used. Run from the repo root.
+
+- Dry-run (shows what would be updated):
+```bash
+scripts/update-auth.sh --dry-run
+```
+
+- Update both to latest with exact pinning (-E):
+```bash
+scripts/update-auth.sh --range exact
+```
+
+- Update to specific versions with caret range (default):
+```bash
+scripts/update-auth.sh --web3 0.7.2 --auth 0.9.5 --range caret
+```
+
+- Use tilde range:
+```bash
+scripts/update-auth.sh --web3 0.7.2 --auth 0.9.5 --range tilde
+```
+
+Notes:
+- The script discovers projects that depend on `@civic/auth` or `@civic/auth-web3` and runs `yarn add` in each, updating their local `yarn.lock` files.
+- When `--range exact` is used, dependencies are pinned exactly.
+- Without `--range exact`, Yarn’s default range behavior applies.
+

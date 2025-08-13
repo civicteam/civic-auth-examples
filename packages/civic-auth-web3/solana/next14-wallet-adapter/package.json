@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@civic/auth-web3": "*",
+    "@civic/auth-web3": "0.7.2",
     "@solana/wallet-adapter-react-ui": "^0.9.35",
     "next": "^14.2.28",
     "react": "^18",
@@ -24,5 +24,6 @@
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
-  }
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
