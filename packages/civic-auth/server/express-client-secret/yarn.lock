@@ -87,18 +87,28 @@
     "@babel/helper-string-parser" "^7.27.1"
     "@babel/helper-validator-identifier" "^7.27.1"
 
-"@civic/auth@*":
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/@civic/auth/-/auth-0.9.0.tgz#5816bb171060ec8a1bf108e779d9ae3e09f6eb46"
-  integrity sha512-xbNQJ5caWEsST8abdTKoTaGEwiDzcJJMcwY8D2+BU6p4NavtnHhA1IcbBCcwFJOopril5VtNJbogh4o444shGQ==
+"@civic/auth-verify@0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@civic/auth-verify/-/auth-verify-0.0.4.tgz#6945688190bdf43b5ca31f7a0105f83a084970a0"
+  integrity sha512-4Gnprwa8wQsCXM9mqRKAec+SMZ2eTrXZAOZrCjD6WA14qsmauLNHJvkFBDR1s3lBu/UIvjUSXzRZseU5vEALmw==
   dependencies:
+    jose "^5.9.4"
+
+"@civic/auth@^0.9.5":
+  version "0.9.5"
+  resolved "https://registry.yarnpkg.com/@civic/auth/-/auth-0.9.5.tgz#a69e7d1a5022208efba7a3323393f2e4d51d2030"
+  integrity sha512-ouTEfS/sSIsIDVI6URWwKDalyK2Oy4evlcNPG5mM4Vc6M26gSb21bAtGOYmwfZ1GcbWuT828M9Zkq3ftArTbyA==
+  dependencies:
+    "@civic/auth-verify" "0.0.4"
     "@civic/iframe-resizer" "0.1.2"
     "@emotion/react" "^11.14.0"
+    "@react-router/node" "^7.0.0"
     debug "^4.3.7"
     eventemitter3 "^5.0.1"
     jose "^5.9.4"
     oslo "^1.2.1"
     picomatch "^4.0.2"
+    react-router "^7.0.0"
     ts-deepmerge "^7.0.2"
     usehooks-ts "^3.1.0"
     uuid "^10.0.0"
@@ -250,6 +260,11 @@
   dependencies:
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
+
+"@mjackson/node-fetch-server@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@mjackson/node-fetch-server/-/node-fetch-server-0.2.0.tgz#577c0c25d8aae9f69a97738b7b0d03d1471cdc49"
+  integrity sha512-EMlH1e30yzmTpGLQjlFmaDAjyOeZhng1/XCd7DExR8PNAnG/G1tyruZxEoUe11ClnwGhGrtsdnyyUx1frSzjng==
 
 "@node-rs/argon2-android-arm-eabi@1.7.0":
   version "1.7.0"
@@ -440,6 +455,13 @@
     "@node-rs/bcrypt-win32-arm64-msvc" "1.9.0"
     "@node-rs/bcrypt-win32-ia32-msvc" "1.9.0"
     "@node-rs/bcrypt-win32-x64-msvc" "1.9.0"
+
+"@react-router/node@^7.0.0":
+  version "7.8.0"
+  resolved "https://registry.yarnpkg.com/@react-router/node/-/node-7.8.0.tgz#255620bc5ab94a2bef5f9cc2e6838e4674ef20d5"
+  integrity sha512-/FFN9vqI2EHPwDCHTvsMInhrYvwJ5SlCeyUr1oWUxH47JyYkooVFks5++M4VkrTgj2ZBsMjPPKy0xRNTQdtBDA==
+  dependencies:
+    "@mjackson/node-fetch-server" "^0.2.0"
 
 "@tsconfig/node10@^1.0.7":
   version "1.0.11"
@@ -739,6 +761,11 @@ cookie@0.7.2:
   version "0.7.2"
   resolved "https://registry.yarnpkg.com/cookie/-/cookie-0.7.2.tgz#556369c472a2ba910f2979891b526b3436237ed7"
   integrity sha512-yki5XnKuf750l50uGTllt6kKILY4nQ1eNIQatoXEByZ5dWgnKqbnqmTrBE5B4N7lrMJKQ2ytWMiTO2o0v6Ew/w==
+
+cookie@^1.0.1:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/cookie/-/cookie-1.0.2.tgz#27360701532116bd3f1f9416929d176afe1e4610"
+  integrity sha512-9Kr/j4O16ISv8zBBhJoi4bXOYNTkFLOqSL3UDB0njXxCXNezjeyVrJyGOWtgfs/q2km1gwBcfH8q1yEGoMYunA==
 
 cosmiconfig@^7.0.0:
   version "7.1.0"
@@ -1328,6 +1355,14 @@ react-is@^16.7.0:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
+react-router@^7.0.0:
+  version "7.8.0"
+  resolved "https://registry.yarnpkg.com/react-router/-/react-router-7.8.0.tgz#2bc07e0a9ff74d88ee38c2f27897e968b8f59170"
+  integrity sha512-r15M3+LHKgM4SOapNmsH3smAizWds1vJ0Z9C4mWaKnT9/wD7+d/0jYcj6LmOvonkrO4Rgdyp4KQ/29gWN2i1eg==
+  dependencies:
+    cookie "^1.0.1"
+    set-cookie-parser "^2.6.0"
+
 readdirp@~3.6.0:
   version "3.6.0"
   resolved "https://registry.yarnpkg.com/readdirp/-/readdirp-3.6.0.tgz#74a370bd857116e245b29cc97340cd431a02a6c7"
@@ -1392,6 +1427,11 @@ serve-static@1.16.2:
     escape-html "~1.0.3"
     parseurl "~1.3.3"
     send "0.19.0"
+
+set-cookie-parser@^2.6.0:
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/set-cookie-parser/-/set-cookie-parser-2.7.1.tgz#3016f150072202dfbe90fadee053573cc89d2943"
+  integrity sha512-IOc8uWeOZgnb3ptbCURJWNjWUPcO3ZnTTdzsurqERrP6nPyv+paC55vJM0LpOlT2ne+Ix+9+CRG1MNLlyZ4GjQ==
 
 setprototypeof@1.2.0:
   version "1.2.0"

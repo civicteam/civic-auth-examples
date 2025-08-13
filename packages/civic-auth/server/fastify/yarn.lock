@@ -84,18 +84,28 @@
     "@babel/helper-string-parser" "^7.25.9"
     "@babel/helper-validator-identifier" "^7.25.9"
 
-"@civic/auth@0.4.7":
-  version "0.4.7"
-  resolved "https://registry.yarnpkg.com/@civic/auth/-/auth-0.4.7.tgz#3c1b3e04aab7ca637728e96b94e2fb0da6a1dbc2"
-  integrity sha512-W9XYw/TBqHG8YRvvePzL3hG5xtn2tjnFfL2lbnhgTBNG87ccN7prZN3Yz/Cc/4gVfCQegd8j6HFb5fEWFeBx8w==
+"@civic/auth-verify@0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@civic/auth-verify/-/auth-verify-0.0.4.tgz#6945688190bdf43b5ca31f7a0105f83a084970a0"
+  integrity sha512-4Gnprwa8wQsCXM9mqRKAec+SMZ2eTrXZAOZrCjD6WA14qsmauLNHJvkFBDR1s3lBu/UIvjUSXzRZseU5vEALmw==
   dependencies:
+    jose "^5.9.4"
+
+"@civic/auth@^0.9.5":
+  version "0.9.5"
+  resolved "https://registry.yarnpkg.com/@civic/auth/-/auth-0.9.5.tgz#a69e7d1a5022208efba7a3323393f2e4d51d2030"
+  integrity sha512-ouTEfS/sSIsIDVI6URWwKDalyK2Oy4evlcNPG5mM4Vc6M26gSb21bAtGOYmwfZ1GcbWuT828M9Zkq3ftArTbyA==
+  dependencies:
+    "@civic/auth-verify" "0.0.4"
     "@civic/iframe-resizer" "0.1.2"
     "@emotion/react" "^11.14.0"
+    "@react-router/node" "^7.0.0"
     debug "^4.3.7"
     eventemitter3 "^5.0.1"
     jose "^5.9.4"
     oslo "^1.2.1"
     picomatch "^4.0.2"
+    react-router "^7.0.0"
     ts-deepmerge "^7.0.2"
     usehooks-ts "^3.1.0"
     uuid "^10.0.0"
@@ -287,6 +297,11 @@
   dependencies:
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
+
+"@mjackson/node-fetch-server@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@mjackson/node-fetch-server/-/node-fetch-server-0.2.0.tgz#577c0c25d8aae9f69a97738b7b0d03d1471cdc49"
+  integrity sha512-EMlH1e30yzmTpGLQjlFmaDAjyOeZhng1/XCd7DExR8PNAnG/G1tyruZxEoUe11ClnwGhGrtsdnyyUx1frSzjng==
 
 "@node-rs/argon2-android-arm-eabi@1.7.0":
   version "1.7.0"
@@ -532,6 +547,13 @@
   version "1.2.10"
   resolved "https://registry.yarnpkg.com/@oven/bun-windows-x64/-/bun-windows-x64-1.2.10.tgz#0aa7bb495ad376240b3b4fc65e2cfb587fb368df"
   integrity sha512-jLo8HCPqlaj1O4P6LJkRZ91gZhSZRPQKWQ0A8g4ysxxXRhuXdpMyeIEqMYzRLCNFwOfhPIl6oVkNDATJ2behAQ==
+
+"@react-router/node@^7.0.0":
+  version "7.8.0"
+  resolved "https://registry.yarnpkg.com/@react-router/node/-/node-7.8.0.tgz#255620bc5ab94a2bef5f9cc2e6838e4674ef20d5"
+  integrity sha512-/FFN9vqI2EHPwDCHTvsMInhrYvwJ5SlCeyUr1oWUxH47JyYkooVFks5++M4VkrTgj2ZBsMjPPKy0xRNTQdtBDA==
+  dependencies:
+    "@mjackson/node-fetch-server" "^0.2.0"
 
 "@tybys/wasm-util@^0.8.1":
   version "0.8.3"
@@ -986,6 +1008,14 @@ react-is@^16.7.0:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
+
+react-router@^7.0.0:
+  version "7.8.0"
+  resolved "https://registry.yarnpkg.com/react-router/-/react-router-7.8.0.tgz#2bc07e0a9ff74d88ee38c2f27897e968b8f59170"
+  integrity sha512-r15M3+LHKgM4SOapNmsH3smAizWds1vJ0Z9C4mWaKnT9/wD7+d/0jYcj6LmOvonkrO4Rgdyp4KQ/29gWN2i1eg==
+  dependencies:
+    cookie "^1.0.1"
+    set-cookie-parser "^2.6.0"
 
 real-require@^0.2.0:
   version "0.2.0"

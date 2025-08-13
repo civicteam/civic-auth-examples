@@ -43,11 +43,7 @@ export const Providers: FC<ProvidersProps> = ({ children }) => {
   return (
       <QueryClientProvider client={queryClient}>
             <WagmiProvider config={wagmiConfig}>
-              <CivicAuthProvider
-                // oauthServer and wallet are not necessary for production.
-                config={{ oauthServer: `${process.env.NEXT_PUBLIC_AUTH_SERVER}`}}
-                endpoints={{ wallet: `${process.env.NEXT_PUBLIC_WALLET_API_BASE_URL}` }}
-              >
+              <CivicAuthProvider>
                 {children}
               </CivicAuthProvider>
             </WagmiProvider>
