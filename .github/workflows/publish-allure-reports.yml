@@ -2,7 +2,7 @@ name: Publish Allure Reports
 
 on:
   workflow_run:
-    workflows: ["Test Example Apps with Safari Browser (WebKit)"]
+    workflows: ["Build and run example apps in Safari"]
     types:
       - completed
 
