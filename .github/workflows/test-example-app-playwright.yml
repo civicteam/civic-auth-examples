@@ -44,16 +44,7 @@ jobs:
     defaults:
       run:
         working-directory: ${{ inputs.project-path }}
-    outputs:
-      project-id: ${{ steps.set-project-id.outputs.project-id }}
     steps:
-      - name: Set project identifier
-        id: set-project-id
-        run: |
-          # Create a safe identifier from the project path
-          project_id=$(echo "${{ inputs.project-path }}" | sed 's/[^a-zA-Z0-9-]/-/g' | sed 's/--*/-/g' | sed 's/^-\|-$//g')
-          echo "project-id=$project_id" >> $GITHUB_OUTPUT
-          echo "Project ID: $project_id"
       - uses: actions/checkout@v4
         with:
           token: ${{ github.token }}
@@ -152,7 +143,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: allure-report-${{ steps.set-project-id.outputs.project-id }}-${{ inputs.browser }}-${{ github.run_number }}
+          name: allure-report-${{ inputs.browser }}-${{ github.run_number }}
           path: packages/e2e/allure-report/
           retention-days: 30
 
@@ -160,7 +151,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: allure-results-${{ steps.set-project-id.outputs.project-id }}-${{ inputs.browser }}-${{ github.run_number }}
+          name: allure-results-${{ inputs.browser }}-${{ github.run_number }}
           path: packages/e2e/allure-results/
           retention-days: 30
 
@@ -168,6 +159,6 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: test-results-${{ steps.set-project-id.outputs.project-id }}-${{ inputs.browser }}-${{ github.run_number }}
+          name: test-results-${{ inputs.browser }}-${{ github.run_number }}
           path: packages/e2e/test-results/
           retention-days: 30 
