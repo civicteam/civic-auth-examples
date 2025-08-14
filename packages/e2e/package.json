@@ -10,7 +10,6 @@
     "test:playwright:ui": "playwright test --ui",
     "test:playwright:allure": "playwright test --reporter=allure-playwright",
     "allure:generate": "allure generate allure-results --clean",
-    "allure:generate-with-history": "if [ -d '../allure_history' ]; then allure generate allure-results --clean --allure-history ../allure_history --allure-report allure-report-with-history; else allure generate allure-results --clean --allure-report allure-report-with-history; fi",
     "allure:open": "allure open allure-report",
     "allure:serve": "allure serve allure-results",
     "test:allure": "yarn test:playwright:allure && yarn allure:serve"
