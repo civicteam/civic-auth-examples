@@ -180,30 +180,11 @@ jobs:
           echo "View detailed test reports with screenshots, videos, and traces at:" >> $GITHUB_STEP_SUMMARY
           echo "**https://civicteam.github.io/civic-auth-examples/allure-reports**" >> $GITHUB_STEP_SUMMARY
 
-      # Load test report history
-      - name: Load test report history
+      # Upload Allure Results for Publishing Job
+      - name: Upload Allure Results for Publishing
         if: always()
-        continue-on-error: true
-        uses: actions/checkout@v2
+        uses: actions/upload-artifact@v4
         with:
-          ref: gh-pages-allure
-          path: allure_history
-
-      # Build test report
-      - name: Build test report
-        if: always()
-        uses: simple-elf/allure-report-action@v1.7
-        with:
-          gh_pages: allure_history
-          allure_results: packages/e2e/allure-results
-          allure_history: allure-report
-          
-      # Publish test report
-      - name: Publish test report
-        if: always()
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages-allure
-          publish_dir: allure-report
-          destination_dir: allure-reports 
+          name: allure-results-${{ steps.project-id.outputs.project-id }}-${{ inputs.browser }}-${{ github.run_number }}
+          path: packages/e2e/allure-results/
+          retention-days: 1 
