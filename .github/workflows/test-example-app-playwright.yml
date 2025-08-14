@@ -196,7 +196,7 @@ jobs:
         with:
           gh_pages: allure_history
           allure_results: packages/e2e/allure-results
-          allure_history: allure-report-with-history
+          allure_history: allure-report
           
       # Publish test report
       - name: Publish test report
@@ -205,5 +205,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages-allure
-          publish_dir: packages/e2e/allure-report-with-history 
+          publish_dir: allure-report
           destination_dir: allure-reports 
