@@ -140,68 +140,7 @@ jobs:
           echo "Checking if allure-report directory was created..."
           ls -la allure-report/ || echo "No allure-report directory found"
 
-      - name: Create Report Index
-        if: always()
-        working-directory: packages/e2e
-        run: |
-          cat > allure-report/index.html << 'EOF'
-          <!DOCTYPE html>
-          <html>
-          <head>
-              <title>Allure Test Reports</title>
-              <style>
-                  body { font-family: Arial, sans-serif; margin: 40px; }
-                  .header { background: #f5f5f5; padding: 20px; border-radius: 8px; margin-bottom: 30px; }
-                  .job { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 20px; margin-bottom: 20px; }
-                  .job h3 { margin-top: 0; color: #333; }
-                  .info { color: #666; font-size: 14px; margin-bottom: 15px; }
-                  .download { background: #007cba; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px; display: inline-block; margin: 5px; }
-                  .download:hover { background: #005a87; }
-                  .timestamp { color: #999; font-size: 12px; }
-              </style>
-          </head>
-          <body>
-              <div class="header">
-                  <h1>🎬 Allure Test Reports</h1>
-                  <p>Download and extract these artifacts to view the detailed test reports with videos and screenshots.</p>
-                  <p class="timestamp">Generated: $(date)</p>
-              </div>
-              
-              <div class="job">
-                  <h3>📊 Allure HTML Report</h3>
-                  <div class="info">
-                      <strong>Job:</strong> ${{ github.job }}<br>
-                      <strong>Browser:</strong> ${{ inputs.browser }}<br>
-                      <strong>Run:</strong> ${{ github.run_number }}
-                  </div>
-                  <p>Complete HTML report with interactive features, screenshots, and video attachments.</p>
-                  <a href="#" class="download">📥 Download Allure Report</a>
-              </div>
-              
-              <div class="job">
-                  <h3>🎬 Test Videos & Screenshots</h3>
-                  <div class="info">
-                      <strong>Job:</strong> ${{ github.job }}<br>
-                      <strong>Browser:</strong> ${{ inputs.browser }}<br>
-                      <strong>Run:</strong> ${{ github.run_number }}
-                  </div>
-                  <p>Raw test results including WebM videos, PNG screenshots, and trace files for debugging.</p>
-                  <a href="#" class="download">📥 Download Test Results</a>
-              </div>
-              
-              <div class="job">
-                  <h3>📋 How to View Reports</h3>
-                  <ol>
-                      <li><strong>Download</strong> the "Allure Report" artifact</li>
-                      <li><strong>Extract</strong> the ZIP file to a folder</li>
-                      <li><strong>Open</strong> <code>index.html</code> in your browser</li>
-                      <li><strong>Navigate</strong> to failed tests to see videos and screenshots</li>
-                  </ol>
-                  <p><em>Note: Videos are only recorded for failed tests to save storage space.</em></p>
-              </div>
-          </body>
-          </html>
-          EOF
+
 
       - name: Upload Allure Report
         if: always()
