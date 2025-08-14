@@ -188,6 +188,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: feature/add_allure
+          publish_branch: gh-pages-allure
           publish_dir: packages/e2e/allure-report
-          destination_dir: allure-reports 
+          destination_dir: allure-reports
+          force_orphan: true 
