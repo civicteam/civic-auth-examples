@@ -31,7 +31,7 @@ jobs:
   build-and-test:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
       actions: read
       id-token: write
       pages: write
@@ -188,5 +188,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: feature/add_allure
           publish_dir: packages/e2e/allure-report
           destination_dir: allure-reports 
