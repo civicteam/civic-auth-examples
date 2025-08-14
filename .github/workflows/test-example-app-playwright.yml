@@ -50,8 +50,9 @@ jobs:
         id: project-id
         working-directory: .
         run: |
-          # Use GitHub job ID for guaranteed uniqueness per job
-          unique_id="job-${GITHUB_JOB_ID}"
+          # Use random number for guaranteed uniqueness
+          random_id=$((RANDOM % 90000 + 10000))
+          unique_id="random-${random_id}"
           echo "project-id=$unique_id" >> $GITHUB_OUTPUT
           echo "Project ID: $unique_id"
       - uses: actions/checkout@v4
