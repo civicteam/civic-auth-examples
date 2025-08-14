@@ -192,3 +192,64 @@ jobs:
       playwright-spec: playwright/tests/wagmi-nextjs-login.spec.ts
       browser: webkit
     secrets: inherit
+
+  # Publish Allure Reports
+  publish-allure-reports:
+    name: "Publish Allure Reports"
+    needs: [
+      job-nextjs-example-app-safari,
+      job-reactjs-example-app-safari,
+      job-express-example-app-safari,
+      job-fastify-example-app-safari,
+      job-hono-example-app-safari,
+      job-vanillajs-example-app-safari,
+      job-next-14-webpack-solana-wallet-adapter-safari,
+      job-next-14-solana-no-wallet-adapter-safari,
+      job-next-15-turbopack-solana-wallet-adapter-safari,
+      job-next-15-webpack-solana-wallet-adapter-safari,
+      job-next-15-turbopack-no-solana-wallet-adapter-safari,
+      job-next-15-webpack-no-solana-wallet-adapter-safari,
+      job-vite-solana-wallet-adapter-safari,
+      job-vite-no-solana-wallet-adapter-safari,
+      job-vite-wagmi-example-app-safari,
+      job-wagmi-nextjs-example-app-safari
+    ]
+    runs-on: ubuntu-latest
+    if: always()
+    permissions:
+      contents: write
+      actions: read
+      id-token: write
+      pages: write
+    steps:
+      - name: Download Allure Results
+        uses: actions/download-artifact@v4
+        with:
+          pattern: allure-results-*
+          merge-multiple: true
+          path: allure-results
+
+      - name: Load test report history
+        if: always()
+        continue-on-error: true
+        uses: actions/checkout@v2
+        with:
+          ref: gh-pages-allure
+          path: allure_history
+
+      - name: Build test report
+        if: always()
+        uses: simple-elf/allure-report-action@v1.7
+        with:
+          gh_pages: allure_history
+          allure_results: allure-results
+          allure_history: allure-report
+          
+      - name: Publish test report
+        if: always()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages-allure
+          publish_dir: allure-report
+          destination_dir: allure-reports
