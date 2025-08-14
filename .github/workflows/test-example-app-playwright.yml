@@ -49,6 +49,7 @@ jobs:
       - name: Create safe project identifier
         id: project-id
         run: |
+          cd $GITHUB_WORKSPACE
           # Create a safe identifier from the project path + job name for uniqueness
           project_id=$(echo "${{ inputs.project-path }}" | sed 's/[^a-zA-Z0-9-]/-/g' | sed 's/--*/-/g' | sed 's/^-\|-$//g')
           job_suffix=$(echo "${{ github.job }}" | sed 's/[^a-zA-Z0-9-]/-/g')
@@ -175,28 +176,18 @@ jobs:
           path: packages/e2e/test-results/
           retention-days: 30
 
-      # GitHub Pages Publishing (following official Allure documentation)
-      - name: Load test report history
+      # GitHub Pages Publishing (simplified for feature branch)
+      - name: Generate Allure Report for GitHub Pages
         if: always()
-        uses: actions/checkout@v4
-        continue-on-error: true
-        with:
-          ref: gh-pages
-          path: gh-pages
-
-      - name: Build test report for GitHub Pages
+        working-directory: packages/e2e
+        run: |
+          echo "Generating Allure report for GitHub Pages..."
+          yarn allure:generate || echo "Failed to generate Allure report"
+          
+      - name: Upload Allure Report for GitHub Pages
         if: always()
-        uses: simple-elf/allure-report-action@master
+        uses: actions/upload-artifact@v4
         with:
-          gh_pages: gh-pages
-          allure_history: allure-history
-          allure_results: packages/e2e/allure-results
-
-      - name: Publish test report to GitHub Pages
-        if: always()
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
-          publish_dir: allure-history
-          force_orphan: true 
+          name: allure-report-github-pages-${{ steps.project-id.outputs.project-id }}-${{ inputs.browser }}-${{ github.run_number }}
+          path: packages/e2e/allure-report/
+          retention-days: 30 
