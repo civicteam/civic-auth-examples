@@ -46,6 +46,15 @@ jobs:
       run:
         working-directory: ${{ inputs.project-path }}
     steps:
+      - name: Create safe project identifier
+        id: project-id
+        run: |
+          # Create a safe identifier from the project path + job name for uniqueness
+          project_id=$(echo "${{ inputs.project-path }}" | sed 's/[^a-zA-Z0-9-]/-/g' | sed 's/--*/-/g' | sed 's/^-\|-$//g')
+          job_suffix=$(echo "${{ github.job }}" | sed 's/[^a-zA-Z0-9-]/-/g')
+          unique_id="${project_id}-${job_suffix}"
+          echo "project-id=$unique_id" >> $GITHUB_OUTPUT
+          echo "Project ID: $unique_id"
       - uses: actions/checkout@v4
         with:
           token: ${{ github.token }}
@@ -146,7 +155,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: allure-report-${{ github.job }}-${{ inputs.browser }}-${{ github.run_number }}
+          name: allure-report-${{ steps.project-id.outputs.project-id }}-${{ inputs.browser }}-${{ github.run_number }}
           path: packages/e2e/allure-report/
           retention-days: 30
 
@@ -154,7 +163,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: allure-results-${{ github.job }}-${{ inputs.browser }}-${{ github.run_number }}
+          name: allure-results-${{ steps.project-id.outputs.project-id }}-${{ inputs.browser }}-${{ github.run_number }}
           path: packages/e2e/allure-results/
           retention-days: 30
 
@@ -162,7 +171,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: test-results-${{ github.job }}-${{ inputs.browser }}-${{ github.run_number }}
+          name: test-results-${{ steps.project-id.outputs.project-id }}-${{ inputs.browser }}-${{ github.run_number }}
           path: packages/e2e/test-results/
           retention-days: 30
 
@@ -189,4 +198,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
-          publish_dir: allure-history 
+          publish_dir: allure-history
+          force_orphan: true 
