@@ -178,7 +178,7 @@ jobs:
         run: |
           echo "## 📊 Allure Test Reports" >> $GITHUB_STEP_SUMMARY
           echo "View detailed test reports with screenshots, videos, and traces at:" >> $GITHUB_STEP_SUMMARY
-          echo "**https://civicteam.github.io/civic-auth-examples/**" >> $GITHUB_STEP_SUMMARY
+          echo "**https://civicteam.github.io/civic-auth-examples**" >> $GITHUB_STEP_SUMMARY
 
       # Load test report history
       - name: Load test report history
@@ -187,6 +187,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: gh-pages-allure
+          path: allure_history
 
       # Build test report with history
       - name: Build test report
@@ -204,3 +205,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages-allure
           publish_dir: packages/e2e/allure-report-with-history 
+          destination_dir: ./
