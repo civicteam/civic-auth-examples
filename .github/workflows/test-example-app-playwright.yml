@@ -46,14 +46,12 @@ jobs:
       run:
         working-directory: ${{ inputs.project-path }}
     steps:
-      - name: Create safe project identifier
+      - name: Create unique identifier
         id: project-id
+        working-directory: .
         run: |
-          cd $GITHUB_WORKSPACE
-          # Create a safe identifier from the project path + job name for uniqueness
-          project_id=$(echo "${{ inputs.project-path }}" | sed 's/[^a-zA-Z0-9-]/-/g' | sed 's/--*/-/g' | sed 's/^-\|-$//g')
-          job_suffix=$(echo "${{ github.job }}" | sed 's/[^a-zA-Z0-9-]/-/g')
-          unique_id="${project_id}-${job_suffix}"
+          # Use GitHub job ID for guaranteed uniqueness per job
+          unique_id="job-${GITHUB_JOB_ID}"
           echo "project-id=$unique_id" >> $GITHUB_OUTPUT
           echo "Project ID: $unique_id"
       - uses: actions/checkout@v4
