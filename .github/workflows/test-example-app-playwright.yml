@@ -149,8 +149,6 @@ jobs:
           echo "Checking if allure-report directory was created..."
           ls -la allure-report/ || echo "No allure-report directory found"
 
-
-
       - name: Upload Allure Report
         if: always()
         uses: actions/upload-artifact@v4
@@ -180,21 +178,29 @@ jobs:
         run: |
           echo "## 📊 Allure Test Reports" >> $GITHUB_STEP_SUMMARY
           echo "View detailed test reports with screenshots, videos, and traces at:" >> $GITHUB_STEP_SUMMARY
-          echo "**https://civicteam.github.io/civic-auth-examples/allure-reports/**" >> $GITHUB_STEP_SUMMARY
+          echo "**https://civicteam.github.io/civic-auth-examples/**" >> $GITHUB_STEP_SUMMARY
 
-      # GitHub Pages Publishing for Allure Reports
-      - name: Generate Allure Report for GitHub Pages
+      # Load test report history
+      - name: Load test report history
+        if: always()
+        continue-on-error: true
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages-allure
+
+      # Build test report with history
+      - name: Build test report
         if: always()
         working-directory: packages/e2e
         run: |
-          echo "Generating Allure report for GitHub Pages..."
-          yarn allure:generate || echo "Failed to generate Allure report"
+          echo "Building Allure report with history..."
+          yarn allure:generate-with-history || echo "Failed to generate Allure report with history"
           
-      - name: Deploy Allure Report to GitHub Pages
+      # Publish test report
+      - name: Publish test report
         if: always()
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages-allure
-          publish_dir: packages/e2e/allure-report
-          destination_dir: allure-reports 
+          publish_dir: packages/e2e/allure-report-with-history 
