@@ -34,6 +34,7 @@ jobs:
       contents: read
       actions: read
       id-token: write
+      pages: write
     env:
       CLIENT_ID: ${{ secrets.CLIENT_ID }}
       VITE_CLIENT_ID: ${{ secrets.CLIENT_ID }}
@@ -224,4 +225,29 @@ jobs:
         with:
           name: test-results-${{ github.job }}-${{ inputs.browser }}-${{ github.run_number }}
           path: packages/e2e/test-results/
-          retention-days: 30 
+          retention-days: 30
+
+      # GitHub Pages Publishing (following official Allure documentation)
+      - name: Load test report history
+        if: always()
+        uses: actions/checkout@v4
+        continue-on-error: true
+        with:
+          ref: gh-pages
+          path: gh-pages
+
+      - name: Build test report for GitHub Pages
+        if: always()
+        uses: simple-elf/allure-report-action@master
+        with:
+          gh_pages: gh-pages
+          allure_history: allure-history
+          allure_results: packages/e2e/allure-results
+
+      - name: Publish test report to GitHub Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: allure-history 
