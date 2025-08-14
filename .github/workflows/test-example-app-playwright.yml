@@ -175,6 +175,13 @@ jobs:
           path: packages/e2e/test-results/
           retention-days: 30
 
+      - name: Comment with Allure Reports URL
+        if: always()
+        run: |
+          echo "## 📊 Allure Test Reports" >> $GITHUB_STEP_SUMMARY
+          echo "View detailed test reports with screenshots, videos, and traces at:" >> $GITHUB_STEP_SUMMARY
+          echo "**https://civicteam.github.io/civic-auth-examples/allure-reports/**" >> $GITHUB_STEP_SUMMARY
+
       # GitHub Pages Publishing for Allure Reports
       - name: Generate Allure Report for GitHub Pages
         if: always()
@@ -190,5 +197,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages-allure
           publish_dir: packages/e2e/allure-report
-          destination_dir: allure-reports
-          force_orphan: true 
+          destination_dir: allure-reports 
