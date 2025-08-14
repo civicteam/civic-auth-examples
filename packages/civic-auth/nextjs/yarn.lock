@@ -84,18 +84,28 @@
     "@babel/helper-string-parser" "^7.25.9"
     "@babel/helper-validator-identifier" "^7.25.9"
 
-"@civic/auth@0.6.0":
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/@civic/auth/-/auth-0.6.0.tgz#c518019f25168229b11c15ac170f56c38641335d"
-  integrity sha512-3SCK8Q/gjZVxTnID8uxdhPsgeyrGIXHiEy0ay8W33BfnE5QCR/8bCkSurfno5lLoztP68mo9BWtZoDdBSei2+A==
+"@civic/auth-verify@0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@civic/auth-verify/-/auth-verify-0.0.4.tgz#6945688190bdf43b5ca31f7a0105f83a084970a0"
+  integrity sha512-4Gnprwa8wQsCXM9mqRKAec+SMZ2eTrXZAOZrCjD6WA14qsmauLNHJvkFBDR1s3lBu/UIvjUSXzRZseU5vEALmw==
   dependencies:
+    jose "^5.9.4"
+
+"@civic/auth@0.9.6-beta.1":
+  version "0.9.6-beta.1"
+  resolved "https://registry.yarnpkg.com/@civic/auth/-/auth-0.9.6-beta.1.tgz#a357fca929417fe6b16319747d7488bfd8fe7a0c"
+  integrity sha512-9OwqzsOVTvBVr1/xdFrJItU15UD9dORci9fHGg0I1Ii1/tfCYOkqLjuW9KV2O8b/ncHZ61hbpjJIw339hpD/6g==
+  dependencies:
+    "@civic/auth-verify" "0.0.4"
     "@civic/iframe-resizer" "0.1.2"
     "@emotion/react" "^11.14.0"
+    "@react-router/node" "^7.0.0"
     debug "^4.3.7"
     eventemitter3 "^5.0.1"
     jose "^5.9.4"
     oslo "^1.2.1"
     picomatch "^4.0.2"
+    react-router "^7.0.0"
     ts-deepmerge "^7.0.2"
     usehooks-ts "^3.1.0"
     uuid "^10.0.0"
@@ -425,6 +435,11 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
+"@mjackson/node-fetch-server@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@mjackson/node-fetch-server/-/node-fetch-server-0.2.0.tgz#577c0c25d8aae9f69a97738b7b0d03d1471cdc49"
+  integrity sha512-EMlH1e30yzmTpGLQjlFmaDAjyOeZhng1/XCd7DExR8PNAnG/G1tyruZxEoUe11ClnwGhGrtsdnyyUx1frSzjng==
+
 "@napi-rs/wasm-runtime@^0.2.7":
   version "0.2.7"
   resolved "https://registry.yarnpkg.com/@napi-rs/wasm-runtime/-/wasm-runtime-0.2.7.tgz#288f03812a408bc53c2c3686c65f38fe90f295eb"
@@ -701,6 +716,13 @@
   version "1.0.39"
   resolved "https://registry.yarnpkg.com/@nolyfill/is-core-module/-/is-core-module-1.0.39.tgz#3dc35ba0f1e66b403c00b39344f870298ebb1c8e"
   integrity sha512-nn5ozdjYQpUCZlWGuxcJY/KpxkWQs4DcbMCmKojjyrYDEAGy4Ce19NN4v5MduafTwJlbKc99UA8YhSVqq9yPZA==
+
+"@react-router/node@^7.0.0":
+  version "7.8.0"
+  resolved "https://registry.yarnpkg.com/@react-router/node/-/node-7.8.0.tgz#255620bc5ab94a2bef5f9cc2e6838e4674ef20d5"
+  integrity sha512-/FFN9vqI2EHPwDCHTvsMInhrYvwJ5SlCeyUr1oWUxH47JyYkooVFks5++M4VkrTgj2ZBsMjPPKy0xRNTQdtBDA==
+  dependencies:
+    "@mjackson/node-fetch-server" "^0.2.0"
 
 "@rtsao/scc@^1.1.0":
   version "1.1.0"
@@ -1197,6 +1219,11 @@ convert-source-map@^1.5.0:
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/convert-source-map/-/convert-source-map-1.9.0.tgz#7faae62353fb4213366d0ca98358d22e8368b05f"
   integrity sha512-ASFBup0Mz1uyiIjANan1jzLQami9z1PoYSZCiiYW2FczPbenXc45FZdBZLzOT+r6+iciuEModtmCti+hjaAk0A==
+
+cookie@^1.0.1:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/cookie/-/cookie-1.0.2.tgz#27360701532116bd3f1f9416929d176afe1e4610"
+  integrity sha512-9Kr/j4O16ISv8zBBhJoi4bXOYNTkFLOqSL3UDB0njXxCXNezjeyVrJyGOWtgfs/q2km1gwBcfH8q1yEGoMYunA==
 
 cosmiconfig@^7.0.0:
   version "7.1.0"
@@ -2642,6 +2669,14 @@ react-is@^16.13.1, react-is@^16.7.0:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
+react-router@^7.0.0:
+  version "7.8.0"
+  resolved "https://registry.yarnpkg.com/react-router/-/react-router-7.8.0.tgz#2bc07e0a9ff74d88ee38c2f27897e968b8f59170"
+  integrity sha512-r15M3+LHKgM4SOapNmsH3smAizWds1vJ0Z9C4mWaKnT9/wD7+d/0jYcj6LmOvonkrO4Rgdyp4KQ/29gWN2i1eg==
+  dependencies:
+    cookie "^1.0.1"
+    set-cookie-parser "^2.6.0"
+
 react@19.0.0:
   version "19.0.0"
   resolved "https://registry.yarnpkg.com/react/-/react-19.0.0.tgz#6e1969251b9f108870aa4bff37a0ce9ddfaaabdd"
@@ -2784,6 +2819,11 @@ semver@^7.6.0, semver@^7.6.3:
   version "7.7.1"
   resolved "https://registry.yarnpkg.com/semver/-/semver-7.7.1.tgz#abd5098d82b18c6c81f6074ff2647fd3e7220c9f"
   integrity sha512-hlq8tAfn0m/61p4BVRcPzIGr6LKiMwo4VM6dGi6pt4qcRkmNzTcWq6eCEjEh+qXjkMDvPlOFFSGwQjoEa6gyMA==
+
+set-cookie-parser@^2.6.0:
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/set-cookie-parser/-/set-cookie-parser-2.7.1.tgz#3016f150072202dfbe90fadee053573cc89d2943"
+  integrity sha512-IOc8uWeOZgnb3ptbCURJWNjWUPcO3ZnTTdzsurqERrP6nPyv+paC55vJM0LpOlT2ne+Ix+9+CRG1MNLlyZ4GjQ==
 
 set-function-length@^1.2.2:
   version "1.2.2"

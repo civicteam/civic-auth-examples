@@ -1,4 +1,4 @@
-name: Test Example Apps with Safari Browser (WebKit)
+name: Generate and Publish Allure Reports
 
 on:
   workflow_call:
@@ -17,6 +17,10 @@ on:
         required: false
         type: string
         default: webkit
+      publish-to-pages:
+        required: false
+        type: boolean
+        default: false
     secrets:
       CLIENT_ID:
         required: true
@@ -27,13 +31,14 @@ on:
       VITE_WALLET_API_BASE_URL:
         required: true
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      actions: read
-      id-token: write
     env:
       CLIENT_ID: ${{ secrets.CLIENT_ID }}
       VITE_CLIENT_ID: ${{ secrets.CLIENT_ID }}
@@ -44,10 +49,19 @@ jobs:
     defaults:
       run:
         working-directory: ${{ inputs.project-path }}
+    outputs:
+      allure-results-path: ${{ steps.set-paths.outputs.allure-results-path }}
     steps:
       - uses: actions/checkout@v4
         with:
           token: ${{ github.token }}
+
+      - name: Set output paths
+        id: set-paths
+        run: |
+          # Create a safe identifier for the project
+          project_safe=$(echo "${{ inputs.project-path }}" | sed 's/[^a-zA-Z0-9-]/-/g' | sed 's/--*/-/g' | sed 's/^-\|-$//g')
+          echo "allure-results-path=packages/e2e/allure-results-${project_safe}-${{ inputs.browser }}" >> $GITHUB_OUTPUT
 
       - name: Install Bun
         if: contains(inputs.project-path, 'hono')
@@ -100,21 +114,15 @@ jobs:
       - name: Install Playwright CLI and Allure
         working-directory: packages/e2e
         run: |
-          yarn add -D @playwright/test allure-commandline allure-playwright
+          yarn add -D @playwright/test
           yarn install
-          
-      - name: Verify Allure Installation
-        working-directory: packages/e2e
-        run: |
-          npx allure --version
-          echo "Allure command-line tool is available"
 
       - name: Install Playwright browsers
         working-directory: packages/e2e
         run: yarn playwright install --with-deps
 
       - name: Yarn build
-        run: yarn build
+        run: ${{ inputs.build-command }}
 
       - name: Start App
         run: yarn dev &
@@ -125,40 +133,39 @@ jobs:
       - name: Run Playwright Tests
         working-directory: packages/e2e
         env:
-          ALLURE_RESULTS_DIR: allure-results
+          ALLURE_RESULTS_DIR: ${{ steps.set-paths.outputs.allure-results-path }}
         run: yarn playwright test ${{ inputs.playwright-spec }} --project=${{ inputs.browser }}
 
-      - name: Generate Allure Report
-        if: always()
-        working-directory: packages/e2e
-        run: |
-          echo "Checking if allure-results directory exists..."
-          ls -la allure-results/ || echo "No allure-results directory found"
-          echo "Generating Allure report..."
-          yarn allure:generate || echo "Failed to generate Allure report"
-          echo "Checking if allure-report directory was created..."
-          ls -la allure-report/ || echo "No allure-report directory found"
-
-      - name: Upload Allure Report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: allure-report-${{ inputs.project-path }}-${{ inputs.browser }}-${{ github.run_number }}
-          path: packages/e2e/allure-report/
-          retention-days: 30
-
+      # Upload artifacts for non-Pages publishing
       - name: Upload Allure Results
-        if: always()
+        if: ${{ !inputs.publish-to-pages }}
         uses: actions/upload-artifact@v4
         with:
           name: allure-results-${{ inputs.project-path }}-${{ inputs.browser }}-${{ github.run_number }}
-          path: packages/e2e/allure-results/
+          path: ${{ steps.set-paths.outputs.allure-results-path }}/
           retention-days: 30
 
-      - name: Upload Test Results (Videos, Screenshots, Traces)
-        if: always()
-        uses: actions/upload-artifact@v4
+      # GitHub Pages publishing flow
+      - name: Load test report history
+        if: ${{ inputs.publish-to-pages }}
+        uses: actions/checkout@v4
+        continue-on-error: true
         with:
-          name: test-results-${{ inputs.project-path }}-${{ inputs.browser }}-${{ github.run_number }}
-          path: packages/e2e/test-results/
-          retention-days: 30 
+          ref: gh-pages
+          path: gh-pages
+
+      - name: Build test report for GitHub Pages
+        if: ${{ inputs.publish-to-pages }}
+        uses: simple-elf/allure-report-action@master
+        with:
+          gh_pages: gh-pages
+          allure_history: allure-history
+          allure_results: ${{ steps.set-paths.outputs.allure-results-path }}
+
+      - name: Publish test report to GitHub Pages
+        if: ${{ inputs.publish-to-pages }}
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: allure-history
