@@ -205,4 +205,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages-allure
           publish_dir: packages/e2e/allure-report-with-history 
-          destination_dir: ./
+          destination_dir: /.
