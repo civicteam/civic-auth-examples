@@ -175,7 +175,7 @@ jobs:
           path: packages/e2e/test-results/
           retention-days: 30
 
-      # GitHub Pages Publishing (simplified for feature branch)
+      # GitHub Pages Publishing for Allure Reports
       - name: Generate Allure Report for GitHub Pages
         if: always()
         working-directory: packages/e2e
@@ -183,10 +183,10 @@ jobs:
           echo "Generating Allure report for GitHub Pages..."
           yarn allure:generate || echo "Failed to generate Allure report"
           
-      - name: Upload Allure Report for GitHub Pages
+      - name: Deploy Allure Report to GitHub Pages
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          name: allure-report-github-pages-${{ steps.project-id.outputs.project-id }}-${{ inputs.browser }}-${{ github.run_number }}
-          path: packages/e2e/allure-report/
-          retention-days: 30 
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: packages/e2e/allure-report
+          destination_dir: allure-reports 
