@@ -1,0 +1,49 @@
+name: Publish Allure Reports
+
+on:
+  workflow_run:
+    workflows: ["Build and run example apps in Safari"]
+    types:
+      - completed
+
+jobs:
+  publish-allure-reports:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: read
+      id-token: write
+      pages: write
+    steps:
+      - name: Download Allure Results
+        uses: actions/download-artifact@v4
+        with:
+          run-id: ${{ github.event.workflow_run.id }}
+          pattern: allure-results-*
+          merge-multiple: true
+          path: allure-results
+
+      - name: Load test report history
+        if: always()
+        continue-on-error: true
+        uses: actions/checkout@v2
+        with:
+          ref: gh-pages-allure
+          path: allure_history
+
+      - name: Build test report
+        if: always()
+        uses: simple-elf/allure-report-action@v1.7
+        with:
+          gh_pages: allure_history
+          allure_results: allure-results
+          allure_history: allure-report
+          
+      - name: Publish test report
+        if: always()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages-allure
+          publish_dir: allure-report
+          destination_dir: allure-reports
