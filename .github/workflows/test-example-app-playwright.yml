@@ -184,18 +184,19 @@ jobs:
       - name: Load test report history
         if: always()
         continue-on-error: true
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2
         with:
           ref: gh-pages-allure
           path: allure_history
 
-      # Build test report with history
+      # Build test report
       - name: Build test report
         if: always()
-        working-directory: packages/e2e
-        run: |
-          echo "Building Allure report with history..."
-          yarn allure:generate-with-history || echo "Failed to generate Allure report with history"
+        uses: simple-elf/allure-report-action@v1.7
+        with:
+          gh_pages: allure_history
+          allure_results: packages/e2e/allure-results
+          allure_history: allure-report-with-history
           
       # Publish test report
       - name: Publish test report
@@ -205,4 +206,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages-allure
           publish_dir: packages/e2e/allure-report-with-history 
-          destination_dir: allure-reports
+          destination_dir: allure-reports 
