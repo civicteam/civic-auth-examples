@@ -1,0 +1,9 @@
+# Page snapshot
+
+```yaml
+- heading "My App" [level=1]
+- button "Sign In (Embedded)"
+- button "Sign In (Modal)"
+- button "Sign Out"
+- iframe
+```
