@@ -147,7 +147,7 @@ jobs:
         working-directory: packages/e2e
         env:
           ALLURE_RESULTS_DIR: allure-results
-        run: yarn playwright test ${{ inputs.playwright-spec }} --project=${{ inputs.browser }}
+        run: yarn playwright test ${{ inputs.playwright-spec }}
 
       - name: Generate Allure Report
         if: always()
