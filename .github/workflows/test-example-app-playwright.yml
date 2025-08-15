@@ -149,24 +149,29 @@ jobs:
           ALLURE_RESULTS_DIR: allure-results
         run: yarn playwright test ${{ inputs.playwright-spec }} --project=${{ inputs.browser }}
 
-      - name: Generate Allure Report
+      - name: Load test report history
+        uses: actions/checkout@v4
         if: always()
-        working-directory: packages/e2e
-        run: |
-          echo "Checking if allure-results directory exists..."
-          ls -la allure-results/ || echo "No allure-results directory found"
-          echo "Generating Allure report..."
-          yarn allure:generate || echo "Failed to generate Allure report"
-          echo "Checking if allure-report directory was created..."
-          ls -la allure-report/ || echo "No allure-report directory found"
-
-      - name: Upload Allure Report
-        if: always()
-        uses: actions/upload-artifact@v4
+        continue-on-error: true
         with:
-          name: allure-report-${{ steps.project-id.outputs.project-id }}-${{ inputs.browser }}-${{ github.run_number }}
-          path: packages/e2e/allure-report/
-          retention-days: 30
+          ref: gh-pages-allure
+          path: gh-pages-allure
+
+      - name: Build test report
+        uses: simple-elf/allure-report-action@master
+        if: always()
+        with:
+          gh_pages: gh-pages-allure
+          allure_history: allure-history
+          allure_results: packages/e2e/allure-results
+
+      - name: Publish test report
+        uses: peaceiris/actions-gh-pages@v3
+        if: always()
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages-allure
+          publish_dir: allure-history
 
       - name: Upload Allure Results
         if: always()
@@ -189,7 +194,7 @@ jobs:
         run: |
           echo "## 📊 Allure Test Reports" >> $GITHUB_STEP_SUMMARY
           echo "View detailed test reports with screenshots, videos, and traces at:" >> $GITHUB_STEP_SUMMARY
-          echo "**https://civicteam.github.io/civic-auth-examples/allure-reports**" >> $GITHUB_STEP_SUMMARY
+          echo "**https://civicteam.github.io/civic-auth-examples/**" >> $GITHUB_STEP_SUMMARY
 
       # Upload Allure Results for Publishing Job
       - name: Upload Allure Results for Publishing
