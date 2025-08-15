@@ -193,7 +193,6 @@ jobs:
       browser: webkit
     secrets: inherit
 
-  # Publish Allure Reports
   publish-allure-reports:
     name: "Publish Allure Reports"
     needs: [
