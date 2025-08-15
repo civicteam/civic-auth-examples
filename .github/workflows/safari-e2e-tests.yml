@@ -227,7 +227,7 @@ jobs:
         with:
           pattern: allure-results-*
           merge-multiple: true
-          path: packages/e2e/allure-results/
+          path: allure-results
 
       - name: Load test report history
         if: always()
