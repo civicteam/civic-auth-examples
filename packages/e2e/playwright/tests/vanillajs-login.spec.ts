@@ -4,6 +4,10 @@ test.describe('VanillaJS Embedded Login Tests', () => {
   test('should complete full embedded login and logout flow', async ({ page, browserName }) => {
     // Open the app home page
     await page.goto('http://localhost:3000');
+
+    // Wait for the page to fully load with all UI elements
+    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
     
     // Click the embedded sign in button
     await page.click('#loginButton');

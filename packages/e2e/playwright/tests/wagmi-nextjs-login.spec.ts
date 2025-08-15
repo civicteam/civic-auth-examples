@@ -1,12 +1,13 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('Wagmi Login Tests', () => {
-  test('should complete login flow and show balance', async ({ page, browserName }) => {
-    // Skip webkit tests for now due to a bug
-    test.skip(browserName === 'webkit', 'Skipping webkit test due to known bug');
-    
+  test('should complete login flow and show balance', async ({ page, browserName }) => {    
     // Open the app home page
     await page.goto('http://localhost:3000');
+    
+    // Wait for the page to fully load with all UI elements
+    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
     
     // Click the sign in button
     await page.click('button:has-text("Sign in")');

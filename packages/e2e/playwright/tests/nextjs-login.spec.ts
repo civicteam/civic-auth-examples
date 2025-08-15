@@ -4,6 +4,10 @@ test.describe('Next.js Login Tests', () => {
   test('should complete full login and logout flow', async ({ page, browserName }) => {
     // Open the app home page
     await page.goto('http://localhost:3000');
+
+    // Wait for the page to fully load with all UI elements
+    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
     
     // Click the sign in button using test ID
     await page.getByTestId('sign-in-button').click();

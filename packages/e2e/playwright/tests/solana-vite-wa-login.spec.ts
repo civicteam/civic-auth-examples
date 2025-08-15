@@ -2,11 +2,12 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Solana Vite Wallet Adapter Login Tests', () => {
   test('should complete login flow and show balance', async ({ page, browserName }) => {
-    // Skip webkit tests for now due to navigation policy check issues
-    test.skip(browserName === 'webkit', 'Skipping webkit due to navigation policy check issues');
-    
     // Open the app home page
     await page.goto('http://localhost:3000');
+
+    // Wait for the page to fully load with all UI elements
+    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
     
     // Click the select wallet button
     await page.click('.wallet-adapter-button-trigger');

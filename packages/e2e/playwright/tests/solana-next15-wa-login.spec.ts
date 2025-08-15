@@ -4,6 +4,10 @@ test.describe('Solana Next15 Wallet Adapter Login Tests', () => {
   test('should complete login flow and show balance', async ({ page, browserName }) => {
     // Open the app home page
     await page.goto('http://localhost:3000');
+
+    // Wait for the page to fully load with all UI elements
+    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
     
     // Click the select wallet button
     await page.click('.wallet-adapter-button-trigger');
