@@ -75,6 +75,15 @@ jobs:
             packages/e2e/node_modules
           key: node-modules-${{ runner.os }}-${{ hashFiles(format('{0}/yarn.lock', inputs.project-path)) }}-${{ hashFiles(format('{0}/package.json', inputs.project-path)) }}-${{ hashFiles('packages/e2e/package.json') }}
 
+      - name: Cache Playwright browsers
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/ms-playwright
+          key: playwright-browsers-${{ runner.os }}-${{ hashFiles('packages/e2e/package.json') }}
+          restore-keys: |
+            playwright-browsers-${{ runner.os }}-
+
       - name: Yarn install with latest Civic packages
         run: |
           # Function to get latest version (comparing stable vs beta)
@@ -123,6 +132,7 @@ jobs:
       - name: Install Playwright browsers
         working-directory: packages/e2e
         run: yarn playwright install --with-deps
+        # The cache step above will restore browsers if available, so this will be fast on subsequent runs
 
       - name: Yarn build
         run: yarn build
