@@ -152,7 +152,12 @@ jobs:
       - name: Generate Allure Report
         if: always()
         run: |
-          allure generate allure-results --clean -o allure-report
+          echo "Checking if allure-results directory exists..."
+          ls -la allure-results/ || echo "No allure-results directory found"
+          echo "Generating Allure report..."
+          yarn allure:generate || echo "Failed to generate Allure report"
+          echo "Checking if allure-report directory was created..."
+          ls -la allure-report/ || echo "No allure-report directory found"
 
       - name: Upload Allure Report
         if: always()
