@@ -155,16 +155,10 @@ jobs:
         run: |
           echo "Checking if allure-results directory exists..."
           ls -la allure-results/ || echo "No allure-results directory found"
-          echo "Checking allure-results contents..."
-          find allure-results/ -type f -name "*.json" | head -5 || echo "No JSON files found in allure-results"
           echo "Generating Allure report..."
           yarn allure:generate || echo "Failed to generate Allure report"
           echo "Checking if allure-report directory was created..."
           ls -la allure-report/ || echo "No allure-report directory found"
-          if [ -d "allure-report" ]; then
-            echo "Allure report generated successfully"
-            ls -la allure-report/
-          fi
 
       - name: Upload Allure Report
         if: always()
@@ -195,7 +189,7 @@ jobs:
         run: |
           echo "## 📊 Allure Test Reports" >> $GITHUB_STEP_SUMMARY
           echo "View detailed test reports with screenshots, videos, and traces at:" >> $GITHUB_STEP_SUMMARY
-          echo "**https://civicteam.github.io/civic-auth-examples/allure-reports/**" >> $GITHUB_STEP_SUMMARY 
+          echo "**https://civicteam.github.io/civic-auth-examples/allure-reports/**" >> $GITHUB_STEP_SUMMARY
 
       # Upload Allure Results for Publishing Job
       - name: Upload Allure Results for Publishing
@@ -204,6 +198,4 @@ jobs:
         with:
           name: allure-results-${{ steps.project-id.outputs.project-id }}-${{ inputs.browser }}-${{ github.run_number }}-${{ github.job }}
           path: packages/e2e/allure-results/
-          retention-days: 1 
-
-          
+          retention-days: 30 
