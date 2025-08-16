@@ -205,3 +205,5 @@ jobs:
           name: allure-results-${{ steps.project-id.outputs.project-id }}-${{ inputs.browser }}-${{ github.run_number }}-${{ github.job }}
           path: packages/e2e/allure-results/
           retention-days: 1 
+
+          
