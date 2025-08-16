@@ -234,15 +234,15 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: gh-pages-allure
-          path: allure_history
+          path: gh-pages-allure
 
       - name: Build test report
         if: always()
         uses: simple-elf/allure-report-action@v1.7
         with:
-          gh_pages: allure_history
+          gh_pages: gh-pages-allure
           allure_results: allure-results
-          allure_history: allure-report
+          allure_history: allure_history
           
       - name: Publish test report
         if: always()
