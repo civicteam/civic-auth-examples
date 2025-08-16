@@ -226,19 +226,7 @@ jobs:
         with:
           pattern: allure-results-*
           merge-multiple: true
-          name: allure-results
-
-      - name: Debug downloaded artifacts
-        if: always()
-        run: |
-          echo "Checking downloaded allure results..."
-          ls -la allure-results/ || echo "No allure-results directory found"
-          if [ -d "allure-results" ]; then
-            echo "Allure results contents:"
-            find allure-results/ -type f -name "*.json" | head -10
-            echo "Total JSON files found:"
-            find allure-results/ -type f -name "*.json" | wc -l
-          fi
+          path: allure-results
 
       - name: Load test report history
         if: always()
@@ -248,24 +236,13 @@ jobs:
           ref: gh-pages
           path: gh-pages
 
-      - name: Create history directory if it doesn't exist
-        if: always()
-        run: |
-          mkdir -p gh-page/allure-reports/allure_history || echo "Could not create history directory"
-          echo "Checking gh-pages structure:"
-          ls -la gh-pages/ || echo "gh-pages directory not found"
-          if [ -d "gh-pages/allure-reports" ]; then
-            echo "allure-reports directory exists:"
-            ls -la gh-pages/allure-reports/
-          fi
-
       - name: Build test report
         if: always()
         uses: simple-elf/allure-report-action@v1.7
         with:
           gh_pages: gh-pages
           allure_results: allure-results
-          allure_history: gh-pages/allure-reports/allure_history
+          allure_history: allure_history
           
       - name: Publish test report
         if: always()

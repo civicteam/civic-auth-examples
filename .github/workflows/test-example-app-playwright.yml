@@ -178,7 +178,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: allure-results-${{ steps.project-id.outputs.project-id }}-${{ inputs.browser }}-${{ github.run_number }}-${{ github.job }}
+          name: allure-results-${{ steps.project-id.outputs.project-id }}-${{ inputs.browser }}-${{ github.run_number }}
           path: packages/e2e/allure-results/
           retention-days: 30
 
@@ -196,3 +196,12 @@ jobs:
           echo "## 📊 Allure Test Reports" >> $GITHUB_STEP_SUMMARY
           echo "View detailed test reports with screenshots, videos, and traces at:" >> $GITHUB_STEP_SUMMARY
           echo "**https://civicteam.github.io/civic-auth-examples/allure-reports/**" >> $GITHUB_STEP_SUMMARY 
+
+      # Upload Allure Results for Publishing Job
+      - name: Upload Allure Results for Publishing
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-results-${{ steps.project-id.outputs.project-id }}-${{ inputs.browser }}-${{ github.run_number }}-${{ github.job }}
+          path: packages/e2e/allure-results/
+          retention-days: 1 
