@@ -81,15 +81,15 @@ jobs:
       browser: webkit
     secrets: inherit
 
-  # job-vanillajs-modal-example-app-safari:
-  #   name: "VanillaJS Modal example app (Safari)"
-  #   needs: check-version
-  #   uses: ./.github/workflows/test-example-app-playwright.yml
-  #   with:
-  #     project-path: packages/civic-auth/vanillajs
-  #     playwright-spec: playwright/tests/vanillajs-modal-login.spec.ts
-  #     browser: webkit
-  #   secrets: inherit
+  job-vanillajs-modal-example-app-safari:
+    name: "VanillaJS Modal example app (Safari)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-playwright.yml
+    with:
+      project-path: packages/civic-auth/vanillajs
+      playwright-spec: playwright/tests/vanillajs-modal-login.spec.ts
+      browser: webkit
+    secrets: inherit
 
   job-next-14-webpack-solana-wallet-adapter-safari:
     name: "Next14 webpack Solana wallet adapter (Safari)"
