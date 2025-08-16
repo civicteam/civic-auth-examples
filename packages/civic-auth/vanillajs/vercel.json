@@ -1,7 +1,0 @@
-{
-    "installCommand": "pnpm install",
-    "buildCommand": "cd ../.. && pnpm build --filter=client-auth-vanilla",
-    "devCommand": "STAGE=dev pnpm preview",
-    "outputDirectory": "dist",
-    "ignoreCommand": "npx turbo-ignore"
-} 
