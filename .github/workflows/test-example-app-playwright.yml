@@ -151,21 +151,15 @@ jobs:
 
       - name: Generate Allure Report
         if: always()
-        working-directory: packages/e2e
         run: |
-          echo "Checking if allure-results directory exists..."
-          ls -la allure-results/ || echo "No allure-results directory found"
-          echo "Generating Allure report..."
-          yarn allure:generate || echo "Failed to generate Allure report"
-          echo "Checking if allure-report directory was created..."
-          ls -la allure-report/ || echo "No allure-report directory found"
+          allure generate allure-results --clean -o allure-report
 
       - name: Upload Allure Report
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: allure-report-${{ steps.project-id.outputs.project-id }}-${{ inputs.browser }}-${{ github.run_number }}
-          path: packages/e2e/allure-report/
+          path: allure-report
           retention-days: 30
 
       - name: Upload Allure Results
@@ -173,7 +167,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: allure-results-${{ steps.project-id.outputs.project-id }}-${{ inputs.browser }}-${{ github.run_number }}
-          path: packages/e2e/allure-results/
+          path: allure-results
           retention-days: 30
 
       - name: Upload Test Results (Videos, Screenshots, Traces)
@@ -181,7 +175,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: test-results-${{ steps.project-id.outputs.project-id }}-${{ inputs.browser }}-${{ github.run_number }}
-          path: packages/e2e/test-results/
+          path: test-results
           retention-days: 30
 
       - name: Comment with Allure Reports URL
@@ -197,5 +191,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: allure-results-${{ steps.project-id.outputs.project-id }}-${{ inputs.browser }}-${{ github.run_number }}-${{ github.job }}
-          path: packages/e2e/allure-results/
+          path: allure-results
           retention-days: 30 

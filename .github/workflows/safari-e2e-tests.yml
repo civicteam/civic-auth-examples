@@ -226,7 +226,7 @@ jobs:
         with:
           pattern: allure-results-*
           merge-multiple: true
-          path: allure-results
+          name: allure-results
 
       - name: Load test report history
         if: always()
@@ -234,13 +234,13 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: gh-pages-allure
-          path: allure-results
+          path: gh-pages-allure
 
       - name: Build test report
         if: always()
         uses: simple-elf/allure-report-action@v1.7
         with:
-          gh_pages: allure-results
+          gh_pages: gh-pages-allure
           allure_results: allure-results
           allure_history: allure_history
           
