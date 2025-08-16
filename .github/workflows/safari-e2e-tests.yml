@@ -234,13 +234,13 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: gh-pages-allure
-          path: last-history
+          path: allure-results
 
       - name: Build test report
         if: always()
         uses: simple-elf/allure-report-action@v1.7
         with:
-          gh_pages: last-history
+          gh_pages: allure-results
           allure_results: allure-results
           allure_history: allure_history
           
