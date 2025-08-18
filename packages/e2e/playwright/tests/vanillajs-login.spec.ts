@@ -4,6 +4,10 @@ test.describe('VanillaJS Embedded Login Tests', () => {
   test('should complete full embedded login and logout flow', async ({ page, browserName }) => {
     // Open the app home page
     await page.goto('http://localhost:3000');
+
+    // Wait for the page to fully load with all UI elements
+    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
     
     // Click the embedded sign in button
     await page.click('#loginButton');
@@ -19,11 +23,11 @@ test.describe('VanillaJS Embedded Login Tests', () => {
       await dummyButton.click();
     } else {
       // Chrome/Firefox use iframe flow
-      // Wait for iframe to appear and load
-      await page.waitForSelector('#civic-auth-iframe', { timeout: 30000 });
+      // Wait for iframe to appear and load inside the authContainer
+      await page.waitForSelector('#authContainer #civic-auth-iframe', { timeout: 30000 });
       
       // Click log in with dummy in the iframe
-      const frame = page.frameLocator('#civic-auth-iframe');
+      const frame = page.frameLocator('#authContainer #civic-auth-iframe');
       
       // Try to wait for the frame to load completely first
       await frame.locator('body').waitFor({ timeout: 30000 });
@@ -33,7 +37,7 @@ test.describe('VanillaJS Embedded Login Tests', () => {
       await dummyButton.click({ timeout: 20000 });
 
       // Wait for the iframe to be gone (indicating login is complete)
-      await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 20000 });
+      await page.waitForSelector('#authContainer #civic-auth-iframe', { state: 'hidden', timeout: 20000 });
     }
     
     // Confirm logged in state by checking for user info display

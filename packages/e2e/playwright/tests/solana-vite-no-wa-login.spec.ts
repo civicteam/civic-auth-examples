@@ -5,6 +5,10 @@ test.describe('Solana Vite No Wallet Adapter Login Tests', () => {
     // Open the app home page
     await page.goto('http://localhost:3000');
     
+    // Wait for the page to fully load with all UI elements
+    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
+
     // Click the sign in button
     await page.click('button:has-text("Sign in")');
     

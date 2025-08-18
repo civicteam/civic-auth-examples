@@ -1,24 +1,25 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('Reactjs Login Tests', () => {
-  test.skip('should complete full login and logout flow', async ({ page, browserName }) => {
-    test.skip(browserName === 'webkit', 'Skipping webkit due to navigation policy check issues');
+  test('should complete full login and logout flow', async ({ page, browserName }) => {
     
     // Open the app home page
     await page.goto('http://localhost:3000');
     
-    // Click the sign in button using test ID
+    // Wait for the page to fully load with all UI elements
+    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
+    
+    // Wait for the UserButton to be visible (the one that says "Sign in")
+    await page.waitForSelector('[data-testid="sign-in-button"]', { timeout: 10000 });
+    
+    // Click the UserButton "Sign in" button (not the CustomSignIn button)
     await page.getByTestId('sign-in-button').click();
     
     if (browserName === 'webkit') {
-      // WebKit uses redirect flow instead of iframe
-      // Wait for navigation to the auth server
-      await page.waitForURL('https://auth-dev.civic.com/**', { timeout: 30000 });
-      
-      // Look for the dummy button on the auth page directly
       const dummyButton = page.locator('[data-testid="civic-login-oidc-button-dummy"]');
       await dummyButton.waitFor({ timeout: 30000 });
-      await dummyButton.click();
+      await dummyButton.click();  
     } else {
       // Chrome/Firefox use iframe flow
       // Wait for iframe to appear and load
@@ -58,7 +59,7 @@ test.describe('Reactjs Login Tests', () => {
       form: {
         grant_type: 'refresh_token',
         refresh_token: 'storedRefreshToken', // Note: You'll need to get the actual refresh token
-        client_id: process.env.CLIENT_ID || ''
+        client_id: process.env.VITE_CLIENT_ID || ''
       }
     });
     expect(response.status()).toBe(400);

@@ -5,6 +5,8 @@ on:
     workflows: ["Build and run example apps using latest sdk versions", "Build and run example apps in Safari"]
     types:
       - completed
+    branches:
+      - main
 
 jobs:
   send-slack-notification:

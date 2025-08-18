@@ -30,6 +30,11 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: read
+      id-token: write
+      pages: write
     env:
       CLIENT_ID: ${{ secrets.CLIENT_ID }}
       VITE_CLIENT_ID: ${{ secrets.CLIENT_ID }}
@@ -41,6 +46,16 @@ jobs:
       run:
         working-directory: ${{ inputs.project-path }}
     steps:
+      - name: Create unique identifier
+        id: project-id
+        working-directory: .
+        run: |
+          # Use timestamp and random number for guaranteed uniqueness
+          timestamp=$(date +%s)
+          random_id=$((RANDOM % 90000 + 10000))
+          unique_id="${timestamp}-${random_id}"
+          echo "project-id=$unique_id" >> $GITHUB_OUTPUT
+          echo "Project ID: $unique_id"
       - uses: actions/checkout@v4
         with:
           token: ${{ github.token }}
@@ -59,6 +74,15 @@ jobs:
             ${{ inputs.project-path }}/node_modules
             packages/e2e/node_modules
           key: node-modules-${{ runner.os }}-${{ hashFiles(format('{0}/yarn.lock', inputs.project-path)) }}-${{ hashFiles(format('{0}/package.json', inputs.project-path)) }}-${{ hashFiles('packages/e2e/package.json') }}
+
+      - name: Cache Playwright browsers
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/ms-playwright
+          key: playwright-browsers-${{ runner.os }}-${{ hashFiles('packages/e2e/package.json') }}
+          restore-keys: |
+            playwright-browsers-${{ runner.os }}-
 
       - name: Yarn install with latest Civic packages
         run: |
@@ -93,13 +117,22 @@ jobs:
           # Install remaining dependencies
           yarn install
 
-      - name: Install Playwright CLI
+      - name: Install Playwright CLI and Allure
         working-directory: packages/e2e
-        run: yarn add -D @playwright/test
+        run: |
+          yarn add -D @playwright/test allure-commandline allure-playwright
+          yarn install
+          
+      - name: Verify Allure Installation
+        working-directory: packages/e2e
+        run: |
+          npx allure --version
+          echo "Allure command-line tool is available"
 
       - name: Install Playwright browsers
         working-directory: packages/e2e
         run: yarn playwright install --with-deps
+        # The cache step above will restore browsers if available, so this will be fast on subsequent runs
 
       - name: Yarn build
         run: yarn build
@@ -112,14 +145,57 @@ jobs:
 
       - name: Run Playwright Tests
         working-directory: packages/e2e
-        run: yarn playwright test ${{ inputs.playwright-spec }} --project=${{ inputs.browser }}
+        env:
+          ALLURE_RESULTS_DIR: allure-results
+        run: yarn playwright test ${{ inputs.playwright-spec }}
 
-      # This is causing tests to fail with dublicate artifact names even though the job is unique
-      # - name: Upload Playwright Report
-      #   if: always()
-      #   uses: actions/upload-artifact@v4
-      #   with:
-      #     name: playwright-report-${{ github.job }}-${{ github.run_id }}
-      #     path: packages/e2e/playwright-report/
-      #     retention-days: 30
-      #     overwrite: true 
+      - name: Generate Allure Report
+        if: always()
+        working-directory: packages/e2e
+        run: |
+          echo "Checking if allure-results directory exists..."
+          ls -la allure-results/ || echo "No allure-results directory found"
+          echo "Generating Allure report..."
+          yarn allure:generate || echo "Failed to generate Allure report"
+          echo "Checking if allure-report directory was created..."
+          ls -la allure-report/ || echo "No allure-report directory found"
+
+      - name: Upload Allure Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-report-${{ steps.project-id.outputs.project-id }}-${{ inputs.browser }}-${{ github.run_number }}
+          path: packages/e2e/allure-report
+          retention-days: 30
+
+      - name: Upload Allure Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-results-${{ steps.project-id.outputs.project-id }}-${{ inputs.browser }}-${{ github.run_number }}
+          path: packages/e2e/allure-results/
+          retention-days: 30
+
+      - name: Upload Test Results (Videos, Screenshots, Traces)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results-${{ steps.project-id.outputs.project-id }}-${{ inputs.browser }}-${{ github.run_number }}
+          path: packages/e2e/test-results/
+          retention-days: 30
+
+      - name: Comment with Allure Reports URL
+        if: always()
+        run: |
+          echo "## 📊 Allure Test Reports" >> $GITHUB_STEP_SUMMARY
+          echo "View detailed test reports with screenshots, videos, and traces at:" >> $GITHUB_STEP_SUMMARY
+          echo "**https://civicteam.github.io/civic-auth-examples/${{ github.run_number }}**" >> $GITHUB_STEP_SUMMARY
+
+      # Upload Allure Results for Publishing Job
+      - name: Upload Allure Results for Publishing
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-results-${{ steps.project-id.outputs.project-id }}-${{ inputs.browser }}-${{ github.run_number }}-${{ github.job }}
+          path: packages/e2e/allure-results/
+          retention-days: 30 
