@@ -189,7 +189,7 @@ jobs:
         run: |
           echo "## 📊 Allure Test Reports" >> $GITHUB_STEP_SUMMARY
           echo "View detailed test reports with screenshots, videos, and traces at:" >> $GITHUB_STEP_SUMMARY
-          echo "**https://civicteam.github.io/civic-auth-examples/**" >> $GITHUB_STEP_SUMMARY
+          echo "**https://civicteam.github.io/civic-auth-examples/${{ github.run_number }}**" >> $GITHUB_STEP_SUMMARY
 
       # Upload Allure Results for Publishing Job
       - name: Upload Allure Results for Publishing
