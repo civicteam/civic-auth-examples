@@ -236,13 +236,25 @@ jobs:
           ref: gh-pages
           path: gh-pages
 
+      - name: Debug gh-pages contents
+        if: always()
+        run: |
+          echo "Contents of gh-pages directory:"
+          ls -la gh-pages/ || echo "gh-pages directory not found"
+          echo ""
+          echo "Looking for allure-history:"
+          ls -la gh-pages/allure-history/ 2>/dev/null || echo "allure-history not found"
+          echo ""
+          echo "Looking for allure-reports:"
+          ls -la gh-pages/allure-reports/ 2>/dev/null || echo "allure-reports not found"
+
       - name: Build test report
         if: always()
         uses: simple-elf/allure-report-action@v1.7
         with:
           gh_pages: gh-pages
           allure_results: allure-results
-          allure_history: allure-history
+          allure_history: allure-report
           
       - name: Publish test report
         if: always()
