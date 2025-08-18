@@ -20,6 +20,10 @@ Given('I open the app home page', () => {
     timeout: 10000,
   })
   
+  // Wait for the page to fully load with all UI elements
+  cy.wait(1000); // Wait for network to be idle
+  cy.get('body').should('be.visible'); // Wait for DOM content to be loaded
+  
   cy.wait('@authRequest').its('response.statusCode').should('eq', 200);
 });
 
