@@ -276,6 +276,7 @@ jobs:
           allure_results: allure-results
           allure_history: allure-history
        
+      # try running this again
       - name: Publish test report
         if: always()
         uses: peaceiris/actions-gh-pages@v3
