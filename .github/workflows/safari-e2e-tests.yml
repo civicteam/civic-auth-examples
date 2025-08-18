@@ -260,7 +260,10 @@ jobs:
             echo "Found history in gh-pages/allure-results/history"
             cp -r gh-pages/allure-results/history allure-results/
             echo "History copied successfully"
-          else
+          elif [ -d "gh-pages/allure-history/history" ]; then
+            echo "Found history in gh-pages/allure-history/history"
+            cp -r gh-pages/allure-history/history allure-results/
+            echo "History copied successfully"
             echo "No existing history found, will create new"
             mkdir -p allure-results/history
           fi
@@ -271,7 +274,7 @@ jobs:
         with:
           gh_pages: gh-pages
           allure_results: allure-results
-          allure_history: allure-report
+          allure_history: allure-history
        
       - name: Publish test report
         if: always()
@@ -279,5 +282,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
-          publish_dir: allure-report
+          publish_dir: allure-history
 
