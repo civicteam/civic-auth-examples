@@ -29,7 +29,7 @@ examples in the .env.example files
 
 * **Allure Test Reports**:
     After running Playwright tests, you can view detailed test reports with screenshots, videos, and traces at:
-    [https://civicteam.github.io/civic-auth-examples/allure-reports/](https://civicteam.github.io/civic-auth-examples/allure-reports/)
+    [https://civicteam.github.io/civic-auth-examples/](https://civicteam.github.io/civic-auth-examples/)
 
 Note: One particular test, `nextjs-loginSuccessUrl.feature`, won't work unless the NextJS app is started with the `LOGIN_SUCCESS_URL` env var set to `"/customSuccessRoute"`. CI does this in the `test-login-success-url.yml` job, which specifically runs that spec.
 

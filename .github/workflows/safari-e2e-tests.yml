@@ -248,6 +248,23 @@ jobs:
           echo "Looking for allure-reports:"
           ls -la gh-pages/allure-reports/ 2>/dev/null || echo "allure-reports not found"
 
+      - name: Copy existing history to test results
+        if: always()
+        run: |
+          echo "Copying existing history to test results directory..."
+          if [ -d "gh-pages/allure-report/history" ]; then
+            echo "Found history in gh-pages/allure-report/history"
+            cp -r gh-pages/allure-report/history allure-results/
+            echo "History copied successfully"
+          elif [ -d "gh-pages/allure-results/history" ]; then
+            echo "Found history in gh-pages/allure-results/history"
+            cp -r gh-pages/allure-results/history allure-results/
+            echo "History copied successfully"
+          else
+            echo "No existing history found, will create new"
+            mkdir -p allure-results/history
+          fi
+
       - name: Build test report
         if: always()
         uses: simple-elf/allure-report-action@v1.7
@@ -263,3 +280,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: allure-report
+          destination_dir: allure-results
