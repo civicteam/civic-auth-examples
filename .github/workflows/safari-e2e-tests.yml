@@ -226,7 +226,7 @@ jobs:
         with:
           pattern: allure-results-*
           merge-multiple: true
-          path: allure-report
+          path: allure-results
 
       - name: Load test report history
         if: always()
@@ -253,8 +253,8 @@ jobs:
         uses: simple-elf/allure-report-action@v1.7
         with:
           gh_pages: gh-pages
-          allure_results: allure-report
-          allure_history: last-history
+          allure_results: allure-results
+          allure_history: allure-report
           
       - name: Publish test report
         if: always()
