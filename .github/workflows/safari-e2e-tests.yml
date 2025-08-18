@@ -17,10 +17,6 @@ jobs:
   check-version:
     uses: ./.github/workflows/check-versions.yml
 
-  # Production jobs with Safari browser
-  # NOTE: To enable Allure reports with GitHub Pages, replace these jobs
-  # with calls to ./.github/workflows/allure-report-publish.yml
-  # and set publish-to-pages: ${{ github.event.inputs.publish-allure-to-pages == 'true' || github.ref == 'refs/heads/main' }}
   job-nextjs-example-app-safari:
     name: "Nextjs example app (Safari)"
     needs: check-version
