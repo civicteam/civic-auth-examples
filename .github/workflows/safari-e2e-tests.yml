@@ -242,7 +242,7 @@ jobs:
         with:
           gh_pages: gh-pages
           allure_results: allure-results
-          allure_history: allure_history
+          allure_history: allure-history
           
       - name: Publish test report
         if: always()
