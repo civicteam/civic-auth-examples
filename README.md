@@ -37,3 +37,31 @@ Note: One particular test, `nextjs-loginSuccessUrl.feature`, won't work unless t
 
 
 
+## Updating Civic packages across all samples
+
+Use the helper script to update either `@civic/auth` or `@civic/auth-web3`. Run from the repo root.
+
+- Update all projects using Web3 package to latest:
+```bash
+scripts/update-auth.sh web3
+```
+
+- Update all projects using non‑Web3 package to latest:
+```bash
+scripts/update-auth.sh auth
+```
+
+- Update all projects to a specific version:
+```bash
+scripts/update-auth.sh web3 0.7.2
+scripts/update-auth.sh auth 0.9.5
+```
+
+- Update only a specific project (path can be a dir or its `package.json`):
+```bash
+scripts/update-auth.sh auth latest packages/civic-auth/nextjs
+```
+
+Notes:
+- The script finds projects that depend on the chosen package and runs `yarn add` in each, updating their local `yarn.lock`.
+
