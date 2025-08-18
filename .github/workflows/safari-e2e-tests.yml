@@ -226,7 +226,7 @@ jobs:
         with:
           pattern: allure-results-*
           merge-multiple: true
-          path: allure-results
+          path: allure-report
 
       - name: Load test report history
         if: always()
@@ -253,7 +253,7 @@ jobs:
         uses: simple-elf/allure-report-action@v1.7
         with:
           gh_pages: gh-pages
-          allure_results: allure-results
+          allure_results: allure-report
           allure_history: last-history
           
       - name: Publish test report
@@ -262,5 +262,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
-          publish_dir: last-history
+          publish_dir: allure-report
           destination_dir: allure-results
