@@ -10,6 +10,9 @@ function App() {
       clientId={CLIENT_ID}
       // oauthServer is not necessary for production.
       config={{ oauthServer: AUTH_SERVER || "https://auth.civic.com/oauth" }}
+      displayMode="iframe"
+      iframeMode="embedded"
+      targetContainerElement="civic-auth-iframe-container"
     >
       <div
         style={{
@@ -23,6 +26,7 @@ function App() {
         <h1>Civic Auth (ReactJS)</h1>
         <UserButton />
         <CustomSignIn />
+        <div id="civic-auth-iframe-container" />
       </div>
     </CivicAuthProvider>
   );
