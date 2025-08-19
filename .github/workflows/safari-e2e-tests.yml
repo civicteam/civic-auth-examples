@@ -23,7 +23,9 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth/nextjs
-      playwright-specs: playwright/tests/nextjs-login.spec.ts,playwright/tests/email/nextjs-email-verification.spec.ts
+      playwright-specs: |
+        playwright/tests/nextjs-login.spec.ts
+        playwright/tests/email/nextjs-email-verification.spec.ts
       browser: webkit
     secrets: inherit
 
@@ -33,7 +35,9 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth/reactjs
-      playwright-specs: playwright/tests/reactjs-login.spec.ts,playwright/tests/email/reactjs-email-verification.spec.ts
+      playwright-specs: |
+        playwright/tests/reactjs-login.spec.ts
+        playwright/tests/email/reactjs-email-verification.spec.ts
       browser: webkit
     secrets: inherit
 
@@ -43,7 +47,9 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth/server/express
-      playwright-specs: playwright/tests/express-login.spec.ts,playwright/tests/email/express-email-verification.spec.ts
+      playwright-specs: |
+        playwright/tests/express-login.spec.ts
+        playwright/tests/email/express-email-verification.spec.ts
       browser: webkit
     secrets: inherit
 
@@ -53,7 +59,9 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth/server/fastify
-      playwright-specs: playwright/tests/fastify-login.spec.ts,playwright/tests/email/fastify-email-verification.spec.ts
+      playwright-specs: |
+        playwright/tests/fastify-login.spec.ts
+        playwright/tests/email/fastify-email-verification.spec.ts
       browser: webkit
     secrets: inherit
 
@@ -63,7 +71,9 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth/server/hono
-      playwright-specs: playwright/tests/hono-login.spec.ts,playwright/tests/email/hono-email-verification.spec.ts
+      playwright-specs: |
+        playwright/tests/hono-login.spec.ts
+        playwright/tests/email/hono-email-verification.spec.ts
       browser: webkit
     secrets: inherit
 
@@ -73,7 +83,10 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth/vanillajs
-      playwright-specs: playwright/tests/vanillajs-login.spec.ts,playwright/tests/email/vanillajs-email-verification.spec.ts,playwright/tests/email/vanillajs-modal-email-verification.spec.ts
+      playwright-specs: |
+        playwright/tests/vanillajs-login.spec.ts
+        playwright/tests/email/vanillajs-email-verification.spec.ts
+        playwright/tests/email/vanillajs-modal-email-verification.spec.ts
       browser: webkit
     secrets: inherit
 
@@ -93,7 +106,9 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth-web3/solana/next14-wallet-adapter
-      playwright-specs: playwright/tests/solana-next14-wa-login.spec.ts,playwright/tests/email/solana-next14-wa-email-verification.spec.ts
+      playwright-specs: |
+        playwright/tests/solana-next14-wa-login.spec.ts
+        playwright/tests/email/solana-next14-wa-email-verification.spec.ts
       browser: webkit
     secrets: inherit
 
@@ -103,7 +118,9 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth-web3/solana/next14-no-wallet-adapter
-      playwright-specs: playwright/tests/solana-next14-no-wa-login.spec.ts,playwright/tests/email/solana-next14-no-wa-email-verification.spec.ts
+      playwright-specs: |
+        playwright/tests/solana-next14-no-wa-login.spec.ts
+        playwright/tests/email/solana-next14-no-wa-email-verification.spec.ts
       browser: webkit
     secrets: inherit
 
@@ -113,7 +130,9 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth-web3/solana/next15-wallet-adapter
-      playwright-specs: playwright/tests/solana-next15-turbopack-wa-login.spec.ts,playwright/tests/email/solana-next15-turbopack-wa-email-verification.spec.ts
+      playwright-specs: |
+        playwright/tests/solana-next15-turbopack-wa-login.spec.ts
+        playwright/tests/email/solana-next15-turbopack-wa-email-verification.spec.ts
       build-command: "yarn build-turbopack"
       browser: webkit
     secrets: inherit
@@ -124,7 +143,9 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth-web3/solana/next15-wallet-adapter
-      playwright-specs: playwright/tests/solana-next15-wa-login.spec.ts,playwright/tests/email/solana-next15-wa-email-verification.spec.ts
+      playwright-specs: |
+        playwright/tests/solana-next15-wa-login.spec.ts
+        playwright/tests/email/solana-next15-wa-email-verification.spec.ts
       browser: webkit
     secrets: inherit
 
@@ -134,7 +155,9 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth-web3/solana/next15-no-wallet-adapter
-      playwright-specs: playwright/tests/solana-next15-turbopack-no-wa-login.spec.ts,playwright/tests/email/solana-next15-turbopack-no-wa-email-verification.spec.ts
+      playwright-specs: |
+        playwright/tests/solana-next15-turbopack-no-wa-login.spec.ts
+        playwright/tests/email/solana-next15-turbopack-no-wa-email-verification.spec.ts
       build-command: "yarn build-turbopack"
       browser: webkit
     secrets: inherit
@@ -145,7 +168,9 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth-web3/solana/next15-no-wallet-adapter
-      playwright-specs: playwright/tests/solana-next15-no-wa-login.spec.ts,playwright/tests/email/solana-next15-no-wa-email-verification.spec.ts
+      playwright-specs: |
+        playwright/tests/solana-next15-no-wa-login.spec.ts
+        playwright/tests/email/solana-next15-no-wa-email-verification.spec.ts
       browser: webkit
     secrets: inherit
 
@@ -155,7 +180,9 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth-web3/solana/vite-wallet-adapter
-      playwright-specs: playwright/tests/solana-vite-wa-login.spec.ts,playwright/tests/email/solana-vite-wa-email-verification.spec.ts
+      playwright-specs: |
+        playwright/tests/solana-vite-wa-login.spec.ts
+        playwright/tests/email/solana-vite-wa-email-verification.spec.ts
       browser: webkit
     secrets: inherit
 
@@ -165,7 +192,9 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth-web3/solana/vite-no-wallet-adapter
-      playwright-specs: playwright/tests/solana-vite-no-wa-login.spec.ts,playwright/tests/email/solana-vite-no-wa-email-verification.spec.ts
+      playwright-specs: |
+        playwright/tests/solana-vite-no-wa-login.spec.ts
+        playwright/tests/email/solana-vite-no-wa-email-verification.spec.ts
       browser: webkit
     secrets: inherit
 
@@ -175,7 +204,9 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth-web3/wagmi
-      playwright-specs: playwright/tests/wagmi-login.spec.ts,playwright/tests/email/wagmi-email-verification.spec.ts
+      playwright-specs: |
+        playwright/tests/wagmi-login.spec.ts
+        playwright/tests/email/wagmi-email-verification.spec.ts
       browser: webkit
     secrets: inherit 
 
@@ -185,7 +216,9 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth-web3/wagmi-nextjs
-      playwright-specs: playwright/tests/wagmi-nextjs-login.spec.ts,playwright/tests/email/wagmi-nextjs-email-verification.spec.ts
+      playwright-specs: |
+        playwright/tests/wagmi-nextjs-login.spec.ts
+        playwright/tests/email/wagmi-nextjs-email-verification.spec.ts
       browser: webkit
     secrets: inherit
 

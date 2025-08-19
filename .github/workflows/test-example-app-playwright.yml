@@ -149,7 +149,8 @@ jobs:
         env:
           ALLURE_RESULTS_DIR: allure-results
         run: |
-          echo "Running test specs: ${{ inputs.playwright-specs }}"
+          echo "Running test specs:"
+          echo "${{ inputs.playwright-specs }}"
           yarn playwright test ${{ inputs.playwright-specs }}
 
       - name: Generate Allure Report
