@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
 import { db } from '../../../utils/database';
+import { generateUniqueEmail } from '../../utils/email-generator';
 
 test.describe('Solana Next.js 15 Turbopack Wallet Adapter Email Verification Tests', () => {
   test.beforeEach(async ({ page }) => {
@@ -14,6 +15,7 @@ test.describe('Solana Next.js 15 Turbopack Wallet Adapter Email Verification Tes
     await allure.tag('solana-nextjs15-turbopack-wa-email-verification');
     
     let extractedLoginFlowId = '';
+    const uniqueEmail = generateUniqueEmail();
 
     // Open the app home page
     await allure.step('Navigate to Solana Next.js 15 Turbopack app home page', async () => {
@@ -52,7 +54,7 @@ test.describe('Solana Next.js 15 Turbopack Wallet Adapter Email Verification Tes
         await allure.step('Enter email address', async () => {
           const emailInput = page.locator('[data-testid="email-input-text"]');
           await emailInput.waitFor({ timeout: 10000 });
-          await emailInput.fill('success@simulator.amazonses.com');
+          await emailInput.fill(uniqueEmail);
         });
         
         // Submit email form and wait for API response
@@ -145,7 +147,7 @@ test.describe('Solana Next.js 15 Turbopack Wallet Adapter Email Verification Tes
         await allure.step('Enter email address in iframe', async () => {
           const emailInput = frame.locator('[data-testid="email-input-text"]');
           await emailInput.waitFor({ timeout: 10000 });
-          await emailInput.fill('success@simulator.amazonses.com');
+          await emailInput.fill(uniqueEmail);
         });
         
         // Submit email form and wait for API response

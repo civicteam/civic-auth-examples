@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
 import { db } from '../../../utils/database';
+import { generateUniqueEmail } from '../../utils/email-generator';
 
 test.describe('Solana Next.js 14 No Wallet Adapter Email Verification Tests', () => {
   test.beforeEach(async ({ page }) => {
@@ -14,6 +15,7 @@ test.describe('Solana Next.js 14 No Wallet Adapter Email Verification Tests', ()
     await allure.tag('solana-nextjs14-no-wa-email-verification');
     
     let extractedLoginFlowId = '';
+    const uniqueEmail = generateUniqueEmail();
 
     // Open the app home page
     await allure.step('Navigate to Solana Next.js 14 app home page', async () => {
@@ -44,7 +46,7 @@ test.describe('Solana Next.js 14 No Wallet Adapter Email Verification Tests', ()
         await allure.step('Enter email address', async () => {
           const emailInput = page.locator('[data-testid="email-input-text"]');
           await emailInput.waitFor({ timeout: 10000 });
-          await emailInput.fill('success@simulator.amazonses.com');
+          await emailInput.fill(uniqueEmail);
         });
         
         // Submit email form and wait for API response
@@ -137,7 +139,7 @@ test.describe('Solana Next.js 14 No Wallet Adapter Email Verification Tests', ()
         await allure.step('Enter email address in iframe', async () => {
           const emailInput = frame.locator('[data-testid="email-input-text"]');
           await emailInput.waitFor({ timeout: 10000 });
-          await emailInput.fill('success@simulator.amazonses.com');
+          await emailInput.fill(uniqueEmail);
         });
         
         // Submit email form and wait for API response
@@ -201,7 +203,7 @@ test.describe('Solana Next.js 14 No Wallet Adapter Email Verification Tests', ()
     
     // Confirm logged in state by checking for email in dropdown
     await allure.step('Verify login success with email', async () => {
-      await expect(page.locator('#civic-dropdown-container').locator('button:has-text("success@simulator.amazonses.com")')).toBeVisible({ timeout: 20000 });
+      await expect(page.locator('#civic-dropdown-container').locator(`button:has-text("${uniqueEmail}")`)).toBeVisible({ timeout: 20000 });
     });
     
     // Verify wallet address is displayed
@@ -212,7 +214,7 @@ test.describe('Solana Next.js 14 No Wallet Adapter Email Verification Tests', ()
     // Test logout functionality
     await allure.step('Test logout functionality', async () => {
       // Click the email dropdown to open it
-      const emailDropdownButton = page.locator('#civic-dropdown-container').locator('button:has-text("success@simulator.amazonses.com")');
+      const emailDropdownButton = page.locator('#civic-dropdown-container').locator(`button:has-text("${uniqueEmail}")`);
       await emailDropdownButton.click();
       
       // Click the logout button

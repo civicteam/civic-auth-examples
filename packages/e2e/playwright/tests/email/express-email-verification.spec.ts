@@ -1,9 +1,11 @@
 import { test, expect } from '@playwright/test';
 import { db } from '../../../utils/database';
+import { generateUniqueEmail } from '../../utils/email-generator';
 
 test.describe('Express Email Verification Tests', () => {
   test('should complete email verification flow with actual email', async ({ page, browserName }) => {
     let extractedLoginFlowId = '';
+    const uniqueEmail = generateUniqueEmail();
 
     // Go to the app home page
     await page.goto('http://localhost:3000');
@@ -20,7 +22,7 @@ test.describe('Express Email Verification Tests', () => {
     // Enter email address
     const emailInput = page.locator('[data-testid="email-input-text"]');
     await emailInput.waitFor({ timeout: 10000 });
-    await emailInput.fill('success@simulator.amazonses.com');
+    await emailInput.fill(uniqueEmail);
 
     // Submit email form and wait for API response
     const responsePromise = page.waitForResponse(

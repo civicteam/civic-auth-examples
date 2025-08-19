@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
 import { db } from '../../../utils/database';
+import { generateUniqueEmail } from '../../utils/email-generator';
 
 test.describe('Hono Email Verification Tests', () => {
   test.beforeEach(async ({ page }) => {
@@ -14,6 +15,7 @@ test.describe('Hono Email Verification Tests', () => {
     await allure.tag('hono-email-verification-real');
     
     let extractedLoginFlowId = '';
+    const uniqueEmail = generateUniqueEmail();
 
     // Go to the app home page
     await allure.step('Navigate to Hono app home page', async () => {
@@ -35,7 +37,7 @@ test.describe('Hono Email Verification Tests', () => {
     await allure.step('Enter email address', async () => {
       const emailInput = page.locator('[data-testid="email-input-text"]');
       await emailInput.waitFor({ timeout: 10000 });
-      await emailInput.fill('success@simulator.amazonses.com');
+      await emailInput.fill(uniqueEmail);
     });
 
     // Submit email form and wait for API response
