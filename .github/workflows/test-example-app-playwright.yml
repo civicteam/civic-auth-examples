@@ -43,7 +43,6 @@ jobs:
       VITE_AUTH_SERVER: ${{ secrets.AUTH_SERVER }}
       NEXT_PUBLIC_WALLET_API_BASE_URL: ${{ secrets.NEXT_PUBLIC_WALLET_API_BASE_URL }}
       VITE_WALLET_API_BASE_URL: ${{ secrets.VITE_WALLET_API_BASE_URL }}
-      DATABASE_URL: ${{ secrets.DATABASE_URL }}
     defaults:
       run:
         working-directory: ${{ inputs.project-path }}
@@ -149,10 +148,7 @@ jobs:
         working-directory: packages/e2e
         env:
           ALLURE_RESULTS_DIR: allure-results
-        run: |
-          echo "Running test specs:"
-          echo "${{ inputs.playwright-specs }}"
-          yarn playwright test ${{ inputs.playwright-specs }}
+        run: yarn playwright test ${{ inputs.playwright-spec }}
 
       - name: Generate Allure Report
         if: always()
