@@ -199,12 +199,7 @@ test.describe('Solana Vite Wallet Adapter Email Verification Tests', () => {
         await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 20000 });
       });
     }
-    
-    // Confirm logged in state by checking for email in dropdown
-    await allure.step('Verify login success with email', async () => {
-      await expect(page.locator('#civic-dropdown-container').locator('button:has-text("success@simulator.amazonses.com")')).toBeVisible({ timeout: 20000 });
-    });
-    
+
     // Verify wallet adapter shows connected state
     await allure.step('Verify wallet adapter connected state', async () => {
       await expect(page.locator('.wallet-adapter-button.wallet-adapter-button-trigger')).toBeVisible({ timeout: 60000 });

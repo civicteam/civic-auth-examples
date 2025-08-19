@@ -228,7 +228,7 @@ test.describe('Solana Next.js 14 Wallet Adapter Email Verification Tests', () =>
       await disconnectButton.click();
       
       // Verify wallet adapter button is back to disconnected state
-      await expect(page.locator('text=User not logged in')).toBeVisible({ timeout: 10000 });
+      await expect(page.locator('.wallet-adapter-button-trigger')).toHaveText('Select Wallet', { timeout: 10000 });
     });
   });
 });
