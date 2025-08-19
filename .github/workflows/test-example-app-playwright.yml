@@ -6,10 +6,9 @@ on:
       project-path:
         required: true
         type: string
-      playwright-specs:
+      playwright-spec:
         required: true
         type: string
-        description: "Comma-separated list of playwright test specs to run"
       build-command:
         required: false
         type: string
