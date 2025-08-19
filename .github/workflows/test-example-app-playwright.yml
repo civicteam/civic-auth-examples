@@ -26,6 +26,8 @@ on:
         required: true
       VITE_WALLET_API_BASE_URL:
         required: true
+      DATABASE_URL:
+        required: true
 
 jobs:
   build-and-test:
@@ -42,6 +44,7 @@ jobs:
       VITE_AUTH_SERVER: ${{ secrets.AUTH_SERVER }}
       NEXT_PUBLIC_WALLET_API_BASE_URL: ${{ secrets.NEXT_PUBLIC_WALLET_API_BASE_URL }}
       VITE_WALLET_API_BASE_URL: ${{ secrets.VITE_WALLET_API_BASE_URL }}
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
     defaults:
       run:
         working-directory: ${{ inputs.project-path }}
