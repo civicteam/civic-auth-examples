@@ -6,9 +6,10 @@ on:
       project-path:
         required: true
         type: string
-      playwright-spec:
+      playwright-specs:
         required: true
         type: string
+        description: "Comma-separated list of playwright test specs to run"
       build-command:
         required: false
         type: string
@@ -147,7 +148,9 @@ jobs:
         working-directory: packages/e2e
         env:
           ALLURE_RESULTS_DIR: allure-results
-        run: yarn playwright test ${{ inputs.playwright-spec }}
+        run: |
+          echo "Running test specs: ${{ inputs.playwright-specs }}"
+          yarn playwright test ${{ inputs.playwright-specs }}
 
       - name: Generate Allure Report
         if: always()
