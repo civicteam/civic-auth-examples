@@ -1,0 +1,13 @@
+Checking URL: https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/assets/email.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/activity-indicator.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiNzVjNzhiZTQtNjZlOC00OTc4LTk0ZGMtN2Q5NTQ5Y2M3YWFkIiwiZGlzcGxheU1vZGUiOiJyZWRpcmVjdCIsImlmcmFtZURpc3BsYXlNb2RlIjoibW9kYWwiLCJmcmFtZXdvcmsiOiJuZXh0anMiLCJzZGtWZXJzaW9uIjoiQGNpdmljL2F1dGg6MC4xMC4wLWJldGEuMCJ9&client_id=demo-client-1&source_system_id=4eE4Nz_PFwale6SmyPHbuBFsKeKOTXbShDKWejA1LoP&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&flow_id=oauth-login-3de9c475-311b-4417-9d43-fb87a3f9598b, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/email?loginFlowId=00d3b9aa-64d9-45f8-a526-f3550a8e4e98&client_id=demo-client-1&sourceSystemId=4eE4Nz_PFwale6SmyPHbuBFsKeKOTXbShDKWejA1LoP&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&emailAddress=success%40simulator.amazonses.com&_rsc=614el, hasLoginFlowId: true, isEmailEndpoint: true, isVerifyEndpoint: false
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=00d3b9aa-64d9-45f8-a526-f3550a8e4e98&client_id=demo-client-1&sourceSystemId=4eE4Nz_PFwale6SmyPHbuBFsKeKOTXbShDKWejA1LoP&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&emailAddress=success%40simulator.amazonses.com&_rsc=614el
+Extracted loginFlowId: 00d3b9aa-64d9-45f8-a526-f3550a8e4e98
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: 00d3b9aa-64d9-45f8-a526-f3550a8e4e98
+Found verification code for loginFlowId 00d3b9aa-64d9-45f8-a526-f3550a8e4e98: 729424
+Database disconnected
+Retrieved verification code: 729424 for loginFlowId: 00d3b9aa-64d9-45f8-a526-f3550a8e4e98
