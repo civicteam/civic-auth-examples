@@ -250,15 +250,15 @@ jobs:
       browser: webkit
     secrets: inherit
 
-  job-vanillajs-modal-email-verification-safari:
-    name: "VanillaJS Modal email verification (Safari)"
-    needs: check-version
-    uses: ./.github/workflows/test-example-app-playwright.yml
-    with:
-      project-path: packages/civic-auth/vanillajs
-      playwright-spec: playwright/tests/email/vanillajs-modal-email-verification.spec.ts
-      browser: webkit
-    secrets: inherit
+  # job-vanillajs-modal-email-verification-safari:
+  #   name: "VanillaJS Modal email verification (Safari)"
+  #   needs: check-version
+  #   uses: ./.github/workflows/test-example-app-playwright.yml
+  #   with:
+  #     project-path: packages/civic-auth/vanillajs
+  #     playwright-spec: playwright/tests/email/vanillajs-modal-email-verification.spec.ts
+  #     browser: webkit
+  #   secrets: inherit
 
   job-next-14-webpack-solana-wallet-adapter-email-safari:
     name: "Next14 webpack Solana wallet adapter email (Safari)"

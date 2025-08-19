@@ -220,17 +220,16 @@ test.describe('Solana Next.js 15 Turbopack Wallet Adapter Email Verification Tes
     
     // Test logout functionality
     await allure.step('Test logout functionality', async () => {
-      // Click the email dropdown to open it
-      const emailDropdownButton = page.locator('#civic-dropdown-container').locator('button:has-text("success@simulator.amazonses.com")');
-      await emailDropdownButton.click();
+      // Click the wallet adapter button to open the dropdown
+      await page.click('.wallet-adapter-button-trigger');
       
-      // Click the logout button
-      const logoutButton = page.locator('#civic-dropdown-container').locator('button:has-text("Logout")');
-      await expect(logoutButton).toBeVisible();
-      await logoutButton.click();
+      // Wait for the dropdown to be visible and click the Disconnect option
+      const disconnectButton = page.locator('.wallet-adapter-dropdown-list-active li:has-text("Disconnect")');
+      await expect(disconnectButton).toBeVisible({ timeout: 10000 });
+      await disconnectButton.click();
       
       // Verify wallet adapter button is back to disconnected state
-      await expect(page.locator('.wallet-adapter-button-trigger')).toBeVisible({ timeout: 10000 });
+      await expect(page.locator('text=User not logged in')).toBeVisible({ timeout: 10000 });
     });
   });
 });

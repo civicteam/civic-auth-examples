@@ -34,16 +34,10 @@ test.describe('VanillaJS Modal Email Verification Tests', () => {
     // Click log in with email in the iframe (modal mode still uses iframe)
     await allure.step('Handle iframe email verification flow', async () => {
       const frame = page.frameLocator('#civic-auth-iframe');
-      
-      // Wait for the frame to load completely first
-      await frame.locator('body').waitFor({ timeout: 30000 });
-      
-      // Wait for the login UI to fully load
-      await allure.step('Wait for login UI to load', async () => {
-        await frame.locator('#civic-login-app-loading').waitFor({ state: 'hidden', timeout: 30000 });
-        await frame.locator('[data-testid*="civic-login"]').first().waitFor({ timeout: 30000 });
-      });
-      
+      await frame.locator('[data-testid="civic-login-oidc-button-dummy"]').click({ timeout: 20000 });
+
+      // Wait for the iframe to be gone (indicating login is complete)
+      await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 20000 });
       // Look for the email login slot
       await allure.step('Find and click email login option', async () => {
         const emailSlot = frame.locator('[data-testid="civic-login-slot-email-comp"]');
