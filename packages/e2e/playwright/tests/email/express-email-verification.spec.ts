@@ -8,9 +8,10 @@ test.describe('Express Email Verification Tests', () => {
     // Go to the app home page
     await page.goto('http://localhost:3000');
 
-    // Wait for navigation to auth server
-    await page.waitForURL('**/auth-dev.civic.com/**', { timeout: 30000 });
-
+    // Wait for the page to fully load with all UI elements
+    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
+    
     // Click "Log in with email" button
     const emailButton = page.locator('[data-testid="civic-login-slot-email-comp"]');
     await emailButton.waitFor({ timeout: 30000 });

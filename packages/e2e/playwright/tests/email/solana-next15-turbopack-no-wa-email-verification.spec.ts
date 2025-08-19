@@ -20,17 +20,18 @@ test.describe('Solana Next.js 15 Turbopack No Wallet Adapter Email Verification 
       await page.goto('http://localhost:3000');
     });
     
+    // Wait for the page to fully load with all UI elements
+    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
+        
+    
     // Click the sign in button
     await allure.step('Click sign in button', async () => {
       await page.getByTestId('sign-in-button').click();
     });
     
     if (browserName === 'webkit') {
-      await allure.step('Handle WebKit redirect email verification flow', async () => {
-        // WebKit uses redirect flow instead of iframe
-        // Wait for navigation to the auth server
-        await page.waitForURL('**/auth-dev.civic.com/**', { timeout: 30000 });
-        
+      await allure.step('Handle WebKit redirect email verification flow', async () => {        
         // Click "Log in with email" button
         const emailButton = page.locator('[data-testid="civic-login-slot-email-comp"]');
         await emailButton.waitFor({ timeout: 30000 });

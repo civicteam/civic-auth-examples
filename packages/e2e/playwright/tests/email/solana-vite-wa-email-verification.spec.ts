@@ -19,6 +19,10 @@ test.describe('Solana Vite Wallet Adapter Email Verification Tests', () => {
     await allure.step('Navigate to Solana Vite app home page', async () => {
       await page.goto('http://localhost:3000');
     });
+
+    // Wait for the page to fully load with all UI elements
+    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
     
     // Click the select wallet button
     await allure.step('Click select wallet button', async () => {
@@ -27,15 +31,11 @@ test.describe('Solana Vite Wallet Adapter Email Verification Tests', () => {
     
     // Click the civic wallet button
     await allure.step('Click Civic wallet button', async () => {
-      await page.click('button:has-text("Civic")');
+      await page.click('button:has-text("Login via Civic")');
     });
     
     if (browserName === 'webkit') {
       await allure.step('Handle WebKit redirect email verification flow', async () => {
-        // WebKit uses redirect flow instead of iframe
-        // Wait for navigation to the auth server
-        await page.waitForURL('**/auth-dev.civic.com/**', { timeout: 30000 });
-        
         // Click "Log in with email" button
         const emailButton = page.locator('[data-testid="civic-login-slot-email-comp"]');
         await emailButton.waitFor({ timeout: 30000 });

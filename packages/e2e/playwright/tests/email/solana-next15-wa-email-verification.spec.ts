@@ -19,6 +19,10 @@ test.describe('Solana Next.js 15 Wallet Adapter Email Verification Tests', () =>
     await allure.step('Navigate to Solana Next.js 15 app home page', async () => {
       await page.goto('http://localhost:3000');
     });
+        
+    // Wait for the page to fully load with all UI elements
+    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
     
     // Click the select wallet button
     await allure.step('Click select wallet button', async () => {

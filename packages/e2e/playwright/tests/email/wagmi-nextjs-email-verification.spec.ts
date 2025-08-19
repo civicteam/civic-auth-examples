@@ -19,7 +19,11 @@ test.describe('Wagmi Next.js Email Verification Tests', () => {
     await allure.step('Navigate to Wagmi Next.js app home page', async () => {
       await page.goto('http://localhost:3000');
     });
-    
+
+    // Wait for the page to fully load with all UI elements
+    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
+
     // Click the sign in button
     await allure.step('Click sign in button', async () => {
       await page.click('button:has-text("Sign in")');

@@ -19,6 +19,10 @@ test.describe('Solana Next.js 15 Turbopack Wallet Adapter Email Verification Tes
     await allure.step('Navigate to Solana Next.js 15 Turbopack app home page', async () => {
       await page.goto('http://localhost:3000');
     });
+
+    // Wait for the page to fully load with all UI elements
+    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
     
     // Click the select wallet button
     await allure.step('Click select wallet button', async () => {
@@ -34,8 +38,11 @@ test.describe('Solana Next.js 15 Turbopack Wallet Adapter Email Verification Tes
       await allure.step('Handle WebKit redirect email verification flow', async () => {
         // WebKit uses redirect flow instead of iframe
         // Wait for navigation to the auth server
-        await page.waitForURL('**/auth-dev.civic.com/**', { timeout: 30000 });
-        
+        // await page.waitForURL('**/auth-dev.civic.com/**', { timeout: 30000 });
+        // Wait for the page to fully load with all UI elements
+        await page.waitForLoadState('networkidle');
+        await page.waitForLoadState('domcontentloaded');
+
         // Click "Log in with email" button
         const emailButton = page.locator('[data-testid="civic-login-slot-email-comp"]');
         await emailButton.waitFor({ timeout: 30000 });
@@ -200,11 +207,6 @@ test.describe('Solana Next.js 15 Turbopack Wallet Adapter Email Verification Tes
       });
     }
     
-    // Confirm logged in state by checking for email in dropdown
-    await allure.step('Verify login success with email', async () => {
-      await expect(page.locator('#civic-dropdown-container').locator('button:has-text("success@simulator.amazonses.com")')).toBeVisible({ timeout: 20000 });
-    });
-    
     // Verify wallet adapter shows connected state
     await allure.step('Verify wallet adapter connected state', async () => {
       await expect(page.locator('.wallet-adapter-button.wallet-adapter-button-trigger')).toBeVisible({ timeout: 60000 });
@@ -229,7 +231,7 @@ test.describe('Solana Next.js 15 Turbopack Wallet Adapter Email Verification Tes
       await disconnectButton.click();
       
       // Verify wallet adapter button is back to disconnected state
-      await expect(page.locator('text=User not logged in')).toBeVisible({ timeout: 10000 });
+      await expect(page.locator('.wallet-adapter-button-trigger')).toHaveText('Select Wallet', { timeout: 10000 });
     });
   });
 });

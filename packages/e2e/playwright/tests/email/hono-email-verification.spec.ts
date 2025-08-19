@@ -20,10 +20,9 @@ test.describe('Hono Email Verification Tests', () => {
       await page.goto('http://localhost:3000');
     });
 
-    // Wait for navigation to auth server
-    await allure.step('Wait for auth server navigation', async () => {
-      await page.waitForURL('**/auth-dev.civic.com/**', { timeout: 30000 });
-    });
+    // Wait for the page to fully load with all UI elements
+    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
 
     // Click "Log in with email" button
     await allure.step('Click email login option', async () => {

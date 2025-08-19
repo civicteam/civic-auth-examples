@@ -27,10 +27,6 @@ test.describe('Solana Next.js 15 No Wallet Adapter Email Verification Tests', ()
     
     if (browserName === 'webkit') {
       await allure.step('Handle WebKit redirect email verification flow', async () => {
-        // WebKit uses redirect flow instead of iframe
-        // Wait for navigation to the auth server
-        await page.waitForURL('**/auth-dev.civic.com/**', { timeout: 30000 });
-        
         // Click "Log in with email" button
         const emailButton = page.locator('[data-testid="civic-login-slot-email-comp"]');
         await emailButton.waitFor({ timeout: 30000 });
