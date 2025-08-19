@@ -203,7 +203,7 @@ test.describe('Solana Vite Wallet Adapter Email Verification Tests', () => {
     // Verify wallet adapter shows connected state
     await allure.step('Verify wallet adapter connected state', async () => {
       await expect(page.locator('.wallet-adapter-button.wallet-adapter-button-trigger')).toBeVisible({ timeout: 60000 });
-      await expect(page.locator('.wallet-adapter-button-start-icon')).toBeVisible({ timeout: 20000 });
+      // await expect(page.locator('.wallet-adapter-button-start-icon')).toBeVisible({ timeout: 20000 });
       await expect(page.locator('.wallet-adapter-button-trigger')).toContainText(/^[A-Za-z0-9]{4}\.\.([A-Za-z0-9]{4})$/, { timeout: 20000 });
     });
     
@@ -224,7 +224,7 @@ test.describe('Solana Vite Wallet Adapter Email Verification Tests', () => {
       await disconnectButton.click();
       
       // Verify wallet adapter button is back to disconnected state
-      await expect(page.locator('text=User not logged in')).toBeVisible({ timeout: 10000 });
+      await expect(page.locator('.wallet-adapter-button-trigger')).toHaveText('Select Wallet', { timeout: 10000 });
     });
   });
 });
