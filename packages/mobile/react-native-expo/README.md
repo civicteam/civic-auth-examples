@@ -13,7 +13,7 @@ React Native Expo app with OAuth2/OIDC authentication using Civic Auth for mobil
 2. **Create a Civic Auth account**
 
 - Sign-up at [auth.civic.com](https://auth.civic.com) and get your client ID.
-- Add the application domain as `civicauthmobile:///` under the Domains Menu. This will allow the app to redirect back to the mobile app after authentication.
+- Add the application domain as `civicauth:///` under the Domains Menu. This will allow the app to redirect back to the mobile app after authentication.
 
 3. **Configure environment**
 

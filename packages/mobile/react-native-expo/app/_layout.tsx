@@ -1,3 +1,11 @@
+// import "@/polyfills/util";
+// import "@/polyfills/window";
+import "@/polyfills/events";
+// import "@/polyfills/document";
+// import "@/polyfills/buffer";
+// import "@/polyfills/crypto";
+// import "@/polyfills/url";
+
 import {
   DarkTheme,
   DefaultTheme,
@@ -10,6 +18,12 @@ import "react-native-reanimated";
 
 import { useColorScheme } from "@/hooks/useColorScheme";
 import { AuthProvider } from "@/contexts/AuthContext";
+import { setupGlobalErrorHandlers } from "@/utils/errorDebug";
+import { ErrorBoundary } from "@/components/ErrorBoundary";
+import { useEffect } from "react";
+
+// Set up error handlers as early as possible
+setupGlobalErrorHandlers();
 
 export default function RootLayout() {
   const colorScheme = useColorScheme();
@@ -23,14 +37,16 @@ export default function RootLayout() {
   }
 
   return (
-    <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-      <AuthProvider>
-        <Stack>
-          <Stack.Screen name="index" options={{ headerShown: false }} />
-          <Stack.Screen name="+not-found" />
-        </Stack>
-      </AuthProvider>
-      <StatusBar style="auto" />
-    </ThemeProvider>
+    <ErrorBoundary>
+      <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
+        <AuthProvider>
+          <Stack>
+            <Stack.Screen name="index" options={{ headerShown: false }} />
+            <Stack.Screen name="+not-found" />
+          </Stack>
+        </AuthProvider>
+        <StatusBar style="auto" />
+      </ThemeProvider>
+    </ErrorBoundary>
   );
 }

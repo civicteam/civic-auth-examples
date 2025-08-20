@@ -1,7 +1,12 @@
-import React, { createContext, useEffect, useMemo, useReducer } from "react";
+import { createContext, useEffect, useMemo, useReducer } from "react";
 import { AuthRequestConfig, useAuthRequest } from "expo-auth-session";
 import * as WebBrowser from "expo-web-browser";
 import { civicAuthConfig } from "@/config/civicAuth";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { useWeb3Client, type Web3Client } from "@civic/auth-web3-rn";
+
+// Create a query client (required by wagmi)
+const queryClient = new QueryClient();
 
 interface AuthState {
   isLoading: boolean;
@@ -30,10 +35,15 @@ const initialState: AuthState = {
   isAuthenticated: false,
 };
 
-export const AuthContext = createContext({
+export type AuthContextType = {
+  state: AuthState;
+  signIn?: () => Promise<void>;
+  signOut?: () => Promise<void>;
+  web3Client?: Web3Client | null;
+};
+
+export const AuthContext = createContext<AuthContextType>({
   state: initialState,
-  signIn: () => {},
-  signOut: () => {},
 });
 
 // This is needed to close the webview after a complete login
@@ -46,6 +56,21 @@ export const AuthProvider = ({
   config?: Partial<AuthRequestConfig>;
   children: React.ReactNode;
 }) => {
+  // Add error boundary logging
+  useEffect(() => {
+    const originalConsoleError = console.error;
+    console.error = (...args) => {
+      if (args[0]?.includes?.("publicKey")) {
+        console.log("=== PublicKey Error Debug ===");
+        console.log("Error:", args[0]);
+        console.trace("Stack trace for publicKey error");
+      }
+      originalConsoleError.apply(console, args);
+    };
+    return () => {
+      console.error = originalConsoleError;
+    };
+  }, []);
   const finalConfig = useMemo(() => {
     return { ...civicAuthConfig, ...config };
   }, [config]);
@@ -89,10 +114,21 @@ export const AuthProvider = ({
     initialState,
   );
 
+  const web3Client = useWeb3Client(
+    {
+      endpoints: {
+        wallet: "https://dev.api.civic.com/metakeep-dev",
+      },
+    },
+    undefined,
+    authState.idToken,
+  );
+
   const authContext = useMemo(
     () => ({
       state: authState,
-      signIn: () => {
+      web3Client,
+      signIn: async () => {
         promptAsync();
       },
       signOut: async () => {
@@ -112,10 +148,10 @@ export const AuthProvider = ({
             endSessionUrl.toString(),
             finalConfig.redirectUri,
           );
-          
+
           // Only sign out if the session was completed successfully
           // If the user cancels (result.type === 'cancel'), we don't sign them out
-          if (result.type === 'success') {
+          if (result.type === "success") {
             dispatch({ type: "SIGN_OUT" });
           }
         } catch (e) {
@@ -123,7 +159,7 @@ export const AuthProvider = ({
         }
       },
     }),
-    [authState, promptAsync, finalConfig],
+    [authState, promptAsync, finalConfig, web3Client],
   );
 
   useEffect(() => {
@@ -189,6 +225,10 @@ export const AuthProvider = ({
       }
     };
     if (authState.isAuthenticated) {
+      // web3User.createWallet();
+      if (!web3Client?.ethereum || !web3Client.solana) {
+        web3Client?.createWallets();
+      }
       getUserInfo();
     }
   }, [
@@ -196,9 +236,16 @@ export const AuthProvider = ({
     authState.isAuthenticated,
     dispatch,
     finalConfig.userInfoEndpoint,
+    web3Client,
   ]);
 
+  useEffect(() => {}, [authState.isAuthenticated, authState.user]);
+
   return (
-    <AuthContext.Provider value={authContext}>{children}</AuthContext.Provider>
+    <QueryClientProvider client={queryClient}>
+      <AuthContext.Provider value={authContext}>
+        {children}
+      </AuthContext.Provider>
+    </QueryClientProvider>
   );
 };

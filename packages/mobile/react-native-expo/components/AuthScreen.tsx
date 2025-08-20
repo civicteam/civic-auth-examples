@@ -34,9 +34,11 @@ export function AuthScreen({ onAuthSuccess }: AuthScreenProps) {
 
   const handleSignIn = async () => {
     try {
-      signIn();
+      if (!signIn) return;
+      await signIn();
       onAuthSuccess?.();
     } catch (error) {
+      console.warn(error);
       Alert.alert(
         "Authentication Error",
         "Failed to sign in with Civic Auth. Please try again.",
@@ -47,8 +49,10 @@ export function AuthScreen({ onAuthSuccess }: AuthScreenProps) {
 
   const handleSignOut = async () => {
     try {
+      if (!signOut) return;
       signOut();
     } catch (error) {
+      console.warn(error);
       Alert.alert("Sign Out Error", "Failed to sign out. Please try again.", [
         { text: "OK" },
       ]);
