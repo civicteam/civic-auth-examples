@@ -23,7 +23,9 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth/nextjs
-      playwright-spec: playwright/tests/nextjs-login.spec.ts
+      playwright-spec: |
+        playwright/tests/nextjs-login.spec.ts
+        playwright/tests/email/nextjs-email-verification.spec.ts
       browser: webkit
     secrets: inherit
 
@@ -33,7 +35,9 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth/reactjs
-      playwright-spec: playwright/tests/reactjs-login.spec.ts
+      playwright-spec: |
+        playwright/tests/reactjs-login.spec.ts
+        playwright/tests/email/reactjs-email-verification.spec.ts
       browser: webkit
     secrets: inherit
 
@@ -43,7 +47,9 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth/server/express
-      playwright-spec: playwright/tests/express-login.spec.ts
+      playwright-spec: |
+        playwright/tests/express-login.spec.ts
+        playwright/tests/email/express-email-verification.spec.ts
       browser: webkit
     secrets: inherit
 
@@ -53,7 +59,9 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth/server/fastify
-      playwright-spec: playwright/tests/fastify-login.spec.ts
+      playwright-spec: |
+        playwright/tests/fastify-login.spec.ts
+        playwright/tests/email/fastify-email-verification.spec.ts
       browser: webkit
     secrets: inherit
 
@@ -63,7 +71,9 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth/server/hono
-      playwright-spec: playwright/tests/hono-login.spec.ts
+      playwright-spec: |
+        playwright/tests/hono-login.spec.ts
+        playwright/tests/email/hono-email-verification.spec.ts
       browser: webkit
     secrets: inherit
 
@@ -73,7 +83,9 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth/vanillajs
-      playwright-spec: playwright/tests/vanillajs-login.spec.ts
+      playwright-spec: |
+        playwright/tests/vanillajs-login.spec.ts
+        playwright/tests/email/vanillajs-email-verification.spec.ts
       browser: webkit
     secrets: inherit
 
@@ -93,7 +105,9 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth-web3/solana/next14-wallet-adapter
-      playwright-spec: playwright/tests/solana-next14-wa-login.spec.ts
+      playwright-spec: |
+        playwright/tests/solana-next14-wa-login.spec.ts
+        playwright/tests/email/solana-next14-wa-email-verification.spec.ts
       browser: webkit
     secrets: inherit
 
@@ -103,7 +117,9 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth-web3/solana/next14-no-wallet-adapter
-      playwright-spec: playwright/tests/solana-next14-no-wa-login.spec.ts
+      playwright-spec: |
+        playwright/tests/solana-next14-no-wa-login.spec.ts
+        playwright/tests/email/solana-next14-no-wa-email-verification.spec.ts
       browser: webkit
     secrets: inherit
 
@@ -113,7 +129,9 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth-web3/solana/next15-wallet-adapter
-      playwright-spec: playwright/tests/solana-next15-turbopack-wa-login.spec.ts
+      playwright-spec: |
+        playwright/tests/solana-next15-turbopack-wa-login.spec.ts
+        playwright/tests/email/solana-next15-turbopack-wa-email-verification.spec.ts
       build-command: "yarn build-turbopack"
       browser: webkit
     secrets: inherit
@@ -124,7 +142,9 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth-web3/solana/next15-wallet-adapter
-      playwright-spec: playwright/tests/solana-next15-wa-login.spec.ts
+      playwright-spec: |
+        playwright/tests/solana-next15-wa-login.spec.ts
+        playwright/tests/email/solana-next15-wa-email-verification.spec.ts
       browser: webkit
     secrets: inherit
 
@@ -134,7 +154,9 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth-web3/solana/next15-no-wallet-adapter
-      playwright-spec: playwright/tests/solana-next15-turbopack-no-wa-login.spec.ts
+      playwright-spec: |
+        playwright/tests/solana-next15-turbopack-no-wa-login.spec.ts
+        playwright/tests/email/solana-next15-turbopack-no-wa-email-verification.spec.ts
       build-command: "yarn build-turbopack"
       browser: webkit
     secrets: inherit
@@ -145,7 +167,9 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth-web3/solana/next15-no-wallet-adapter
-      playwright-spec: playwright/tests/solana-next15-no-wa-login.spec.ts
+      playwright-spec: |
+        playwright/tests/solana-next15-no-wa-login.spec.ts
+        playwright/tests/email/solana-next15-no-wa-email-verification.spec.ts
       browser: webkit
     secrets: inherit
 
@@ -155,7 +179,9 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth-web3/solana/vite-wallet-adapter
-      playwright-spec: playwright/tests/solana-vite-wa-login.spec.ts
+      playwright-spec: |
+        playwright/tests/solana-vite-wa-login.spec.ts
+        playwright/tests/email/solana-vite-wa-email-verification.spec.ts
       browser: webkit
     secrets: inherit
 
@@ -165,7 +191,9 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth-web3/solana/vite-no-wallet-adapter
-      playwright-spec: playwright/tests/solana-vite-no-wa-login.spec.ts
+      playwright-spec: |
+        playwright/tests/solana-vite-no-wa-login.spec.ts
+        playwright/tests/email/solana-vite-no-wa-email-verification.spec.ts
       browser: webkit
     secrets: inherit
 
@@ -175,7 +203,9 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth-web3/wagmi
-      playwright-spec: playwright/tests/wagmi-login.spec.ts
+      playwright-spec: |
+        playwright/tests/wagmi-login.spec.ts
+        playwright/tests/email/wagmi-email-verification.spec.ts
       browser: webkit
     secrets: inherit 
 
@@ -185,180 +215,9 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth-web3/wagmi-nextjs
-      playwright-spec: playwright/tests/wagmi-nextjs-login.spec.ts
-      browser: webkit
-    secrets: inherit
-
-  # Email verification tests
-  job-nextjs-email-verification-safari:
-    name: "Nextjs email verification (Safari)"
-    needs: check-version
-    uses: ./.github/workflows/test-example-app-playwright.yml
-    with:
-      project-path: packages/civic-auth/nextjs
-      playwright-spec: playwright/tests/email/nextjs-email-verification.spec.ts
-      browser: webkit
-    secrets: inherit
-
-  job-reactjs-email-verification-safari:
-    name: "Reactjs email verification (Safari)"
-    needs: check-version
-    uses: ./.github/workflows/test-example-app-playwright.yml
-    with:
-      project-path: packages/civic-auth/reactjs
-      playwright-spec: playwright/tests/email/reactjs-email-verification.spec.ts
-      browser: webkit
-    secrets: inherit
-
-  job-express-email-verification-safari:
-    name: "Express email verification (Safari)"
-    needs: check-version
-    uses: ./.github/workflows/test-example-app-playwright.yml
-    with:
-      project-path: packages/civic-auth/server/express
-      playwright-spec: playwright/tests/email/express-email-verification.spec.ts
-      browser: webkit
-    secrets: inherit
-
-  job-fastify-email-verification-safari:
-    name: "Fastify email verification (Safari)"
-    needs: check-version
-    uses: ./.github/workflows/test-example-app-playwright.yml
-    with:
-      project-path: packages/civic-auth/server/fastify
-      playwright-spec: playwright/tests/email/fastify-email-verification.spec.ts
-      browser: webkit
-    secrets: inherit
-
-  job-hono-email-verification-safari:
-    name: "Hono email verification (Safari)"
-    needs: check-version
-    uses: ./.github/workflows/test-example-app-playwright.yml
-    with:
-      project-path: packages/civic-auth/server/hono
-      playwright-spec: playwright/tests/email/hono-email-verification.spec.ts
-      browser: webkit
-    secrets: inherit
-
-  job-vanillajs-email-verification-safari:
-    name: "VanillaJS email verification (Safari)"
-    needs: check-version
-    uses: ./.github/workflows/test-example-app-playwright.yml
-    with:
-      project-path: packages/civic-auth/vanillajs
-      playwright-spec: playwright/tests/email/vanillajs-email-verification.spec.ts
-      browser: webkit
-    secrets: inherit
-
-  # job-vanillajs-modal-email-verification-safari:
-  #   name: "VanillaJS Modal email verification (Safari)"
-  #   needs: check-version
-  #   uses: ./.github/workflows/test-example-app-playwright.yml
-  #   with:
-  #     project-path: packages/civic-auth/vanillajs
-  #     playwright-spec: playwright/tests/email/vanillajs-modal-email-verification.spec.ts
-  #     browser: webkit
-  #   secrets: inherit
-
-  job-next-14-webpack-solana-wallet-adapter-email-safari:
-    name: "Next14 webpack Solana wallet adapter email (Safari)"
-    needs: check-version
-    uses: ./.github/workflows/test-example-app-playwright.yml
-    with:
-      project-path: packages/civic-auth-web3/solana/next14-wallet-adapter
-      playwright-spec: playwright/tests/email/solana-next14-wa-email-verification.spec.ts
-      browser: webkit
-    secrets: inherit
-
-  job-next-14-solana-no-wallet-adapter-email-safari:
-    name: "Next14 webpack Solana No wallet adapter email (Safari)"
-    needs: check-version
-    uses: ./.github/workflows/test-example-app-playwright.yml
-    with:
-      project-path: packages/civic-auth-web3/solana/next14-no-wallet-adapter
-      playwright-spec: playwright/tests/email/solana-next14-no-wa-email-verification.spec.ts
-      browser: webkit
-    secrets: inherit
-
-  job-next-15-turbopack-solana-wallet-adapter-email-safari:
-    name: "Next15 turbopack Solana wallet adapter email (Safari)"
-    needs: check-version
-    uses: ./.github/workflows/test-example-app-playwright.yml
-    with:
-      project-path: packages/civic-auth-web3/solana/next15-wallet-adapter
-      playwright-spec: playwright/tests/email/solana-next15-turbopack-wa-email-verification.spec.ts
-      build-command: "yarn build-turbopack"
-      browser: webkit
-    secrets: inherit
-
-  job-next-15-webpack-solana-wallet-adapter-email-safari:
-    name: "Next15 webpack Solana wallet adapter email (Safari)"
-    needs: check-version
-    uses: ./.github/workflows/test-example-app-playwright.yml
-    with:
-      project-path: packages/civic-auth-web3/solana/next15-wallet-adapter
-      playwright-spec: playwright/tests/email/solana-next15-wa-email-verification.spec.ts
-      browser: webkit
-    secrets: inherit
-
-  job-next-15-turbopack-no-solana-wallet-adapter-email-safari:
-    name: "Next15 turbopack no Solana wallet adapter email (Safari)"
-    needs: check-version
-    uses: ./.github/workflows/test-example-app-playwright.yml
-    with:
-      project-path: packages/civic-auth-web3/solana/next15-no-wallet-adapter
-      playwright-spec: playwright/tests/email/solana-next15-turbopack-no-wa-email-verification.spec.ts
-      build-command: "yarn build-turbopack"
-      browser: webkit
-    secrets: inherit
-
-  job-next-15-webpack-no-solana-wallet-adapter-email-safari:
-    name: "Next15 webpack no Solana wallet adapter email (Safari)"
-    needs: check-version
-    uses: ./.github/workflows/test-example-app-playwright.yml
-    with:
-      project-path: packages/civic-auth-web3/solana/next15-no-wallet-adapter
-      playwright-spec: playwright/tests/email/solana-next15-no-wa-email-verification.spec.ts
-      browser: webkit
-    secrets: inherit
-
-  job-vite-solana-wallet-adapter-email-safari:
-    name: "Vite solana wallet adapter email (Safari)"
-    needs: check-version
-    uses: ./.github/workflows/test-example-app-playwright.yml
-    with:
-      project-path: packages/civic-auth-web3/solana/vite-wallet-adapter
-      playwright-spec: playwright/tests/email/solana-vite-wa-email-verification.spec.ts
-      browser: webkit
-    secrets: inherit
-
-  job-vite-no-solana-wallet-adapter-email-safari:
-    name: "Vite no solana wallet adapter email (Safari)"
-    needs: check-version
-    uses: ./.github/workflows/test-example-app-playwright.yml
-    with:
-      project-path: packages/civic-auth-web3/solana/vite-no-wallet-adapter
-      playwright-spec: playwright/tests/email/solana-vite-no-wa-email-verification.spec.ts
-      browser: webkit
-    secrets: inherit
-
-  job-vite-wagmi-email-verification-safari:
-    name: "Vite wagmi email verification (Safari)"
-    needs: check-version
-    uses: ./.github/workflows/test-example-app-playwright.yml
-    with:
-      project-path: packages/civic-auth-web3/wagmi
-      playwright-spec: playwright/tests/email/wagmi-email-verification.spec.ts
-      browser: webkit
-    secrets: inherit
-
-  job-wagmi-nextjs-email-verification-safari:
-    name: "Wagmi nextjs email verification (Safari)"
-    needs: check-version
-    uses: ./.github/workflows/test-example-app-playwright.yml
-    with:
-      project-path: packages/civic-auth-web3/wagmi-nextjs
-      playwright-spec: playwright/tests/email/wagmi-nextjs-email-verification.spec.ts
+      playwright-spec: |
+        playwright/tests/wagmi-nextjs-login.spec.ts
+        playwright/tests/email/wagmi-nextjs-email-verification.spec.ts
       browser: webkit
     secrets: inherit
 
@@ -381,24 +240,8 @@ jobs:
       job-vite-no-solana-wallet-adapter-safari,
       job-vite-wagmi-example-app-safari,
       job-wagmi-nextjs-example-app-safari,
-      # Email verification jobs
-      job-nextjs-email-verification-safari,
-      job-reactjs-email-verification-safari,
-      job-express-email-verification-safari,
-      job-fastify-email-verification-safari,
-      job-hono-email-verification-safari,
-      job-vanillajs-email-verification-safari,
-      job-next-14-webpack-solana-wallet-adapter-email-safari,
-      job-next-14-solana-no-wallet-adapter-email-safari,
-      job-next-15-turbopack-solana-wallet-adapter-email-safari,
-      job-next-15-webpack-solana-wallet-adapter-email-safari,
-      job-next-15-turbopack-no-solana-wallet-adapter-email-safari,
-      job-next-15-webpack-no-solana-wallet-adapter-email-safari,
-      job-vite-solana-wallet-adapter-email-safari,
-      job-vite-no-solana-wallet-adapter-email-safari,
-      job-vite-wagmi-email-verification-safari,
-      job-wagmi-nextjs-email-verification-safari
     ]
+    
     runs-on: ubuntu-latest
     if: always()
     permissions:
