@@ -6,11 +6,42 @@ import ParallaxScrollView from "@/components/ParallaxScrollView";
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
 import { AuthGuard } from "@/components/AuthGuard";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "@/contexts/AuthContext";
 
 function AuthenticatedContent() {
-  const { state, signOut } = useContext(AuthContext);
+  const { state, signOut, web3Client } = useContext(AuthContext);
+
+  const [signature, setSignature] = useState<string | null>(null);
+  const [transaction, setTransaction] = useState<string | null>(null);
+
+  const sendTransaction = async () => {
+    try {
+      if (web3Client) {
+        const transaction = await web3Client?.solana?.sendTransaction(
+          "AK531DxnLT5SkL6BBAY52Db7xw2NcEVabXt6aUVmiBGX",
+          0.01,
+        );
+        setTransaction(transaction);
+        console.log("Transaction:", transaction);
+      }
+    } catch (error) {
+      console.error("Error sending transaction:", error);
+    }
+  };
+
+  const signMessage = async () => {
+    try {
+      if (web3Client) {
+        const signature =
+          await web3Client?.solana?.signMessage("Hello, world!");
+        setSignature(signature);
+        console.log("Signature:", signature);
+      }
+    } catch (error) {
+      console.error("Error signing message:", error);
+    }
+  };
 
   return (
     <ParallaxScrollView
@@ -39,11 +70,40 @@ function AuthenticatedContent() {
       </ThemedView>
 
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">🚀 Next Steps</ThemedText>
+        <ThemedText type="subtitle">Status</ThemedText>
         <ThemedText>
-          You can now access all authenticated features of the app. Your session
-          will be automatically managed.
+          <ThemedText type="defaultSemiBold">User info:</ThemedText>{" "}
+          {state.user?.name || "Loading"}
         </ThemedText>
+        <ThemedText type="defaultSemiBold">Wallet info:</ThemedText>
+        <ThemedText>
+          Solana: {web3Client?.solana?.address || "Loading"}
+        </ThemedText>
+        <ThemedText>
+          {/*Balance: {web3Client?.solana?.getBalance() || "Loading"}*/}
+        </ThemedText>
+      </ThemedView>
+
+      <ThemedView style={styles.buttonContainer}>
+        <ThemedView style={styles.actionButton} onTouchEnd={signMessage}>
+          <ThemedText style={styles.signOutText}>Sign Message</ThemedText>
+        </ThemedView>
+      </ThemedView>
+
+      <ThemedView style={styles.stepContainer}>
+        <ThemedText type="subtitle">Signed Message</ThemedText>
+        <ThemedText>{signature}</ThemedText>
+      </ThemedView>
+
+      <ThemedView style={styles.buttonContainer}>
+        <ThemedView style={styles.actionButton} onTouchEnd={sendTransaction}>
+          <ThemedText style={styles.signOutText}>Send transaction</ThemedText>
+        </ThemedView>
+      </ThemedView>
+
+      <ThemedView style={styles.stepContainer}>
+        <ThemedText type="subtitle">Signed trasaction:</ThemedText>
+        <ThemedText>{transaction}</ThemedText>
       </ThemedView>
 
       <ThemedView style={styles.buttonContainer}>
@@ -86,6 +146,12 @@ const styles = StyleSheet.create({
   },
   signOutButton: {
     backgroundColor: "#FF3B30",
+    paddingVertical: 12,
+    paddingHorizontal: 24,
+    borderRadius: 8,
+  },
+  actionButton: {
+    backgroundColor: "#007AFF",
     paddingVertical: 12,
     paddingHorizontal: 24,
     borderRadius: 8,
