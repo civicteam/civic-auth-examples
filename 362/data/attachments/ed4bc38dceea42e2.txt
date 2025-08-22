@@ -1,0 +1,8 @@
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=060aa007-bead-45a5-87ce-8f49e1cf08a6&client_id=demo-client-1&source_system_id=uXojgV3t5KJBB6WCQt_YM8G6Eigk1Mw-YMnRI4-E0eF&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=896343%40simulator.amazonses.com&_rsc=13vuy
+Extracted loginFlowId: 060aa007-bead-45a5-87ce-8f49e1cf08a6
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: 060aa007-bead-45a5-87ce-8f49e1cf08a6
+Found verification code for loginFlowId 060aa007-bead-45a5-87ce-8f49e1cf08a6: 980496
+Database disconnected
+Retrieved verification code: 980496 for loginFlowId: 060aa007-bead-45a5-87ce-8f49e1cf08a6
