@@ -3,7 +3,7 @@ import { AuthRequestConfig, useAuthRequest } from "expo-auth-session";
 import * as WebBrowser from "expo-web-browser";
 import { civicAuthConfig } from "@/config/civicAuth";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { useWeb3Client, type Web3Client } from "@civic/auth-web3-rn";
+import { useWeb3Client, type Web3Client } from "@civic/react-native-auth-web3";
 
 // Create a query client (required by wagmi)
 const queryClient = new QueryClient();

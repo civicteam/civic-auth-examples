@@ -1,7 +1,6 @@
-import 'react-native-get-random-values';
-import * as Crypto from 'expo-crypto';
+import * as Crypto from "expo-crypto";
 
-if (typeof global.crypto === 'undefined') {
+if (typeof global.crypto === "undefined") {
   global.crypto = {
     getRandomValues: (array: Uint8Array) => {
       return Crypto.getRandomValues(array);
