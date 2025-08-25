@@ -6,6 +6,7 @@ import ParallaxScrollView from "@/components/ParallaxScrollView";
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
 import { AuthGuard } from "@/components/AuthGuard";
+import { SolanaActions } from "@/components/SolanaActions";
 import { useContext } from "react";
 import { AuthContext } from "@/contexts/AuthContext";
 
@@ -39,12 +40,14 @@ function AuthenticatedContent() {
       </ThemedView>
 
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">🚀 Next Steps</ThemedText>
+        <ThemedText type="subtitle">User Status</ThemedText>
         <ThemedText>
-          You can now access all authenticated features of the app. Your session
-          will be automatically managed.
+          <ThemedText type="defaultSemiBold">Logged in as:</ThemedText>{" "}
+          {state.user?.name || "Loading"}
         </ThemedText>
       </ThemedView>
+
+      <SolanaActions />
 
       <ThemedView style={styles.buttonContainer}>
         <ThemedView style={styles.signOutButton} onTouchEnd={signOut}>

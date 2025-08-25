@@ -1,6 +1,7 @@
 import Expo
 import React
 import ReactAppDependencyProvider
+import MetaKeep
 
 @UIApplicationMain
 public class AppDelegate: ExpoAppDelegate {
@@ -38,6 +39,11 @@ public class AppDelegate: ExpoAppDelegate {
     open url: URL,
     options: [UIApplication.OpenURLOptionsKey: Any] = [:]
   ) -> Bool {
+    // Only handle MetaKeep URLs that contain "metakeep" in the URL string
+    if url.absoluteString.lowercased().contains("metakeep") {
+      MetaKeep.companion.resume(url: url.absoluteString)
+      return true
+    }
     return super.application(app, open: url, options: options) || RCTLinkingManager.application(app, open: url, options: options)
   }
 
