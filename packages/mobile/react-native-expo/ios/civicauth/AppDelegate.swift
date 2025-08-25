@@ -39,10 +39,11 @@ public class AppDelegate: ExpoAppDelegate {
     open url: URL,
     options: [UIApplication.OpenURLOptionsKey: Any] = [:]
   ) -> Bool {
-    // Allow MetaKeep to handle the deep link URL.
-    // If you are handling other deeplinks, you may want to add some logic
-    // to only do this if the URL's format matches the one used by MetaKeep.
-    MetaKeep.companion.resume(url: url.absoluteString)
+    // Only handle MetaKeep URLs that contain "metakeep" in the URL string
+    if url.absoluteString.lowercased().contains("metakeep") {
+      MetaKeep.companion.resume(url: url.absoluteString)
+      return true
+    }
     return super.application(app, open: url, options: options) || RCTLinkingManager.application(app, open: url, options: options)
   }
 
