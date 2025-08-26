@@ -19,9 +19,7 @@ export function SolanaActions() {
   const [signature, setSignature] = useState<string | null>(null);
   const [transaction, setTransaction] = useState<string | null>(null);
   const [messageToSign, setMessageToSign] = useState<string>("Hello, world!");
-  const [recipientAddress, setRecipientAddress] = useState<string>(
-    "AK531DxnLT5SkL6BBAY52Db7xw2NcEVabXt6aUVmiBGX",
-  );
+  const [recipientAddress, setRecipientAddress] = useState<string>("");
   const [solAmount, setSolAmount] = useState<string>("0.001");
   const [balance, setBalance] = useState<number | null>(null);
   const [isSigningMessage, setIsSigningMessage] = useState<boolean>(false);
@@ -91,11 +89,23 @@ export function SolanaActions() {
     }
   };
 
+  const requestAirdrop = async () => {
+    if (web3Client?.solana?.address) {
+      const url = `https://faucet.solana.com/?walletAddress=${web3Client.solana.address}&amount=1`;
+      try {
+        await Linking.openURL(url);
+      } catch (error) {
+        console.error("Failed to open URL:", error);
+        Alert.alert("Error", "Could not open Solana Faucet");
+      }
+    }
+  };
+
   return (
     <ThemedView style={styles.container}>
       <ThemedView style={styles.header}>
         <ThemedText type="subtitle" style={styles.headerText}>
-          🔗 SOLANA
+          🔗 SOLANA (devnet)
         </ThemedText>
       </ThemedView>
 
@@ -116,11 +126,22 @@ export function SolanaActions() {
               </ThemedText>
             </TouchableOpacity>
             <ThemedText style={styles.walletLabel}>Balance:</ThemedText>
-            <ThemedText style={styles.walletBalance}>
-              {balance !== null
-                ? `${balance / LAMPORTS_PER_SOL} SOL`
-                : "Loading..."}
-            </ThemedText>
+            <ThemedView style={styles.balanceRow}>
+              <ThemedText style={styles.walletBalance}>
+                {balance !== null
+                  ? `${balance / LAMPORTS_PER_SOL} SOL`
+                  : "Loading..."}
+              </ThemedText>
+              <TouchableOpacity
+                style={styles.airdropButton}
+                onPress={requestAirdrop}
+                activeOpacity={0.7}
+              >
+                <ThemedText style={styles.airdropButtonText}>
+                  💧 Request Airdrop
+                </ThemedText>
+              </TouchableOpacity>
+            </ThemedView>
           </ThemedView>
         </ThemedView>
 
@@ -288,20 +309,15 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   sectionCard: {
-    backgroundColor: "white",
     padding: 16,
     borderRadius: 12,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 3,
+    borderWidth: 1,
+    borderColor: "rgba(128, 128, 128, 0.2)",
   },
   sectionTitle: {
     fontSize: 16,
     fontWeight: "600",
     marginBottom: 12,
-    color: "#333",
   },
   inputContainer: {
     gap: 8,
@@ -309,12 +325,11 @@ const styles = StyleSheet.create({
   },
   input: {
     borderWidth: 1,
-    borderColor: "#ddd",
+    borderColor: "rgba(128, 128, 128, 0.4)",
     borderRadius: 8,
     padding: 12,
     fontSize: 14,
-    backgroundColor: "#f8f8f8",
-    color: "#000",
+    backgroundColor: "rgba(255, 255, 255, 0.2)",
   },
   buttonContainer: {
     alignItems: "center",
@@ -346,19 +361,17 @@ const styles = StyleSheet.create({
   resultContainer: {
     marginTop: 12,
     padding: 12,
-    backgroundColor: "#f8f8f8",
     borderRadius: 8,
     borderWidth: 1,
-    borderColor: "#e0e0e0",
+    borderColor: "rgba(128, 128, 128, 0.3)",
   },
   resultLabel: {
     fontSize: 12,
-    color: "#666",
+    opacity: 0.7,
     marginBottom: 4,
   },
   resultText: {
     fontSize: 12,
-    color: "#333",
     fontFamily: "monospace",
   },
   walletInfo: {
@@ -366,7 +379,7 @@ const styles = StyleSheet.create({
   },
   walletLabel: {
     fontSize: 14,
-    color: "#666",
+    opacity: 0.7,
     fontWeight: "500",
   },
   walletAddress: {
@@ -378,7 +391,6 @@ const styles = StyleSheet.create({
   },
   walletBalance: {
     fontSize: 16,
-    color: "#333",
     fontWeight: "600",
   },
   explorerLink: {
@@ -392,6 +404,22 @@ const styles = StyleSheet.create({
   explorerLinkText: {
     color: "white",
     fontSize: 13,
+    fontWeight: "600",
+  },
+  balanceRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+  airdropButton: {
+    paddingVertical: 6,
+    paddingHorizontal: 12,
+    backgroundColor: "#4A90E2",
+    borderRadius: 6,
+  },
+  airdropButtonText: {
+    color: "white",
+    fontSize: 12,
     fontWeight: "600",
   },
 });
