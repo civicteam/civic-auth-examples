@@ -12,21 +12,13 @@ test.describe('Solana Next14 No Wallet Adapter Login Tests', () => {
     // Click the sign in button
     await page.click('button:has-text("Sign in")');
     
-    if (browserName === 'webkit') {
-      // WebKit uses redirect flow instead of iframe
-      // Wait for the dummy button on the auth page directly (without waiting for URL)
-      const dummyButton = page.locator('[data-testid="civic-login-oidc-button-dummy"]');
-      await dummyButton.waitFor({ timeout: 30000 });
-      await dummyButton.click();
-    } else {
-      // Chrome/Firefox use iframe flow
-      // Click log in with dummy in the iframe
-      const frame = page.frameLocator('#civic-auth-iframe');
-      await frame.locator('[data-testid="civic-login-oidc-button-dummy"]').click({ timeout: 20000 });
+    // Chrome/Firefox use iframe flow
+    // Click log in with dummy in the iframe
+    const frame = page.frameLocator('#civic-auth-iframe');
+    await frame.locator('[data-testid="civic-login-oidc-button-dummy"]').click({ timeout: 20000 });
 
-      // Wait for the iframe to be gone (indicating login is complete)
-      await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 40000 });
-    }
+    // Wait for the iframe to be gone (indicating login is complete)
+    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 40000 });
 
     // Verify Ghost button is visible in dropdown
     await expect(page.locator('#civic-dropdown-container').locator('button:has-text("Ghost")')).toBeVisible({ timeout: 60000 });
