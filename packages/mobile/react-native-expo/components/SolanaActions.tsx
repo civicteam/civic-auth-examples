@@ -45,7 +45,6 @@ export function SolanaActions() {
           parseFloat(solAmount),
         );
         setTransaction(transaction);
-        console.log("Transaction:", transaction);
       }
     } catch (error) {
       console.error("Error sending transaction:", error);
@@ -64,7 +63,6 @@ export function SolanaActions() {
           "Sign a message",
         );
         setSignature(signature);
-        console.log("Signature:", signature);
       }
     } catch (error) {
       console.error("Error signing message:", error);

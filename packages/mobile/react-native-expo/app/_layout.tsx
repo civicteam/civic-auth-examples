@@ -1,11 +1,3 @@
-// import "@/polyfills/util";
-// import "@/polyfills/window";
-import "@/polyfills/events";
-// import "@/polyfills/document";
-// import "@/polyfills/buffer";
-// import "@/polyfills/crypto";
-// import "@/polyfills/url";
-
 import {
   DarkTheme,
   DefaultTheme,
@@ -20,7 +12,6 @@ import { useColorScheme } from "@/hooks/useColorScheme";
 import { AuthProvider } from "@/contexts/AuthContext";
 import { setupGlobalErrorHandlers } from "@/utils/errorDebug";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
-import { useEffect } from "react";
 
 // Set up error handlers as early as possible
 setupGlobalErrorHandlers();
