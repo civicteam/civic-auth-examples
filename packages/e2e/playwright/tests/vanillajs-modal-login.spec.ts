@@ -12,8 +12,15 @@ test.describe('VanillaJS Modal Login Tests', () => {
     // Click the modal sign in button
     await page.click('#loginModalButton');
     
+    // Wait for iframe to appear and load
+    await page.waitForSelector('#civic-auth-iframe', { timeout: 30000 });
+    
     // Click log in with dummy in the iframe (modal mode still uses iframe)
     const frame = page.frameLocator('#civic-auth-iframe');
+    
+    // Try to wait for the frame to load completely first
+    await frame.locator('body').waitFor({ timeout: 30000 });
+    
     await frame.locator('[data-testid="civic-login-oidc-button-dummy"]').click({ timeout: 20000 });
 
     // Wait for the iframe to be gone (indicating login is complete)
