@@ -30,16 +30,16 @@ test.describe('VanillaJS Embedded Email Verification Tests', () => {
     
     // Click the sign in button using test ID
     await allure.step('Click sign in button', async () => {
-      await page.getByTestId('sign-in-button').click();
+      await page.locator('#loginButton').click();
     });
     
     await allure.step('Handle iframe email verification flow', async () => {
       // Chrome/Firefox use iframe flow
-      // Wait for iframe to appear and load
-      await page.waitForSelector('#civic-auth-iframe', { timeout: 30000 });
+      // Wait for iframe to appear and load (specifically the embedded one)
+      await page.waitForSelector('#authContainer #civic-auth-iframe', { timeout: 30000 });
       
       // Click log in with email in the iframe
-      const frame = page.frameLocator('#civic-auth-iframe');
+      const frame = page.frameLocator('#authContainer #civic-auth-iframe');
       
       // Try to wait for the frame to load completely first
       await frame.locator('body').waitFor({ timeout: 30000 });

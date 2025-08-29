@@ -11,11 +11,19 @@ export class DatabaseUtil {
     // Disable TLS certificate verification for dev environment
     process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
     
+    // Parse the DATABASE_URL to check if SSL is specified
+    const databaseUrl = process.env.DATABASE_URL;
+    const hasSSLMode = databaseUrl?.includes('sslmode=');
+    
+    // If sslmode is specified in the URL, let the URL handle SSL configuration
+    // Otherwise, use our fallback SSL config
     this.client = new Client({
-      connectionString: process.env.DATABASE_URL,
-      ssl: {
-        rejectUnauthorized: false
-      }
+      connectionString: databaseUrl,
+      ...(hasSSLMode ? {} : {
+        ssl: {
+          rejectUnauthorized: false
+        }
+      })
     });
   }
 
