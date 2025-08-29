@@ -25,6 +25,7 @@ jobs:
       project-path: packages/civic-auth/nextjs
       playwright-spec: "playwright/tests/civic-auth/nextjs-login.spec.ts playwright/tests/civic-auth/email/nextjs-email-verification.spec.ts"
       browser: webkit
+      job-name: "🚀 NextJS App (Login + Email)"
     secrets: inherit
 
   job-nextjs-basepath-example-app:
@@ -37,6 +38,7 @@ jobs:
       build-command: "yarn build"
       dev-command: "yarn dev:subpath"
       browser: webkit
+      job-name: "🚀 NextJS App (Basepath)"
     secrets: inherit
 
   job-reactjs-example-app:
@@ -47,6 +49,7 @@ jobs:
       project-path: packages/civic-auth/reactjs
       playwright-spec: "playwright/tests/civic-auth/reactjs-login.spec.ts playwright/tests/civic-auth/email/reactjs-email-verification.spec.ts"
       browser: webkit
+      job-name: "⚛️ ReactJS App (Login + Email)"
     secrets: inherit
 
   job-express-example-app:
@@ -57,6 +60,7 @@ jobs:
       project-path: packages/civic-auth/server/express
       playwright-spec: "playwright/tests/civic-auth/express-login.spec.ts playwright/tests/civic-auth/email/express-email-verification.spec.ts"
       browser: webkit
+      job-name: "🛠️ Express Server (Login + Email)"
     secrets: inherit
 
   job-fastify-example-app:
@@ -67,6 +71,7 @@ jobs:
       project-path: packages/civic-auth/server/fastify
       playwright-spec: "playwright/tests/civic-auth/fastify-login.spec.ts playwright/tests/civic-auth/email/fastify-email-verification.spec.ts"
       browser: webkit
+      job-name: "⚡ Fastify Server (Login + Email)"
     secrets: inherit
 
   job-hono-example-app:
@@ -77,6 +82,7 @@ jobs:
       project-path: packages/civic-auth/server/hono
       playwright-spec: "playwright/tests/civic-auth/hono-login.spec.ts playwright/tests/civic-auth/email/hono-email-verification.spec.ts"
       browser: webkit
+      job-name: "🔥 Hono Server (Login + Email)"
     secrets: inherit
 
   job-vanillajs-example-app:
@@ -87,6 +93,7 @@ jobs:
       project-path: packages/civic-auth/vanillajs
       playwright-spec: "playwright/tests/civic-auth/vanillajs-login.spec.ts playwright/tests/civic-auth/email/vanillajs-email-verification.spec.ts"
       browser: webkit
+      job-name: "📦 VanillaJS App (Login + Email)"
     secrets: inherit
 
   # job-vanillajs-modal-example-app-safari:

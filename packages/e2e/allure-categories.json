@@ -1,32 +1,42 @@
 [
   {
-    "name": "Web2 › Login Tests",
-    "messageRegex": ".*(civic-auth).*(?!email|basePath).*login.*",
+    "name": "🚀 NextJS App",
+    "messageRegex": ".*NextJS.*",
     "matchedStatuses": ["failed", "broken", "passed", "skipped"]
   },
   {
-    "name": "Web2 › Email Verification",
-    "messageRegex": ".*(civic-auth/email).*",
+    "name": "⚛️ ReactJS App", 
+    "messageRegex": ".*ReactJS.*",
     "matchedStatuses": ["failed", "broken", "passed", "skipped"]
   },
   {
-    "name": "Web2 › Basepath Tests",
-    "messageRegex": ".*(civic-auth/basePath).*",
+    "name": "🛠️ Express Server",
+    "messageRegex": ".*Express.*",
     "matchedStatuses": ["failed", "broken", "passed", "skipped"]
   },
   {
-    "name": "Web3 › Solana Tests",
-    "messageRegex": ".*(civic-auth-web3).*solana.*",
+    "name": "⚡ Fastify Server",
+    "messageRegex": ".*Fastify.*",
     "matchedStatuses": ["failed", "broken", "passed", "skipped"]
   },
   {
-    "name": "Web3 › Wagmi Tests",
-    "messageRegex": ".*(civic-auth-web3).*wagmi.*",
+    "name": "🔥 Hono Server",
+    "messageRegex": ".*Hono.*",
     "matchedStatuses": ["failed", "broken", "passed", "skipped"]
   },
   {
-    "name": "Web3 › Email Verification",
-    "messageRegex": ".*(civic-auth-web3/email).*",
+    "name": "📦 VanillaJS App",
+    "messageRegex": ".*VanillaJS.*",
+    "matchedStatuses": ["failed", "broken", "passed", "skipped"]
+  },
+  {
+    "name": "🔗 Solana Web3",
+    "messageRegex": ".*(Solana|Next14|Next15|Vite).*wallet.*",
+    "matchedStatuses": ["failed", "broken", "passed", "skipped"]
+  },
+  {
+    "name": "💰 Wagmi Web3",
+    "messageRegex": ".*Wagmi.*",
     "matchedStatuses": ["failed", "broken", "passed", "skipped"]
   }
 ]

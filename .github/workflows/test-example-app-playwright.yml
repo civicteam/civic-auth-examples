@@ -21,6 +21,10 @@ on:
         required: false
         type: string
         default: webkit
+      job-name:
+        required: false
+        type: string
+        default: "Test Job"
     secrets:
       CLIENT_ID:
         required: true
@@ -161,6 +165,7 @@ jobs:
         working-directory: packages/e2e
         env:
           ALLURE_RESULTS_DIR: allure-results
+          GITHUB_JOB_NAME: ${{ inputs.job-name }}
         run: yarn playwright test ${{ inputs.playwright-spec }}
 
       - name: Generate Allure Report

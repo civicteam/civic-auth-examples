@@ -30,7 +30,11 @@ export default defineConfig({
       suiteTitle: false,
       environmentInfo: {
         'Test Environment': 'Development',
-        'Civic Auth Version': 'Latest'
+        'Civic Auth Version': 'Latest',
+        'Report URL': 'https://civicteam.github.io/civic-auth-examples/2/',
+        'GitHub Workflow': process.env.GITHUB_WORKFLOW || 'Local Run',
+        'Job Name': process.env.GITHUB_JOB_NAME || process.env.GITHUB_JOB || 'Local Test',
+        'Run ID': process.env.GITHUB_RUN_ID || 'N/A'
       },
       categoriesPath: './allure-categories.json'
     }]

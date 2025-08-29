@@ -35,6 +35,7 @@ jobs:
       project-path: packages/civic-auth-web3/solana/next14-wallet-adapter
       playwright-spec: "playwright/tests/civic-auth-web3/solana-next14-wa-login.spec.ts playwright/tests/civic-auth-web3/email/solana-next14-wa-email-verification.spec.ts"
       browser: webkit
+      job-name: "🔗 Solana Next14 (Webpack + Wallet Adapter)"
     secrets: inherit
 
   job-next-14-solana-no-wallet-adapter:
@@ -45,6 +46,7 @@ jobs:
       project-path: packages/civic-auth-web3/solana/next14-no-wallet-adapter
       playwright-spec: "playwright/tests/civic-auth-web3/solana-next14-no-wa-login.spec.ts playwright/tests/civic-auth-web3/email/solana-next14-no-wa-email-verification.spec.ts"
       browser: webkit
+      job-name: "🔗 Solana Next14 (Webpack + No Wallet)"
     secrets: inherit
 
   job-next-15-turbopack-solana-wallet-adapter:
@@ -117,7 +119,8 @@ jobs:
       project-path: packages/civic-auth-web3/wagmi
       playwright-spec: "playwright/tests/civic-auth-web3/wagmi-login.spec.ts playwright/tests/civic-auth-web3/email/wagmi-email-verification.spec.ts"
       browser: webkit
-    secrets: inherit 
+      job-name: "💰 Wagmi Vite App"
+    secrets: inherit
 
   job-wagmi-nextjs-example-app:
     name: "Wagmi nextjs example app"
@@ -127,6 +130,7 @@ jobs:
       project-path: packages/civic-auth-web3/wagmi-nextjs
       playwright-spec: "playwright/tests/civic-auth-web3/wagmi-nextjs-login.spec.ts playwright/tests/civic-auth-web3/email/wagmi-nextjs-email-verification.spec.ts"
       browser: webkit
+      job-name: "💰 Wagmi NextJS App"
     secrets: inherit
 
   publish-allure-reports:
