@@ -41,6 +41,58 @@ jobs:
       job-name: "🚀 NextJS App (Basepath)"
     secrets: inherit
 
+  job-nextjs-loginsuccessurl-example-app:
+    name: "NextJS loginSuccessUrl example app"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-playwright.yml
+    with:
+      project-path: packages/civic-auth/nextjs
+      playwright-spec: "playwright/tests/civic-auth/loginSuccessUrl/nextjs-login.spec.ts"
+      build-command: "yarn build"
+      dev-command: "yarn dev:loginSuccessUrl"
+      browser: webkit
+      job-name: "🚀 NextJS App (LoginSuccessUrl)"
+    secrets: inherit
+
+  job-express-loginsuccessurl-example-app:
+    name: "Express loginSuccessUrl example app"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-playwright.yml
+    with:
+      project-path: packages/civic-auth/server/express
+      playwright-spec: "playwright/tests/civic-auth/loginSuccessUrl/express-login.spec.ts"
+      build-command: "yarn build"
+      dev-command: "yarn dev:loginSuccessUrl"
+      browser: webkit
+      job-name: "🛠️ Express Server (LoginSuccessUrl)"
+    secrets: inherit
+
+  job-fastify-loginsuccessurl-example-app:
+    name: "Fastify loginSuccessUrl example app"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-playwright.yml
+    with:
+      project-path: packages/civic-auth/server/fastify
+      playwright-spec: "playwright/tests/civic-auth/loginSuccessUrl/fastify-login.spec.ts"
+      build-command: "yarn build"
+      dev-command: "yarn dev:loginSuccessUrl"
+      browser: webkit
+      job-name: "⚡ Fastify Server (LoginSuccessUrl)"
+    secrets: inherit
+
+  job-hono-loginsuccessurl-example-app:
+    name: "Hono loginSuccessUrl example app"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-playwright.yml
+    with:
+      project-path: packages/civic-auth/server/hono
+      playwright-spec: "playwright/tests/civic-auth/loginSuccessUrl/hono-login.spec.ts"
+      build-command: "yarn build"
+      dev-command: "yarn dev:loginSuccessUrl"
+      browser: webkit
+      job-name: "🔥 Hono Server (LoginSuccessUrl)"
+    secrets: inherit
+
   job-reactjs-example-app:
     name: "ReactJS example app"
     needs: check-version
@@ -113,6 +165,10 @@ jobs:
     needs: [
       job-nextjs-example-app,
       job-nextjs-basepath-example-app,
+      job-nextjs-loginsuccessurl-example-app,
+      job-express-loginsuccessurl-example-app,
+      job-fastify-loginsuccessurl-example-app,
+      job-hono-loginsuccessurl-example-app,
       job-reactjs-example-app,
       job-express-example-app,
       job-fastify-example-app,

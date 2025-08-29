@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev --port 3000",
     "dev:subpath": "BASE_PATH=/demo next dev",
+    "dev:loginSuccessUrl": "BASE_PATH= LOGIN_SUCCESS_URL=/customSuccessRoute next dev --port 3000",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"

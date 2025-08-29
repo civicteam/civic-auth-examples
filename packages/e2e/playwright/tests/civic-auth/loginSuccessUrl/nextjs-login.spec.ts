@@ -1,9 +1,9 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('Next.js Login Tests (BasePath)', () => {
-  test('should complete full login and logout flow with basepath', async ({ page, browserName }) => {
-    // Open the app home page with basepath
-    await page.goto('http://localhost:3000/demo');
+test.describe('Next.js Login Tests (LoginSuccessUrl)', () => {
+  test('should complete full login and logout flow with custom loginSuccessUrl', async ({ page, browserName }) => {
+    // Open the app home page
+    await page.goto('http://localhost:3000');
 
     // Wait for the page to fully load with all UI elements
     await page.waitForLoadState('networkidle');
@@ -31,9 +31,8 @@ test.describe('Next.js Login Tests (BasePath)', () => {
     // Confirm logged in state by checking for Ghost button in dropdown
     await expect(page.locator('#civic-dropdown-container').locator('button:has-text("Ghost")')).toBeVisible({ timeout: 20000 });
     
-    // Verify custom loginSuccessUrl is not loaded (should still be on basepath)
-    await expect(page.url()).not.toContain('loginSuccessUrl');
-    await expect(page.url()).toContain('/demo');
+    // Verify custom loginSuccessUrl is loaded - should redirect to /customSuccessRoute
+    await expect(page.url()).toContain('/customSuccessRoute');
 
     // Capture essential cookies after login
     const cookiesAfterLogin = await page.context().cookies();
@@ -70,8 +69,8 @@ test.describe('Next.js Login Tests (BasePath)', () => {
     // Assert that essential auth cookies have been deleted
     expect(remainingAuthCookies.length).toBe(0);
     
-    // Additional verification: try to access a protected route to ensure session is cleared
-    await page.goto('http://localhost:3000/demo');
+    // Additional verification: try to access the home route to ensure session is cleared
+    await page.goto('http://localhost:3000');
     await page.waitForLoadState('networkidle');
     
     // Should be back to logged-out state (Sign In button visible, Ghost button not visible)
