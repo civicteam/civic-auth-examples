@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Web2 › Login Tests",
+    "messageRegex": ".*(civic-auth).*(?!email|basePath).*login.*",
+    "matchedStatuses": ["failed", "broken", "passed", "skipped"]
+  },
+  {
+    "name": "Web2 › Email Verification",
+    "messageRegex": ".*(civic-auth/email).*",
+    "matchedStatuses": ["failed", "broken", "passed", "skipped"]
+  },
+  {
+    "name": "Web2 › Basepath Tests",
+    "messageRegex": ".*(civic-auth/basePath).*",
+    "matchedStatuses": ["failed", "broken", "passed", "skipped"]
+  },
+  {
+    "name": "Web3 › Solana Tests",
+    "messageRegex": ".*(civic-auth-web3).*solana.*",
+    "matchedStatuses": ["failed", "broken", "passed", "skipped"]
+  },
+  {
+    "name": "Web3 › Wagmi Tests",
+    "messageRegex": ".*(civic-auth-web3).*wagmi.*",
+    "matchedStatuses": ["failed", "broken", "passed", "skipped"]
+  },
+  {
+    "name": "Web3 › Email Verification",
+    "messageRegex": ".*(civic-auth-web3/email).*",
+    "matchedStatuses": ["failed", "broken", "passed", "skipped"]
+  }
+]

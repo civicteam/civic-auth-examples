@@ -13,6 +13,10 @@ on:
         required: false
         type: string
         default: yarn build
+      dev-command:
+        required: false
+        type: string
+        default: yarn dev
       browser:
         required: false
         type: string
@@ -138,13 +142,20 @@ jobs:
         # The cache step above will restore browsers if available, so this will be fast on subsequent runs
 
       - name: Yarn build
-        run: yarn build
+        run: ${{ inputs.build-command }}
 
       - name: Start App
-        run: yarn dev &
+        run: ${{ inputs.dev-command }} &
 
       - name: Wait for app to start
-        run: npx wait-on http-get://localhost:3000 --timeout 300000
+        run: |
+          if echo "${{ inputs.dev-command }}" | grep -q "subpath"; then
+            echo "Waiting for app with basepath at http://localhost:3000/demo"
+            npx wait-on http-get://localhost:3000/demo --timeout 300000
+          else
+            echo "Waiting for app at http://localhost:3000"
+            npx wait-on http-get://localhost:3000 --timeout 300000
+          fi
 
       - name: Run Playwright Tests
         working-directory: packages/e2e

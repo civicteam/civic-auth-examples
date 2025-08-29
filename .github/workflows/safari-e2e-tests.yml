@@ -23,7 +23,19 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth/nextjs
-      playwright-spec: "playwright/tests/nextjs-login.spec.ts playwright/tests/email/nextjs-email-verification.spec.ts"
+      playwright-spec: "playwright/tests/civic-auth/nextjs-login.spec.ts playwright/tests/civic-auth/email/nextjs-email-verification.spec.ts"
+      browser: webkit
+    secrets: inherit
+
+  job-nextjs-basepath-example-app-safari:
+    name: "Nextjs basepath example app (Safari)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-playwright.yml
+    with:
+      project-path: packages/civic-auth/nextjs
+      playwright-spec: "playwright/tests/civic-auth/basePath/nextjs-login.spec.ts"
+      build-command: "yarn build"
+      dev-command: "yarn dev:subpath"
       browser: webkit
     secrets: inherit
 
@@ -33,7 +45,19 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth/reactjs
-      playwright-spec: "playwright/tests/reactjs-login.spec.ts playwright/tests/email/reactjs-email-verification.spec.ts"
+      playwright-spec: "playwright/tests/civic-auth/reactjs-login.spec.ts playwright/tests/civic-auth/email/reactjs-email-verification.spec.ts"
+      browser: webkit
+    secrets: inherit
+
+  job-reactjs-basepath-example-app-safari:
+    name: "Reactjs basepath example app (Safari)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-playwright.yml
+    with:
+      project-path: packages/civic-auth/reactjs
+      playwright-spec: "playwright/tests/civic-auth/basePath/reactjs-login.spec.ts"
+      build-command: "yarn build"
+      dev-command: "yarn dev:subpath"
       browser: webkit
     secrets: inherit
 
@@ -43,7 +67,19 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth/server/express
-      playwright-spec: "playwright/tests/express-login.spec.ts playwright/tests/email/express-email-verification.spec.ts"
+      playwright-spec: "playwright/tests/civic-auth/express-login.spec.ts playwright/tests/civic-auth/email/express-email-verification.spec.ts"
+      browser: webkit
+    secrets: inherit
+
+  job-express-basepath-example-app-safari:
+    name: "Express basepath example app (Safari)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-playwright.yml
+    with:
+      project-path: packages/civic-auth/server/express
+      playwright-spec: "playwright/tests/civic-auth/basePath/express-login.spec.ts"
+      build-command: "yarn build"
+      dev-command: "yarn dev:subpath"
       browser: webkit
     secrets: inherit
 
@@ -53,7 +89,19 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth/server/fastify
-      playwright-spec: "playwright/tests/fastify-login.spec.ts playwright/tests/email/fastify-email-verification.spec.ts"
+      playwright-spec: "playwright/tests/civic-auth/fastify-login.spec.ts playwright/tests/civic-auth/email/fastify-email-verification.spec.ts"
+      browser: webkit
+    secrets: inherit
+
+  job-fastify-basepath-example-app-safari:
+    name: "Fastify basepath example app (Safari)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-playwright.yml
+    with:
+      project-path: packages/civic-auth/server/fastify
+      playwright-spec: "playwright/tests/civic-auth/basePath/fastify-login.spec.ts"
+      build-command: "yarn build"
+      dev-command: "yarn dev:subpath"
       browser: webkit
     secrets: inherit
 
@@ -63,7 +111,19 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth/server/hono
-      playwright-spec: "playwright/tests/hono-login.spec.ts playwright/tests/email/hono-email-verification.spec.ts"
+      playwright-spec: "playwright/tests/civic-auth/hono-login.spec.ts playwright/tests/civic-auth/email/hono-email-verification.spec.ts"
+      browser: webkit
+    secrets: inherit
+
+  job-hono-basepath-example-app-safari:
+    name: "Hono basepath example app (Safari)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-playwright.yml
+    with:
+      project-path: packages/civic-auth/server/hono
+      playwright-spec: "playwright/tests/civic-auth/basePath/hono-login.spec.ts"
+      build-command: "yarn build"
+      dev-command: "yarn dev:subpath"
       browser: webkit
     secrets: inherit
 
@@ -73,7 +133,19 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth/vanillajs
-      playwright-spec: "playwright/tests/vanillajs-login.spec.ts playwright/tests/email/vanillajs-email-verification.spec.ts"
+      playwright-spec: "playwright/tests/civic-auth/vanillajs-login.spec.ts playwright/tests/civic-auth/email/vanillajs-email-verification.spec.ts"
+      browser: webkit
+    secrets: inherit
+
+  job-vanillajs-basepath-example-app-safari:
+    name: "VanillaJS basepath example app (Safari)"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-playwright.yml
+    with:
+      project-path: packages/civic-auth/vanillajs
+      playwright-spec: "playwright/tests/civic-auth/basePath/vanillajs-login.spec.ts"
+      build-command: "yarn build"
+      dev-command: "yarn dev:subpath"
       browser: webkit
     secrets: inherit
 
@@ -83,7 +155,7 @@ jobs:
   #   uses: ./.github/workflows/test-example-app-playwright.yml
   #   with:
   #     project-path: packages/civic-auth/vanillajs
-  #     playwright-spec: playwright/tests/vanillajs-modal-login.spec.ts
+  #     playwright-spec: "playwright/tests/civic-auth/vanillajs-modal-login.spec.ts playwright/tests/civic-auth/basePath/vanillajs-modal-login.spec.ts"
   #     browser: webkit
   #   secrets: inherit
 
@@ -93,7 +165,7 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth-web3/solana/next14-wallet-adapter
-      playwright-spec: "playwright/tests/solana-next14-wa-login.spec.ts playwright/tests/email/solana-next14-wa-email-verification.spec.ts"
+      playwright-spec: "playwright/tests/civic-auth-web3/solana-next14-wa-login.spec.ts playwright/tests/civic-auth-web3/email/solana-next14-wa-email-verification.spec.ts"
       browser: webkit
     secrets: inherit
 
@@ -103,7 +175,7 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth-web3/solana/next14-no-wallet-adapter
-      playwright-spec: "playwright/tests/solana-next14-no-wa-login.spec.ts playwright/tests/email/solana-next14-no-wa-email-verification.spec.ts"
+      playwright-spec: "playwright/tests/civic-auth-web3/solana-next14-no-wa-login.spec.ts playwright/tests/civic-auth-web3/email/solana-next14-no-wa-email-verification.spec.ts"
       browser: webkit
     secrets: inherit
 
@@ -113,7 +185,7 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth-web3/solana/next15-wallet-adapter
-      playwright-spec: "playwright/tests/solana-next15-turbopack-wa-login.spec.ts playwright/tests/email/solana-next15-turbopack-wa-email-verification.spec.ts"
+      playwright-spec: "playwright/tests/civic-auth-web3/solana-next15-turbopack-wa-login.spec.ts playwright/tests/civic-auth-web3/email/solana-next15-turbopack-wa-email-verification.spec.ts"
       build-command: "yarn build-turbopack"
       browser: webkit
     secrets: inherit
@@ -124,7 +196,7 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth-web3/solana/next15-wallet-adapter
-      playwright-spec: "playwright/tests/solana-next15-wa-login.spec.ts playwright/tests/email/solana-next15-wa-email-verification.spec.ts"
+      playwright-spec: "playwright/tests/civic-auth-web3/solana-next15-wa-login.spec.ts playwright/tests/civic-auth-web3/email/solana-next15-wa-email-verification.spec.ts"
       browser: webkit
     secrets: inherit
 
@@ -134,7 +206,7 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth-web3/solana/next15-no-wallet-adapter
-      playwright-spec: "playwright/tests/solana-next15-turbopack-no-wa-login.spec.ts playwright/tests/email/solana-next15-turbopack-no-wa-email-verification.spec.ts"
+      playwright-spec: "playwright/tests/civic-auth-web3/solana-next15-turbopack-no-wa-login.spec.ts playwright/tests/civic-auth-web3/email/solana-next15-turbopack-no-wa-email-verification.spec.ts"
       build-command: "yarn build-turbopack"
       browser: webkit
     secrets: inherit
@@ -145,7 +217,7 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth-web3/solana/next15-no-wallet-adapter
-      playwright-spec: "playwright/tests/solana-next15-no-wa-login.spec.ts playwright/tests/email/solana-next15-no-wa-email-verification.spec.ts"
+      playwright-spec: "playwright/tests/civic-auth-web3/solana-next15-no-wa-login.spec.ts playwright/tests/civic-auth-web3/email/solana-next15-no-wa-email-verification.spec.ts"
       browser: webkit
     secrets: inherit
 
@@ -155,7 +227,7 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth-web3/solana/vite-wallet-adapter
-      playwright-spec: "playwright/tests/solana-vite-wa-login.spec.ts playwright/tests/email/solana-vite-wa-email-verification.spec.ts"
+      playwright-spec: "playwright/tests/civic-auth-web3/solana-vite-wa-login.spec.ts playwright/tests/civic-auth-web3/email/solana-vite-wa-email-verification.spec.ts"
       browser: webkit
     secrets: inherit
 
@@ -165,7 +237,7 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth-web3/solana/vite-no-wallet-adapter
-      playwright-spec: "playwright/tests/solana-vite-no-wa-login.spec.ts playwright/tests/email/solana-vite-no-wa-email-verification.spec.ts"
+      playwright-spec: "playwright/tests/civic-auth-web3/solana-vite-no-wa-login.spec.ts playwright/tests/civic-auth-web3/email/solana-vite-no-wa-email-verification.spec.ts"
       browser: webkit
     secrets: inherit
 
@@ -175,7 +247,7 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth-web3/wagmi
-      playwright-spec: "playwright/tests/wagmi-login.spec.ts playwright/tests/email/wagmi-email-verification.spec.ts"
+      playwright-spec: "playwright/tests/civic-auth-web3/wagmi-login.spec.ts playwright/tests/civic-auth-web3/email/wagmi-email-verification.spec.ts"
       browser: webkit
     secrets: inherit 
 
@@ -185,7 +257,7 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth-web3/wagmi-nextjs
-      playwright-spec: "playwright/tests/wagmi-nextjs-login.spec.ts playwright/tests/email/wagmi-nextjs-email-verification.spec.ts"
+      playwright-spec: "playwright/tests/civic-auth-web3/wagmi-nextjs-login.spec.ts playwright/tests/civic-auth-web3/email/wagmi-nextjs-email-verification.spec.ts"
       browser: webkit
     secrets: inherit
 
@@ -193,11 +265,17 @@ jobs:
     name: "Publish Allure Reports"
     needs: [
       job-nextjs-example-app-safari,
+      job-nextjs-basepath-example-app-safari,
       job-reactjs-example-app-safari,
+      job-reactjs-basepath-example-app-safari,
       job-express-example-app-safari,
+      job-express-basepath-example-app-safari,
       job-fastify-example-app-safari,
+      job-fastify-basepath-example-app-safari,
       job-hono-example-app-safari,
+      job-hono-basepath-example-app-safari,
       job-vanillajs-example-app-safari,
+      job-vanillajs-basepath-example-app-safari,
       job-next-14-webpack-solana-wallet-adapter-safari,
       job-next-14-solana-no-wallet-adapter-safari,
       job-next-15-turbopack-solana-wallet-adapter-safari,

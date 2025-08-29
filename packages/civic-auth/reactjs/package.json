@@ -5,12 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "vite --port 3000",
+    "dev:subpath": "BASE_PATH=/demo vite --port 3000",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "start": "vite preview --port 3000"
   },
   "dependencies": {
-    "@civic/auth": "*",
+    "@civic/auth": "/Users/mitchsandberg/civic-auth-clone-2/civic-auth/packages/civic-auth-client/civic-auth-0.10.5.tgz",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },

@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
-import { db } from '../../../utils/database';
-import { generateUniqueEmail } from '../../utils/email-generator';
+import { db } from '../../../../utils/database';
+import { generateUniqueEmail } from '../../../utils/email-generator';
 
 test.describe('VanillaJS Modal Email Verification Tests', () => {
   test.beforeEach(async ({ page }) => {

@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
-import { db } from '../../../utils/database';
-import { generateUniqueEmail } from '../../utils/email-generator';
+import { db } from '../../../../utils/database';
+import { generateUniqueEmail } from '../../../utils/email-generator';
 
 test.describe('Express Email Verification Tests', () => {
   test('should complete email verification flow with actual email', async ({ page, browserName }) => {

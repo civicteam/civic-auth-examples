@@ -9,7 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@civic/auth-web3": "*",
+    "@civic/auth": "^0.10.0-beta.3",
+    "@civic/auth-web3": "0.7.3-beta.0",
     "@solana/wallet-adapter-react-ui": "^0.9.35",
     "next": "^14.2.28",
     "react": "^18",

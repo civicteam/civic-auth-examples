@@ -1,31 +1,31 @@
 import { test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
-import { db } from '../../../utils/database';
-import { generateUniqueEmail } from '../../utils/email-generator';
+import { db } from '../../../../utils/database';
+import { generateUniqueEmail } from '../../../utils/email-generator';
 
-test.describe('Hono Email Verification Tests', () => {
+test.describe('Fastify Email Verification Tests', () => {
   test.beforeEach(async ({ page }) => {
     await allure.epic('Sample Applications');
-    await allure.feature('Hono Email Verification');
+    await allure.feature('Fastify Email Verification');
   });
 
   test('should complete email verification flow with actual email', async ({ page, browserName }) => {
-    await allure.story('Hono Email Code Verification Flow with Real Email');
+    await allure.story('Fastify Email Code Verification Flow with Real Email');
     await allure.severity('critical');
-    await allure.tag('hono-email-verification-real');
+    await allure.tag('fastify-email-verification-real');
     
     let extractedLoginFlowId = '';
     const uniqueEmail = generateUniqueEmail();
 
     // Go to the app home page
-    await allure.step('Navigate to Hono app home page', async () => {
+    await allure.step('Navigate to Fastify app home page', async () => {
       await page.goto('http://localhost:3000');
     });
 
     // Wait for the page to fully load with all UI elements
     await page.waitForLoadState('networkidle');
     await page.waitForLoadState('domcontentloaded');
-
+        
     // Click "Log in with email" button
     await allure.step('Click email login option', async () => {
       const emailButton = page.locator('[data-testid="civic-login-slot-email-comp"]');

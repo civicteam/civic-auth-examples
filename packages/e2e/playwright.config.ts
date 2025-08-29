@@ -27,7 +27,12 @@ export default defineConfig({
     ['allure-playwright', { 
       outputFolder: process.env.ALLURE_RESULTS_DIR || 'allure-results',
       detail: true,
-      suiteTitle: false 
+      suiteTitle: false,
+      environmentInfo: {
+        'Test Environment': 'Development',
+        'Civic Auth Version': 'Latest'
+      },
+      categoriesPath: './allure-categories.json'
     }]
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */

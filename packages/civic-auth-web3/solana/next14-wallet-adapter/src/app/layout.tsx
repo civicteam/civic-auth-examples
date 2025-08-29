@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import {Providers} from "@/app/Providers";
-
-import "@solana/wallet-adapter-react-ui/styles.css"
+import { Providers } from "@/app/Providers";
+import { ClientProviders } from "@/app/ClientProviders";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -32,7 +31,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Providers>
-          {children}
+          <ClientProviders>
+            {children}
+          </ClientProviders>
         </Providers>
       </body>
     </html>
