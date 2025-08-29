@@ -1,10 +1,20 @@
 name: Web3 Apps - E2E Tests (Playwright)
 
+# DISABLED: Uncomment the 'on:' section below to re-enable this workflow
+# on:
+#   schedule:
+#     - cron: '0 0 * * *'  # Run daily at midnight UTC
+#   push:
+#   pull_request:
+#   workflow_dispatch:
+#     inputs:
+#       publish-allure-to-pages:
+#         description: 'Publish Allure reports to GitHub Pages'
+#         required: false
+#         default: false
+#         type: boolean
+
 on:
-  schedule:
-    - cron: '0 0 * * *'  # Run daily at midnight UTC
-  push:
-  pull_request:
   workflow_dispatch:
     inputs:
       publish-allure-to-pages:

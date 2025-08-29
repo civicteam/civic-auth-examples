@@ -1,10 +1,14 @@
 name: Build and run example apps using latest sdk versions
 
+# DISABLED: Uncomment the 'on:' section below to re-enable this workflow
+# on:
+#   schedule:
+#     - cron: '0 0 * * *'  # Run daily at midnight UTC
+#   push:
+#   pull_request:
+#   workflow_dispatch:
+
 on:
-  schedule:
-    - cron: '0 0 * * *'  # Run daily at midnight UTC
-  push:
-  pull_request:
   workflow_dispatch:
     
 jobs:
