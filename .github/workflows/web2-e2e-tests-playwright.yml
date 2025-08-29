@@ -17,8 +17,8 @@ jobs:
   check-version:
     uses: ./.github/workflows/check-versions.yml
 
-  job-nextjs-example-app-safari:
-    name: "Nextjs example app (Safari)"
+  job-nextjs-example-app:
+    name: "NextJS example app"
     needs: check-version
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
@@ -27,8 +27,8 @@ jobs:
       browser: webkit
     secrets: inherit
 
-  job-nextjs-basepath-example-app-safari:
-    name: "Nextjs basepath example app (Safari)"
+  job-nextjs-basepath-example-app:
+    name: "NextJS basepath example app"
     needs: check-version
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
@@ -39,8 +39,8 @@ jobs:
       browser: webkit
     secrets: inherit
 
-  job-reactjs-example-app-safari:
-    name: "ReactJS example app (Safari)"
+  job-reactjs-example-app:
+    name: "ReactJS example app"
     needs: check-version
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
@@ -49,8 +49,8 @@ jobs:
       browser: webkit
     secrets: inherit
 
-  job-express-example-app-safari:
-    name: "Express example app (Safari)"
+  job-express-example-app:
+    name: "Express example app"
     needs: check-version
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
@@ -59,8 +59,8 @@ jobs:
       browser: webkit
     secrets: inherit
 
-  job-fastify-example-app-safari:
-    name: "Fastify example app (Safari)"
+  job-fastify-example-app:
+    name: "Fastify example app"
     needs: check-version
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
@@ -69,8 +69,8 @@ jobs:
       browser: webkit
     secrets: inherit
 
-  job-hono-example-app-safari:
-    name: "Hono example app (Safari)"
+  job-hono-example-app:
+    name: "Hono example app"
     needs: check-version
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
@@ -79,8 +79,8 @@ jobs:
       browser: webkit
     secrets: inherit
 
-  job-vanillajs-example-app-safari:
-    name: "VanillaJS example app (Safari)"
+  job-vanillajs-example-app:
+    name: "VanillaJS example app"
     needs: check-version
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
@@ -104,13 +104,13 @@ jobs:
   publish-allure-reports:
     name: "Publish Web2 Allure Reports"
     needs: [
-      job-nextjs-example-app-safari,
-      job-nextjs-basepath-example-app-safari,
-      job-reactjs-example-app-safari,
-      job-express-example-app-safari,
-      job-fastify-example-app-safari,
-      job-hono-example-app-safari,
-      job-vanillajs-example-app-safari,
+      job-nextjs-example-app,
+      job-nextjs-basepath-example-app,
+      job-reactjs-example-app,
+      job-express-example-app,
+      job-fastify-example-app,
+      job-hono-example-app,
+      job-vanillajs-example-app,
     ]
     
     runs-on: ubuntu-latest

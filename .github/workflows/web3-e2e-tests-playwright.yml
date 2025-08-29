@@ -1,0 +1,206 @@
+name: Web3 Apps - E2E Tests (Playwright)
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Run daily at midnight UTC
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      publish-allure-to-pages:
+        description: 'Publish Allure reports to GitHub Pages'
+        required: false
+        default: false
+        type: boolean
+    
+jobs:
+  check-version:
+    uses: ./.github/workflows/check-versions.yml
+
+  job-next-14-webpack-solana-wallet-adapter:
+    name: "Next14 webpack Solana wallet adapter"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-playwright.yml
+    with:
+      project-path: packages/civic-auth-web3/solana/next14-wallet-adapter
+      playwright-spec: "playwright/tests/civic-auth-web3/solana-next14-wa-login.spec.ts playwright/tests/civic-auth-web3/email/solana-next14-wa-email-verification.spec.ts"
+      browser: webkit
+    secrets: inherit
+
+  job-next-14-solana-no-wallet-adapter:
+    name: "Next14 webpack Solana No wallet adapter"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-playwright.yml
+    with:
+      project-path: packages/civic-auth-web3/solana/next14-no-wallet-adapter
+      playwright-spec: "playwright/tests/civic-auth-web3/solana-next14-no-wa-login.spec.ts playwright/tests/civic-auth-web3/email/solana-next14-no-wa-email-verification.spec.ts"
+      browser: webkit
+    secrets: inherit
+
+  job-next-15-turbopack-solana-wallet-adapter:
+    name: "Next15 turbopack Solana wallet adapter"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-playwright.yml
+    with:
+      project-path: packages/civic-auth-web3/solana/next15-wallet-adapter
+      playwright-spec: "playwright/tests/civic-auth-web3/solana-next15-turbopack-wa-login.spec.ts playwright/tests/civic-auth-web3/email/solana-next15-turbopack-wa-email-verification.spec.ts"
+      build-command: "yarn build-turbopack"
+      browser: webkit
+    secrets: inherit
+
+  job-next-15-webpack-solana-wallet-adapter:
+    name: "Next15 webpack Solana wallet adapter"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-playwright.yml
+    with:
+      project-path: packages/civic-auth-web3/solana/next15-wallet-adapter
+      playwright-spec: "playwright/tests/civic-auth-web3/solana-next15-wa-login.spec.ts playwright/tests/civic-auth-web3/email/solana-next15-wa-email-verification.spec.ts"
+      browser: webkit
+    secrets: inherit
+
+  job-next-15-turbopack-no-solana-wallet-adapter:
+    name: "Next15 turbopack no Solana wallet adapter"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-playwright.yml
+    with:
+      project-path: packages/civic-auth-web3/solana/next15-no-wallet-adapter
+      playwright-spec: "playwright/tests/civic-auth-web3/solana-next15-turbopack-no-wa-login.spec.ts playwright/tests/civic-auth-web3/email/solana-next15-turbopack-no-wa-email-verification.spec.ts"
+      build-command: "yarn build-turbopack"
+      browser: webkit
+    secrets: inherit
+
+  job-next-15-webpack-no-solana-wallet-adapter:
+    name: "Next15 webpack no Solana wallet adapter"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-playwright.yml
+    with:
+      project-path: packages/civic-auth-web3/solana/next15-no-wallet-adapter
+      playwright-spec: "playwright/tests/civic-auth-web3/solana-next15-no-wa-login.spec.ts playwright/tests/civic-auth-web3/email/solana-next15-no-wa-email-verification.spec.ts"
+      browser: webkit
+    secrets: inherit
+
+  job-vite-solana-wallet-adapter:
+    name: "Vite solana wallet adapter"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-playwright.yml
+    with:
+      project-path: packages/civic-auth-web3/solana/vite-wallet-adapter
+      playwright-spec: "playwright/tests/civic-auth-web3/solana-vite-wa-login.spec.ts playwright/tests/civic-auth-web3/email/solana-vite-wa-email-verification.spec.ts"
+      browser: webkit
+    secrets: inherit
+
+  job-vite-no-solana-wallet-adapter:
+    name: "Vite no solana wallet adapter"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-playwright.yml
+    with:
+      project-path: packages/civic-auth-web3/solana/vite-no-wallet-adapter
+      playwright-spec: "playwright/tests/civic-auth-web3/solana-vite-no-wa-login.spec.ts playwright/tests/civic-auth-web3/email/solana-vite-no-wa-email-verification.spec.ts"
+      browser: webkit
+    secrets: inherit
+
+  job-vite-wagmi-example-app:
+    name: "Vite wagmi example app"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-playwright.yml
+    with:
+      project-path: packages/civic-auth-web3/wagmi
+      playwright-spec: "playwright/tests/civic-auth-web3/wagmi-login.spec.ts playwright/tests/civic-auth-web3/email/wagmi-email-verification.spec.ts"
+      browser: webkit
+    secrets: inherit 
+
+  job-wagmi-nextjs-example-app:
+    name: "Wagmi nextjs example app"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-playwright.yml
+    with:
+      project-path: packages/civic-auth-web3/wagmi-nextjs
+      playwright-spec: "playwright/tests/civic-auth-web3/wagmi-nextjs-login.spec.ts playwright/tests/civic-auth-web3/email/wagmi-nextjs-email-verification.spec.ts"
+      browser: webkit
+    secrets: inherit
+
+  publish-allure-reports:
+    name: "Publish Web3 Allure Reports"
+    needs: [
+      job-next-14-webpack-solana-wallet-adapter-safari,
+      job-next-14-solana-no-wallet-adapter-safari,
+      job-next-15-turbopack-solana-wallet-adapter-safari,
+      job-next-15-webpack-solana-wallet-adapter-safari,
+      job-next-15-turbopack-no-solana-wallet-adapter-safari,
+      job-next-15-webpack-no-solana-wallet-adapter-safari,
+      job-vite-solana-wallet-adapter-safari,
+      job-vite-no-solana-wallet-adapter-safari,
+      job-vite-wagmi-example-app-safari,
+      job-wagmi-nextjs-example-app-safari,
+    ]
+    
+    runs-on: ubuntu-latest
+    if: always()
+    permissions:
+      contents: write
+      actions: read
+      id-token: write
+      pages: write
+    steps:
+      - name: Download Allure Results
+        uses: actions/download-artifact@v4
+        with:
+          pattern: allure-results-*
+          merge-multiple: true
+          path: allure-results
+
+      - name: Load test report history
+        if: always()
+        continue-on-error: true
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: gh-pages
+
+      - name: Debug gh-pages contents
+        if: always()
+        run: |
+          echo "Contents of gh-pages directory:"
+          ls -la gh-pages/ || echo "gh-pages directory not found"
+          echo ""
+          echo "Looking for allure-history:"
+          ls -la gh-pages/allure-history/ 2>/dev/null || echo "allure-history not found"
+          echo ""
+          echo "Looking for allure-reports:"
+          ls -la gh-pages/allure-reports/ 2>/dev/null || echo "allure-reports not found"
+
+      - name: Copy existing history to test results
+        if: always()
+        run: |
+          echo "Copying existing history to test results directory..."
+          if [ -d "gh-pages/allure-report/history" ]; then
+            echo "Found history in gh-pages/allure-report/history"
+            cp -r gh-pages/allure-report/history allure-results/
+            echo "History copied successfully"
+          elif [ -d "gh-pages/allure-results/history" ]; then
+            echo "Found history in gh-pages/allure-results/history"
+            cp -r gh-pages/allure-results/history allure-results/
+            echo "History copied successfully"
+          elif [ -d "gh-pages/allure-history/history" ]; then
+            echo "Found history in gh-pages/allure-history/history"
+            cp -r gh-pages/allure-history/history allure-results/
+            echo "History copied successfully"
+            echo "No existing history found, will create new"
+            mkdir -p allure-results/history
+          fi
+
+      - name: Build test report
+        if: always()
+        uses: simple-elf/allure-report-action@v1.7
+        with:
+          gh_pages: gh-pages
+          allure_results: allure-results
+          allure_history: allure-history
+
+      - name: Publish test report
+        if: always()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: allure-history
