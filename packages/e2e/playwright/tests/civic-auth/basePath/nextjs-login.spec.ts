@@ -55,28 +55,6 @@ test.describe('Next.js Login Tests (BasePath)', () => {
     // Click the dummy button
     await dummyButton.click({ timeout: 20000 });
     
-    // // Monitor for loading state after dummy button click
-    // try {
-    //   // Look for the specific loading text that might get stuck
-    //   const loadingText = frame.locator('text=Loading...');
-    //   const isLoadingTextVisible = await loadingText.isVisible({ timeout: 5000 }).catch(() => false);
-      
-    //   if (isLoadingTextVisible) {
-    //     // Wait for loading to disappear
-    //     await loadingText.waitFor({ state: 'hidden', timeout: 30000 });
-    //   }
-    // } catch (error) {
-    //   // If loading gets stuck, try to force completion
-    //   try {
-    //     const hiddenSubmitButtons = await frame.locator('button[type="submit"], input[type="submit"]').count();
-    //     if (hiddenSubmitButtons > 0) {
-    //       await frame.locator('button[type="submit"], input[type="submit"]').first().click({ timeout: 5000 });
-    //     }
-    //   } catch (submitError) {
-    //     // Continue if submit fails
-    //   }
-    // }
-
     // Wait for the iframe to be gone (indicating login is complete)
     await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 60000 });
     
