@@ -66,7 +66,11 @@ export default defineConfig({
 
     {
       name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
+      use: { 
+        ...devices['Desktop Firefox'],
+        // Firefox also needs to ignore HTTPS errors for cross-origin auth server communication
+        ignoreHTTPSErrors: true,
+      },
     },
 
     {

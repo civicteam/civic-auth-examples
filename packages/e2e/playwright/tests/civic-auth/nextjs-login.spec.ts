@@ -4,7 +4,6 @@ test.describe('Next.js Login Tests', () => {
   test('should complete full login and logout flow', async ({ page, browserName }) => {
     // Configure test to be more resilient
     test.setTimeout(120000); // Increase timeout to 2 minutes
-    
 
     // Open the app home page
     await page.goto('http://localhost:3000');
