@@ -71,7 +71,11 @@ export default defineConfig({
 
     {
       name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
+      use: { 
+        ...devices['Desktop Safari'],
+        // WebKit is stricter about cross-origin frame access and HTTPS errors
+        ignoreHTTPSErrors: true,
+      },
     },
 
     /* Test against mobile viewports. */
