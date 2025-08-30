@@ -12,7 +12,7 @@
     "dev:loginSuccessUrl": "LOGIN_SUCCESS_URL=/customSuccessRoute PORT=${PORT:-3000} bun run src/app.ts --watch"
   },
   "dependencies": {
-    "@civic/auth": "0.10.0-beta.5",
+    "@civic/auth": "*",
     "@fastify/cookie": "^11.0.1",
     "bun": "^1.2.5",
     "dotenv": "^16.4.7",

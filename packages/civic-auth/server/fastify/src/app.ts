@@ -28,7 +28,7 @@ const config = {
   clientId: process.env.CLIENT_ID!,
   // oauthServer is not necessary for production.
   oauthServer: process.env.AUTH_SERVER || 'https://auth.civic.com/oauth',
-  loginSuccessUrl: process.env.LOGIN_SUCCESS_URL || '/',
+  loginSuccessUrl: process.env.LOGIN_SUCCESS_URL,
   redirectUrl: `http://localhost:${PORT}/auth/callback`,
   postLogoutRedirectUrl: `http://localhost:${PORT}/`,
 };
