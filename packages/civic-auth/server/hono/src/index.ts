@@ -23,6 +23,7 @@ const config = {
   // oauthServer is not necessary for production.
   oauthServer: process.env.AUTH_SERVER || 'https://auth.civic.com/oauth',
   redirectUrl: `http://localhost:${PORT}/auth/callback`,
+  loginSuccessUrl: process.env.LOGIN_SUCCESS_URL,
   postLogoutRedirectUrl: `http://localhost:${PORT}/`,
 };
 
@@ -88,7 +89,8 @@ app.get('/auth/callback', async (c) => {
     const state = c.req.query('state') as string;
 
     await c.get('civicAuth').resolveOAuthAccessCode(code, state);
-    return c.redirect('/admin/hello');
+    const redirectUrl = config.loginSuccessUrl || '/admin/hello';
+    return c.redirect(redirectUrl);
   } catch (error) {
     console.error('Callback error:', error);
     return c.text(`Authentication failed: ${error instanceof Error ? error.message : 'Unknown error'}`, 500);
