@@ -78,6 +78,14 @@ app.use('/admin/*', async (c, next) => {
   await next();
 });
 
+// Auth middleware for /customSuccessRoute
+app.use('/customSuccessRoute', async (c, next) => {
+  if (!c.get('civicAuth').isLoggedIn()) {
+    return c.text('Unauthorized', 401);
+  }
+  await next();
+});
+
 app.get('/', async (c) => {
   const url = await c.get('civicAuth').buildLoginUrl();
   return c.redirect(url.toString());
@@ -126,6 +134,24 @@ app.get('/admin/hello', async (c) => {
       <html>
         <body>
           <h1>Hello, ${user?.name}!</h1>
+          <button onclick="window.location.href='/auth/logout'">Logout</button>
+        </body>
+      </html>
+    `);
+  } catch (error) {
+    console.error('Failed to get user info:', error);
+    return c.text(`Failed to get user info: ${error instanceof Error ? error.message : 'Unknown error'}`, 500);
+  }
+});
+
+app.get('/customSuccessRoute', async (c) => {
+  try {
+    const user = await c.get('civicAuth').getUser();
+    return c.html(`
+      <html>
+        <body>
+          <h1>Hello, ${user?.name}!</h1>
+          <p>Custom success route</p>
           <button onclick="window.location.href='/auth/logout'">Logout</button>
         </body>
       </html>
