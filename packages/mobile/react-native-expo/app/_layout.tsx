@@ -9,9 +9,8 @@ import { StatusBar } from "expo-status-bar";
 import "react-native-reanimated";
 
 import { useColorScheme } from "@/hooks/useColorScheme";
-import { AuthProvider } from "@/contexts/AuthContext";
 import { setupGlobalErrorHandlers } from "@/utils/errorDebug";
-import { ErrorBoundary } from "@/components/ErrorBoundary";
+import { Providers } from "@/components/Providers";
 
 // Set up error handlers as early as possible
 setupGlobalErrorHandlers();
@@ -28,16 +27,14 @@ export default function RootLayout() {
   }
 
   return (
-    <ErrorBoundary>
+    <Providers>
       <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-        <AuthProvider>
-          <Stack>
-            <Stack.Screen name="index" options={{ headerShown: false }} />
-            <Stack.Screen name="+not-found" />
-          </Stack>
-        </AuthProvider>
+        <Stack>
+          <Stack.Screen name="index" options={{ headerShown: false }} />
+          <Stack.Screen name="+not-found" />
+        </Stack>
         <StatusBar style="auto" />
       </ThemeProvider>
-    </ErrorBoundary>
+    </Providers>
   );
 }

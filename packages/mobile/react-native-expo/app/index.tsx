@@ -1,5 +1,5 @@
 import { Image } from "expo-image";
-import { StyleSheet } from "react-native";
+import { StyleSheet, TouchableOpacity } from "react-native";
 
 import { HelloWave } from "@/components/HelloWave";
 import ParallaxScrollView from "@/components/ParallaxScrollView";
@@ -7,11 +7,14 @@ import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
 import { AuthGuard } from "@/components/AuthGuard";
 import { SolanaActions } from "@/components/SolanaActions";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "@/contexts/AuthContext";
 
 function AuthenticatedContent() {
   const { state, signOut } = useContext(AuthContext);
+  const [activeChain, setActiveChain] = useState<"solana" | "ethereum">(
+    "solana",
+  );
 
   return (
     <ParallaxScrollView
@@ -47,6 +50,47 @@ function AuthenticatedContent() {
         </ThemedText>
       </ThemedView>
 
+      {/*<ThemedView style={styles.tabContainer}>
+        <TouchableOpacity
+          style={[
+            styles.tab,
+            activeChain === "solana" && styles.activeTab,
+            activeChain === "solana" && styles.solanaActiveTab,
+          ]}
+          onPress={() => setActiveChain("solana")}
+          activeOpacity={0.7}
+        >
+          <ThemedText
+            style={[
+              styles.tabText,
+              activeChain === "solana" && styles.activeTabText,
+            ]}
+          >
+            🔗 Solana
+          </ThemedText>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={[
+            styles.tab,
+            activeChain === "ethereum" && styles.activeTab,
+            activeChain === "ethereum" && styles.ethereumActiveTab,
+          ]}
+          onPress={() => setActiveChain("ethereum")}
+          activeOpacity={0.7}
+        >
+          <ThemedText
+            style={[
+              styles.tabText,
+              activeChain === "ethereum" && styles.activeTabText,
+            ]}
+          >
+            ⟠ Ethereum
+          </ThemedText>
+        </TouchableOpacity>
+      </ThemedView>*/}
+
+      {/*{activeChain === "solana" ? <SolanaActions /> : <EthereumActions />}*/}
       <SolanaActions />
 
       <ThemedView style={styles.buttonContainer}>
@@ -97,5 +141,40 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 16,
     fontWeight: "600",
+  },
+  tabContainer: {
+    flexDirection: "row",
+    marginHorizontal: -20,
+    paddingHorizontal: 20,
+    marginBottom: 16,
+    gap: 8,
+  },
+  tab: {
+    flex: 1,
+    paddingVertical: 12,
+    paddingHorizontal: 16,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: "rgba(128, 128, 128, 0.3)",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  activeTab: {
+    borderWidth: 0,
+  },
+  solanaActiveTab: {
+    backgroundColor: "#14F195",
+  },
+  ethereumActiveTab: {
+    backgroundColor: "#627EEA",
+  },
+  tabText: {
+    fontSize: 14,
+    fontWeight: "600",
+    opacity: 0.6,
+  },
+  activeTabText: {
+    opacity: 1,
+    color: "white",
   },
 });

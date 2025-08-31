@@ -99,6 +99,8 @@ android {
         // metakeepScheme: Replace com.domain.app with your app's package name
         manifestPlaceholders = [metakeepDomain: "*.auth.metakeep.xyz", metakeepScheme: "com.civic.civicauth"]
         //<---
+
+
     }
     signingConfigs {
         debug {
