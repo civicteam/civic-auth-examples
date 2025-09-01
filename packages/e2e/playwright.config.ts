@@ -1,4 +1,6 @@
 import { defineConfig, devices } from '@playwright/test';
+import { readFileSync } from 'fs';
+import { join } from 'path';
 
 /**
  * Read environment variables from file.
@@ -7,6 +9,36 @@ import { defineConfig, devices } from '@playwright/test';
 // import dotenv from 'dotenv';
 // import path from 'path';
 // dotenv.config({ path: path.resolve(__dirname, '.env') });
+
+/**
+ * Get the Civic Auth version from the installed package
+ */
+function getCivicAuthVersion(): string {
+  try {
+    // Try to read from a test app's node_modules first
+    const paths = [
+      '../civic-auth/nextjs/node_modules/@civic/auth/package.json',
+      '../civic-auth/reactjs/node_modules/@civic/auth/package.json',
+      '../../node_modules/@civic/auth/package.json',
+      '../../../node_modules/@civic/auth/package.json'
+    ];
+    
+    for (const path of paths) {
+      try {
+        const packagePath = join(__dirname, path);
+        const packageJson = JSON.parse(readFileSync(packagePath, 'utf8'));
+        return packageJson.version;
+      } catch (error) {
+        // Continue to next path
+      }
+    }
+    
+    // Fallback to environment variable or default
+    return process.env.CIVIC_AUTH_VERSION || 'Latest';
+  } catch (error) {
+    return 'Latest';
+  }
+}
 
 /**
  * See https://playwright.dev/docs/test-configuration.
@@ -30,10 +62,9 @@ export default defineConfig({
       suiteTitle: false,
       environmentInfo: {
         'Test Environment': 'Development',
-        'Civic Auth Version': 'Latest',
-        'Report URL': 'https://civicteam.github.io/civic-auth-examples/2/',
+        'Civic Auth Version': getCivicAuthVersion(),
+        'Report URL': 'https://civicteam.github.io/civic-auth-examples/civic-auth/',
         'GitHub Workflow': process.env.GITHUB_WORKFLOW || 'Local Run',
-        'Job Name': process.env.GITHUB_JOB_NAME || process.env.GITHUB_JOB || 'Local Test',
         'Run ID': process.env.GITHUB_RUN_ID || 'N/A'
       },
       categoriesPath: './allure-categories.json'
