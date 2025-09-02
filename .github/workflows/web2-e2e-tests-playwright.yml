@@ -214,21 +214,41 @@ jobs:
       - name: Copy existing history to test results
         if: always()
         run: |
-          echo "Copying existing history to test results directory..."
-          if [ -d "gh-pages/allure-report/history" ]; then
-            echo "Found history in gh-pages/allure-report/history"
-            cp -r gh-pages/allure-report/history allure-results/
-            echo "History copied successfully"
-          elif [ -d "gh-pages/allure-results/history" ]; then
-            echo "Found history in gh-pages/allure-results/history"
-            cp -r gh-pages/allure-results/history allure-results/
-            echo "History copied successfully"
-          elif [ -d "gh-pages/allure-history/history" ]; then
-            echo "Found history in gh-pages/allure-history/history"
-            cp -r gh-pages/allure-history/history allure-results/
-            echo "History copied successfully"
-            echo "No existing history found, will create new"
-            mkdir -p allure-results/history
+          echo "Copying existing civic-auth history to test results directory..."
+          
+          # Look for history in the civic-auth subdirectory first
+          HISTORY_FOUND=false
+          
+          # Check for history in previous civic-auth runs
+          for dir in gh-pages/civic-auth/*/history; do
+            if [ -d "$dir" ]; then
+              echo "Found civic-auth history in $dir"
+              cp -r "$dir" allure-results/
+              echo "Civic-auth history copied successfully"
+              HISTORY_FOUND=true
+              break
+            fi
+          done
+          
+          # Fallback to old location for backward compatibility
+          if [ "$HISTORY_FOUND" = false ]; then
+            echo "No civic-auth specific history found, checking legacy locations..."
+            if [ -d "gh-pages/allure-report/history" ]; then
+              echo "Found history in gh-pages/allure-report/history"
+              cp -r gh-pages/allure-report/history allure-results/
+              echo "History copied successfully"
+            elif [ -d "gh-pages/allure-results/history" ]; then
+              echo "Found history in gh-pages/allure-results/history"
+              cp -r gh-pages/allure-results/history allure-results/
+              echo "History copied successfully"
+            elif [ -d "gh-pages/allure-history/history" ]; then
+              echo "Found history in gh-pages/allure-history/history"
+              cp -r gh-pages/allure-history/history allure-results/
+              echo "History copied successfully"
+            else
+              echo "No existing history found, will create new"
+              mkdir -p allure-results/history
+            fi
           fi
 
       - name: Build test report
@@ -238,6 +258,17 @@ jobs:
           gh_pages: gh-pages
           allure_results: allure-results
           allure_history: allure-history
+
+      - name: Clean up .git folder from allure-history
+        if: always()
+        run: |
+          echo "Cleaning up .git folder from allure-history to prevent publishing conflicts..."
+          if [ -d "allure-history/.git" ]; then
+            rm -rf allure-history/.git
+            echo "Removed .git folder from allure-history"
+          else
+            echo "No .git folder found in allure-history"
+          fi
 
       - name: Publish test report
         if: always()
