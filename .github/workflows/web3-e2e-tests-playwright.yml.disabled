@@ -230,7 +230,9 @@ jobs:
         run: |
           echo "Cleaning up .git folder from allure-history to prevent publishing conflicts..."
           if [ -d "allure-history/.git" ]; then
-            rm -rf allure-history/.git
+            echo "Found .git folder, changing permissions and removing..."
+            chmod -R +w allure-history/.git || true
+            rm -rf allure-history/.git || sudo rm -rf allure-history/.git
             echo "Removed .git folder from allure-history"
           else
             echo "No .git folder found in allure-history"
