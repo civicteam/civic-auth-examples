@@ -1,6 +1,12 @@
 import { test, expect } from '@playwright/test';
+import { allure } from 'allure-playwright';
 
 test.describe('Next.js Login Tests (BasePath)', () => {
+  test.beforeEach(async ({ page }) => {
+    await allure.epic('civic auth sample apps');
+    await allure.feature('Next.js Login (BasePath)');
+  });
+
   test('should complete full login and logout flow with basepath', async ({ page, browserName }) => {
     // Configure test to be more resilient
     test.setTimeout(120000); // Increase timeout to 2 minutes

@@ -1,6 +1,12 @@
 import { test, expect } from '@playwright/test';
+import { allure } from 'allure-playwright';
 
 test.describe('Hono Login Tests (LoginSuccessUrl)', () => {
+  test.beforeEach(async ({ page }) => {
+    await allure.epic('civic auth sample apps');
+    await allure.feature('Hono Login (LoginSuccessUrl)');
+  });
+
   test('should complete login flow and redirect to customSuccessRoute', async ({ page }) => {
     // Intercept the external Civic auth server and redirect back to your app
     await page.route('**auth-dev.civic.com/**', async (route) => {

@@ -1,6 +1,12 @@
 import { test, expect } from '@playwright/test';
+import { allure } from 'allure-playwright';
 
 test.describe('Fastify Login Tests (BasePath)', () => {
+  test.beforeEach(async ({ page }) => {
+    await allure.epic('civic auth sample apps');
+    await allure.feature('Fastify Login (BasePath)');
+  });
+
   test('should complete login flow and redirect to hello page with basepath', async ({ page }) => {
     // Intercept the external Civic auth server and redirect back to your app
     await page.route('**auth-dev.civic.com/**', async (route) => {

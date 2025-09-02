@@ -1,6 +1,12 @@
 import { test, expect } from '@playwright/test';
+import { allure } from 'allure-playwright';
 
 test.describe('Next.js Login Tests (LoginSuccessUrl)', () => {
+  test.beforeEach(async ({ page }) => {
+    await allure.epic('civic auth sample apps');
+    await allure.feature('Next.js Login (LoginSuccessUrl)');
+  });
+
   test('should complete full login and logout flow with custom loginSuccessUrl', async ({ page, browserName }) => {
     // Open the app home page
     await page.goto('http://localhost:3000');

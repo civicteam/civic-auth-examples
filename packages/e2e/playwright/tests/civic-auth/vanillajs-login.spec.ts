@@ -1,6 +1,12 @@
 import { test, expect } from '@playwright/test';
+import { allure } from 'allure-playwright';
 
 test.describe('VanillaJS Embedded Login Tests', () => {
+  test.beforeEach(async ({ page }) => {
+    await allure.epic('civic auth sample apps');
+    await allure.feature('VanillaJS Embedded Login');
+  });
+
   test('should complete full embedded login and logout flow', async ({ page, browserName }) => {
     // Open the app home page
     await page.goto('http://localhost:3000');

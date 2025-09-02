@@ -5,7 +5,7 @@ import { generateUniqueEmail } from '../../../utils/email-generator';
 
 test.describe('React.js Email Verification Tests', () => {
   test.beforeEach(async ({ page }) => {
-    await allure.epic('Sample Applications');
+    await allure.epic('civic auth sample apps');
     await allure.feature('React.js Email Verification');
   });
 
