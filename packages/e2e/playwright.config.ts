@@ -100,7 +100,7 @@ export default defineConfig({
       use: { 
         ...devices['Desktop Firefox'],
         // Firefox also needs to ignore HTTPS errors for cross-origin auth server communication
-        ignoreHTTPSErrors: true,
+        // ignoreHTTPSErrors: true,
       },
     },
 
@@ -109,7 +109,7 @@ export default defineConfig({
       use: { 
         ...devices['Desktop Safari'],
         // WebKit is stricter about cross-origin frame access and HTTPS errors
-        ignoreHTTPSErrors: true,
+        // ignoreHTTPSErrors: true,
       },
     },
 
