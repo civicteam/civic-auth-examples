@@ -225,18 +225,29 @@ jobs:
           allure_results: allure-results
           allure_history: allure-history
 
-      - name: Clean up .git folder from allure-history
+      - name: Organize report for publishing
         if: always()
         run: |
-          echo "Cleaning up .git folder from allure-history to prevent publishing conflicts..."
-          if [ -d "allure-history/.git" ]; then
-            echo "Found .git folder, changing permissions and removing..."
-            chmod -R +w allure-history/.git || true
-            rm -rf allure-history/.git || sudo rm -rf allure-history/.git
-            echo "Removed .git folder from allure-history"
-          else
-            echo "No .git folder found in allure-history"
-          fi
+          echo "Organizing civic-auth-web3 report for publishing..."
+          
+          # Save the current allure-history content
+          cp -r allure-history temp-allure-report
+          
+          # Remove any .git folders from the temp copy
+          find temp-allure-report -name ".git" -type d -exec rm -rf {} + 2>/dev/null || true
+          
+          # Clear allure-history and create the new structure
+          rm -rf allure-history/*
+          mkdir -p allure-history/civic-auth-web3/${{ github.run_number }}
+          
+          # Move the report to the organized structure
+          cp -r temp-allure-report/* allure-history/civic-auth-web3/${{ github.run_number }}/
+          
+          # Clean up temp directory
+          rm -rf temp-allure-report
+          
+          echo "Report organized successfully"
+          ls -la allure-history/civic-auth-web3/${{ github.run_number }}/
 
       - name: Publish test report
         if: always()
@@ -245,4 +256,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: allure-history
-          destination_dir: civic-auth-web3/${{ github.run_number }}
+          keep_files: true
