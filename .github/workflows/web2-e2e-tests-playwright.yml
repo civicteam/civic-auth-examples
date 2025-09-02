@@ -214,41 +214,21 @@ jobs:
       - name: Copy existing history to test results
         if: always()
         run: |
-          echo "Copying existing civic-auth history to test results directory..."
-          
-          # Look for history in the civic-auth subdirectory first
-          HISTORY_FOUND=false
-          
-          # Check for history in previous civic-auth runs
-          for dir in gh-pages/civic-auth/*/history; do
-            if [ -d "$dir" ]; then
-              echo "Found civic-auth history in $dir"
-              cp -r "$dir" allure-results/
-              echo "Civic-auth history copied successfully"
-              HISTORY_FOUND=true
-              break
-            fi
-          done
-          
-          # Fallback to old location for backward compatibility
-          if [ "$HISTORY_FOUND" = false ]; then
-            echo "No civic-auth specific history found, checking legacy locations..."
-            if [ -d "gh-pages/allure-report/history" ]; then
-              echo "Found history in gh-pages/allure-report/history"
-              cp -r gh-pages/allure-report/history allure-results/
-              echo "History copied successfully"
-            elif [ -d "gh-pages/allure-results/history" ]; then
-              echo "Found history in gh-pages/allure-results/history"
-              cp -r gh-pages/allure-results/history allure-results/
-              echo "History copied successfully"
-            elif [ -d "gh-pages/allure-history/history" ]; then
-              echo "Found history in gh-pages/allure-history/history"
-              cp -r gh-pages/allure-history/history allure-results/
-              echo "History copied successfully"
-            else
-              echo "No existing history found, will create new"
-              mkdir -p allure-results/history
-            fi
+          echo "Copying existing history to test results directory..."
+          if [ -d "gh-pages/allure-report/history" ]; then
+            echo "Found history in gh-pages/allure-report/history"
+            cp -r gh-pages/allure-report/history allure-results/
+            echo "History copied successfully"
+          elif [ -d "gh-pages/allure-results/history" ]; then
+            echo "Found history in gh-pages/allure-results/history"
+            cp -r gh-pages/allure-results/history allure-results/
+            echo "History copied successfully"
+          elif [ -d "gh-pages/allure-history/history" ]; then
+            echo "Found history in gh-pages/allure-history/history"
+            cp -r gh-pages/allure-history/history allure-results/
+            echo "History copied successfully"
+            echo "No existing history found, will create new"
+            mkdir -p allure-results/history
           fi
 
       - name: Build test report
@@ -259,30 +239,6 @@ jobs:
           allure_results: allure-results
           allure_history: allure-history
 
-      - name: Organize report for publishing
-        if: always()
-        run: |
-          echo "Organizing civic-auth report for publishing..."
-          
-          # Save the current allure-history content
-          cp -r allure-history temp-allure-report
-          
-          # Remove any .git folders from the temp copy
-          find temp-allure-report -name ".git" -type d -exec rm -rf {} + 2>/dev/null || true
-          
-          # Clear allure-history and create the new structure
-          rm -rf allure-history/*
-          mkdir -p allure-history/civic-auth/${{ github.run_number }}
-          
-          # Move the report to the organized structure
-          cp -r temp-allure-report/* allure-history/civic-auth/${{ github.run_number }}/
-          
-          # Clean up temp directory
-          rm -rf temp-allure-report
-          
-          echo "Report organized successfully"
-          ls -la allure-history/civic-auth/${{ github.run_number }}/
-
       - name: Publish test report
         if: always()
         uses: peaceiris/actions-gh-pages@v3
@@ -290,5 +246,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: allure-history
-          keep_files: true
 
