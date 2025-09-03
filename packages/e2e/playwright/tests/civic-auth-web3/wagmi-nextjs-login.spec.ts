@@ -14,11 +14,11 @@ test.describe('Wagmi Login Tests', () => {
     
     // Chrome/Firefox use iframe flow
     // Click log in with dummy in the iframe
-    const frame = page.frameLocator('#civic-auth-iframe');
+    const frame = page.frameLocator('[data-testid="civic-auth-iframe-with-resizer"]');
     await frame.locator('[data-testid="civic-login-oidc-button-dummy"]').click({ timeout: 20000 });
 
     // Wait for the iframe to be gone (indicating login is complete)
-    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 40000 });
+    await page.waitForSelector('[data-testid="civic-auth-iframe-with-resizer"]', { state: 'hidden', timeout: 40000 });
 
     // Verify Ghost button is visible in dropdown
     await expect(page.locator('#civic-dropdown-container').locator('button:has-text("Ghost")')).toBeVisible({ timeout: 60000 });

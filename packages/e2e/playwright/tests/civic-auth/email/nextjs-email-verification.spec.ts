@@ -34,11 +34,11 @@ test.describe('Civic Auth Applications', () => {
     
     await allure.step('Handle iframe email verification flow', async () => {
       // Chrome/Firefox use iframe flow
-      // Wait for iframe to appear and load
-      await page.waitForSelector('#civic-auth-iframe', { timeout: 30000 });
+      // Wait for iframe to appear and load using the correct selector
+      await page.waitForSelector('[data-testid="civic-auth-iframe-with-resizer"]', { timeout: 30000 });
       
       // Click log in with email in the iframe
-      const frame = page.frameLocator('#civic-auth-iframe');
+      const frame = page.frameLocator('[data-testid="civic-auth-iframe-with-resizer"]');
       
       // Try to wait for the frame to load completely first
       await frame.locator('body').waitFor({ timeout: 30000 });
@@ -191,7 +191,7 @@ test.describe('Civic Auth Applications', () => {
       // Note: Verification automatically submits when 6th digit is entered
 
       // Wait for the iframe to be gone (indicating login is complete)
-      await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 20000 });
+      await page.waitForSelector('[data-testid="civic-auth-iframe-with-resizer"]', { state: 'hidden', timeout: 20000 });
     });
     
     // Confirm logged in state by checking for email in dropdown

@@ -107,10 +107,10 @@ test.describe('Wagmi Next.js Email Verification Tests', () => {
       await allure.step('Handle iframe email verification flow', async () => {
         // Chrome/Firefox use iframe flow
         // Wait for iframe to appear and load
-        await page.waitForSelector('#civic-auth-iframe', { timeout: 30000 });
+        await page.waitForSelector('[data-testid="civic-auth-iframe-with-resizer"]', { timeout: 30000 });
         
         // Click log in with email in the iframe
-        const frame = page.frameLocator('#civic-auth-iframe');
+        const frame = page.frameLocator('[data-testid="civic-auth-iframe-with-resizer"]');
         
         // Wait for the frame to load completely first
         await frame.locator('body').waitFor({ timeout: 30000 });
@@ -197,7 +197,7 @@ test.describe('Wagmi Next.js Email Verification Tests', () => {
         });
         
         // Wait for the iframe to be gone (indicating login is complete)
-        await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 20000 });
+        await page.waitForSelector('[data-testid="civic-auth-iframe-with-resizer"]', { state: 'hidden', timeout: 20000 });
       });
     }
     
