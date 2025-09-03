@@ -206,8 +206,11 @@ jobs:
           mkdir -p allure-results/history
           
           # Copy existing history if it exists
-          if [ -d "gh-pages/allure-history/history" ]; then
+          if [ -d "gh-pages/examples/civic-auth/history" ]; then
             echo "Found existing history, copying and limiting to last 5 reports..."
+            cp -r gh-pages/examples/civic-auth/history/* allure-results/history/ 2>/dev/null || true
+          elif [ -d "gh-pages/allure-history/history" ]; then
+            echo "Found legacy history, copying and limiting to last 5 reports..."
             cp -r gh-pages/allure-history/history/* allure-results/history/ 2>/dev/null || true
             
             # Cleanup to keep only last 5 reports
