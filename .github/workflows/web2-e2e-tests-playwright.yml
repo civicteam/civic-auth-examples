@@ -233,12 +233,12 @@ jobs:
           allure_history: allure-history/civic-auth
           keep_reports: 5
 
-      #     # Publish test report
-      # - name: Publish test report
-      #   if: always()
-      #   uses: peaceiris/actions-gh-pages@v3
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     publish_branch: gh-pages
-      #     publish_dir: allure-history
+          # Publish test report
+      - name: Publish test report
+        if: always()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: allure-history/civic-auth
 
