@@ -1,12 +1,10 @@
-import { createContext, useEffect, useMemo, useReducer } from "react";
+import { createContext, useEffect, useMemo, useReducer, useRef } from "react";
 import { AuthRequestConfig, useAuthRequest } from "expo-auth-session";
 import * as WebBrowser from "expo-web-browser";
 import { civicAuthConfig } from "@/config/civicAuth";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useWeb3Client, type Web3Client } from "@civic/react-native-auth-web3";
-
-// Create a query client (required by wagmi)
-const queryClient = new QueryClient();
+import { clusterApiUrl } from "@solana/web3.js";
+import { CivicWeb3ClientConfig } from "@civic/react-native-auth-web3/dist/types";
 
 interface AuthState {
   isLoading: boolean;
@@ -39,7 +37,7 @@ export type AuthContextType = {
   state: AuthState;
   signIn?: () => Promise<void>;
   signOut?: () => Promise<void>;
-  web3Client?: Web3Client | null;
+  web3Client?: Web3Client | null | undefined;
 };
 
 export const AuthContext = createContext<AuthContextType>({
@@ -56,21 +54,6 @@ export const AuthProvider = ({
   config?: Partial<AuthRequestConfig>;
   children: React.ReactNode;
 }) => {
-  // Add error boundary logging
-  useEffect(() => {
-    const originalConsoleError = console.error;
-    console.error = (...args) => {
-      if (args[0]?.includes?.("publicKey")) {
-        console.log("=== PublicKey Error Debug ===");
-        console.log("Error:", args[0]);
-        console.trace("Stack trace for publicKey error");
-      }
-      originalConsoleError.apply(console, args);
-    };
-    return () => {
-      console.error = originalConsoleError;
-    };
-  }, []);
   const finalConfig = useMemo(() => {
     return { ...civicAuthConfig, ...config };
   }, [config]);
@@ -90,7 +73,6 @@ export const AuthProvider = ({
 
   const [authState, dispatch] = useReducer(
     (previousState: AuthState, action: AuthAction): AuthState => {
-      console.debug(action.type, action.payload);
       switch (action.type) {
         case "SIGN_IN":
           return {
@@ -114,20 +96,26 @@ export const AuthProvider = ({
     initialState,
   );
 
-  const web3Client = useWeb3Client(
-    {
-      endpoints: {
-        wallet: "https://dev.api.civic.com/metakeep-dev",
-      },
-    },
-    undefined,
-    authState.idToken,
+  const web3Config = useMemo(
+    () =>
+      ({
+        solana: {
+          endpoint: clusterApiUrl("devnet"),
+        },
+      }) as CivicWeb3ClientConfig,
+    [],
   );
+
+  const web3Client = useWeb3Client(web3Config, authState.idToken);
+
+  const web3ClientRef = useRef<typeof web3Client>(web3Client);
 
   const authContext = useMemo(
     () => ({
       state: authState,
-      web3Client,
+      get web3Client() {
+        return web3ClientRef.current;
+      },
       signIn: async () => {
         promptAsync();
       },
@@ -159,7 +147,7 @@ export const AuthProvider = ({
         }
       },
     }),
-    [authState, promptAsync, finalConfig, web3Client],
+    [authState, promptAsync, finalConfig],
   );
 
   useEffect(() => {
@@ -225,7 +213,6 @@ export const AuthProvider = ({
       }
     };
     if (authState.isAuthenticated) {
-      // web3User.createWallet();
       if (!web3Client?.ethereum || !web3Client.solana) {
         web3Client?.createWallets();
       }
@@ -242,10 +229,6 @@ export const AuthProvider = ({
   useEffect(() => {}, [authState.isAuthenticated, authState.user]);
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <AuthContext.Provider value={authContext}>
-        {children}
-      </AuthContext.Provider>
-    </QueryClientProvider>
+    <AuthContext.Provider value={authContext}>{children}</AuthContext.Provider>
   );
 };
