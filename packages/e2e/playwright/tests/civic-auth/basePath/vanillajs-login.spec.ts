@@ -4,6 +4,7 @@ import { allure } from 'allure-playwright';
 test.describe('Civic Auth Applications', () => {
   test.beforeEach(async ({ page }) => {
     await allure.epic('Civic Auth Applications');
+    await allure.suite('Login Basepath');
     await allure.feature('VanillaJS Embedded Login (BasePath)');
   });
   test('should complete full embedded login and logout flow with basepath', async ({ page, browserName }) => {

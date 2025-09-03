@@ -4,6 +4,7 @@ import { allure } from 'allure-playwright';
 test.describe('Civic Auth Applications', () => {
   test.beforeEach(async ({ page }) => {
     await allure.epic('Civic Auth Applications');
+    await allure.suite('Login SuccessUrl');
     await allure.feature('Next.js Login (LoginSuccessUrl)');
   });
   test('should complete full login and logout flow with custom loginSuccessUrl', async ({ page, browserName }) => {

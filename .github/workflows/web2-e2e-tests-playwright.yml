@@ -191,14 +191,38 @@ jobs:
           merge-multiple: true
           path: allure-results
 
-      - name: Clean start - skip history to avoid 26k+ file issue
+      - name: Load test report history
+        if: always()
+        continue-on-error: true
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: gh-pages
+
+      - name: Copy existing history and limit to last 5 reports
         if: always()
         run: |
-          echo "Starting fresh without history to avoid processing 26,225+ files"
-          echo "The previous gh-pages branch had accumulated too many files causing hangs"
-          echo "Creating empty allure-results/history directory for a clean start"
+          echo "Setting up allure results directory..."
           mkdir -p allure-results/history
-          echo "Report history will be reset but future runs will be limited to 5 reports"
+          
+          # Copy existing history if it exists
+          if [ -d "gh-pages/allure-history/history" ]; then
+            echo "Found existing history, copying and limiting to last 5 reports..."
+            cp -r gh-pages/allure-history/history/* allure-results/history/ 2>/dev/null || true
+            
+            # Cleanup to keep only last 5 reports
+            cd allure-results/history
+            echo "Current history files:"
+            ls -la *.json 2>/dev/null || echo "No history files found"
+            
+            # Keep only the 5 most recent history files
+            ls -t *.json 2>/dev/null | tail -n +6 | xargs rm -f || true
+            echo "After cleanup (keeping last 5):"
+            ls -la *.json 2>/dev/null || echo "No history files found"
+            cd ../..
+          else
+            echo "No existing history found, starting fresh"
+          fi
 
       - name: Build test report
         if: always()
@@ -216,5 +240,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: allure-history
-          force_orphan: true
 

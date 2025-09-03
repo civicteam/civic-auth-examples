@@ -4,6 +4,7 @@ import { allure } from 'allure-playwright';
 test.describe('Civic Auth Applications', () => {
   test.beforeEach(async ({ page }) => {
     await allure.epic('Civic Auth Applications');
+    await allure.suite('Login');
     await allure.feature('Hono Login');
   });
   test('should complete login flow and redirect to hello page', async ({ page }) => {

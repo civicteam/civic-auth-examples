@@ -6,6 +6,7 @@ import { generateUniqueEmail } from '../../../utils/email-generator';
 test.describe('Civic Auth Applications', () => {
   test.beforeEach(async ({ page }) => {
     await allure.epic('Civic Auth Applications');
+    await allure.suite('Email');
     await allure.feature('VanillaJS Embedded Email Verification');
   });
 
