@@ -229,16 +229,16 @@ jobs:
         uses: simple-elf/allure-report-action@v1.7
         with:
           gh_pages: gh-pages
-          allure_results: allure-results
-          allure_history: allure-history
+          allure_results: allure-results/civic-auth
+          allure_history: allure-history/civic-auth
           keep_reports: 5
 
-          # Publish test report
-      - name: Publish test report
-        if: always()
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
-          publish_dir: allure-history
+      #     # Publish test report
+      # - name: Publish test report
+      #   if: always()
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_branch: gh-pages
+      #     publish_dir: allure-history
 
