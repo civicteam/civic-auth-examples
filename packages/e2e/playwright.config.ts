@@ -91,12 +91,12 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-      name: 'chromium',
+      name: 'Civic Auth Applications - Chromium',
       use: { ...devices['Desktop Chrome'] },
     },
 
     {
-      name: 'firefox',
+      name: 'Civic Auth Applications - Firefox',
       use: { 
         ...devices['Desktop Firefox'],
         // Firefox also needs to ignore HTTPS errors for cross-origin auth server communication
@@ -105,7 +105,7 @@ export default defineConfig({
     },
 
     {
-      name: 'webkit',
+      name: 'Civic Auth Applications - WebKit',
       use: { 
         ...devices['Desktop Safari'],
         // WebKit is stricter about cross-origin frame access and HTTPS errors
