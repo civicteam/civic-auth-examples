@@ -211,7 +211,7 @@ jobs:
           echo "Looking for allure-reports:"
           ls -la gh-pages/allure-reports/ 2>/dev/null || echo "allure-reports not found"
 
-      - name: Copy existing history to test results
+      - name: Copy existing history to test results and cleanup old reports
         if: always()
         run: |
           echo "Copying existing history to test results directory..."
@@ -227,8 +227,19 @@ jobs:
             echo "Found history in gh-pages/allure-history/history"
             cp -r gh-pages/allure-history/history allure-results/
             echo "History copied successfully"
+          else
             echo "No existing history found, will create new"
             mkdir -p allure-results/history
+          fi
+          
+          # Cleanup old history files to keep only last 5 runs
+          if [ -d "allure-results/history" ]; then
+            echo "Cleaning up old history files to keep only last 5 runs..."
+            cd allure-results/history
+            # Keep only the 5 most recent history files based on modification time
+            ls -t history-*.json 2>/dev/null | tail -n +6 | xargs rm -f || true
+            echo "Cleanup completed"
+            cd ../..
           fi
 
       - name: Build test report
@@ -238,6 +249,7 @@ jobs:
           gh_pages: gh-pages
           allure_results: allure-results
           allure_history: allure-history
+          keep_reports: 5
 
       - name: Publish test report
         if: always()
