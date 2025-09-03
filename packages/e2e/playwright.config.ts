@@ -63,7 +63,7 @@ export default defineConfig({
       environmentInfo: {
         'Test Environment': 'Development',
         'Civic Auth Version': getCivicAuthVersion(),
-        'Report URL': 'https://civicteam.github.io/civic-auth-examples/examples/civic-auth/',
+        'Report URL': 'https://civicteam.github.io/civic-auth-examples/civic-auth/',
         'GitHub Workflow': process.env.GITHUB_WORKFLOW || 'Local Run',
         'Run ID': process.env.GITHUB_RUN_ID || 'N/A'
       },
