@@ -1,0 +1,49 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - heading "My App" [level=1] [ref=e2]
+  - generic [ref=e3]:
+    - button "Sign In (Embedded)" [ref=e4] [cursor=pointer]
+    - button "Sign In (Modal)" [ref=e5] [cursor=pointer]
+    - button "Sign Out" [ref=e6] [cursor=pointer]
+  - iframe [active] [ref=e10]:
+    - generic [ref=f1e1]:
+      - main [ref=f1e2]:
+        - generic [ref=f1e7]:
+          - generic [ref=f1e8]:
+            - generic [ref=f1e10]:
+              - paragraph [ref=f1e11]: Your information was not shared with Civic
+              - paragraph [ref=f1e12]: "Process ID:"
+              - paragraph [ref=f1e13]: 458f1e85-b139-46bb-ad38-304f99c02ebc
+            - generic [ref=f1e14]:
+              - heading "Login" [level=2] [ref=f1e15]
+              - heading "Log in or create account" [level=2] [ref=f1e16]
+          - generic [ref=f1e17]:
+            - generic [ref=f1e20]:
+              - button "Google" [ref=f1e21] [cursor=pointer]:
+                - img "Google" [ref=f1e22] [cursor=pointer]
+              - button "Dummy" [active] [ref=f1e23] [cursor=pointer]:
+                - img "Dummy" [ref=f1e24] [cursor=pointer]
+              - button "Github" [ref=f1e25] [cursor=pointer]:
+                - img "Github" [ref=f1e26] [cursor=pointer]
+              - button "Discord" [ref=f1e27] [cursor=pointer]:
+                - img "Discord" [ref=f1e28] [cursor=pointer]
+              - button "Facebook" [ref=f1e29] [cursor=pointer]:
+                - img "Facebook" [ref=f1e30] [cursor=pointer]
+              - button "X" [ref=f1e31] [cursor=pointer]:
+                - img "X" [ref=f1e32] [cursor=pointer]
+            - heading "OR" [level=2] [ref=f1e34]
+            - generic [ref=f1e36]:
+              - textbox "Email address" [ref=f1e37]
+              - button [ref=f1e39] [cursor=pointer]:
+                - img [ref=f1e40] [cursor=pointer]
+          - generic [ref=f1e42]:
+            - generic [ref=f1e43]: Powered by
+            - link [ref=f1e44]:
+              - /url: https://www.civic.com/
+              - img [ref=f1e45]
+      - region "Notifications (F8)":
+        - list
+      - alert [ref=f1e54]
+```
