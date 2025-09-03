@@ -3,9 +3,9 @@ import { allure } from 'allure-playwright';
 import { db } from '../../../../utils/database';
 import { generateUniqueEmail } from '../../../utils/email-generator';
 
-test.describe('VanillaJS Embedded Email Verification Tests', () => {
+test.describe('Civic Auth Applications', () => {
   test.beforeEach(async ({ page }) => {
-    await allure.epic('Sample Applications');
+    await allure.epic('Civic Auth Applications');
     await allure.feature('VanillaJS Embedded Email Verification');
   });
 

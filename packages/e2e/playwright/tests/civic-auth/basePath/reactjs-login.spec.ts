@@ -1,6 +1,11 @@
 import { test, expect } from '@playwright/test';
+import { allure } from 'allure-playwright';
 
-test.describe('Reactjs Login Tests (BasePath)', () => {
+test.describe('Civic Auth Applications', () => {
+  test.beforeEach(async ({ page }) => {
+    await allure.epic('Civic Auth Applications');
+    await allure.feature('React.js Login (BasePath)');
+  });
   test('should complete full login and logout flow with basepath', async ({ page, browserName }) => {
     
     // Open the app home page with basepath

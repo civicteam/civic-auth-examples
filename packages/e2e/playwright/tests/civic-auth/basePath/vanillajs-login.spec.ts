@@ -1,6 +1,11 @@
 import { test, expect } from '@playwright/test';
+import { allure } from 'allure-playwright';
 
-test.describe('VanillaJS Embedded Login Tests (BasePath)', () => {
+test.describe('Civic Auth Applications', () => {
+  test.beforeEach(async ({ page }) => {
+    await allure.epic('Civic Auth Applications');
+    await allure.feature('VanillaJS Embedded Login (BasePath)');
+  });
   test('should complete full embedded login and logout flow with basepath', async ({ page, browserName }) => {
     // Open the app home page with basepath
     await page.goto('http://localhost:3000/demo');

@@ -1,6 +1,11 @@
 import { test, expect } from '@playwright/test';
+import { allure } from 'allure-playwright';
 
-test.describe('VanillaJS Modal Login Tests', () => {
+test.describe('Civic Auth Applications', () => {
+  test.beforeEach(async ({ page }) => {
+    await allure.epic('Civic Auth Applications');
+    await allure.feature('VanillaJS Modal Login');
+  });
   test('should complete full modal login and logout flow', async ({ page }) => {
     // Open the app home page
     await page.goto('http://localhost:3000');
