@@ -1,0 +1,14 @@
+Email slot count: 1
+Checking URL: https://auth-dev.civic.com/oauth/analytics, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/activity-indicator.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/assets/email.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiY2MzYTI4MDItNGUxNS00Yjg5LWFkMjAtNDc1NjNmNjlhMGRhIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjEwLjAtYmV0YS42In0%3D&client_id=demo-client-1&source_system_id=_jYHFNKSfBwHposZvLcFl4tz91uvtmfF_7jKdVEJQyx&scope=openid+profile+email+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&flow_id=oauth-login-28ee7445-a510-432d-b3fb-b01dd8f5ed79, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/email?loginFlowId=99217015-c753-42c1-8e50-6ec0bbdc9db1&client_id=demo-client-1&source_system_id=_jYHFNKSfBwHposZvLcFl4tz91uvtmfF_7jKdVEJQyx&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=888441%40simulator.amazonses.com&_rsc=z7nrp, hasLoginFlowId: true, isEmailEndpoint: true, isVerifyEndpoint: false
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=99217015-c753-42c1-8e50-6ec0bbdc9db1&client_id=demo-client-1&source_system_id=_jYHFNKSfBwHposZvLcFl4tz91uvtmfF_7jKdVEJQyx&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=888441%40simulator.amazonses.com&_rsc=z7nrp
+Extracted loginFlowId: 99217015-c753-42c1-8e50-6ec0bbdc9db1
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: 99217015-c753-42c1-8e50-6ec0bbdc9db1
+Found verification code for loginFlowId 99217015-c753-42c1-8e50-6ec0bbdc9db1: 806234
+Database disconnected
+Retrieved verification code: 806234 for loginFlowId: 99217015-c753-42c1-8e50-6ec0bbdc9db1
