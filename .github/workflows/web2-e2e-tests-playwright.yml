@@ -233,6 +233,7 @@ jobs:
           allure_history: allure-history
           keep_reports: 5
 
+          # Publish test report
       - name: Publish test report
         if: always()
         uses: peaceiris/actions-gh-pages@v3
