@@ -191,56 +191,14 @@ jobs:
           merge-multiple: true
           path: allure-results
 
-      - name: Load test report history
-        if: always()
-        continue-on-error: true
-        uses: actions/checkout@v4
-        with:
-          ref: gh-pages
-          path: gh-pages
-
-      - name: Debug gh-pages contents
+      - name: Clean start - skip history to avoid 26k+ file issue
         if: always()
         run: |
-          echo "Contents of gh-pages directory:"
-          ls -la gh-pages/ || echo "gh-pages directory not found"
-          echo ""
-          echo "Looking for allure-history:"
-          ls -la gh-pages/allure-history/ 2>/dev/null || echo "allure-history not found"
-          echo ""
-          echo "Looking for allure-reports:"
-          ls -la gh-pages/allure-reports/ 2>/dev/null || echo "allure-reports not found"
-
-      - name: Copy existing history to test results and cleanup old reports
-        if: always()
-        run: |
-          echo "Copying existing history to test results directory..."
-          if [ -d "gh-pages/allure-report/history" ]; then
-            echo "Found history in gh-pages/allure-report/history"
-            cp -r gh-pages/allure-report/history allure-results/
-            echo "History copied successfully"
-          elif [ -d "gh-pages/allure-results/history" ]; then
-            echo "Found history in gh-pages/allure-results/history"
-            cp -r gh-pages/allure-results/history allure-results/
-            echo "History copied successfully"
-          elif [ -d "gh-pages/allure-history/history" ]; then
-            echo "Found history in gh-pages/allure-history/history"
-            cp -r gh-pages/allure-history/history allure-results/
-            echo "History copied successfully"
-          else
-            echo "No existing history found, will create new"
-            mkdir -p allure-results/history
-          fi
-          
-          # Cleanup old history files to keep only last 5 runs
-          if [ -d "allure-results/history" ]; then
-            echo "Cleaning up old history files to keep only last 5 runs..."
-            cd allure-results/history
-            # Keep only the 5 most recent history files based on modification time
-            ls -t history-*.json 2>/dev/null | tail -n +6 | xargs rm -f || true
-            echo "Cleanup completed"
-            cd ../..
-          fi
+          echo "Starting fresh without history to avoid processing 26,225+ files"
+          echo "The previous gh-pages branch had accumulated too many files causing hangs"
+          echo "Creating empty allure-results/history directory for a clean start"
+          mkdir -p allure-results/history
+          echo "Report history will be reset but future runs will be limited to 5 reports"
 
       - name: Build test report
         if: always()
@@ -258,4 +216,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: allure-history
+          force_orphan: true
 
