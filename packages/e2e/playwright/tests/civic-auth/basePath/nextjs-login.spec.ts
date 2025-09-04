@@ -28,11 +28,11 @@ test.describe('Civic Auth Applications', () => {
     // Click the sign in button using test ID
     await page.getByTestId('sign-in-button').click();
     
-    // Wait for iframe to appear and load
-    await page.waitForSelector('[data-testid="civic-auth-iframe-with-resizer"]', { timeout: 30000 });
+    // Wait for iframe to appear and load - use ID selector instead of test-id for better Firefox compatibility
+    await page.waitForSelector('#civic-auth-iframe', { timeout: 30000 });
     
     // Click log in with dummy in the iframe
-    const frame = page.frameLocator('[data-testid="civic-auth-iframe-with-resizer"]');
+    const frame = page.frameLocator('#civic-auth-iframe');
     
     // Try to wait for the frame to load completely first
     await frame.locator('body').waitFor({ timeout: 30000 });
@@ -62,7 +62,7 @@ test.describe('Civic Auth Applications', () => {
     await dummyButton.click({ timeout: 20000 });
     
     // Wait for the iframe to be gone (indicating login is complete)
-    await page.waitForSelector('[data-testid="civic-auth-iframe-with-resizer"]', { state: 'hidden', timeout: 60000 });
+    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 60000 });
     
     // Wait a bit for the auth state to update
     await page.waitForTimeout(2000);
