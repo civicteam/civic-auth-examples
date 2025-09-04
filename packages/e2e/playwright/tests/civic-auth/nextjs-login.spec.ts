@@ -78,18 +78,34 @@ test.describe('Civic Auth Applications', () => {
     // Verify custom loginSuccessUrl is not loaded
     await expect(page.url()).not.toContain('loginSuccessUrl');
 
-    // Click the Ghost button in dropdown
+    // Click the Ghost button in dropdown with retry logic for Firefox
     const ghostButton = page.locator('#civic-dropdown-container').locator('button:has-text("Ghost")');
     await ghostButton.waitFor({ state: 'visible', timeout: 10000 });
     await ghostButton.click();
 
-    // Click the logout button
+    // Wait a moment for dropdown to fully expand
+    await page.waitForTimeout(500);
+
+    // Click the logout button with more robust handling
     const logoutButton = page.locator('#civic-dropdown-container').locator('button:has-text("Logout")');
-    await logoutButton.waitFor({ state: 'visible', timeout: 10000 });
-    await logoutButton.click();
     
-    // Confirm successful logout
-    await expect(page.locator('#civic-dropdown-container').locator('button:has-text("Ghost")')).not.toBeVisible();
+    // Try multiple approaches to handle Firefox dropdown timing issues
+    try {
+      await logoutButton.waitFor({ state: 'visible', timeout: 5000 });
+      await logoutButton.click();
+    } catch (error) {
+      // Fallback: click Ghost again to re-open dropdown and try logout
+      await ghostButton.click();
+      await page.waitForTimeout(500);
+      await logoutButton.waitFor({ state: 'visible', timeout: 5000 });
+      await logoutButton.click();
+    }
+    
+    // Confirm successful logout with longer timeout for Firefox
+    await expect(page.locator('#civic-dropdown-container').locator('button:has-text("Ghost")')).not.toBeVisible({ timeout: 15000 });
+    
+    // Wait for logout process to complete before checking cookies
+    await page.waitForTimeout(1000);
     
     // Verify essential cookies are deleted after logout
     const cookiesAfterLogout = await page.context().cookies();
@@ -101,12 +117,33 @@ test.describe('Civic Auth Applications', () => {
       cookie.name.includes('session')
     );
     
-    // Assert that essential auth cookies have been deleted
-    expect(remainingAuthCookies.length).toBe(0);
+    // Assert that essential auth cookies have been deleted (allow for some Firefox timing quirks)
+    // If there's still 1 cookie, wait a bit longer and check again
+    if (remainingAuthCookies.length > 0) {
+      await page.waitForTimeout(2000);
+      const finalCookies = await page.context().cookies();
+      const finalAuthCookies = finalCookies.filter(cookie => 
+        cookie.name.includes('civic-auth') || 
+        cookie.name.includes('access_token') || 
+        cookie.name.includes('refresh_token') ||
+        cookie.name.includes('id_token') ||
+        cookie.name.includes('session')
+      );
+      expect(finalAuthCookies.length).toBe(0);
+    }
     
     // Additional verification: try to access a protected route to ensure session is cleared
-    await page.goto('http://localhost:3000');
-    await page.waitForLoadState('networkidle');
+    // Handle redirect to /unauthenticated as expected behavior
+    try {
+      await page.goto('http://localhost:3000', { waitUntil: 'networkidle', timeout: 10000 });
+    } catch (error) {
+      // If navigation is interrupted by redirect, that's actually expected behavior
+      if (error.message.includes('interrupted by another navigation')) {
+        await page.waitForLoadState('networkidle');
+      } else {
+        throw error;
+      }
+    }
     
     // Should be back to logged-out state (Sign In button visible, Ghost button not visible)
     await expect(page.getByTestId('sign-in-button')).toBeVisible({ timeout: 10000 });
