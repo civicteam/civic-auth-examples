@@ -1,0 +1,14 @@
+Email slot count: 1
+Checking URL: https://auth-dev.civic.com/login/assets/email.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/activity-indicator.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiNTE1ZDc2NmYtZTM0Mi00YTViLWE0NTEtYjQyYTU1ZTExZGE1IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjEwLjAtYmV0YS43In0%3D&client_id=demo-client-1&source_system_id=kocai4IXO9Ia2NagvV7NCVKAAWt9X67h-FI89OJ0nFW&scope=openid+profile+email+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&flow_id=oauth-login-0561e4c6-fc8e-4298-b07a-a21fb1e08d76, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/email?loginFlowId=eb0c7684-2825-4196-8766-b2067106aea3&client_id=demo-client-1&source_system_id=kocai4IXO9Ia2NagvV7NCVKAAWt9X67h-FI89OJ0nFW&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=256592%40simulator.amazonses.com&_rsc=1bke7, hasLoginFlowId: true, isEmailEndpoint: true, isVerifyEndpoint: false
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=eb0c7684-2825-4196-8766-b2067106aea3&client_id=demo-client-1&source_system_id=kocai4IXO9Ia2NagvV7NCVKAAWt9X67h-FI89OJ0nFW&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=256592%40simulator.amazonses.com&_rsc=1bke7
+Extracted loginFlowId: eb0c7684-2825-4196-8766-b2067106aea3
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: eb0c7684-2825-4196-8766-b2067106aea3
+Found verification code for loginFlowId eb0c7684-2825-4196-8766-b2067106aea3: 718889
+Database disconnected
+Retrieved verification code: 718889 for loginFlowId: eb0c7684-2825-4196-8766-b2067106aea3

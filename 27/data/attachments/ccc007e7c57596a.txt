@@ -1,0 +1,16 @@
+Email slot count: 1
+Checking URL: https://auth-dev.civic.com/login/assets/email.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/activity-indicator.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/oauth/analytics, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/oauth/analytics, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiN2QwMTU5YzgtNjM5Ny00YzFhLWEyMTAtZGVkZGQ5YTRkMTQ1IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjEwLjAtYmV0YS43In0%3D&client_id=demo-client-1&source_system_id=L8oEj6cCxT9IYEUtSfmgR75-mFt4bq0rF_1jzSHvxXm&scope=openid+profile+email+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&flow_id=oauth-login-ba0cb4cd-c7a1-4241-bbe3-e30e07b582ee, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/email?loginFlowId=c165e7da-286d-46b8-9c08-d622db37cc1b&client_id=demo-client-1&source_system_id=L8oEj6cCxT9IYEUtSfmgR75-mFt4bq0rF_1jzSHvxXm&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=229895%40simulator.amazonses.com&_rsc=1o7pe, hasLoginFlowId: true, isEmailEndpoint: true, isVerifyEndpoint: false
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=c165e7da-286d-46b8-9c08-d622db37cc1b&client_id=demo-client-1&source_system_id=L8oEj6cCxT9IYEUtSfmgR75-mFt4bq0rF_1jzSHvxXm&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=229895%40simulator.amazonses.com&_rsc=1o7pe
+Extracted loginFlowId: c165e7da-286d-46b8-9c08-d622db37cc1b
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: c165e7da-286d-46b8-9c08-d622db37cc1b
+Found verification code for loginFlowId c165e7da-286d-46b8-9c08-d622db37cc1b: 236492
+Database disconnected
+Retrieved verification code: 236492 for loginFlowId: c165e7da-286d-46b8-9c08-d622db37cc1b
