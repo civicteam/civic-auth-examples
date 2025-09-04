@@ -10,7 +10,7 @@
     "start:loginSuccessUrl": "LOGIN_SUCCESS_URL=/customSuccessRoute bun run src/app.ts",
     "build": "bun build src/app.ts --target bun",
     "dev": "PORT=${PORT:-3000} bun run src/app.ts --watch",
-    "dev:loginSuccessUrl": "LOGIN_SUCCESS_URL=/customSuccessUrl PORT=${PORT:-3000} bun run src/app.ts --watch"
+    "dev:loginSuccessUrl": "LOGIN_SUCCESS_URL=/customSuccessRoute PORT=${PORT:-3000} bun run src/app.ts --watch"
   },
   "dependencies": {
     "@civic/auth": "*",
