@@ -28,8 +28,8 @@ test.describe('Civic Auth Applications', () => {
     // Click the sign in button using test ID
     await page.getByTestId('sign-in-button').click();
     
-    // Wait for iframe to appear and load - use ID selector instead of test-id for better Firefox compatibility
-    await page.waitForSelector('#civic-auth-iframe', { timeout: 30000 });
+    // Wait for iframe to be present in DOM (don't care if it's visible or hidden)
+    await page.waitForSelector('#civic-auth-iframe', { state: 'attached', timeout: 30000 });
     
     // Click log in with dummy in the iframe
     const frame = page.frameLocator('#civic-auth-iframe');
