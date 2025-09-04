@@ -1,4 +1,4 @@
-name: Civic Auth Example Apps - E2E Tests (Playwright)
+name: Civic Auth Example Apps - E2E Tests (Dev Mode)
 
 on:
   schedule:
@@ -148,8 +148,8 @@ jobs:
       job-name: "📦 VanillaJS App (Login + Email)"
     secrets: inherit
 
-  # job-vanillajs-modal-example-app-safari:
-  #   name: "VanillaJS Modal example app (Safari)"
+  # job-vanillajs-modal-example-app:
+  #   name: "VanillaJS Modal example app"
   #   needs: check-version
   #   uses: ./.github/workflows/test-example-app-playwright.yml
   #   with:

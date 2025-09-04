@@ -1,0 +1,249 @@
+name: Civic Auth Example Apps - E2E Tests (Start Mode)
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Run daily at midnight UTC
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      publish-allure-to-pages:
+        description: 'Publish Allure reports to GitHub Pages'
+        required: false
+        default: false
+        type: boolean
+    
+jobs:
+  check-version:
+    uses: ./.github/workflows/check-versions.yml
+
+  job-nextjs-example-app:
+    name: "NextJS example app"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-playwright.yml
+    with:
+      project-path: packages/civic-auth/nextjs
+      playwright-spec: "playwright/tests/civic-auth/nextjs-login.spec.ts playwright/tests/civic-auth/email/nextjs-email-verification.spec.ts"
+      dev-command: "yarn start"
+      browser: webkit
+      job-name: "🚀 NextJS App (Login + Email)"
+    secrets: inherit
+
+  job-nextjs-basepath-example-app:
+    name: "NextJS basepath example app"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-playwright.yml
+    with:
+      project-path: packages/civic-auth/nextjs
+      playwright-spec: "playwright/tests/civic-auth/basePath/nextjs-login.spec.ts"
+      build-command: "yarn build"
+      dev-command: "yarn start:subpath"
+      browser: webkit
+      job-name: "🚀 NextJS App (Basepath)"
+    secrets: inherit
+
+  job-nextjs-loginsuccessurl-example-app:
+    name: "NextJS loginSuccessUrl example app"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-playwright.yml
+    with:
+      project-path: packages/civic-auth/nextjs
+      playwright-spec: "playwright/tests/civic-auth/loginSuccessUrl/nextjs-login.spec.ts"
+      build-command: "yarn build"
+      dev-command: "yarn start:loginSuccessUrl"
+      browser: webkit
+      job-name: "🚀 NextJS App (LoginSuccessUrl)"
+    secrets: inherit
+
+  job-express-loginsuccessurl-example-app:
+    name: "Express loginSuccessUrl example app"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-playwright.yml
+    with:
+      project-path: packages/civic-auth/server/express
+      playwright-spec: "playwright/tests/civic-auth/loginSuccessUrl/express-login.spec.ts"
+      build-command: "yarn build"
+      dev-command: "yarn start:loginSuccessUrl"
+      browser: webkit
+      job-name: "🛠️ Express Server (LoginSuccessUrl)"
+    secrets: inherit
+
+  job-fastify-loginsuccessurl-example-app:
+    name: "Fastify loginSuccessUrl example app"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-playwright.yml
+    with:
+      project-path: packages/civic-auth/server/fastify
+      playwright-spec: "playwright/tests/civic-auth/loginSuccessUrl/fastify-login.spec.ts"
+      build-command: "yarn build"
+      dev-command: "yarn start:loginSuccessUrl"
+      browser: webkit
+      job-name: "⚡ Fastify Server (LoginSuccessUrl)"
+    secrets: inherit
+
+  job-hono-loginsuccessurl-example-app:
+    name: "Hono loginSuccessUrl example app"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-playwright.yml
+    with:
+      project-path: packages/civic-auth/server/hono
+      playwright-spec: "playwright/tests/civic-auth/loginSuccessUrl/hono-login.spec.ts"
+      build-command: "yarn build"
+      dev-command: "yarn start:loginSuccessUrl"
+      browser: webkit
+      job-name: "🔥 Hono Server (LoginSuccessUrl)"
+    secrets: inherit
+
+  job-reactjs-example-app:
+    name: "ReactJS example app"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-playwright.yml
+    with:
+      project-path: packages/civic-auth/reactjs
+      playwright-spec: "playwright/tests/civic-auth/reactjs-login.spec.ts playwright/tests/civic-auth/email/reactjs-email-verification.spec.ts"
+      dev-command: "yarn start"
+      browser: webkit
+      job-name: "⚛️ ReactJS App (Login + Email)"
+    secrets: inherit
+
+  job-express-example-app:
+    name: "Express example app"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-playwright.yml
+    with:
+      project-path: packages/civic-auth/server/express
+      playwright-spec: "playwright/tests/civic-auth/express-login.spec.ts playwright/tests/civic-auth/email/express-email-verification.spec.ts"
+      dev-command: "yarn start"
+      browser: webkit
+      job-name: "🛠️ Express Server (Login + Email)"
+    secrets: inherit
+
+  job-fastify-example-app:
+    name: "Fastify example app"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-playwright.yml
+    with:
+      project-path: packages/civic-auth/server/fastify
+      playwright-spec: "playwright/tests/civic-auth/fastify-login.spec.ts playwright/tests/civic-auth/email/fastify-email-verification.spec.ts"
+      dev-command: "yarn start"
+      browser: webkit
+      job-name: "⚡ Fastify Server (Login + Email)"
+    secrets: inherit
+
+  job-hono-example-app:
+    name: "Hono example app"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-playwright.yml
+    with:
+      project-path: packages/civic-auth/server/hono
+      playwright-spec: "playwright/tests/civic-auth/hono-login.spec.ts playwright/tests/civic-auth/email/hono-email-verification.spec.ts"
+      dev-command: "yarn start"
+      browser: webkit
+      job-name: "🔥 Hono Server (Login + Email)"
+    secrets: inherit
+
+  job-vanillajs-example-app:
+    name: "VanillaJS example app"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-playwright.yml
+    with:
+      project-path: packages/civic-auth/vanillajs
+      playwright-spec: "playwright/tests/civic-auth/vanillajs-login.spec.ts playwright/tests/civic-auth/email/vanillajs-email-verification.spec.ts"
+      dev-command: "yarn start"
+      browser: webkit
+      job-name: "📦 VanillaJS App (Login + Email)"
+    secrets: inherit
+
+  # job-vanillajs-modal-example-app:
+  #   name: "VanillaJS Modal example app"
+  #   needs: check-version
+  #   uses: ./.github/workflows/test-example-app-playwright.yml
+  #   with:
+  #     project-path: packages/civic-auth/vanillajs
+  #     playwright-spec: "playwright/tests/civic-auth/vanillajs-modal-login.spec.ts playwright/tests/civic-auth/basePath/vanillajs-modal-login.spec.ts"
+  #     browser: webkit
+  #   secrets: inherit
+
+
+
+  publish-allure-reports:
+    name: "Publish Web2 Allure Reports"
+    needs: [
+      job-nextjs-example-app,
+      job-nextjs-basepath-example-app,
+      job-nextjs-loginsuccessurl-example-app,
+      job-express-loginsuccessurl-example-app,
+      job-fastify-loginsuccessurl-example-app,
+      job-hono-loginsuccessurl-example-app,
+      job-reactjs-example-app,
+      job-express-example-app,
+      job-fastify-example-app,
+      job-hono-example-app,
+      job-vanillajs-example-app,
+    ]
+    
+    runs-on: ubuntu-latest
+    if: always()
+    permissions:
+      contents: write
+      actions: read
+      id-token: write
+      pages: write
+    steps:
+      - name: Download Allure Results
+        uses: actions/download-artifact@v4
+        with:
+          pattern: allure-results-*
+          merge-multiple: true
+          path: allure-results
+
+      - name: Load test report history
+        if: always()
+        continue-on-error: true
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: gh-pages
+
+      - name: Copy existing history and limit to last 5 reports
+        if: always()
+        run: |
+          echo "Setting up allure results directory..."
+          mkdir -p allure-results/history
+          
+          # Copy existing history if it exists
+          if [ -d "gh-pages/allure-history/history" ]; then
+            echo "Found existing history, copying and limiting to last 5 reports..."
+            cp -r gh-pages/allure-history/history/* allure-results/history/ 2>/dev/null || true
+            
+            # Cleanup to keep only last 5 reports
+            cd allure-results/history
+            echo "Current history files:"
+            ls -la *.json 2>/dev/null || echo "No history files found"
+            
+            # Keep only the 5 most recent history files
+            ls -t *.json 2>/dev/null | tail -n +6 | xargs rm -f || true
+            echo "After cleanup (keeping last 5):"
+            ls -la *.json 2>/dev/null || echo "No history files found"
+            cd ../..
+          else
+            echo "No existing history found, starting fresh"
+          fi
+
+      - name: Build test report
+        if: always()
+        uses: simple-elf/allure-report-action@v1.7
+        with:
+          gh_pages: gh-pages
+          allure_results: allure-results
+          allure_history: allure-history
+          keep_reports: 5
+
+      - name: Publish test report
+        if: always()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: allure-history
+

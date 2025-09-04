@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node dist/app.js",
+    "start:loginSuccessUrl": "LOGIN_SUCCESS_URL=/customSuccessRoute node dist/app.js",
     "dev": "PORT=3000 NODE_OPTIONS=\"--loader ts-node/esm\" nodemon src/app.ts",
     "dev:loginSuccessUrl": "LOGIN_SUCCESS_URL=/customSuccessRoute PORT=3000 NODE_OPTIONS=\"--loader ts-node/esm\" nodemon src/app.ts",
     "predev": "yarn build",
