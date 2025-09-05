@@ -150,6 +150,7 @@ jobs:
           # Install remaining dependencies
           yarn install
 
+          # run again
       - name: Install Playwright CLI and Allure
         working-directory: packages/e2e
         run: |
