@@ -154,7 +154,6 @@ jobs:
         working-directory: packages/e2e
         run: |
           yarn add -D @playwright/test allure-commandline allure-playwright
-          yarn install
           
       - name: Verify Allure Installation
         working-directory: packages/e2e
