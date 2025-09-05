@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev --port 3000",
-    "dev:subpath": "BASE_PATH=/demo next dev",
-    "dev:loginSuccessUrl": "LOGIN_SUCCESS_URL=/customSuccessRoute next dev --port 3000",
+    "dev:subpath": "BASE_PATH='/demo' next dev",
+    "dev:loginSuccessUrl": "LOGIN_SUCCESS_URL='/customSuccessRoute' next dev --port 3000",
     "build": "next build",
     "start": "next start",
     "start:subpath": "BASE_PATH='/demo' next start",
