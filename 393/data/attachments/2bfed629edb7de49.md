@@ -1,0 +1,88 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [active]:
+    - generic [ref=e6] [cursor=pointer]:
+      - button "Open Next.js Dev Tools" [ref=e7] [cursor=pointer]:
+        - img [ref=e8] [cursor=pointer]
+      - generic [ref=e12] [cursor=pointer]:
+        - button "Open issues overlay" [ref=e13] [cursor=pointer]:
+          - generic [ref=e14] [cursor=pointer]:
+            - generic [ref=e15] [cursor=pointer]: "2"
+            - generic [ref=e16] [cursor=pointer]: "3"
+          - generic [ref=e17] [cursor=pointer]:
+            - text: Issue
+            - generic [ref=e18] [cursor=pointer]: s
+        - button "Collapse issues badge" [ref=e19] [cursor=pointer]:
+          - img [ref=e20] [cursor=pointer]
+    - generic [ref=e24]:
+      - dialog "Console Error" [ref=e25]:
+        - generic [ref=e27]:
+          - generic [ref=e28]:
+            - generic [ref=e29]:
+              - generic [ref=e30]:
+                - generic [ref=e32]: Console Error
+                - generic [ref=e33]:
+                  - button "Copy Stack Trace" [ref=e34] [cursor=pointer]:
+                    - img [ref=e35] [cursor=pointer]
+                  - button "No related documentation found" [disabled] [ref=e37]:
+                    - img [ref=e38]
+                  - link "Learn more about enabling Node.js inspector for server code with Chrome DevTools" [ref=e40] [cursor=pointer]:
+                    - /url: https://nextjs.org/docs/app/building-your-application/configuring/debugging#server-side-code
+                    - img [ref=e41] [cursor=pointer]
+              - paragraph [ref=e50]: "<CivicNextAuthProvider> is an async Client Component. Only Server Components can be async at the moment. This error is often caused by accidentally adding `'use client'` to a module that was originally written for the server."
+            - generic [ref=e51]:
+              - generic [ref=e52]:
+                - paragraph [ref=e54]:
+                  - img [ref=e56]
+                  - generic [ref=e59]: src/app/layout.tsx (32:9) @ RootLayout
+                  - button "Open in editor" [ref=e60] [cursor=pointer]:
+                    - img [ref=e62] [cursor=pointer]
+                - generic [ref=e65]: "30 | className={`${geistSans.variable} ${geistMono.variable} antialiased`} 31 | > > 32 | <CivicAuthProvider> | ^ 33 | {children} 34 | </CivicAuthProvider> 35 | </body>"
+              - generic [ref=e66]:
+                - generic [ref=e67]:
+                  - paragraph [ref=e68]:
+                    - text: Call Stack
+                    - generic [ref=e69]: "60"
+                  - button "Show 59 ignore-listed frame(s)" [ref=e70] [cursor=pointer]:
+                    - text: Show 59 ignore-listed frame(s)
+                    - img [ref=e71] [cursor=pointer]
+                - generic [ref=e73]:
+                  - generic [ref=e74]:
+                    - text: RootLayout
+                    - button [ref=e75] [cursor=pointer]:
+                      - img [ref=e76] [cursor=pointer]
+                  - generic [ref=e78]: src/app/layout.tsx (32:9)
+          - contentinfo [ref=e80]:
+            - region "Error feedback" [ref=e81]:
+              - paragraph [ref=e82]:
+                - link "Was this helpful?" [ref=e83] [cursor=pointer]:
+                  - /url: https://nextjs.org/telemetry#error-feedback
+              - button "Mark as helpful" [ref=e84] [cursor=pointer]:
+                - img [ref=e85] [cursor=pointer]
+              - button "Mark as not helpful" [ref=e88] [cursor=pointer]:
+                - img [ref=e89] [cursor=pointer]
+          - generic [ref=e91]:
+            - generic [ref=e92]: "1"
+            - generic [ref=e93]: "2"
+      - generic [ref=e94]:
+        - generic [ref=e95]:
+          - navigation [ref=e96]:
+            - button "previous" [disabled] [ref=e97]:
+              - img "previous" [ref=e98]
+            - generic [ref=e100]:
+              - generic [ref=e101]: 1/
+              - generic [ref=e102]: "3"
+            - button "next" [ref=e103] [cursor=pointer]:
+              - img "next" [ref=e104] [cursor=pointer]
+          - img
+        - generic [ref=e106]:
+          - link "Next.js 15.2.4 (stale) Turbopack" [ref=e107] [cursor=pointer]:
+            - /url: https://nextjs.org/docs/messages/version-staleness
+            - img [ref=e108] [cursor=pointer]
+            - generic "There is a newer version (15.5.2) available, upgrade recommended!" [ref=e110] [cursor=pointer]: Next.js 15.2.4 (stale)
+            - generic [ref=e111] [cursor=pointer]: Turbopack
+          - img
+  - 'heading "Application error: a client-side exception has occurred while loading localhost (see the browser console for more information)." [level=2] [ref=e114]'
+```
