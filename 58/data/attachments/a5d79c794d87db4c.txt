@@ -1,0 +1,14 @@
+Email slot count: 1
+Checking URL: https://auth-dev.civic.com/login/activity-indicator.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/assets/email.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/assets/discord.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiNjMyMTBiMWItMjc3Yy00YmNiLWIxNGQtZTg0M2JjMGNjNWViIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjEwLjAtYmV0YS4xMSJ9&client_id=demo-client-1&source_system_id=vyFR6-HFnWFF1Egqcl_-qOO1B6FbjbmBSREGZS1R0nH&scope=openid+profile+email+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&flow_id=oauth-login-33a78d8a-2b9f-4e78-b782-308270d7be03, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/email?loginFlowId=e52b2a29-0b82-447d-abc2-71b96f52e59b&client_id=demo-client-1&source_system_id=vyFR6-HFnWFF1Egqcl_-qOO1B6FbjbmBSREGZS1R0nH&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=565674%40simulator.amazonses.com&_rsc=q7hvs, hasLoginFlowId: true, isEmailEndpoint: true, isVerifyEndpoint: false
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=e52b2a29-0b82-447d-abc2-71b96f52e59b&client_id=demo-client-1&source_system_id=vyFR6-HFnWFF1Egqcl_-qOO1B6FbjbmBSREGZS1R0nH&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=565674%40simulator.amazonses.com&_rsc=q7hvs
+Extracted loginFlowId: e52b2a29-0b82-447d-abc2-71b96f52e59b
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: e52b2a29-0b82-447d-abc2-71b96f52e59b
+Found verification code for loginFlowId e52b2a29-0b82-447d-abc2-71b96f52e59b: 253759
+Database disconnected
+Retrieved verification code: 253759 for loginFlowId: e52b2a29-0b82-447d-abc2-71b96f52e59b
