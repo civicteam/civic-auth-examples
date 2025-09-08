@@ -34,11 +34,14 @@ test.describe('Civic Auth Applications', () => {
     // Wait for the iframe to be gone (indicating login is complete)
     await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 20000 });
   
-    // Confirm logged in state by checking for Ghost button in dropdown
-    await expect(page.locator('#civic-dropdown-container').locator('button:has-text("Ghost")')).toBeVisible({ timeout: 20000 });
+    // Wait for the custom success route to load (indicating redirect happened)
+    await expect(page.getByTestId('loginSuccessUrlHeader')).toBeVisible({ timeout: 20000 });
     
     // Verify custom loginSuccessUrl is loaded - should redirect to /customSuccessRoute
     await expect(page.url()).toContain('/customSuccessRoute');
+    
+    // Confirm logged in state by checking for Ghost button in dropdown
+    await expect(page.locator('#civic-dropdown-container').locator('button:has-text("Ghost")')).toBeVisible({ timeout: 20000 });
 
     // Capture essential cookies after login
     const cookiesAfterLogin = await page.context().cookies();
