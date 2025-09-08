@@ -15,6 +15,12 @@ test.describe('Civic Auth Applications', () => {
     await page.waitForLoadState('networkidle');
     await page.waitForLoadState('domcontentloaded');
     
+    // Click "Try Embedded Mode" to navigate to the embedded page
+    await page.click('a[href="embedded.html"]');
+    
+    // Wait for the embedded page to load
+    await page.waitForLoadState('networkidle');
+    
     // Click the embedded sign in button
     await page.click('#loginButton');
     

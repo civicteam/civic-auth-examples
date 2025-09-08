@@ -29,6 +29,12 @@ test.describe('Civic Auth Applications', () => {
       await page.waitForLoadState('domcontentloaded');
     });
     
+    // Click "Try Embedded Mode" to navigate to the embedded page
+    await allure.step('Navigate to embedded page', async () => {
+      await page.click('a[href="embedded.html"]');
+      await page.waitForLoadState('networkidle');
+    });
+    
     // Click the sign in button using test ID
     await allure.step('Click sign in button', async () => {
       await page.locator('#loginButton').click();
