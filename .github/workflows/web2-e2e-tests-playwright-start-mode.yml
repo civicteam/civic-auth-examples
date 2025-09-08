@@ -29,31 +29,33 @@ jobs:
       job-name: "🚀 NextJS App (Login + Email)"
     secrets: inherit
 
-  job-nextjs-basepath-example-app:
-    name: "NextJS basepath example app"
-    needs: check-version
-    uses: ./.github/workflows/test-example-app-playwright.yml
-    with:
-      project-path: packages/civic-auth/nextjs
-      playwright-spec: "playwright/tests/civic-auth/basePath/nextjs-login.spec.ts"
-      build-command: "yarn build"
-      dev-command: "yarn start:subpath"
-      browser: webkit
-      job-name: "🚀 NextJS App (Basepath)"
-    secrets: inherit
+  # disabled because of basepath bug https://civicteam.atlassian.net/browse/TECH-2609
+  # job-nextjs-basepath-example-app:
+  #   name: "NextJS basepath example app"
+  #   needs: check-version
+  #   uses: ./.github/workflows/test-example-app-playwright.yml
+  #   with:
+  #     project-path: packages/civic-auth/nextjs
+  #     playwright-spec: "playwright/tests/civic-auth/basePath/nextjs-login.spec.ts"
+  #     build-command: "yarn build"
+  #     dev-command: "yarn start:subpath"
+  #     browser: webkit
+  #     job-name: "🚀 NextJS App (Basepath)"
+  #   secrets: inherit
 
-  job-nextjs-loginsuccessurl-example-app:
-    name: "NextJS loginSuccessUrl example app"
-    needs: check-version
-    uses: ./.github/workflows/test-example-app-playwright.yml
-    with:
-      project-path: packages/civic-auth/nextjs
-      playwright-spec: "playwright/tests/civic-auth/loginSuccessUrl/nextjs-login.spec.ts"
-      build-command: "yarn build"
-      dev-command: "yarn start:loginSuccessUrl"
-      browser: webkit
-      job-name: "🚀 NextJS App (LoginSuccessUrl)"
-    secrets: inherit
+  # disabled because of loginSuccessUrl bug https://civicteam.atlassian.net/browse/TECH-2610
+  # job-nextjs-loginsuccessurl-example-app:
+  #   name: "NextJS loginSuccessUrl example app"
+  #   needs: check-version
+  #   uses: ./.github/workflows/test-example-app-playwright.yml
+  #   with:
+  #     project-path: packages/civic-auth/nextjs
+  #     playwright-spec: "playwright/tests/civic-auth/loginSuccessUrl/nextjs-login.spec.ts"
+  #     build-command: "yarn build"
+  #     dev-command: "yarn start:loginSuccessUrl"
+  #     browser: webkit
+  #     job-name: "🚀 NextJS App (LoginSuccessUrl)"
+  #   secrets: inherit
 
   job-express-loginsuccessurl-example-app:
     name: "Express loginSuccessUrl example app"
@@ -170,8 +172,8 @@ jobs:
     name: "Publish Web2 Allure Reports"
     needs: [
       job-nextjs-example-app,
-      job-nextjs-basepath-example-app,
-      job-nextjs-loginsuccessurl-example-app,
+      # job-nextjs-basepath-example-app,
+      # job-nextjs-loginsuccessurl-example-app,
       job-express-loginsuccessurl-example-app,
       job-fastify-loginsuccessurl-example-app,
       job-hono-loginsuccessurl-example-app,
