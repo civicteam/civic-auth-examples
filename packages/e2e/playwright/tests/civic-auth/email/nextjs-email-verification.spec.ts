@@ -27,18 +27,24 @@ test.describe('Civic Auth Applications', () => {
     await page.waitForLoadState('networkidle');
     await page.waitForLoadState('domcontentloaded');
     
+    // Wait for the sign in button to be visible and enabled/clickable
+    const signInButton = page.getByTestId('sign-in-button');
+    await signInButton.waitFor({ state: 'visible', timeout: 30000 });
+    await expect(signInButton).toBeEnabled({ timeout: 10000 });
+    
+    // Add a small delay to ensure the button is fully interactive
+    await page.waitForTimeout(1000);
+    
     // Click the sign in button using test ID
-    await allure.step('Click sign in button', async () => {
-      await page.getByTestId('sign-in-button').click();
-    });
+    await signInButton.click();
     
     await allure.step('Handle iframe email verification flow', async () => {
       // Chrome/Firefox use iframe flow
-      // Wait for iframe to appear and load using the correct selector
-      await page.waitForSelector('[data-testid="civic-auth-iframe-with-resizer"]', { timeout: 30000 });
+      // Wait for iframe to appear and load
+      await page.waitForSelector('#civic-auth-iframe', { timeout: 30000 });
       
       // Click log in with email in the iframe
-      const frame = page.frameLocator('[data-testid="civic-auth-iframe-with-resizer"]');
+      const frame = page.frameLocator('#civic-auth-iframe');
       
       // Try to wait for the frame to load completely first
       await frame.locator('body').waitFor({ timeout: 30000 });
