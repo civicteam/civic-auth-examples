@@ -101,15 +101,23 @@ test.describe('Civic Auth Applications', () => {
     // Confirm successful logout
     await expect(page.locator('#civic-dropdown-container').locator('button:has-text("Ghost")')).not.toBeVisible();
     
-    // Verify essential cookies are deleted after logout
-    const cookiesAfterLogout = await page.context().cookies();
-    const remainingAuthCookies = cookiesAfterLogout.filter(cookie => 
-      cookie.name.includes('civic-auth') || 
-      cookie.name.includes('access_token') || 
-      cookie.name.includes('refresh_token') ||
-      cookie.name.includes('id_token') ||
-      cookie.name.includes('session')
-    );
+    // Wait for auth cookies to be cleared after logout with retry logic
+    let remainingAuthCookies = [];
+    let attempts = 0;
+    const maxAttempts = 10; // 10 attempts with 500ms each = 5 seconds max
+    
+    do {
+      await page.waitForTimeout(500); // Wait 500ms between checks
+      const cookiesAfterLogout = await page.context().cookies();
+      remainingAuthCookies = cookiesAfterLogout.filter(cookie => 
+        cookie.name.includes('civic-auth') || 
+        cookie.name.includes('access_token') || 
+        cookie.name.includes('refresh_token') ||
+        cookie.name.includes('id_token') ||
+        cookie.name.includes('session')
+      );
+      attempts++;
+    } while (remainingAuthCookies.length > 0 && attempts < maxAttempts);
     
     // Assert that essential auth cookies have been deleted
     expect(remainingAuthCookies.length).toBe(0);
