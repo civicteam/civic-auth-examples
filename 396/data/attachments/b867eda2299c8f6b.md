@@ -1,0 +1,166 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [active]:
+    - generic [ref=e6] [cursor=pointer]:
+      - button "Open Next.js Dev Tools" [ref=e7] [cursor=pointer]:
+        - img [ref=e8] [cursor=pointer]
+      - generic [ref=e11] [cursor=pointer]:
+        - button "Open issues overlay" [ref=e12] [cursor=pointer]:
+          - generic [ref=e13] [cursor=pointer]:
+            - generic [ref=e14] [cursor=pointer]: "5"
+            - generic [ref=e15] [cursor=pointer]: "6"
+          - generic [ref=e16] [cursor=pointer]:
+            - text: Issue
+            - generic [ref=e17] [cursor=pointer]: s
+        - button "Collapse issues badge" [ref=e18] [cursor=pointer]:
+          - img [ref=e19] [cursor=pointer]
+    - generic [ref=e23]:
+      - generic [ref=e24]:
+        - generic [ref=e25]:
+          - navigation [ref=e26]:
+            - button "previous" [disabled] [ref=e27]:
+              - img "previous" [ref=e28]
+            - generic [ref=e30]:
+              - generic [ref=e31]: 1/
+              - generic [ref=e32]: "6"
+            - button "next" [ref=e33] [cursor=pointer]:
+              - img "next" [ref=e34] [cursor=pointer]
+          - img
+        - generic [ref=e36]:
+          - link "Next.js 15.4.6 (stale) Webpack" [ref=e37] [cursor=pointer]:
+            - /url: https://nextjs.org/docs/messages/version-staleness
+            - img [ref=e38] [cursor=pointer]
+            - generic "There is a newer version (15.5.2) available, upgrade recommended!" [ref=e40] [cursor=pointer]: Next.js 15.4.6 (stale)
+            - generic [ref=e41] [cursor=pointer]: Webpack
+          - img
+      - generic [ref=e42]:
+        - dialog "Console Error" [ref=e43]:
+          - generic [ref=e46]:
+            - generic [ref=e47]:
+              - generic [ref=e48]:
+                - generic [ref=e50]: Console Error
+                - generic [ref=e51]:
+                  - button "Copy Stack Trace" [ref=e52] [cursor=pointer]:
+                    - img [ref=e53] [cursor=pointer]
+                  - button "No related documentation found" [disabled] [ref=e55]:
+                    - img [ref=e56]
+                  - link "Learn more about enabling Node.js inspector for server code with Chrome DevTools" [ref=e58] [cursor=pointer]:
+                    - /url: https://nextjs.org/docs/app/building-your-application/configuring/debugging#server-side-code
+                    - img [ref=e59] [cursor=pointer]
+              - paragraph [ref=e68]: "<CivicNextAuthProvider> is an async Client Component. Only Server Components can be async at the moment. This error is often caused by accidentally adding `'use client'` to a module that was originally written for the server."
+            - generic [ref=e70]:
+              - paragraph [ref=e72]:
+                - text: Call Stack
+                - generic [ref=e73]: "16"
+              - generic [ref=e74]:
+                - generic [ref=e75]:
+                  - text: createConsoleError
+                  - button "Sourcemapping failed. Click to log cause of error." [ref=e76] [cursor=pointer]:
+                    - img [ref=e77] [cursor=pointer]
+                - generic [ref=e79]: ./node_modules/next/dist/next-devtools/shared/console-error.js
+              - generic [ref=e80]:
+                - generic [ref=e81]:
+                  - text: handleConsoleError
+                  - button "Sourcemapping failed. Click to log cause of error." [ref=e82] [cursor=pointer]:
+                    - img [ref=e83] [cursor=pointer]
+                - generic [ref=e85]: ./node_modules/next/dist/next-devtools/userspace/app/errors/use-error-handler.js
+              - generic [ref=e86]:
+                - generic [ref=e87]:
+                  - text: console.error
+                  - button "Sourcemapping failed. Click to log cause of error." [ref=e88] [cursor=pointer]:
+                    - img [ref=e89] [cursor=pointer]
+                - generic [ref=e91]: ./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js
+              - generic [ref=e92]:
+                - generic [ref=e93]:
+                  - text: renderWithHooks
+                  - button "Sourcemapping failed. Click to log cause of error." [ref=e94] [cursor=pointer]:
+                    - img [ref=e95] [cursor=pointer]
+                - generic [ref=e97]: ./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js
+              - generic [ref=e98]:
+                - generic [ref=e99]:
+                  - text: updateFunctionComponent
+                  - button "Sourcemapping failed. Click to log cause of error." [ref=e100] [cursor=pointer]:
+                    - img [ref=e101] [cursor=pointer]
+                - generic [ref=e103]: ./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js
+              - generic [ref=e104]:
+                - generic [ref=e105]:
+                  - text: beginWork
+                  - button "Sourcemapping failed. Click to log cause of error." [ref=e106] [cursor=pointer]:
+                    - img [ref=e107] [cursor=pointer]
+                - generic [ref=e109]: ./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js
+              - generic [ref=e110]:
+                - generic [ref=e111]:
+                  - text: runWithFiberInDEV
+                  - button "Sourcemapping failed. Click to log cause of error." [ref=e112] [cursor=pointer]:
+                    - img [ref=e113] [cursor=pointer]
+                - generic [ref=e115]: ./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js
+              - generic [ref=e116]:
+                - generic [ref=e117]:
+                  - text: performUnitOfWork
+                  - button "Sourcemapping failed. Click to log cause of error." [ref=e118] [cursor=pointer]:
+                    - img [ref=e119] [cursor=pointer]
+                - generic [ref=e121]: ./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js
+              - generic [ref=e122]:
+                - generic [ref=e123]:
+                  - text: workLoopConcurrentByScheduler
+                  - button "Sourcemapping failed. Click to log cause of error." [ref=e124] [cursor=pointer]:
+                    - img [ref=e125] [cursor=pointer]
+                - generic [ref=e127]: ./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js
+              - generic [ref=e128]:
+                - generic [ref=e129]:
+                  - text: renderRootConcurrent
+                  - button "Sourcemapping failed. Click to log cause of error." [ref=e130] [cursor=pointer]:
+                    - img [ref=e131] [cursor=pointer]
+                - generic [ref=e133]: ./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js
+              - generic [ref=e134]:
+                - generic [ref=e135]:
+                  - text: performWorkOnRoot
+                  - button "Sourcemapping failed. Click to log cause of error." [ref=e136] [cursor=pointer]:
+                    - img [ref=e137] [cursor=pointer]
+                - generic [ref=e139]: ./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js
+              - generic [ref=e140]:
+                - generic [ref=e141]:
+                  - text: performWorkOnRootViaSchedulerTask
+                  - button "Sourcemapping failed. Click to log cause of error." [ref=e142] [cursor=pointer]:
+                    - img [ref=e143] [cursor=pointer]
+                - generic [ref=e145]: ./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js
+              - generic [ref=e146]:
+                - generic [ref=e147]:
+                  - text: MessagePort.performWorkUntilDeadline
+                  - button "Sourcemapping failed. Click to log cause of error." [ref=e148] [cursor=pointer]:
+                    - img [ref=e149] [cursor=pointer]
+                - generic [ref=e151]: ./node_modules/next/dist/compiled/scheduler/cjs/scheduler.development.js
+              - generic [ref=e152]:
+                - generic [ref=e153]:
+                  - text: CivicAuthProvider
+                  - button "Sourcemapping failed. Click to log cause of error." [ref=e154] [cursor=pointer]:
+                    - img [ref=e155] [cursor=pointer]
+                - generic [ref=e157]: ./node_modules/@civic/auth-web3/dist/nextjs/CivicAuthProvider.js
+              - generic [ref=e158]:
+                - generic [ref=e159]:
+                  - text: Providers
+                  - button "Sourcemapping failed. Click to log cause of error." [ref=e160] [cursor=pointer]:
+                    - img [ref=e161] [cursor=pointer]
+                - generic [ref=e163]: ./src/app/Providers.tsx
+              - generic [ref=e164]:
+                - generic [ref=e165]:
+                  - text: RootLayout
+                  - button "Sourcemapping failed. Click to log cause of error." [ref=e166] [cursor=pointer]:
+                    - img [ref=e167] [cursor=pointer]
+                - generic [ref=e169]: rsc:/Server/webpack-internal:///(rsc)/src/app/layout.tsx (28:98)
+          - generic [ref=e170]:
+            - generic [ref=e171]: "1"
+            - generic [ref=e172]: "2"
+        - contentinfo [ref=e173]:
+          - region "Error feedback" [ref=e174]:
+            - paragraph [ref=e175]:
+              - link "Was this helpful?" [ref=e176] [cursor=pointer]:
+                - /url: https://nextjs.org/telemetry#error-feedback
+            - button "Mark as helpful" [ref=e177] [cursor=pointer]:
+              - img [ref=e178] [cursor=pointer]
+            - button "Mark as not helpful" [ref=e181] [cursor=pointer]:
+              - img [ref=e182] [cursor=pointer]
+  - 'heading "Application error: a client-side exception has occurred while loading localhost (see the browser console for more information)." [level=2] [ref=e186]'
+```
