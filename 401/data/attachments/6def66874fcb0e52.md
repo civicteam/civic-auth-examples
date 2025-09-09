@@ -1,0 +1,53 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e3]:
+      - heading "Civic Auth (NextJS)" [level=1] [ref=e4]
+      - button [active] [ref=e5]:
+        - status [ref=e8]:
+          - img [ref=e9]
+          - generic [ref=e12]: Loading...
+      - button "Sign in (Custom)" [ref=e13] [cursor=pointer]
+  - button "Open Next.js Dev Tools" [ref=e19] [cursor=pointer]:
+    - img [ref=e20] [cursor=pointer]
+  - alert [ref=e25]
+  - generic [ref=e27]:
+    - iframe [ref=e29]:
+      - generic [active] [ref=f1e1]:
+        - main [ref=f1e2]:
+          - generic [ref=f1e7]:
+            - generic [ref=f1e9]:
+              - heading "Login" [level=2] [ref=f1e10]
+              - heading "Log in or create account" [level=2] [ref=f1e11]
+            - generic [ref=f1e12]:
+              - generic [ref=f1e15]:
+                - button "Google" [ref=f1e16] [cursor=pointer]:
+                  - img "Google" [ref=f1e17] [cursor=pointer]
+                - button "Dummy" [ref=f1e18] [cursor=pointer]:
+                  - img "Dummy" [ref=f1e19] [cursor=pointer]
+                - button "Github" [ref=f1e20] [cursor=pointer]:
+                  - img "Github" [ref=f1e21] [cursor=pointer]
+                - button "Discord" [ref=f1e22] [cursor=pointer]:
+                  - img "Discord" [ref=f1e23] [cursor=pointer]
+                - button "Facebook" [ref=f1e24] [cursor=pointer]:
+                  - img "Facebook" [ref=f1e25] [cursor=pointer]
+                - button "X" [ref=f1e26] [cursor=pointer]:
+                  - img "X" [ref=f1e27] [cursor=pointer]
+              - heading "OR" [level=2] [ref=f1e29]
+              - generic [ref=f1e31]:
+                - textbox "Email address" [ref=f1e32]
+                - button [ref=f1e34] [cursor=pointer]:
+                  - img [ref=f1e35] [cursor=pointer]
+            - generic [ref=f1e37]:
+              - generic [ref=f1e38]: Powered by
+              - link [ref=f1e39]:
+                - /url: https://www.civic.com/
+                - img [ref=f1e40]
+        - region "Notifications (F8)":
+          - list
+        - alert [ref=f1e49]
+    - button "Close" [ref=e30] [cursor=pointer]:
+      - img [ref=e31] [cursor=pointer]
+```
