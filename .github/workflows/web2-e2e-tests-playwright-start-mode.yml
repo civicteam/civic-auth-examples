@@ -218,9 +218,9 @@ jobs:
           mkdir -p allure-results/history
           
           # Copy existing history if it exists
-          if [ -d "gh-pages/allure-history/history" ]; then
-            echo "Found existing history, copying and limiting to last 5 reports..."
-            cp -r gh-pages/allure-history/history/* allure-results/history/ 2>/dev/null || true
+          if [ -d "gh-pages/start-mode/history" ]; then
+            echo "Found existing start-mode history, copying and limiting to last 5 reports..."
+            cp -r gh-pages/start-mode/history/* allure-results/history/ 2>/dev/null || true
             
             # Cleanup to keep only last 5 reports
             cd allure-results/history
@@ -242,7 +242,7 @@ jobs:
         with:
           gh_pages: gh-pages
           allure_results: allure-results
-          allure_history: allure-history
+          allure_history: allure-history-start-mode
           keep_reports: 5
 
       - name: Publish test report
@@ -251,7 +251,8 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
-          publish_dir: allure-history
+          publish_dir: allure-history-start-mode
+          destination_dir: start-mode
           force_orphan: false
           enable_jekyll: false
 
