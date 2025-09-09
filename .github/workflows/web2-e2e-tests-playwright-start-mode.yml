@@ -186,6 +186,9 @@ jobs:
     
     runs-on: ubuntu-latest
     if: always()
+    concurrency:
+      group: publish-allure-reports
+      cancel-in-progress: false
     permissions:
       contents: write
       actions: read
@@ -206,6 +209,7 @@ jobs:
         with:
           ref: gh-pages
           path: gh-pages
+          fetch-depth: 0
 
       - name: Copy existing history and limit to last 5 reports
         if: always()
@@ -248,4 +252,6 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: allure-history
+          force_orphan: false
+          enable_jekyll: false
 
