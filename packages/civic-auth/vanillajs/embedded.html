@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My App with Civic Auth</title>
+    <title>Civic Auth - Embedded Mode</title>
     <style>
         body { 
             font-family: sans-serif; 
@@ -46,21 +46,34 @@
             border-radius: 4px;
             min-height: 400px;
         }
+        .back-link {
+            color: #007bff;
+            text-decoration: none;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
-    <h1>My App</h1>
+    <a href="index.html" class="back-link">← Back to Main Page</a>
+    
+    <h1>Civic Auth - Embedded Mode</h1>
     
     <div id="userInfo" class="user-info">
         <div>👋 Welcome, <span id="userName" class="user-name"></span>!</div>
     </div>
     
     <div class="controls">
-        <a href="embedded.html" style="display: inline-block; padding: 10px 15px; font-size: 16px; text-decoration: none; margin-right: 10px; border: none; border-radius: 4px; background-color: #28a745; color: white;">Try Embedded Mode</a>
-        <button id="loginModalButton">Sign In (Modal)</button>
+        <button id="loginButton">Sign In (Embedded)</button>
         <button id="logoutButton">Sign Out</button>
     </div>
 
-    <script type="module" src="main.js"></script>
+    <!-- Container for embedded authentication -->
+    <div id="authContainer"></div>
+
+    <script type="module" src="embedded.js"></script>
 </body>
-</html> 
+</html>

@@ -3,8 +3,6 @@ import { CivicAuth, AuthenticationEvents, AuthEvent } from '@civic/auth/vanillaj
 let authClient;
 let events;
 
-// Helper function to ensure URL ends with trailing slash
-
 // UI Helper functions
 const showUserInfo = (user) => {
     console.log("showUserInfo", user);
@@ -34,6 +32,12 @@ const initializeAuth = async () => {
             console.error("Logout failed:", error);
         });
 
+        events.on(AuthEvent.SIGN_IN_COMPLETE, () => {
+           console.log("Sign in complete");
+           window.location.reload();
+        });
+      
+
         authClient = await CivicAuth.create({
             clientId: import.meta.env.VITE_CLIENT_ID,
             // Auth server is not required for production
@@ -44,7 +48,7 @@ const initializeAuth = async () => {
         // Check if user is already authenticated
         const isAuthenticated = await authClient.isAuthenticated();
         if (isAuthenticated) {
-            const  user  = await authClient.getCurrentUser();
+            const user = await authClient.getCurrentUser();
             showUserInfo(user);
             console.log("User already authenticated:", user);
         }
@@ -53,14 +57,16 @@ const initializeAuth = async () => {
     }
 };
 
-// Sign in with modal
-document.getElementById("loginModalButton").addEventListener("click", async () => {
+// Sign in with embedded iframe
+document.getElementById("loginButton").addEventListener("click", async () => {
     try {
-        // Reinitialize with modal mode
+        // Reinitialize with embedded mode
         authClient = await CivicAuth.create({
             clientId: import.meta.env.VITE_CLIENT_ID,
             // Auth server is not required for production
             oauthServerBaseUrl: import.meta.env.VITE_AUTH_SERVER,
+            targetContainerElement: document.getElementById("authContainer"),
+            iframeDisplayMode: "embedded",
             events: events,
         });
         
@@ -83,4 +89,4 @@ document.getElementById("logoutButton").addEventListener("click", async () => {
 });
 
 // Initialize on page load
-initializeAuth(); 
+initializeAuth();
