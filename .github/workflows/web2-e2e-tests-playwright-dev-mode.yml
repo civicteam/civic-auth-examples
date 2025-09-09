@@ -41,6 +41,7 @@ jobs:
       job-name: "🚀 NextJS App (Basepath)"
     secrets: inherit
 
+    # run
   job-nextjs-loginsuccessurl-example-app:
     name: "NextJS loginSuccessUrl example app"
     needs: check-version
