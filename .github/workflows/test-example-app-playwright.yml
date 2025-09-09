@@ -230,14 +230,13 @@ jobs:
         run: |
           echo "## 📊 Allure Test Reports" >> $GITHUB_STEP_SUMMARY
           echo "View detailed test reports with screenshots, videos, and traces at:" >> $GITHUB_STEP_SUMMARY
-          echo "**Dev Mode**: https://civicteam.github.io/civic-auth-examples/dev-mode/${{ github.run_number }}" >> $GITHUB_STEP_SUMMARY
-          echo "**Start Mode**: https://civicteam.github.io/civic-auth-examples/start-mode/${{ github.run_number }}" >> $GITHUB_STEP_SUMMARY
+          echo "**https://civicteam.github.io/civic-auth-examples/${{ github.run_number }}**" >> $GITHUB_STEP_SUMMARY
 
       # Upload Allure Results for Publishing Job
       - name: Upload Allure Results for Publishing
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: allure-results-${{ steps.project-id.outputs.project-id }}-${{ inputs.browser }}-${{ github.run_number }}-${{ github.workflow }}
+          name: allure-results-${{ steps.project-id.outputs.project-id }}-${{ inputs.browser }}-${{ github.run_number }}-${{ github.job }}
           path: packages/e2e/allure-results/
           retention-days: 5 

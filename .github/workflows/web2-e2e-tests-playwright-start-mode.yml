@@ -234,7 +234,6 @@ jobs:
           gh_pages: gh-pages
           allure_results: allure-results
           allure_history: allure-history
-          keep_reports: 5
 
       - name: Publish test report
         if: always()
