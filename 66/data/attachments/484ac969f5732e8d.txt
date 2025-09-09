@@ -1,0 +1,14 @@
+Email slot count: 1
+Checking URL: https://auth-dev.civic.com/login/activity-indicator.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/assets/email.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiMGNmYTUxYTgtMTA4Yi00YjQ1LTgzZGUtNTVkNGUyMjFkNGJiIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjEwLjAtYmV0YS4xMSJ9&client_id=demo-client-1&source_system_id=N6nZjbdgJxKdKriz9fFB7zgkVNHxtqihYp7zyaACTzW&scope=openid+profile+email+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&flow_id=oauth-login-451e8a01-0d70-4733-be8a-0a5e0f7c6452, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/email?loginFlowId=70e813f4-d6ff-4e84-93fc-71368e98db66&client_id=demo-client-1&source_system_id=N6nZjbdgJxKdKriz9fFB7zgkVNHxtqihYp7zyaACTzW&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=541630%40simulator.amazonses.com&_rsc=nhjcn, hasLoginFlowId: true, isEmailEndpoint: true, isVerifyEndpoint: false
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=70e813f4-d6ff-4e84-93fc-71368e98db66&client_id=demo-client-1&source_system_id=N6nZjbdgJxKdKriz9fFB7zgkVNHxtqihYp7zyaACTzW&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=541630%40simulator.amazonses.com&_rsc=nhjcn
+Extracted loginFlowId: 70e813f4-d6ff-4e84-93fc-71368e98db66
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: 70e813f4-d6ff-4e84-93fc-71368e98db66
+Found verification code for loginFlowId 70e813f4-d6ff-4e84-93fc-71368e98db66: 772349
+Database disconnected
+Retrieved verification code: 772349 for loginFlowId: 70e813f4-d6ff-4e84-93fc-71368e98db66
