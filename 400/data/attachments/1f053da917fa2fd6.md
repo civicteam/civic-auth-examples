@@ -1,0 +1,66 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [active]:
+    - generic [ref=e6] [cursor=pointer]:
+      - button "Open Next.js Dev Tools" [ref=e7] [cursor=pointer]:
+        - img [ref=e8] [cursor=pointer]
+      - generic [ref=e13] [cursor=pointer]:
+        - button "Open issues overlay" [ref=e14] [cursor=pointer]:
+          - generic [ref=e15] [cursor=pointer]:
+            - generic [ref=e16] [cursor=pointer]: "2"
+            - generic [ref=e17] [cursor=pointer]: "3"
+          - generic [ref=e18] [cursor=pointer]:
+            - text: Issue
+            - generic [ref=e19] [cursor=pointer]: s
+        - button "Collapse issues badge" [ref=e20] [cursor=pointer]:
+          - img [ref=e21] [cursor=pointer]
+    - generic [ref=e25]:
+      - generic [ref=e26]:
+        - generic [ref=e27]:
+          - navigation [ref=e28]:
+            - button "previous" [disabled] [ref=e29]:
+              - img "previous" [ref=e30]
+            - generic [ref=e32]:
+              - generic [ref=e33]: 1/
+              - generic [ref=e34]: "3"
+            - button "next" [ref=e35] [cursor=pointer]:
+              - img "next" [ref=e36] [cursor=pointer]
+          - img
+        - generic [ref=e38]:
+          - link "Next.js 15.3.1 (stale) Webpack" [ref=e39]:
+            - /url: https://nextjs.org/docs/messages/version-staleness
+            - img [ref=e40]
+            - generic "There is a newer version (15.5.2) available, upgrade recommended!" [ref=e42]: Next.js 15.3.1 (stale)
+            - generic [ref=e43]: Webpack
+          - img
+      - generic [ref=e44]:
+        - dialog "Console Error" [ref=e45]:
+          - generic [ref=e47]:
+            - generic [ref=e49]:
+              - generic [ref=e50]:
+                - generic [ref=e52]: Console Error
+                - generic [ref=e53]:
+                  - button "Copy Stack Trace" [ref=e54] [cursor=pointer]:
+                    - img [ref=e55] [cursor=pointer]
+                  - button "No related documentation found" [disabled] [ref=e57]:
+                    - img [ref=e58]
+                  - link "Learn more about enabling Node.js inspector for server code with Chrome DevTools" [ref=e60]:
+                    - /url: https://nextjs.org/docs/app/building-your-application/configuring/debugging#server-side-code
+                    - img [ref=e61]
+              - paragraph [ref=e73]: "<CivicNextAuthProvider> is an async Client Component. Only Server Components can be async at the moment. This error is often caused by accidentally adding `'use client'` to a module that was originally written for the server."
+            - generic [ref=e75]:
+              - generic [ref=e76]: "1"
+              - generic [ref=e77]: "2"
+        - contentinfo [ref=e78]:
+          - region "Error feedback" [ref=e79]:
+            - paragraph [ref=e80]:
+              - link "Was this helpful?" [ref=e81]:
+                - /url: https://nextjs.org/telemetry#error-feedback
+            - button "Mark as helpful" [ref=e82] [cursor=pointer]:
+              - img [ref=e83] [cursor=pointer]
+            - button "Mark as not helpful" [ref=e86] [cursor=pointer]:
+              - img [ref=e87] [cursor=pointer]
+  - 'heading "Application error: a client-side exception has occurred while loading localhost (see the browser console for more information)." [level=2] [ref=e91]'
+```
