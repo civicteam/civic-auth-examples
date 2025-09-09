@@ -1,0 +1,67 @@
+[
+  {
+    "name": "🚀 NextJS App (Login)",
+    "messageRegex": ".*NextJS.*(?!.*BasePath|.*LoginSuccessUrl).*",
+    "matchedStatuses": ["failed", "broken", "passed", "skipped"]
+  },
+  {
+    "name": "🚀 NextJS App (Basepath)",
+    "messageRegex": ".*NextJS.*BasePath.*",
+    "matchedStatuses": ["failed", "broken", "passed", "skipped"]
+  },
+  {
+    "name": "🚀 NextJS App (LoginSuccessUrl)",
+    "messageRegex": ".*NextJS.*LoginSuccessUrl.*",
+    "matchedStatuses": ["failed", "broken", "passed", "skipped"]
+  },
+  {
+    "name": "⚛️ ReactJS App", 
+    "messageRegex": ".*ReactJS.*",
+    "matchedStatuses": ["failed", "broken", "passed", "skipped"]
+  },
+  {
+    "name": "🛠️ Express Server (Login + Email)",
+    "messageRegex": ".*Express.*(?!.*LoginSuccessUrl).*",
+    "matchedStatuses": ["failed", "broken", "passed", "skipped"]
+  },
+  {
+    "name": "🛠️ Express Server (LoginSuccessUrl)",
+    "messageRegex": ".*Express.*LoginSuccessUrl.*",
+    "matchedStatuses": ["failed", "broken", "passed", "skipped"]
+  },
+  {
+    "name": "⚡ Fastify Server (Login + Email)",
+    "messageRegex": ".*Fastify.*(?!.*LoginSuccessUrl).*",
+    "matchedStatuses": ["failed", "broken", "passed", "skipped"]
+  },
+  {
+    "name": "⚡ Fastify Server (LoginSuccessUrl)",
+    "messageRegex": ".*Fastify.*LoginSuccessUrl.*",
+    "matchedStatuses": ["failed", "broken", "passed", "skipped"]
+  },
+  {
+    "name": "🔥 Hono Server (Login + Email)",
+    "messageRegex": ".*Hono.*(?!.*LoginSuccessUrl).*",
+    "matchedStatuses": ["failed", "broken", "passed", "skipped"]
+  },
+  {
+    "name": "🔥 Hono Server (LoginSuccessUrl)",
+    "messageRegex": ".*Hono.*LoginSuccessUrl.*",
+    "matchedStatuses": ["failed", "broken", "passed", "skipped"]
+  },
+  {
+    "name": "📦 VanillaJS App",
+    "messageRegex": ".*VanillaJS.*",
+    "matchedStatuses": ["failed", "broken", "passed", "skipped"]
+  },
+  {
+    "name": "🔗 Solana Web3",
+    "messageRegex": ".*(Solana|Next14|Next15|Vite).*wallet.*",
+    "matchedStatuses": ["failed", "broken", "passed", "skipped"]
+  },
+  {
+    "name": "💰 Wagmi Web3",
+    "messageRegex": ".*Wagmi.*",
+    "matchedStatuses": ["failed", "broken", "passed", "skipped"]
+  }
+]
