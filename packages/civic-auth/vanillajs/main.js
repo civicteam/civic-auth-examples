@@ -44,35 +44,14 @@ const initializeAuth = async () => {
         // Check if user is already authenticated
         const isAuthenticated = await authClient.isAuthenticated();
         if (isAuthenticated) {
-            const { user } = await authClient.getCurrentUser();
-            showUserInfo({user});
+            const  user  = await authClient.getCurrentUser();
+            showUserInfo(user);
             console.log("User already authenticated:", user);
         }
     } catch (error) {
         console.error("Failed to initialize auth:", error);
     }
 };
-
-// Sign in with embedded iframe
-document.getElementById("loginButton").addEventListener("click", async () => {
-    try {
-        // Reinitialize with embedded mode
-        authClient = await CivicAuth.create({
-            clientId: import.meta.env.VITE_CLIENT_ID,
-            // Auth server is not required for production
-            oauthServerBaseUrl: import.meta.env.VITE_AUTH_SERVER,
-            targetContainerElement: document.getElementById("authContainer"),
-            iframeDisplayMode: "embedded",
-            events: events,
-        });
-        
-        const { user } = await authClient.startAuthentication();
-        showUserInfo(user);
-        console.log("Authentication successful:", user);
-    } catch (error) {
-        console.error("Authentication failed:", error);
-    }
-});
 
 // Sign in with modal
 document.getElementById("loginModalButton").addEventListener("click", async () => {

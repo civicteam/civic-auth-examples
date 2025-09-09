@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Civic Auth - Embedded Mode</title>
+    <style>
+        body { 
+            font-family: sans-serif; 
+            margin: 20px; 
+        }
+        button { 
+            padding: 10px 15px; 
+            font-size: 16px; 
+            cursor: pointer; 
+            margin-right: 10px; 
+            border: none; 
+            border-radius: 4px; 
+            background-color: #6c757d; 
+            color: white; 
+        }
+        button:hover { 
+            opacity: 0.8; 
+        }
+        .controls { 
+            margin-bottom: 20px; 
+        }
+        .user-info {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 4px;
+            padding: 15px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        .user-info.show {
+            display: block;
+        }
+        .user-name {
+            font-weight: bold;
+            color: #155724;
+        }
+        #authContainer {
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            min-height: 400px;
+        }
+        .back-link {
+            color: #007bff;
+            text-decoration: none;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-link">← Back to Main Page</a>
+    
+    <h1>Civic Auth - Embedded Mode</h1>
+    
+    <div id="userInfo" class="user-info">
+        <div>👋 Welcome, <span id="userName" class="user-name"></span>!</div>
+    </div>
+    
+    <div class="controls">
+        <button id="loginButton">Sign In (Embedded)</button>
+        <button id="logoutButton">Sign Out</button>
+    </div>
+
+    <!-- Container for embedded authentication -->
+    <div id="authContainer"></div>
+
+    <script type="module" src="embedded.js"></script>
+</body>
+</html>

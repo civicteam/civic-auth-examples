@@ -1,4 +1,6 @@
 import { defineConfig, devices } from '@playwright/test';
+import { readFileSync } from 'fs';
+import { join } from 'path';
 
 /**
  * Read environment variables from file.
@@ -7,6 +9,36 @@ import { defineConfig, devices } from '@playwright/test';
 // import dotenv from 'dotenv';
 // import path from 'path';
 // dotenv.config({ path: path.resolve(__dirname, '.env') });
+
+/**
+ * Get the Civic Auth version from the installed package
+ */
+function getCivicAuthVersion(): string {
+  try {
+    // Try to read from a test app's node_modules first
+    const paths = [
+      '../civic-auth/nextjs/node_modules/@civic/auth/package.json',
+      '../civic-auth/reactjs/node_modules/@civic/auth/package.json',
+      '../../node_modules/@civic/auth/package.json',
+      '../../../node_modules/@civic/auth/package.json'
+    ];
+    
+    for (const path of paths) {
+      try {
+        const packagePath = join(__dirname, path);
+        const packageJson = JSON.parse(readFileSync(packagePath, 'utf8'));
+        return packageJson.version;
+      } catch (error) {
+        // Continue to next path
+      }
+    }
+    
+    // Fallback to environment variable or default
+    return process.env.CIVIC_AUTH_VERSION || 'Latest';
+  } catch (error) {
+    return 'Latest';
+  }
+}
 
 /**
  * See https://playwright.dev/docs/test-configuration.
@@ -27,7 +59,15 @@ export default defineConfig({
     ['allure-playwright', { 
       outputFolder: process.env.ALLURE_RESULTS_DIR || 'allure-results',
       detail: true,
-      suiteTitle: false 
+      suiteTitle: false,
+      environmentInfo: {
+        'Test Environment': 'Development',
+        'Civic Auth Version': getCivicAuthVersion(),
+        'Report URL': 'https://civicteam.github.io/civic-auth-examples/',
+        'GitHub Workflow': process.env.GITHUB_WORKFLOW || 'Local Run',
+        'Run ID': process.env.GITHUB_RUN_ID || 'N/A'
+      },
+      categoriesPath: './allure-categories.json'
     }]
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
@@ -51,18 +91,26 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-      name: 'chromium',
+      name: 'Civic Auth Applications - Chromium',
       use: { ...devices['Desktop Chrome'] },
     },
 
     {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
+      name: 'Civic Auth Applications - Firefox',
+      use: { 
+        ...devices['Desktop Firefox'],
+        // Firefox also needs to ignore HTTPS errors for cross-origin auth server communication
+        ignoreHTTPSErrors: true,
+      },
     },
 
     {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
+      name: 'Civic Auth Applications - WebKit',
+      use: { 
+        ...devices['Desktop Safari'],
+        // WebKit is stricter about cross-origin frame access and HTTPS errors
+        ignoreHTTPSErrors: true,
+      },
     },
 
     /* Test against mobile viewports. */

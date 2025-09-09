@@ -28,6 +28,7 @@ const config = {
   clientId: process.env.CLIENT_ID!,
   // oauthServer is not necessary for production.
   oauthServer: process.env.AUTH_SERVER || 'https://auth.civic.com/oauth',
+  loginSuccessUrl: process.env.LOGIN_SUCCESS_URL,
   redirectUrl: `http://localhost:${PORT}/auth/callback`,
   postLogoutRedirectUrl: `http://localhost:${PORT}/`,
 };
@@ -87,9 +88,9 @@ fastify.addHook('preHandler', async (request, reply) => {
   request.civicAuth = new CivicAuth(request.storage, config);
 });
 
-// Auth middleware for /admin routes
+// Auth middleware for /admin routes and /customSuccessRoute
 fastify.addHook('preHandler', async (request, reply) => {
-  if (!request.url.includes('/admin')) return;
+  if (!request.url.includes('/admin') && !request.url.includes('/customSuccessRoute')) return;
 
   if (!request.civicAuth.isLoggedIn()) {
     return reply.status(401).send({ error: 'Unauthorized' });
@@ -112,7 +113,8 @@ fastify.get<{
     await request.civicAuth.resolveOAuthAccessCode(code, state);
     fastify.log.info('OAuth code resolved successfully');
 
-    return reply.redirect('/admin/hello');
+    const redirectUrl = config.loginSuccessUrl || '/admin/hello';
+    return reply.redirect(redirectUrl);
   } catch (error) {
     fastify.log.error('Callback error:', error);
     return reply.status(500).send({ 
@@ -130,6 +132,24 @@ fastify.get('/admin/hello', async (request, reply) => {
       <html>
         <body>
           <h1>Hello, ${user?.name}!</h1>
+          <button onclick="window.location.href='/auth/logout'">Logout</button>
+        </body>
+      </html>
+    `;
+  } catch (error) {
+    fastify.log.error('Failed to get user info', error);
+  }
+});
+
+fastify.get('/customSuccessRoute', async (request, reply) => {
+  try {
+    const user = await request.civicAuth.getUser();
+    reply.type('text/html');
+    return `
+      <html>
+        <body>
+          <h1>Hello, ${user?.name}!</h1>
+          <p>Custom success route</p>
           <button onclick="window.location.href='/auth/logout'">Logout</button>
         </body>
       </html>

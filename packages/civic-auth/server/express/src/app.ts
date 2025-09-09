@@ -27,6 +27,7 @@ const config = {
   // oauthServer is not necessary for production.
   oauthServer: process.env.AUTH_SERVER || 'https://auth.civic.com/oauth',
   redirectUrl: `http://localhost:${PORT}/auth/callback`,
+  loginSuccessUrl: process.env.LOGIN_SUCCESS_URL,
   postLogoutRedirectUrl: `http://localhost:${PORT}/`,
 };
 
@@ -75,7 +76,8 @@ app.get("/auth/callback", async (req: Request, res: Response) => {
   const { code, state } = req.query as { code: string; state: string };
 
   await req.civicAuth.resolveOAuthAccessCode(code, state);
-  res.redirect("/admin/hello");
+  const redirectUrl = config.loginSuccessUrl || "/admin/hello";
+  res.redirect(redirectUrl);
 });
 
 const authMiddleware = async (
@@ -88,6 +90,7 @@ const authMiddleware = async (
 };
 
 app.use("/admin", authMiddleware);
+app.use("/customSuccessRoute", authMiddleware);
 
 app.get("/admin/hello", async (req: Request, res: Response) => {
   const user = await req.civicAuth.getUser();
@@ -96,6 +99,20 @@ app.get("/admin/hello", async (req: Request, res: Response) => {
     <html>
       <body>
         <h1>Hello, ${user?.name}!</h1>
+        <button onclick="window.location.href='/auth/logout'">Logout</button>
+      </body>
+    </html>
+  `);
+});
+
+app.get("/customSuccessRoute", async (req: Request, res: Response) => {
+  const user = await req.civicAuth.getUser();
+  res.setHeader("Content-Type", "text/html");
+  res.send(`
+    <html>
+      <body>
+        <h1>Hello, ${user?.name}!</h1>
+        <p>Custom success route</p>
         <button onclick="window.location.href='/auth/logout'">Logout</button>
       </body>
     </html>
