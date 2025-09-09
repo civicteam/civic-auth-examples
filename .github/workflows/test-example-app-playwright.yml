@@ -238,6 +238,6 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: allure-results-${{ steps.project-id.outputs.project-id }}-${{ inputs.browser }}-${{ github.run_number }}-${{ github.job }}
+          name: allure-results-${{ steps.project-id.outputs.project-id }}-${{ inputs.browser }}-${{ github.run_number }}-${{ github.workflow }}
           path: packages/e2e/allure-results/
           retention-days: 5 
