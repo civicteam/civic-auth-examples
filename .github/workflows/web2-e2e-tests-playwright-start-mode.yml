@@ -27,6 +27,7 @@ jobs:
       dev-command: "yarn start"
       browser: webkit
       job-name: "🚀 NextJS App (Login + Email)"
+      workflow-identifier: "start-mode"
     secrets: inherit
 
   # disabled because of basepath bug https://civicteam.atlassian.net/browse/TECH-2609
@@ -68,6 +69,7 @@ jobs:
       dev-command: "yarn start:loginSuccessUrl"
       browser: webkit
       job-name: "🛠️ Express Server (LoginSuccessUrl)"
+      workflow-identifier: "start-mode"
     secrets: inherit
 
   job-fastify-loginsuccessurl-example-app:
@@ -81,6 +83,7 @@ jobs:
       dev-command: "yarn start:loginSuccessUrl"
       browser: webkit
       job-name: "⚡ Fastify Server (LoginSuccessUrl)"
+      workflow-identifier: "start-mode"
     secrets: inherit
 
   job-hono-loginsuccessurl-example-app:
@@ -94,6 +97,7 @@ jobs:
       dev-command: "yarn start:loginSuccessUrl"
       browser: webkit
       job-name: "🔥 Hono Server (LoginSuccessUrl)"
+      workflow-identifier: "start-mode"
     secrets: inherit
 
   job-reactjs-example-app:
@@ -106,6 +110,7 @@ jobs:
       dev-command: "yarn start"
       browser: webkit
       job-name: "⚛️ ReactJS App (Login + Email)"
+      workflow-identifier: "start-mode"
     secrets: inherit
 
   job-express-example-app:
@@ -118,6 +123,7 @@ jobs:
       dev-command: "yarn start"
       browser: webkit
       job-name: "🛠️ Express Server (Login + Email)"
+      workflow-identifier: "start-mode"
     secrets: inherit
 
   job-fastify-example-app:
@@ -130,6 +136,7 @@ jobs:
       dev-command: "yarn start"
       browser: webkit
       job-name: "⚡ Fastify Server (Login + Email)"
+      workflow-identifier: "start-mode"
     secrets: inherit
 
   job-hono-example-app:
@@ -142,6 +149,7 @@ jobs:
       dev-command: "yarn start"
       browser: webkit
       job-name: "🔥 Hono Server (Login + Email)"
+      workflow-identifier: "start-mode"
     secrets: inherit
 
   job-vanillajs-example-app:
@@ -154,6 +162,7 @@ jobs:
       dev-command: "yarn start"
       browser: webkit
       job-name: "📦 VanillaJS App (Login + Email)"
+      workflow-identifier: "start-mode"
     secrets: inherit
 
   # job-vanillajs-modal-example-app:
@@ -244,6 +253,7 @@ jobs:
           gh_pages: gh-pages
           allure_results: allure-results
           allure_history: allure-history
+          keep_reports: 5
 
       - name: Publish test report
         if: always()
