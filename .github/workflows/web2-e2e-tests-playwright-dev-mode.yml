@@ -209,7 +209,11 @@ jobs:
           # Ensure allure-results directory exists
           mkdir -p allure-results/
           
-          if [ -d "gh-pages/allure-report/history" ]; then
+          if [ -d "gh-pages/last-history" ]; then
+            echo "Found history in gh-pages/last-history"
+            cp -r gh-pages/last-history/* allure-results/history/
+            echo "History copied successfully from last-history"
+          elif [ -d "gh-pages/allure-report/history" ]; then
             echo "Found history in gh-pages/allure-report/history"
             cp -r gh-pages/allure-report/history allure-results/
             echo "History copied successfully from allure-report"
@@ -228,6 +232,8 @@ jobs:
           
           echo "Final allure-results contents:"
           ls -la allure-results/
+          echo "Contents of allure-results/history:"
+          ls -la allure-results/history/ || echo "No history directory"
 
       - name: Build test report
         if: always()
