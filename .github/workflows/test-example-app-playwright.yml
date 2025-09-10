@@ -25,10 +25,10 @@ on:
         required: false
         type: string
         default: "Test Job"
-      workflow-identifier:
-        required: false
-        type: string
-        default: "Test Workflow"
+      # workflow-identifier:
+      #   required: false
+      #   type: string
+      #   default: "Test Workflow"
     secrets:
       CLIENT_ID:
         required: true
