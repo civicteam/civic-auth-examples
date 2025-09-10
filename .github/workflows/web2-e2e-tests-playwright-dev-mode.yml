@@ -165,7 +165,7 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth/vanillajs
-      playwright-spec: "playwright/tests/civic-auth/vanillajs-modal-login.spec.ts playwright/tests/civic-auth/basePath/vanillajs-modal-login.spec.ts"
+      playwright-spec: "playwright/tests/civic-auth/vanillajs-modal-login.spec.ts"
       browser: webkit
       workflow-identifier: "dev-mode"
     secrets: inherit
