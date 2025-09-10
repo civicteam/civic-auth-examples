@@ -26,7 +26,6 @@ jobs:
       playwright-spec: "playwright/tests/civic-auth/nextjs-login.spec.ts playwright/tests/civic-auth/email/nextjs-email-verification.spec.ts"
       browser: webkit
       job-name: "🚀 NextJS App (Login + Email)"
-      workflow-identifier: "dev-mode"
     secrets: inherit
 
   job-nextjs-basepath-example-app:
@@ -40,7 +39,6 @@ jobs:
       dev-command: "yarn dev:subpath"
       browser: webkit
       job-name: "🚀 NextJS App (Basepath)"
-      workflow-identifier: "dev-mode"
     secrets: inherit
 
   job-nextjs-loginsuccessurl-example-app:
@@ -54,7 +52,6 @@ jobs:
       dev-command: "yarn dev:loginSuccessUrl"
       browser: webkit
       job-name: "🚀 NextJS App (LoginSuccessUrl)"
-      workflow-identifier: "dev-mode"
     secrets: inherit
 
   job-express-loginsuccessurl-example-app:
@@ -68,7 +65,6 @@ jobs:
       dev-command: "yarn dev:loginSuccessUrl"
       browser: webkit
       job-name: "🛠️ Express Server (LoginSuccessUrl)"
-      workflow-identifier: "dev-mode"
     secrets: inherit
 
   job-fastify-loginsuccessurl-example-app:
@@ -82,7 +78,6 @@ jobs:
       dev-command: "yarn dev:loginSuccessUrl"
       browser: webkit
       job-name: "⚡ Fastify Server (LoginSuccessUrl)"
-      workflow-identifier: "dev-mode"
     secrets: inherit
 
   job-hono-loginsuccessurl-example-app:
@@ -96,7 +91,6 @@ jobs:
       dev-command: "yarn dev:loginSuccessUrl"
       browser: webkit
       job-name: "🔥 Hono Server (LoginSuccessUrl)"
-      workflow-identifier: "dev-mode"
     secrets: inherit
 
   job-reactjs-example-app:
@@ -108,7 +102,6 @@ jobs:
       playwright-spec: "playwright/tests/civic-auth/reactjs-login.spec.ts playwright/tests/civic-auth/email/reactjs-email-verification.spec.ts"
       browser: webkit
       job-name: "⚛️ ReactJS App (Login + Email)"
-      workflow-identifier: "dev-mode"
     secrets: inherit
 
   job-express-example-app:
@@ -120,7 +113,6 @@ jobs:
       playwright-spec: "playwright/tests/civic-auth/express-login.spec.ts playwright/tests/civic-auth/email/express-email-verification.spec.ts"
       browser: webkit
       job-name: "🛠️ Express Server (Login + Email)"
-      workflow-identifier: "dev-mode"
     secrets: inherit
 
   job-fastify-example-app:
@@ -132,7 +124,6 @@ jobs:
       playwright-spec: "playwright/tests/civic-auth/fastify-login.spec.ts playwright/tests/civic-auth/email/fastify-email-verification.spec.ts"
       browser: webkit
       job-name: "⚡ Fastify Server (Login + Email)"
-      workflow-identifier: "dev-mode"
     secrets: inherit
 
   job-hono-example-app:
@@ -144,7 +135,6 @@ jobs:
       playwright-spec: "playwright/tests/civic-auth/hono-login.spec.ts playwright/tests/civic-auth/email/hono-email-verification.spec.ts"
       browser: webkit
       job-name: "🔥 Hono Server (Login + Email)"
-      workflow-identifier: "dev-mode"
     secrets: inherit
 
   job-vanillajs-example-app:
@@ -156,7 +146,6 @@ jobs:
       playwright-spec: "playwright/tests/civic-auth/vanillajs-login.spec.ts playwright/tests/civic-auth/email/vanillajs-email-verification.spec.ts"
       browser: webkit
       job-name: "📦 VanillaJS App (Login + Email)"
-      workflow-identifier: "dev-mode"
     secrets: inherit
 
   # job-vanillajs-modal-example-app:
@@ -249,11 +238,11 @@ jobs:
           allure_history: allure-history
           keep_reports: 5
 
-      - name: Publish test report
-        if: always()
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
-          publish_dir: allure-history
+      # - name: Publish test report
+      #   if: always()
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_branch: gh-pages
+      #     publish_dir: allure-history
 
