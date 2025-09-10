@@ -3,12 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My App with Civic Auth</title>
+    <title>Civic Auth VanillaJS SPA Example</title>
     <style>
-        body { 
-            font-family: sans-serif; 
-            margin: 20px; 
+        body { font-family: sans-serif; margin: 20px; }
+        .status-item { 
+            margin-top: 5px; 
+            padding: 8px 12px; 
+            border: 1px solid transparent; 
+            border-radius: 4px; 
+            font-size: 14px;
+            display: inline-block;
+            min-width: 200px;
         }
+        .success { border-color: green; color: green; background-color: #e6ffe6; }
+        .error { border-color: red; color: red; background-color: #ffe6e6; }
+        .processing { border-color: orange; color: orange; background-color: #fff3cd; }
+        .ready { border-color: #6c757d; color: #6c757d; background-color: #f8f9fa; }
         button { 
             padding: 10px 15px; 
             font-size: 16px; 
@@ -17,50 +27,86 @@
             border: none; 
             border-radius: 4px; 
             background-color: #6c757d; 
-            color: white; 
+            color: white;
+            min-width: 200px;
         }
-        button:hover { 
-            opacity: 0.8; 
-        }
-        .controls { 
-            margin-bottom: 20px; 
-        }
-        .user-info {
-            background-color: #d4edda;
-            border: 1px solid #c3e6cb;
-            border-radius: 4px;
-            padding: 15px;
-            margin-bottom: 20px;
-            display: none;
-        }
-        .user-info.show {
-            display: block;
-        }
-        .user-name {
-            font-weight: bold;
-            color: #155724;
-        }
-        #authContainer {
-            margin-top: 20px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            min-height: 400px;
-        }
+        button:hover { opacity: 0.8; }
+        button:disabled { background-color: #6c757d; cursor: not-allowed; }
+        .controls { margin-bottom: 20px; }
+        /* Default embedded styling - will be overridden by library for modal mode */
+      
     </style>
 </head>
 <body>
-    <h1>My App</h1>
+    <h1>Civic Auth VanillaJS SPA Example</h1>
     
-    <div id="userInfo" class="user-info">
-        <div>👋 Welcome, <span id="userName" class="user-name"></span>!</div>
+    <div style="background: #e7f3ff; border: 1px solid #b6d7ff; padding: 10px; border-radius: 4px; margin-bottom: 20px; font-size: 14px;">
+        📚 <strong>Documentation:</strong> 
+        <a href="https://docs.civic.com/auth/client-libraries/vanillajs" target="_blank">VanillaJS Client Library</a>
     </div>
     
     <div class="controls">
-        <a href="embedded.html" style="display: inline-block; padding: 10px 15px; font-size: 16px; text-decoration: none; margin-right: 10px; border: none; border-radius: 4px; background-color: #28a745; color: white;">Try Embedded Mode</a>
-        <button id="loginModalButton">Sign In (Modal)</button>
-        <button id="logoutButton">Sign Out</button>
+        <div style="margin-bottom: 15px;">
+            <button id="startAuthButton" data-testid="vanilla-js-sign-in-button">Start Iframe Auth (Embedded)</button>
+            <button id="logoutEmbeddedButton" data-testid="vanilla-js-logout-embedded-button" style="display:none;">Logout Embedded</button>
+            <div id="embeddedStatus" class="status-item" data-testid="vanilla-js-embedded-status">Embedded: Ready</div>
+        </div>
+        
+        <div style="margin-bottom: 15px;">
+            <button id="startAuthModalButton" data-testid="vanilla-js-modal-button">Start Iframe Auth (Modal)</button>
+            <button id="logoutModalButton" data-testid="vanilla-js-logout-modal-button" style="display:none;">Logout Modal</button>
+            <div id="modalStatus" class="status-item" data-testid="vanilla-js-modal-status">Modal: Ready</div>
+        </div>
+        
+        <div style="margin-bottom: 15px;">
+            <button id="startNewTabButton" data-testid="vanilla-js-new-tab-button">Start New Tab Auth (Popup)</button>
+            <button id="logoutNewTabButton" data-testid="vanilla-js-logout-new-tab-button" style="display:none;">Logout New Tab</button>
+            <div id="newTabStatus" class="status-item" data-testid="vanilla-js-new-tab-status">New Tab: Ready</div>
+        </div>
+        
+        <div style="margin-bottom: 15px;">
+            <button id="startRedirectButton" data-testid="vanilla-js-redirect-button">Start SPA Redirect Auth</button>
+            <button id="logoutRedirectButton" data-testid="vanilla-js-logout-redirect-button" style="display:none;">Logout Redirect</button>
+            <div id="redirectStatus" class="status-item" data-testid="vanilla-js-redirect-status">Redirect: Ready</div>
+        </div>
+        
+        <div style="margin-bottom: 15px;">
+            <button id="startBackendButton" data-testid="vanilla-js-backend-button">Start Backend Redirect Auth</button>
+            <button id="logoutBackendButton" data-testid="vanilla-js-logout-backend-button" style="display:none;">Logout Backend</button>
+            <div id="backendStatus" class="status-item" data-testid="vanilla-js-backend-status">Backend: Ready</div>
+        </div>
+        
+        <div style="margin-bottom: 15px;">
+            <button id="startBackendIframeButton" data-testid="vanilla-js-backend-iframe-button">Start Backend Iframe Auth</button>
+            <button id="logoutBackendIframeButton" data-testid="vanilla-js-logout-backend-iframe-button" style="display:none;">Logout Backend Iframe</button>
+            <div id="backendIframeStatus" class="status-item" data-testid="vanilla-js-backend-iframe-status">Backend Iframe: Ready</div>
+        </div>
+        
+        <div style="margin-bottom: 15px; border-top: 1px solid #ddd; padding-top: 15px;">
+            <button id="testCookiesButton" data-testid="vanilla-js-test-cookies-button">Test Backend Session</button>
+            <button id="debugCookiesButton" data-testid="vanilla-js-debug-cookies-button">Debug Cookies</button>
+            <button id="refreshTokensButton" data-testid="vanilla-js-refresh-button">Refresh Tokens</button>
+            <button id="testRefreshRestoreButton" data-testid="vanilla-js-test-refresh-restore-button">Test Refresh Token Restore (SPA)</button>
+            <button id="logoutButton" data-testid="vanilla-js-logout-button" style="display:none;">Logout All</button>
+        </div>
     </div>
 
+    <div id="generalStatus" data-testid="vanilla-js-general-status" style="margin-top: 20px; padding: 10px; border: 1px solid #ddd; border-radius: 4px; background-color: #f8f9fa;">
+        <strong>General Status:</strong> <span id="generalStatusText">Initializing...</span>
+    </div>
+
+    <div id="iframeContainer" data-testid="vanilla-js-iframe-container"></div>
+
+    <!-- 
+        For this example, we are using relative paths to import the SDK components.
+        In a real application, you would typically import from the installed package:
+        import { CivicAuth, AuthenticationEvents, AuthEvent } from '@civic/civic-auth-client/vanillajs'; 
+        or similar, depending on your build setup and how the package is structured.
+        Make sure your local server can resolve these paths if you run this HTML directly.
+        You might need to adjust the path based on where you run the HTML file from relative to the civic-auth-client package.
+        For instance, if you serve from the root of the `civic-auth` monorepo, the path might be:
+        '../../packages/civic-auth-client/src/vanillajs/iframe/CivicAuth.js'
+    -->
     <script type="module" src="main.js"></script>
 </body>
 </html> 
