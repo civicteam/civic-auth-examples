@@ -89,10 +89,10 @@
   dependencies:
     jose "^5.9.4"
 
-"@civic/auth@0.10.0-beta.12":
-  version "0.10.0-beta.11"
-  resolved "https://registry.yarnpkg.com/@civic/auth/-/auth-0.10.0-beta.11.tgz#c2156b66e779ab9ff3b748f504e967ac6e91c220"
-  integrity sha512-iAuOqizk5/xNEKeOXaf+bMYxoAH5Gq4kB0kkF8W5mNJiuiRFMpA+gd/u0r7zjo4sf9LA9PvFd/ds7Qa7313y8w==
+"@civic/auth@*":
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/@civic/auth/-/auth-0.10.0.tgz#fbf69babda9ebbb3db759394629a8807fb5c9ecc"
+  integrity sha512-TwIQxljmXK5LHsomCxtprILzjynaVaXEjcsuH8YFhUdYiuoFsfVzG2eJ8m1zkzJFFNM6US2OXdLOcMmN2V11zg==
   dependencies:
     "@civic/auth-verify" "0.0.4"
     "@civic/iframe-resizer" "0.1.2"
