@@ -214,17 +214,17 @@ jobs:
         if: always()
         run: |
           echo "Copying existing history to test results directory..."
-          if [ -d "allure-report/history" ]; then
-            echo "Found history in allure-report/history"
-            cp -r allure-report/history allure-results/
+          if [ -d "gh-pages/allure-report/history" ]; then
+            echo "Found history in gh-pages/allure-report/history"
+            cp -r gh-pages/allure-report/history allure-results/
             echo "History copied successfully"
-          elif [ -d "allure-results/history" ]; then
-            echo "Found history in allure-results/history"
-            cp -r allure-results/history allure-results/
+          elif [ -d "gh-pages/allure-results/history" ]; then
+            echo "Found history in gh-pages/allure-results/history"
+            cp -r gh-pages/allure-results/history allure-results/
             echo "History copied successfully"
-          elif [ -d "allure-history/history" ]; then
+          elif [ -d "gh-pages/allure-history/history" ]; then
             echo "Found history in gh-pages/allure-history/history"
-            cp -r allure-history/history allure-results/
+            cp -r gh-pages/allure-history/history allure-results/
             echo "History copied successfully"
           else
             echo "No existing history found, will create new"
@@ -239,11 +239,12 @@ jobs:
           allure_results: allure-results
           allure_history: allure-history
           keep_reports: 5
-          
+
+      # Only publish here in order to avoid errors with publishing to gh-pages branch
       - name: Publish test report
         if: always()
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
-          publish_dir: allure-report 
+          publish_dir: allure-report
