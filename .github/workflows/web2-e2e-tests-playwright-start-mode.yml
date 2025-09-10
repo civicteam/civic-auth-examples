@@ -247,7 +247,6 @@ jobs:
           keep_reports: 5
 
       # Only publish here in order to avoid errors with publishing to gh-pages branch
-      # we still upload all results of dev and start mode bc they all have the allure-results-* pattern
       - name: Publish test report
         if: always()
         uses: peaceiris/actions-gh-pages@v3
