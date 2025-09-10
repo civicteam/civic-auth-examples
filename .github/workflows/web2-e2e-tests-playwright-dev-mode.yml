@@ -214,31 +214,22 @@ jobs:
         if: always()
         run: |
           echo "Copying existing history to test results directory..."
-          echo "Contents of gh-pages directory:"
-          ls -la gh-pages/ || echo "No gh-pages directory found"
-          
-          # Ensure allure-results directory exists
-          mkdir -p allure-results/
-          
           if [ -d "gh-pages/allure-report/history" ]; then
             echo "Found history in gh-pages/allure-report/history"
             cp -r gh-pages/allure-report/history allure-results/
-            echo "History copied successfully from allure-report"
+            echo "History copied successfully"
           elif [ -d "gh-pages/allure-results/history" ]; then
             echo "Found history in gh-pages/allure-results/history"
             cp -r gh-pages/allure-results/history allure-results/
-            echo "History copied successfully from allure-results"
+            echo "History copied successfully"
           elif [ -d "gh-pages/allure-history/history" ]; then
             echo "Found history in gh-pages/allure-history/history"
             cp -r gh-pages/allure-history/history allure-results/
-            echo "History copied successfully from allure-history"
+            echo "History copied successfully"
           else
             echo "No existing history found, will create new"
             mkdir -p allure-results/history
           fi
-          
-          echo "Final allure-results contents:"
-          ls -la allure-results/
 
       - name: Build test report
         if: always()
