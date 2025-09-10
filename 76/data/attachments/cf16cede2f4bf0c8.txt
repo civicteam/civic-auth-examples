@@ -1,0 +1,14 @@
+Email slot count: 1
+Checking URL: https://auth-dev.civic.com/oauth/analytics, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/assets/email.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/activity-indicator.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiNTcwMDljNjUtNWY1Ny00NzIxLWI1NGQtY2YxZjdmMDIzMTBkIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjEwLjAtYmV0YS4xMiJ9&client_id=demo-client-1&source_system_id=j848n0gDqNwp5xPq8lRV1XnH2W_MIIkWX2r0nn2eTnc&scope=openid+profile+email+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&flow_id=oauth-login-2f4b385a-30b6-4051-b598-595fe546e799, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/email?loginFlowId=12e86207-6b99-4767-879b-6090a43d2f4b&client_id=demo-client-1&source_system_id=j848n0gDqNwp5xPq8lRV1XnH2W_MIIkWX2r0nn2eTnc&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=486439%40simulator.amazonses.com&_rsc=aulwr, hasLoginFlowId: true, isEmailEndpoint: true, isVerifyEndpoint: false
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=12e86207-6b99-4767-879b-6090a43d2f4b&client_id=demo-client-1&source_system_id=j848n0gDqNwp5xPq8lRV1XnH2W_MIIkWX2r0nn2eTnc&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=486439%40simulator.amazonses.com&_rsc=aulwr
+Extracted loginFlowId: 12e86207-6b99-4767-879b-6090a43d2f4b
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: 12e86207-6b99-4767-879b-6090a43d2f4b
+Found verification code for loginFlowId 12e86207-6b99-4767-879b-6090a43d2f4b: 360857
+Database disconnected
+Retrieved verification code: 360857 for loginFlowId: 12e86207-6b99-4767-879b-6090a43d2f4b
