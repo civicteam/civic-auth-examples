@@ -1,0 +1,8 @@
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=cafccc30-2154-4ee1-88ea-65d573a03bfe&client_id=demo-client-1&source_system_id=6F_En5X-TdoHJTaRF8bHF6EjUzAWjBKYYcLl1cmbxEY&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fauth%2Fcallback&emailAddress=836135%40simulator.amazonses.com&_rsc=1copv
+Extracted loginFlowId: cafccc30-2154-4ee1-88ea-65d573a03bfe
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: cafccc30-2154-4ee1-88ea-65d573a03bfe
+Found verification code for loginFlowId cafccc30-2154-4ee1-88ea-65d573a03bfe: 174937
+Database disconnected
+Retrieved verification code: 174937 for loginFlowId: cafccc30-2154-4ee1-88ea-65d573a03bfe
