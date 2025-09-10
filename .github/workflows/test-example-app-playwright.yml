@@ -25,6 +25,10 @@ on:
         required: false
         type: string
         default: "Test Job"
+      workflow-identifier:
+        required: false
+        type: string
+        default: "Test Workflow"
     secrets:
       CLIENT_ID:
         required: true
@@ -97,12 +101,26 @@ jobs:
 
       - name: Yarn install with latest Civic packages
         run: |
-          # Function to get the absolute latest version (stable or beta, whichever is newer)
+          # Function to get the latest stable version (prefer stable over pre-release)
           get_latest_version() {
             local pkg=$1
             echo "Checking versions for $pkg..." >&2
             
-            # Get all versions and find the absolute latest
+            # First try to get the latest stable version (no pre-release identifiers)
+            local stable_version=$(npm view $pkg versions --json 2>/dev/null | \
+              grep -o '"[^"]*"' | \
+              sed 's/"//g' | \
+              grep -v -E '\-(alpha|beta|rc|dev|pre)' | \
+              sort -V | \
+              tail -n 1)
+            
+            if [ -n "$stable_version" ] && [ "$stable_version" != "null" ]; then
+              echo "Latest stable version found: $stable_version" >&2
+              echo "${pkg}@${stable_version}"
+              return
+            fi
+            
+            # Fallback to absolute latest if no stable version found
             local latest_version=$(npm view $pkg versions --json 2>/dev/null | \
               grep -o '"[^"]*"' | \
               sed 's/"//g' | \
@@ -113,7 +131,7 @@ jobs:
               echo "Could not determine latest version for $pkg, using latest tag" >&2
               echo "${pkg}@latest"
             else
-              echo "Latest version found: $latest_version" >&2
+              echo "Latest version found (including pre-release): $latest_version" >&2
               echo "${pkg}@${latest_version}"
             fi
           }
@@ -218,11 +236,10 @@ jobs:
           echo "View detailed test reports with screenshots, videos, and traces at:" >> $GITHUB_STEP_SUMMARY
           echo "**https://civicteam.github.io/civic-auth-examples/${{ github.run_number }}**" >> $GITHUB_STEP_SUMMARY
 
-      # Upload Allure Results for Publishing Job
       - name: Upload Allure Results for Publishing
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: allure-results-${{ steps.project-id.outputs.project-id }}-${{ inputs.browser }}-${{ github.run_number }}-${{ github.job }}
+          name: allure-results-${{ steps.project-id.outputs.project-id }}-${{ inputs.browser }}-${{ github.run_number }}-${{ github.job }}-${{ github.run_attempt }}
           path: packages/e2e/allure-results/
           retention-days: 5 

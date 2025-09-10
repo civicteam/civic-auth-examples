@@ -27,6 +27,7 @@ jobs:
       dev-command: "yarn start"
       browser: webkit
       job-name: "🚀 NextJS App (Login + Email)"
+      workflow-identifier: "start-mode"
     secrets: inherit
 
   # disabled because of basepath bug https://civicteam.atlassian.net/browse/TECH-2609
@@ -68,6 +69,7 @@ jobs:
       dev-command: "yarn start:loginSuccessUrl"
       browser: webkit
       job-name: "🛠️ Express Server (LoginSuccessUrl)"
+      workflow-identifier: "start-mode"
     secrets: inherit
 
   job-fastify-loginsuccessurl-example-app:
@@ -81,6 +83,7 @@ jobs:
       dev-command: "yarn start:loginSuccessUrl"
       browser: webkit
       job-name: "⚡ Fastify Server (LoginSuccessUrl)"
+      workflow-identifier: "start-mode"
     secrets: inherit
 
   job-hono-loginsuccessurl-example-app:
@@ -94,6 +97,7 @@ jobs:
       dev-command: "yarn start:loginSuccessUrl"
       browser: webkit
       job-name: "🔥 Hono Server (LoginSuccessUrl)"
+      workflow-identifier: "start-mode"
     secrets: inherit
 
   job-reactjs-example-app:
@@ -106,6 +110,7 @@ jobs:
       dev-command: "yarn start"
       browser: webkit
       job-name: "⚛️ ReactJS App (Login + Email)"
+      workflow-identifier: "start-mode"
     secrets: inherit
 
   job-express-example-app:
@@ -118,6 +123,7 @@ jobs:
       dev-command: "yarn start"
       browser: webkit
       job-name: "🛠️ Express Server (Login + Email)"
+      workflow-identifier: "start-mode"
     secrets: inherit
 
   job-fastify-example-app:
@@ -130,6 +136,7 @@ jobs:
       dev-command: "yarn start"
       browser: webkit
       job-name: "⚡ Fastify Server (Login + Email)"
+      workflow-identifier: "start-mode"
     secrets: inherit
 
   job-hono-example-app:
@@ -142,6 +149,7 @@ jobs:
       dev-command: "yarn start"
       browser: webkit
       job-name: "🔥 Hono Server (Login + Email)"
+      workflow-identifier: "start-mode"
     secrets: inherit
 
   job-vanillajs-example-app:
@@ -154,6 +162,7 @@ jobs:
       dev-command: "yarn start"
       browser: webkit
       job-name: "📦 VanillaJS App (Login + Email)"
+      workflow-identifier: "start-mode"
     secrets: inherit
 
   # job-vanillajs-modal-example-app:
@@ -207,29 +216,25 @@ jobs:
           ref: gh-pages
           path: gh-pages
 
-      - name: Copy existing history and limit to last 5 reports
+      - name: Copy existing history to test results
         if: always()
         run: |
-          echo "Setting up allure results directory..."
-          mkdir -p allure-results/history
-          
-          # Copy existing history if it exists
-          if [ -d "gh-pages/allure-history/history" ]; then
-            echo "Found existing history, copying and limiting to last 5 reports..."
-            cp -r gh-pages/allure-history/history/* allure-results/history/ 2>/dev/null || true
-            
-            # Cleanup to keep only last 5 reports
-            cd allure-results/history
-            echo "Current history files:"
-            ls -la *.json 2>/dev/null || echo "No history files found"
-            
-            # Keep only the 5 most recent history files
-            ls -t *.json 2>/dev/null | tail -n +6 | xargs rm -f || true
-            echo "After cleanup (keeping last 5):"
-            ls -la *.json 2>/dev/null || echo "No history files found"
-            cd ../..
+          echo "Copying existing history to test results directory..."
+          if [ -d "allure-report/history" ]; then
+            echo "Found history in allure-report/history"
+            cp -r allure-report/history allure-results/
+            echo "History copied successfully"
+          elif [ -d "allure-results/history" ]; then
+            echo "Found history in allure-results/history"
+            cp -r allure-results/history allure-results/
+            echo "History copied successfully"
+          elif [ -d "allure-history/history" ]; then
+            echo "Found history in allure-history/history"
+            cp -r allure-history/history allure-results/
+            echo "History copied successfully"
           else
-            echo "No existing history found, starting fresh"
+            echo "No existing history found, will create new"
+            mkdir -p allure-results/history
           fi
 
       - name: Build test report
@@ -240,12 +245,4 @@ jobs:
           allure_results: allure-results
           allure_history: allure-history
           keep_reports: 5
-
-      - name: Publish test report
-        if: always()
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
-          publish_dir: allure-history
 
