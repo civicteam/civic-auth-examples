@@ -5,9 +5,9 @@ test.describe('Civic Auth Applications', () => {
   test.beforeEach(async ({ page }) => {
     await allure.epic('Civic Auth Applications');
     await allure.suite('Login');
-    await allure.feature('VanillaJS Modal Login');
+    await allure.feature('VanillaJS Embedded Login');
   });
-  test('should complete full modal login and logout flow', async ({ page }) => {
+  test('should complete full modal login and logout flow', async ({ page, browserName }) => {
     // Open the app home page
     await page.goto('http://localhost:3000');
 
@@ -15,33 +15,42 @@ test.describe('Civic Auth Applications', () => {
     await page.waitForLoadState('networkidle');
     await page.waitForLoadState('domcontentloaded');
     
-    // Click the modal sign in button
-    await page.click('#loginModalButton');
+    // Click "Try Embedded Mode" to navigate to the embedded page
+    await page.click('#startAuthModalButton');
     
-    // Wait for iframe to appear and load
+    // Wait for the embedded page to load
+    await page.waitForLoadState('networkidle');
+    
+    // Click the embedded sign in button
+    // await page.click('#loginButton');
+    
+    // Chrome/Firefox use iframe flow
+    // Wait for iframe to appear and load inside the authContainer
     await page.waitForSelector('#civic-auth-iframe', { timeout: 30000 });
     
-    // Click log in with dummy in the iframe (modal mode still uses iframe)
+    // Click log in with dummy in the iframe
     const frame = page.frameLocator('#civic-auth-iframe');
     
     // Try to wait for the frame to load completely first
     await frame.locator('body').waitFor({ timeout: 30000 });
     
-    await frame.locator('[data-testid="civic-login-oidc-button-dummy"]').click({ timeout: 20000 });
+    // Look for the dummy button
+    const dummyButton = frame.locator('[data-testid="civic-login-oidc-button-dummy"]');
+    await dummyButton.click({ timeout: 20000 });
 
     // Wait for the iframe to be gone (indicating login is complete)
     await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 20000 });
-    
-    // Confirm logged in state by checking for user info display
-    await expect(page.locator('#userInfo')).toHaveClass(/show/, { timeout: 20000 });
-    await expect(page.locator('#userName')).toBeVisible({ timeout: 20000 });
-    await expect(page.locator('#userName')).not.toBeEmpty();
 
-    // Click the logout button
-    await page.locator('#logoutButton').click();
+    // Check that we're logged in by verifying the embedded status shows success
+    await expect(page.locator('[data-testid="vanilla-js-modal-status"]')).toContainText('Ghost');
+    await expect(page.locator('[data-testid="vanilla-js-modal-status"]')).toHaveClass(/success/);
     
-    // Confirm successful logout
-    await expect(page.locator('#userInfo')).not.toHaveClass(/show/);
+    // Now logout using the "Logout All" button
+    await page.click('[data-testid="vanilla-js-logout-button"]');
+    
+    // Verify we're logged out by checking the embedded status returns to "Ready"
+    await expect(page.locator('[data-testid="vanilla-js-modal-status"]')).toContainText('Ready');
+    await expect(page.locator('[data-testid="vanilla-js-modal-status"]')).toHaveClass(/ready/);
     
     // Verify token refresh fails after logout
     const response = await page.request.post('https://auth-dev.civic.com/oauth/token', {

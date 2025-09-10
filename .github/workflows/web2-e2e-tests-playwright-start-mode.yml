@@ -165,15 +165,16 @@ jobs:
       workflow-identifier: "start-mode"
     secrets: inherit
 
-  # job-vanillajs-modal-example-app:
-  #   name: "VanillaJS Modal example app"
-  #   needs: check-version
-  #   uses: ./.github/workflows/test-example-app-playwright.yml
-  #   with:
-  #     project-path: packages/civic-auth/vanillajs
-  #     playwright-spec: "playwright/tests/civic-auth/vanillajs-modal-login.spec.ts playwright/tests/civic-auth/basePath/vanillajs-modal-login.spec.ts"
-  #     browser: webkit
-  #   secrets: inherit
+  job-vanillajs-modal-example-app:
+    name: "VanillaJS Modal example app"
+    needs: check-version
+    uses: ./.github/workflows/test-example-app-playwright.yml
+    with:
+      project-path: packages/civic-auth/vanillajs
+      playwright-spec: "playwright/tests/civic-auth/vanillajs-modal-login.spec.ts playwright/tests/civic-auth/basePath/vanillajs-modal-login.spec.ts"
+      browser: webkit
+      workflow-identifier: "start-mode"
+    secrets: inherit
 
 
 
@@ -191,6 +192,7 @@ jobs:
       job-fastify-example-app,
       job-hono-example-app,
       job-vanillajs-example-app,
+      job-vanillajs-modal-example-app,
     ]
     
     runs-on: ubuntu-latest

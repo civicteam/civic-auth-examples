@@ -16,20 +16,20 @@ test.describe('Civic Auth Applications', () => {
     await page.waitForLoadState('domcontentloaded');
     
     // Click "Try Embedded Mode" to navigate to the embedded page
-    await page.click('a[href="embedded.html"]');
+    await page.click('#startAuthButton');
     
     // Wait for the embedded page to load
     await page.waitForLoadState('networkidle');
     
     // Click the embedded sign in button
-    await page.click('#loginButton');
+    // await page.click('#loginButton');
     
     // Chrome/Firefox use iframe flow
     // Wait for iframe to appear and load inside the authContainer
-    await page.waitForSelector('#authContainer #civic-auth-iframe', { timeout: 30000 });
+    await page.waitForSelector('#iframeContainer #civic-auth-iframe', { timeout: 30000 });
     
     // Click log in with dummy in the iframe
-    const frame = page.frameLocator('#authContainer #civic-auth-iframe');
+    const frame = page.frameLocator('#iframeContainer #civic-auth-iframe');
     
     // Try to wait for the frame to load completely first
     await frame.locator('body').waitFor({ timeout: 30000 });
@@ -39,11 +39,18 @@ test.describe('Civic Auth Applications', () => {
     await dummyButton.click({ timeout: 20000 });
 
     // Wait for the iframe to be gone (indicating login is complete)
-    await page.waitForSelector('#authContainer #civic-auth-iframe', { state: 'hidden', timeout: 20000 });
+    await page.waitForSelector('#iframeContainer #civic-auth-iframe', { state: 'hidden', timeout: 20000 });
+
+    // Check that we're logged in by verifying the embedded status shows success
+    await expect(page.locator('[data-testid="vanilla-js-embedded-status"]')).toContainText('Ghost');
+    await expect(page.locator('[data-testid="vanilla-js-embedded-status"]')).toHaveClass(/success/);
     
-    // Confirm logged in state by checking for user info display
-    await page.getByRole('button', { name: 'Sign Out' }).click();
-    await page.getByRole('button', { name: 'Sign In' });
+    // Now logout using the "Logout All" button
+    await page.click('[data-testid="vanilla-js-logout-button"]');
+    
+    // Verify we're logged out by checking the embedded status returns to "Ready"
+    await expect(page.locator('[data-testid="vanilla-js-embedded-status"]')).toContainText('Ready');
+    await expect(page.locator('[data-testid="vanilla-js-embedded-status"]')).toHaveClass(/ready/);
     
     // Verify token refresh fails after logout
     const response = await page.request.post('https://auth-dev.civic.com/oauth/token', {
