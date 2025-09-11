@@ -1,0 +1,15 @@
+Email slot count: 1
+Checking URL: https://auth-dev.civic.com/login/assets/discord.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/activity-indicator.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/assets/email.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiNDhmMmNhZWItNDA4ZC00NDJmLTgzYzItMjE5NjIwMDFiY2JmIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6ImVtYmVkZGVkIiwiZnJhbWV3b3JrIjoidmFuaWxsYWpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMC1iZXRhLjIifQ%3D%3D&nonce=1234567890&client_id=demo-client-1&source_system_id=FmFA6Al3_xFI3dF4BQSHlrkVLCWpFsmu6ozon5d8QXr&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&flow_id=oauth-login-9001ed8d-1073-4f5b-8194-1103da3e46b4, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/email?loginFlowId=1ca2cd6b-6088-44c1-a81d-8c4d5986c416&client_id=demo-client-1&nonce=1234567890&source_system_id=FmFA6Al3_xFI3dF4BQSHlrkVLCWpFsmu6ozon5d8QXr&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=980302%40simulator.amazonses.com&_rsc=17921, hasLoginFlowId: true, isEmailEndpoint: true, isVerifyEndpoint: false
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=1ca2cd6b-6088-44c1-a81d-8c4d5986c416&client_id=demo-client-1&nonce=1234567890&source_system_id=FmFA6Al3_xFI3dF4BQSHlrkVLCWpFsmu6ozon5d8QXr&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=980302%40simulator.amazonses.com&_rsc=17921
+Extracted loginFlowId: 1ca2cd6b-6088-44c1-a81d-8c4d5986c416
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: 1ca2cd6b-6088-44c1-a81d-8c4d5986c416
+Found verification code for loginFlowId 1ca2cd6b-6088-44c1-a81d-8c4d5986c416: 479096
+Database disconnected
+Retrieved verification code: 479096 for loginFlowId: 1ca2cd6b-6088-44c1-a81d-8c4d5986c416
