@@ -95,7 +95,7 @@ test.describe('Civic Auth Applications', () => {
     await page.waitForTimeout(500);
 
     // Click the logout button with more robust handling
-    const logoutButton = page.locator('#civic-dropdown-container').locator('button:has-text("Logout")');
+    const logoutButton = page.locator('#civic-dropdown-container').locator('button:has-text("Log out")');
     
     // Try multiple approaches to handle Firefox dropdown timing issues
     try {

@@ -215,7 +215,7 @@ test.describe('Solana Next.js 15 Turbopack No Wallet Adapter Email Verification 
       await emailDropdownButton.click();
       
       // Click the logout button
-      const logoutButton = page.locator('#civic-dropdown-container').locator('button:has-text("Logout")');
+      const logoutButton = page.locator('#civic-dropdown-container').locator('button:has-text("Log out")');
       await expect(logoutButton).toBeVisible();
       await logoutButton.click();
       

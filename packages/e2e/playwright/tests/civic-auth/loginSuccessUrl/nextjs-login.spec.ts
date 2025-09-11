@@ -68,7 +68,7 @@ test.describe('Civic Auth Applications', () => {
     await page.locator('#civic-dropdown-container').locator('button:has-text("Ghost")').click();
 
     // Click the logout button
-    await page.locator('#civic-dropdown-container').locator('button:has-text("Logout")').click();
+    await page.locator('#civic-dropdown-container').locator('button:has-text("Log out")').click();
     
     // Confirm successful logout
     await expect(page.locator('#civic-dropdown-container').locator('button:has-text("Ghost")')).not.toBeVisible();
