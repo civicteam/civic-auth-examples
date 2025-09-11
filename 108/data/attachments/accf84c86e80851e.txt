@@ -1,0 +1,13 @@
+Email slot count: 1
+Checking URL: https://auth-dev.civic.com/login/assets/email.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/activity-indicator.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiMDJiZmM3YjItZmEzNy00ZjRkLWEyNTYtMzFlYzVlZmU2NzI0IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6ImVtYmVkZGVkIiwiZnJhbWV3b3JrIjoidmFuaWxsYWpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMC1iZXRhLjIifQ%3D%3D&nonce=1234567890&client_id=demo-client-1&source_system_id=pOZvekgJOqq4-TB6GY3ZH_0pui8sLxtBFpwHuKxAP2v&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&flow_id=oauth-login-ac502326-c9d8-4233-9f63-5f7e1152c791, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/email?loginFlowId=a26e4921-3651-4db5-909f-4b4adda15ddb&client_id=demo-client-1&nonce=1234567890&source_system_id=pOZvekgJOqq4-TB6GY3ZH_0pui8sLxtBFpwHuKxAP2v&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=212155%40simulator.amazonses.com&_rsc=124wp, hasLoginFlowId: true, isEmailEndpoint: true, isVerifyEndpoint: false
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=a26e4921-3651-4db5-909f-4b4adda15ddb&client_id=demo-client-1&nonce=1234567890&source_system_id=pOZvekgJOqq4-TB6GY3ZH_0pui8sLxtBFpwHuKxAP2v&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=212155%40simulator.amazonses.com&_rsc=124wp
+Extracted loginFlowId: a26e4921-3651-4db5-909f-4b4adda15ddb
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: a26e4921-3651-4db5-909f-4b4adda15ddb
+Found verification code for loginFlowId a26e4921-3651-4db5-909f-4b4adda15ddb: 598292
+Database disconnected
+Retrieved verification code: 598292 for loginFlowId: a26e4921-3651-4db5-909f-4b4adda15ddb
