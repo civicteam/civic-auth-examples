@@ -102,7 +102,7 @@ test.describe('Civic Auth Applications', () => {
     await ghostButton.click();
 
     // Click the logout button
-    const logoutButton = page.locator('#civic-dropdown-container').locator('button:has-text("Logout")');
+    const logoutButton = page.locator('#civic-dropdown-container').locator('button:has-text("Log out")');
     await logoutButton.waitFor({ state: 'visible', timeout: 10000 });
     await logoutButton.click();
     

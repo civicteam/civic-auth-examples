@@ -183,7 +183,7 @@ test.describe('Civic Auth Applications', () => {
       await emailDropdownButton.click();
 
       // Click the logout button
-      const logoutButton = page.locator('#civic-dropdown-container').locator('button:has-text("Logout")');
+      const logoutButton = page.locator('#civic-dropdown-container').locator('button:has-text("Log out")');
       await expect(logoutButton).toBeVisible();
       await logoutButton.click();
       
