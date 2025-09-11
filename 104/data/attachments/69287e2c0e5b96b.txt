@@ -1,0 +1,16 @@
+Email slot count: 1
+Checking URL: https://auth-dev.civic.com/login/assets/facebook.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/assets/x.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/activity-indicator.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/assets/email.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiNDU0ZmQwNzctMDMxMC00ZTUwLTg1NzktN2Q3ZGM3ZTY2MTJmIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6ImVtYmVkZGVkIiwiZnJhbWV3b3JrIjoidmFuaWxsYWpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTAuMCJ9&nonce=1234567890&client_id=demo-client-1&source_system_id=3sluyBc7dsWe93XS7NO6MPEYLpq299zI8Rid253WQ6M&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&flow_id=oauth-login-c5d6bcc2-d09d-48af-9b96-1acc51a0317b, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/email?loginFlowId=7001f089-f016-4082-a1d7-61be52ba5e56&client_id=demo-client-1&nonce=1234567890&source_system_id=3sluyBc7dsWe93XS7NO6MPEYLpq299zI8Rid253WQ6M&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=189356%40simulator.amazonses.com&_rsc=ufoz4, hasLoginFlowId: true, isEmailEndpoint: true, isVerifyEndpoint: false
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=7001f089-f016-4082-a1d7-61be52ba5e56&client_id=demo-client-1&nonce=1234567890&source_system_id=3sluyBc7dsWe93XS7NO6MPEYLpq299zI8Rid253WQ6M&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=189356%40simulator.amazonses.com&_rsc=ufoz4
+Extracted loginFlowId: 7001f089-f016-4082-a1d7-61be52ba5e56
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: 7001f089-f016-4082-a1d7-61be52ba5e56
+Found verification code for loginFlowId 7001f089-f016-4082-a1d7-61be52ba5e56: 941124
+Database disconnected
+Retrieved verification code: 941124 for loginFlowId: 7001f089-f016-4082-a1d7-61be52ba5e56
