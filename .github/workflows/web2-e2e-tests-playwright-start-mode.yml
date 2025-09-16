@@ -23,10 +23,10 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth/nextjs
-      playwright-spec: "playwright/tests/civic-auth/nextjs-login.spec.ts playwright/tests/civic-auth/email/nextjs-email-verification.spec.ts"
+      playwright-spec: "playwright/tests/civic-auth/login/nextjs-login.spec.ts playwright/tests/civic-auth/email/nextjs-email-verification.spec.ts playwright/tests/civic-auth/refresh/nextjs-refresh-token.spec.ts playwright/tests/civic-auth/staleSession/nextjs-stale-session.spec.ts"
       dev-command: "yarn start"
       browser: webkit
-      job-name: "🚀 NextJS App (Login + Email)"
+      job-name: "🚀 NextJS App (Login + Email + Refresh + Stale Session)"
       workflow-identifier: "start-mode"
     secrets: inherit
 
@@ -106,7 +106,7 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth/reactjs
-      playwright-spec: "playwright/tests/civic-auth/reactjs-login.spec.ts playwright/tests/civic-auth/email/reactjs-email-verification.spec.ts"
+      playwright-spec: "playwright/tests/civic-auth/login/reactjs-login.spec.ts playwright/tests/civic-auth/email/reactjs-email-verification.spec.ts"
       dev-command: "yarn start"
       browser: webkit
       job-name: "⚛️ ReactJS App (Login + Email)"
@@ -119,7 +119,7 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth/server/express
-      playwright-spec: "playwright/tests/civic-auth/express-login.spec.ts playwright/tests/civic-auth/email/express-email-verification.spec.ts"
+      playwright-spec: "playwright/tests/civic-auth/login/express-login.spec.ts playwright/tests/civic-auth/email/express-email-verification.spec.ts"
       dev-command: "yarn start"
       browser: webkit
       job-name: "🛠️ Express Server (Login + Email)"
@@ -132,7 +132,7 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth/server/fastify
-      playwright-spec: "playwright/tests/civic-auth/fastify-login.spec.ts playwright/tests/civic-auth/email/fastify-email-verification.spec.ts"
+      playwright-spec: "playwright/tests/civic-auth/login/fastify-login.spec.ts playwright/tests/civic-auth/email/fastify-email-verification.spec.ts"
       dev-command: "yarn start"
       browser: webkit
       job-name: "⚡ Fastify Server (Login + Email)"
@@ -145,7 +145,7 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth/server/hono
-      playwright-spec: "playwright/tests/civic-auth/hono-login.spec.ts playwright/tests/civic-auth/email/hono-email-verification.spec.ts"
+      playwright-spec: "playwright/tests/civic-auth/login/hono-login.spec.ts playwright/tests/civic-auth/email/hono-email-verification.spec.ts"
       dev-command: "yarn start"
       browser: webkit
       job-name: "🔥 Hono Server (Login + Email)"
@@ -158,10 +158,10 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth/vanillajs
-      playwright-spec: "playwright/tests/civic-auth/vanillajs-login.spec.ts playwright/tests/civic-auth/email/vanillajs-email-verification.spec.ts"
+      playwright-spec: "playwright/tests/civic-auth/login/vanillajs-login.spec.ts playwright/tests/civic-auth/email/vanillajs-email-verification.spec.ts playwright/tests/civic-auth/refresh/vanillajs-refresh-token.spec.ts playwright/tests/civic-auth/staleSession/vanillajs-stale-session.spec.ts"
       dev-command: "yarn start"
       browser: webkit
-      job-name: "📦 VanillaJS App (Login + Email)"
+      job-name: "📦 VanillaJS App (Login + Email + Refresh + Stale Session)"
       workflow-identifier: "start-mode"
     secrets: inherit
 
@@ -171,8 +171,9 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth/vanillajs
-      playwright-spec: "playwright/tests/civic-auth/vanillajs-modal-login.spec.ts"
+      playwright-spec: "playwright/tests/civic-auth/login/vanillajs-modal-login.spec.ts playwright/tests/civic-auth/refresh/vanillajs-modal-refresh-token.spec.ts"
       browser: webkit
+      job-name: "📦 VanillaJS Modal App (Login + Refresh)"
       workflow-identifier: "start-mode"
     secrets: inherit
 
