@@ -1,0 +1,13 @@
+Email slot count: 1
+Checking URL: https://auth-dev.civic.com/login/activity-indicator.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/assets/email.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiZDVkZjdmN2MtYTczMC00ZThlLTg3MzUtMmIwZjRkM2I2NDZkIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6ImVtYmVkZGVkIiwiZnJhbWV3b3JrIjoidmFuaWxsYWpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMS1iZXRhLjAifQ%3D%3D&nonce=1234567890&client_id=demo-client-1&source_system_id=EufYHbnWhfKqLKopMKBCimwR6WhTL7y9VrQP2RqoYa6&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&flow_id=oauth-login-9f30e19c-e219-4243-9227-3b2fecd45a91, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/email?loginFlowId=6454911a-d15c-4173-9835-dc39cc7b258f&client_id=demo-client-1&nonce=1234567890&source_system_id=EufYHbnWhfKqLKopMKBCimwR6WhTL7y9VrQP2RqoYa6&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=855724%40simulator.amazonses.com&_rsc=tvvad, hasLoginFlowId: true, isEmailEndpoint: true, isVerifyEndpoint: false
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=6454911a-d15c-4173-9835-dc39cc7b258f&client_id=demo-client-1&nonce=1234567890&source_system_id=EufYHbnWhfKqLKopMKBCimwR6WhTL7y9VrQP2RqoYa6&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=855724%40simulator.amazonses.com&_rsc=tvvad
+Extracted loginFlowId: 6454911a-d15c-4173-9835-dc39cc7b258f
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: 6454911a-d15c-4173-9835-dc39cc7b258f
+Found verification code for loginFlowId 6454911a-d15c-4173-9835-dc39cc7b258f: 929844
+Database disconnected
+Retrieved verification code: 929844 for loginFlowId: 6454911a-d15c-4173-9835-dc39cc7b258f
