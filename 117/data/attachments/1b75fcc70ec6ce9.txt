@@ -1,0 +1,13 @@
+Email slot count: 1
+Checking URL: https://auth-dev.civic.com/login/activity-indicator.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/assets/email.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiNGVjM2E1MjMtMGNiNS00MzM5LThhMmYtZTY3NTlhYjMwZjRjIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6ImVtYmVkZGVkIiwiZnJhbWV3b3JrIjoidmFuaWxsYWpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMS1iZXRhLjAifQ%3D%3D&nonce=1234567890&client_id=demo-client-1&source_system_id=WcP-urn9Ocl6xUbo_56P3c2kvdtSmOH568FSqnZu4up&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&flow_id=oauth-login-5d91b032-2a90-411f-b40c-2bd498252b0d, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/email?loginFlowId=642c9c63-8cee-425f-9aee-c879128a15d1&client_id=demo-client-1&nonce=1234567890&source_system_id=WcP-urn9Ocl6xUbo_56P3c2kvdtSmOH568FSqnZu4up&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=445424%40simulator.amazonses.com&_rsc=xd092, hasLoginFlowId: true, isEmailEndpoint: true, isVerifyEndpoint: false
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=642c9c63-8cee-425f-9aee-c879128a15d1&client_id=demo-client-1&nonce=1234567890&source_system_id=WcP-urn9Ocl6xUbo_56P3c2kvdtSmOH568FSqnZu4up&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=445424%40simulator.amazonses.com&_rsc=xd092
+Extracted loginFlowId: 642c9c63-8cee-425f-9aee-c879128a15d1
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: 642c9c63-8cee-425f-9aee-c879128a15d1
+Found verification code for loginFlowId 642c9c63-8cee-425f-9aee-c879128a15d1: 167342
+Database disconnected
+Retrieved verification code: 167342 for loginFlowId: 642c9c63-8cee-425f-9aee-c879128a15d1
