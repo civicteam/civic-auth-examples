@@ -1,0 +1,14 @@
+Email slot count: 1
+Checking URL: https://auth-dev.civic.com/login/activity-indicator.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/assets/email.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiZjIyMzE0NmEtZmI4MC00NWNmLTk5YzItYjZjMTdjNTM2ZWJhIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjEifQ%3D%3D&client_id=demo-client-1&source_system_id=VVXuaCGR5RGV-NvWDdBg9hbEWtzCfoVgifXwmtV84Rq&scope=openid+profile+email+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&flow_id=oauth-login-7c3d867d-530d-4bd7-b88f-a4da913b5121, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/email?loginFlowId=1f9216ca-0dc1-43d1-8be6-cc019ebf55c2&client_id=demo-client-1&source_system_id=VVXuaCGR5RGV-NvWDdBg9hbEWtzCfoVgifXwmtV84Rq&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=721604%40simulator.amazonses.com&_rsc=en8eb, hasLoginFlowId: true, isEmailEndpoint: true, isVerifyEndpoint: false
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=1f9216ca-0dc1-43d1-8be6-cc019ebf55c2&client_id=demo-client-1&source_system_id=VVXuaCGR5RGV-NvWDdBg9hbEWtzCfoVgifXwmtV84Rq&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=721604%40simulator.amazonses.com&_rsc=en8eb
+Extracted loginFlowId: 1f9216ca-0dc1-43d1-8be6-cc019ebf55c2
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: 1f9216ca-0dc1-43d1-8be6-cc019ebf55c2
+Found verification code for loginFlowId 1f9216ca-0dc1-43d1-8be6-cc019ebf55c2: 757880
+Database disconnected
+Retrieved verification code: 757880 for loginFlowId: 1f9216ca-0dc1-43d1-8be6-cc019ebf55c2
