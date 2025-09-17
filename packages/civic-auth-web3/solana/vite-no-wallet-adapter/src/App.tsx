@@ -37,15 +37,23 @@ const App = () => {
   const { address } = useWallet({ type: "solana"});
 
   return (
-    <>
-      <UserButton/>
-      {address && (
-        <div>
-          <p>Wallet address: {address}</p>
-          <p>Balance: {balance !== null && balance !== undefined ? `${balance / 1e9} SOL` : "Loading..."}</p>
-        </div>
-      )}
-    </>
+    <div className="bg-black min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+      <main className="flex flex-col gap-8 items-center">
+        <h1 className="text-4xl font-bold text-center mb-8">
+          Civic Auth + Solana Wallet Example
+        </h1>
+        <p className="text-lg text-center text-gray-600 dark:text-gray-300 mb-8">
+          Vite React with no Wallet Adapter integration
+        </p>
+        <UserButton theme="dark" />
+        {address && (
+          <div className="flex flex-col gap-4 items-center">
+            <p className="text-lg">Wallet address: <span className="font-mono text-sm break-all">{address}</span></p>
+            <p className="text-lg">Balance: <span className="font-semibold">{balance !== null && balance !== undefined ? `${balance / 1e9} SOL` : "Loading..."}</span></p>
+          </div>
+        )}
+      </main>
+    </div>
   );
 };
 

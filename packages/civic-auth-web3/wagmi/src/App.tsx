@@ -74,29 +74,45 @@ const AppContent = () => {
   };
 
   return (
-    <>
-      <UserButton />
-      {userContext.user &&
-        <div>
-          {!userHasWallet(userContext) &&
-            <p><button onClick={createWallet}>Create Wallet</button></p>
-          }
-          {userHasWallet(userContext) &&
-            <>
-              <p>Wallet address: {userContext.ethereum.address}</p>
-              <p>Balance: {
-                balance?.data
-                  ? `${(BigInt(balance.data.value) / BigInt(1e18)).toString()} ${balance.data.symbol}`
-                  : 'Loading...'
-              }</p>
-              {isConnected ? <p>Wallet is connected</p> : (
-                <button onClick={connectExistingWallet}>Connect Wallet</button>
-              )}
-            </>
-          }
-        </div>
-      }
-    </>
+    <div className="min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+      <main className="flex flex-col gap-8 items-center">
+        <h1 className="text-4xl font-bold text-center mb-8">
+          Civic Auth + Ethereum Wallet Example
+        </h1>
+        <p className="text-lg text-center text-gray-600 dark:text-gray-300 mb-8">
+          Vite React with Wagmi integration
+        </p>
+        <UserButton />
+        {userContext.user &&
+          <div className="flex flex-col gap-6 items-center max-w-md w-full">
+            {!userHasWallet(userContext) &&
+              <div className="text-center">
+                <p className="text-lg mb-4">No wallet found. Create one to get started.</p>
+                <button 
+                  onClick={createWallet}
+                  className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+                >
+                  Create Wallet
+                </button>
+              </div>
+            }
+            {userHasWallet(userContext) &&
+              <div className="flex flex-col gap-4 items-center w-full">
+                <p className="text-lg">Wallet address: <span className="font-mono text-sm break-all">{userContext.ethereum.address}</span></p>
+                <p className="text-lg">Balance: <span className="font-semibold">{
+                  balance?.data
+                    ? `${(BigInt(balance.data.value) / BigInt(1e18)).toString()} ${balance.data.symbol}`
+                    : 'Loading...'
+                }</span></p>
+                {isConnected && (
+                  <p className="text-green-600 font-semibold">✓ Wallet is connected</p>
+                )}
+              </div>
+            }
+          </div>
+        }
+      </main>
+    </div>
   );
 };
 
