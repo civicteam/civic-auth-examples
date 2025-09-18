@@ -1,0 +1,13 @@
+Email slot count: 1
+Checking URL: https://auth-dev.civic.com/login/activity-indicator.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/assets/email.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiMTQwMjdhYTYtNzQ3Ny00ZWU4LThmZDEtYWExY2FlZGQzYjQzIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6ImVtYmVkZGVkIiwiZnJhbWV3b3JrIjoidmFuaWxsYWpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMi1iZXRhLjAifQ%3D%3D&nonce=1234567890&client_id=demo-client-1&source_system_id=b8-ophqT4_lOW_jPlRBqgOuMQd2bEYBYAMtjHiYvt7y&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&flow_id=oauth-login-6d2c4081-e643-49b6-aff5-6c583b0d23a1, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/email?loginFlowId=efb61963-360c-4df4-a6f9-9b022208f9e7&client_id=demo-client-1&nonce=1234567890&source_system_id=b8-ophqT4_lOW_jPlRBqgOuMQd2bEYBYAMtjHiYvt7y&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=578217%40simulator.amazonses.com&_rsc=1u3l6, hasLoginFlowId: true, isEmailEndpoint: true, isVerifyEndpoint: false
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=efb61963-360c-4df4-a6f9-9b022208f9e7&client_id=demo-client-1&nonce=1234567890&source_system_id=b8-ophqT4_lOW_jPlRBqgOuMQd2bEYBYAMtjHiYvt7y&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=578217%40simulator.amazonses.com&_rsc=1u3l6
+Extracted loginFlowId: efb61963-360c-4df4-a6f9-9b022208f9e7
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: efb61963-360c-4df4-a6f9-9b022208f9e7
+Found verification code for loginFlowId efb61963-360c-4df4-a6f9-9b022208f9e7: 939637
+Database disconnected
+Retrieved verification code: 939637 for loginFlowId: efb61963-360c-4df4-a6f9-9b022208f9e7
