@@ -23,10 +23,10 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth/nextjs
-      playwright-spec: "playwright/tests/civic-auth/login/nextjs-login.spec.ts playwright/tests/civic-auth/email/nextjs-email-verification.spec.ts playwright/tests/civic-auth/refresh/nextjs-refresh-token.spec.ts playwright/tests/civic-auth/staleSession/nextjs-stale-session.spec.ts"
+      playwright-spec: "playwright/tests/civic-auth/login/nextjs-login.spec.ts playwright/tests/civic-auth/email/nextjs-email-verification.spec.ts playwright/tests/civic-auth/refresh/nextjs-refresh-token.spec.ts playwright/tests/civic-auth/staleSession/nextjs-stale-session.spec.ts playwright/tests/civic-auth/rehydration/nextjs-session-rehydration.spec.ts"
       dev-command: "yarn start"
       browser: webkit
-      job-name: "🚀 NextJS App (Login + Email + Refresh + Stale Session)"
+      job-name: "🚀 NextJS App (Login + Email + Refresh + Stale Session + Rehydration)"
       workflow-identifier: "start-mode"
     secrets: inherit
 
@@ -158,10 +158,10 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth/vanillajs
-      playwright-spec: "playwright/tests/civic-auth/login/vanillajs-login.spec.ts playwright/tests/civic-auth/email/vanillajs-email-verification.spec.ts playwright/tests/civic-auth/refresh/vanillajs-refresh-token.spec.ts playwright/tests/civic-auth/staleSession/vanillajs-stale-session.spec.ts"
+      playwright-spec: "playwright/tests/civic-auth/login/vanillajs-login.spec.ts playwright/tests/civic-auth/email/vanillajs-email-verification.spec.ts playwright/tests/civic-auth/refresh/vanillajs-refresh-token.spec.ts playwright/tests/civic-auth/staleSession/vanillajs-stale-session.spec.ts playwright/tests/civic-auth/rehydration/vanillajs-session-rehydration.spec.ts"
       dev-command: "yarn start"
       browser: webkit
-      job-name: "📦 VanillaJS App (Login + Email + Refresh + Stale Session)"
+      job-name: "📦 VanillaJS App (Login + Email + Refresh + Stale Session + Rehydration)"
       workflow-identifier: "start-mode"
     secrets: inherit
 
