@@ -1,0 +1,19 @@
+Original tokens captured: {
+  user: '%7B%22name%22%3A%22G...',
+  access_token: 'eyJhbGciOiJSUzI1NiIs...',
+  id_token: 'eyJhbGciOiJSUzI1NiIs...',
+  refresh_token: 'QzzLI6N-O1SeAe2K-S-W...',
+  oidc_session_expires_at: '1758233158'
+}
+Tokens manipulated: deleted user, access_token, id_token; kept refresh_token; set oidc_session_expires_at to past
+Refreshed tokens: {
+  user: '%7B%22name%22%3A%22G...',
+  access_token: 'eyJhbGciOiJSUzI1NiIs...',
+  id_token: 'eyJhbGciOiJSUzI1NiIs...',
+  refresh_token: 'HoBKD1n_6j94sudl-gRh...',
+  oidc_session_expires_at: '1758233158'
+}
+✅ Refresh token has been renewed
+✅ oidc_session_expires_at has been set to future: 2025-09-18T22:05:58.000Z
+✅ user, access_token, and id_token tokens are present and renewed
+✅ User remains authenticated after token refresh
