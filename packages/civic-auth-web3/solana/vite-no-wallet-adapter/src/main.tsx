@@ -2,10 +2,7 @@ import { Buffer } from "buffer";
 import { CivicAuthProvider } from "@civic/auth-web3/react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
-// import dotenv from "dotenv";
-
-// dotenv.config();
-
+import "./index.css";
 
 globalThis.Buffer = Buffer;
 

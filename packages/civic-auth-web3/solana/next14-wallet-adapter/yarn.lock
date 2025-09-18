@@ -101,14 +101,14 @@
   dependencies:
     jose "^5.9.4"
 
-"@civic/auth-web3@0.7.3-beta.0":
-  version "0.7.3-beta.0"
-  resolved "https://registry.yarnpkg.com/@civic/auth-web3/-/auth-web3-0.7.3-beta.0.tgz#9c503685f2799e8b2ed592f1c34020e2872f145d"
-  integrity sha512-g5/eKaJ0v35mTLyaYIjdiMv/GzAhHgjSmCY7U5QwFtxMKgtuKQz21IaPGQg0SH3j8RDiCMQtsjcGFRH0qs2WWA==
+"@civic/auth-web3@0.8.0-beta.0":
+  version "0.8.0-beta.0"
+  resolved "https://registry.yarnpkg.com/@civic/auth-web3/-/auth-web3-0.8.0-beta.0.tgz#76233f6217fab4ae0d01f0fc4bb28f91fd0a8b9c"
+  integrity sha512-kpeQg1+2V1VGM2gOGJU4+i3nWUfsXMtYJEvsGwelpK8IvPEqCthc2htuMm06kdiTU93LbIhLB+QuYwPWRjVuNw==
   dependencies:
-    "@civic/auth" "0.10.0-beta.3"
+    "@civic/auth" "0.11.1"
     "@noble/hashes" "^1.5.0"
-    "@solana/wallet-adapter-base" "^0.9.23"
+    "@solana/wallet-adapter-base" "0.9.23"
     "@solana/wallet-standard-features" "^1.3.0"
     "@solana/web3.js" "^1.98.0"
     "@wallet-standard/base" "^1.1.0"
@@ -121,10 +121,10 @@
     tslib "^2.7.0"
     viem "^2.32.0"
 
-"@civic/auth@0.10.0-beta.3":
-  version "0.10.0-beta.3"
-  resolved "https://registry.yarnpkg.com/@civic/auth/-/auth-0.10.0-beta.3.tgz#d392d8c8101f53c6e2c3e7dc790b4359562a8f22"
-  integrity sha512-JlTr5HqSalIwHWVbfftwrZBuvS1fYhXmPRjx3EO9LNUrNUw0475CJlIafKfeMoqfOYuPmzkEnlyvCFqIZaeLFw==
+"@civic/auth@0.11.1":
+  version "0.11.1"
+  resolved "https://registry.yarnpkg.com/@civic/auth/-/auth-0.11.1.tgz#b0055d152b5276fff00052165a49fec5046da1e5"
+  integrity sha512-Y6UNGHSRWszXVzzoaESHGYpHaENCJ+MpJkhAzFdq8aUo6kqIgJmEedKpfcII9r7f7oMVjjdnvkBq6uI6kzeHNA==
   dependencies:
     "@civic/auth-verify" "0.0.4"
     "@civic/iframe-resizer" "0.1.2"
@@ -783,6 +783,16 @@
   integrity sha512-me3iyLGRS+0NevvL1ixzmTGro0fuJlSWSSmNVjMbfqSx+6ooqY2A5SyuTur27F+Qa2L/b7tzH3L0ojLkHC2rmw==
   dependencies:
     "@solana/wallet-adapter-react" "^0.15.36"
+
+"@solana/wallet-adapter-base@0.9.23":
+  version "0.9.23"
+  resolved "https://registry.yarnpkg.com/@solana/wallet-adapter-base/-/wallet-adapter-base-0.9.23.tgz#3b17c28afd44e173f44f658bf9700fd637e12a11"
+  integrity sha512-apqMuYwFp1jFi55NxDfvXUX2x1T0Zh07MxhZ/nCCTGys5raSfYUh82zen2BLv8BSDj/JxZ2P/s7jrQZGrX8uAw==
+  dependencies:
+    "@solana/wallet-standard-features" "^1.1.0"
+    "@wallet-standard/base" "^1.0.1"
+    "@wallet-standard/features" "^1.0.3"
+    eventemitter3 "^4.0.7"
 
 "@solana/wallet-adapter-base@^0.9.23", "@solana/wallet-adapter-base@^0.9.24":
   version "0.9.24"
