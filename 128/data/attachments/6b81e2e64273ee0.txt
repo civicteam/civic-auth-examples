@@ -1,0 +1,13 @@
+Email slot count: 1
+Checking URL: https://auth-dev.civic.com/login/assets/email.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/activity-indicator.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiZGE5OTdkZDYtYzBlMC00OGQ0LWExNjYtNWFmZmVkM2U2ZmU0IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6ImVtYmVkZGVkIiwiZnJhbWV3b3JrIjoidmFuaWxsYWpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMi1iZXRhLjAifQ%3D%3D&nonce=1234567890&client_id=demo-client-1&source_system_id=m6zJR481NyRUZzjMD_cHrmMzTrP9BBhJNqgfy2QpEQA&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&flow_id=oauth-login-6c2a04f8-26b3-4127-bd45-e21c03a5b09e, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/email?loginFlowId=a34f3c88-02ff-4c7c-8c06-af947f2a6664&client_id=demo-client-1&nonce=1234567890&source_system_id=m6zJR481NyRUZzjMD_cHrmMzTrP9BBhJNqgfy2QpEQA&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=323263%40simulator.amazonses.com&_rsc=12ik6, hasLoginFlowId: true, isEmailEndpoint: true, isVerifyEndpoint: false
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=a34f3c88-02ff-4c7c-8c06-af947f2a6664&client_id=demo-client-1&nonce=1234567890&source_system_id=m6zJR481NyRUZzjMD_cHrmMzTrP9BBhJNqgfy2QpEQA&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=323263%40simulator.amazonses.com&_rsc=12ik6
+Extracted loginFlowId: a34f3c88-02ff-4c7c-8c06-af947f2a6664
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: a34f3c88-02ff-4c7c-8c06-af947f2a6664
+Found verification code for loginFlowId a34f3c88-02ff-4c7c-8c06-af947f2a6664: 832323
+Database disconnected
+Retrieved verification code: 832323 for loginFlowId: a34f3c88-02ff-4c7c-8c06-af947f2a6664
