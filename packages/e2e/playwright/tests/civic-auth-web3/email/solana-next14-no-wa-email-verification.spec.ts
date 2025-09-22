@@ -3,13 +3,14 @@ import { allure } from 'allure-playwright';
 import { db } from '../../../../utils/database';
 import { generateUniqueEmail } from '../../../utils/email-generator';
 
-test.describe('Solana Next.js 14 No Wallet Adapter Email Verification Tests', () => {
+test.describe('Civic Auth Applications', () => {
   test.beforeEach(async ({ page }) => {
-    await allure.epic('Sample Applications');
+    await allure.epic('Civic Auth Applications');
+    await allure.suite('Email');
     await allure.feature('Solana Next.js 14 No Wallet Adapter Email Verification');
   });
 
-  test('should complete email verification flow without wallet adapter', async ({ page, browserName }) => {
+  test('should complete email verification flow', async ({ page, browserName }) => {
     await allure.story('Solana Next.js 14 No Wallet Adapter Email Code Verification Flow');
     await allure.severity('critical');
     await allure.tag('solana-nextjs14-no-wa-email-verification');
@@ -21,15 +22,21 @@ test.describe('Solana Next.js 14 No Wallet Adapter Email Verification Tests', ()
     await allure.step('Navigate to Solana Next.js 14 app home page', async () => {
       await page.goto('http://localhost:3000');
     });
-
+        
     // Wait for the page to fully load with all UI elements
     await page.waitForLoadState('networkidle');
     await page.waitForLoadState('domcontentloaded');
     
+    // Wait for the sign in button to be visible and enabled/clickable
+    const signInButton = page.getByTestId('sign-in-button');
+    await signInButton.waitFor({ state: 'visible', timeout: 30000 });
+    await expect(signInButton).toBeEnabled({ timeout: 10000 });
+    
+    // Add a small delay to ensure the button is fully interactive
+    await page.waitForTimeout(1000);
+    
     // Click the sign in button using test ID
-    await allure.step('Click sign in button', async () => {
-      await page.getByTestId('sign-in-button').click();
-    });
+    await signInButton.click();
     
     await allure.step('Handle iframe email verification flow', async () => {
       // Chrome/Firefox use iframe flow
@@ -155,26 +162,29 @@ test.describe('Solana Next.js 14 No Wallet Adapter Email Verification Tests', ()
       // Note: Verification automatically submits when 6th digit is entered
 
       // Wait for the iframe to be gone (indicating login is complete)
-      await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 20000 });
+      await page.waitForSelector('[data-testid="civic-auth-iframe-with-resizer"]', { state: 'hidden', timeout: 20000 });
     });
     
     // Confirm logged in state by checking for email in dropdown
     await allure.step('Verify login success with email', async () => {
       await expect(page.locator('#civic-dropdown-container').locator(`button:has-text("${uniqueEmail}")`)).toBeVisible({ timeout: 20000 });
+      
+      // Verify custom loginSuccessUrl is not loaded
+      await expect(page.url()).not.toContain('loginSuccessUrl');
     });
     
-    // Verify wallet address is displayed
+    // Verify wallet address is displayed (Web3 functionality)
     await allure.step('Verify wallet address', async () => {
       await expect(page.locator('text=/Wallet address: [A-Za-z0-9]{32,44}/')).toBeVisible({ timeout: 20000 });
     });
     
     // Test logout functionality
     await allure.step('Test logout functionality', async () => {
-      // Click the email dropdown to open it
+      // Click the email dropdown to open it (be more specific to avoid strict mode violation)
       const emailDropdownButton = page.locator('#civic-dropdown-container').locator(`button:has-text("${uniqueEmail}")`);
       await emailDropdownButton.click();
       
-      // Click the logout button
+      // Click the logout button (using same selector as nextjs-login.spec.ts)
       const logoutButton = page.locator('#civic-dropdown-container').locator('button:has-text("Log out")');
       await expect(logoutButton).toBeVisible();
       await logoutButton.click();

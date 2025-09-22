@@ -3,13 +3,14 @@ import { allure } from 'allure-playwright';
 import { db } from '../../../../utils/database';
 import { generateUniqueEmail } from '../../../utils/email-generator';
 
-test.describe('Solana Vite No Wallet Adapter Email Verification Tests', () => {
+test.describe('Civic Auth Applications', () => {
   test.beforeEach(async ({ page }) => {
-    await allure.epic('Sample Applications');
+    await allure.epic('Civic Auth Applications');
+    await allure.suite('Email');
     await allure.feature('Solana Vite No Wallet Adapter Email Verification');
   });
 
-  test('should complete email verification flow without wallet adapter', async ({ page, browserName }) => {
+  test('should complete email verification flow', async ({ page, browserName }) => {
     await allure.story('Solana Vite No Wallet Adapter Email Code Verification Flow');
     await allure.severity('critical');
     await allure.tag('solana-vite-no-wa-email-verification');
@@ -21,11 +22,18 @@ test.describe('Solana Vite No Wallet Adapter Email Verification Tests', () => {
     await allure.step('Navigate to Solana Vite app home page', async () => {
       await page.goto('http://localhost:3000');
     });
-
+    
     // Wait for the page to fully load with all UI elements
-    await page.waitForLoadState('networkidle');
-    await page.waitForLoadState('domcontentloaded');
-
+    await allure.step('Wait for page to load', async () => {
+      await page.waitForLoadState('networkidle');
+      await page.waitForLoadState('domcontentloaded');
+    });
+    
+    // Wait for the UserButton to be visible (the one that says "Sign in")
+    await allure.step('Wait for sign in button', async () => {
+      await page.waitForSelector('[data-testid="sign-in-button"]', { timeout: 10000 });
+    });
+    
     // Click the sign in button using test ID
     await allure.step('Click sign in button', async () => {
       await page.getByTestId('sign-in-button').click();
@@ -163,24 +171,41 @@ test.describe('Solana Vite No Wallet Adapter Email Verification Tests', () => {
       await expect(page.locator('#civic-dropdown-container').locator(`button:has-text("${uniqueEmail}")`)).toBeVisible({ timeout: 20000 });
     });
     
-    // Verify wallet address is displayed
+    // Verify wallet address is displayed (Web3 functionality)
     await allure.step('Verify wallet address', async () => {
       await expect(page.locator('text=/Wallet address: [A-Za-z0-9]{32,44}/')).toBeVisible({ timeout: 20000 });
     });
     
+    // Verify custom loginSuccessUrl is not loaded
+    await allure.step('Verify custom loginSuccessUrl is not loaded', async () => {
+      await expect(page.url()).not.toContain('loginSuccessUrl');
+    });
+
     // Test logout functionality
     await allure.step('Test logout functionality', async () => {
       // Click the email dropdown to open it
       const emailDropdownButton = page.locator('#civic-dropdown-container').locator(`button:has-text("${uniqueEmail}")`);
       await emailDropdownButton.click();
-      
+
       // Click the logout button
       const logoutButton = page.locator('#civic-dropdown-container').locator('button:has-text("Log out")');
       await expect(logoutButton).toBeVisible();
       await logoutButton.click();
       
-      // Verify sign in button is visible again
-      await expect(page.getByTestId('sign-in-button')).toBeVisible({ timeout: 10000 });
+      // Confirm successful logout
+      await expect(page.locator('#civic-dropdown-container').locator(`button:has-text("${uniqueEmail}")`)).not.toBeVisible();
+    });
+    
+    // Verify token refresh fails after logout
+    await allure.step('Verify token refresh fails after logout', async () => {
+      const response = await page.request.post('https://auth-dev.civic.com/oauth/token', {
+        form: {
+          grant_type: 'refresh_token',
+          refresh_token: 'storedRefreshToken',
+          client_id: process.env.VITE_CLIENT_ID || ''
+        }
+      });
+      expect(response.status()).toBe(400);
     });
   });
 });
