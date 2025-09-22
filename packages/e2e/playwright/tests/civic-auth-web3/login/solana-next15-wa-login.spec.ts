@@ -9,28 +9,52 @@ test.describe('Solana Next15 Wallet Adapter Login Tests', () => {
     await page.waitForLoadState('networkidle');
     await page.waitForLoadState('domcontentloaded');
     
-    // Click the select wallet button
-    await page.click('.wallet-adapter-button-trigger');
+    // Wait for and click the select wallet button
+    const selectWalletButton = page.locator('.wallet-adapter-button-trigger');
+    await selectWalletButton.waitFor({ state: 'visible', timeout: 30000 });
+    await expect(selectWalletButton).toBeEnabled({ timeout: 10000 });
+    await selectWalletButton.click();
     
-    // Click the civic wallet button
-    await page.click('button:has-text("Civic")');
+    // Wait for and click the civic wallet button
+    const civicWalletButton = page.locator('button:has-text("Civic")');
+    await civicWalletButton.waitFor({ state: 'visible', timeout: 30000 });
+    await expect(civicWalletButton).toBeEnabled({ timeout: 10000 });
+    await civicWalletButton.click();
     
-    // Click the sign in button using test ID
-    await page.getByTestId('sign-in-button').click();
+        // Wait for iframe to be present in DOM (don't care if it's visible or hidden)
+        await page.waitForSelector('#civic-auth-iframe', { state: 'attached', timeout: 30000 });
     
-    // Chrome/Firefox use iframe flow
-    // Wait for iframe to appear and load
-    await page.waitForSelector('#civic-auth-iframe', { timeout: 30000 });
-    
-    // Click log in with dummy in the iframe
-    const frame = page.frameLocator('#civic-auth-iframe');
-    
-    // Try to wait for the frame to load completely first
-    await frame.locator('body').waitFor({ timeout: 30000 });
-    
-    // Look for the dummy button
-    const dummyButton = frame.locator('[data-testid="civic-login-oidc-button-dummy"]');
-    await dummyButton.click({ timeout: 20000 });
+        // Click log in with dummy in the iframe
+        const frame = page.frameLocator('#civic-auth-iframe');
+        
+        // Try to wait for the frame to load completely first
+        await frame.locator('body').waitFor({ timeout: 30000 });
+        
+        // Wait for the login UI to fully load (not just the loading spinner)
+        try {
+          const loadingElement = frame.locator('#civic-login-app-loading');
+          const isLoadingVisible = await loadingElement.isVisible({ timeout: 5000 }).catch(() => false);
+          
+          if (isLoadingVisible) {
+            await loadingElement.waitFor({ state: 'hidden', timeout: 45000 });
+          }
+        } catch (error) {
+          // Loading element might not exist, that's ok
+        }
+        
+        // Wait for login elements to appear
+        await frame.locator('[data-testid*="civic-login"]').first().waitFor({ timeout: 30000 });
+        
+        // Look for the dummy button with extended timeout and ensure it's visible and enabled
+        const dummyButton = frame.locator('[data-testid="civic-login-oidc-button-dummy"]');
+        await dummyButton.waitFor({ state: 'visible', timeout: 30000 });
+        await expect(dummyButton).toBeEnabled({ timeout: 10000 });
+        
+        // Add a small delay to ensure button is fully interactive
+        await page.waitForTimeout(1000);
+        
+        // Click the dummy button
+        await dummyButton.click({ timeout: 20000 });
 
     // Wait for the iframe to be gone (indicating login is complete)
     await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 20000 });

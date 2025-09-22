@@ -29,6 +29,10 @@ on:
         required: false
         type: string
         default: "Test Workflow"
+      allure-parent-suite:
+        required: false
+        type: string
+        default: "Civic Auth Applications"
     secrets:
       CLIENT_ID:
         required: true
@@ -57,6 +61,7 @@ jobs:
       NEXT_PUBLIC_WALLET_API_BASE_URL: ${{ secrets.NEXT_PUBLIC_WALLET_API_BASE_URL }}
       VITE_WALLET_API_BASE_URL: ${{ secrets.VITE_WALLET_API_BASE_URL }}
       DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      ALLURE_PARENT_SUITE: ${{ inputs.allure-parent-suite }}
     defaults:
       run:
         working-directory: ${{ inputs.project-path }}

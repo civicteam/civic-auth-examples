@@ -16,11 +16,16 @@ test.describe('Civic Auth Applications', () => {
     await page.waitForLoadState('networkidle');
     await page.waitForLoadState('domcontentloaded');
     
-    // Wait for the UserButton to be visible (the one that says "Sign in")
-    await page.waitForSelector('[data-testid="sign-in-button"]', { timeout: 10000 });
+    // Wait for the sign in button to be visible and enabled/clickable
+    const signInButton = page.getByTestId('sign-in-button');
+    await signInButton.waitFor({ state: 'visible', timeout: 30000 });
+    await expect(signInButton).toBeEnabled({ timeout: 10000 });
+    
+    // Add a small delay to ensure the button is fully interactive
+    await page.waitForTimeout(1000);
     
     // Click the UserButton "Sign in" button (not the CustomSignIn button)
-    await page.getByTestId('sign-in-button').click();
+    await signInButton.click();
     
     // Chrome/Firefox use iframe flow
     // Wait for iframe to appear and load
@@ -32,8 +37,14 @@ test.describe('Civic Auth Applications', () => {
     // Try to wait for the frame to load completely first
     await frame.locator('body').waitFor({ timeout: 30000 });
     
-    // Look for the dummy button
+    // Look for the dummy button and ensure it's visible and enabled
     const dummyButton = frame.locator('[data-testid="civic-login-oidc-button-dummy"]');
+    await dummyButton.waitFor({ state: 'visible', timeout: 30000 });
+    await expect(dummyButton).toBeEnabled({ timeout: 10000 });
+    
+    // Add a small delay to ensure button is fully interactive
+    await page.waitForTimeout(1000);
+    
     await dummyButton.click({ timeout: 20000 });
 
     // Wait for the iframe to be gone (indicating login is complete)
@@ -49,10 +60,16 @@ test.describe('Civic Auth Applications', () => {
     await expect(page.url()).not.toContain('loginSuccessUrl');
 
     // Click the Ghost button in dropdown
-    await page.locator('#civic-dropdown-container').locator('button:has-text("Ghost")').click();
+    const ghostButton = page.locator('#civic-dropdown-container').locator('button:has-text("Ghost")');
+    await ghostButton.waitFor({ state: 'visible', timeout: 10000 });
+    await expect(ghostButton).toBeEnabled({ timeout: 5000 });
+    await ghostButton.click();
 
     // Click the logout button
-    await page.locator('#civic-dropdown-container').locator('button:has-text("Log out")').click();
+    const logoutButton = page.locator('#civic-dropdown-container').locator('button:has-text("Log out")');
+    await logoutButton.waitFor({ state: 'visible', timeout: 10000 });
+    await expect(logoutButton).toBeEnabled({ timeout: 5000 });
+    await logoutButton.click();
     
     // Confirm successful logout
     await expect(page.locator('#civic-dropdown-container').locator('button:has-text("Ghost")')).not.toBeVisible();

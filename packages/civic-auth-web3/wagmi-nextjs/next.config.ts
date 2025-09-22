@@ -5,7 +5,7 @@ const withCivicAuth = createCivicAuthPlugin({
   // eslint-disable-next-line no-undef
   clientId: `${process.env.CLIENT_ID}`,
   // eslint-disable-next-line no-undef
-  oauthServer: `${process.env.AUTH_SERVER}`,
+  oauthServer: process.env.AUTH_SERVER || 'https://auth.civic.com/oauth',
 });
 
 const nextConfig: NextConfig = {

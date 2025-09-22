@@ -27,6 +27,7 @@ jobs:
       browser: webkit
       job-name: "🚀 NextJS App (Login + Email + Refresh + Stale Session + Rehydration)"
       workflow-identifier: "dev-mode"
+      allure-parent-suite: "Web2 Dev Mode"
     secrets: inherit
 
   job-nextjs-basepath-example-app:
@@ -41,6 +42,7 @@ jobs:
       browser: webkit
       job-name: "🚀 NextJS App (Basepath)"
       workflow-identifier: "dev-mode"
+      allure-parent-suite: "Web2 Dev Mode"
     secrets: inherit
 
   job-nextjs-loginsuccessurl-example-app:
@@ -55,6 +57,7 @@ jobs:
       browser: webkit
       job-name: "🚀 NextJS App (LoginSuccessUrl)"
       workflow-identifier: "dev-mode"
+      allure-parent-suite: "Web2 Dev Mode"
     secrets: inherit
 
   job-express-loginsuccessurl-example-app:
@@ -69,6 +72,7 @@ jobs:
       browser: webkit
       job-name: "🛠️ Express Server (LoginSuccessUrl)"
       workflow-identifier: "dev-mode"
+      allure-parent-suite: "Web2 Dev Mode"
     secrets: inherit
 
   job-fastify-loginsuccessurl-example-app:
@@ -83,6 +87,7 @@ jobs:
       browser: webkit
       job-name: "⚡ Fastify Server (LoginSuccessUrl)"
       workflow-identifier: "dev-mode"
+      allure-parent-suite: "Web2 Dev Mode"
     secrets: inherit
 
   job-hono-loginsuccessurl-example-app:
@@ -97,6 +102,7 @@ jobs:
       browser: webkit
       job-name: "🔥 Hono Server (LoginSuccessUrl)"
       workflow-identifier: "dev-mode"
+      allure-parent-suite: "Web2 Dev Mode"
     secrets: inherit
 
   job-reactjs-example-app:
@@ -109,6 +115,7 @@ jobs:
       browser: webkit
       job-name: "⚛️ ReactJS App (Login + Email)"
       workflow-identifier: "dev-mode"
+      allure-parent-suite: "Web2 Dev Mode"
     secrets: inherit
 
   job-express-example-app:
@@ -121,6 +128,7 @@ jobs:
       browser: webkit
       job-name: "🛠️ Express Server (Login + Email)"
       workflow-identifier: "dev-mode"
+      allure-parent-suite: "Web2 Dev Mode"
     secrets: inherit
 
   job-fastify-example-app:
@@ -133,6 +141,7 @@ jobs:
       browser: webkit
       job-name: "⚡ Fastify Server (Login + Email)"
       workflow-identifier: "dev-mode"
+      allure-parent-suite: "Web2 Dev Mode"
     secrets: inherit
 
   job-hono-example-app:
@@ -145,6 +154,7 @@ jobs:
       browser: webkit
       job-name: "🔥 Hono Server (Login + Email)"
       workflow-identifier: "dev-mode"
+      allure-parent-suite: "Web2 Dev Mode"
     secrets: inherit
 
   job-vanillajs-example-app:
@@ -157,6 +167,7 @@ jobs:
       browser: webkit
       job-name: "📦 VanillaJS App (Login + Email + Refresh + Stale Session + Rehydration)"
       workflow-identifier: "dev-mode"
+      allure-parent-suite: "Web2 Dev Mode"
     secrets: inherit
 
   job-vanillajs-modal-example-app:
@@ -169,6 +180,7 @@ jobs:
       browser: webkit
       job-name: "📦 VanillaJS Modal App (Login + Refresh)"
       workflow-identifier: "dev-mode"
+      allure-parent-suite: "Web2 Dev Mode"
     secrets: inherit
 
 

@@ -2,12 +2,13 @@ import { test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
 
 test.describe('Civic Auth Applications', () => {
-  test.beforeEach(async ({ page }) => {
+  test.beforeEach(async ({ page, browserName }) => {
     await allure.parentSuite(process.env.ALLURE_PARENT_SUITE || 'Web3 Applications');
     await allure.suite('Solana Applications');
     await allure.subSuite('Next.js 14 No Wallet Adapter');
     await allure.epic('Civic Auth Web3 Applications');
     await allure.feature('Solana Next.js 14 No Wallet Adapter Login');
+    await allure.label('browser', browserName);
   });
   test('should complete full login and logout flow', async ({ page, browserName }) => {
     // Configure test to be more resilient
@@ -55,9 +56,10 @@ test.describe('Civic Auth Applications', () => {
     // Wait for login elements to appear
     await frame.locator('[data-testid*="civic-login"]').first().waitFor({ timeout: 30000 });
     
-    // Look for the dummy button with extended timeout and ensure it's visible
+    // Look for the dummy button with extended timeout and ensure it's visible and enabled
     const dummyButton = frame.locator('[data-testid="civic-login-oidc-button-dummy"]');
     await dummyButton.waitFor({ state: 'visible', timeout: 30000 });
+    await expect(dummyButton).toBeEnabled({ timeout: 10000 });
     
     // Add a small delay to ensure button is fully interactive
     await page.waitForTimeout(1000);
@@ -94,6 +96,7 @@ test.describe('Civic Auth Applications', () => {
     // Click the Ghost button in dropdown with retry logic for Firefox
     const ghostButton = page.locator('#civic-dropdown-container').locator('button:has-text("Ghost")');
     await ghostButton.waitFor({ state: 'visible', timeout: 10000 });
+    await expect(ghostButton).toBeEnabled({ timeout: 5000 });
     await ghostButton.click();
 
     // Wait a moment for dropdown to fully expand
@@ -105,12 +108,14 @@ test.describe('Civic Auth Applications', () => {
     // Try multiple approaches to handle Firefox dropdown timing issues
     try {
       await logoutButton.waitFor({ state: 'visible', timeout: 5000 });
+      await expect(logoutButton).toBeEnabled({ timeout: 5000 });
       await logoutButton.click();
     } catch (error) {
       // Fallback: click Ghost again to re-open dropdown and try logout
       await ghostButton.click();
       await page.waitForTimeout(500);
       await logoutButton.waitFor({ state: 'visible', timeout: 5000 });
+      await expect(logoutButton).toBeEnabled({ timeout: 5000 });
       await logoutButton.click();
     }
     
@@ -151,7 +156,7 @@ test.describe('Civic Auth Applications', () => {
       await page.goto('http://localhost:3000', { waitUntil: 'networkidle', timeout: 10000 });
     } catch (error) {
       // If navigation is interrupted by redirect, that's actually expected behavior
-      if (error.message.includes('interrupted by another navigation')) {
+      if (error instanceof Error && error.message.includes('interrupted by another navigation')) {
         await page.waitForLoadState('networkidle');
       } else {
         throw error;
