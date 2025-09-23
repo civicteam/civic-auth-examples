@@ -265,6 +265,35 @@ jobs:
           echo "Directory structure:"
           find combined-report -type d | sort
 
+      - name: Fix absolute URLs in reports
+        run: |
+          echo "Fixing absolute URLs in Allure reports..."
+          
+          # Function to fix URLs in a report directory
+          fix_report_urls() {
+            local report_dir="$1"
+            local report_name="$2"
+            
+            if [ -d "$report_dir" ] && [ -f "$report_dir/index.html" ]; then
+              echo "Fixing URLs in $report_name report..."
+              
+              # Replace absolute GitHub Pages URLs with relative paths
+              find "$report_dir" -name "*.html" -type f -exec sed -i 's|https://civicteam\.github\.io/civic-auth-examples/[0-9]*/|./|g' {} \;
+              find "$report_dir" -name "*.js" -type f -exec sed -i 's|https://civicteam\.github\.io/civic-auth-examples/[0-9]*/|./|g' {} \;
+              find "$report_dir" -name "*.json" -type f -exec sed -i 's|https://civicteam\.github\.io/civic-auth-examples/[0-9]*/|./|g' {} \;
+              
+              echo "✅ Fixed URLs in $report_name"
+            else
+              echo "⚠️ No report found in $report_dir"
+            fi
+          }
+          
+          # Fix URLs in each report
+          fix_report_urls "combined-report/web2-dev-mode" "Web2 Dev Mode"
+          fix_report_urls "combined-report/web2-start-mode" "Web2 Start Mode"
+          fix_report_urls "combined-report/web3-dev-mode" "Web3 Dev Mode"
+          fix_report_urls "combined-report/web3-start-mode" "Web3 Start Mode"
+
       - name: Publish combined reports
         if: always()
         uses: peaceiris/actions-gh-pages@v3
