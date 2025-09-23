@@ -189,5 +189,70 @@ jobs:
 
 
 
-  # Individual publishing removed - now handled by publish-combined-allure-reports.yml workflow
+  build-allure-report:
+    name: "Build Web2 Start Mode Allure Report"
+    needs: [
+      job-nextjs-example-app,
+      # job-nextjs-basepath-example-app,
+      # job-nextjs-loginsuccessurl-example-app,
+      job-express-loginsuccessurl-example-app,
+      job-fastify-loginsuccessurl-example-app,
+      job-hono-loginsuccessurl-example-app,
+      job-reactjs-example-app,
+      job-express-example-app,
+      job-fastify-example-app,
+      job-hono-example-app,
+      job-vanillajs-example-app,
+      job-vanillajs-modal-example-app,
+    ]
+    
+    runs-on: ubuntu-latest
+    if: always()
+    permissions:
+      contents: read
+      actions: read
+    steps:
+      - name: Download Allure Results
+        uses: actions/download-artifact@v4
+        with:
+          pattern: allure-results-*
+          merge-multiple: true
+          path: allure-results
+
+      - name: Load test report history
+        if: always()
+        continue-on-error: true
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: gh-pages
+
+      - name: Copy existing history to test results
+        if: always()
+        run: |
+          echo "Copying existing history to test results directory..."
+          if [ -d "gh-pages/history" ]; then
+            echo "Found history in gh-pages/history"
+            cp -r gh-pages/history allure-results/
+            echo "History copied successfully"
+          else
+            echo "No existing history found, will create new"
+            mkdir -p allure-results/history
+          fi
+
+      - name: Build test report (but don't publish)
+        if: always()
+        uses: simple-elf/allure-report-action@v1.7
+        with:
+          allure_results: allure-results
+          allure_history: allure-history
+          keep_reports: 5
+
+      - name: Upload built report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: web2-start-mode-allure-report
+          path: allure-history/
+          retention-days: 5
 

@@ -108,102 +108,212 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Download Web2 Dev Mode Artifacts
+      - name: Download Web2 Dev Mode Report
         continue-on-error: true
         uses: dawidd6/action-download-artifact@v6
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           workflow: web2-e2e-tests-playwright-dev-mode.yml
-          name_is_regexp: true
-          name: allure-results-.*
-          path: allure-results/
+          name: web2-dev-mode-allure-report
+          path: reports/web2-dev-mode/
           if_no_artifact_found: warn
 
-      - name: Download Web2 Start Mode Artifacts
+      - name: Download Web2 Start Mode Report
         continue-on-error: true
         uses: dawidd6/action-download-artifact@v6
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           workflow: web2-e2e-tests-playwright-start-mode.yml
-          name_is_regexp: true
-          name: allure-results-.*
-          path: allure-results/
+          name: web2-start-mode-allure-report
+          path: reports/web2-start-mode/
           if_no_artifact_found: warn
 
-      - name: Download Web3 Dev Mode Artifacts
+      - name: Download Web3 Dev Mode Report
         continue-on-error: true
         uses: dawidd6/action-download-artifact@v6
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           workflow: web3-e2e-tests-playwright-dev-mode.yml
-          name_is_regexp: true
-          name: allure-results-.*
-          path: allure-results/
+          name: web3-dev-mode-allure-report
+          path: reports/web3-dev-mode/
           if_no_artifact_found: warn
 
-      - name: Download Web3 Start Mode Artifacts
+      - name: Download Web3 Start Mode Report
         continue-on-error: true
         uses: dawidd6/action-download-artifact@v6
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           workflow: web3-e2e-tests-playwright-start-mode.yml
-          name_is_regexp: true
-          name: allure-results-.*
-          path: allure-results/
+          name: web3-start-mode-allure-report
+          path: reports/web3-start-mode/
           if_no_artifact_found: warn
 
-      - name: List downloaded artifacts
+      - name: List downloaded reports
         run: |
-          echo "Downloaded artifacts structure:"
-          find allure-results -type f -name "*.json" | head -20
-          echo "Total JSON files found: $(find allure-results -name "*.json" | wc -l)"
+          echo "Downloaded reports structure:"
+          find reports -type f -name "index.html" | head -10
+          echo "Total report directories found: $(find reports -name index.html | wc -l)"
+          ls -la reports/
 
-      - name: Load test report history
-        if: always()
-        continue-on-error: true
-        uses: actions/checkout@v4
-        with:
-          ref: gh-pages
-          path: gh-pages
-
-      - name: Copy existing history to test results
-        if: always()
+      - name: Create combined report structure
         run: |
-          echo "Copying existing history to test results directory..."
-          if [ -d "gh-pages/history" ]; then
-            echo "Found history in gh-pages/history"
-            cp -r gh-pages/history allure-results/
-            echo "History copied successfully"
-          elif [ -d "allure-report/history" ]; then
-            echo "Found history in allure-report/history"
-            cp -r allure-report/history allure-results/
-            echo "History copied successfully"
-          elif [ -d "allure-results/history" ]; then
-            echo "Found history in allure-results/history"
-            cp -r allure-results/history allure-results/
-            echo "History copied successfully"
-          elif [ -d "allure-history/history" ]; then
-            echo "Found history in allure-history/history"
-            cp -r allure-history/history allure-results/
-            echo "History copied successfully"
+          echo "Creating combined report structure..."
+          mkdir -p combined-report
+          
+          # Create an index.html that provides navigation to all reports
+          cat > combined-report/index.html << 'EOF'
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>Civic Auth E2E Test Reports</title>
+              <style>
+                  body { 
+                      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+                      margin: 0; padding: 40px; 
+                      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                      min-height: 100vh;
+                      color: white;
+                  }
+                  .container { 
+                      max-width: 1200px; 
+                      margin: 0 auto; 
+                      background: rgba(255,255,255,0.1);
+                      backdrop-filter: blur(10px);
+                      border-radius: 20px;
+                      padding: 40px;
+                      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+                  }
+                  h1 { 
+                      text-align: center; 
+                      margin-bottom: 40px; 
+                      font-size: 2.5em;
+                      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+                  }
+                  .reports-grid { 
+                      display: grid; 
+                      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+                      gap: 30px; 
+                  }
+                  .report-card { 
+                      background: rgba(255,255,255,0.15);
+                      border-radius: 15px; 
+                      padding: 30px; 
+                      text-align: center;
+                      transition: all 0.3s ease;
+                      border: 1px solid rgba(255,255,255,0.2);
+                  }
+                  .report-card:hover { 
+                      transform: translateY(-10px);
+                      background: rgba(255,255,255,0.25);
+                      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+                  }
+                  .report-card h2 { 
+                      margin-bottom: 20px; 
+                      font-size: 1.4em;
+                  }
+                  .report-card a { 
+                      display: inline-block;
+                      background: rgba(255,255,255,0.9);
+                      color: #333;
+                      padding: 12px 30px;
+                      border-radius: 25px;
+                      text-decoration: none;
+                      font-weight: 600;
+                      transition: all 0.3s ease;
+                  }
+                  .report-card a:hover { 
+                      background: white;
+                      transform: scale(1.05);
+                  }
+                  .emoji { font-size: 2em; margin-bottom: 15px; }
+                  .description { 
+                      margin: 15px 0; 
+                      opacity: 0.9; 
+                      font-size: 0.95em;
+                      line-height: 1.4;
+                  }
+              </style>
+          </head>
+          <body>
+              <div class="container">
+                  <h1>🧪 Civic Auth E2E Test Reports</h1>
+                  <div class="reports-grid">
+                      <div class="report-card">
+                          <div class="emoji">🚀</div>
+                          <h2>Web2 Dev Mode</h2>
+                          <div class="description">Development mode tests for Web2 applications including NextJS, React, Express, and VanillaJS</div>
+                          <a href="web2-dev-mode/index.html">View Report</a>
+                      </div>
+                      <div class="report-card">
+                          <div class="emoji">🏭</div>
+                          <h2>Web2 Start Mode</h2>
+                          <div class="description">Production build tests for Web2 applications with optimized bundles and performance validation</div>
+                          <a href="web2-start-mode/index.html">View Report</a>
+                      </div>
+                      <div class="report-card">
+                          <div class="emoji">🌐</div>
+                          <h2>Web3 Dev Mode</h2>
+                          <div class="description">Development mode tests for Web3 applications including Solana wallet adapters and Wagmi integrations</div>
+                          <a href="web3-dev-mode/index.html">View Report</a>
+                      </div>
+                      <div class="report-card">
+                          <div class="emoji">⚡</div>
+                          <h2>Web3 Start Mode</h2>
+                          <div class="description">Production build tests for Web3 applications with wallet connectivity and blockchain interactions</div>
+                          <a href="web3-start-mode/index.html">View Report</a>
+                      </div>
+                  </div>
+              </div>
+          </body>
+          </html>
+          EOF
+
+      - name: Copy individual reports to combined structure
+        run: |
+          echo "Copying individual reports..."
+          
+          # Copy each report to the combined structure
+          if [ -d "reports/web2-dev-mode" ]; then
+            cp -r reports/web2-dev-mode/* combined-report/web2-dev-mode/ 2>/dev/null || mkdir -p combined-report/web2-dev-mode
+            echo "✅ Copied Web2 Dev Mode report"
           else
-            echo "No existing history found, will create new"
-            mkdir -p allure-results/history
+            mkdir -p combined-report/web2-dev-mode
+            echo "⚠️ Web2 Dev Mode report not found, created empty directory"
           fi
+          
+          if [ -d "reports/web2-start-mode" ]; then
+            cp -r reports/web2-start-mode/* combined-report/web2-start-mode/ 2>/dev/null || mkdir -p combined-report/web2-start-mode
+            echo "✅ Copied Web2 Start Mode report"
+          else
+            mkdir -p combined-report/web2-start-mode
+            echo "⚠️ Web2 Start Mode report not found, created empty directory"
+          fi
+          
+          if [ -d "reports/web3-dev-mode" ]; then
+            cp -r reports/web3-dev-mode/* combined-report/web3-dev-mode/ 2>/dev/null || mkdir -p combined-report/web3-dev-mode
+            echo "✅ Copied Web3 Dev Mode report"
+          else
+            mkdir -p combined-report/web3-dev-mode
+            echo "⚠️ Web3 Dev Mode report not found, created empty directory"
+          fi
+          
+          if [ -d "reports/web3-start-mode" ]; then
+            cp -r reports/web3-start-mode/* combined-report/web3-start-mode/ 2>/dev/null || mkdir -p combined-report/web3-start-mode
+            echo "✅ Copied Web3 Start Mode report"
+          else
+            mkdir -p combined-report/web3-start-mode
+            echo "⚠️ Web3 Start Mode report not found, created empty directory"
+          fi
+          
+          echo "Combined report structure:"
+          find combined-report -name "index.html" | sort
 
-      - name: Build combined test report
-        if: always()
-        uses: simple-elf/allure-report-action@v1.7
-        with:
-          gh_pages: gh-pages
-          allure_results: allure-results
-          allure_history: allure-history
-          keep_reports: 5
-
-      - name: Publish combined test report
+      - name: Publish combined reports
         if: always()
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
-          publish_dir: allure-history
+          publish_dir: combined-report
