@@ -265,9 +265,9 @@ jobs:
           echo "Directory structure:"
           find combined-report -type d | sort
 
-      - name: Fix absolute URLs in reports
+      - name: Fix absolute URLs and redirects in reports
         run: |
-          echo "Fixing absolute URLs in Allure reports..."
+          echo "Fixing absolute URLs and redirects in Allure reports..."
           
           # Function to fix URLs in a report directory
           fix_report_urls() {
@@ -282,7 +282,21 @@ jobs:
               find "$report_dir" -name "*.js" -type f -exec sed -i 's|https://civicteam\.github\.io/civic-auth-examples/[0-9]*/|./|g' {} \;
               find "$report_dir" -name "*.json" -type f -exec sed -i 's|https://civicteam\.github\.io/civic-auth-examples/[0-9]*/|./|g' {} \;
               
-              echo "✅ Fixed URLs in $report_name"
+              # Also fix URLs without build numbers
+              find "$report_dir" -name "*.html" -type f -exec sed -i 's|https://civicteam\.github\.io/civic-auth-examples/|./|g' {} \;
+              find "$report_dir" -name "*.js" -type f -exec sed -i 's|https://civicteam\.github\.io/civic-auth-examples/|./|g' {} \;
+              find "$report_dir" -name "*.json" -type f -exec sed -i 's|https://civicteam\.github\.io/civic-auth-examples/|./|g' {} \;
+              
+              # Remove meta refresh redirects
+              find "$report_dir" -name "*.html" -type f -exec sed -i '/<meta.*refresh.*>/d' {} \;
+              
+              # Remove JavaScript redirects (common patterns)
+              find "$report_dir" -name "*.html" -type f -exec sed -i '/window\.location\.href.*civicteam\.github\.io/d' {} \;
+              find "$report_dir" -name "*.html" -type f -exec sed -i '/window\.location\.replace.*civicteam\.github\.io/d' {} \;
+              find "$report_dir" -name "*.js" -type f -exec sed -i '/window\.location\.href.*civicteam\.github\.io/d' {} \;
+              find "$report_dir" -name "*.js" -type f -exec sed -i '/window\.location\.replace.*civicteam\.github\.io/d' {} \;
+              
+              echo "✅ Fixed URLs and redirects in $report_name"
             else
               echo "⚠️ No report found in $report_dir"
             fi
