@@ -205,37 +205,41 @@ jobs:
           echo "Copying individual reports..."
           
           # Copy each report to the combined structure
-          if [ -d "reports/web2-dev-mode" ]; then
-            cp -r reports/web2-dev-mode/* combined-report/web2-dev-mode/ 2>/dev/null || mkdir -p combined-report/web2-dev-mode
-            echo "✅ Copied Web2 Dev Mode report"
-          else
-            mkdir -p combined-report/web2-dev-mode
-            echo "⚠️ Web2 Dev Mode report not found, created empty directory"
-          fi
+          # We need to copy the main report files (index.html and supporting files) 
+          # not the nested numbered directories
           
-          if [ -d "reports/web2-start-mode" ]; then
-            cp -r reports/web2-start-mode/* combined-report/web2-start-mode/ 2>/dev/null || mkdir -p combined-report/web2-start-mode
-            echo "✅ Copied Web2 Start Mode report"
-          else
-            mkdir -p combined-report/web2-start-mode
-            echo "⚠️ Web2 Start Mode report not found, created empty directory"
-          fi
+          copy_main_report() {
+            local source_dir="$1"
+            local target_dir="$2"
+            local report_name="$3"
+            
+            if [ -d "$source_dir" ]; then
+              mkdir -p "$target_dir"
+              
+              # Copy main report files (index.html, styles.css, etc.) but skip numbered directories
+              if [ -f "$source_dir/index.html" ]; then
+                cp "$source_dir/index.html" "$target_dir/"
+                [ -f "$source_dir/styles.css" ] && cp "$source_dir/styles.css" "$target_dir/"
+                [ -f "$source_dir/favicon.ico" ] && cp "$source_dir/favicon.ico" "$target_dir/"
+                [ -d "$source_dir/data" ] && cp -r "$source_dir/data" "$target_dir/"
+                [ -d "$source_dir/history" ] && cp -r "$source_dir/history" "$target_dir/"
+                [ -d "$source_dir/widgets" ] && cp -r "$source_dir/widgets" "$target_dir/"
+                [ -d "$source_dir/plugin" ] && cp -r "$source_dir/plugin" "$target_dir/"
+                [ -d "$source_dir/export" ] && cp -r "$source_dir/export" "$target_dir/"
+                echo "✅ Copied $report_name report"
+              else
+                echo "⚠️ No main index.html found in $source_dir, created empty directory"
+              fi
+            else
+              mkdir -p "$target_dir"
+              echo "⚠️ $report_name report not found, created empty directory"
+            fi
+          }
           
-          if [ -d "reports/web3-dev-mode" ]; then
-            cp -r reports/web3-dev-mode/* combined-report/web3-dev-mode/ 2>/dev/null || mkdir -p combined-report/web3-dev-mode
-            echo "✅ Copied Web3 Dev Mode report"
-          else
-            mkdir -p combined-report/web3-dev-mode
-            echo "⚠️ Web3 Dev Mode report not found, created empty directory"
-          fi
-          
-          if [ -d "reports/web3-start-mode" ]; then
-            cp -r reports/web3-start-mode/* combined-report/web3-start-mode/ 2>/dev/null || mkdir -p combined-report/web3-start-mode
-            echo "✅ Copied Web3 Start Mode report"
-          else
-            mkdir -p combined-report/web3-start-mode
-            echo "⚠️ Web3 Start Mode report not found, created empty directory"
-          fi
+          copy_main_report "reports/web2-dev-mode" "combined-report/web2-dev-mode" "Web2 Dev Mode"
+          copy_main_report "reports/web2-start-mode" "combined-report/web2-start-mode" "Web2 Start Mode"  
+          copy_main_report "reports/web3-dev-mode" "combined-report/web3-dev-mode" "Web3 Dev Mode"
+          copy_main_report "reports/web3-start-mode" "combined-report/web3-start-mode" "Web3 Start Mode"
           
           echo "Combined report structure:"
           find combined-report -name "index.html" | sort
