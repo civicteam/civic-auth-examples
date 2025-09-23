@@ -51,7 +51,7 @@ jobs:
       project-path: packages/civic-auth-web3/solana/next15-no-wallet-adapter
       playwright-spec: "playwright/tests/civic-auth-web3/login/solana-next15-turbopack-no-wa-login.spec.ts playwright/tests/civic-auth-web3/email/solana-next15-turbopack-no-wa-email-verification.spec.ts"
       build-command: "yarn build"
-      dev-command: "yarn dev:turbopack"
+      dev-command: "yarn dev-turbopack"
       browser: webkit
       job-name: "🌐 Solana Next.js 15 Turbopack No WA (Login + Email)"
       workflow-identifier: "dev-mode"
@@ -105,7 +105,7 @@ jobs:
       project-path: packages/civic-auth-web3/solana/next15-wallet-adapter
       playwright-spec: "playwright/tests/civic-auth-web3/login/solana-next15-turbopack-wa-login.spec.ts playwright/tests/civic-auth-web3/email/solana-next15-turbopack-wa-email-verification.spec.ts"
       build-command: "yarn build"
-      dev-command: "yarn dev:turbopack"
+      dev-command: "yarn dev-turbopack"
       browser: webkit
       job-name: "🌐 Solana Next.js 15 Turbopack WA (Login + Email)"
       workflow-identifier: "dev-mode"
@@ -215,3 +215,12 @@ jobs:
           name: web3-dev-mode-allure-report
           path: allure-history/
           retention-days: 5
+
+    # Only publish here in order to avoid errors with publishing to gh-pages branch
+      - name: Publish test report
+        if: always()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            publish_branch: gh-pages
+            publish_dir: allure-history

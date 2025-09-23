@@ -9,7 +9,7 @@
     "build": "WEBPACK_ENABLE_SOLANA_WALLET_ADAPTER=true next build",
     "build-webpack": "next build",
     "build-turbopack": "WEBPACK_ENABLE_SOLANA_WALLET_ADAPTER=true next build --turbopack",
-    "start": "next start",
+    "start-turbopack": "WEBPACK_ENABLE_SOLANA_WALLET_ADAPTER=true next start --turbopack --port 3000",
     "lint": "next lint"
   },
   "dependencies": {

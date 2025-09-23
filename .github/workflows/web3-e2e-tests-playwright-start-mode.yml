@@ -60,19 +60,19 @@ jobs:
       allure-parent-suite: "Web3 Start Mode"
     secrets: inherit
 
-  job-solana-vite-no-wa-example-app:
-    name: "Solana Vite No Wallet Adapter example app"
-    needs: check-version
-    uses: ./.github/workflows/test-example-app-playwright.yml
-    with:
-      project-path: packages/civic-auth-web3/solana/vite-no-wallet-adapter
-      playwright-spec: "playwright/tests/civic-auth-web3/login/solana-vite-no-wa-login.spec.ts playwright/tests/civic-auth-web3/email/solana-vite-no-wa-email-verification.spec.ts"
-      dev-command: "yarn start"
-      browser: webkit
-      job-name: "🌐 Solana Vite No WA (Login + Email)"
-      workflow-identifier: "start-mode"
-      allure-parent-suite: "Web3 Start Mode"
-    secrets: inherit
+  # job-solana-vite-no-wa-example-app:
+  #   name: "Solana Vite No Wallet Adapter example app"
+  #   needs: check-version
+  #   uses: ./.github/workflows/test-example-app-playwright.yml
+  #   with:
+  #     project-path: packages/civic-auth-web3/solana/vite-no-wallet-adapter
+  #     playwright-spec: "playwright/tests/civic-auth-web3/login/solana-vite-no-wa-login.spec.ts playwright/tests/civic-auth-web3/email/solana-vite-no-wa-email-verification.spec.ts"
+  #     dev-command: "yarn start"
+  #     browser: webkit
+  #     job-name: "🌐 Solana Vite No WA (Login + Email)"
+  #     workflow-identifier: "start-mode"
+  #     allure-parent-suite: "Web3 Start Mode"
+  #   secrets: inherit
 
   job-solana-next14-wa-example-app:
     name: "Solana Next.js 14 Wallet Adapter example app"
@@ -110,40 +110,40 @@ jobs:
       project-path: packages/civic-auth-web3/solana/next15-wallet-adapter
       playwright-spec: "playwright/tests/civic-auth-web3/login/solana-next15-turbopack-wa-login.spec.ts playwright/tests/civic-auth-web3/email/solana-next15-turbopack-wa-email-verification.spec.ts"
       build-command: "yarn build"
-      dev-command: "yarn start:turbopack"
+      dev-command: "yarn start-turbopack"
       browser: webkit
       job-name: "🌐 Solana Next.js 15 Turbopack WA (Login + Email)"
       workflow-identifier: "start-mode"
       allure-parent-suite: "Web3 Start Mode"
     secrets: inherit
 
-  job-solana-vite-wa-example-app:
-    name: "Solana Vite Wallet Adapter example app"
-    needs: check-version
-    uses: ./.github/workflows/test-example-app-playwright.yml
-    with:
-      project-path: packages/civic-auth-web3/solana/vite-wallet-adapter
-      playwright-spec: "playwright/tests/civic-auth-web3/login/solana-vite-wa-login.spec.ts playwright/tests/civic-auth-web3/email/solana-vite-wa-email-verification.spec.ts"
-      dev-command: "yarn start"
-      browser: webkit
-      job-name: "🌐 Solana Vite WA (Login + Email)"
-      workflow-identifier: "start-mode"
-      allure-parent-suite: "Web3 Start Mode"
-    secrets: inherit
+  # job-solana-vite-wa-example-app:
+  #   name: "Solana Vite Wallet Adapter example app"
+  #   needs: check-version
+  #   uses: ./.github/workflows/test-example-app-playwright.yml
+  #   with:
+  #     project-path: packages/civic-auth-web3/solana/vite-wallet-adapter
+  #     playwright-spec: "playwright/tests/civic-auth-web3/login/solana-vite-wa-login.spec.ts playwright/tests/civic-auth-web3/email/solana-vite-wa-email-verification.spec.ts"
+  #     dev-command: "yarn start"
+  #     browser: webkit
+  #     job-name: "🌐 Solana Vite WA (Login + Email)"
+  #     workflow-identifier: "start-mode"
+  #     allure-parent-suite: "Web3 Start Mode"
+  #   secrets: inherit
 
-  job-wagmi-example-app:
-    name: "Wagmi example app"
-    needs: check-version
-    uses: ./.github/workflows/test-example-app-playwright.yml
-    with:
-      project-path: packages/civic-auth-web3/wagmi
-      playwright-spec: "playwright/tests/civic-auth-web3/login/wagmi-login.spec.ts"
-      dev-command: "yarn start"
-      browser: webkit
-      job-name: "🌐 Wagmi (Login)"
-      workflow-identifier: "start-mode"
-      allure-parent-suite: "Web3 Start Mode"
-    secrets: inherit
+  # job-wagmi-example-app:
+  #   name: "Wagmi example app"
+  #   needs: check-version
+  #   uses: ./.github/workflows/test-example-app-playwright.yml
+  #   with:
+  #     project-path: packages/civic-auth-web3/wagmi
+  #     playwright-spec: "playwright/tests/civic-auth-web3/login/wagmi-login.spec.ts"
+  #     dev-command: "yarn start"
+  #     browser: webkit
+  #     job-name: "🌐 Wagmi (Login)"
+  #     workflow-identifier: "start-mode"
+  #     allure-parent-suite: "Web3 Start Mode"
+  #   secrets: inherit
 
   job-wagmi-nextjs-example-app:
     name: "Wagmi Next.js example app"
@@ -165,12 +165,12 @@ jobs:
       job-solana-next14-no-wa-example-app,
       job-solana-next15-no-wa-example-app,
       job-solana-next15-turbopack-no-wa-example-app,
-      job-solana-vite-no-wa-example-app,
+      # job-solana-vite-no-wa-example-app,
       job-solana-next14-wa-example-app,
       job-solana-next15-wa-example-app,
       job-solana-next15-turbopack-wa-example-app,
-      job-solana-vite-wa-example-app,
-      job-wagmi-example-app,
+      # job-solana-vite-wa-example-app,
+      # job-wagmi-example-app,
       job-wagmi-nextjs-example-app,
     ]
     

@@ -9,19 +9,20 @@ test.describe('Wagmi Login Tests', () => {
     await page.waitForLoadState('networkidle');
     await page.waitForLoadState('domcontentloaded');
     
-    // Wait for and click the sign in button
-    const signInButton = page.locator('button:has-text("Sign in")');
+    // Wait for the sign in button to be visible and enabled/clickable
+    const signInButton = page.getByTestId('sign-in-button');
     await signInButton.waitFor({ state: 'visible', timeout: 30000 });
     await expect(signInButton).toBeEnabled({ timeout: 10000 });
     
     // Add a small delay to ensure the button is fully interactive
     await page.waitForTimeout(1000);
     
+    // Click the sign in button using test ID
     await signInButton.click();
     
     // Chrome/Firefox use iframe flow
     // Click log in with dummy in the iframe
-    const frame = page.frameLocator('#civic-auth-iframe');
+    const frame = page.frameLocator('[data-testid="civic-auth-iframe-with-resizer"]');
     const dummyButton = frame.locator('[data-testid="civic-login-oidc-button-dummy"]');
     await dummyButton.waitFor({ state: 'visible', timeout: 30000 });
     await expect(dummyButton).toBeEnabled({ timeout: 10000 });

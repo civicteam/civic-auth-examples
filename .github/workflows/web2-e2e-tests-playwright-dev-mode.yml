@@ -27,7 +27,6 @@ jobs:
       browser: webkit
       job-name: "🚀 NextJS App (Login + Email + Refresh + Stale Session + Rehydration)"
       workflow-identifier: "dev-mode"
-      allure-parent-suite: "Web2 Dev Mode"
     secrets: inherit
 
   job-nextjs-basepath-example-app:
@@ -42,7 +41,6 @@ jobs:
       browser: webkit
       job-name: "🚀 NextJS App (Basepath)"
       workflow-identifier: "dev-mode"
-      allure-parent-suite: "Web2 Dev Mode"
     secrets: inherit
 
   job-nextjs-loginsuccessurl-example-app:
@@ -57,7 +55,6 @@ jobs:
       browser: webkit
       job-name: "🚀 NextJS App (LoginSuccessUrl)"
       workflow-identifier: "dev-mode"
-      allure-parent-suite: "Web2 Dev Mode"
     secrets: inherit
 
   job-express-loginsuccessurl-example-app:
@@ -72,7 +69,6 @@ jobs:
       browser: webkit
       job-name: "🛠️ Express Server (LoginSuccessUrl)"
       workflow-identifier: "dev-mode"
-      allure-parent-suite: "Web2 Dev Mode"
     secrets: inherit
 
   job-fastify-loginsuccessurl-example-app:
@@ -87,7 +83,6 @@ jobs:
       browser: webkit
       job-name: "⚡ Fastify Server (LoginSuccessUrl)"
       workflow-identifier: "dev-mode"
-      allure-parent-suite: "Web2 Dev Mode"
     secrets: inherit
 
   job-hono-loginsuccessurl-example-app:
@@ -102,7 +97,6 @@ jobs:
       browser: webkit
       job-name: "🔥 Hono Server (LoginSuccessUrl)"
       workflow-identifier: "dev-mode"
-      allure-parent-suite: "Web2 Dev Mode"
     secrets: inherit
 
   job-reactjs-example-app:
@@ -115,7 +109,6 @@ jobs:
       browser: webkit
       job-name: "⚛️ ReactJS App (Login + Email)"
       workflow-identifier: "dev-mode"
-      allure-parent-suite: "Web2 Dev Mode"
     secrets: inherit
 
   job-express-example-app:
@@ -128,7 +121,6 @@ jobs:
       browser: webkit
       job-name: "🛠️ Express Server (Login + Email)"
       workflow-identifier: "dev-mode"
-      allure-parent-suite: "Web2 Dev Mode"
     secrets: inherit
 
   job-fastify-example-app:
@@ -141,7 +133,6 @@ jobs:
       browser: webkit
       job-name: "⚡ Fastify Server (Login + Email)"
       workflow-identifier: "dev-mode"
-      allure-parent-suite: "Web2 Dev Mode"
     secrets: inherit
 
   job-hono-example-app:
@@ -154,7 +145,6 @@ jobs:
       browser: webkit
       job-name: "🔥 Hono Server (Login + Email)"
       workflow-identifier: "dev-mode"
-      allure-parent-suite: "Web2 Dev Mode"
     secrets: inherit
 
   job-vanillajs-example-app:
@@ -167,7 +157,6 @@ jobs:
       browser: webkit
       job-name: "📦 VanillaJS App (Login + Email + Refresh + Stale Session + Rehydration)"
       workflow-identifier: "dev-mode"
-      allure-parent-suite: "Web2 Dev Mode"
     secrets: inherit
 
   job-vanillajs-modal-example-app:
@@ -180,13 +169,12 @@ jobs:
       browser: webkit
       job-name: "📦 VanillaJS Modal App (Login + Refresh)"
       workflow-identifier: "dev-mode"
-      allure-parent-suite: "Web2 Dev Mode"
     secrets: inherit
 
 
 
-  build-allure-report:
-    name: "Build Web2 Dev Mode Allure Report"
+  publish-allure-reports:
+    name: "Publish Web2 Allure Reports"
     needs: [
       job-nextjs-example-app,
       job-nextjs-basepath-example-app,
@@ -205,8 +193,10 @@ jobs:
     runs-on: ubuntu-latest
     if: always()
     permissions:
-      contents: read
+      contents: write
       actions: read
+      id-token: write
+      pages: write
     steps:
       - name: Download Allure Results
         uses: actions/download-artifact@v4
@@ -227,27 +217,37 @@ jobs:
         if: always()
         run: |
           echo "Copying existing history to test results directory..."
-          if [ -d "gh-pages/history" ]; then
-            echo "Found history in gh-pages/history"
-            cp -r gh-pages/history allure-results/
+          if [ -d "allure-report/history" ]; then
+            echo "Found history in allure-report/history"
+            cp -r allure-report/history allure-results/
+            echo "History copied successfully"
+          elif [ -d "allure-results/history" ]; then
+            echo "Found history in allure-results/history"
+            cp -r allure-results/history allure-results/
+            echo "History copied successfully"
+          elif [ -d "allure-history/history" ]; then
+            echo "Found history in allure-history/history"
+            cp -r allure-history/history allure-results/
             echo "History copied successfully"
           else
             echo "No existing history found, will create new"
             mkdir -p allure-results/history
           fi
 
-      - name: Build test report (but don't publish)
+      - name: Build test report
         if: always()
         uses: simple-elf/allure-report-action@v1.7
         with:
+          gh_pages: gh-pages
           allure_results: allure-results
           allure_history: allure-history
           keep_reports: 5
 
-      - name: Upload built report
+      # Only publish here in order to avoid errors with publishing to gh-pages branch
+      - name: Publish test report
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          name: web2-dev-mode-allure-report
-          path: allure-history/
-          retention-days: 5
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: allure-history

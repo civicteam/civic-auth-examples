@@ -42,11 +42,6 @@ test.describe('Solana Next.js 15 Wallet Adapter Email Verification Tests', () =>
       await civicWalletButton.click();
     });
     
-    // Click the sign in button using test ID
-    await allure.step('Click sign in button', async () => {
-      await page.getByTestId('sign-in-button').click();
-    });
-    
     await allure.step('Handle iframe email verification flow', async () => {
       // Chrome/Firefox use iframe flow
       // Wait for iframe to be present in DOM (don't care if it's visible or hidden)
