@@ -1,14 +1,14 @@
 {
-  "name": "next15-turbopack-no-wallet-adapter",
+  "name": "next15-turbopack-wallet-adapter",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "yarn dev-webpack",
-    "dev-turbopack": "next dev --turbopack --port 3000",
+    "dev-turbopack": "WEBPACK_ENABLE_SOLANA_WALLET_ADAPTER=true next dev --turbopack --port 3000",
     "dev-webpack": "WEBPACK_ENABLE_SOLANA_WALLET_ADAPTER=true next dev --port 3000",
     "build": "WEBPACK_ENABLE_SOLANA_WALLET_ADAPTER=true next build",
     "build-webpack": "next build",
-    "build-turbopack": "next build --turbopack",
+    "build-turbopack": "WEBPACK_ENABLE_SOLANA_WALLET_ADAPTER=true next build --turbopack",
     "start": "next start",
     "lint": "next lint"
   },

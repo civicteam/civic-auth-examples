@@ -1,0 +1,209 @@
+name: Publish Combined Allure Reports
+
+on:
+  workflow_dispatch:
+    inputs:
+      target-sha:
+        description: 'Target SHA to collect reports from (defaults to latest main)'
+        required: false
+        type: string
+  schedule:
+    - cron: '0 1 * * *'  # Run daily at 1 AM UTC (1 hour after other workflows)
+  # Only trigger after ALL workflows complete - using workflow_run but with smart checking
+  workflow_run:
+    workflows: 
+      - "Civic Auth Example Apps - E2E Tests (Dev Mode)"
+      - "Civic Auth Example Apps - E2E Tests (Start Mode)"
+      - "Civic Auth Web3 Example Apps - E2E Tests (Dev Mode)"
+      - "Civic Auth Web3 Example Apps - E2E Tests (Start Mode)"
+    types:
+      - completed
+
+jobs:
+  check-all-workflows-complete:
+    name: "Check if all workflows are complete"
+    runs-on: ubuntu-latest
+    if: always()
+    outputs:
+      all-complete: ${{ steps.check-workflows.outputs.all-complete }}
+    steps:
+      - name: Check if all 4 workflows have completed
+        id: check-workflows
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const workflowNames = [
+              "Civic Auth Example Apps - E2E Tests (Dev Mode)",
+              "Civic Auth Example Apps - E2E Tests (Start Mode)", 
+              "Civic Auth Web3 Example Apps - E2E Tests (Dev Mode)",
+              "Civic Auth Web3 Example Apps - E2E Tests (Start Mode)"
+            ];
+            
+            const { owner, repo } = context.repo;
+            
+            // Get the SHA we're checking for
+            let targetSha;
+            if (context.eventName === 'workflow_run') {
+              targetSha = context.payload.workflow_run.head_sha;
+            } else if (context.eventName === 'workflow_dispatch' && context.payload.inputs['target-sha']) {
+              targetSha = context.payload.inputs['target-sha'];
+            } else {
+              // Default to latest commit on main
+              const { data: ref } = await github.rest.git.getRef({
+                owner,
+                repo,
+                ref: 'heads/main'
+              });
+              targetSha = ref.object.sha;
+            }
+            
+            console.log(`Checking workflows for SHA: ${targetSha}`);
+            
+            // Get all workflow runs for this SHA
+            const { data: workflowRuns } = await github.rest.actions.listWorkflowRunsForRepo({
+              owner,
+              repo,
+              head_sha: targetSha,
+              per_page: 100
+            });
+            
+            console.log(`Found ${workflowRuns.workflow_runs.length} total workflow runs for this SHA`);
+            
+            // Filter to our target workflows and only completed ones
+            const targetRuns = workflowRuns.workflow_runs.filter(run => 
+              workflowNames.includes(run.name) && 
+              run.head_sha === targetSha &&
+              run.status === 'completed'
+            );
+            
+            console.log(`Completed target workflow runs:`, targetRuns.map(r => `${r.name}: ${r.conclusion}`));
+            
+            // Check if all 4 workflows have completed successfully
+            const allWorkflowsCompleted = workflowNames.every(workflowName => 
+              targetRuns.some(run => run.name === workflowName)
+            );
+            
+            if (allWorkflowsCompleted) {
+              console.log('✅ All 4 workflows have completed, proceeding with report generation');
+              core.setOutput('all-complete', 'true');
+            } else {
+              const missingWorkflows = workflowNames.filter(workflowName => 
+                !targetRuns.some(run => run.name === workflowName)
+              );
+              console.log(`❌ Not all workflows completed yet. Missing: ${missingWorkflows.join(', ')}`);
+              core.setOutput('all-complete', 'false');
+            }
+
+  publish-combined-reports:
+    name: "Publish Combined Allure Reports"
+    needs: check-all-workflows-complete
+    runs-on: ubuntu-latest
+    if: always() && needs.check-all-workflows-complete.outputs.all-complete == 'true'
+    permissions:
+      contents: write
+      actions: read
+      id-token: write
+      pages: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download Web2 Dev Mode Artifacts
+        continue-on-error: true
+        uses: dawidd6/action-download-artifact@v6
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          workflow: web2-e2e-tests-playwright-dev-mode.yml
+          name_is_regexp: true
+          name: allure-results-.*
+          path: allure-results/
+          if_no_artifact_found: warn
+
+      - name: Download Web2 Start Mode Artifacts
+        continue-on-error: true
+        uses: dawidd6/action-download-artifact@v6
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          workflow: web2-e2e-tests-playwright-start-mode.yml
+          name_is_regexp: true
+          name: allure-results-.*
+          path: allure-results/
+          if_no_artifact_found: warn
+
+      - name: Download Web3 Dev Mode Artifacts
+        continue-on-error: true
+        uses: dawidd6/action-download-artifact@v6
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          workflow: web3-e2e-tests-playwright-dev-mode.yml
+          name_is_regexp: true
+          name: allure-results-.*
+          path: allure-results/
+          if_no_artifact_found: warn
+
+      - name: Download Web3 Start Mode Artifacts
+        continue-on-error: true
+        uses: dawidd6/action-download-artifact@v6
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          workflow: web3-e2e-tests-playwright-start-mode.yml
+          name_is_regexp: true
+          name: allure-results-.*
+          path: allure-results/
+          if_no_artifact_found: warn
+
+      - name: List downloaded artifacts
+        run: |
+          echo "Downloaded artifacts structure:"
+          find allure-results -type f -name "*.json" | head -20
+          echo "Total JSON files found: $(find allure-results -name "*.json" | wc -l)"
+
+      - name: Load test report history
+        if: always()
+        continue-on-error: true
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: gh-pages
+
+      - name: Copy existing history to test results
+        if: always()
+        run: |
+          echo "Copying existing history to test results directory..."
+          if [ -d "gh-pages/history" ]; then
+            echo "Found history in gh-pages/history"
+            cp -r gh-pages/history allure-results/
+            echo "History copied successfully"
+          elif [ -d "allure-report/history" ]; then
+            echo "Found history in allure-report/history"
+            cp -r allure-report/history allure-results/
+            echo "History copied successfully"
+          elif [ -d "allure-results/history" ]; then
+            echo "Found history in allure-results/history"
+            cp -r allure-results/history allure-results/
+            echo "History copied successfully"
+          elif [ -d "allure-history/history" ]; then
+            echo "Found history in allure-history/history"
+            cp -r allure-history/history allure-results/
+            echo "History copied successfully"
+          else
+            echo "No existing history found, will create new"
+            mkdir -p allure-results/history
+          fi
+
+      - name: Build combined test report
+        if: always()
+        uses: simple-elf/allure-report-action@v1.7
+        with:
+          gh_pages: gh-pages
+          allure_results: allure-results
+          allure_history: allure-history
+          keep_reports: 5
+
+      - name: Publish combined test report
+        if: always()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: allure-history
