@@ -216,11 +216,10 @@ jobs:
           path: allure-history
           retention-days: 5
 
-    # Only publish here in order to avoid errors with publishing to gh-pages branch
-      - name: Publish test report
+      - name: Upload built report
         if: always()
-        uses: peaceiris/actions-gh-pages@v3
+        uses: actions/upload-artifact@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
-          publish_dir: allure-history
+          name: web3-dev-mode-allure-report
+          path: allure-history/
+          retention-days: 5
