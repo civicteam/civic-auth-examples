@@ -12,6 +12,7 @@ on:
     workflows: ["Civic Auth Example Apps - E2E Tests (Dev Mode)", "Civic Auth Example Apps - E2E Tests (Start Mode)", "Civic Auth Web3 Example Apps - E2E Tests (Dev Mode)", "Civic Auth Web3 Example Apps - E2E Tests (Start Mode)"]
     types:
       - completed
+    branches: ['**']
 
 jobs:
   publish-combined-reports:
