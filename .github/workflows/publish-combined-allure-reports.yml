@@ -11,11 +11,7 @@ on:
     - cron: '0 1 * * *'  # Run daily at 1 AM UTC (1 hour after other workflows)
   # Only trigger after ALL workflows complete - using workflow_run but with smart checking
   workflow_run:
-    workflows: 
-      - "Civic Auth Example Apps - E2E Tests (Dev Mode)"
-      - "Civic Auth Example Apps - E2E Tests (Start Mode)"
-      - "Civic Auth Web3 Example Apps - E2E Tests (Dev Mode)"
-      - "Civic Auth Web3 Example Apps - E2E Tests (Start Mode)"
+    workflows: ["Civic Auth Example Apps - E2E Tests (Dev Mode)", "Civic Auth Example Apps - E2E Tests (Start Mode)", "Civic Auth Web3 Example Apps - E2E Tests (Dev Mode)", "Civic Auth Web3 Example Apps - E2E Tests (Start Mode)"]
     types:
       - completed
 
@@ -39,14 +35,20 @@ jobs:
               "Civic Auth Web3 Example Apps - E2E Tests (Start Mode)"
             ];
             
+            console.log('🚀 Starting workflow completion check...');
+            console.log(`Event: ${context.eventName}`);
+            console.log(`Triggered by: ${context.payload.workflow_run?.name || 'N/A'}`);
+            
             const { owner, repo } = context.repo;
             
             // Get the SHA we're checking for
             let targetSha;
             if (context.eventName === 'workflow_run') {
               targetSha = context.payload.workflow_run.head_sha;
+              console.log(`Using SHA from workflow_run: ${targetSha}`);
             } else if (context.eventName === 'workflow_dispatch' && context.payload.inputs['target-sha']) {
               targetSha = context.payload.inputs['target-sha'];
+              console.log(`Using SHA from input: ${targetSha}`);
             } else {
               // Default to latest commit on main
               const { data: ref } = await github.rest.git.getRef({
@@ -55,9 +57,8 @@ jobs:
                 ref: 'heads/main'
               });
               targetSha = ref.object.sha;
+              console.log(`Using latest main SHA: ${targetSha}`);
             }
-            
-            console.log(`Checking workflows for SHA: ${targetSha}`);
             
             // Get all workflow runs for this SHA
             const { data: workflowRuns } = await github.rest.actions.listWorkflowRunsForRepo({
@@ -67,7 +68,16 @@ jobs:
               per_page: 100
             });
             
-            console.log(`Found ${workflowRuns.workflow_runs.length} total workflow runs for this SHA`);
+            console.log(`📊 Found ${workflowRuns.workflow_runs.length} total workflow runs for SHA: ${targetSha}`);
+            
+            // Debug: Show all workflow runs for this SHA
+            const allRuns = workflowRuns.workflow_runs.map(run => ({
+              name: run.name,
+              status: run.status,
+              conclusion: run.conclusion,
+              created_at: run.created_at
+            }));
+            console.log('All workflow runs:', JSON.stringify(allRuns, null, 2));
             
             // Filter to our target workflows and only completed ones
             const targetRuns = workflowRuns.workflow_runs.filter(run => 
@@ -76,21 +86,32 @@ jobs:
               run.status === 'completed'
             );
             
-            console.log(`Completed target workflow runs:`, targetRuns.map(r => `${r.name}: ${r.conclusion}`));
+            console.log(`🎯 Completed target workflow runs (${targetRuns.length}/4):`);
+            targetRuns.forEach(run => {
+              console.log(`  ✅ ${run.name}: ${run.conclusion} (${run.created_at})`);
+            });
             
-            // Check if all 4 workflows have completed successfully
+            // Check if all 4 workflows have completed
             const allWorkflowsCompleted = workflowNames.every(workflowName => 
               targetRuns.some(run => run.name === workflowName)
             );
             
+            // Check for force-run option
+            const forceRun = context.eventName === 'workflow_dispatch' && 
+              context.payload.inputs['force-run'] === 'true';
+            
             if (allWorkflowsCompleted) {
-              console.log('✅ All 4 workflows have completed, proceeding with report generation');
+              console.log('🎉 All 4 workflows have completed, proceeding with report generation');
+              core.setOutput('all-complete', 'true');
+            } else if (forceRun) {
+              console.log('🔧 Force-run enabled, proceeding despite missing workflows');
               core.setOutput('all-complete', 'true');
             } else {
               const missingWorkflows = workflowNames.filter(workflowName => 
                 !targetRuns.some(run => run.name === workflowName)
               );
-              console.log(`❌ Not all workflows completed yet. Missing: ${missingWorkflows.join(', ')}`);
+              console.log(`⏳ Not all workflows completed yet. Missing (${missingWorkflows.length}):`);
+              missingWorkflows.forEach(name => console.log(`  ❌ ${name}`));
               core.setOutput('all-complete', 'false');
             }
 
