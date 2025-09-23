@@ -1,6 +1,5 @@
 "use client";
 
-import { FC, PropsWithChildren } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Chain, http } from "viem";
 import { createConfig, WagmiProvider } from "wagmi";

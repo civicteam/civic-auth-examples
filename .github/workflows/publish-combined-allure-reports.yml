@@ -41,15 +41,37 @@ jobs:
           elapsed=0
           interval=30   # Check every 30 seconds
           
+          # Define the workflows we need to wait for
+          workflows=(
+            "web2-e2e-tests-playwright-dev-mode.yml"
+            "web2-e2e-tests-playwright-start-mode.yml"
+            "web3-e2e-tests-playwright-dev-mode.yml"
+            "web3-e2e-tests-playwright-start-mode.yml"
+          )
+          
           while [ $elapsed -lt $timeout ]; do
             echo "Checking for completed test workflows... (${elapsed}s elapsed)"
             
-            # Check if we have any completed test workflows with artifacts
-            if gh run list --workflow="web2-e2e-tests-playwright-dev-mode.yml" --limit=1 --json status,conclusion | jq -r '.[0].conclusion' | grep -q "success\|failure"; then
-              echo "✅ Found completed test workflows, proceeding with publish"
+            all_completed=true
+            for workflow in "${workflows[@]}"; do
+              echo "Checking workflow: $workflow"
+              conclusion=$(gh run list --workflow="$workflow" --limit=1 --json status,conclusion | jq -r '.[0].conclusion // "running"')
+              echo "  Status: $conclusion"
+              
+              if [[ "$conclusion" != "success" && "$conclusion" != "failure" && "$conclusion" != "cancelled" ]]; then
+                all_completed=false
+                echo "  ⏳ Still running or not found"
+              else
+                echo "  ✅ Completed with status: $conclusion"
+              fi
+            done
+            
+            if [ "$all_completed" = true ]; then
+              echo "✅ All test workflows completed, proceeding with publish"
               break
             fi
             
+            echo "⏳ Not all workflows completed yet, waiting..."
             sleep $interval
             elapsed=$((elapsed + interval))
           done
