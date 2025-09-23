@@ -7,6 +7,7 @@ on:
         description: 'Target SHA to collect reports from (defaults to latest main)'
         required: false
         type: string
+  push:
 #   # Only trigger after ALL workflows complete - using workflow_run but with smart checking
 #   workflow_run:
 #     workflows: ["Civic Auth Example Apps - E2E Tests (Dev Mode)", "Civic Auth Example Apps - E2E Tests (Start Mode)", "Civic Auth Web3 Example Apps - E2E Tests (Dev Mode)", "Civic Auth Web3 Example Apps - E2E Tests (Start Mode)"]
