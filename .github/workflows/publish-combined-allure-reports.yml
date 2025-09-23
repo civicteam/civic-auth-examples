@@ -54,6 +54,7 @@ jobs:
           name: web2-dev-mode-allure-report
           path: reports/web2-dev-mode/
           if_no_artifact_found: warn
+          commit: ${{ github.sha }}
 
       - name: Download Web2 Start Mode Report
         continue-on-error: true
@@ -64,6 +65,7 @@ jobs:
           name: web2-start-mode-allure-report
           path: reports/web2-start-mode/
           if_no_artifact_found: warn
+          commit: ${{ github.sha }}
 
       - name: Download Web3 Dev Mode Report
         continue-on-error: true
@@ -74,6 +76,7 @@ jobs:
           name: web3-dev-mode-allure-report
           path: reports/web3-dev-mode/
           if_no_artifact_found: warn
+          commit: ${{ github.sha }}
 
       - name: Download Web3 Start Mode Report
         continue-on-error: true
@@ -84,6 +87,7 @@ jobs:
           name: web3-start-mode-allure-report
           path: reports/web3-start-mode/
           if_no_artifact_found: warn
+          commit: ${{ github.sha }}
 
       - name: List downloaded reports
         run: |
