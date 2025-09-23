@@ -54,7 +54,8 @@ jobs:
           name: web2-dev-mode-allure-report
           path: reports/web2-dev-mode/
           if_no_artifact_found: warn
-          commit: ${{ github.sha }}
+          workflow_conclusion: ""
+          search_artifacts: true
 
       - name: Download Web2 Start Mode Report
         continue-on-error: true
@@ -65,7 +66,8 @@ jobs:
           name: web2-start-mode-allure-report
           path: reports/web2-start-mode/
           if_no_artifact_found: warn
-          commit: ${{ github.sha }}
+          workflow_conclusion: ""
+          search_artifacts: true
 
       - name: Download Web3 Dev Mode Report
         continue-on-error: true
@@ -76,7 +78,8 @@ jobs:
           name: web3-dev-mode-allure-report
           path: reports/web3-dev-mode/
           if_no_artifact_found: warn
-          commit: ${{ github.sha }}
+          workflow_conclusion: ""
+          search_artifacts: true
 
       - name: Download Web3 Start Mode Report
         continue-on-error: true
@@ -87,7 +90,8 @@ jobs:
           name: web3-start-mode-allure-report
           path: reports/web3-start-mode/
           if_no_artifact_found: warn
-          commit: ${{ github.sha }}
+          workflow_conclusion: ""
+          search_artifacts: true
 
       - name: List downloaded reports
         run: |
@@ -229,18 +233,7 @@ jobs:
               mkdir -p "$target_dir"
               
               # Find the index.html file (it's usually in a numbered subdirectory like 167/)
-              # But sometimes it's in a wrong subdirectory like web2-start-mode/
               local index_file=$(find "$source_dir" -name "index.html" -type f | head -1)
-              
-              # If we found a file but it's very small (likely a redirect), look for a better one
-              if [ -n "$index_file" ] && [ $(wc -c < "$index_file") -lt 1000 ]; then
-                echo "Found small index.html ($(wc -c < "$index_file") bytes), looking for larger one..."
-                local larger_file=$(find "$source_dir" -name "index.html" -type f -size +1k | head -1)
-                if [ -n "$larger_file" ]; then
-                  index_file="$larger_file"
-                  echo "Found larger index.html: $index_file"
-                fi
-              fi
               
               if [ -n "$index_file" ]; then
                 echo "Found index.html at: $index_file"
@@ -337,8 +330,8 @@ jobs:
           echo "=== DEBUGGING HTML CONTENT ==="
           for report_dir in combined-report/*/; do
             if [ -d "$report_dir" ] && [ -f "$report_dir/index.html" ]; then
-              echo "Content of $(basename "$report_dir")/index.html:"
-              cat "$report_dir/index.html"
+              echo "First 20 lines of $(basename "$report_dir")/index.html:"
+              head -20 "$report_dir/index.html"
               echo "---"
             fi
           done
