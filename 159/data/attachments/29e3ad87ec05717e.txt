@@ -1,0 +1,14 @@
+Email slot count: 1
+Checking URL: https://auth-dev.civic.com/login/activity-indicator.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/assets/email.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiYWQ1MmU2NTItYzUwNy00M2E4LWE1ZGEtZDIzOTU1YjhmZTAzIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjIifQ%3D%3D&client_id=demo-client-1&source_system_id=d2c_SqSA4X0t2iNWbbFbbIbbVGYkuph9119NRQ5NEYA&scope=openid+profile+email+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&flow_id=oauth-login-07bba351-651e-4e5a-9344-de825f7d1a43, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/email?loginFlowId=4154b100-fcd6-47fb-a1d9-c1e3fad65a64&client_id=demo-client-1&source_system_id=d2c_SqSA4X0t2iNWbbFbbIbbVGYkuph9119NRQ5NEYA&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=229025%40simulator.amazonses.com&_rsc=8c1z1, hasLoginFlowId: true, isEmailEndpoint: true, isVerifyEndpoint: false
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=4154b100-fcd6-47fb-a1d9-c1e3fad65a64&client_id=demo-client-1&source_system_id=d2c_SqSA4X0t2iNWbbFbbIbbVGYkuph9119NRQ5NEYA&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=229025%40simulator.amazonses.com&_rsc=8c1z1
+Extracted loginFlowId: 4154b100-fcd6-47fb-a1d9-c1e3fad65a64
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: 4154b100-fcd6-47fb-a1d9-c1e3fad65a64
+Found verification code for loginFlowId 4154b100-fcd6-47fb-a1d9-c1e3fad65a64: 701329
+Database disconnected
+Retrieved verification code: 701329 for loginFlowId: 4154b100-fcd6-47fb-a1d9-c1e3fad65a64
