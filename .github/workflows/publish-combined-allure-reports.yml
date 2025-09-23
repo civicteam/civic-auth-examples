@@ -264,6 +264,16 @@ jobs:
           find combined-report -name "index.html" | sort
           echo "Directory structure:"
           find combined-report -type d | sort
+          
+          # Debug: Check what's in each report directory
+          echo "=== DEBUGGING REPORT CONTENTS ==="
+          for report_dir in combined-report/*/; do
+            if [ -d "$report_dir" ]; then
+              echo "Contents of $(basename "$report_dir"):"
+              ls -la "$report_dir" | head -10
+              echo "---"
+            fi
+          done
 
       - name: Fix absolute URLs and redirects in reports
         run: |
@@ -307,6 +317,16 @@ jobs:
           fix_report_urls "combined-report/web2-start-mode" "Web2 Start Mode"
           fix_report_urls "combined-report/web3-dev-mode" "Web3 Dev Mode"
           fix_report_urls "combined-report/web3-start-mode" "Web3 Start Mode"
+          
+          # Debug: Check HTML content
+          echo "=== DEBUGGING HTML CONTENT ==="
+          for report_dir in combined-report/*/; do
+            if [ -d "$report_dir" ] && [ -f "$report_dir/index.html" ]; then
+              echo "First 20 lines of $(basename "$report_dir")/index.html:"
+              head -20 "$report_dir/index.html"
+              echo "---"
+            fi
+          done
 
       - name: Publish combined reports
         if: always()

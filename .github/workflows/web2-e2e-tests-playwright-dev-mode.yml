@@ -247,5 +247,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: web2-dev-mode-allure-report
-          path: allure-history/
+          path: allure-history
           retention-days: 5
