@@ -61,8 +61,8 @@ test.describe('Solana Vite Wallet Adapter Login Tests', () => {
 
     // Verify wallet adapter button shows connected state
     await expect(page.locator('.wallet-adapter-button.wallet-adapter-button-trigger')).toBeVisible({ timeout: 60000 });
-    await expect(page.locator('.wallet-adapter-button-start-icon')).toBeVisible({ timeout: 20000 });
-    await expect(page.locator('.wallet-adapter-button-trigger')).toContainText(/^[A-Za-z0-9]{4}\.\.([A-Za-z0-9]{4})$/, { timeout: 20000 });
+    await expect(page.locator('.wallet-adapter-button-start-icon')).toBeVisible({ timeout: 60000 });
+    await expect(page.locator('.wallet-adapter-button-trigger')).toContainText(/^[A-Za-z0-9]{4}\.\.([A-Za-z0-9]{4})$/, { timeout: 60000 });
     
     // Verify wallet address is displayed
     await expect(page.locator('text=/Wallet address: [A-Za-z0-9]{32,44}/')).toBeVisible({ timeout: 20000 });

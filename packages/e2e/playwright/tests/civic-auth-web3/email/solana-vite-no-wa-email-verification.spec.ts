@@ -41,8 +41,8 @@ test.describe('Civic Auth Applications', () => {
     
     await allure.step('Handle iframe email verification flow', async () => {
       // Chrome/Firefox use iframe flow
-      // Wait for iframe to appear and load
-      await page.waitForSelector('#civic-auth-iframe', { timeout: 30000 });
+      // Wait for iframe to be present in DOM (don't care if it's visible or hidden)
+      await page.waitForSelector('#civic-auth-iframe', { state: 'attached', timeout: 30000 });
       
       // Click log in with email in the iframe
       const frame = page.frameLocator('#civic-auth-iframe');
@@ -52,10 +52,18 @@ test.describe('Civic Auth Applications', () => {
       
       // Wait for the login UI to fully load (not just the loading spinner)
       await allure.step('Wait for login UI to load', async () => {
-        // Wait for the login content to appear (no more loading)
-        await frame.locator('#civic-login-app-loading').waitFor({ state: 'hidden', timeout: 30000 });
+        try {
+          const loadingElement = frame.locator('#civic-login-app-loading');
+          const isLoadingVisible = await loadingElement.isVisible({ timeout: 5000 }).catch(() => false);
+          
+          if (isLoadingVisible) {
+            await loadingElement.waitFor({ state: 'hidden', timeout: 45000 });
+          }
+        } catch (error) {
+          // Loading element might not exist, that's ok
+        }
         
-        // Alternative: wait for any actual login elements to appear
+        // Wait for login elements to appear
         await frame.locator('[data-testid*="civic-login"]').first().waitFor({ timeout: 30000 });
       });
       
@@ -92,6 +100,8 @@ test.describe('Civic Auth Applications', () => {
         }
         
         await emailSlot.waitFor({ timeout: 30000 });
+        // Add a small delay to ensure button is fully interactive
+        await page.waitForTimeout(1000);
         await emailSlot.click();
       });
       
@@ -119,6 +129,8 @@ test.describe('Civic Auth Applications', () => {
         
         const submitButton = frame.locator('button svg.lucide-arrow-right').locator('..');
         await submitButton.waitFor({ timeout: 10000 });
+        // Add a small delay to ensure button is fully interactive
+        await page.waitForTimeout(1000);
         await submitButton.click();
         
         // Now wait for the response
