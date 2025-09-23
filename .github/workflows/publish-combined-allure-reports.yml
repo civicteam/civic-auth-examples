@@ -51,7 +51,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           workflow: web2-e2e-tests-playwright-dev-mode.yml
-          name: allure-report-**
+          name: web2-dev-mode-allure-report
           path: reports/web2-dev-mode/
           if_no_artifact_found: warn
 
@@ -61,7 +61,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           workflow: web2-e2e-tests-playwright-start-mode.yml
-          name: allure-report-**
+          name: web2-start-mode-allure-report
           path: reports/web2-start-mode/
           if_no_artifact_found: warn
 
@@ -71,7 +71,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           workflow: web3-e2e-tests-playwright-dev-mode.yml
-          name: allure-report-**
+          name: web3-dev-mode-allure-report
           path: reports/web3-dev-mode/
           if_no_artifact_found: warn
 
@@ -81,7 +81,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           workflow: web3-e2e-tests-playwright-start-mode.yml
-          name: allure-report-**
+          name: web3-start-mode-allure-report
           path: reports/web3-start-mode/
           if_no_artifact_found: warn
 

@@ -215,11 +215,3 @@ jobs:
           name: web3-dev-mode-allure-report
           path: allure-history
           retention-days: 5
-
-      - name: Upload built report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: web3-dev-mode-allure-report
-          path: allure-history/
-          retention-days: 5
