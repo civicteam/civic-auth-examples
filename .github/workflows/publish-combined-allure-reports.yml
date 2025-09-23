@@ -7,11 +7,7 @@ on:
         description: 'Target SHA to collect reports from (defaults to latest main)'
         required: false
         type: string
-  # Only trigger after ALL workflows complete - using workflow_run
-  workflow_run:
-    workflows: ["Civic Auth Example Apps - E2E Tests (Dev Mode)", "Civic Auth Example Apps - E2E Tests (Start Mode)", "Civic Auth Web3 Example Apps - E2E Tests (Dev Mode)", "Civic Auth Web3 Example Apps - E2E Tests (Start Mode)"]
-    types:
-      - completed
+  push:
     branches:
       - chore/update_web3_tests
       - main
@@ -34,6 +30,33 @@ jobs:
           echo "Triggered by workflow: ${{ github.event.workflow_run.name || 'N/A' }}"
           echo "SHA: ${{ github.event.workflow_run.head_sha || github.sha }}"
           echo "Branch: ${{ github.event.workflow_run.head_branch || github.ref_name }}"
+          
+      - name: Wait for test workflows to complete
+        run: |
+          echo "⏳ Waiting for test workflows to complete..."
+          echo "This workflow will wait up to 30 minutes for test workflows to finish"
+          
+          # Wait for test workflows to complete
+          timeout=1800  # 30 minutes
+          elapsed=0
+          interval=30   # Check every 30 seconds
+          
+          while [ $elapsed -lt $timeout ]; do
+            echo "Checking for completed test workflows... (${elapsed}s elapsed)"
+            
+            # Check if we have any completed test workflows with artifacts
+            if gh run list --workflow="web2-e2e-tests-playwright-dev-mode.yml" --limit=1 --json status,conclusion | jq -r '.[0].conclusion' | grep -q "success\|failure"; then
+              echo "✅ Found completed test workflows, proceeding with publish"
+              break
+            fi
+            
+            sleep $interval
+            elapsed=$((elapsed + interval))
+          done
+          
+          if [ $elapsed -ge $timeout ]; then
+            echo "⚠️ Timeout reached, proceeding anyway (some workflows may still be running)"
+          fi
           
       - name: Checkout repository
         uses: actions/checkout@v4
