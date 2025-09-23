@@ -54,8 +54,6 @@ jobs:
           name: web2-dev-mode-allure-report
           path: reports/web2-dev-mode/
           if_no_artifact_found: warn
-          workflow_conclusion: ""
-          search_artifacts: true
 
       - name: Download Web2 Start Mode Report
         continue-on-error: true
@@ -66,8 +64,6 @@ jobs:
           name: web2-start-mode-allure-report
           path: reports/web2-start-mode/
           if_no_artifact_found: warn
-          workflow_conclusion: ""
-          search_artifacts: true
 
       - name: Download Web3 Dev Mode Report
         continue-on-error: true
@@ -78,8 +74,6 @@ jobs:
           name: web3-dev-mode-allure-report
           path: reports/web3-dev-mode/
           if_no_artifact_found: warn
-          workflow_conclusion: ""
-          search_artifacts: true
 
       - name: Download Web3 Start Mode Report
         continue-on-error: true
@@ -90,8 +84,6 @@ jobs:
           name: web3-start-mode-allure-report
           path: reports/web3-start-mode/
           if_no_artifact_found: warn
-          workflow_conclusion: ""
-          search_artifacts: true
 
       - name: List downloaded reports
         run: |
@@ -189,25 +181,25 @@ jobs:
                           <div class="emoji">🚀</div>
                           <h2>Web2 Dev Mode</h2>
                           <div class="description">Development mode tests for Web2 applications including NextJS, React, Express, and VanillaJS</div>
-                          <a href="web2-dev-mode/index.html">View Report</a>
+                          <a href="web2-dev-mode/latest/index.html">View Report</a>
                       </div>
                       <div class="report-card">
                           <div class="emoji">🏭</div>
                           <h2>Web2 Start Mode</h2>
                           <div class="description">Production build tests for Web2 applications with optimized bundles and performance validation</div>
-                          <a href="web2-start-mode/index.html">View Report</a>
+                          <a href="web2-start-mode/latest/index.html">View Report</a>
                       </div>
                       <div class="report-card">
                           <div class="emoji">🌐</div>
                           <h2>Web3 Dev Mode</h2>
                           <div class="description">Development mode tests for Web3 applications including Solana wallet adapters and Wagmi integrations</div>
-                          <a href="web3-dev-mode/index.html">View Report</a>
+                          <a href="web3-dev-mode/latest/index.html">View Report</a>
                       </div>
                       <div class="report-card">
                           <div class="emoji">⚡</div>
                           <h2>Web3 Start Mode</h2>
                           <div class="description">Production build tests for Web3 applications with wallet connectivity and blockchain interactions</div>
-                          <a href="web3-start-mode/index.html">View Report</a>
+                          <a href="web3-start-mode/latest/index.html">View Report</a>
                       </div>
                   </div>
               </div>
@@ -263,25 +255,22 @@ jobs:
             fi
           }
           
-          copy_main_report "reports/web2-dev-mode" "combined-report/web2-dev-mode" "Web2 Dev Mode"
-          copy_main_report "reports/web2-start-mode" "combined-report/web2-start-mode" "Web2 Start Mode"  
-          copy_main_report "reports/web3-dev-mode" "combined-report/web3-dev-mode" "Web3 Dev Mode"
-          copy_main_report "reports/web3-start-mode" "combined-report/web3-start-mode" "Web3 Start Mode"
+          # Create directories with run numbers for history
+          copy_main_report "reports/web2-dev-mode" "combined-report/web2-dev-mode/${{ github.run_number }}" "Web2 Dev Mode"
+          copy_main_report "reports/web2-start-mode" "combined-report/web2-start-mode/${{ github.run_number }}" "Web2 Start Mode"  
+          copy_main_report "reports/web3-dev-mode" "combined-report/web3-dev-mode/${{ github.run_number }}" "Web3 Dev Mode"
+          copy_main_report "reports/web3-start-mode" "combined-report/web3-start-mode/${{ github.run_number }}" "Web3 Start Mode"
+          
+          # Create symlinks to latest for easy access
+          ln -sf "${{ github.run_number }}" "combined-report/web2-dev-mode/latest" || true
+          ln -sf "${{ github.run_number }}" "combined-report/web2-start-mode/latest" || true
+          ln -sf "${{ github.run_number }}" "combined-report/web3-dev-mode/latest" || true
+          ln -sf "${{ github.run_number }}" "combined-report/web3-start-mode/latest" || true
           
           echo "Combined report structure:"
           find combined-report -name "index.html" | sort
           echo "Directory structure:"
           find combined-report -type d | sort
-          
-          # Debug: Check what's in each report directory
-          echo "=== DEBUGGING REPORT CONTENTS ==="
-          for report_dir in combined-report/*/; do
-            if [ -d "$report_dir" ]; then
-              echo "Contents of $(basename "$report_dir"):"
-              ls -la "$report_dir" | head -10
-              echo "---"
-            fi
-          done
 
       - name: Fix absolute URLs and redirects in reports
         run: |
@@ -325,16 +314,6 @@ jobs:
           fix_report_urls "combined-report/web2-start-mode" "Web2 Start Mode"
           fix_report_urls "combined-report/web3-dev-mode" "Web3 Dev Mode"
           fix_report_urls "combined-report/web3-start-mode" "Web3 Start Mode"
-          
-          # Debug: Check HTML content
-          echo "=== DEBUGGING HTML CONTENT ==="
-          for report_dir in combined-report/*/; do
-            if [ -d "$report_dir" ] && [ -f "$report_dir/index.html" ]; then
-              echo "First 20 lines of $(basename "$report_dir")/index.html:"
-              head -20 "$report_dir/index.html"
-              echo "---"
-            fi
-          done
 
       - name: Publish combined reports
         if: always()
