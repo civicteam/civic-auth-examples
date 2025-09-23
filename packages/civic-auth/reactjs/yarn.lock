@@ -255,10 +255,10 @@
   dependencies:
     jose "^5.9.4"
 
-"@civic/auth@0.11.1-beta.1":
-  version "0.11.1-beta.1"
-  resolved "https://registry.yarnpkg.com/@civic/auth/-/auth-0.11.1-beta.1.tgz#d41f204c436ed162a9f076a7fd5a8ddbaddc8935"
-  integrity sha512-z6YP57eDjt8hoKkuql7HdT3oltEDB6+EvUjLDbIE9RlJ3GaRuTX3b5jBRFBxKrcIi//aaViQlqlhYWwsPrGSOQ==
+"@civic/auth@*":
+  version "0.11.2"
+  resolved "https://registry.yarnpkg.com/@civic/auth/-/auth-0.11.2.tgz#d830af6c4349426c439bee2e670da7c11097e679"
+  integrity sha512-U/VU4f+AqLeMVVyd4orgIW1SKi+Cr5OpXSskHh58Zd++48+6FwLzfhZw5GLJERdYpSTZOe3A9k2MqFwSRDTeqw==
   dependencies:
     "@civic/auth-verify" "0.0.4"
     "@civic/iframe-resizer" "0.1.2"
