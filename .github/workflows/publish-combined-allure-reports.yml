@@ -251,18 +251,10 @@ jobs:
           echo "Combined report structure:"
           find combined-report -name "index.html" | sort
 
-      - name: Setup Pages
+      - name: Publish combined reports
         if: always()
-        uses: actions/configure-pages@v4
-
-      - name: Upload Pages artifact
-        if: always()
-        uses: actions/upload-pages-artifact@v3
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          name: github-pages
-          path: combined-report
-
-      - name: Deploy to GitHub Pages
-        if: always()
-        id: deployment
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: combined-report
