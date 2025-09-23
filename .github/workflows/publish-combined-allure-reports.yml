@@ -45,45 +45,48 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Download Web2 Dev Mode Report
+      - name: Download test reports using GitHub CLI
         continue-on-error: true
-        uses: dawidd6/action-download-artifact@v6
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          workflow: web2-e2e-tests-playwright-dev-mode.yml
-          name: allure-report-*
-          path: reports/web2-dev-mode/
-          if_no_artifact_found: warn
-
-      - name: Download Web2 Start Mode Report
-        continue-on-error: true
-        uses: dawidd6/action-download-artifact@v6
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          workflow: web2-e2e-tests-playwright-start-mode.yml
-          name: allure-report-*
-          path: reports/web2-start-mode/
-          if_no_artifact_found: warn
-
-      - name: Download Web3 Dev Mode Report
-        continue-on-error: true
-        uses: dawidd6/action-download-artifact@v6
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          workflow: web3-e2e-tests-playwright-dev-mode.yml
-          name: allure-report-*
-          path: reports/web3-dev-mode/
-          if_no_artifact_found: warn
-
-      - name: Download Web3 Start Mode Report
-        continue-on-error: true
-        uses: dawidd6/action-download-artifact@v6
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          workflow: web3-e2e-tests-playwright-start-mode.yml
-          name: allure-report-*
-          path: reports/web3-start-mode/
-          if_no_artifact_found: warn
+        run: |
+          echo "Downloading test reports using GitHub CLI..."
+          
+          # Function to download latest artifact by pattern
+          download_latest_artifact() {
+            local workflow_name="$1"
+            local target_dir="$2"
+            local pattern="$3"
+            
+            echo "Looking for artifacts matching '$pattern' in workflow '$workflow_name'"
+            
+            # Get the latest successful run
+            local run_id=$(gh run list --workflow="$workflow_name" --limit=1 --json databaseId,conclusion --jq '.[0].databaseId')
+            local conclusion=$(gh run list --workflow="$workflow_name" --limit=1 --json conclusion --jq '.[0].conclusion')
+            
+            if [[ "$conclusion" != "success" && "$conclusion" != "failure" ]]; then
+              echo "⚠️ No completed run found for $workflow_name"
+              return
+            fi
+            
+            echo "Found run ID: $run_id with conclusion: $conclusion"
+            
+            # List artifacts and find the one matching our pattern
+            local artifact_name=$(gh api "repos/${{ github.repository }}/actions/runs/$run_id/artifacts" --jq ".artifacts[] | select(.name | startswith(\"$pattern\")) | .name" | head -1)
+            
+            if [[ -n "$artifact_name" ]]; then
+              echo "Found artifact: $artifact_name"
+              mkdir -p "$target_dir"
+              gh run download "$run_id" --name "$artifact_name" --dir "$target_dir"
+              echo "✅ Downloaded $artifact_name to $target_dir"
+            else
+              echo "⚠️ No artifact matching '$pattern' found for $workflow_name"
+            fi
+          }
+          
+          # Download reports for each workflow
+          download_latest_artifact "web2-e2e-tests-playwright-dev-mode.yml" "reports/web2-dev-mode" "allure-report"
+          download_latest_artifact "web2-e2e-tests-playwright-start-mode.yml" "reports/web2-start-mode" "allure-report"
+          download_latest_artifact "web3-e2e-tests-playwright-dev-mode.yml" "reports/web3-dev-mode" "allure-report"
+          download_latest_artifact "web3-e2e-tests-playwright-start-mode.yml" "reports/web3-start-mode" "allure-report"
 
       - name: List downloaded reports
         run: |
@@ -259,6 +262,7 @@ jobs:
         if: always()
         uses: actions/upload-pages-artifact@v3
         with:
+          name: github-pages
           path: combined-report
 
       - name: Deploy to GitHub Pages
