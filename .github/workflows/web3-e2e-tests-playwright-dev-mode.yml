@@ -50,7 +50,7 @@ jobs:
     with:
       project-path: packages/civic-auth-web3/solana/next15-no-wallet-adapter
       playwright-spec: "playwright/tests/civic-auth-web3/login/solana-next15-turbopack-no-wa-login.spec.ts playwright/tests/civic-auth-web3/email/solana-next15-turbopack-no-wa-email-verification.spec.ts"
-      build-command: "yarn build-turbopack"
+      build-command: "yarn build"
       dev-command: "yarn dev-turbopack"
       browser: webkit
       job-name: "🌐 Solana Next.js 15 Turbopack No WA (Login + Email)"
