@@ -212,34 +212,46 @@ jobs:
           echo "Copying individual reports..."
           
           # Copy each report to the combined structure
-          # We need to copy the main report files (index.html and supporting files) 
-          # not the nested numbered directories
+          # The artifacts might be in subdirectories, so we need to find the actual report files
           
           copy_main_report() {
             local source_dir="$1"
             local target_dir="$2"
             local report_name="$3"
             
+            echo "Processing $report_name from $source_dir to $target_dir"
+            
             if [ -d "$source_dir" ]; then
               mkdir -p "$target_dir"
               
-              # Copy main report files (index.html, styles.css, etc.) but skip numbered directories
-              if [ -f "$source_dir/index.html" ]; then
-                cp "$source_dir/index.html" "$target_dir/"
-                [ -f "$source_dir/styles.css" ] && cp "$source_dir/styles.css" "$target_dir/"
-                [ -f "$source_dir/favicon.ico" ] && cp "$source_dir/favicon.ico" "$target_dir/"
-                [ -d "$source_dir/data" ] && cp -r "$source_dir/data" "$target_dir/"
-                [ -d "$source_dir/history" ] && cp -r "$source_dir/history" "$target_dir/"
-                [ -d "$source_dir/widgets" ] && cp -r "$source_dir/widgets" "$target_dir/"
-                [ -d "$source_dir/plugin" ] && cp -r "$source_dir/plugin" "$target_dir/"
-                [ -d "$source_dir/export" ] && cp -r "$source_dir/export" "$target_dir/"
-                echo "✅ Copied $report_name report"
+              # Find the index.html file (it's usually in a numbered subdirectory like 167/)
+              local index_file=$(find "$source_dir" -name "index.html" -type f | head -1)
+              
+              if [ -n "$index_file" ]; then
+                echo "Found index.html at: $index_file"
+                local report_base_dir=$(dirname "$index_file")
+                
+                # Copy all files from the report directory (the numbered subdirectory)
+                echo "Copying from $report_base_dir to $target_dir"
+                cp -r "$report_base_dir"/* "$target_dir/" 2>/dev/null || true
+                
+                # Also copy the root index.html if it exists (for the main navigation)
+                if [ -f "$source_dir/index.html" ] && [ "$source_dir/index.html" != "$index_file" ]; then
+                  echo "Also found root index.html, copying as well"
+                  cp "$source_dir/index.html" "$target_dir/root-index.html"
+                fi
+                
+                echo "✅ Copied $report_name report from $report_base_dir"
+                echo "Files copied: $(ls -la "$target_dir" | wc -l) items"
               else
-                echo "⚠️ No main index.html found in $source_dir, created empty directory"
+                echo "⚠️ No index.html found in $source_dir"
+                # List what's actually in the directory
+                echo "Contents of $source_dir:"
+                find "$source_dir" -type f | head -10
               fi
             else
               mkdir -p "$target_dir"
-              echo "⚠️ $report_name report not found, created empty directory"
+              echo "⚠️ $report_name report directory not found: $source_dir"
             fi
           }
           
@@ -250,6 +262,8 @@ jobs:
           
           echo "Combined report structure:"
           find combined-report -name "index.html" | sort
+          echo "Directory structure:"
+          find combined-report -type d | sort
 
       - name: Publish combined reports
         if: always()
