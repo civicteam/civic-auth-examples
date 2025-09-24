@@ -250,10 +250,17 @@ jobs:
                 
                 # Also copy the most recent one to the main directory for "latest"
                 local latest_dir="${numbered_dirs[-1]}"
+                local latest_run_number=$(basename "$latest_dir")
                 echo "Copying latest ($latest_dir) to main directory"
                 cp -r "$latest_dir"/* "$target_dir/" 2>/dev/null || true
                 
-                echo "✅ Copied $report_name report with history (${#numbered_dirs[@]} versions)"
+                # Add run number to the title of the latest report
+                if [ -f "$target_dir/index.html" ]; then
+                  echo "Adding run number $latest_run_number to report title"
+                  sed -i "s|<title>|<title>[Run $latest_run_number] |" "$target_dir/index.html"
+                fi
+                
+                echo "✅ Copied $report_name report with history (${#numbered_dirs[@]} versions, latest: $latest_run_number)"
                 echo "Files in latest: $(ls -la "$target_dir" | wc -l) items"
               else
                 echo "⚠️ No numbered directories found in $source_dir"
