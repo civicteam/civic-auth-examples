@@ -1,0 +1,18 @@
+Original tokens captured: {
+  user: '{"name":"Ghost","ema...',
+  access_token: 'eyJhbGciOiJSUzI1NiIs...',
+  id_token: 'eyJhbGciOiJSUzI1NiIs...',
+  refresh_token: 'k6GVcWeXY3AD4lbr9g5D...',
+  oidc_session_expires_at: '1758685596'
+}
+Refreshed tokens: {
+  user: '{"name":"Ghost","ema...',
+  access_token: 'eyJhbGciOiJSUzI1NiIs...',
+  id_token: 'eyJhbGciOiJSUzI1NiIs...',
+  refresh_token: 'mAcvWb5iiILjXgvvBpCB...',
+  oidc_session_expires_at: '1758685597'
+}
+✅ Refresh token has been renewed
+✅ oidc_session_expires_at has been set to future: 2025-09-24T03:46:37.000Z
+✅ user, access_token, and id_token tokens are present and renewed
+✅ User remains authenticated after token refresh
