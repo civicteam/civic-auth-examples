@@ -272,6 +272,7 @@ jobs:
           echo "Directory structure:"
           find combined-report -type d | sort
 
+          # hello
       - name: Fix absolute URLs and redirects in reports
         run: |
           echo "Fixing absolute URLs and redirects in Allure reports..."
