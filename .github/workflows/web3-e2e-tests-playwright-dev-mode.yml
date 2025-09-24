@@ -57,7 +57,8 @@ jobs:
       workflow-identifier: "dev-mode"
       allure-parent-suite: "Web3 Dev Mode"
     secrets: inherit
-
+        
+    ## Need to fix https://civicteam.atlassian.net/browse/TECH-2646
 #   job-solana-vite-no-wa-example-app:
 #     name: "Solana Vite No Wallet Adapter example app"
 #     needs: check-version
@@ -112,6 +113,7 @@ jobs:
       allure-parent-suite: "Web3 Dev Mode"
     secrets: inherit
 
+    ## Need to fix https://civicteam.atlassian.net/browse/TECH-2646
 #   job-solana-vite-wa-example-app:
 #     name: "Solana Vite Wallet Adapter example app"
 #     needs: check-version
@@ -125,6 +127,7 @@ jobs:
 #       allure-parent-suite: "Web3 Dev Mode"
 #     secrets: inherit
 
+    ## Need to fix https://civicteam.atlassian.net/browse/TECH-2646
 #   job-wagmi-example-app:
 #     name: "Wagmi example app"
 #     needs: check-version
