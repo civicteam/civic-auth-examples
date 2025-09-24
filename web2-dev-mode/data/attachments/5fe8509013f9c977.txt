@@ -1,0 +1,14 @@
+Email slot count: 1
+Checking URL: https://auth-dev.civic.com/login/assets/email.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/activity-indicator.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiZWQ0MGRjOGYtOWEyMy00OGExLWE1OGQtOWQzNWIwMGRhZjdhIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjIifQ%3D%3D&client_id=demo-client-1&source_system_id=ErMSp0r5E8pWnn95hH4kVTA3uO1qU26b3UWo3VmDdl9&scope=openid+profile+email+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&flow_id=oauth-login-fd72052b-72ca-40d9-aad1-1352d054a0da, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/email?loginFlowId=389908be-29f5-4861-851f-20558373b55a&client_id=demo-client-1&source_system_id=ErMSp0r5E8pWnn95hH4kVTA3uO1qU26b3UWo3VmDdl9&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=394543%40simulator.amazonses.com&_rsc=1ubo7, hasLoginFlowId: true, isEmailEndpoint: true, isVerifyEndpoint: false
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=389908be-29f5-4861-851f-20558373b55a&client_id=demo-client-1&source_system_id=ErMSp0r5E8pWnn95hH4kVTA3uO1qU26b3UWo3VmDdl9&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=394543%40simulator.amazonses.com&_rsc=1ubo7
+Extracted loginFlowId: 389908be-29f5-4861-851f-20558373b55a
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: 389908be-29f5-4861-851f-20558373b55a
+Found verification code for loginFlowId 389908be-29f5-4861-851f-20558373b55a: 192120
+Database disconnected
+Retrieved verification code: 192120 for loginFlowId: 389908be-29f5-4861-851f-20558373b55a
