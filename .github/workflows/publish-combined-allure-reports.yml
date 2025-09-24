@@ -181,25 +181,25 @@ jobs:
                           <div class="emoji">🚀</div>
                           <h2>Web2 Dev Mode</h2>
                           <div class="description">Development mode tests for Web2 applications including NextJS, React, Express, and VanillaJS</div>
-                          <a href="web2-dev-mode/latest/index.html?v=${{ github.run_number }}">View Report</a>
+                          <a href="web2-dev-mode/index.html?v=${{ github.run_number }}">View Report</a>
                       </div>
                       <div class="report-card">
                           <div class="emoji">🏭</div>
                           <h2>Web2 Start Mode</h2>
                           <div class="description">Production build tests for Web2 applications with optimized bundles and performance validation</div>
-                          <a href="web2-start-mode/latest/index.html?v=${{ github.run_number }}">View Report</a>
+                          <a href="web2-start-mode/index.html?v=${{ github.run_number }}">View Report</a>
                       </div>
                       <div class="report-card">
                           <div class="emoji">🌐</div>
                           <h2>Web3 Dev Mode</h2>
                           <div class="description">Development mode tests for Web3 applications including Solana wallet adapters and Wagmi integrations</div>
-                          <a href="web3-dev-mode/latest/index.html?v=${{ github.run_number }}">View Report</a>
+                          <a href="web3-dev-mode/index.html?v=${{ github.run_number }}">View Report</a>
                       </div>
                       <div class="report-card">
                           <div class="emoji">⚡</div>
                           <h2>Web3 Start Mode</h2>
                           <div class="description">Production build tests for Web3 applications with wallet connectivity and blockchain interactions</div>
-                          <a href="web3-start-mode/latest/index.html?v=${{ github.run_number }}">View Report</a>
+                          <a href="web3-start-mode/index.html?v=${{ github.run_number }}">View Report</a>
                       </div>
                   </div>
               </div>
@@ -255,17 +255,11 @@ jobs:
             fi
           }
           
-          # Create directories with run numbers for history
-          copy_main_report "reports/web2-dev-mode" "combined-report/web2-dev-mode/${{ github.run_number }}" "Web2 Dev Mode"
-          copy_main_report "reports/web2-start-mode" "combined-report/web2-start-mode/${{ github.run_number }}" "Web2 Start Mode"  
-          copy_main_report "reports/web3-dev-mode" "combined-report/web3-dev-mode/${{ github.run_number }}" "Web3 Dev Mode"
-          copy_main_report "reports/web3-start-mode" "combined-report/web3-start-mode/${{ github.run_number }}" "Web3 Start Mode"
-          
-          # Create symlinks to latest for easy access
-          ln -sf "${{ github.run_number }}" "combined-report/web2-dev-mode/latest" || true
-          ln -sf "${{ github.run_number }}" "combined-report/web2-start-mode/latest" || true
-          ln -sf "${{ github.run_number }}" "combined-report/web3-dev-mode/latest" || true
-          ln -sf "${{ github.run_number }}" "combined-report/web3-start-mode/latest" || true
+          # Copy reports directly to main directories (like the working version)
+          copy_main_report "reports/web2-dev-mode" "combined-report/web2-dev-mode" "Web2 Dev Mode"
+          copy_main_report "reports/web2-start-mode" "combined-report/web2-start-mode" "Web2 Start Mode"  
+          copy_main_report "reports/web3-dev-mode" "combined-report/web3-dev-mode" "Web3 Dev Mode"
+          copy_main_report "reports/web3-start-mode" "combined-report/web3-start-mode" "Web3 Start Mode"
           
           echo "Combined report structure:"
           find combined-report -name "index.html" | sort
