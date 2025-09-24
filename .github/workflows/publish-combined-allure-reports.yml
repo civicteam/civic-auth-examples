@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
 
 jobs:
-    # this job will wait for all the workflows to complete. Unfortunately github does not have a way to wait for all workflows to complete, so using a script instead.
+    # this job will wait for all the workflows to complete. Unfortunately github does not have a way to wait for all workflows to complete. The drawback is that it does the check after each workflow completes.
     # see https://github.com/orgs/community/discussions/16059 for more information
   wait-for-workflows:
     runs-on: ubuntu-latest
