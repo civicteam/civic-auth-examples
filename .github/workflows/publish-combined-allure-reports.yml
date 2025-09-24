@@ -1,60 +1,47 @@
 name: Publish Combined Allure Reports
 
 on:
-  workflow_run:
-    workflows: [
-      "Civic Auth Example Apps - E2E Tests (Dev Mode)",
-      "Civic Auth Example Apps - E2E Tests (Start Mode)", 
-      "Civic Auth Web3 Example Apps - E2E Tests (Dev Mode)",
-      "Civic Auth Web3 Example Apps - E2E Tests (Start Mode)"
-    ]
-    types: [completed]
+  push:
   workflow_dispatch:
 
 jobs:
-  wait-for-all:
+    # this job will wait for all the workflows to complete. Unfortunately github does not have a way to wait for all workflows to complete, so using a script instead.
+    # see https://github.com/orgs/community/discussions/16059 for more information
+  wait-for-workflows:
     runs-on: ubuntu-latest
     steps:
-      - name: Wait for all workflows
-        uses: actions/github-script@v7
+      - uses: lewagon/wait-on-check-action@v1.3.4
         with:
-          script: |
-            const workflows = [
-              "Civic Auth Example Apps - E2E Tests (Dev Mode)",
-              "Civic Auth Example Apps - E2E Tests (Start Mode)", 
-              "Civic Auth Web3 Example Apps - E2E Tests (Dev Mode)",
-              "Civic Auth Web3 Example Apps - E2E Tests (Start Mode)"
-            ];
+          ref: ${{ github.ref }}
+          check-name: 'Civic Auth Example Apps - E2E Tests (Dev Mode)'
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          wait-interval: 30
             
-            // Check if all workflows have completed
-            const runs = await github.rest.actions.listWorkflowRunsForRepo({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              branch: 'main',
-              per_page: 100
-            });
+      - uses: lewagon/wait-on-check-action@v1.3.4
+        with:
+          ref: ${{ github.ref }}
+          check-name: 'Civic Auth Example Apps - E2E Tests (Start Mode)'
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          wait-interval: 30
             
-            const latestRuns = new Map();
-            runs.data.workflow_runs.forEach(run => {
-              const key = run.name;
-              if (!latestRuns.has(key) || run.created_at > latestRuns.get(key).created_at) {
-                latestRuns.set(key, run);
-              }
-            });
+      - uses: lewagon/wait-on-check-action@v1.3.4
+        with:
+          ref: ${{ github.ref }}
+          check-name: 'Civic Auth Web3 Example Apps - E2E Tests (Dev Mode)'
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          wait-interval: 30
             
-            const allCompleted = workflows.every(workflow => {
-              const run = latestRuns.get(workflow);
-              return run && run.status === 'completed';
-            });
-            
-            if (!allCompleted) {
-              core.setFailed('Not all workflows have completed yet');
-            }
+      - uses: lewagon/wait-on-check-action@v1.3.4
+        with:
+          ref: ${{ github.ref }}
+          check-name: 'Civic Auth Web3 Example Apps - E2E Tests (Start Mode)'
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          wait-interval: 30
 
   publish-combined-reports:
     name: "Publish Combined Allure Reports"
     runs-on: ubuntu-latest
-    needs: wait-for-all
+    needs: wait-for-workflows
     if: always()
     permissions:
       contents: write
