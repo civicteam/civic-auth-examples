@@ -181,25 +181,33 @@ jobs:
                           <div class="emoji">🚀</div>
                           <h2>Web2 Dev Mode</h2>
                           <div class="description">Development mode tests for Web2 applications including NextJS, React, Express, and VanillaJS</div>
-                          <a href="web2-dev-mode/index.html">View Report</a>
+                          <a href="web2-dev-mode/index.html">View Latest Report</a>
+                          <br><br>
+                          <a href="web2-dev-mode/" style="font-size: 0.9em; opacity: 0.8;">📚 View History</a>
                       </div>
                       <div class="report-card">
                           <div class="emoji">🏭</div>
                           <h2>Web2 Start Mode</h2>
                           <div class="description">Production build tests for Web2 applications with optimized bundles and performance validation</div>
-                          <a href="web2-start-mode/index.html">View Report</a>
+                          <a href="web2-start-mode/index.html">View Latest Report</a>
+                          <br><br>
+                          <a href="web2-start-mode/" style="font-size: 0.9em; opacity: 0.8;">📚 View History</a>
                       </div>
                       <div class="report-card">
                           <div class="emoji">🌐</div>
                           <h2>Web3 Dev Mode</h2>
                           <div class="description">Development mode tests for Web3 applications including Solana wallet adapters and Wagmi integrations</div>
-                          <a href="web3-dev-mode/index.html">View Report</a>
+                          <a href="web3-dev-mode/index.html">View Latest Report</a>
+                          <br><br>
+                          <a href="web3-dev-mode/" style="font-size: 0.9em; opacity: 0.8;">📚 View History</a>
                       </div>
                       <div class="report-card">
                           <div class="emoji">⚡</div>
                           <h2>Web3 Start Mode</h2>
                           <div class="description">Production build tests for Web3 applications with wallet connectivity and blockchain interactions</div>
-                          <a href="web3-start-mode/index.html">View Report</a>
+                          <a href="web3-start-mode/index.html">View Latest Report</a>
+                          <br><br>
+                          <a href="web3-start-mode/" style="font-size: 0.9em; opacity: 0.8;">📚 View History</a>
                       </div>
                   </div>
               </div>
@@ -224,24 +232,34 @@ jobs:
             if [ -d "$source_dir" ]; then
               mkdir -p "$target_dir"
               
-              # Find the index.html file - it could be nested in subdirectories
-              local index_file=$(find "$source_dir" -name "index.html" -type f | head -1)
+              # Find all numbered directories and copy them for history
+              local numbered_dirs=($(find "$source_dir" -maxdepth 1 -type d -name "[0-9]*" | sort -V))
               
-              if [ -n "$index_file" ]; then
-                echo "Found index.html at: $index_file"
-                local report_base_dir=$(dirname "$index_file")
+              if [ ${#numbered_dirs[@]} -gt 0 ]; then
+                echo "Found ${#numbered_dirs[@]} numbered directories: ${numbered_dirs[*]}"
                 
-                # Copy all files from the report directory
-                echo "Copying from $report_base_dir to $target_dir"
-                cp -r "$report_base_dir"/* "$target_dir/" 2>/dev/null || true
+                # Copy each numbered directory for history
+                for numbered_dir in "${numbered_dirs[@]}"; do
+                  local report_number=$(basename "$numbered_dir")
+                  local history_dir="$target_dir/$report_number"
+                  
+                  echo "Copying $numbered_dir to $history_dir"
+                  mkdir -p "$history_dir"
+                  cp -r "$numbered_dir"/* "$history_dir/" 2>/dev/null || true
+                done
                 
-                echo "✅ Copied $report_name report from $report_base_dir"
-                echo "Files copied: $(ls -la "$target_dir" | wc -l) items"
+                # Also copy the most recent one to the main directory for "latest"
+                local latest_dir="${numbered_dirs[-1]}"
+                echo "Copying latest ($latest_dir) to main directory"
+                cp -r "$latest_dir"/* "$target_dir/" 2>/dev/null || true
+                
+                echo "✅ Copied $report_name report with history (${#numbered_dirs[@]} versions)"
+                echo "Files in latest: $(ls -la "$target_dir" | wc -l) items"
               else
-                echo "⚠️ No index.html found in $source_dir"
+                echo "⚠️ No numbered directories found in $source_dir"
                 # List what's actually in the directory
                 echo "Contents of $source_dir:"
-                find "$source_dir" -type f | head -10
+                find "$source_dir" -maxdepth 2 -type f | head -10
               fi
             else
               mkdir -p "$target_dir"
