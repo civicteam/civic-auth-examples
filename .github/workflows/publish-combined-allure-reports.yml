@@ -98,7 +98,7 @@ jobs:
           mkdir -p combined-report
           
           # Create an index.html that provides navigation to all reports
-          cat > combined-report/index.html << 'EOF'
+          cat > combined-report/index.html << EOF
           <!DOCTYPE html>
           <html lang="en">
           <head>
@@ -181,25 +181,25 @@ jobs:
                           <div class="emoji">🚀</div>
                           <h2>Web2 Dev Mode</h2>
                           <div class="description">Development mode tests for Web2 applications including NextJS, React, Express, and VanillaJS</div>
-                          <a href="web2-dev-mode/latest/index.html">View Report</a>
+                          <a href="web2-dev-mode/latest/index.html?v=${{ github.run_number }}">View Report</a>
                       </div>
                       <div class="report-card">
                           <div class="emoji">🏭</div>
                           <h2>Web2 Start Mode</h2>
                           <div class="description">Production build tests for Web2 applications with optimized bundles and performance validation</div>
-                          <a href="web2-start-mode/latest/index.html">View Report</a>
+                          <a href="web2-start-mode/latest/index.html?v=${{ github.run_number }}">View Report</a>
                       </div>
                       <div class="report-card">
                           <div class="emoji">🌐</div>
                           <h2>Web3 Dev Mode</h2>
                           <div class="description">Development mode tests for Web3 applications including Solana wallet adapters and Wagmi integrations</div>
-                          <a href="web3-dev-mode/latest/index.html">View Report</a>
+                          <a href="web3-dev-mode/latest/index.html?v=${{ github.run_number }}">View Report</a>
                       </div>
                       <div class="report-card">
                           <div class="emoji">⚡</div>
                           <h2>Web3 Start Mode</h2>
                           <div class="description">Production build tests for Web3 applications with wallet connectivity and blockchain interactions</div>
-                          <a href="web3-start-mode/latest/index.html">View Report</a>
+                          <a href="web3-start-mode/latest/index.html?v=${{ github.run_number }}">View Report</a>
                       </div>
                   </div>
               </div>
@@ -304,7 +304,14 @@ jobs:
               find "$report_dir" -name "*.js" -type f -exec sed -i '/window\.location\.href.*civicteam\.github\.io/d' {} \;
               find "$report_dir" -name "*.js" -type f -exec sed -i '/window\.location\.replace.*civicteam\.github\.io/d' {} \;
               
-              echo "✅ Fixed URLs and redirects in $report_name"
+              # Add cache-busting meta tags to prevent caching
+              find "$report_dir" -name "*.html" -type f -exec sed -i 's|<head>|<head>\n    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">\n    <meta http-equiv="Pragma" content="no-cache">\n    <meta http-equiv="Expires" content="0">|' {} \;
+              
+              # Add timestamp to force fresh content
+              local timestamp=$(date -u +"%Y-%m-%d %H:%M:%S UTC")
+              find "$report_dir" -name "*.html" -type f -exec sed -i "s|<title>|<title>[$timestamp] |" {} \;
+              
+              echo "✅ Fixed URLs and redirects in $report_name (timestamp: $timestamp)"
             else
               echo "⚠️ No report found in $report_dir"
             fi

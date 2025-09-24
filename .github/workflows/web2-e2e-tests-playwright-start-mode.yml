@@ -253,6 +253,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: web2-start-mode-allure-report
-          path: allure-history
+          path: allure-history/
           retention-days: 5
 
