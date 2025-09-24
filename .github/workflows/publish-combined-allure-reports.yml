@@ -2,23 +2,13 @@ name: Publish Combined Allure Reports
 
 on:
   push:
+  pull_request:
   workflow_dispatch:
 
 jobs:
-    # this job will wait for all the workflows to complete. Unfortunately github does not have a way to wait for all workflows to complete. The drawback is that it does the check after each workflow completes.
-    # see https://github.com/orgs/community/discussions/16059 for more information
-  wait-for-workflows:
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    steps:
-      - uses: int128/wait-for-workflows-action@v1.47.0
-        with:
-          fail-fast: false
-
   publish-combined-reports:
     name: "Publish Combined Allure Reports"
     runs-on: ubuntu-latest
-    needs: wait-for-workflows
     if: always()
     permissions:
       contents: write
@@ -26,6 +16,20 @@ jobs:
       id-token: write
       pages: write
     steps:
+      # Implementing 15 minute wait in order for the jobs to complete.  
+      # Unfortunately this is the cleanest solution I could find, and is much more readable in the github runs.
+      # See https://github.com/orgs/community/discussions/16059 for more information.
+      - name: Wait for test workflows to complete
+        run: |
+          echo "⏳ Waiting for test workflows to complete..."
+          echo "This workflow will wait up to 15 minutes for test workflows to finish"
+          
+          # Simple approach: just wait a reasonable amount of time
+          # The download steps will handle missing artifacts gracefully
+          sleep 900  # Wait 15 minutes for workflows to start and make progress
+          
+          echo "✅ Wait period completed, proceeding with artifact download"
+
 
       - name: Checkout repository
         uses: actions/checkout@v4
