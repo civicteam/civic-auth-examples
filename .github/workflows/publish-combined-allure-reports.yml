@@ -38,7 +38,7 @@ jobs:
           
           # Simple approach: just wait a reasonable amount of time
           # The download steps will handle missing artifacts gracefully
-          sleep 900  # Wait 15 minutes for workflows to start and make progress
+          sleep 720  # Wait 12 minutes for workflows to start and make progress
           
           echo "✅ Wait period completed, proceeding with artifact download"
           
@@ -224,22 +224,16 @@ jobs:
             if [ -d "$source_dir" ]; then
               mkdir -p "$target_dir"
               
-              # Find the index.html file (it's usually in a numbered subdirectory like 167/)
+              # Find the index.html file - it could be nested in subdirectories
               local index_file=$(find "$source_dir" -name "index.html" -type f | head -1)
               
               if [ -n "$index_file" ]; then
                 echo "Found index.html at: $index_file"
                 local report_base_dir=$(dirname "$index_file")
                 
-                # Copy all files from the report directory (the numbered subdirectory)
+                # Copy all files from the report directory
                 echo "Copying from $report_base_dir to $target_dir"
                 cp -r "$report_base_dir"/* "$target_dir/" 2>/dev/null || true
-                
-                # Also copy the root index.html if it exists (for the main navigation)
-                if [ -f "$source_dir/index.html" ] && [ "$source_dir/index.html" != "$index_file" ]; then
-                  echo "Also found root index.html, copying as well"
-                  cp "$source_dir/index.html" "$target_dir/root-index.html"
-                fi
                 
                 echo "✅ Copied $report_name report from $report_base_dir"
                 echo "Files copied: $(ls -la "$target_dir" | wc -l) items"
