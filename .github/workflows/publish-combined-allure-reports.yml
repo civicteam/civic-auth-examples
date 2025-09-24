@@ -98,7 +98,7 @@ jobs:
           mkdir -p combined-report
           
           # Create an index.html that provides navigation to all reports
-          cat > combined-report/index.html << EOF
+          cat > combined-report/index.html << 'EOF'
           <!DOCTYPE html>
           <html lang="en">
           <head>
@@ -181,25 +181,25 @@ jobs:
                           <div class="emoji">🚀</div>
                           <h2>Web2 Dev Mode</h2>
                           <div class="description">Development mode tests for Web2 applications including NextJS, React, Express, and VanillaJS</div>
-                          <a href="web2-dev-mode/index.html?v=${{ github.run_number }}">View Report</a>
+                          <a href="web2-dev-mode/index.html">View Report</a>
                       </div>
                       <div class="report-card">
                           <div class="emoji">🏭</div>
                           <h2>Web2 Start Mode</h2>
                           <div class="description">Production build tests for Web2 applications with optimized bundles and performance validation</div>
-                          <a href="web2-start-mode/index.html?v=${{ github.run_number }}">View Report</a>
+                          <a href="web2-start-mode/index.html">View Report</a>
                       </div>
                       <div class="report-card">
                           <div class="emoji">🌐</div>
                           <h2>Web3 Dev Mode</h2>
                           <div class="description">Development mode tests for Web3 applications including Solana wallet adapters and Wagmi integrations</div>
-                          <a href="web3-dev-mode/index.html?v=${{ github.run_number }}">View Report</a>
+                          <a href="web3-dev-mode/index.html">View Report</a>
                       </div>
                       <div class="report-card">
                           <div class="emoji">⚡</div>
                           <h2>Web3 Start Mode</h2>
                           <div class="description">Production build tests for Web3 applications with wallet connectivity and blockchain interactions</div>
-                          <a href="web3-start-mode/index.html?v=${{ github.run_number }}">View Report</a>
+                          <a href="web3-start-mode/index.html">View Report</a>
                       </div>
                   </div>
               </div>
@@ -255,7 +255,6 @@ jobs:
             fi
           }
           
-          # Copy reports directly to main directories (like the working version)
           copy_main_report "reports/web2-dev-mode" "combined-report/web2-dev-mode" "Web2 Dev Mode"
           copy_main_report "reports/web2-start-mode" "combined-report/web2-start-mode" "Web2 Start Mode"  
           copy_main_report "reports/web3-dev-mode" "combined-report/web3-dev-mode" "Web3 Dev Mode"
@@ -265,8 +264,17 @@ jobs:
           find combined-report -name "index.html" | sort
           echo "Directory structure:"
           find combined-report -type d | sort
+          
+          # Debug: Check what's in each report directory
+          echo "=== DEBUGGING REPORT CONTENTS ==="
+          for report_dir in combined-report/*/; do
+            if [ -d "$report_dir" ]; then
+              echo "Contents of $(basename "$report_dir"):"
+              ls -la "$report_dir" | head -10
+              echo "---"
+            fi
+          done
 
-          # hello
       - name: Fix absolute URLs and redirects in reports
         run: |
           echo "Fixing absolute URLs and redirects in Allure reports..."
@@ -298,14 +306,7 @@ jobs:
               find "$report_dir" -name "*.js" -type f -exec sed -i '/window\.location\.href.*civicteam\.github\.io/d' {} \;
               find "$report_dir" -name "*.js" -type f -exec sed -i '/window\.location\.replace.*civicteam\.github\.io/d' {} \;
               
-              # Add cache-busting meta tags to prevent caching
-              find "$report_dir" -name "*.html" -type f -exec sed -i 's|<head>|<head>\n    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">\n    <meta http-equiv="Pragma" content="no-cache">\n    <meta http-equiv="Expires" content="0">|' {} \;
-              
-              # Add timestamp to force fresh content
-              local timestamp=$(date -u +"%Y-%m-%d %H:%M:%S UTC")
-              find "$report_dir" -name "*.html" -type f -exec sed -i "s|<title>|<title>[$timestamp] |" {} \;
-              
-              echo "✅ Fixed URLs and redirects in $report_name (timestamp: $timestamp)"
+              echo "✅ Fixed URLs and redirects in $report_name"
             else
               echo "⚠️ No report found in $report_dir"
             fi
@@ -316,6 +317,16 @@ jobs:
           fix_report_urls "combined-report/web2-start-mode" "Web2 Start Mode"
           fix_report_urls "combined-report/web3-dev-mode" "Web3 Dev Mode"
           fix_report_urls "combined-report/web3-start-mode" "Web3 Start Mode"
+          
+          # Debug: Check HTML content
+          echo "=== DEBUGGING HTML CONTENT ==="
+          for report_dir in combined-report/*/; do
+            if [ -d "$report_dir" ] && [ -f "$report_dir/index.html" ]; then
+              echo "First 20 lines of $(basename "$report_dir")/index.html:"
+              head -20 "$report_dir/index.html"
+              echo "---"
+            fi
+          done
 
       - name: Publish combined reports
         if: always()
