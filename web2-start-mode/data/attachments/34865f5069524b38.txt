@@ -1,0 +1,14 @@
+Email slot count: 1
+Checking URL: https://auth-dev.civic.com/login/activity-indicator.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/assets/email.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiNmM2ODQ3MDMtMTgxYy00MTE2LTg2ODYtOWZmMGU2OTY3OWEwIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjIifQ%3D%3D&client_id=demo-client-1&source_system_id=7pcPjtUALXKb9FwogUfmiXiYyCmxvxuOWCHNeCPK75K&scope=openid+profile+email+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&flow_id=oauth-login-e4aee5e1-44d4-49e2-b01b-872f4e382a3b, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/email?loginFlowId=ba2a244f-9fb3-49ff-b1a1-9a8d7b11d568&client_id=demo-client-1&source_system_id=7pcPjtUALXKb9FwogUfmiXiYyCmxvxuOWCHNeCPK75K&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=368182%40simulator.amazonses.com&_rsc=kkb5e, hasLoginFlowId: true, isEmailEndpoint: true, isVerifyEndpoint: false
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=ba2a244f-9fb3-49ff-b1a1-9a8d7b11d568&client_id=demo-client-1&source_system_id=7pcPjtUALXKb9FwogUfmiXiYyCmxvxuOWCHNeCPK75K&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=368182%40simulator.amazonses.com&_rsc=kkb5e
+Extracted loginFlowId: ba2a244f-9fb3-49ff-b1a1-9a8d7b11d568
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: ba2a244f-9fb3-49ff-b1a1-9a8d7b11d568
+Found verification code for loginFlowId ba2a244f-9fb3-49ff-b1a1-9a8d7b11d568: 113364
+Database disconnected
+Retrieved verification code: 113364 for loginFlowId: ba2a244f-9fb3-49ff-b1a1-9a8d7b11d568
