@@ -1,0 +1,14 @@
+Email slot count: 1
+Checking URL: https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/assets/email.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/activity-indicator.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiYjA0ODU0ZDMtZWYyOS00OWNjLWFiYmItN2FlZjQzYjIyM2U2IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjIifQ%3D%3D&client_id=demo-client-1&source_system_id=EOq3cOWvl4flLV16XwT3R_JtyFQ3nobAAZTkFbWPsb7&scope=openid+profile+email+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&flow_id=oauth-login-ba712a99-1116-48ba-9a8c-6923556fa0df, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/email?loginFlowId=597fd5d8-95aa-47f2-be33-874bc0d8842b&client_id=demo-client-1&source_system_id=EOq3cOWvl4flLV16XwT3R_JtyFQ3nobAAZTkFbWPsb7&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=171486%40simulator.amazonses.com&_rsc=snr1f, hasLoginFlowId: true, isEmailEndpoint: true, isVerifyEndpoint: false
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=597fd5d8-95aa-47f2-be33-874bc0d8842b&client_id=demo-client-1&source_system_id=EOq3cOWvl4flLV16XwT3R_JtyFQ3nobAAZTkFbWPsb7&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=171486%40simulator.amazonses.com&_rsc=snr1f
+Extracted loginFlowId: 597fd5d8-95aa-47f2-be33-874bc0d8842b
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: 597fd5d8-95aa-47f2-be33-874bc0d8842b
+Found verification code for loginFlowId 597fd5d8-95aa-47f2-be33-874bc0d8842b: 664478
+Database disconnected
+Retrieved verification code: 664478 for loginFlowId: 597fd5d8-95aa-47f2-be33-874bc0d8842b
