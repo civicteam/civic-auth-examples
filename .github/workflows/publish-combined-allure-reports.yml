@@ -9,34 +9,11 @@ jobs:
     # see https://github.com/orgs/community/discussions/16059 for more information
   wait-for-workflows:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
-      - uses: lewagon/wait-on-check-action@v1.3.4
+      - uses: int128/wait-for-workflows-action@v1.47.0
         with:
-          ref: ${{ github.ref }}
-          check-name: 'Civic Auth Example Apps - E2E Tests (Dev Mode)'
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          wait-interval: 30
-            
-      - uses: lewagon/wait-on-check-action@v1.3.4
-        with:
-          ref: ${{ github.ref }}
-          check-name: 'Civic Auth Example Apps - E2E Tests (Start Mode)'
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          wait-interval: 30
-            
-      - uses: lewagon/wait-on-check-action@v1.3.4
-        with:
-          ref: ${{ github.ref }}
-          check-name: 'Civic Auth Web3 Example Apps - E2E Tests (Dev Mode)'
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          wait-interval: 30
-            
-      - uses: lewagon/wait-on-check-action@v1.3.4
-        with:
-          ref: ${{ github.ref }}
-          check-name: 'Civic Auth Web3 Example Apps - E2E Tests (Start Mode)'
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          wait-interval: 30
+          fail-fast: false
 
   publish-combined-reports:
     name: "Publish Combined Allure Reports"
