@@ -60,12 +60,23 @@ export default defineConfig({
       outputFolder: process.env.ALLURE_RESULTS_DIR || 'allure-results',
       detail: true,
       suiteTitle: false,
+      links: [
+        {
+          type: 'issue',
+          urlTemplate: 'https://github.com/civicteam/civic-auth-examples/issues/%s'
+        },
+        {
+          type: 'tms', 
+          urlTemplate: 'https://github.com/civicteam/civic-auth-examples/tree/main/%s'
+        }
+      ],
       environmentInfo: {
-        'Test Environment': 'Development',
+        'Test Environment': process.env.ALLURE_PARENT_SUITE || 'Development',
         'Civic Auth Version': getCivicAuthVersion(),
         'Report URL': 'https://civicteam.github.io/civic-auth-examples/',
         'GitHub Workflow': process.env.GITHUB_WORKFLOW || 'Local Run',
-        'Run ID': process.env.GITHUB_RUN_ID || 'N/A'
+        'Run ID': process.env.GITHUB_RUN_ID || 'N/A',
+        'Browser': process.env.BROWSER || 'All Browsers'
       },
       categoriesPath: './allure-categories.json'
     }]
@@ -91,12 +102,12 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-      name: 'Civic Auth Applications - Chromium',
+      name: 'Chromium',
       use: { ...devices['Desktop Chrome'] },
     },
 
     {
-      name: 'Civic Auth Applications - Firefox',
+      name: 'Firefox',
       use: { 
         ...devices['Desktop Firefox'],
         // Firefox also needs to ignore HTTPS errors for cross-origin auth server communication
@@ -105,7 +116,7 @@ export default defineConfig({
     },
 
     {
-      name: 'Civic Auth Applications - WebKit',
+      name: 'WebKit',
       use: { 
         ...devices['Desktop Safari'],
         // WebKit is stricter about cross-origin frame access and HTTPS errors
