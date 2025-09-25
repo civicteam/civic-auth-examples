@@ -1,0 +1,13 @@
+Email slot count: 1
+Checking URL: https://auth-dev.civic.com/login/activity-indicator.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/assets/email.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiOTZhNjVhZWMtMmJmYy00ZmEwLWFkYmQtMmUyOWI2M2MyZTNlIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6ImVtYmVkZGVkIiwiZnJhbWV3b3JrIjoidmFuaWxsYWpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMy1iZXRhLjAifQ%3D%3D&nonce=1234567890&client_id=demo-client-1&source_system_id=toPtQRoeOXsRSe2W9ymFgufmY3p1qfYVB9ciqf7Xqti&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&flow_id=oauth-login-0804451b-083f-45d8-a36c-68b3529ad88a, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/email?loginFlowId=5396b30f-2041-4949-915d-438f53e2d57c&client_id=demo-client-1&nonce=1234567890&source_system_id=toPtQRoeOXsRSe2W9ymFgufmY3p1qfYVB9ciqf7Xqti&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=811229%40simulator.amazonses.com&_rsc=10fce, hasLoginFlowId: true, isEmailEndpoint: true, isVerifyEndpoint: false
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=5396b30f-2041-4949-915d-438f53e2d57c&client_id=demo-client-1&nonce=1234567890&source_system_id=toPtQRoeOXsRSe2W9ymFgufmY3p1qfYVB9ciqf7Xqti&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=811229%40simulator.amazonses.com&_rsc=10fce
+Extracted loginFlowId: 5396b30f-2041-4949-915d-438f53e2d57c
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: 5396b30f-2041-4949-915d-438f53e2d57c
+Found verification code for loginFlowId 5396b30f-2041-4949-915d-438f53e2d57c: 483565
+Database disconnected
+Retrieved verification code: 483565 for loginFlowId: 5396b30f-2041-4949-915d-438f53e2d57c
