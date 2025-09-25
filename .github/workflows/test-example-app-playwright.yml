@@ -153,6 +153,12 @@ jobs:
             yarn add "@civic/auth@$auth_version"
           fi
           
+          if grep -q '"@civic/auth-web3"' package.json; then
+            auth_web3_version=$(get_latest_version "@civic/auth-web3")
+            echo "Installing @civic/auth-web3@$auth_web3_version"
+            yarn add "@civic/auth-web3@$auth_web3_version"
+          fi
+          
           # Install remaining dependencies
           yarn install
 
