@@ -1,0 +1,13 @@
+Email slot count: 1
+Checking URL: https://auth-dev.civic.com/login/assets/email.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/activity-indicator.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiYmRkZjcyOGMtMzYxNC00MWRiLWE2MWItYTljOWQ4OTk3OTViIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMy1iZXRhLjEifQ%3D%3D&client_id=demo-client-1&source_system_id=IXeLt54UG1MDDyzmgqEzIpyDpktH1YFcRuWrTFXwmgT&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&flow_id=oauth-login-979d1b13-f107-479c-b5ff-e09d622f7384, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/email?loginFlowId=f4f65210-a126-4c22-ab1b-0de519eb0ad8&client_id=demo-client-1&source_system_id=IXeLt54UG1MDDyzmgqEzIpyDpktH1YFcRuWrTFXwmgT&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&emailAddress=480779%40simulator.amazonses.com&_rsc=83v2x, hasLoginFlowId: true, isEmailEndpoint: true, isVerifyEndpoint: false
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=f4f65210-a126-4c22-ab1b-0de519eb0ad8&client_id=demo-client-1&source_system_id=IXeLt54UG1MDDyzmgqEzIpyDpktH1YFcRuWrTFXwmgT&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&emailAddress=480779%40simulator.amazonses.com&_rsc=83v2x
+Extracted loginFlowId: f4f65210-a126-4c22-ab1b-0de519eb0ad8
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: f4f65210-a126-4c22-ab1b-0de519eb0ad8
+Found verification code for loginFlowId f4f65210-a126-4c22-ab1b-0de519eb0ad8: 244142
+Database disconnected
+Retrieved verification code: 244142 for loginFlowId: f4f65210-a126-4c22-ab1b-0de519eb0ad8

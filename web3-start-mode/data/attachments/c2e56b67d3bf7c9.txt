@@ -1,0 +1,13 @@
+Email slot count: 1
+Checking URL: https://auth-dev.civic.com/login/assets/email.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/activity-indicator.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiN2Q4MjYxNTUtNmVjNC00NjU4LTgzMTUtYTA1MGJkYTU4ZjVhIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMy1iZXRhLjEifQ%3D%3D&client_id=demo-client-1&source_system_id=xNzwqoGjtTnQk4hMEn2stNe8I49YRB9UcYIzaeGLXzP&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&flow_id=oauth-login-b19d3ea0-c4a2-4e48-9709-6b4672656f41, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/email?loginFlowId=01235903-faba-4cde-b13b-8fb65e838da6&client_id=demo-client-1&source_system_id=xNzwqoGjtTnQk4hMEn2stNe8I49YRB9UcYIzaeGLXzP&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&emailAddress=234228%40simulator.amazonses.com&_rsc=8hnfm, hasLoginFlowId: true, isEmailEndpoint: true, isVerifyEndpoint: false
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=01235903-faba-4cde-b13b-8fb65e838da6&client_id=demo-client-1&source_system_id=xNzwqoGjtTnQk4hMEn2stNe8I49YRB9UcYIzaeGLXzP&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&emailAddress=234228%40simulator.amazonses.com&_rsc=8hnfm
+Extracted loginFlowId: 01235903-faba-4cde-b13b-8fb65e838da6
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: 01235903-faba-4cde-b13b-8fb65e838da6
+Found verification code for loginFlowId 01235903-faba-4cde-b13b-8fb65e838da6: 903134
+Database disconnected
+Retrieved verification code: 903134 for loginFlowId: 01235903-faba-4cde-b13b-8fb65e838da6

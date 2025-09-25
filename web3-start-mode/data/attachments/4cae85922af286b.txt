@@ -1,0 +1,13 @@
+Email slot count: 1
+Checking URL: https://auth-dev.civic.com/login/activity-indicator.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/assets/email.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiMDc2NWE5ZWItOGEyOC00NWVjLWIxZGQtODlhYTZjMmYyZTUzIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMy1iZXRhLjEifQ%3D%3D&client_id=demo-client-1&source_system_id=YTDXZgWTAx1CP9p0mdL0YOBFkrioCOwwroRvv_Q9X74&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&flow_id=oauth-login-60c1b58e-248d-4d5e-a13c-68a18d087b7f, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/email?loginFlowId=52359b86-9149-4045-ae23-c0b4d9c84ad9&client_id=demo-client-1&source_system_id=YTDXZgWTAx1CP9p0mdL0YOBFkrioCOwwroRvv_Q9X74&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&emailAddress=289278%40simulator.amazonses.com&_rsc=1nmvu, hasLoginFlowId: true, isEmailEndpoint: true, isVerifyEndpoint: false
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=52359b86-9149-4045-ae23-c0b4d9c84ad9&client_id=demo-client-1&source_system_id=YTDXZgWTAx1CP9p0mdL0YOBFkrioCOwwroRvv_Q9X74&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&emailAddress=289278%40simulator.amazonses.com&_rsc=1nmvu
+Extracted loginFlowId: 52359b86-9149-4045-ae23-c0b4d9c84ad9
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: 52359b86-9149-4045-ae23-c0b4d9c84ad9
+Found verification code for loginFlowId 52359b86-9149-4045-ae23-c0b4d9c84ad9: 764458
+Database disconnected
+Retrieved verification code: 764458 for loginFlowId: 52359b86-9149-4045-ae23-c0b4d9c84ad9

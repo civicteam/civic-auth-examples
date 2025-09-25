@@ -1,0 +1,13 @@
+Email slot count: 1
+Checking URL: https://auth-dev.civic.com/login/activity-indicator.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/assets/email.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiZTliZjRiYzctZGMxMS00YWU5LTg0NzYtMDBjZmQ2NjAzNjMyIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMy1iZXRhLjEifQ%3D%3D&client_id=demo-client-1&source_system_id=HxFmSELaKKxHgb4ZyyTGvH1RNGRv4k3lagCDy8aZCnI&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&flow_id=oauth-login-2623eed3-9cd1-469d-a048-f5a532b84845, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/email?loginFlowId=52add0dc-21f5-4225-a41f-8210820ba1b7&client_id=demo-client-1&source_system_id=HxFmSELaKKxHgb4ZyyTGvH1RNGRv4k3lagCDy8aZCnI&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&emailAddress=989300%40simulator.amazonses.com&_rsc=13ovv, hasLoginFlowId: true, isEmailEndpoint: true, isVerifyEndpoint: false
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=52add0dc-21f5-4225-a41f-8210820ba1b7&client_id=demo-client-1&source_system_id=HxFmSELaKKxHgb4ZyyTGvH1RNGRv4k3lagCDy8aZCnI&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&emailAddress=989300%40simulator.amazonses.com&_rsc=13ovv
+Extracted loginFlowId: 52add0dc-21f5-4225-a41f-8210820ba1b7
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: 52add0dc-21f5-4225-a41f-8210820ba1b7
+Found verification code for loginFlowId 52add0dc-21f5-4225-a41f-8210820ba1b7: 933372
+Database disconnected
+Retrieved verification code: 933372 for loginFlowId: 52add0dc-21f5-4225-a41f-8210820ba1b7

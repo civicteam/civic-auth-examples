@@ -1,0 +1,13 @@
+Email slot count: 1
+Checking URL: https://auth-dev.civic.com/login/assets/email.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/activity-indicator.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiNmQ2Njg4MzgtMzY1Zi00YTIyLWFmZWUtZmVhZGQ4MTMyMWJkIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMy1iZXRhLjEifQ%3D%3D&client_id=demo-client-1&source_system_id=qgssYH_mWC924yd44TNXVwHtCPLba9RCAYw8QnHs_Y9&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&flow_id=oauth-login-ca2d0574-797e-4b23-a23d-b8cfa7231a6c, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/email?loginFlowId=81c562a8-1dc1-4255-a052-3dc85450fded&client_id=demo-client-1&source_system_id=qgssYH_mWC924yd44TNXVwHtCPLba9RCAYw8QnHs_Y9&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&emailAddress=669965%40simulator.amazonses.com&_rsc=1usqk, hasLoginFlowId: true, isEmailEndpoint: true, isVerifyEndpoint: false
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=81c562a8-1dc1-4255-a052-3dc85450fded&client_id=demo-client-1&source_system_id=qgssYH_mWC924yd44TNXVwHtCPLba9RCAYw8QnHs_Y9&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&emailAddress=669965%40simulator.amazonses.com&_rsc=1usqk
+Extracted loginFlowId: 81c562a8-1dc1-4255-a052-3dc85450fded
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: 81c562a8-1dc1-4255-a052-3dc85450fded
+Found verification code for loginFlowId 81c562a8-1dc1-4255-a052-3dc85450fded: 262569
+Database disconnected
+Retrieved verification code: 262569 for loginFlowId: 81c562a8-1dc1-4255-a052-3dc85450fded

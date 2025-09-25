@@ -1,0 +1,13 @@
+Email slot count: 1
+Checking URL: https://auth-dev.civic.com/login/activity-indicator.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/assets/email.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiMzViNGJhYWEtNjUxMC00NWU2LWIwNDYtOWYwNmM0YmRkZDI0IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMy1iZXRhLjEifQ%3D%3D&client_id=demo-client-1&source_system_id=yHZa_mVJU_PSfY581pkkRUb6cjv4nC-9e2BVFJJ8rX7&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&flow_id=oauth-login-0998b8bc-46ed-4c01-9633-0b4c882ac0e7, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/email?loginFlowId=3997d889-8762-4578-9c09-062d3bae26d2&client_id=demo-client-1&source_system_id=yHZa_mVJU_PSfY581pkkRUb6cjv4nC-9e2BVFJJ8rX7&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&emailAddress=289044%40simulator.amazonses.com&_rsc=17eg5, hasLoginFlowId: true, isEmailEndpoint: true, isVerifyEndpoint: false
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=3997d889-8762-4578-9c09-062d3bae26d2&client_id=demo-client-1&source_system_id=yHZa_mVJU_PSfY581pkkRUb6cjv4nC-9e2BVFJJ8rX7&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&emailAddress=289044%40simulator.amazonses.com&_rsc=17eg5
+Extracted loginFlowId: 3997d889-8762-4578-9c09-062d3bae26d2
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: 3997d889-8762-4578-9c09-062d3bae26d2
+Found verification code for loginFlowId 3997d889-8762-4578-9c09-062d3bae26d2: 379318
+Database disconnected
+Retrieved verification code: 379318 for loginFlowId: 3997d889-8762-4578-9c09-062d3bae26d2

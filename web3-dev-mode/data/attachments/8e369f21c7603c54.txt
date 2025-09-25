@@ -1,0 +1,13 @@
+Email slot count: 1
+Checking URL: https://auth-dev.civic.com/login/activity-indicator.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/assets/email.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiYTZkMDI1ZDMtMjRhNi00ZTBkLWFmYjgtNmI2YzdjOWNlMzk4IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMy1iZXRhLjEifQ%3D%3D&client_id=demo-client-1&source_system_id=dDSabtoxye41ICC1_beP0OjibaFVUCgxNDVUq81Kjvs&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&flow_id=oauth-login-0bc691e8-bf48-4cb6-a34f-c882a8d1a176, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/email?loginFlowId=06be9a82-fc2d-4144-a06e-9a6898125e61&client_id=demo-client-1&source_system_id=dDSabtoxye41ICC1_beP0OjibaFVUCgxNDVUq81Kjvs&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&emailAddress=186226%40simulator.amazonses.com&_rsc=ylkku, hasLoginFlowId: true, isEmailEndpoint: true, isVerifyEndpoint: false
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=06be9a82-fc2d-4144-a06e-9a6898125e61&client_id=demo-client-1&source_system_id=dDSabtoxye41ICC1_beP0OjibaFVUCgxNDVUq81Kjvs&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&emailAddress=186226%40simulator.amazonses.com&_rsc=ylkku
+Extracted loginFlowId: 06be9a82-fc2d-4144-a06e-9a6898125e61
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: 06be9a82-fc2d-4144-a06e-9a6898125e61
+Found verification code for loginFlowId 06be9a82-fc2d-4144-a06e-9a6898125e61: 151695
+Database disconnected
+Retrieved verification code: 151695 for loginFlowId: 06be9a82-fc2d-4144-a06e-9a6898125e61

@@ -1,0 +1,13 @@
+Email slot count: 1
+Checking URL: https://auth-dev.civic.com/login/assets/email.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/activity-indicator.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiZTc4MzdlMWYtN2FkNC00NjQ1LWIzYTctZTgwMWM1N2EzNTUwIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMy1iZXRhLjEifQ%3D%3D&client_id=demo-client-1&source_system_id=E9x2TkryyD93Sa0tAnbsQEwd5TyFOX5SPob5tFnPI2a&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&flow_id=oauth-login-74c3a46f-299c-4c39-99a4-b60508f3aa1b, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/email?loginFlowId=58f301f7-8b20-4c8f-8031-200c230744b4&client_id=demo-client-1&source_system_id=E9x2TkryyD93Sa0tAnbsQEwd5TyFOX5SPob5tFnPI2a&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&emailAddress=808791%40simulator.amazonses.com&_rsc=1nrxe, hasLoginFlowId: true, isEmailEndpoint: true, isVerifyEndpoint: false
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=58f301f7-8b20-4c8f-8031-200c230744b4&client_id=demo-client-1&source_system_id=E9x2TkryyD93Sa0tAnbsQEwd5TyFOX5SPob5tFnPI2a&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&emailAddress=808791%40simulator.amazonses.com&_rsc=1nrxe
+Extracted loginFlowId: 58f301f7-8b20-4c8f-8031-200c230744b4
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: 58f301f7-8b20-4c8f-8031-200c230744b4
+Found verification code for loginFlowId 58f301f7-8b20-4c8f-8031-200c230744b4: 933729
+Database disconnected
+Retrieved verification code: 933729 for loginFlowId: 58f301f7-8b20-4c8f-8031-200c230744b4

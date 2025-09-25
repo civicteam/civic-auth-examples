@@ -1,0 +1,13 @@
+Email slot count: 1
+Checking URL: https://auth-dev.civic.com/login/assets/email.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/activity-indicator.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiODk3YzVmZTEtZDhiOS00ODdhLTgxMjAtOWU1MWNiZjkyYTM4IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMy1iZXRhLjEifQ%3D%3D&client_id=demo-client-1&source_system_id=WZoh9M-WCm9bGXHTt5G0tUJgd2w57himMxh47ZfRCEZ&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&flow_id=oauth-login-37fd26e5-7e0b-449f-8eac-1876880229a0, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/email?loginFlowId=d5b1b0cb-9fc4-4459-98b9-d6768b749d57&client_id=demo-client-1&source_system_id=WZoh9M-WCm9bGXHTt5G0tUJgd2w57himMxh47ZfRCEZ&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&emailAddress=705333%40simulator.amazonses.com&_rsc=4xwd0, hasLoginFlowId: true, isEmailEndpoint: true, isVerifyEndpoint: false
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=d5b1b0cb-9fc4-4459-98b9-d6768b749d57&client_id=demo-client-1&source_system_id=WZoh9M-WCm9bGXHTt5G0tUJgd2w57himMxh47ZfRCEZ&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&emailAddress=705333%40simulator.amazonses.com&_rsc=4xwd0
+Extracted loginFlowId: d5b1b0cb-9fc4-4459-98b9-d6768b749d57
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: d5b1b0cb-9fc4-4459-98b9-d6768b749d57
+Found verification code for loginFlowId d5b1b0cb-9fc4-4459-98b9-d6768b749d57: 642689
+Database disconnected
+Retrieved verification code: 642689 for loginFlowId: d5b1b0cb-9fc4-4459-98b9-d6768b749d57
