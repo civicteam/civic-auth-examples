@@ -1,0 +1,13 @@
+Email slot count: 1
+Checking URL: https://auth-dev.civic.com/login/activity-indicator.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/assets/email.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiYTBjMTM0NTItZGUyZC00OTIwLTkyYjAtY2Y4YjdmYmJmZjA5IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6ImVtYmVkZGVkIiwiZnJhbWV3b3JrIjoidmFuaWxsYWpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMy1iZXRhLjEifQ%3D%3D&nonce=1234567890&client_id=demo-client-1&source_system_id=r3jmMUmvVmu4wOaxY2z8ZtUv3xmRC-bBetuhfR6Fsz0&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&flow_id=oauth-login-afdf971d-efe6-476e-afdd-c381afd466fa, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/email?loginFlowId=62dc9600-9ced-4f81-804b-1c7481c0164e&client_id=demo-client-1&nonce=1234567890&source_system_id=r3jmMUmvVmu4wOaxY2z8ZtUv3xmRC-bBetuhfR6Fsz0&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=262303%40simulator.amazonses.com&_rsc=n9s1c, hasLoginFlowId: true, isEmailEndpoint: true, isVerifyEndpoint: false
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=62dc9600-9ced-4f81-804b-1c7481c0164e&client_id=demo-client-1&nonce=1234567890&source_system_id=r3jmMUmvVmu4wOaxY2z8ZtUv3xmRC-bBetuhfR6Fsz0&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=262303%40simulator.amazonses.com&_rsc=n9s1c
+Extracted loginFlowId: 62dc9600-9ced-4f81-804b-1c7481c0164e
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: 62dc9600-9ced-4f81-804b-1c7481c0164e
+Found verification code for loginFlowId 62dc9600-9ced-4f81-804b-1c7481c0164e: 571072
+Database disconnected
+Retrieved verification code: 571072 for loginFlowId: 62dc9600-9ced-4f81-804b-1c7481c0164e
