@@ -1,0 +1,13 @@
+Email slot count: 1
+Checking URL: https://auth-dev.civic.com/login/activity-indicator.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/assets/email.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiODY1OWYxOGMtOThmNS00YzI1LWJmOTktNzYwYTk4Y2E2NmRjIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6ImVtYmVkZGVkIiwiZnJhbWV3b3JrIjoidmFuaWxsYWpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMy1iZXRhLjAifQ%3D%3D&nonce=1234567890&client_id=demo-client-1&source_system_id=s23sVgbiSnjUxYBskmyffaMNFuE2DQu4nyDj20JUJ0Y&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&flow_id=oauth-login-cc7c8cbf-62df-4012-9252-14c3d967be6b, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/email?loginFlowId=bea99790-1d31-4d05-971f-9f8c81707970&client_id=demo-client-1&nonce=1234567890&source_system_id=s23sVgbiSnjUxYBskmyffaMNFuE2DQu4nyDj20JUJ0Y&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=313656%40simulator.amazonses.com&_rsc=1fio7, hasLoginFlowId: true, isEmailEndpoint: true, isVerifyEndpoint: false
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=bea99790-1d31-4d05-971f-9f8c81707970&client_id=demo-client-1&nonce=1234567890&source_system_id=s23sVgbiSnjUxYBskmyffaMNFuE2DQu4nyDj20JUJ0Y&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=313656%40simulator.amazonses.com&_rsc=1fio7
+Extracted loginFlowId: bea99790-1d31-4d05-971f-9f8c81707970
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: bea99790-1d31-4d05-971f-9f8c81707970
+Found verification code for loginFlowId bea99790-1d31-4d05-971f-9f8c81707970: 233962
+Database disconnected
+Retrieved verification code: 233962 for loginFlowId: bea99790-1d31-4d05-971f-9f8c81707970
