@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { CivicAuthProvider, UserButton } from "@civic/auth/react";
+import { CivicAuthProvider } from "@civic/auth/react";
 import OnSignInTestComponent from "./components/OnSignInTestComponent";
 
 const CLIENT_ID = import.meta.env.VITE_CLIENT_ID;
