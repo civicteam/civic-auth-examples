@@ -1,0 +1,13 @@
+Email slot count: 1
+Checking URL: https://auth-dev.civic.com/login/assets/email.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/activity-indicator.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiZGJhMmI4NmMtOWNkYS00ZmJjLWFlNTAtMmI2ODUxYTk4Njg2IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&client_id=demo-client-1&source_system_id=PnPt9hj4X96mIV2fMG04tOWrVf9H9tVNRnouPZqj3gK&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&flow_id=oauth-login-7044afa7-f487-4a28-881b-121f37624d5d, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/email?loginFlowId=e96086ee-3712-491b-a4e7-fa753bca139d&client_id=demo-client-1&source_system_id=PnPt9hj4X96mIV2fMG04tOWrVf9H9tVNRnouPZqj3gK&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&emailAddress=999784%40simulator.amazonses.com&_rsc=q11mj, hasLoginFlowId: true, isEmailEndpoint: true, isVerifyEndpoint: false
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=e96086ee-3712-491b-a4e7-fa753bca139d&client_id=demo-client-1&source_system_id=PnPt9hj4X96mIV2fMG04tOWrVf9H9tVNRnouPZqj3gK&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&emailAddress=999784%40simulator.amazonses.com&_rsc=q11mj
+Extracted loginFlowId: e96086ee-3712-491b-a4e7-fa753bca139d
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: e96086ee-3712-491b-a4e7-fa753bca139d
+Found verification code for loginFlowId e96086ee-3712-491b-a4e7-fa753bca139d: 627835
+Database disconnected
+Retrieved verification code: 627835 for loginFlowId: e96086ee-3712-491b-a4e7-fa753bca139d
