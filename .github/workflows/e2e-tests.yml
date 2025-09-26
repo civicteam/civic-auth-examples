@@ -1,0 +1,343 @@
+name: Build and run example apps using prod endpoints
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  push:
+  pull_request:
+
+jobs:
+  check-version:
+    runs-on: ubuntu-latest
+    outputs:
+      version_changed: ${{ steps.check-version.outputs.version_changed }}
+      auth_latest: ${{ steps.check-version.outputs.auth_latest }}
+      web3_latest: ${{ steps.check-version.outputs.web3_latest }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT }}
+
+      - name: Check Versions
+        id: check-version
+        run: |
+          # Default to false
+          echo "version_changed=false" >> $GITHUB_OUTPUT
+          
+          AUTH_BETA_VERSION=$(npm view @civic/auth@beta version)
+          AUTH_PROD_VERSION=$(npm view @civic/auth version)
+          WEB3_BETA_VERSION=$(npm view @civic/auth-web3@beta version)
+          WEB3_PROD_VERSION=$(npm view @civic/auth-web3 version)
+          
+          echo "Auth Beta version: $AUTH_BETA_VERSION"
+          echo "Auth Production version: $AUTH_PROD_VERSION"
+          echo "Web3 Beta version: $WEB3_BETA_VERSION"
+          echo "Web3 Production version: $WEB3_PROD_VERSION"
+          
+          # Determine latest versions by comparing beta vs production
+          # Using sort -V for version comparison
+          AUTH_LATEST=$(echo -e "$AUTH_BETA_VERSION\n$AUTH_PROD_VERSION" | sort -V | tail -n 1)
+          WEB3_LATEST=$(echo -e "$WEB3_BETA_VERSION\n$WEB3_PROD_VERSION" | sort -V | tail -n 1)
+          
+          echo "Auth Latest version: $AUTH_LATEST"
+          echo "Web3 Latest version: $WEB3_LATEST"
+          
+          # Set outputs for use in subsequent steps
+          echo "auth_latest=$AUTH_LATEST" >> $GITHUB_OUTPUT
+          echo "web3_latest=$WEB3_LATEST" >> $GITHUB_OUTPUT
+          
+          if [ -f .civic-versions ]; then
+            PREV_VERSIONS=$(cat .civic-versions)
+            PREV_AUTH_BETA=$(echo "$PREV_VERSIONS" | sed -n '1p')
+            PREV_AUTH_PROD=$(echo "$PREV_VERSIONS" | sed -n '2p')
+            PREV_WEB3_BETA=$(echo "$PREV_VERSIONS" | sed -n '3p')
+            PREV_WEB3_PROD=$(echo "$PREV_VERSIONS" | sed -n '4p')
+            
+            # Always echo previous versions for confirmation
+            echo "Previous versions:"
+            echo "Auth Beta: $PREV_AUTH_BETA"
+            echo "Auth Prod: $PREV_AUTH_PROD"
+            echo "Web3 Beta: $PREV_WEB3_BETA"
+            echo "Web3 Prod: $PREV_WEB3_PROD"
+            
+            # Determine previous latest versions
+            PREV_AUTH_LATEST=$(echo -e "$PREV_AUTH_BETA\n$PREV_AUTH_PROD" | sort -V | tail -n 1)
+            PREV_WEB3_LATEST=$(echo -e "$PREV_WEB3_BETA\n$PREV_WEB3_PROD" | sort -V | tail -n 1)
+            
+            echo "Previous latest versions:"
+            echo "Auth: $PREV_AUTH_LATEST"
+            echo "Web3: $PREV_WEB3_LATEST"
+            
+            if [ "$AUTH_LATEST" != "$PREV_AUTH_LATEST" ] || [ "$WEB3_LATEST" != "$PREV_WEB3_LATEST" ]; then
+              echo "version_changed=true" >> $GITHUB_OUTPUT
+              echo "Changed from:"
+              echo "Auth: $PREV_AUTH_LATEST -> $AUTH_LATEST"
+              echo "Web3: $PREV_WEB3_LATEST -> $WEB3_LATEST"
+            else
+              echo "No version changes detected"
+            fi
+          else
+            # If the file doesn't exist, it's the first run, so we consider it changed
+            echo "First run - no previous versions file found"
+            echo "version_changed=true" >> $GITHUB_OUTPUT
+          fi
+          
+          # Write new versions to file
+          echo "$AUTH_BETA_VERSION" > .civic-versions
+          echo "$AUTH_PROD_VERSION" >> .civic-versions
+          echo "$WEB3_BETA_VERSION" >> .civic-versions
+          echo "$WEB3_PROD_VERSION" >> .civic-versions
+      
+      - name: Commit and push if versions changed
+        if: steps.check-version.outputs.version_changed == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add .civic-versions
+          git commit -m "Update .civic-versions file [skip ci]" || echo "No changes to commit"
+          git push
+
+  build:
+    needs: check-version
+    if: needs.check-version.outputs.version_changed == 'true'
+    runs-on: ubuntu-latest
+    env:
+      CLIENT_ID: ${{ secrets.CLIENT_ID }}
+      VITE_CLIENT_ID: ${{ secrets.CLIENT_ID }}
+      CYPRESS_CLIENT_ID: ${{ secrets.CLIENT_ID }}
+      AUTH_SERVER: ${{ secrets.AUTH_SERVER }}
+      VITE_AUTH_SERVER: ${{ secrets.AUTH_SERVER }}
+      NEXT_PUBLIC_WALLET_API_BASE_URL: ${{ secrets.NEXT_PUBLIC_WALLET_API_BASE_URL }}
+      VITE_WALLET_API_BASE_URL: ${{ secrets.VITE_WALLET_API_BASE_URL }}
+    defaults:
+      run:
+        working-directory: ./
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Bun (used to run the examples)
+        uses: oven-sh/setup-bun@v2
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # Check directory structure before installing
+      - name: Check Repository Structure
+        run: |
+          echo "📁 Checking repository structure"
+          
+          # Check root directories
+          ls -la ./packages/
+
+          # Check auth package directories
+          DIRS=(
+            "packages/civic-auth/nextjs"
+            "packages/civic-auth/reactjs"
+            "packages/civic-auth/server/express"
+            "packages/civic-auth/server/fastify"
+            "packages/civic-auth/server/hono"
+            "packages/civic-auth-web3/solana/next14-no-wallet-adapter"
+            "packages/civic-auth-web3/solana/next14-wallet-adapter"
+            "packages/civic-auth-web3/solana/next15-turbopack-no-wallet-adapter"
+            "packages/civic-auth-web3/solana/next15-turbopack-wallet-adapter"
+            "packages/civic-auth-web3/solana/vite-no-wallet-adapter"
+            "packages/civic-auth-web3/solana/vite-wallet-adapter"
+            "packages/civic-auth-web3/wagmi"
+          )
+          
+          for dir in "${DIRS[@]}"; do
+            if [ -d "$dir" ]; then
+              echo "✅ $dir exists"
+              if [ -f "$dir/package.json" ]; then
+                echo "   📄 package.json found"
+                # Check if dev script exists
+                if grep -q '"dev":' "$dir/package.json"; then
+                  echo "   ✅ dev script found"
+                else
+                  echo "   ❌ dev script NOT found"
+                fi
+              else
+                echo "   ❌ package.json NOT found"
+              fi
+            else
+              echo "❌ $dir does NOT exist"
+            fi
+          done
+
+      # Simplified installation script - just install packages
+      - name: Install Packages
+        env:
+          AUTH_LATEST: ${{ needs.check-version.outputs.auth_latest }}
+          WEB3_LATEST: ${{ needs.check-version.outputs.web3_latest }}
+        run: |
+          # Function to install packages in a directory
+          install_packages() {
+            local dir="$1"
+            local package="$2"
+            local version="$3"
+            
+            echo "📦 Installing $package@$version in $dir"
+            cd "$dir" || exit 1
+            
+            # Add the specific package version
+            yarn add "$package@$version"
+            
+            # Install all dependencies and build
+            yarn install
+            yarn build
+            
+            cd "$GITHUB_WORKSPACE" || exit 1
+          }
+          
+          # Auth package installations
+          install_packages "packages/civic-auth/nextjs" "@civic/auth" "$AUTH_LATEST"
+          install_packages "packages/civic-auth/reactjs" "@civic/auth" "$AUTH_LATEST"
+          install_packages "packages/civic-auth/server/express" "@civic/auth" "$AUTH_LATEST"
+          install_packages "packages/civic-auth/server/fastify" "@civic/auth" "$AUTH_LATEST"
+          install_packages "packages/civic-auth/server/hono" "@civic/auth" "$AUTH_LATEST"
+          
+          # Web3 package installations
+          install_packages "packages/civic-auth-web3/solana/next14-no-wallet-adapter" "@civic/auth-web3" "$WEB3_LATEST"
+          install_packages "packages/civic-auth-web3/solana/next14-wallet-adapter" "@civic/auth-web3" "$WEB3_LATEST"
+          install_packages "packages/civic-auth-web3/solana/next15-turbopack-no-wallet-adapter" "@civic/auth-web3" "$WEB3_LATEST"
+          install_packages "packages/civic-auth-web3/solana/next15-turbopack-wallet-adapter" "@civic/auth-web3" "$WEB3_LATEST"
+          install_packages "packages/civic-auth-web3/solana/vite-no-wallet-adapter" "@civic/auth-web3" "$WEB3_LATEST"
+          install_packages "packages/civic-auth-web3/solana/vite-wallet-adapter" "@civic/auth-web3" "$WEB3_LATEST"
+          install_packages "packages/civic-auth-web3/wagmi" "@civic/auth-web3" "$WEB3_LATEST"
+          
+          # Special handling for hono (additional dependency)
+          cd packages/civic-auth/server/hono
+          bun add @hono/node-server
+          cd $GITHUB_WORKSPACE
+      
+      # Add specific debugging for start commands
+      - name: Start Applications
+        run: |
+          # Function to start applications with health check
+          start_app() {
+            local name="$1"
+            local dir="$2"
+            local port="$3"
+            local start_cmd="$4"
+            
+            echo "🚀 Starting $name on port $port"
+            cd "$dir" || exit 1
+            
+            # Start the app with nohup to run in background
+            nohup $start_cmd > "$name.log" 2>&1 &
+            
+            cd "$GITHUB_WORKSPACE" || exit 1
+          }
+          
+          # Start all applications
+          start_app "nextjs" "packages/civic-auth/nextjs" "3000" "yarn dev"
+          start_app "reactjs" "packages/civic-auth/reactjs" "3001" "yarn dev"
+          start_app "express" "packages/civic-auth/server/express" "3002" "yarn dev"
+          start_app "fastify" "packages/civic-auth/server/fastify" "3003" "yarn dev"
+          start_app "hono" "packages/civic-auth/server/hono" "3004" "yarn dev"
+          start_app "solana-next14-no-wa" "packages/civic-auth-web3/solana/next14-no-wallet-adapter" "3005" "yarn dev"
+          start_app "solana-next14-wa" "packages/civic-auth-web3/solana/next14-wallet-adapter" "3006" "yarn dev"
+          start_app "solana-next15-no-wa" "packages/civic-auth-web3/solana/next15-turbopack-no-wallet-adapter" "3007" "yarn dev"
+          start_app "solana-next15-wa" "packages/civic-auth-web3/solana/next15-turbopack-wallet-adapter" "3008" "yarn dev"
+          start_app "solana-vite-no-wa" "packages/civic-auth-web3/solana/vite-no-wallet-adapter" "3009" "yarn dev"
+          start_app "solana-vite-wa" "packages/civic-auth-web3/solana/vite-wallet-adapter" "3010" "yarn dev"
+          start_app "wagmi" "packages/civic-auth-web3/wagmi" "3011" "yarn dev"
+          
+          # Give some time for initial startup before checking
+          echo "⏳ Waiting 30 seconds for initial startup..."
+          sleep 30
+          
+          # Show running processes
+          echo "🔍 Running Node.js processes:"
+          ps aux | grep node
+          
+          # Periodically check if services are responding before wait-on
+          for i in {1..5}; do
+            echo "🔄 Checking application status (attempt $i)..."
+            
+            for port in 3000 3001 3002 3003 3004 3005 3006 3007 3008 3009 3010 3011; do
+              if curl -s -o /dev/null -w "%{http_code}" http://localhost:$port | grep -q "200\|301\|302\|404"; then
+                echo "✅ Service on port $port is responding with HTTP status"
+              else
+                echo "❌ Service on port $port is not responding with valid HTTP status"
+                
+                # For failing Next.js apps, show the logs
+                if [[ $port -eq 3000 || ($port -ge 3005 && $port -le 3008) ]]; then
+                  case $port in
+                    3000) log="nextjs.log" ;;
+                    3005) log="solana-next14-no-wa.log" ;;
+                    3006) log="solana-next14-wa.log" ;;
+                    3007) log="solana-next15-no-wa.log" ;;
+                    3008) log="solana-next15-wa.log" ;;
+                  esac
+                  
+                  echo "📜 Last 20 lines of $log:"
+                  tail -20 $log
+                fi
+              fi
+            done
+            
+            # Wait before next check
+            if [ $i -lt 5 ]; then
+              echo "⏳ Waiting 15 seconds before next check..."
+              sleep 15
+            fi
+          done
+
+      - name: Run wait-on with increased timeout
+        run: |
+          # Wait for all servers to be ready with increased timeout
+          npx wait-on \
+            http-get://localhost:3000 \
+            http-get://localhost:3001 \
+            http-get://localhost:3002 \
+            http-get://localhost:3003 \
+            http-get://localhost:3004 \
+            http-get://localhost:3005 \
+            http-get://localhost:3006 \
+            http-get://localhost:3007 \
+            http-get://localhost:3008 \
+            http-get://localhost:3009 \
+            http-get://localhost:3010 \
+            http-get://localhost:3011 \
+            --timeout 300000 \
+            --verbose
+
+      - name: Run Cypress example app e2e prod tests
+        id: cypress
+        uses: cypress-io/github-action@v6
+        with:
+          working-directory: packages/e2e
+          command: yarn cypress run --browser chrome --record
+          browser: chrome
+          install: true
+          record: true
+        env:
+          NEXT_JS_BASE_URL: 'http://localhost:3000'
+          REACT_BASE_URL: 'http://localhost:3001'
+          EXPRESS_BASE_URL: 'http://localhost:3002'
+          FASTIFY_BASE_URL: 'http://localhost:3003'
+          HONO_BASE_URL: 'http://localhost:3004'
+          SOLANA_NEXT14_NO_WA_BASE_URL: 'http://localhost:3005'
+          SOLANA_NEXT14_WA_BASE_URL: 'http://localhost:3006'
+          SOLANA_NEXT15_TURBO_NO_WA_BASE_URL: 'http://localhost:3007'
+          SOLANA_NEXT15_TURBO_WA_BASE_URL: 'http://localhost:3008'
+          SOLANA_VITE_NO_WA_BASE_URL: 'http://localhost:3009'
+          SOLANA_VITE_WA_BASE_URL: 'http://localhost:3010'
+          WAGMI_BASE_URL: 'http://localhost:3011'
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+
+      # - name: Send Slack Notification on Failure
+      #   if: failure()
+      #   uses: slackapi/slack-github-action@v1.27.0
+      #   with:
+      #     payload: |
+      #       {
+      #         "channel": "#build",
+      #         "text": "<!subteam^S012Q4F3TRB> <@UCBGV5J12> Example repo Cypress tests failed in civicteam/civic-auth-examples.\n\nThese tests are run after new beta and prod versions of civic/auth and civic/auth-web3, so there may be an issue with the new version(s). Check the recording of the test failure here https://cloud.cypress.io/projects/cmyigw/runs.\n\n Alternatively, see the full GitHub Actions run details here ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}."
+      #       }
+      #   env:
+      #     SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      #     SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
