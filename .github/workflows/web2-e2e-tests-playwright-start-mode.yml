@@ -23,10 +23,10 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth/nextjs
-      playwright-spec: "playwright/tests/civic-auth/login/nextjs-login.spec.ts playwright/tests/civic-auth/email/nextjs-email-verification.spec.ts playwright/tests/civic-auth/refresh/nextjs-refresh-token.spec.ts playwright/tests/civic-auth/staleSession/nextjs-stale-session.spec.ts playwright/tests/civic-auth/rehydration/nextjs-session-rehydration.spec.ts"
+      playwright-spec: "playwright/tests/civic-auth/login/nextjs-login.spec.ts playwright/tests/civic-auth/email/nextjs-email-verification.spec.ts playwright/tests/civic-auth/refresh/nextjs-refresh-token.spec.ts playwright/tests/civic-auth/staleSession/nextjs-stale-session.spec.ts playwright/tests/civic-auth/rehydration/nextjs-session-rehydration.spec.ts playwright/tests/civic-auth/onSignIn/nextjs-onsignin-callback.spec.ts"
       dev-command: "yarn start"
       browser: webkit
-      job-name: "🚀 NextJS App (Login + Email + Refresh + Stale Session + Rehydration)"
+      job-name: "🚀 NextJS App (Login + Email + Refresh + Stale Session + Rehydration + OnSignIn)"
       workflow-identifier: "start-mode"
       allure-parent-suite: "Web2 Start Mode"
     secrets: inherit
@@ -110,10 +110,10 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth/reactjs
-      playwright-spec: "playwright/tests/civic-auth/login/reactjs-login.spec.ts playwright/tests/civic-auth/email/reactjs-email-verification.spec.ts"
+      playwright-spec: "playwright/tests/civic-auth/login/reactjs-login.spec.ts playwright/tests/civic-auth/email/reactjs-email-verification.spec.ts playwright/tests/civic-auth/onSignIn/reactjs-onsignin-callback.spec.ts"
       dev-command: "yarn start"
       browser: webkit
-      job-name: "⚛️ ReactJS App (Login + Email)"
+      job-name: "⚛️ ReactJS App (Login + Email + OnSignIn)"
       workflow-identifier: "start-mode"
       allure-parent-suite: "Web2 Start Mode"
     secrets: inherit

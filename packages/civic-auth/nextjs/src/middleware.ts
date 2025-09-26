@@ -9,7 +9,8 @@ export const config = {
      * Match all request paths except those starting with:
      * - _next (static files)
      * - favicon.ico, sitemap.xml, robots.txt
+     * - onSignInTest (our test page)
      */
-    '/((?!_next|favicon.ico|sitemap.xml|robots.txt).*)',
+    '/((?!_next|favicon.ico|sitemap.xml|robots.txt|onSignInTest).*)',
   ],
 }
