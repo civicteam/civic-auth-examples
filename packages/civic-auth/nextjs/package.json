@@ -6,14 +6,15 @@
     "dev": "next dev --port 3000",
     "dev:subpath": "BASE_PATH=/demo next dev",
     "dev:loginSuccessUrl": "LOGIN_SUCCESS_URL=/customSuccessRoute next dev --port 3000",
-    "build": "next build",
+    "typecheck": "tsc --noEmit",
+    "build": "yarn typecheck && next build",
     "start": "next start",
     "start:subpath": "BASE_PATH='/demo' next start",
     "start:loginSuccessUrl": "LOGIN_SUCCESS_URL='/customSuccessRoute' next start --port 3000",
     "lint": "next lint"
   },
   "dependencies": {
-    "@civic/auth": "*",
+    "@civic/auth": "0.11.3",
     "next": "^15.2.3",
     "react": "19.0.0",
     "react-dom": "19.0.0"

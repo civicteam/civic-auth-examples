@@ -11,10 +11,10 @@
     "dev:loginSuccessUrl": "LOGIN_SUCCESS_URL=/customSuccessRoute PORT=3000 NODE_OPTIONS=\"--loader ts-node/esm\" nodemon src/app.ts",
     "predev": "yarn build",
     "typecheck": "tsc --noEmit",
-    "build": "tsc"
+    "build": "yarn typecheck && tsc"
   },
   "dependencies": {
-    "@civic/auth": "*",
+    "@civic/auth": "0.11.3",
     "cookie-parser": "^1.4.7",
     "dotenv": "^16.0.3",
     "express": "^4.18.2"
