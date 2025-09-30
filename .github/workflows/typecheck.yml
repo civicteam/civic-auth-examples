@@ -1,0 +1,97 @@
+name: TypeScript Type Checking
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  typecheck:
+    name: Type Check All Examples
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        project:
+          - packages/civic-auth/nextjs
+          - packages/civic-auth/reactjs
+          - packages/civic-auth/vanillajs
+          - packages/civic-auth/server/express
+          - packages/civic-auth/server/fastify
+          - packages/civic-auth/server/hono
+          - packages/civic-auth-web3/wagmi
+          - packages/civic-auth-web3/wagmi-nextjs
+          - packages/civic-auth-web3/solana/next14-wallet-adapter
+          - packages/civic-auth-web3/solana/next14-no-wallet-adapter
+          - packages/civic-auth-web3/solana/next15-wallet-adapter
+          - packages/civic-auth-web3/solana/next15-no-wallet-adapter
+          - packages/civic-auth-web3/solana/vite-wallet-adapter
+          - packages/civic-auth-web3/solana/vite-no-wallet-adapter
+          - packages/e2e
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'yarn'
+          cache-dependency-path: ${{ matrix.project }}/yarn.lock
+
+      - name: Install Bun (for Hono/Fastify)
+        if: contains(matrix.project, 'hono') || contains(matrix.project, 'fastify')
+        run: |
+          curl -fsSL https://bun.sh/install | bash
+          echo "BUN_INSTALL=$HOME/.bun" >> $GITHUB_ENV
+          echo "$HOME/.bun/bin" >> $GITHUB_PATH
+
+      - name: Install dependencies
+        working-directory: ${{ matrix.project }}
+        run: yarn install --frozen-lockfile
+
+      - name: Type check
+        working-directory: ${{ matrix.project }}
+        run: |
+          if grep -q '"typecheck"' package.json; then
+            echo "Running typecheck script..."
+            yarn typecheck
+          elif grep -q '"build".*"tsc' package.json; then
+            echo "Running tsc via build script..."
+            yarn build
+          elif [ -f "tsconfig.json" ]; then
+            echo "Running tsc directly..."
+            npx tsc --noEmit
+          else
+            echo "⚠️ No TypeScript configuration found, skipping..."
+          fi
+
+      - name: Summary
+        if: always()
+        run: |
+          if [ "${{ job.status }}" == "success" ]; then
+            echo "✅ Type checking passed for ${{ matrix.project }}" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ Type checking failed for ${{ matrix.project }}" >> $GITHUB_STEP_SUMMARY
+          fi
+
+  summary:
+    name: Type Check Summary
+    needs: typecheck
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
+      - name: Check results
+        run: |
+          if [ "${{ needs.typecheck.result }}" == "success" ]; then
+            echo "## ✅ All Type Checks Passed" >> $GITHUB_STEP_SUMMARY
+            echo "All example applications have valid TypeScript with no type errors." >> $GITHUB_STEP_SUMMARY
+          else
+            echo "## ❌ Type Check Failures Detected" >> $GITHUB_STEP_SUMMARY
+            echo "Some example applications have TypeScript errors. Please review the logs above." >> $GITHUB_STEP_SUMMARY
+            exit 1
+          fi
+

@@ -6,6 +6,7 @@
     "dev": "yarn dev-webpack",
     "dev-turbopack": "WEBPACK_ENABLE_SOLANA_WALLET_ADAPTER=true next dev --turbopack --port 3000",
     "dev-webpack": "WEBPACK_ENABLE_SOLANA_WALLET_ADAPTER=true next dev --port 3000",
+    "typecheck": "tsc --noEmit",
     "build": "WEBPACK_ENABLE_SOLANA_WALLET_ADAPTER=true next build",
     "build-webpack": "next build",
     "build-turbopack": "WEBPACK_ENABLE_SOLANA_WALLET_ADAPTER=true next build --turbopack",

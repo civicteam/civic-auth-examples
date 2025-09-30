@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev --port 3000",
     "dev-turbopack": "next dev --turbopack --port 3000",
+    "typecheck": "tsc --noEmit",
     "build": "next build",
     "build-webpack": "next build",
     "build-turbopack": "next build --turbopack",
