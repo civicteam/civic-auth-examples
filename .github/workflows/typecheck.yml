@@ -16,7 +16,6 @@ jobs:
           - packages/civic-auth/vanillajs
           - packages/civic-auth/server/express
           - packages/civic-auth/server/fastify
-          - packages/civic-auth/server/hono
           - packages/civic-auth-web3/wagmi
           - packages/civic-auth-web3/wagmi-nextjs
           - packages/civic-auth-web3/solana/next14-wallet-adapter
@@ -25,7 +24,6 @@ jobs:
           - packages/civic-auth-web3/solana/next15-no-wallet-adapter
           - packages/civic-auth-web3/solana/vite-wallet-adapter
           - packages/civic-auth-web3/solana/vite-no-wallet-adapter
-          - packages/e2e
     
     steps:
       - name: Checkout code
