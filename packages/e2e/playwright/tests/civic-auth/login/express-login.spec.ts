@@ -57,15 +57,10 @@ test.describe('Civic Auth Applications', () => {
       // Loading handling - if it fails, continue
     }
 
-    // WebKit shows "Authentication successful" page instead of redirecting
-    if (browserName === 'webkit') {
-      await expect(page.locator('text=Authentication successful')).toBeVisible({ timeout: 60000 });
-    } else {
-      // Wait for redirect to /admin/hello
-      await expect(page).toHaveURL(/.*\/admin\/hello/, { timeout: 60000 });
-      
-      // Check the page content
-      await expect(page.locator('h1')).toContainText('Hello', { timeout: 10000 });
-    }
+    // Wait for redirect to /admin/hello
+    await expect(page).toHaveURL(/.*\/admin\/hello/, { timeout: 60000 });
+    
+    // Check the page content
+    await expect(page.locator('h1')).toContainText('Hello', { timeout: 10000 });
   });
 }); 
