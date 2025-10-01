@@ -23,14 +23,20 @@ const config = {
   // oauthServer is not necessary for production.
   oauthServer: process.env.AUTH_SERVER || 'https://auth.civic.com/oauth',
   redirectUrl: `http://localhost:${PORT}/auth/callback`,
-  loginSuccessUrl: process.env.LOGIN_SUCCESS_URL,
+  loginSuccessUrl: process.env.LOGIN_SUCCESS_URL || `http://localhost:${PORT}/admin/hello`,
   postLogoutRedirectUrl: `http://localhost:${PORT}/`,
 };
 
 class HonoCookieStorage extends CookieStorage {
   constructor(private c: Context) {
+    // Detect if we're running on HTTPS (production) or HTTP (localhost)
+    const isHttps = c.req.header('x-forwarded-proto') === 'https' || c.req.url.startsWith('https://');
+
     super({
-      secure: process.env.NODE_ENV === "production",
+      secure: isHttps, // Use secure cookies for HTTPS
+      sameSite: isHttps ? "none" : "lax", // none for HTTPS cross-origin, lax for localhost
+      httpOnly: false, // Allow frontend JavaScript to access cookies
+      path: "/", // Ensure cookies are available for all paths
     });
   }
 
@@ -72,7 +78,7 @@ app.use('*', async (c, next) => {
 
 // Auth middleware for /admin routes
 app.use('/admin/*', async (c, next) => {
-  if (!c.get('civicAuth').isLoggedIn()) {
+  if (!(await c.get('civicAuth').isLoggedIn())) {
     return c.text('Unauthorized', 401);
   }
   await next();
@@ -80,7 +86,7 @@ app.use('/admin/*', async (c, next) => {
 
 // Auth middleware for /customSuccessRoute
 app.use('/customSuccessRoute', async (c, next) => {
-  if (!c.get('civicAuth').isLoggedIn()) {
+  if (!(await c.get('civicAuth').isLoggedIn())) {
     return c.text('Unauthorized', 401);
   }
   await next();
@@ -91,27 +97,58 @@ app.get('/', async (c) => {
   return c.redirect(url.toString());
 });
 
+app.get('/auth/login-url', async (c) => {
+  const frontendState = c.req.query('state');
+
+  const url = await c.get('civicAuth').buildLoginUrl({
+    state: frontendState,
+  });
+  
+  return c.redirect(url.toString());
+});
+
 app.get('/auth/callback', async (c) => {
   try {
     const code = c.req.query('code') as string;
     const state = c.req.query('state') as string;
 
-    await c.get('civicAuth').resolveOAuthAccessCode(code, state);
-    const redirectUrl = config.loginSuccessUrl || '/admin/hello';
-    return c.redirect(redirectUrl);
+    const result = await c.get('civicAuth').handleCallback({
+      code,
+      state,
+      req: c.req.raw as any,
+    });
+
+    if (result.redirectTo) {
+      return c.redirect(result.redirectTo);
+    }
+
+    if (result.content) {
+      return c.html(result.content as string);
+    }
+
+    return c.json({ error: 'Internal server error' }, 500);
   } catch (error) {
     console.error('Callback error:', error);
-    return c.text(`Authentication failed: ${error instanceof Error ? error.message : 'Unknown error'}`, 500);
+    return c.redirect('/?error=auth_failed');
   }
 });
 
 app.get('/auth/logout', async (c) => {
   try {
-    const url = await c.get('civicAuth').buildLogoutRedirectUrl();
+    const urlString = await c.get('civicAuth').buildLogoutRedirectUrl();
+    await c.get('civicAuth').clearTokens();
+
+    // Convert to URL object to modify parameters
+    const url = new URL(urlString);
+    // Remove the state parameter to avoid it showing up in the frontend URL
+    url.searchParams.delete('state');
+
     return c.redirect(url.toString());
   } catch (error) {
     console.error('Logout error:', error);
-    return c.text(`Logout failed: ${error instanceof Error ? error.message : 'Unknown error'}`, 500);
+    // If logout URL generation fails, clear tokens and redirect to home
+    await c.get('civicAuth').clearTokens();
+    return c.redirect('/');
   }
 });
 
