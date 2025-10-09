@@ -48,6 +48,8 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.48.2-jammy
     permissions:
       contents: write
       actions: read
@@ -62,6 +64,7 @@ jobs:
       VITE_WALLET_API_BASE_URL: ${{ secrets.VITE_WALLET_API_BASE_URL }}
       DATABASE_URL: ${{ secrets.DATABASE_URL }}
       ALLURE_PARENT_SUITE: ${{ inputs.allure-parent-suite }}
+      HOME: /root
     defaults:
       run:
         working-directory: ${{ inputs.project-path }}
@@ -80,6 +83,13 @@ jobs:
         with:
           token: ${{ github.token }}
 
+      - name: Install system dependencies for Allure
+        working-directory: .
+        run: |
+          apt-get update
+          apt-get install -y default-jre-headless fontconfig
+          java -version
+
       - name: Install Bun
         if: contains(inputs.project-path, 'hono')
         run: |
@@ -95,14 +105,7 @@ jobs:
             packages/e2e/node_modules
           key: node-modules-${{ runner.os }}-${{ hashFiles(format('{0}/yarn.lock', inputs.project-path)) }}-${{ hashFiles(format('{0}/package.json', inputs.project-path)) }}-${{ hashFiles('packages/e2e/package.json') }}
 
-      - name: Cache Playwright browsers
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.cache/ms-playwright
-          key: playwright-browsers-${{ runner.os }}-${{ hashFiles('packages/e2e/package.json') }}
-          restore-keys: |
-            playwright-browsers-${{ runner.os }}-
+      # Skipping browser cache since we're using Playwright container with pre-installed browsers
 
       - name: Yarn install with latest Civic packages
         run: |
@@ -173,10 +176,7 @@ jobs:
           npx allure --version
           echo "Allure command-line tool is available"
 
-      - name: Install Playwright browsers
-        working-directory: packages/e2e
-        run: yarn playwright install --with-deps
-        # The cache step above will restore browsers if available, so this will be fast on subsequent runs
+      # Skipping browser installation - using Playwright container with pre-installed browsers
 
       - name: Yarn build
         run: ${{ inputs.build-command }}
