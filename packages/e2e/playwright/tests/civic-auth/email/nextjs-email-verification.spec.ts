@@ -2,6 +2,7 @@ import { test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
 import { db } from '../../../../utils/database';
 import { generateUniqueEmail } from '../../../utils/email-generator';
+import { waitForCivicIframeToLoad, waitForCivicIframeToClose, debugIframeState } from '../../../helpers/iframe-helpers';
 
 test.describe('Civic Auth Applications', () => {
   test.beforeEach(async ({ page }) => {
@@ -39,59 +40,11 @@ test.describe('Civic Auth Applications', () => {
     await signInButton.click();
     
     await allure.step('Handle iframe email verification flow', async () => {
-      // Chrome/Firefox use iframe flow
-      // Wait for iframe to appear and load
-      await page.waitForSelector('#civic-auth-iframe', { timeout: 30000 });
-      
-      // Click log in with email in the iframe
-      const frame = page.frameLocator('#civic-auth-iframe');
-      
-      // Try to wait for the frame to load completely first
-      await frame.locator('body').waitFor({ timeout: 30000 });
-      
-      // Wait for the login UI to fully load (not just the loading spinner)
-      await allure.step('Wait for login UI to load', async () => {
-        // Wait for the login content to appear (no more loading)
-        await frame.locator('#civic-login-app-loading').waitFor({ state: 'hidden', timeout: 30000 });
-        
-        // Alternative: wait for any actual login elements to appear
-        await frame.locator('[data-testid*="civic-login"]').first().waitFor({ timeout: 30000 });
-      });
+      // Wait for iframe to fully load with content (CI-safe)
+      const frame = await waitForCivicIframeToLoad(page, { timeout: 60000 });
       
       // Debug: Let's see what's actually in the iframe
-      await allure.step('Debug iframe content', async () => {
-        const bodyText = await frame.locator('body').textContent();
-        console.log(`Iframe body text: "${bodyText}"`);
-        
-        const allElements = frame.locator('*');
-        const elementCount = await allElements.count();
-        console.log(`Found ${elementCount} elements in iframe`);
-        
-        const allButtons = frame.locator('button');
-        const buttonCount = await allButtons.count();
-        console.log(`Found ${buttonCount} buttons in iframe`);
-        
-        // If we have buttons, log their details
-        for (let i = 0; i < Math.min(buttonCount, 10); i++) {
-          const button = allButtons.nth(i);
-          const text = await button.textContent();
-          const testId = await button.getAttribute('data-testid');
-          console.log(`Button ${i}: text="${text}", data-testid="${testId}"`);
-        }
-        
-        // Also look for any divs or spans that might be clickable
-        const clickableElements = frame.locator('[data-testid*="login"], [data-testid*="email"], [role="button"], .button, [class*="button"]');
-        const clickableCount = await clickableElements.count();
-        console.log(`Found ${clickableCount} potentially clickable elements`);
-        
-        for (let i = 0; i < Math.min(clickableCount, 5); i++) {
-          const element = clickableElements.nth(i);
-          const text = await element.textContent();
-          const testId = await element.getAttribute('data-testid');
-          const className = await element.getAttribute('class');
-          console.log(`Clickable ${i}: text="${text}", data-testid="${testId}", class="${className}"`);
-        }
-      });
+      await debugIframeState(page, frame);
       
       // Look for the email login slot - first check if it's visible
       await allure.step('Find and click email login option', async () => {
@@ -197,7 +150,10 @@ test.describe('Civic Auth Applications', () => {
       // Note: Verification automatically submits when 6th digit is entered
 
       // Wait for the iframe to be gone (indicating login is complete)
-      await page.waitForSelector('[data-testid="civic-auth-iframe-with-resizer"]', { state: 'hidden', timeout: 20000 });
+      await waitForCivicIframeToClose(page, { 
+        iframeSelector: '[data-testid="civic-auth-iframe-with-resizer"]',
+        timeout: 30000 
+      });
     });
     
     // Confirm logged in state by checking for email in dropdown

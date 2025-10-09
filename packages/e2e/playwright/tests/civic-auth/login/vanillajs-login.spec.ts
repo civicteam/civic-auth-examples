@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
+import { waitForCivicIframeToLoad, waitForCivicIframeToClose } from '../../../helpers/iframe-helpers';
 
 test.describe('Civic Auth Applications', () => {
   test.beforeEach(async ({ page }) => {

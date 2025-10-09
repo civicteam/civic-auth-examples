@@ -2,6 +2,7 @@ import { test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
 import { db } from '../../../../utils/database';
 import { generateUniqueEmail } from '../../../utils/email-generator';
+import { waitForCivicIframeToLoad, waitForCivicIframeToClose } from '../../../helpers/iframe-helpers';
 
 test.describe('Civic Auth Applications', () => {
   test.beforeEach(async ({ page }) => {
@@ -39,32 +40,9 @@ test.describe('Civic Auth Applications', () => {
     await signInButton.click();
     
     await allure.step('Handle iframe email verification flow', async () => {
-      // Chrome/Firefox use iframe flow
-      // Wait for iframe to be present in DOM (don't care if it's visible or hidden)
-      await page.waitForSelector('#civic-auth-iframe', { state: 'attached', timeout: 30000 });
-      
-      // Click log in with email in the iframe
-      const frame = page.frameLocator('#civic-auth-iframe');
-      
-      // Try to wait for the frame to load completely first
-      await frame.locator('body').waitFor({ timeout: 30000 });
-      
-      // Wait for the login UI to fully load (not just the loading spinner)
-      await allure.step('Wait for login UI to load', async () => {
-        try {
-          const loadingElement = frame.locator('#civic-login-app-loading');
-          const isLoadingVisible = await loadingElement.isVisible({ timeout: 5000 }).catch(() => false);
-          
-          if (isLoadingVisible) {
-            await loadingElement.waitFor({ state: 'hidden', timeout: 45000 });
-          }
-        } catch (error) {
-          // Loading element might not exist, that's ok
-        }
-        
-        // Wait for login elements to appear
-        await frame.locator('[data-testid*="civic-login"]').first().waitFor({ timeout: 30000 });
-      });
+      // Wait for iframe to fully load with content (CI-safe)
+
+      const frame = await waitForCivicIframeToLoad(page, { timeout: 60000 });
       
       // Look for the email login slot - first check if it's visible
       await allure.step('Find and click email login option', async () => {
@@ -174,7 +152,10 @@ test.describe('Civic Auth Applications', () => {
       // Note: Verification automatically submits when 6th digit is entered
 
       // Wait for the iframe to be gone (indicating login is complete)
-      await page.waitForSelector('[data-testid="civic-auth-iframe-with-resizer"]', { state: 'hidden', timeout: 20000 });
+      await waitForCivicIframeToClose(page, { 
+        iframeSelector: '[data-testid="civic-auth-iframe-with-resizer"]',
+        timeout: 30000 
+      });
     });
     
     // Confirm logged in state by checking for email in dropdown

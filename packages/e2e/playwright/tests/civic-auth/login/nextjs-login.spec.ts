@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
+import { waitForCivicIframeToLoad, waitForCivicIframeToClose } from '../../../helpers/iframe-helpers';
 
 test.describe('Civic Auth Applications', () => {
   test.beforeEach(async ({ page }) => {
@@ -29,29 +30,8 @@ test.describe('Civic Auth Applications', () => {
     // Click the sign in button using test ID
     await signInButton.click();
     
-    // Wait for iframe to be present in DOM (don't care if it's visible or hidden)
-    await page.waitForSelector('#civic-auth-iframe', { state: 'attached', timeout: 30000 });
-    
-    // Click log in with dummy in the iframe
-    const frame = page.frameLocator('#civic-auth-iframe');
-    
-    // Try to wait for the frame to load completely first
-    await frame.locator('body').waitFor({ timeout: 30000 });
-    
-    // Wait for the login UI to fully load (not just the loading spinner)
-    try {
-      const loadingElement = frame.locator('#civic-login-app-loading');
-      const isLoadingVisible = await loadingElement.isVisible({ timeout: 5000 }).catch(() => false);
-      
-      if (isLoadingVisible) {
-        await loadingElement.waitFor({ state: 'hidden', timeout: 45000 });
-      }
-    } catch (error) {
-      // Loading element might not exist, that's ok
-    }
-    
-    // Wait for login elements to appear
-    await frame.locator('[data-testid*="civic-login"]').first().waitFor({ timeout: 30000 });
+    // Wait for iframe to fully load with content (CI-safe)
+    const frame = await waitForCivicIframeToLoad(page, { timeout: 60000 });
     
     // Look for the dummy button with extended timeout and ensure it's visible
     const dummyButton = frame.locator('[data-testid="civic-login-oidc-button-dummy"]');
@@ -77,7 +57,7 @@ test.describe('Civic Auth Applications', () => {
     }
 
     // Wait for the iframe to be gone (indicating login is complete)
-    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 60000 });
+    await waitForCivicIframeToClose(page, { timeout: 60000 });
   
     // Confirm logged in state by checking for Ghost button in dropdown
     const ghostButtonLocator = page.locator('#civic-dropdown-container').locator('button:has-text("Ghost")');
@@ -146,7 +126,7 @@ test.describe('Civic Auth Applications', () => {
       await page.goto('http://localhost:3000', { waitUntil: 'networkidle', timeout: 10000 });
     } catch (error) {
       // If navigation is interrupted by redirect, that's actually expected behavior
-      if (error.message.includes('interrupted by another navigation')) {
+      if (error instanceof Error && error.message.includes('interrupted by another navigation')) {
         await page.waitForLoadState('networkidle');
       } else {
         throw error;

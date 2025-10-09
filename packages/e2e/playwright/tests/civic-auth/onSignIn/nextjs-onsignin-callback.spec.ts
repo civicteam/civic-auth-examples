@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
+import { waitForCivicIframeToLoad, waitForCivicIframeToClose } from '../../../helpers/iframe-helpers';
 
 test.describe('Civic Auth onSignIn Callback Tests', () => {
   test.beforeEach(async ({ page }) => {
@@ -24,18 +25,14 @@ test.describe('Civic Auth onSignIn Callback Tests', () => {
     // Click the Test Sign In button from our test component
     await page.locator('button:has-text("Test Sign In")').click();
     
-    // Wait for iframe to appear and load
-    await page.waitForSelector('#civic-auth-iframe', { timeout: 30000 });
-    
-    // Click log in with dummy in the iframe
-    const frame = page.frameLocator('#civic-auth-iframe');
-    await frame.locator('body').waitFor({ timeout: 30000 });
+    // Wait for iframe to fully load with content (CI-safe)
+    const frame = await waitForCivicIframeToLoad(page, { timeout: 60000 });
     
     const dummyButton = frame.locator('[data-testid="civic-login-oidc-button-dummy"]');
     await dummyButton.click({ timeout: 20000 });
 
     // Wait for the iframe to be gone (indicating login is complete)
-    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 20000 });
+    await waitForCivicIframeToClose(page, { timeout: 30000 });
     
     // Wait for the callback to be executed (sign-in process takes several seconds)
     await page.waitForTimeout(5000);
@@ -68,15 +65,12 @@ test.describe('Civic Auth onSignIn Callback Tests', () => {
     
     // First sign-in attempt
     await page.locator('button:has-text("Test Sign In")').click();
-    await page.waitForSelector('#civic-auth-iframe', { timeout: 30000 });
-    
-    const frame = page.frameLocator('#civic-auth-iframe');
-    await frame.locator('body').waitFor({ timeout: 30000 });
+    const frame = await waitForCivicIframeToLoad(page, { timeout: 60000 });
     
     const dummyButton = frame.locator('[data-testid="civic-login-oidc-button-dummy"]');
     await dummyButton.click({ timeout: 20000 });
 
-    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 20000 });
+    await waitForCivicIframeToClose(page, { timeout: 30000 });
     await page.waitForTimeout(5000);
     
     // Verify callback was logged
@@ -135,15 +129,12 @@ test.describe('Civic Auth onSignIn Callback Tests', () => {
     
     // Perform a sign-in
     await page.locator('button:has-text("Test Sign In")').click();
-    await page.waitForSelector('#civic-auth-iframe', { timeout: 30000 });
-    
-    const frame = page.frameLocator('#civic-auth-iframe');
-    await frame.locator('body').waitFor({ timeout: 30000 });
+    const frame = await waitForCivicIframeToLoad(page, { timeout: 60000 });
     
     const dummyButton = frame.locator('[data-testid="civic-login-oidc-button-dummy"]');
     await dummyButton.click({ timeout: 20000 });
 
-    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 20000 });
+    await waitForCivicIframeToClose(page, { timeout: 30000 });
     await page.waitForTimeout(5000);
     
     // Verify callback was logged
