@@ -64,7 +64,6 @@ jobs:
       VITE_WALLET_API_BASE_URL: ${{ secrets.VITE_WALLET_API_BASE_URL }}
       DATABASE_URL: ${{ secrets.DATABASE_URL }}
       ALLURE_PARENT_SUITE: ${{ inputs.allure-parent-suite }}
-      HOME: /root
     defaults:
       run:
         working-directory: ${{ inputs.project-path }}
@@ -184,27 +183,47 @@ jobs:
         run: ${{ inputs.build-command }}
 
       - name: Start App
-        run: ${{ inputs.dev-command }} &
-
+        run: |
+          echo "Starting app with command: ${{ inputs.dev-command }}"
+          nohup ${{ inputs.dev-command }} > /tmp/app.log 2>&1 &
+          APP_PID=$!
+          echo "App started with PID: $APP_PID"
+          echo "APP_PID=$APP_PID" >> $GITHUB_ENV
+          sleep 5
+          echo "=== First 50 lines of app log ==="
+          head -50 /tmp/app.log || echo "No log output yet"
+          
       - name: Wait for app to start
         run: |
             if echo "${{ inputs.dev-command }}" | grep -q "subpath"; then
-              echo "Waiting for app with basepath at http://localhost:3000/demo"
-              npx wait-on http-get://localhost:3000/demo --timeout 300000
+              TARGET_URL="http://localhost:3000/demo"
             elif echo "${{ inputs.dev-command }}" | grep -q "loginSuccessUrl"; then
-              echo "Waiting for app with loginSuccessUrl at http://localhost:3000"
-              npx wait-on http-get://localhost:3000 --timeout 300000
+              TARGET_URL="http://localhost:3000"
             else
-              echo "Waiting for app at http://localhost:3000"
-              npx wait-on http-get://localhost:3000 --timeout 300000
+              TARGET_URL="http://localhost:3000"
             fi
+            
+            echo "Waiting for app at $TARGET_URL"
+            npx wait-on http-get://$TARGET_URL --timeout 300000 --interval 2000 --verbose || {
+              echo "=== App failed to start. Full app log: ==="
+              cat /tmp/app.log
+              echo "=== Checking if process is still running ==="
+              ps aux | grep -E "node|yarn|npm" | grep -v grep
+              echo "=== Port 3000 status ==="
+              netstat -tulpn | grep 3000 || lsof -i :3000 || echo "Port 3000 not in use"
+              exit 1
+            }
 
       - name: Run Playwright Tests
         working-directory: packages/e2e
         env:
           ALLURE_RESULTS_DIR: allure-results
           GITHUB_JOB_NAME: ${{ inputs.job-name }}
-        run: yarn playwright test ${{ inputs.playwright-spec }}
+        run: |
+          # Capitalize browser name to match Playwright project names (Chromium, WebKit, Firefox)
+          BROWSER_NAME=$(echo "${{ inputs.browser }}" | awk '{print toupper(substr($0,1,1)) tolower(substr($0,2))}')
+          echo "Running tests on browser: $BROWSER_NAME"
+          yarn playwright test ${{ inputs.playwright-spec }} --project="$BROWSER_NAME"
 
       - name: Generate Allure Report
         if: always()

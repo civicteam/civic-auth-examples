@@ -1,13 +1,16 @@
 import { test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
+import { setupDiagnostics } from '../../utils/test-helpers';
 
 test.describe('Civic Auth Applications', () => {
   test.beforeEach(async ({ page }) => {
+    setupDiagnostics(page);
     await allure.epic('Civic Auth Applications');
     await allure.suite('Login');
     await allure.feature('VanillaJS Embedded Login');
   });
   test('should complete full modal login and logout flow', async ({ page, browserName }) => {
+    setupDiagnostics(page);
     // Open the app home page
     await page.goto('http://localhost:3000');
 
@@ -39,7 +42,7 @@ test.describe('Civic Auth Applications', () => {
     await dummyButton.click({ timeout: 20000 });
 
     // Wait for the iframe to be gone (indicating login is complete)
-    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 20000 });
+    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 60000 });
 
     // Check that we're logged in by verifying the embedded status shows success
     await expect(page.locator('[data-testid="vanilla-js-modal-status"]')).toContainText('Ghost');

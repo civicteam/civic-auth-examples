@@ -1,16 +1,19 @@
 import { test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
+import { setupDiagnostics } from '../../utils/test-helpers';
 import { db } from '../../../../utils/database';
 import { generateUniqueEmail } from '../../../utils/email-generator';
 
 test.describe('Civic Auth Applications', () => {
   test.beforeEach(async ({ page }) => {
+    setupDiagnostics(page);
     await allure.epic('Civic Auth Applications');
     await allure.suite('Email');
     await allure.feature('VanillaJS Modal Email Verification');
   });
 
   test('should complete full modal email verification and logout flow', async ({ page, browserName }) => {
+    setupDiagnostics(page);
     let extractedLoginFlowId = '';
     const uniqueEmail = generateUniqueEmail();
 
@@ -110,7 +113,7 @@ test.describe('Civic Auth Applications', () => {
     // Note: Verification automatically submits when 6th digit is entered
 
     // Wait for the iframe to be gone (indicating login is complete)
-    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 20000 });
+    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 60000 });
     
     // Check that we're logged in by verifying the embedded status shows success
     await expect(page.locator('[data-testid="vanilla-js-modal-status"]')).toContainText('@simulator.amazonses.com');

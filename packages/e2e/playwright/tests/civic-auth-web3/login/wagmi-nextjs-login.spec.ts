@@ -2,6 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Wagmi Login Tests', () => {
   test('should complete login flow and show balance', async ({ page, browserName }) => {    
+    setupDiagnostics(page);
     // Open the app home page
     await page.goto('http://localhost:3000');
     

@@ -1,13 +1,16 @@
 import { test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
+import { setupDiagnostics } from '../../utils/test-helpers';
 
 test.describe('Civic Auth Applications', () => {
   test.beforeEach(async ({ page }) => {
+    setupDiagnostics(page);
     await allure.epic('Civic Auth Applications');
     await allure.suite('Login Basepath');
     await allure.feature('Express Login (BasePath)');
   });
   test('should complete login flow and redirect to hello page with basepath', async ({ page }) => {
+    setupDiagnostics(page);
     // Intercept the external Civic auth server and redirect back to your app
     await page.route('**auth-dev.civic.com/**', async (route) => {
       const url = new URL(route.request().url());

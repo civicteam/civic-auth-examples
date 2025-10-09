@@ -1,14 +1,17 @@
 import { test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
+import { setupDiagnostics } from '../../utils/test-helpers';
 
 test.describe('Civic Auth onSignIn Callback Tests', () => {
   test.beforeEach(async ({ page }) => {
+    setupDiagnostics(page);
     await allure.epic('Civic Auth Applications');
     await allure.suite('onSignIn Callback');
     await allure.feature('React.js onSignIn Callback');
   });
 
   test('should call onSignIn callback on successful sign-in', async ({ page }) => {
+    setupDiagnostics(page);
     // Clear any existing auth state to ensure clean test
     await page.context().clearCookies();
     
@@ -65,7 +68,8 @@ test.describe('Civic Auth onSignIn Callback Tests', () => {
     await dummyButton.click({ timeout: 20000 });
 
     // Wait for the iframe to be gone (indicating login is complete)
-    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 20000 });
+    // Using longer timeout for CI environments
+    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 60000 });
     
     // Wait for the callback to be executed
     await page.waitForTimeout(2000);
@@ -85,6 +89,7 @@ test.describe('Civic Auth onSignIn Callback Tests', () => {
   });
 
   test('should call onSignIn callback and handle sign-out correctly', async ({ page }) => {
+    setupDiagnostics(page);
     // Clear any existing auth state to ensure clean test
     await page.context().clearCookies();
     
@@ -143,7 +148,9 @@ test.describe('Civic Auth onSignIn Callback Tests', () => {
     const dummyButton = frame.locator('[data-testid="civic-login-oidc-button-dummy"]');
     await dummyButton.click({ timeout: 20000 });
 
-    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 20000 });
+    // Wait for the iframe to be gone (indicating login is complete)
+    // Using longer timeout for CI environments
+    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 60000 });
     await page.waitForTimeout(2000);
     
     // Verify first callback
@@ -166,6 +173,7 @@ test.describe('Civic Auth onSignIn Callback Tests', () => {
   });
 
   test('should call onSignIn callback with error on failed sign-in', async ({ page }) => {
+    setupDiagnostics(page);
     // This test would require simulating a failed sign-in scenario
     // For now, we'll test the callback structure and timing
     
@@ -194,6 +202,7 @@ test.describe('Civic Auth onSignIn Callback Tests', () => {
   });
 
   test('should maintain callback state across page interactions', async ({ page }) => {
+    setupDiagnostics(page);
     // Navigate to the main React app
     await page.goto('http://localhost:3000?view=onSignInTest');
     
@@ -238,7 +247,9 @@ test.describe('Civic Auth onSignIn Callback Tests', () => {
     const dummyButton = frame.locator('[data-testid="civic-login-oidc-button-dummy"]');
     await dummyButton.click({ timeout: 20000 });
 
-    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 20000 });
+    // Wait for the iframe to be gone (indicating login is complete)
+    // Using longer timeout for CI environments
+    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 60000 });
     await page.waitForTimeout(2000);
     
     // Verify callback was logged

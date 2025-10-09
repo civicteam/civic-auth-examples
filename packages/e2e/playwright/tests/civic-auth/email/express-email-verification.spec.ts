@@ -1,15 +1,18 @@
 import { test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
+import { setupDiagnostics } from '../../utils/test-helpers';
 import { db } from '../../../../utils/database';
 import { generateUniqueEmail } from '../../../utils/email-generator';
 
 test.describe('Civic Auth Applications', () => {
   test.beforeEach(async ({ page }) => {
+    setupDiagnostics(page);
     await allure.epic('Civic Auth Applications');
     await allure.suite('Email');
     await allure.feature('Express Email Verification');
   });
   test('should complete email verification flow with actual email', async ({ page, browserName }) => {
+    setupDiagnostics(page);
     let extractedLoginFlowId = '';
     const uniqueEmail = generateUniqueEmail();
 

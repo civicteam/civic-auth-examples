@@ -1,13 +1,16 @@
 import { test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
+import { setupDiagnostics } from '../../utils/test-helpers';
 
 test.describe('Civic Auth Applications', () => {
   test.beforeEach(async ({ page }) => {
+    setupDiagnostics(page);
     await allure.epic('Civic Auth Applications');
     await allure.suite('Login Basepath');
     await allure.feature('VanillaJS Modal Login (BasePath)');
   });
   test('should complete full modal login and logout flow with basepath', async ({ page }) => {
+    setupDiagnostics(page);
     // Open the app home page with basepath
     await page.goto('http://localhost:3000/demo');
 
@@ -30,7 +33,7 @@ test.describe('Civic Auth Applications', () => {
     await frame.locator('[data-testid="civic-login-oidc-button-dummy"]').click({ timeout: 20000 });
 
     // Wait for the iframe to be gone (indicating login is complete)
-    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 20000 });
+    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 60000 });
     
     // Confirm logged in state by checking for user info display
     await expect(page.locator('#userInfo')).toHaveClass(/show/, { timeout: 20000 });

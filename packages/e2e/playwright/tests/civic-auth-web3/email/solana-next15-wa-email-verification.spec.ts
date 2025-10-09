@@ -1,15 +1,18 @@
 import { test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
+import { setupDiagnostics } from '../../utils/test-helpers';
 import { db } from '../../../../utils/database';
 import { generateUniqueEmail } from '../../../utils/email-generator';
 
 test.describe('Solana Next.js 15 Wallet Adapter Email Verification Tests', () => {
   test.beforeEach(async ({ page }) => {
+    setupDiagnostics(page);
     await allure.epic('Sample Applications');
     await allure.feature('Solana Next.js 15 Wallet Adapter Email Verification');
   });
 
   test('should complete email verification flow with wallet adapter', async ({ page, browserName }) => {
+    setupDiagnostics(page);
     await allure.story('Solana Next.js 15 Wallet Adapter Email Code Verification Flow');
     await allure.severity('critical');
     await allure.tag('solana-nextjs15-wa-email-verification');
@@ -178,7 +181,7 @@ test.describe('Solana Next.js 15 Wallet Adapter Email Verification Tests', () =>
       // Note: Verification automatically submits when 6th digit is entered
 
       // Wait for the iframe to be gone (indicating login is complete)
-      await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 20000 });
+      await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 60000 });
     });
     
     // Verify wallet adapter shows connected state

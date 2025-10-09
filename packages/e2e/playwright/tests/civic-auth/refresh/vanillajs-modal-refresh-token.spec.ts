@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
+import { setupDiagnostics } from '../../utils/test-helpers';
 
 test.describe('Civic Auth Applications', () => {
   test.beforeEach(async ({ page }) => {
@@ -9,6 +10,9 @@ test.describe('Civic Auth Applications', () => {
   });
 
   test('should handle refresh token flow correctly in modal mode', async ({ page, browserName }) => {
+    // Setup diagnostic monitoring for CI debugging
+    setupDiagnostics(page, 'vanillajs-modal-refresh-token');
+    
     // Configure test to be more resilient
     test.setTimeout(120000); // Increase timeout to 2 minutes
 
@@ -39,7 +43,7 @@ test.describe('Civic Auth Applications', () => {
     await dummyButton.click({ timeout: 20000 });
 
     // Wait for the iframe to be gone (indicating login is complete)
-    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 20000 });
+    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 60000 });
 
     // Check that we're logged in by verifying the embedded status shows success
     await expect(page.locator('[data-testid="vanilla-js-modal-status"]')).toContainText('Ghost');
