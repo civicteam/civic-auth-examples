@@ -78,6 +78,12 @@ await fastify.register(fastifyCookie, {
   secret: env.COOKIE_SECRET || "my-secret"
 });
 
+// Add Private Network Access headers to allow OAuth callback from public auth server
+fastify.addHook('onRequest', async (request, reply) => {
+  reply.header('Access-Control-Allow-Private-Network', 'true');
+  reply.header('Access-Control-Allow-Origin', '*');
+});
+
 // Decorate request with storage and civicAuth
 fastify.decorateRequest('storage', null);
 fastify.decorateRequest('civicAuth', null);

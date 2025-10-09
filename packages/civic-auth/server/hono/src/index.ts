@@ -62,6 +62,13 @@ class HonoCookieStorage extends CookieStorage {
 
 const app = new Hono();
 
+// Add Private Network Access headers to allow OAuth callback from public auth server
+app.use('*', async (c, next) => {
+  c.header('Access-Control-Allow-Private-Network', 'true');
+  c.header('Access-Control-Allow-Origin', '*');
+  await next();
+});
+
 // Add storage and civicAuth to each request
 app.use('*', async (c, next) => {
   const storage = new HonoCookieStorage(c);

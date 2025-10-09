@@ -1,11 +1,29 @@
 import { createCivicAuthPlugin } from "@civic/auth-web3/nextjs";
 import type { NextConfig } from "next";
 
+const PORT = process.env.PORT ? parseInt(process.env.PORT) : 3000;
+
 const nextConfig: NextConfig = {
   /* config options here */
+  async headers() {
+    return [
+      {
+        // Apply headers to all API routes including auth callback
+        source: '/api/:path*',
+        headers: [
+          {
+            key: 'Access-Control-Allow-Private-Network',
+            value: 'true',
+          },
+          {
+            key: 'Access-Control-Allow-Origin',
+            value: '*',
+          },
+        ],
+      },
+    ];
+  },
 };
-
-const PORT = process.env.PORT ? parseInt(process.env.PORT) : 3000;
 
 const withCivicAuth = createCivicAuthPlugin({
   clientId: `${process.env.CLIENT_ID}`,

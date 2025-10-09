@@ -22,6 +22,13 @@ const PORT = process.env.PORT ? parseInt(process.env.PORT) : 3000;
 
 app.use(cookieParser());
 
+// Add Private Network Access headers to allow OAuth callback from public auth server
+app.use((req: Request, res: Response, next: NextFunction) => {
+  res.setHeader('Access-Control-Allow-Private-Network', 'true');
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  next();
+});
+
 const config = {
   clientId: process.env.CLIENT_ID!,
   clientSecret: process.env.CLIENT_SECRET!,

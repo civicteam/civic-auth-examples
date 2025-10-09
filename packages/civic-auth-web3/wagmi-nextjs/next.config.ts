@@ -10,6 +10,24 @@ const withCivicAuth = createCivicAuthPlugin({
 
 const nextConfig: NextConfig = {
   /* config options here */
+  async headers() {
+    return [
+      {
+        // Apply headers to all API routes including auth callback
+        source: '/api/:path*',
+        headers: [
+          {
+            key: 'Access-Control-Allow-Private-Network',
+            value: 'true',
+          },
+          {
+            key: 'Access-Control-Allow-Origin',
+            value: '*',
+          },
+        ],
+      },
+    ];
+  },
 };
 
 export default withCivicAuth(nextConfig);;
