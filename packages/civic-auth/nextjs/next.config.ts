@@ -3,6 +3,24 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   basePath: process.env.BASE_PATH || '',
+  async headers() {
+    return [
+      {
+        // Apply headers to all API routes including auth callback
+        source: '/api/:path*',
+        headers: [
+          {
+            key: 'Access-Control-Allow-Private-Network',
+            value: 'true',
+          },
+          {
+            key: 'Access-Control-Allow-Origin',
+            value: '*',
+          },
+        ],
+      },
+    ];
+  },
 };
 
 const withCivicAuth = createCivicAuthPlugin({
