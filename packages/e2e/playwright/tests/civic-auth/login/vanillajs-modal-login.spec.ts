@@ -1,6 +1,5 @@
 import { test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
-import { waitForCivicIframeToLoad, waitForCivicIframeToClose } from '../../../helpers/iframe-helpers';
 
 test.describe('Civic Auth Applications', () => {
   test.beforeEach(async ({ page }) => {
@@ -25,15 +24,22 @@ test.describe('Civic Auth Applications', () => {
     // Click the embedded sign in button
     // await page.click('#loginButton');
     
-    // Wait for iframe to fully load
-    const frame = await waitForCivicIframeToLoad(page);
+    // Chrome/Firefox use iframe flow
+    // Wait for iframe to appear and load inside the authContainer
+    await page.waitForSelector('#civic-auth-iframe', { timeout: 30000 });
     
-    // Click log in with dummy
+    // Click log in with dummy in the iframe
+    const frame = page.frameLocator('#civic-auth-iframe');
+    
+    // Try to wait for the frame to load completely first
+    await frame.locator('body').waitFor({ timeout: 30000 });
+    
+    // Look for the dummy button
     const dummyButton = frame.locator('[data-testid="civic-login-oidc-button-dummy"]');
     await dummyButton.click({ timeout: 20000 });
 
-    // Wait for iframe to close
-    await waitForCivicIframeToClose(page);
+    // Wait for the iframe to be gone (indicating login is complete)
+    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 20000 });
 
     // Check that we're logged in by verifying the embedded status shows success
     await expect(page.locator('[data-testid="vanilla-js-modal-status"]')).toContainText('Ghost');

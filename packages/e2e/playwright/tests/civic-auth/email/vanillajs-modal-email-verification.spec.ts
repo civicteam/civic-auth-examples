@@ -2,7 +2,6 @@ import { test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
 import { db } from '../../../../utils/database';
 import { generateUniqueEmail } from '../../../utils/email-generator';
-import { waitForCivicIframeToLoad, waitForCivicIframeToClose } from '../../../helpers/iframe-helpers';
 
 test.describe('Civic Auth Applications', () => {
   test.beforeEach(async ({ page }) => {
@@ -26,7 +25,13 @@ test.describe('Civic Auth Applications', () => {
     await page.click('#startAuthModalButton');
     
     // Wait for iframe to appear and load
-    const frame = await waitForCivicIframeToLoad(page);
+    await page.waitForSelector('#civic-auth-iframe', { timeout: 30000 });
+    
+    // Click log in with email in the iframe (modal mode still uses iframe)
+    const frame = page.frameLocator('#civic-auth-iframe');
+    
+    // Try to wait for the frame to load completely first
+    await frame.locator('body').waitFor({ timeout: 30000 });
     
     // Wait for the login UI to fully load (not just the loading spinner)
     await frame.locator('#civic-login-app-loading').waitFor({ state: 'hidden', timeout: 30000 });
@@ -105,7 +110,7 @@ test.describe('Civic Auth Applications', () => {
     // Note: Verification automatically submits when 6th digit is entered
 
     // Wait for the iframe to be gone (indicating login is complete)
-    await waitForCivicIframeToClose(page);
+    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 20000 });
     
     // Check that we're logged in by verifying the embedded status shows success
     await expect(page.locator('[data-testid="vanilla-js-modal-status"]')).toContainText('@simulator.amazonses.com');

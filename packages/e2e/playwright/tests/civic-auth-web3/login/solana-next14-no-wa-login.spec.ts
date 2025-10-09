@@ -1,5 +1,4 @@
 import { test, expect } from '@playwright/test';
-import { waitForCivicIframeToLoad, waitForCivicIframeToClose } from '../../../helpers/iframe-helpers';
 import { allure } from 'allure-playwright';
 
 test.describe('Civic Auth Applications', () => {
@@ -34,9 +33,13 @@ test.describe('Civic Auth Applications', () => {
     await signInButton.click();
     
     // Wait for iframe to be present in DOM (don't care if it's visible or hidden)
-    // Wait for iframe to fully load with content (CI-safe)
-
-    const frame = await waitForCivicIframeToLoad(page);
+    await page.waitForSelector('#civic-auth-iframe', { state: 'attached', timeout: 30000 });
+    
+    // Click log in with dummy in the iframe
+    const frame = page.frameLocator('#civic-auth-iframe');
+    
+    // Try to wait for the frame to load completely first
+    await frame.locator('body').waitFor({ timeout: 30000 });
     
     // Wait for the login UI to fully load (not just the loading spinner)
     try {
@@ -71,14 +74,14 @@ test.describe('Civic Auth Applications', () => {
       
       if (isLoadingVisibleAfterClick) {
         // Wait longer for the auth flow to complete
-        await loadingAfterClick.waitFor({ state: 'hidden', timeout: 30000 });
+        await loadingAfterClick.waitFor({ state: 'hidden', timeout: 60000 });
       }
     } catch (error) {
       // Loading handling - if it fails, continue
     }
 
     // Wait for the iframe to be gone (indicating login is complete)
-    await waitForCivicIframeToClose(page, { timeout: 30000 });
+    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 60000 });
   
     // Confirm logged in state by checking for Ghost button in dropdown
     const ghostButtonLocator = page.locator('#civic-dropdown-container').locator('button:has-text("Ghost")');

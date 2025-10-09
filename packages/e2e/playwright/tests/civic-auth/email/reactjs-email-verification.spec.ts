@@ -2,7 +2,6 @@ import { test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
 import { db } from '../../../../utils/database';
 import { generateUniqueEmail } from '../../../utils/email-generator';
-import { waitForCivicIframeToLoad, waitForCivicIframeToClose } from '../../../helpers/iframe-helpers';
 
 test.describe('Civic Auth Applications', () => {
   test.beforeEach(async ({ page }) => {
@@ -41,8 +40,24 @@ test.describe('Civic Auth Applications', () => {
     });
     
     await allure.step('Handle iframe email verification flow', async () => {
-      // Wait for iframe to fully load with content (CI-safe)
-      const frame = await waitForCivicIframeToLoad(page);
+      // Chrome/Firefox use iframe flow
+      // Wait for iframe to appear and load
+      await page.waitForSelector('#civic-auth-iframe', { timeout: 30000 });
+      
+      // Click log in with email in the iframe
+      const frame = page.frameLocator('#civic-auth-iframe');
+      
+      // Try to wait for the frame to load completely first
+      await frame.locator('body').waitFor({ timeout: 30000 });
+      
+      // Wait for the login UI to fully load (not just the loading spinner)
+      await allure.step('Wait for login UI to load', async () => {
+        // Wait for the login content to appear (no more loading)
+        await frame.locator('#civic-login-app-loading').waitFor({ state: 'hidden', timeout: 30000 });
+        
+        // Alternative: wait for any actual login elements to appear
+        await frame.locator('[data-testid*="civic-login"]').first().waitFor({ timeout: 30000 });
+      });
       
       // Look for the email login slot - first check if it's visible
       await allure.step('Find and click email login option', async () => {
@@ -148,7 +163,7 @@ test.describe('Civic Auth Applications', () => {
       // Note: Verification automatically submits when 6th digit is entered
 
       // Wait for the iframe to be gone (indicating login is complete)
-      await waitForCivicIframeToClose(page, { timeout: 30000 });
+      await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 20000 });
     });
     
     // Confirm logged in state by checking for email in dropdown

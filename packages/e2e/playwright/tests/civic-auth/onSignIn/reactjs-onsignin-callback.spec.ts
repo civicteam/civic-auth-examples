@@ -1,6 +1,5 @@
 import { test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
-import { waitForCivicIframeToLoad, waitForCivicIframeToClose } from '../../../helpers/iframe-helpers';
 
 test.describe('Civic Auth onSignIn Callback Tests', () => {
   test.beforeEach(async ({ page }) => {
@@ -40,8 +39,14 @@ test.describe('Civic Auth onSignIn Callback Tests', () => {
     // Click the Test Sign In button from our test component
     await page.locator('button:has-text("Test Sign In")').click();
     
-    // Wait for iframe to fully load with content (CI-safe)
-    const frame = await waitForCivicIframeToLoad(page);
+    // Wait for iframe to be present in DOM (don't care if it's visible or hidden)
+    await page.waitForSelector('#civic-auth-iframe', { state: 'attached', timeout: 30000 });
+    
+    // Click log in with dummy in the iframe
+    const frame = page.frameLocator('#civic-auth-iframe');
+    
+    // Try to wait for the frame to load completely first
+    await frame.locator('body').waitFor({ timeout: 30000 });
     
     // Wait for the login UI to fully load (not just the loading spinner)
     try {
@@ -60,7 +65,7 @@ test.describe('Civic Auth onSignIn Callback Tests', () => {
     await dummyButton.click({ timeout: 20000 });
 
     // Wait for the iframe to be gone (indicating login is complete)
-    await waitForCivicIframeToClose(page, { timeout: 30000 });
+    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 20000 });
     
     // Wait for the callback to be executed
     await page.waitForTimeout(2000);
@@ -113,8 +118,14 @@ test.describe('Civic Auth onSignIn Callback Tests', () => {
     // First sign-in attempt
     await page.locator('button:has-text("Test Sign In")').click();
         
-    // Wait for iframe to fully load with content (CI-safe)
-    const frame = await waitForCivicIframeToLoad(page);
+    // Wait for iframe to be present in DOM (don't care if it's visible or hidden)
+    await page.waitForSelector('#civic-auth-iframe', { state: 'attached', timeout: 30000 });
+    
+    // Click log in with dummy in the iframe
+    const frame = page.frameLocator('#civic-auth-iframe');
+    
+    // Try to wait for the frame to load completely first
+    await frame.locator('body').waitFor({ timeout: 30000 });
     
     // Wait for the login UI to fully load (not just the loading spinner)
     try {
@@ -132,7 +143,7 @@ test.describe('Civic Auth onSignIn Callback Tests', () => {
     const dummyButton = frame.locator('[data-testid="civic-login-oidc-button-dummy"]');
     await dummyButton.click({ timeout: 20000 });
 
-    await waitForCivicIframeToClose(page, { timeout: 30000 });
+    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 20000 });
     await page.waitForTimeout(2000);
     
     // Verify first callback
@@ -202,8 +213,14 @@ test.describe('Civic Auth onSignIn Callback Tests', () => {
     // Perform a sign-in
     await page.locator('button:has-text("Test Sign In")').click();
         // Chrome/Firefox use iframe flow
-    // Wait for iframe to fully load with content (CI-safe)
-    const frame = await waitForCivicIframeToLoad(page);
+    // Wait for iframe to be present in DOM (don't care if it's visible or hidden)
+    await page.waitForSelector('#civic-auth-iframe', { state: 'attached', timeout: 30000 });
+    
+    // Click log in with dummy in the iframe
+    const frame = page.frameLocator('#civic-auth-iframe');
+    
+    // Try to wait for the frame to load completely first
+    await frame.locator('body').waitFor({ timeout: 30000 });
     
     // Wait for the login UI to fully load (not just the loading spinner)
     try {
@@ -221,7 +238,7 @@ test.describe('Civic Auth onSignIn Callback Tests', () => {
     const dummyButton = frame.locator('[data-testid="civic-login-oidc-button-dummy"]');
     await dummyButton.click({ timeout: 20000 });
 
-    await waitForCivicIframeToClose(page, { timeout: 30000 });
+    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 20000 });
     await page.waitForTimeout(2000);
     
     // Verify callback was logged

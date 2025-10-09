@@ -1,6 +1,5 @@
 import { test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
-import { waitForCivicIframeToLoad, waitForCivicIframeToClose } from '../../../helpers/iframe-helpers';
 
 test.describe('Civic Auth Applications', () => {
   test.beforeEach(async ({ page }) => {
@@ -20,12 +19,18 @@ test.describe('Civic Auth Applications', () => {
     await page.click('#loginModalButton');
     
     // Wait for iframe to appear and load
-    const frame = await waitForCivicIframeToLoad(page);
+    await page.waitForSelector('#civic-auth-iframe', { timeout: 30000 });
+    
+    // Click log in with dummy in the iframe (modal mode still uses iframe)
+    const frame = page.frameLocator('#civic-auth-iframe');
+    
+    // Try to wait for the frame to load completely first
+    await frame.locator('body').waitFor({ timeout: 30000 });
     
     await frame.locator('[data-testid="civic-login-oidc-button-dummy"]').click({ timeout: 20000 });
 
     // Wait for the iframe to be gone (indicating login is complete)
-    await waitForCivicIframeToClose(page);
+    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 20000 });
     
     // Confirm logged in state by checking for user info display
     await expect(page.locator('#userInfo')).toHaveClass(/show/, { timeout: 20000 });

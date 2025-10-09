@@ -1,5 +1,4 @@
 import { test, expect } from '@playwright/test';
-import { waitForCivicIframeToLoad, waitForCivicIframeToClose } from '../../../helpers/iframe-helpers';
 
 test.describe('Wagmi Login Tests', () => {
   test('should complete login flow and show balance', async ({ page, browserName }) => {    
@@ -21,23 +20,19 @@ test.describe('Wagmi Login Tests', () => {
     // Click the sign in button using test ID
     await signInButton.click();
     
-    // Wait for iframe to fully load with content (CI-safe)
-    const frame = await waitForCivicIframeToLoad(page, { 
-      iframeSelector: '[data-testid="civic-auth-iframe-with-resizer"]',
-      timeout: 30000 
-    });
+    // Chrome/Firefox use iframe flow
+    // Click log in with dummy in the iframe
+    const frame = page.frameLocator('[data-testid="civic-auth-iframe-with-resizer"]');
     const dummyButton = frame.locator('[data-testid="civic-login-oidc-button-dummy"]');
+    await dummyButton.waitFor({ state: 'visible', timeout: 30000 });
     await expect(dummyButton).toBeEnabled({ timeout: 10000 });
     await dummyButton.click({ timeout: 20000 });
 
     // Wait for the iframe to be gone (indicating login is complete)
-    await waitForCivicIframeToClose(page, { 
-      iframeSelector: '[data-testid="civic-auth-iframe-with-resizer"]',
-      timeout: 40000 
-    });
+    await page.waitForSelector('[data-testid="civic-auth-iframe-with-resizer"]', { state: 'hidden', timeout: 40000 });
 
     // Verify Ghost button is visible in dropdown
-    await expect(page.locator('#civic-dropdown-container').locator('button:has-text("Ghost")')).toBeVisible({ timeout: 30000 });
+    await expect(page.locator('#civic-dropdown-container').locator('button:has-text("Ghost")')).toBeVisible({ timeout: 60000 });
     
     // Verify wallet address is displayed
     await expect(page.locator('text=/Wallet address: [A-Za-z0-9]{32,44}/')).toBeVisible({ timeout: 20000 });

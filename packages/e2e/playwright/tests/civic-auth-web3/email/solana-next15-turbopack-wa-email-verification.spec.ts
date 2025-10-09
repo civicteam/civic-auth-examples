@@ -2,7 +2,6 @@ import { test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
 import { db } from '../../../../utils/database';
 import { generateUniqueEmail } from '../../../utils/email-generator';
-import { waitForCivicIframeToLoad, waitForCivicIframeToClose } from '../../../helpers/iframe-helpers';
 
 test.describe('Solana Next.js 15 Turbopack Wallet Adapter Email Verification Tests', () => {
   test.beforeEach(async ({ page }) => {
@@ -44,9 +43,32 @@ test.describe('Solana Next.js 15 Turbopack Wallet Adapter Email Verification Tes
     });
     
     await allure.step('Handle iframe email verification flow', async () => {
-      // Wait for iframe to fully load with content (CI-safe)
-
-      const frame = await waitForCivicIframeToLoad(page);
+      // Chrome/Firefox use iframe flow
+      // Wait for iframe to be present in DOM (don't care if it's visible or hidden)
+      await page.waitForSelector('#civic-auth-iframe', { state: 'attached', timeout: 30000 });
+      
+      // Click log in with email in the iframe
+      const frame = page.frameLocator('#civic-auth-iframe');
+      
+      // Try to wait for the frame to load completely first
+      await frame.locator('body').waitFor({ timeout: 30000 });
+      
+      // Wait for the login UI to fully load (not just the loading spinner)
+      await allure.step('Wait for login UI to load', async () => {
+        try {
+          const loadingElement = frame.locator('#civic-login-app-loading');
+          const isLoadingVisible = await loadingElement.isVisible({ timeout: 5000 }).catch(() => false);
+          
+          if (isLoadingVisible) {
+            await loadingElement.waitFor({ state: 'hidden', timeout: 45000 });
+          }
+        } catch (error) {
+          // Loading element might not exist, that's ok
+        }
+        
+        // Wait for login elements to appear
+        await frame.locator('[data-testid*="civic-login"]').first().waitFor({ timeout: 30000 });
+      });
       
       // Look for the email login slot - first check if it's visible
       await allure.step('Find and click email login option', async () => {
@@ -156,12 +178,12 @@ test.describe('Solana Next.js 15 Turbopack Wallet Adapter Email Verification Tes
       // Note: Verification automatically submits when 6th digit is entered
 
       // Wait for the iframe to be gone (indicating login is complete)
-      await waitForCivicIframeToClose(page, { timeout: 30000 });
+      await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 20000 });
     });
     
     // Verify wallet adapter shows connected state
     await allure.step('Verify wallet adapter connected state', async () => {
-      await expect(page.locator('.wallet-adapter-button.wallet-adapter-button-trigger')).toBeVisible({ timeout: 30000 });
+      await expect(page.locator('.wallet-adapter-button.wallet-adapter-button-trigger')).toBeVisible({ timeout: 60000 });
       await expect(page.locator('.wallet-adapter-button-start-icon')).toBeVisible({ timeout: 20000 });
       await expect(page.locator('.wallet-adapter-button-trigger')).toContainText(/^[A-Za-z0-9]{4}\.\.([A-Za-z0-9]{4})$/, { timeout: 20000 });
     });
