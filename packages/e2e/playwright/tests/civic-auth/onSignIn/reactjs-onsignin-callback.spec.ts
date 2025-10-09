@@ -41,7 +41,7 @@ test.describe('Civic Auth onSignIn Callback Tests', () => {
     await page.locator('button:has-text("Test Sign In")').click();
     
     // Wait for iframe to fully load with content (CI-safe)
-    const frame = await waitForCivicIframeToLoad(page, { timeout: 60000 });
+    const frame = await waitForCivicIframeToLoad(page);
     
     // Wait for the login UI to fully load (not just the loading spinner)
     try {
@@ -114,7 +114,7 @@ test.describe('Civic Auth onSignIn Callback Tests', () => {
     await page.locator('button:has-text("Test Sign In")').click();
         
     // Wait for iframe to fully load with content (CI-safe)
-    const frame = await waitForCivicIframeToLoad(page, { timeout: 60000 });
+    const frame = await waitForCivicIframeToLoad(page);
     
     // Wait for the login UI to fully load (not just the loading spinner)
     try {
@@ -203,7 +203,7 @@ test.describe('Civic Auth onSignIn Callback Tests', () => {
     await page.locator('button:has-text("Test Sign In")').click();
         // Chrome/Firefox use iframe flow
     // Wait for iframe to fully load with content (CI-safe)
-    const frame = await waitForCivicIframeToLoad(page, { timeout: 60000 });
+    const frame = await waitForCivicIframeToLoad(page);
     
     // Wait for the login UI to fully load (not just the loading spinner)
     try {

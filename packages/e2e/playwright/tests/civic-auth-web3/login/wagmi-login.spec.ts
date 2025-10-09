@@ -24,7 +24,7 @@ test.describe('Wagmi Login Tests', () => {
     // Wait for iframe to fully load with content (CI-safe)
     const frame = await waitForCivicIframeToLoad(page, { 
       iframeSelector: '[data-testid="civic-auth-iframe-with-resizer"]',
-      timeout: 60000 
+      timeout: 30000 
     });
     const dummyButton = frame.locator('[data-testid="civic-login-oidc-button-dummy"]');
     await expect(dummyButton).toBeEnabled({ timeout: 10000 });
@@ -34,7 +34,7 @@ test.describe('Wagmi Login Tests', () => {
     await waitForCivicIframeToClose(page, { timeout: 30000 });
 
     // Verify Ghost button is visible in dropdown
-    await expect(page.locator('#civic-dropdown-container').locator('button:has-text("Ghost")')).toBeVisible({ timeout: 60000 });
+    await expect(page.locator('#civic-dropdown-container').locator('button:has-text("Ghost")')).toBeVisible({ timeout: 30000 });
     
     // Verify wallet address is displayed
     await expect(page.locator('text=/Wallet address: [A-Za-z0-9]{32,44}/')).toBeVisible({ timeout: 20000 });

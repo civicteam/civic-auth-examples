@@ -41,7 +41,7 @@ test.describe('Civic Auth Applications', () => {
     
     await allure.step('Handle iframe email verification flow', async () => {
       // Wait for iframe to fully load with content (CI-safe)
-      const frame = await waitForCivicIframeToLoad(page, { timeout: 60000 });
+      const frame = await waitForCivicIframeToLoad(page);
       
       // Debug: Let's see what's actually in the iframe
       await debugIframeState(page, frame);

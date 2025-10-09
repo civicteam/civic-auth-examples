@@ -36,7 +36,7 @@ test.describe('Civic Auth Applications', () => {
     // Wait for iframe to be present in DOM (don't care if it's visible or hidden)
     // Wait for iframe to fully load with content (CI-safe)
 
-    const frame = await waitForCivicIframeToLoad(page, { timeout: 60000 });
+    const frame = await waitForCivicIframeToLoad(page);
     
     // Wait for the login UI to fully load (not just the loading spinner)
     try {
@@ -71,7 +71,7 @@ test.describe('Civic Auth Applications', () => {
       
       if (isLoadingVisibleAfterClick) {
         // Wait longer for the auth flow to complete
-        await loadingAfterClick.waitFor({ state: 'hidden', timeout: 60000 });
+        await loadingAfterClick.waitFor({ state: 'hidden', timeout: 30000 });
       }
     } catch (error) {
       // Loading handling - if it fails, continue

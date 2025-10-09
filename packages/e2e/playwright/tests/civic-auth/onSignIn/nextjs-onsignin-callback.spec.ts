@@ -26,7 +26,7 @@ test.describe('Civic Auth onSignIn Callback Tests', () => {
     await page.locator('button:has-text("Test Sign In")').click();
     
     // Wait for iframe to fully load with content (CI-safe)
-    const frame = await waitForCivicIframeToLoad(page, { timeout: 60000 });
+    const frame = await waitForCivicIframeToLoad(page);
     
     const dummyButton = frame.locator('[data-testid="civic-login-oidc-button-dummy"]');
     await dummyButton.click({ timeout: 20000 });
@@ -65,7 +65,7 @@ test.describe('Civic Auth onSignIn Callback Tests', () => {
     
     // First sign-in attempt
     await page.locator('button:has-text("Test Sign In")').click();
-    const frame = await waitForCivicIframeToLoad(page, { timeout: 60000 });
+    const frame = await waitForCivicIframeToLoad(page);
     
     const dummyButton = frame.locator('[data-testid="civic-login-oidc-button-dummy"]');
     await dummyButton.click({ timeout: 20000 });
@@ -129,7 +129,7 @@ test.describe('Civic Auth onSignIn Callback Tests', () => {
     
     // Perform a sign-in
     await page.locator('button:has-text("Test Sign In")').click();
-    const frame = await waitForCivicIframeToLoad(page, { timeout: 60000 });
+    const frame = await waitForCivicIframeToLoad(page);
     
     const dummyButton = frame.locator('[data-testid="civic-login-oidc-button-dummy"]');
     await dummyButton.click({ timeout: 20000 });

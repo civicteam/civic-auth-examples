@@ -32,7 +32,7 @@ test.describe('Civic Auth Applications', () => {
     // Wait for iframe to appear and load
     // Wait for iframe to fully load with content (CI-safe)
 
-    const frame = await waitForCivicIframeToLoad(page, { timeout: 60000 });
+    const frame = await waitForCivicIframeToLoad(page);
     
     // Look for the dummy button and ensure it's visible and enabled
     const dummyButton = frame.locator('[data-testid="civic-login-oidc-button-dummy"]');

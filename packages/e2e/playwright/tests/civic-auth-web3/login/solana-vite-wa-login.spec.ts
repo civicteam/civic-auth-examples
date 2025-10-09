@@ -25,7 +25,7 @@ test.describe('Solana Vite Wallet Adapter Login Tests', () => {
     // Wait for iframe to be present in DOM (don't care if it's visible or hidden)
     // Wait for iframe to fully load with content (CI-safe)
 
-    const frame = await waitForCivicIframeToLoad(page, { timeout: 60000 });
+    const frame = await waitForCivicIframeToLoad(page);
     
     // Wait for the login UI to fully load (not just the loading spinner)
     try {
@@ -57,9 +57,9 @@ test.describe('Solana Vite Wallet Adapter Login Tests', () => {
     await waitForCivicIframeToClose(page, { timeout: 30000 });
 
     // Verify wallet adapter button shows connected state
-    await expect(page.locator('.wallet-adapter-button.wallet-adapter-button-trigger')).toBeVisible({ timeout: 60000 });
-    await expect(page.locator('.wallet-adapter-button-start-icon')).toBeVisible({ timeout: 60000 });
-    await expect(page.locator('.wallet-adapter-button-trigger')).toContainText(/^[A-Za-z0-9]{4}\.\.([A-Za-z0-9]{4})$/, { timeout: 60000 });
+    await expect(page.locator('.wallet-adapter-button.wallet-adapter-button-trigger')).toBeVisible({ timeout: 30000 });
+    await expect(page.locator('.wallet-adapter-button-start-icon')).toBeVisible({ timeout: 30000 });
+    await expect(page.locator('.wallet-adapter-button-trigger')).toContainText(/^[A-Za-z0-9]{4}\.\.([A-Za-z0-9]{4})$/, { timeout: 30000 });
     
     // Verify wallet address is displayed
     await expect(page.locator('text=/Wallet address: [A-Za-z0-9]{32,44}/')).toBeVisible({ timeout: 20000 });

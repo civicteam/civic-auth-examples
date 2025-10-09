@@ -25,20 +25,14 @@ test.describe('Civic Auth Applications', () => {
     
     // Chrome/Firefox use iframe flow
     // Wait for iframe to appear and load inside the authContainer
-    await page.waitForSelector('#iframeContainer #civic-auth-iframe', { timeout: 30000 });
-    
-    // Click log in with dummy in the iframe
-    const frame = page.frameLocator('#iframeContainer #civic-auth-iframe');
-    
-    // Try to wait for the frame to load completely first
-    await frame.locator('body').waitFor({ timeout: 30000 });
+    const frame = await waitForCivicIframeToLoad(page);
     
     // Look for the dummy button
     const dummyButton = frame.locator('[data-testid="civic-login-oidc-button-dummy"]');
     await dummyButton.click({ timeout: 20000 });
 
     // Wait for the iframe to be gone (indicating login is complete)
-    await page.waitForSelector('#iframeContainer #civic-auth-iframe', { state: 'hidden', timeout: 20000 });
+    await waitForCivicIframeToClose(page);
 
     // Check that we're logged in by verifying the embedded status shows success
     await expect(page.locator('[data-testid="vanilla-js-embedded-status"]')).toContainText('Ghost');

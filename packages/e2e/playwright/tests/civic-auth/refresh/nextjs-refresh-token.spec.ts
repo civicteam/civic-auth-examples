@@ -32,7 +32,7 @@ test.describe('Civic Auth Applications', () => {
     await signInButton.click();
     
     // Wait for iframe to fully load with content (CI-safe)
-    const frame = await waitForCivicIframeToLoad(page, { timeout: 60000 });
+    const frame = await waitForCivicIframeToLoad(page);
     
     // Look for the dummy button with extended timeout and ensure it's visible
     const dummyButton = frame.locator('[data-testid="civic-login-oidc-button-dummy"]');
@@ -51,14 +51,14 @@ test.describe('Civic Auth Applications', () => {
       
       if (isLoadingVisibleAfterClick) {
         // Wait longer for the auth flow to complete
-        await loadingAfterClick.waitFor({ state: 'hidden', timeout: 60000 });
+        await loadingAfterClick.waitFor({ state: 'hidden', timeout: 30000 });
       }
     } catch (error) {
       // Loading handling - if it fails, continue
     }
 
     // Wait for the iframe to be gone (indicating login is complete)
-    await waitForCivicIframeToClose(page, { timeout: 60000 });
+    await waitForCivicIframeToClose(page, { timeout: 30000 });
   
     // Confirm logged in state by checking for Ghost button in dropdown
     const ghostButtonLocator = page.locator('#civic-dropdown-container').locator('button:has-text("Ghost")');
