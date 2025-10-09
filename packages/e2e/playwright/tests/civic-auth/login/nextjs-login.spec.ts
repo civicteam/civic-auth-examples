@@ -90,7 +90,9 @@ test.describe('Civic Auth Applications', () => {
     await page.waitForTimeout(1000);
     
     // Click the dummy button
+    console.log('🔘 About to click dummy button...');
     await dummyButton.click({ timeout: 20000 });
+    console.log('✅ Dummy button clicked successfully');
     
     // Wait for any loading to complete after click
     try {
@@ -112,8 +114,25 @@ test.describe('Civic Auth Applications', () => {
     console.log('🔍 DEBUG: Current URL:', page.url());
     console.log('🔍 DEBUG: Iframe visible?', await page.locator('#civic-auth-iframe').isVisible().catch(() => 'unknown'));
 
+    // Poll iframe state every 5 seconds while waiting
+    const pollInterval = setInterval(async () => {
+      try {
+        const iframeVisible = await page.locator('#civic-auth-iframe').isVisible().catch(() => false);
+        if (iframeVisible) {
+          const iframeSrc = await page.locator('#civic-auth-iframe').getAttribute('src').catch(() => 'unknown');
+          const bodyText = await frame.locator('body').textContent({ timeout: 1000 }).catch(() => 'Could not read');
+          console.log(`⏳ [Poll] Iframe still visible. Src: ${iframeSrc?.substring(0, 100)}...`);
+          console.log(`⏳ [Poll] Iframe body (first 200 chars): ${bodyText?.substring(0, 200)}`);
+          console.log(`⏳ [Poll] Callback requests so far: ${callbackRequests.length}`);
+        }
+      } catch (e) {
+        console.log(`⏳ [Poll] Error polling iframe: ${e.message}`);
+      }
+    }, 5000);
+
     // Wait for the iframe to be gone (indicating login is complete)
     await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 60000 }).catch(async (error) => {
+      clearInterval(pollInterval);
       console.error('\n❌ IFRAME NEVER CLOSED!');
       console.error('Final callback requests:', JSON.stringify(callbackRequests, null, 2));
       console.error('Failed requests:', JSON.stringify(failedRequests, null, 2));
@@ -124,13 +143,16 @@ test.describe('Civic Auth Applications', () => {
         const iframeUrl = await page.locator('#civic-auth-iframe').getAttribute('src');
         console.error('Iframe src:', iframeUrl);
         const iframeBody = await frame.locator('body').textContent({ timeout: 2000 }).catch(() => 'Could not read body');
-        console.error('Iframe body text:', iframeBody);
+        console.error('Iframe body text (first 500 chars):', iframeBody?.substring(0, 500));
       } catch (e) {
         console.error('Could not inspect iframe:', e);
       }
       
       throw error;
     });
+    
+    clearInterval(pollInterval);
+    console.log('✅ Iframe closed successfully!');
   
     // Confirm logged in state by checking for Ghost button in dropdown
     const ghostButtonLocator = page.locator('#civic-dropdown-container').locator('button:has-text("Ghost")');
