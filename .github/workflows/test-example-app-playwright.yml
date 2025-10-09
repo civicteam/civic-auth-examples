@@ -196,14 +196,14 @@ jobs:
       - name: Wait for app to start
         run: |
             if echo "${{ inputs.dev-command }}" | grep -q "subpath"; then
-              TARGET_URL="http://localhost:3000/demo"
+              TARGET_URL="localhost:3000/demo"
             elif echo "${{ inputs.dev-command }}" | grep -q "loginSuccessUrl"; then
-              TARGET_URL="http://localhost:3000"
+              TARGET_URL="localhost:3000"
             else
-              TARGET_URL="http://localhost:3000"
+              TARGET_URL="localhost:3000"
             fi
             
-            echo "Waiting for app at $TARGET_URL"
+            echo "Waiting for app at http://$TARGET_URL"
             npx wait-on http-get://$TARGET_URL --timeout 300000 --interval 2000 --verbose || {
               echo "=== App failed to start. Full app log: ==="
               cat /tmp/app.log
