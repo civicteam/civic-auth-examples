@@ -69,26 +69,28 @@ jobs:
       run:
         working-directory: ${{ inputs.project-path }}
     steps:
-      - name: Create unique identifier
-        id: project-id
-        working-directory: .
-        run: |
-          # Use timestamp and random number for guaranteed uniqueness
-          timestamp=$(date +%s)
-          random_id=$((RANDOM % 90000 + 10000))
-          unique_id="${timestamp}-${random_id}"
-          echo "project-id=$unique_id" >> $GITHUB_OUTPUT
-          echo "Project ID: $unique_id"
       - uses: actions/checkout@v4
         with:
           token: ${{ github.token }}
 
-      - name: Install system dependencies for Allure
+      - name: Create unique identifier
+        id: project-id
+        working-directory: .
+        run: |
+          # Use timestamp, random number, and run attempt for guaranteed uniqueness
+          timestamp=$(date +%s%N)
+          random_id=$((RANDOM % 90000 + 10000))
+          unique_id="${timestamp}-${random_id}-${{ github.run_attempt }}"
+          echo "project-id=$unique_id" >> $GITHUB_OUTPUT
+          echo "Project ID: $unique_id"
+
+      - name: Install system dependencies
         working-directory: .
         run: |
           apt-get update
-          apt-get install -y default-jre-headless fontconfig
+          apt-get install -y default-jre-headless fontconfig unzip
           java -version
+          echo "System dependencies installed successfully"
 
       - name: Install Bun
         if: contains(inputs.project-path, 'hono')
@@ -219,7 +221,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: allure-report-${{ steps.project-id.outputs.project-id }}-${{ inputs.browser }}-${{ github.run_number }}
+          name: allure-report-${{ steps.project-id.outputs.project-id }}-${{ inputs.browser }}
           path: packages/e2e/allure-report
           retention-days: 5
 
@@ -227,7 +229,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: allure-results-${{ steps.project-id.outputs.project-id }}-${{ inputs.browser }}-${{ github.run_number }}
+          name: allure-results-${{ steps.project-id.outputs.project-id }}-${{ inputs.browser }}
           path: packages/e2e/allure-results/
           retention-days: 5
 
@@ -235,7 +237,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: test-results-${{ steps.project-id.outputs.project-id }}-${{ inputs.browser }}-${{ github.run_number }}
+          name: test-results-${{ steps.project-id.outputs.project-id }}-${{ inputs.browser }}
           path: packages/e2e/test-results/
           retention-days: 5
 
@@ -250,6 +252,6 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: allure-results-${{ steps.project-id.outputs.project-id }}-${{ inputs.browser }}-${{ github.run_number }}-${{ github.job }}-${{ github.run_attempt }}
+          name: allure-results-publish-${{ steps.project-id.outputs.project-id }}-${{ inputs.browser }}
           path: packages/e2e/allure-results/
           retention-days: 5 
