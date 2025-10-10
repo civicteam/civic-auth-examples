@@ -251,7 +251,7 @@ Then('I fetch tokens from local storage', () => {
         return isSet; // Return true when the value is set
       });
     }, {
-      timeout: 60000, // 60 seconds
+      timeout: 30000, // 60 seconds
       interval: 1000   // Check every 1000ms
     });
   }

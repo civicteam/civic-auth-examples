@@ -38,7 +38,7 @@ test.describe('Civic Auth onSignIn Callback Tests', () => {
     await dummyButton.click({ timeout: 20000 });
 
     // Wait for the iframe to be gone (indicating login is complete)
-    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 60000 });
+    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 30000 });
     
     // Wait for the callback to be executed (sign-in process takes several seconds)
     await page.waitForTimeout(5000);
@@ -80,7 +80,7 @@ test.describe('Civic Auth onSignIn Callback Tests', () => {
     const dummyButton = frame.locator('[data-testid="civic-login-oidc-button-dummy"]');
     await dummyButton.click({ timeout: 20000 });
 
-    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 60000 });
+    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 30000 });
     await page.waitForTimeout(5000);
     
     // Verify callback was logged
@@ -149,7 +149,7 @@ test.describe('Civic Auth onSignIn Callback Tests', () => {
     const dummyButton = frame.locator('[data-testid="civic-login-oidc-button-dummy"]');
     await dummyButton.click({ timeout: 20000 });
 
-    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 60000 });
+    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 30000 });
     await page.waitForTimeout(5000);
     
     // Verify callback was logged

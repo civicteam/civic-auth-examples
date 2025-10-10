@@ -73,14 +73,14 @@ test.describe('Civic Auth Applications', () => {
       
       if (isLoadingVisibleAfterClick) {
         // Wait longer for the auth flow to complete
-        await loadingAfterClick.waitFor({ state: 'hidden', timeout: 60000 });
+        await loadingAfterClick.waitFor({ state: 'hidden', timeout: 30000 });
       }
     } catch (error) {
       // Loading handling - if it fails, continue
     }
 
     // Wait for the iframe to be gone (indicating login is complete)
-    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 60000 });
+    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 30000 });
   
     // Confirm logged in state by checking for Ghost button in dropdown
     const ghostButtonLocator = page.locator('#civic-dropdown-container').locator('button:has-text("Ghost")');

@@ -42,7 +42,7 @@ test.describe('Civic Auth Applications', () => {
     await dummyButton.click({ timeout: 20000 });
 
     // Wait for the iframe to be gone (indicating login is complete)
-    await page.waitForSelector('#authContainer #civic-auth-iframe', { state: 'hidden', timeout: 60000 });
+    await page.waitForSelector('#authContainer #civic-auth-iframe', { state: 'hidden', timeout: 30000 });
     
     // Confirm logged in state by checking for user info display
     await page.getByRole('button', { name: 'Sign Out' }).click();

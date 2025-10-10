@@ -69,7 +69,7 @@ test.describe('Civic Auth onSignIn Callback Tests', () => {
 
     // Wait for the iframe to be gone (indicating login is complete)
     // Using longer timeout for CI environments
-    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 60000 });
+    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 30000 });
     
     // Wait for the callback to be executed
     await page.waitForTimeout(2000);
@@ -150,7 +150,7 @@ test.describe('Civic Auth onSignIn Callback Tests', () => {
 
     // Wait for the iframe to be gone (indicating login is complete)
     // Using longer timeout for CI environments
-    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 60000 });
+    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 30000 });
     await page.waitForTimeout(2000);
     
     // Verify first callback
@@ -249,7 +249,7 @@ test.describe('Civic Auth onSignIn Callback Tests', () => {
 
     // Wait for the iframe to be gone (indicating login is complete)
     // Using longer timeout for CI environments
-    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 60000 });
+    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 30000 });
     await page.waitForTimeout(2000);
     
     // Verify callback was logged

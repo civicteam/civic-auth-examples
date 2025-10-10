@@ -181,12 +181,12 @@ test.describe('Solana Next.js 15 Turbopack Wallet Adapter Email Verification Tes
       // Note: Verification automatically submits when 6th digit is entered
 
       // Wait for the iframe to be gone (indicating login is complete)
-      await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 60000 });
+      await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 30000 });
     });
     
     // Verify wallet adapter shows connected state
     await allure.step('Verify wallet adapter connected state', async () => {
-      await expect(page.locator('.wallet-adapter-button.wallet-adapter-button-trigger')).toBeVisible({ timeout: 60000 });
+      await expect(page.locator('.wallet-adapter-button.wallet-adapter-button-trigger')).toBeVisible({ timeout: 30000 });
       await expect(page.locator('.wallet-adapter-button-start-icon')).toBeVisible({ timeout: 20000 });
       await expect(page.locator('.wallet-adapter-button-trigger')).toContainText(/^[A-Za-z0-9]{4}\.\.([A-Za-z0-9]{4})$/, { timeout: 20000 });
     });

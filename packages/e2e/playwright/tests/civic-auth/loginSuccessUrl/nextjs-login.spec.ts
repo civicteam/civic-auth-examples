@@ -43,7 +43,7 @@ test.describe('Civic Auth Applications', () => {
     await dummyButton.click({ timeout: 20000 });
 
     // Wait for the iframe to be gone (indicating login is complete)
-    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 60000 });
+    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 30000 });
   
     // Wait for the custom success route to load (indicating redirect happened)
     await expect(page.getByTestId('loginSuccessUrlHeader')).toBeVisible({ timeout: 20000 });

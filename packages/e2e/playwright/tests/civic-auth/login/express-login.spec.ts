@@ -54,14 +54,14 @@ test.describe('Civic Auth Applications', () => {
       const isLoadingVisibleAfterClick = await loadingAfterClick.isVisible({ timeout: 3000 }).catch(() => false);
       
       if (isLoadingVisibleAfterClick) {
-        await loadingAfterClick.waitFor({ state: 'hidden', timeout: 60000 });
+        await loadingAfterClick.waitFor({ state: 'hidden', timeout: 30000 });
       }
     } catch (error) {
       // Loading handling - if it fails, continue
     }
 
     // Wait for redirect to /admin/hello
-    await expect(page).toHaveURL(/.*\/admin\/hello/, { timeout: 60000 });
+    await expect(page).toHaveURL(/.*\/admin\/hello/, { timeout: 30000 });
     
     // Check the page content
     await expect(page.locator('h1')).toContainText('Hello', { timeout: 10000 });

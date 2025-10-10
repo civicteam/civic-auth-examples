@@ -22,11 +22,11 @@ jobs:
       - name: Wait for test workflows to complete
         run: |
           echo "⏳ Waiting for test workflows to complete..."
-          echo "This workflow will wait up to 10 minutes for test workflows to finish"
+          echo "This workflow will wait up to 15 minutes for test workflows to finish"
           
           # Simple approach: just wait a reasonable amount of time
           # The download steps will handle missing artifacts gracefully
-          sleep 600  # Wait 10 minutes for workflows to start and make progress
+          sleep 900  # Wait 15 minutes for workflows to start and make progress
           
           echo "✅ Wait period completed, proceeding with artifact download"
 

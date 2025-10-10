@@ -140,7 +140,7 @@ test.describe('Civic Auth Applications', () => {
     // Note: Verification automatically submits when 6th digit is entered
 
     // Wait for the iframe to be gone (indicating login is complete)
-    await page.waitForSelector('#iframeContainer #civic-auth-iframe', { state: 'hidden', timeout: 60000 });
+    await page.waitForSelector('#iframeContainer #civic-auth-iframe', { state: 'hidden', timeout: 30000 });
 
     // Check that we're logged in by verifying the embedded status shows success
     await expect(page.locator('[data-testid="vanilla-js-embedded-status"]')).toContainText('@simulator.amazonses.com');
