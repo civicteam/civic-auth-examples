@@ -64,6 +64,7 @@ jobs:
       VITE_WALLET_API_BASE_URL: ${{ secrets.VITE_WALLET_API_BASE_URL }}
       DATABASE_URL: ${{ secrets.DATABASE_URL }}
       ALLURE_PARENT_SUITE: ${{ inputs.allure-parent-suite }}
+      HOME: /root
     defaults:
       run:
         working-directory: ${{ inputs.project-path }}
