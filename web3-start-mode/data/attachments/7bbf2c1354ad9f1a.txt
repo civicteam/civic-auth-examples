@@ -1,0 +1,112 @@
+[PAGE CONSOLE] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[PAGE CONSOLE] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 3548ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 3548ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 58ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 58ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 90ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 90ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 78ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 78ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 43ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 43ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 37ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 37ms
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?response_type=code&client_id=demo-client-1&state=eyJ1dWlkIjoiMmM1MzhlNTEtYzc0Zi00NDViLTk3OTYtOTk1MDQ2OGY4NjgwIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&code_challenge=357O8i9_s_NtbF9b3nwI7VASlS83nule3VGymI-pftY&code_challenge_method=S256&prompt=consent
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?response_type=code&client_id=demo-client-1&state=eyJ1dWlkIjoiMmM1MzhlNTEtYzc0Zi00NDViLTk3OTYtOTk1MDQ2OGY4NjgwIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&code_challenge=357O8i9_s_NtbF9b3nwI7VASlS83nule3VGymI-pftY&code_challenge_method=S256&prompt=consent
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[BAD RESPONSE] 429 https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us
+[BAD RESPONSE] 429 https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 429 ()
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 429 ()
+[RESPONSE BODY] {"detail":"Sentry dropped data due to a quota or internal rate limit being reached. This will not affect your application. See https://docs.sentry.io/product/accounts/quotas/ for more information."}
+[RESPONSE BODY] {"detail":"Sentry dropped data due to a quota or internal rate limit being reached. This will not affect your application. See https://docs.sentry.io/product/accounts/quotas/ for more information."}
+[REQUEST FAILED] POST https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiMmM1MzhlNTEtYzc0Zi00NDViLTk3OTYtOTk1MDQ2OGY4NjgwIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&client_id=demo-client-1&source_system_id=NaJIMDhRyixhPIRQy5JmC9oLk8BE_q5YxsXjg2riUvP&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&flow_id=oauth-login-2a7eacf9-92f2-4629-8ec8-64fcc12f81c6 - net::ERR_ABORTED
+[REQUEST FAILED] POST https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiMmM1MzhlNTEtYzc0Zi00NDViLTk3OTYtOTk1MDQ2OGY4NjgwIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&client_id=demo-client-1&source_system_id=NaJIMDhRyixhPIRQy5JmC9oLk8BE_q5YxsXjg2riUvP&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&flow_id=oauth-login-2a7eacf9-92f2-4629-8ec8-64fcc12f81c6 - net::ERR_ABORTED
+[REQUEST FAILED] POST https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiMmM1MzhlNTEtYzc0Zi00NDViLTk3OTYtOTk1MDQ2OGY4NjgwIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&client_id=demo-client-1&source_system_id=NaJIMDhRyixhPIRQy5JmC9oLk8BE_q5YxsXjg2riUvP&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&flow_id=oauth-login-2a7eacf9-92f2-4629-8ec8-64fcc12f81c6 - net::ERR_ABORTED
+[REQUEST FAILED] POST https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiMmM1MzhlNTEtYzc0Zi00NDViLTk3OTYtOTk1MDQ2OGY4NjgwIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&client_id=demo-client-1&source_system_id=NaJIMDhRyixhPIRQy5JmC9oLk8BE_q5YxsXjg2riUvP&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&flow_id=oauth-login-2a7eacf9-92f2-4629-8ec8-64fcc12f81c6 - net::ERR_ABORTED
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/NaJIMDhRyixhPIRQy5JmC9oLk8BE_q5YxsXjg2riUvP/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR2hvc3QiLCJzdWIiOiI0OTllYjcxNi1jYTRkLTQ5ODktYWE2Ny1kMmRjODEyNjIwYjEiLCJlbWFpbCI6IjhmZDllNmJlLWJlZmUtNDMxMS05OThhLTI3NzhiNDc0YzY1YkBleGFtcGxlLmV4YW1wbGUiLCJzY29wZXMiOlsib3BlbmlkIiwib2ZmbGluZV9hY2Nlc3MiLCJwcm9maWxlIiwiZW1haWwiLCJ3YWxsZXQiLCJmb3J3YXJkZWRUb2tlbnMiLCJwYXNza2V5Il0sImF1ZCI6ImRiN2U4OGMxLWQ5OTctNDA5OC04YzA1LTNjMjhjMDE3NzFmMyIsImlkVG9rZW5UVEwiOjM2MDAsImFjY2Vzc1Rva2VuVFRMIjozNjAwLCJyZWZyZXNoVG9rZW5UVEwiOjg2NDAwLCJjbGllbnRJZCI6ImRlbW8tY2xpZW50LTEiLCJwcm92aWRlciI6ImR1bW15IiwiZmxvd19pZCI6Im9hdXRoLWxvZ2luLTJhN2VhY2Y5LTkyZjItNDYyOS04ZWM4LTY0ZmNjMTJmODFjNiIsImxvZ2luX2Zsb3dfaWQiOiIyMWM3NWI4OS1lZDU4LTQ4YTAtOGZkOC05OGYyZGYzODBhZDAiLCJkaXNwbGF5X21vZGUiOiJwb3B1cCIsImZsb3dfdHlwZSI6Im9pZGMiLCJvcmlnaW4iOiJodHRwczovL2F1dGgtZGV2LmNpdmljLmNvbSIsImZvcndhcmRlZFRva2VucyI6eyJkdW1teSI6eyJpZF90b2tlbiI6ImV5SmhiR2NpT2lKU1V6STFOaUlzSW5SNWNDSTZJa3BYVkNJc0ltdHBaQ0k2SW1zeEluMC5leUpwYzNNaU9pSm9kSFJ3Y3pvdkwyaGxZV1JsY2kxd2NtOTRlUzVrWVc1cFpXeGlhMlZzYkdWb1pYSXpOems1TG5kdmNtdGxjbk11WkdWMklpd2lZWFZrSWpvaWRHVnVZVzUwTFRFdFlYQndMVEVpTENKemRXSWlPaUk0Wm1RNVpUWmlaUzFpWldabExUUXpNVEV0T1RrNFlTMHlOemM0WWpRM05HTTJOV0lpTENKbGJXRnBiQ0k2SWpobVpEbGxObUpsTFdKbFptVXRORE14TVMwNU9UaGhMVEkzTnpoaU5EYzBZelkxWWtCbGVHRnRjR3hsTG1WNFlXMXdiR1VpTENKdWIyNWpaU0k2SW1WbVkyWmtZVGxtTFRReE5UVXRORFk1TUMxaVpXRmhMVEZqWkdObE1HTXlOVFl6WWlJc0ltbGhkQ0k2TVRjMk1ERXlNVFE0T0N3aVpYaHdJam94TnpZd01USTFNRGc0TENKbWIzSjNZWEprWldSVWIydGxibk1pT25zaVpIVnRiWGtpT25zaWFXUmZkRzlyWlc0aU9pSmxlVXBvWWtkamFVOXBTbE5WZWtreFRtbEpjMGx1VWpWalEwazJTV3R3V0ZaRFNYTkpiWFJ3V2tOSk5rbHRjM2hKYmpBdVpYbEtjR016VFdsUGFVcHZaRWhTZDJONmIzWk1NbWhzV1ZkU2JHTnBNWGRqYlRrMFpWTTFhMWxYTlhCYVYzaHBZVEpXYzJKSFZtOWFXRWw2VG5wck5VeHVaSFpqYlhSc1kyNU5kVnBIVmpKSmFYZHBZek5XYVVscWIybFBSMXByVDFkVk1sbHRWWFJaYlZadFdsTXdNRTE2UlhoTVZHczFUMGRGZEUxcVl6TlBSMGt3VG5wU2FrNXFWbWxKYVhkcFdsY3hhR0ZYZDJsUGFVazBXbTFSTlZwVVdtbGFVekZwV2xkYWJFeFVVWHBOVkVWMFQxUnJORmxUTUhsT2VtTTBXV3BSTTA1SFRUSk9WMHBCV2xob2FHSllRbk5hVXpWc1pVZEdkR05IZUd4SmFYZHBZbTA1ZFZreVZXbFBhVXBzV20xT2JWcEhSVFZhYVRBd1RWUlZNVXhVVVRKUFZFRjBXVzFXYUZsVE1IaFpNbEpxV2xSQ2FrMXFWVEpOTWtscFRFTkthR1JYVVdsUGFVcHZaRWhTZDA5cE9IWmlSemxxV1ZkNGIySXpUakJQYWsxM1RVUkJhVXhEU25CWldGRnBUMnBGTTA1cVFYaE5ha1V3VDBSbmMwbHRWalJqUTBrMlRWUmpNazFFUlhsT1ZFRTBUMGd3TGtKVE0yeHVjMnR0TUZOa1JWSmlZa1IyWlY4NU0zUkJlbTh5VjNZM1owMW9iV3hIYVRsMVdtUktWRXB5UVRWRE5HeHJWek5hTWtseE1sWnpVRXRSTVZsUmFVVTNkMkpGYVRsVVZqWlhZalYxUlZGT2FscFdjbkU1ZEZVdFNrNXpkMEZUVDJSeU5XZHdlak5NZEhoc2FraDFaMjFtZGw5aFdVRkhMVkZQWmswMmRtOW5ZMWxSU1ZCaVVFaGtkVzVvV1Raa2JETm1Sa1UyUVZZMVdVNDNMVEptUzNsb2JtcFFiR3hwV2xJMmRuZ3RlVU5PYUVsSVNuZG5jams0UVVwSFJXOUxkM3BxY2tWUFJUSTRhWEF3TjAxblUybzJSM0ZzWVVrdFYyRlhXRXR0WVU1aWVWVjZWMjQ1TWtWSk9VcEJZbFIzUzJ0eWJtaElhMnRQTUdkUE1WQktVa0ZQY1hJMlIzbFdkRXBaU21Oc1ZtdzJNWFJJV1ZkaGRXeElTV0YzZWtwQ1gxY3RaMFJuYkRKWFVDMUNaRWxOYVdscFVYWnRkVTB0ZW5wb1pVeE5NRnBGVTNvd2EzWjBObXRQVlZCT1JsOHhObmx1VVNKOWZYMC5lWEJ2dWpNYVFSNVdBNVk5LWlDVU1Ya25TRGVDS1JhMFltTjZxRU9aSmJGQVlUV19xOWNLNEVXZUI3V3J0ZnhTZHV6T2tFMmNQVUFOV1dheG0tN2hackhMQnFnNDNCOUR0UHUxYVp5Qzlkc0dTN2FIVUpEcUJyY2hXY2FyMHdCZ0NGdU8tMG5MVE5NelhVdVktUlFIRUJzWG5QSDNsUXQ2R2h2SjZ0THBMZDFaMlg2Ni03U2pZT2MwMW9xR2QxX2FJZlBGZmxsUEhpUE84VjcyWHhsNG1ZWkxWbzhycXFfYXc0d29lRHNvTmpRdDhnZVdQbzBhdWx2Z3hZd3Rkb19uaW9xVnJXdEl3dlN1TzFra01IZU5xejR0aUZPeTFMTTU4MEhHVTNLTTdMTGF5MFhlb2lQbnlJVHkwT0VRVjZvWHhlMU1NRUY3Y3Vqek5pNnpuTWhSaGciLCJhY2Nlc3NfdG9rZW4iOiIifX19.cKTlxPkSlmBFCQC-pAUm6qPxpQQ6wWSCLJ73r2Sasxw&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/NaJIMDhRyixhPIRQy5JmC9oLk8BE_q5YxsXjg2riUvP/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR2hvc3QiLCJzdWIiOiI0OTllYjcxNi1jYTRkLTQ5ODktYWE2Ny1kMmRjODEyNjIwYjEiLCJlbWFpbCI6IjhmZDllNmJlLWJlZmUtNDMxMS05OThhLTI3NzhiNDc0YzY1YkBleGFtcGxlLmV4YW1wbGUiLCJzY29wZXMiOlsib3BlbmlkIiwib2ZmbGluZV9hY2Nlc3MiLCJwcm9maWxlIiwiZW1haWwiLCJ3YWxsZXQiLCJmb3J3YXJkZWRUb2tlbnMiLCJwYXNza2V5Il0sImF1ZCI6ImRiN2U4OGMxLWQ5OTctNDA5OC04YzA1LTNjMjhjMDE3NzFmMyIsImlkVG9rZW5UVEwiOjM2MDAsImFjY2Vzc1Rva2VuVFRMIjozNjAwLCJyZWZyZXNoVG9rZW5UVEwiOjg2NDAwLCJjbGllbnRJZCI6ImRlbW8tY2xpZW50LTEiLCJwcm92aWRlciI6ImR1bW15IiwiZmxvd19pZCI6Im9hdXRoLWxvZ2luLTJhN2VhY2Y5LTkyZjItNDYyOS04ZWM4LTY0ZmNjMTJmODFjNiIsImxvZ2luX2Zsb3dfaWQiOiIyMWM3NWI4OS1lZDU4LTQ4YTAtOGZkOC05OGYyZGYzODBhZDAiLCJkaXNwbGF5X21vZGUiOiJwb3B1cCIsImZsb3dfdHlwZSI6Im9pZGMiLCJvcmlnaW4iOiJodHRwczovL2F1dGgtZGV2LmNpdmljLmNvbSIsImZvcndhcmRlZFRva2VucyI6eyJkdW1teSI6eyJpZF90b2tlbiI6ImV5SmhiR2NpT2lKU1V6STFOaUlzSW5SNWNDSTZJa3BYVkNJc0ltdHBaQ0k2SW1zeEluMC5leUpwYzNNaU9pSm9kSFJ3Y3pvdkwyaGxZV1JsY2kxd2NtOTRlUzVrWVc1cFpXeGlhMlZzYkdWb1pYSXpOems1TG5kdmNtdGxjbk11WkdWMklpd2lZWFZrSWpvaWRHVnVZVzUwTFRFdFlYQndMVEVpTENKemRXSWlPaUk0Wm1RNVpUWmlaUzFpWldabExUUXpNVEV0T1RrNFlTMHlOemM0WWpRM05HTTJOV0lpTENKbGJXRnBiQ0k2SWpobVpEbGxObUpsTFdKbFptVXRORE14TVMwNU9UaGhMVEkzTnpoaU5EYzBZelkxWWtCbGVHRnRjR3hsTG1WNFlXMXdiR1VpTENKdWIyNWpaU0k2SW1WbVkyWmtZVGxtTFRReE5UVXRORFk1TUMxaVpXRmhMVEZqWkdObE1HTXlOVFl6WWlJc0ltbGhkQ0k2TVRjMk1ERXlNVFE0T0N3aVpYaHdJam94TnpZd01USTFNRGc0TENKbWIzSjNZWEprWldSVWIydGxibk1pT25zaVpIVnRiWGtpT25zaWFXUmZkRzlyWlc0aU9pSmxlVXBvWWtkamFVOXBTbE5WZWtreFRtbEpjMGx1VWpWalEwazJTV3R3V0ZaRFNYTkpiWFJ3V2tOSk5rbHRjM2hKYmpBdVpYbEtjR016VFdsUGFVcHZaRWhTZDJONmIzWk1NbWhzV1ZkU2JHTnBNWGRqYlRrMFpWTTFhMWxYTlhCYVYzaHBZVEpXYzJKSFZtOWFXRWw2VG5wck5VeHVaSFpqYlhSc1kyNU5kVnBIVmpKSmFYZHBZek5XYVVscWIybFBSMXByVDFkVk1sbHRWWFJaYlZadFdsTXdNRTE2UlhoTVZHczFUMGRGZEUxcVl6TlBSMGt3VG5wU2FrNXFWbWxKYVhkcFdsY3hhR0ZYZDJsUGFVazBXbTFSTlZwVVdtbGFVekZwV2xkYWJFeFVVWHBOVkVWMFQxUnJORmxUTUhsT2VtTTBXV3BSTTA1SFRUSk9WMHBCV2xob2FHSllRbk5hVXpWc1pVZEdkR05IZUd4SmFYZHBZbTA1ZFZreVZXbFBhVXBzV20xT2JWcEhSVFZhYVRBd1RWUlZNVXhVVVRKUFZFRjBXVzFXYUZsVE1IaFpNbEpxV2xSQ2FrMXFWVEpOTWtscFRFTkthR1JYVVdsUGFVcHZaRWhTZDA5cE9IWmlSemxxV1ZkNGIySXpUakJQYWsxM1RVUkJhVXhEU25CWldGRnBUMnBGTTA1cVFYaE5ha1V3VDBSbmMwbHRWalJqUTBrMlRWUmpNazFFUlhsT1ZFRTBUMGd3TGtKVE0yeHVjMnR0TUZOa1JWSmlZa1IyWlY4NU0zUkJlbTh5VjNZM1owMW9iV3hIYVRsMVdtUktWRXB5UVRWRE5HeHJWek5hTWtseE1sWnpVRXRSTVZsUmFVVTNkMkpGYVRsVVZqWlhZalYxUlZGT2FscFdjbkU1ZEZVdFNrNXpkMEZUVDJSeU5XZHdlak5NZEhoc2FraDFaMjFtZGw5aFdVRkhMVkZQWmswMmRtOW5ZMWxSU1ZCaVVFaGtkVzVvV1Raa2JETm1Sa1UyUVZZMVdVNDNMVEptUzNsb2JtcFFiR3hwV2xJMmRuZ3RlVU5PYUVsSVNuZG5jams0UVVwSFJXOUxkM3BxY2tWUFJUSTRhWEF3TjAxblUybzJSM0ZzWVVrdFYyRlhXRXR0WVU1aWVWVjZWMjQ1TWtWSk9VcEJZbFIzUzJ0eWJtaElhMnRQTUdkUE1WQktVa0ZQY1hJMlIzbFdkRXBaU21Oc1ZtdzJNWFJJV1ZkaGRXeElTV0YzZWtwQ1gxY3RaMFJuYkRKWFVDMUNaRWxOYVdscFVYWnRkVTB0ZW5wb1pVeE5NRnBGVTNvd2EzWjBObXRQVlZCT1JsOHhObmx1VVNKOWZYMC5lWEJ2dWpNYVFSNVdBNVk5LWlDVU1Ya25TRGVDS1JhMFltTjZxRU9aSmJGQVlUV19xOWNLNEVXZUI3V3J0ZnhTZHV6T2tFMmNQVUFOV1dheG0tN2hackhMQnFnNDNCOUR0UHUxYVp5Qzlkc0dTN2FIVUpEcUJyY2hXY2FyMHdCZ0NGdU8tMG5MVE5NelhVdVktUlFIRUJzWG5QSDNsUXQ2R2h2SjZ0THBMZDFaMlg2Ni03U2pZT2MwMW9xR2QxX2FJZlBGZmxsUEhpUE84VjcyWHhsNG1ZWkxWbzhycXFfYXc0d29lRHNvTmpRdDhnZVdQbzBhdWx2Z3hZd3Rkb19uaW9xVnJXdEl3dlN1TzFra01IZU5xejR0aUZPeTFMTTU4MEhHVTNLTTdMTGF5MFhlb2lQbnlJVHkwT0VRVjZvWHhlMU1NRUY3Y3Vqek5pNnpuTWhSaGciLCJhY2Nlc3NfdG9rZW4iOiIifX19.cKTlxPkSlmBFCQC-pAUm6qPxpQQ6wWSCLJ73r2Sasxw&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/NaJIMDhRyixhPIRQy5JmC9oLk8BE_q5YxsXjg2riUvP
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/NaJIMDhRyixhPIRQy5JmC9oLk8BE_q5YxsXjg2riUvP
+[REQUEST FAILED] GET http://localhost:3000/api/auth/callback?code=Sm-A2CVvB635q1wI2bgcy0Zw4F3fM_83NXeuFS5i_UL&state=eyJ1dWlkIjoiMmM1MzhlNTEtYzc0Zi00NDViLTk3OTYtOTk1MDQ2OGY4NjgwIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F - net::ERR_BLOCKED_BY_PRIVATE_NETWORK_ACCESS_CHECKS
+[REQUEST FAILED] GET http://localhost:3000/api/auth/callback?code=Sm-A2CVvB635q1wI2bgcy0Zw4F3fM_83NXeuFS5i_UL&state=eyJ1dWlkIjoiMmM1MzhlNTEtYzc0Zi00NDViLTk3OTYtOTk1MDQ2OGY4NjgwIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F - net::ERR_BLOCKED_BY_PRIVATE_NETWORK_ACCESS_CHECKS
+[REQUEST FAILED] POST https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us - net::ERR_ABORTED
+[REQUEST FAILED] POST https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us - net::ERR_ABORTED
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 58ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 58ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 42ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 42ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 33ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 33ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 22ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 22ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 35ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 35ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 24ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 24ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 31ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 31ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 46ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 46ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 49ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 49ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 48ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 48ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 35ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 35ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 21ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 21ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 97ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 97ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 30ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 30ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 47ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 47ms

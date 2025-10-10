@@ -1,0 +1,100 @@
+[PAGE CONSOLE] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[PAGE CONSOLE] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 2811ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 2811ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 72ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 72ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 42ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 42ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 71ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 71ms
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?response_type=code&client_id=demo-client-1&state=eyJ1dWlkIjoiZjE3YjdhODEtODZlMy00ODA1LWEzNGUtNDViODkwM2JjOWM5IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&code_challenge=eP0DmusXMv_twf5OpdkDLZ5tlmS6rphPrAR67xZYM2I&code_challenge_method=S256&prompt=consent
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?response_type=code&client_id=demo-client-1&state=eyJ1dWlkIjoiZjE3YjdhODEtODZlMy00ODA1LWEzNGUtNDViODkwM2JjOWM5IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&code_challenge=eP0DmusXMv_twf5OpdkDLZ5tlmS6rphPrAR67xZYM2I&code_challenge_method=S256&prompt=consent
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[BAD RESPONSE] 429 https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us
+[BAD RESPONSE] 429 https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 429 ()
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 429 ()
+[RESPONSE BODY] {"detail":"Sentry dropped data due to a quota or internal rate limit being reached. This will not affect your application. See https://docs.sentry.io/product/accounts/quotas/ for more information."}
+[RESPONSE BODY] {"detail":"Sentry dropped data due to a quota or internal rate limit being reached. This will not affect your application. See https://docs.sentry.io/product/accounts/quotas/ for more information."}
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/RczoVG5VSY2IuTZgIqR9YbX0MJPUQLXQJdOTxSPZlFl/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkYzg1MmQ0YS0zZTgwLTQ1NmItYjY5Ny1hZTQ4MmZhNWQ5OWEiLCJuYW1lIjoiR2hvc3QiLCJlbWFpbCI6ImYzMWExYjQ5LWQxY2MtNDIxYS1iMGFhLWZlMTQzZDZhY2NlOUBleGFtcGxlLmV4YW1wbGUiLCJzY29wZXMiOlsib3BlbmlkIiwib2ZmbGluZV9hY2Nlc3MiLCJwcm9maWxlIiwiZW1haWwiLCJ3YWxsZXQiLCJmb3J3YXJkZWRUb2tlbnMiLCJwYXNza2V5Il0sImF1ZCI6ImRiN2U4OGMxLWQ5OTctNDA5OC04YzA1LTNjMjhjMDE3NzFmMyIsImlkVG9rZW5UVEwiOjM2MDAsImFjY2Vzc1Rva2VuVFRMIjozNjAwLCJyZWZyZXNoVG9rZW5UVEwiOjg2NDAwLCJjbGllbnRJZCI6ImRlbW8tY2xpZW50LTEiLCJwcm92aWRlciI6ImR1bW15IiwiZmxvd19pZCI6Im9hdXRoLWxvZ2luLWI2OTRiYWExLTE3ZDgtNGRhMy1iMDlhLWY5ZmI3YjhkYmM3ZCIsImxvZ2luX2Zsb3dfaWQiOiJjYmEzNjg2NC01NTU5LTRkOWEtYmE1NS01ZDE5MmQ1ZGMxOGYiLCJkaXNwbGF5X21vZGUiOiJwb3B1cCIsImZsb3dfdHlwZSI6Im9pZGMiLCJvcmlnaW4iOiJodHRwczovL2F1dGgtZGV2LmNpdmljLmNvbSIsImZvcndhcmRlZFRva2VucyI6eyJkdW1teSI6eyJpZF90b2tlbiI6ImV5SmhiR2NpT2lKU1V6STFOaUlzSW5SNWNDSTZJa3BYVkNJc0ltdHBaQ0k2SW1zeEluMC5leUpwYzNNaU9pSm9kSFJ3Y3pvdkwyaGxZV1JsY2kxd2NtOTRlUzVrWVc1cFpXeGlhMlZzYkdWb1pYSXpOems1TG5kdmNtdGxjbk11WkdWMklpd2lZWFZrSWpvaWRHVnVZVzUwTFRFdFlYQndMVEVpTENKemRXSWlPaUptTXpGaE1XSTBPUzFrTVdOakxUUXlNV0V0WWpCaFlTMW1aVEUwTTJRMllXTmpaVGtpTENKbGJXRnBiQ0k2SW1Zek1XRXhZalE1TFdReFkyTXROREl4WVMxaU1HRmhMV1psTVRRelpEWmhZMk5sT1VCbGVHRnRjR3hsTG1WNFlXMXdiR1VpTENKdWIyNWpaU0k2SWpsa01XSmlNVEZtTFdSaU9UQXROR0k0WmkxaU5qRmhMVFE1T0RZMFpEQTVORFF3WlNJc0ltbGhkQ0k2TVRjMk1ERXlNVFE0TUN3aVpYaHdJam94TnpZd01USTFNRGd3TENKbWIzSjNZWEprWldSVWIydGxibk1pT25zaVpIVnRiWGtpT25zaWFXUmZkRzlyWlc0aU9pSmxlVXBvWWtkamFVOXBTbE5WZWtreFRtbEpjMGx1VWpWalEwazJTV3R3V0ZaRFNYTkpiWFJ3V2tOSk5rbHRjM2hKYmpBdVpYbEtjR016VFdsUGFVcHZaRWhTZDJONmIzWk1NbWhzV1ZkU2JHTnBNWGRqYlRrMFpWTTFhMWxYTlhCYVYzaHBZVEpXYzJKSFZtOWFXRWw2VG5wck5VeHVaSFpqYlhSc1kyNU5kVnBIVmpKSmFYZHBZek5XYVVscWIybGFhazE0V1ZSR2FVNUVhM1JhUkVacVdYa3dNRTFxUm1oTVYwbDNXVmRGZEZwdFZYaE9SRTVyVG0xR2Fsa3lWVFZKYVhkcFdsY3hhR0ZYZDJsUGFVcHRUWHBHYUUxWFNUQlBVekZyVFZkT2FreFVVWGxOVjBWMFdXcENhRmxUTVcxYVZFVXdUVEpSTWxsWFRtcGFWR3hCV2xob2FHSllRbk5hVXpWc1pVZEdkR05IZUd4SmFYZHBZbTA1ZFZreVZXbFBhVWsxV2tSR2FWbHFSWGhhYVRGcldXcHJkMHhVVW1sUFIxbDBXV3BaZUZsVE1EQlBWR2N5VGtkUmQwOVVVVEJOUjFWcFRFTkthR1JYVVdsUGFVcHZaRWhTZDA5cE9IWmlSemxxV1ZkNGIySXpUakJQYWsxM1RVUkJhVXhEU25CWldGRnBUMnBGTTA1cVFYaE5ha1V3VDBSQmMwbHRWalJqUTBrMlRWUmpNazFFUlhsT1ZFRTBUVWd3TGs1MVpWQkZUMkZCWjNvM01rRmhlRjlFTUdwVlgzbFdZa3d5ZVdKNFZrdGpWeTFvYTA1b1dIUjFWSE5rVWxVM1RqZ3ljRzVCZGw5Uk9GRTVRek5zVERKbldHUm5OalJQUjJadVYyUllYelpsV1hwWlFYQnVPRVppWVV4YVZGWlZPWHBYZW00NVRscGljMXBUYXpkeU4ycHFWR05ZV21WNlRYTlhSa2RoTmtab09HZzRTRWRvZFVsU1NWUTRiR0pPVTNCbGJGbDBhMkpwYnkxS2VHaFhObXREV2w5aGJXNVlOM0p3VVdKSGRXWlVaVk5KVlROb1lrTXpibEJyUkhCSFJEWnFVbk01WkhObGFtTnhVRE5PTjNoTlV6RXdhVnBrWWxkdVQzWjNTR2c0WlU5NGNsaGFTR1JYV2tGTFprVlpZbVJMV0hsWVJETlJPVkZMUldoNGNuVTJOMmczWWxoWGVHcHFSMWxYVDFGNVRXNTJlRzFJWjFsQldITlpOVEJHUkRCaGVXRXRTakJUTkZVMk4zZHdaRE5LZFZSM01HdFlRbkYyT1RoTlFXTk5lWHBPV0d0NFFsb3hOemw0UjNGTU9YRnRUV1F5VVNKOWZYMC5qakRtaks4aUE3QnU5RkN5QXVRQldYWlFyZXlSTldUYnJUeWRkci1naTZWV29fZVVnMHpGTGtHc3FaejdMV21KOFVPdkNQOVpvbDc4OXhabmN3b01DQXNOMHQ4WkJHTm1oSjVudy1JLUpPN2lSaTZpRER2dFFxUzlXTVE5cEJ3SFl4QkptN1FTN3p2dFhUNXJuU1FjcDNBZjk4VldNSWlneG5jVGdyQi1vQjQ2MWJ4WGFGQXU0UEFOTjBWLU5lN2ZGNDBfOVpZN1ByZ09PdlpKOXhWTlpHQm5YYWIxdWlVREg1dEh6T2V5YkNST1ctNnFydDNGbHVuazNsczZlbko1T0lQbUxITDVCVy1vUkI3ZmgtckFNOFQxT0tYajh1M0ZFNlBuVVNCZlBsYkJCSjFoMzRZR0pZVFlaWmxlM2YtQzNaRFVYcTBKU2FsTTktWHF1UHI2OFEiLCJhY2Nlc3NfdG9rZW4iOiIifX19.teobH6Biw8ryzvn8xpEiRW8aEtAQwQmxUsLg5wKkYkU&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/RczoVG5VSY2IuTZgIqR9YbX0MJPUQLXQJdOTxSPZlFl/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkYzg1MmQ0YS0zZTgwLTQ1NmItYjY5Ny1hZTQ4MmZhNWQ5OWEiLCJuYW1lIjoiR2hvc3QiLCJlbWFpbCI6ImYzMWExYjQ5LWQxY2MtNDIxYS1iMGFhLWZlMTQzZDZhY2NlOUBleGFtcGxlLmV4YW1wbGUiLCJzY29wZXMiOlsib3BlbmlkIiwib2ZmbGluZV9hY2Nlc3MiLCJwcm9maWxlIiwiZW1haWwiLCJ3YWxsZXQiLCJmb3J3YXJkZWRUb2tlbnMiLCJwYXNza2V5Il0sImF1ZCI6ImRiN2U4OGMxLWQ5OTctNDA5OC04YzA1LTNjMjhjMDE3NzFmMyIsImlkVG9rZW5UVEwiOjM2MDAsImFjY2Vzc1Rva2VuVFRMIjozNjAwLCJyZWZyZXNoVG9rZW5UVEwiOjg2NDAwLCJjbGllbnRJZCI6ImRlbW8tY2xpZW50LTEiLCJwcm92aWRlciI6ImR1bW15IiwiZmxvd19pZCI6Im9hdXRoLWxvZ2luLWI2OTRiYWExLTE3ZDgtNGRhMy1iMDlhLWY5ZmI3YjhkYmM3ZCIsImxvZ2luX2Zsb3dfaWQiOiJjYmEzNjg2NC01NTU5LTRkOWEtYmE1NS01ZDE5MmQ1ZGMxOGYiLCJkaXNwbGF5X21vZGUiOiJwb3B1cCIsImZsb3dfdHlwZSI6Im9pZGMiLCJvcmlnaW4iOiJodHRwczovL2F1dGgtZGV2LmNpdmljLmNvbSIsImZvcndhcmRlZFRva2VucyI6eyJkdW1teSI6eyJpZF90b2tlbiI6ImV5SmhiR2NpT2lKU1V6STFOaUlzSW5SNWNDSTZJa3BYVkNJc0ltdHBaQ0k2SW1zeEluMC5leUpwYzNNaU9pSm9kSFJ3Y3pvdkwyaGxZV1JsY2kxd2NtOTRlUzVrWVc1cFpXeGlhMlZzYkdWb1pYSXpOems1TG5kdmNtdGxjbk11WkdWMklpd2lZWFZrSWpvaWRHVnVZVzUwTFRFdFlYQndMVEVpTENKemRXSWlPaUptTXpGaE1XSTBPUzFrTVdOakxUUXlNV0V0WWpCaFlTMW1aVEUwTTJRMllXTmpaVGtpTENKbGJXRnBiQ0k2SW1Zek1XRXhZalE1TFdReFkyTXROREl4WVMxaU1HRmhMV1psTVRRelpEWmhZMk5sT1VCbGVHRnRjR3hsTG1WNFlXMXdiR1VpTENKdWIyNWpaU0k2SWpsa01XSmlNVEZtTFdSaU9UQXROR0k0WmkxaU5qRmhMVFE1T0RZMFpEQTVORFF3WlNJc0ltbGhkQ0k2TVRjMk1ERXlNVFE0TUN3aVpYaHdJam94TnpZd01USTFNRGd3TENKbWIzSjNZWEprWldSVWIydGxibk1pT25zaVpIVnRiWGtpT25zaWFXUmZkRzlyWlc0aU9pSmxlVXBvWWtkamFVOXBTbE5WZWtreFRtbEpjMGx1VWpWalEwazJTV3R3V0ZaRFNYTkpiWFJ3V2tOSk5rbHRjM2hKYmpBdVpYbEtjR016VFdsUGFVcHZaRWhTZDJONmIzWk1NbWhzV1ZkU2JHTnBNWGRqYlRrMFpWTTFhMWxYTlhCYVYzaHBZVEpXYzJKSFZtOWFXRWw2VG5wck5VeHVaSFpqYlhSc1kyNU5kVnBIVmpKSmFYZHBZek5XYVVscWIybGFhazE0V1ZSR2FVNUVhM1JhUkVacVdYa3dNRTFxUm1oTVYwbDNXVmRGZEZwdFZYaE9SRTVyVG0xR2Fsa3lWVFZKYVhkcFdsY3hhR0ZYZDJsUGFVcHRUWHBHYUUxWFNUQlBVekZyVFZkT2FreFVVWGxOVjBWMFdXcENhRmxUTVcxYVZFVXdUVEpSTWxsWFRtcGFWR3hCV2xob2FHSllRbk5hVXpWc1pVZEdkR05IZUd4SmFYZHBZbTA1ZFZreVZXbFBhVWsxV2tSR2FWbHFSWGhhYVRGcldXcHJkMHhVVW1sUFIxbDBXV3BaZUZsVE1EQlBWR2N5VGtkUmQwOVVVVEJOUjFWcFRFTkthR1JYVVdsUGFVcHZaRWhTZDA5cE9IWmlSemxxV1ZkNGIySXpUakJQYWsxM1RVUkJhVXhEU25CWldGRnBUMnBGTTA1cVFYaE5ha1V3VDBSQmMwbHRWalJqUTBrMlRWUmpNazFFUlhsT1ZFRTBUVWd3TGs1MVpWQkZUMkZCWjNvM01rRmhlRjlFTUdwVlgzbFdZa3d5ZVdKNFZrdGpWeTFvYTA1b1dIUjFWSE5rVWxVM1RqZ3ljRzVCZGw5Uk9GRTVRek5zVERKbldHUm5OalJQUjJadVYyUllYelpsV1hwWlFYQnVPRVppWVV4YVZGWlZPWHBYZW00NVRscGljMXBUYXpkeU4ycHFWR05ZV21WNlRYTlhSa2RoTmtab09HZzRTRWRvZFVsU1NWUTRiR0pPVTNCbGJGbDBhMkpwYnkxS2VHaFhObXREV2w5aGJXNVlOM0p3VVdKSGRXWlVaVk5KVlROb1lrTXpibEJyUkhCSFJEWnFVbk01WkhObGFtTnhVRE5PTjNoTlV6RXdhVnBrWWxkdVQzWjNTR2c0WlU5NGNsaGFTR1JYV2tGTFprVlpZbVJMV0hsWVJETlJPVkZMUldoNGNuVTJOMmczWWxoWGVHcHFSMWxYVDFGNVRXNTJlRzFJWjFsQldITlpOVEJHUkRCaGVXRXRTakJUTkZVMk4zZHdaRE5LZFZSM01HdFlRbkYyT1RoTlFXTk5lWHBPV0d0NFFsb3hOemw0UjNGTU9YRnRUV1F5VVNKOWZYMC5qakRtaks4aUE3QnU5RkN5QXVRQldYWlFyZXlSTldUYnJUeWRkci1naTZWV29fZVVnMHpGTGtHc3FaejdMV21KOFVPdkNQOVpvbDc4OXhabmN3b01DQXNOMHQ4WkJHTm1oSjVudy1JLUpPN2lSaTZpRER2dFFxUzlXTVE5cEJ3SFl4QkptN1FTN3p2dFhUNXJuU1FjcDNBZjk4VldNSWlneG5jVGdyQi1vQjQ2MWJ4WGFGQXU0UEFOTjBWLU5lN2ZGNDBfOVpZN1ByZ09PdlpKOXhWTlpHQm5YYWIxdWlVREg1dEh6T2V5YkNST1ctNnFydDNGbHVuazNsczZlbko1T0lQbUxITDVCVy1vUkI3ZmgtckFNOFQxT0tYajh1M0ZFNlBuVVNCZlBsYkJCSjFoMzRZR0pZVFlaWmxlM2YtQzNaRFVYcTBKU2FsTTktWHF1UHI2OFEiLCJhY2Nlc3NfdG9rZW4iOiIifX19.teobH6Biw8ryzvn8xpEiRW8aEtAQwQmxUsLg5wKkYkU&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/RczoVG5VSY2IuTZgIqR9YbX0MJPUQLXQJdOTxSPZlFl
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/RczoVG5VSY2IuTZgIqR9YbX0MJPUQLXQJdOTxSPZlFl
+[REQUEST FAILED] GET http://localhost:3000/api/auth/callback?code=EOjcBE4txMS7-3gcUZLDb3bng-Vu6L6YiJ2it7gFzvB&state=eyJ1dWlkIjoiZjE3YjdhODEtODZlMy00ODA1LWEzNGUtNDViODkwM2JjOWM5IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F - net::ERR_BLOCKED_BY_PRIVATE_NETWORK_ACCESS_CHECKS
+[REQUEST FAILED] GET http://localhost:3000/api/auth/callback?code=EOjcBE4txMS7-3gcUZLDb3bng-Vu6L6YiJ2it7gFzvB&state=eyJ1dWlkIjoiZjE3YjdhODEtODZlMy00ODA1LWEzNGUtNDViODkwM2JjOWM5IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F - net::ERR_BLOCKED_BY_PRIVATE_NETWORK_ACCESS_CHECKS
+[REQUEST FAILED] POST https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us - net::ERR_ABORTED
+[REQUEST FAILED] POST https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us - net::ERR_ABORTED
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 58ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 58ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 46ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 46ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 30ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 30ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 21ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 21ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 34ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 34ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 62ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 62ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 32ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 32ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 22ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 22ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 49ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 49ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 32ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 32ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 36ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 36ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 19ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 19ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 98ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 98ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 32ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 32ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 20ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 20ms
