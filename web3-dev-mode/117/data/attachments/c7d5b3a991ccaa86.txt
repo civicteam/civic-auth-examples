@@ -1,0 +1,67 @@
+[PAGE CONSOLE] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[PAGE CONSOLE] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [warning] [Fast Refresh] performing full reload
+
+Fast Refresh will perform a full reload when you edit a file that's imported by modules outside of the React rendering tree.
+You might have a file which exports a React component but also exports a value that is imported by a non-React component file.
+Consider migrating the non-React component export to a separate file and importing it into both files.
+
+It is also possible the parent component of the component you edited is a class component, which disables Fast Refresh.
+Fast Refresh requires at least one parent function component in your React tree.
+[PAGE CONSOLE] [warning] [Fast Refresh] performing full reload
+
+Fast Refresh will perform a full reload when you edit a file that's imported by modules outside of the React rendering tree.
+You might have a file which exports a React component but also exports a value that is imported by a non-React component file.
+Consider migrating the non-React component export to a separate file and importing it into both files.
+
+It is also possible the parent component of the component you edited is a class component, which disables Fast Refresh.
+Fast Refresh requires at least one parent function component in your React tree.
+[REQUEST FAILED] GET http://localhost:3000/?_rsc=fsnpp - net::ERR_ABORTED
+[REQUEST FAILED] GET http://localhost:3000/?_rsc=fsnpp - net::ERR_ABORTED
+[REQUEST FAILED] GET http://localhost:3000/api/auth/user?optimisticRehydration=true - net::ERR_ABORTED
+[REQUEST FAILED] GET http://localhost:3000/api/auth/user?optimisticRehydration=true - net::ERR_ABORTED
+[PAGE CONSOLE] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[PAGE CONSOLE] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?response_type=code&client_id=demo-client-1&state=eyJ1dWlkIjoiMTQ1OWRkZTctN2I3Ni00ZjFmLTg4ZTctNTgzYmUzY2JhYTE4IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&code_challenge=r3ZJsEEoc_gwTkgpy0u8jJPin1JaE3x3MJC8YWhdNT4&code_challenge_method=S256&prompt=consent
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?response_type=code&client_id=demo-client-1&state=eyJ1dWlkIjoiMTQ1OWRkZTctN2I3Ni00ZjFmLTg4ZTctNTgzYmUzY2JhYTE4IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&code_challenge=r3ZJsEEoc_gwTkgpy0u8jJPin1JaE3x3MJC8YWhdNT4&code_challenge_method=S256&prompt=consent
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[BAD RESPONSE] 429 https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us
+[BAD RESPONSE] 429 https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 429 ()
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 429 ()
+[RESPONSE BODY] {"detail":"Sentry dropped data due to a quota or internal rate limit being reached. This will not affect your application. See https://docs.sentry.io/product/accounts/quotas/ for more information."}
+[RESPONSE BODY] {"detail":"Sentry dropped data due to a quota or internal rate limit being reached. This will not affect your application. See https://docs.sentry.io/product/accounts/quotas/ for more information."}
+Email slot count: 1
+Checking URL: https://auth-dev.civic.com/login/activity-indicator.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/assets/email.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiMTQ1OWRkZTctN2I3Ni00ZjFmLTg4ZTctNTgzYmUzY2JhYTE4IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&client_id=demo-client-1&source_system_id=AlaVFLTFrHV8_6DhWJISn2uGVN6fMUHqiL4J5k8PDRp&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&flow_id=oauth-login-9ddc4a56-82a1-48cf-992c-ffd71063d3da, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/email?loginFlowId=5f38cf33-d257-44fe-8624-eb76e7829ae0&client_id=demo-client-1&source_system_id=AlaVFLTFrHV8_6DhWJISn2uGVN6fMUHqiL4J5k8PDRp&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&emailAddress=574252%40simulator.amazonses.com&_rsc=5fk2y, hasLoginFlowId: true, isEmailEndpoint: true, isVerifyEndpoint: false
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=5f38cf33-d257-44fe-8624-eb76e7829ae0&client_id=demo-client-1&source_system_id=AlaVFLTFrHV8_6DhWJISn2uGVN6fMUHqiL4J5k8PDRp&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&emailAddress=574252%40simulator.amazonses.com&_rsc=5fk2y
+Extracted loginFlowId: 5f38cf33-d257-44fe-8624-eb76e7829ae0
+[REQUEST FAILED] GET https://auth-dev.civic.com/login/email?loginFlowId=5f38cf33-d257-44fe-8624-eb76e7829ae0&client_id=demo-client-1&source_system_id=AlaVFLTFrHV8_6DhWJISn2uGVN6fMUHqiL4J5k8PDRp&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&emailAddress=574252%40simulator.amazonses.com&_rsc=5fk2y - net::ERR_ABORTED
+[REQUEST FAILED] GET https://auth-dev.civic.com/login/email?loginFlowId=5f38cf33-d257-44fe-8624-eb76e7829ae0&client_id=demo-client-1&source_system_id=AlaVFLTFrHV8_6DhWJISn2uGVN6fMUHqiL4J5k8PDRp&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&emailAddress=574252%40simulator.amazonses.com&_rsc=5fk2y - net::ERR_ABORTED
+[REQUEST FAILED] GET https://auth-dev.civic.com/login/email?loginFlowId=5f38cf33-d257-44fe-8624-eb76e7829ae0&client_id=demo-client-1&source_system_id=AlaVFLTFrHV8_6DhWJISn2uGVN6fMUHqiL4J5k8PDRp&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&emailAddress=574252%40simulator.amazonses.com&_rsc=1x6hu - net::ERR_ABORTED
+[REQUEST FAILED] GET https://auth-dev.civic.com/login/email?loginFlowId=5f38cf33-d257-44fe-8624-eb76e7829ae0&client_id=demo-client-1&source_system_id=AlaVFLTFrHV8_6DhWJISn2uGVN6fMUHqiL4J5k8PDRp&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&emailAddress=574252%40simulator.amazonses.com&_rsc=1x6hu - net::ERR_ABORTED
+[PAGE CONSOLE] [log] Loading login flow data...
+[PAGE CONSOLE] [log] Loading login flow data...
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: 5f38cf33-d257-44fe-8624-eb76e7829ae0
+Found verification code for loginFlowId 5f38cf33-d257-44fe-8624-eb76e7829ae0: 857590
+Database disconnected
+Retrieved verification code: 857590 for loginFlowId: 5f38cf33-d257-44fe-8624-eb76e7829ae0
+[REQUEST FAILED] POST https://auth-dev.civic.com/login/email?loginFlowId=5f38cf33-d257-44fe-8624-eb76e7829ae0&client_id=demo-client-1&source_system_id=AlaVFLTFrHV8_6DhWJISn2uGVN6fMUHqiL4J5k8PDRp&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&emailAddress=574252%40simulator.amazonses.com - net::ERR_ABORTED
+[REQUEST FAILED] POST https://auth-dev.civic.com/login/email?loginFlowId=5f38cf33-d257-44fe-8624-eb76e7829ae0&client_id=demo-client-1&source_system_id=AlaVFLTFrHV8_6DhWJISn2uGVN6fMUHqiL4J5k8PDRp&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&emailAddress=574252%40simulator.amazonses.com - net::ERR_ABORTED
+[REQUEST FAILED] GET https://auth-dev.civic.com/login/api/callback/email?state=5f38cf33-d257-44fe-8624-eb76e7829ae0&code=857590 - net::ERR_ABORTED
+[REQUEST FAILED] GET https://auth-dev.civic.com/login/api/callback/email?state=5f38cf33-d257-44fe-8624-eb76e7829ae0&code=857590 - net::ERR_ABORTED

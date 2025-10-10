@@ -1,0 +1,46 @@
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [info] Download the React DevTools for a better development experience: https://react.dev/link/react-devtools
+[PAGE CONSOLE] [info] Download the React DevTools for a better development experience: https://react.dev/link/react-devtools
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?client_id=demo-client-1&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&response_type=code&scope=openid+profile+email+offline_access&state=eyJ1dWlkIjoiYjM5YWI4NzUtZGI2YS00MzFjLWI2ODMtZDg2ODYzNDc0ZjI1IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjMifQ%3D%3D&code_challenge=RSnpkSEZ120PNvr8zXjZZDbOMGPHQ4j78Mlsv3yiTHc&code_challenge_method=S256&prompt=consent
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?client_id=demo-client-1&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&response_type=code&scope=openid+profile+email+offline_access&state=eyJ1dWlkIjoiYjM5YWI4NzUtZGI2YS00MzFjLWI2ODMtZDg2ODYzNDc0ZjI1IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjMifQ%3D%3D&code_challenge=RSnpkSEZ120PNvr8zXjZZDbOMGPHQ4j78Mlsv3yiTHc&code_challenge_method=S256&prompt=consent
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+Email slot count: 1
+[BAD RESPONSE] 429 https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us
+[BAD RESPONSE] 429 https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us
+Checking URL: https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+[RESPONSE BODY] {"detail":"Sentry dropped data due to a quota or internal rate limit being reached. This will not affect your application. See https://docs.sentry.io/product/accounts/quotas/ for more information."}
+[RESPONSE BODY] {"detail":"Sentry dropped data due to a quota or internal rate limit being reached. This will not affect your application. See https://docs.sentry.io/product/accounts/quotas/ for more information."}
+Checking URL: https://auth-dev.civic.com/login/assets/email.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/activity-indicator.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiYjM5YWI4NzUtZGI2YS00MzFjLWI2ODMtZDg2ODYzNDc0ZjI1IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjMifQ%3D%3D&client_id=demo-client-1&source_system_id=E9gD_Gl8TVBjWnyeo2I1C_VfsRrS-N15mwQOWRcQ5gT&scope=openid+profile+email+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&flow_id=oauth-login-51c38396-dec2-4fc5-a7bb-4d5fcee42a18, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/email?loginFlowId=3c60229f-e737-47b6-8b1d-1c2b5fb23064&client_id=demo-client-1&source_system_id=E9gD_Gl8TVBjWnyeo2I1C_VfsRrS-N15mwQOWRcQ5gT&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=201091%40simulator.amazonses.com&_rsc=req8z, hasLoginFlowId: true, isEmailEndpoint: true, isVerifyEndpoint: false
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=3c60229f-e737-47b6-8b1d-1c2b5fb23064&client_id=demo-client-1&source_system_id=E9gD_Gl8TVBjWnyeo2I1C_VfsRrS-N15mwQOWRcQ5gT&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=201091%40simulator.amazonses.com&_rsc=req8z
+Extracted loginFlowId: 3c60229f-e737-47b6-8b1d-1c2b5fb23064
+[PAGE CONSOLE] [log] Loading login flow data...
+[PAGE CONSOLE] [log] Loading login flow data...
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: 3c60229f-e737-47b6-8b1d-1c2b5fb23064
+Found verification code for loginFlowId 3c60229f-e737-47b6-8b1d-1c2b5fb23064: 416445
+Database disconnected
+Retrieved verification code: 416445 for loginFlowId: 3c60229f-e737-47b6-8b1d-1c2b5fb23064
+[BAD RESPONSE] 302 https://auth-dev.civic.com/login/api/callback/email?state=3c60229f-e737-47b6-8b1d-1c2b5fb23064&code=416445
+[BAD RESPONSE] 302 https://auth-dev.civic.com/login/api/callback/email?state=3c60229f-e737-47b6-8b1d-1c2b5fb23064&code=416445
+[PAGE CONSOLE] [warning] [JavaScript Warning: "The resource at “https://auth-dev.civic.com/login/_next/static/media/4c33a6e82dbdb8e0-s.p.woff2” preloaded with link preload was not used within a few seconds. Make sure all attributes of the preload tag are set correctly." {file: "https://auth-dev.civic.com/login/email?loginFlowId=3c60229f-e737-47b6-8b1d-1c2b5fb23064&client_id=demo-client-1&source_system_id=E9gD_Gl8TVBjWnyeo2I1C_VfsRrS-N15mwQOWRcQ5gT&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=201091%40simulator.amazonses.com" line: 0}]
+[PAGE CONSOLE] [warning] [JavaScript Warning: "The resource at “https://auth-dev.civic.com/login/_next/static/media/4c33a6e82dbdb8e0-s.p.woff2” preloaded with link preload was not used within a few seconds. Make sure all attributes of the preload tag are set correctly." {file: "https://auth-dev.civic.com/login/email?loginFlowId=3c60229f-e737-47b6-8b1d-1c2b5fb23064&client_id=demo-client-1&source_system_id=E9gD_Gl8TVBjWnyeo2I1C_VfsRrS-N15mwQOWRcQ5gT&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=201091%40simulator.amazonses.com" line: 0}]
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/E9gD_Gl8TVBjWnyeo2I1C_VfsRrS-N15mwQOWRcQ5gT/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjIwMTA5MUBzaW11bGF0b3IuYW1hem9uc2VzLmNvbSIsInNjb3BlcyI6WyJvcGVuaWQiLCJvZmZsaW5lX2FjY2VzcyIsInByb2ZpbGUiLCJlbWFpbCIsIndhbGxldCIsImZvcndhcmRlZFRva2VucyIsInBhc3NrZXkiXSwiYXVkIjoiZGI3ZTg4YzEtZDk5Ny00MDk4LThjMDUtM2MyOGMwMTc3MWYzIiwic3ViIjoiMTkyZDVlNDQtZWViOS00YWM4LWI3NjQtMmY5ZTEyN2JhYTczIiwiaWRUb2tlblRUTCI6MzYwMCwiYWNjZXNzVG9rZW5UVEwiOjM2MDAsInJlZnJlc2hUb2tlblRUTCI6ODY0MDAsImNsaWVudElkIjoiZGVtby1jbGllbnQtMSIsInByb3ZpZGVyIjoiZW1haWwiLCJmbG93X2lkIjoib2F1dGgtbG9naW4tNTFjMzgzOTYtZGVjMi00ZmM1LWE3YmItNGQ1ZmNlZTQyYTE4IiwibG9naW5fZmxvd19pZCI6IjNjNjAyMjlmLWU3MzctNDdiNi04YjFkLTFjMmI1ZmIyMzA2NCIsImRpc3BsYXlfbW9kZSI6InJlZGlyZWN0IiwiZmxvd190eXBlIjoiZW1haWxDb2RlIiwib3JpZ2luIjoiaHR0cHM6Ly9hdXRoLWRldi5jaXZpYy5jb20iLCJmb3J3YXJkZWRUb2tlbnMiOnsiZW1haWwiOnt9fX0.6T_fbsHdF6FGghE4B0QL5_3xc0wHIV0MOMXsNuDWICE&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/E9gD_Gl8TVBjWnyeo2I1C_VfsRrS-N15mwQOWRcQ5gT/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjIwMTA5MUBzaW11bGF0b3IuYW1hem9uc2VzLmNvbSIsInNjb3BlcyI6WyJvcGVuaWQiLCJvZmZsaW5lX2FjY2VzcyIsInByb2ZpbGUiLCJlbWFpbCIsIndhbGxldCIsImZvcndhcmRlZFRva2VucyIsInBhc3NrZXkiXSwiYXVkIjoiZGI3ZTg4YzEtZDk5Ny00MDk4LThjMDUtM2MyOGMwMTc3MWYzIiwic3ViIjoiMTkyZDVlNDQtZWViOS00YWM4LWI3NjQtMmY5ZTEyN2JhYTczIiwiaWRUb2tlblRUTCI6MzYwMCwiYWNjZXNzVG9rZW5UVEwiOjM2MDAsInJlZnJlc2hUb2tlblRUTCI6ODY0MDAsImNsaWVudElkIjoiZGVtby1jbGllbnQtMSIsInByb3ZpZGVyIjoiZW1haWwiLCJmbG93X2lkIjoib2F1dGgtbG9naW4tNTFjMzgzOTYtZGVjMi00ZmM1LWE3YmItNGQ1ZmNlZTQyYTE4IiwibG9naW5fZmxvd19pZCI6IjNjNjAyMjlmLWU3MzctNDdiNi04YjFkLTFjMmI1ZmIyMzA2NCIsImRpc3BsYXlfbW9kZSI6InJlZGlyZWN0IiwiZmxvd190eXBlIjoiZW1haWxDb2RlIiwib3JpZ2luIjoiaHR0cHM6Ly9hdXRoLWRldi5jaXZpYy5jb20iLCJmb3J3YXJkZWRUb2tlbnMiOnsiZW1haWwiOnt9fX0.6T_fbsHdF6FGghE4B0QL5_3xc0wHIV0MOMXsNuDWICE&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/E9gD_Gl8TVBjWnyeo2I1C_VfsRrS-N15mwQOWRcQ5gT
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/E9gD_Gl8TVBjWnyeo2I1C_VfsRrS-N15mwQOWRcQ5gT
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth:0.11.3

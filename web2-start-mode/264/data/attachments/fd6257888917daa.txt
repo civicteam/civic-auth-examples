@@ -1,0 +1,324 @@
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [error] Failed to initialize auth in CivicAuthProvider: Error
+[PAGE CONSOLE] [error] Failed to initialize auth in CivicAuthProvider: Error
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?response_type=code&client_id=demo-client-1&state=eyJ1dWlkIjoiYzE5NzIwNDAtOTg4OC00ZDZmLTk0YmQtMjEzMjg1NDQ3Yzk0IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&code_challenge=-5Dh-Q03toMdMMbPO-ZWrXAlCpkvwT9OUVYNo-0hxjo&code_challenge_method=S256&prompt=consent
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?response_type=code&client_id=demo-client-1&state=eyJ1dWlkIjoiYzE5NzIwNDAtOTg4OC00ZDZmLTk0YmQtMjEzMjg1NDQ3Yzk0IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&code_challenge=-5Dh-Q03toMdMMbPO-ZWrXAlCpkvwT9OUVYNo-0hxjo&code_challenge_method=S256&prompt=consent
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[PAGE CONSOLE] [warning] [JavaScript Warning: "Loading failed for the <script> with source “https://auth-dev.civic.com/login/_next/static/chunks/568-b79f503f7c37cd6b.js”." {file: "https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiYzE5NzIwNDAtOTg4OC00ZDZmLTk0YmQtMjEzMjg1NDQ3Yzk0IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&client_id=demo-client-1&source_system_id=ZQRx8V2pQqIPpuxQlqBAT6a4sWHDeBbsEtVnzhBk30i&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&flow_id=oauth-login-e679b214-6454-4a9a-b19a-5ee40ee46d5a" line: 1}]
+[PAGE CONSOLE] [warning] [JavaScript Warning: "Loading failed for the <script> with source “https://auth-dev.civic.com/login/_next/static/chunks/568-b79f503f7c37cd6b.js”." {file: "https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiYzE5NzIwNDAtOTg4OC00ZDZmLTk0YmQtMjEzMjg1NDQ3Yzk0IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&client_id=demo-client-1&source_system_id=ZQRx8V2pQqIPpuxQlqBAT6a4sWHDeBbsEtVnzhBk30i&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&flow_id=oauth-login-e679b214-6454-4a9a-b19a-5ee40ee46d5a" line: 1}]
+[PAGE CONSOLE] [warning] [JavaScript Warning: "Loading failed for the <script> with source “https://auth-dev.civic.com/login/_next/static/chunks/629-4e887a9ed364399e.js”." {file: "https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiYzE5NzIwNDAtOTg4OC00ZDZmLTk0YmQtMjEzMjg1NDQ3Yzk0IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&client_id=demo-client-1&source_system_id=ZQRx8V2pQqIPpuxQlqBAT6a4sWHDeBbsEtVnzhBk30i&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&flow_id=oauth-login-e679b214-6454-4a9a-b19a-5ee40ee46d5a" line: 1}]
+[PAGE CONSOLE] [warning] [JavaScript Warning: "Loading failed for the <script> with source “https://auth-dev.civic.com/login/_next/static/chunks/629-4e887a9ed364399e.js”." {file: "https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiYzE5NzIwNDAtOTg4OC00ZDZmLTk0YmQtMjEzMjg1NDQ3Yzk0IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&client_id=demo-client-1&source_system_id=ZQRx8V2pQqIPpuxQlqBAT6a4sWHDeBbsEtVnzhBk30i&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&flow_id=oauth-login-e679b214-6454-4a9a-b19a-5ee40ee46d5a" line: 1}]
+[PAGE CONSOLE] [warning] [JavaScript Warning: "Loading failed for the <script> with source “https://auth-dev.civic.com/login/_next/static/chunks/338-6bc82a14ff0b426f.js”." {file: "https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiYzE5NzIwNDAtOTg4OC00ZDZmLTk0YmQtMjEzMjg1NDQ3Yzk0IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&client_id=demo-client-1&source_system_id=ZQRx8V2pQqIPpuxQlqBAT6a4sWHDeBbsEtVnzhBk30i&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&flow_id=oauth-login-e679b214-6454-4a9a-b19a-5ee40ee46d5a" line: 1}]
+[PAGE CONSOLE] [warning] [JavaScript Warning: "Loading failed for the <script> with source “https://auth-dev.civic.com/login/_next/static/chunks/338-6bc82a14ff0b426f.js”." {file: "https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiYzE5NzIwNDAtOTg4OC00ZDZmLTk0YmQtMjEzMjg1NDQ3Yzk0IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&client_id=demo-client-1&source_system_id=ZQRx8V2pQqIPpuxQlqBAT6a4sWHDeBbsEtVnzhBk30i&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&flow_id=oauth-login-e679b214-6454-4a9a-b19a-5ee40ee46d5a" line: 1}]
+[PAGE CONSOLE] [warning] [JavaScript Warning: "Loading failed for the <script> with source “https://auth-dev.civic.com/login/_next/static/chunks/app/page-10237c7229c737df.js”." {file: "https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiYzE5NzIwNDAtOTg4OC00ZDZmLTk0YmQtMjEzMjg1NDQ3Yzk0IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&client_id=demo-client-1&source_system_id=ZQRx8V2pQqIPpuxQlqBAT6a4sWHDeBbsEtVnzhBk30i&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&flow_id=oauth-login-e679b214-6454-4a9a-b19a-5ee40ee46d5a" line: 1}]
+[PAGE CONSOLE] [warning] [JavaScript Warning: "Loading failed for the <script> with source “https://auth-dev.civic.com/login/_next/static/chunks/app/page-10237c7229c737df.js”." {file: "https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiYzE5NzIwNDAtOTg4OC00ZDZmLTk0YmQtMjEzMjg1NDQ3Yzk0IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&client_id=demo-client-1&source_system_id=ZQRx8V2pQqIPpuxQlqBAT6a4sWHDeBbsEtVnzhBk30i&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&flow_id=oauth-login-e679b214-6454-4a9a-b19a-5ee40ee46d5a" line: 1}]
+[PAGE CONSOLE] [warning] [JavaScript Warning: "Loading failed for the <script> with source “https://auth-dev.civic.com/login/_next/static/chunks/513-8aabc48966b65da3.js”." {file: "https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiYzE5NzIwNDAtOTg4OC00ZDZmLTk0YmQtMjEzMjg1NDQ3Yzk0IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&client_id=demo-client-1&source_system_id=ZQRx8V2pQqIPpuxQlqBAT6a4sWHDeBbsEtVnzhBk30i&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&flow_id=oauth-login-e679b214-6454-4a9a-b19a-5ee40ee46d5a" line: 1}]
+[PAGE CONSOLE] [warning] [JavaScript Warning: "Loading failed for the <script> with source “https://auth-dev.civic.com/login/_next/static/chunks/513-8aabc48966b65da3.js”." {file: "https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiYzE5NzIwNDAtOTg4OC00ZDZmLTk0YmQtMjEzMjg1NDQ3Yzk0IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&client_id=demo-client-1&source_system_id=ZQRx8V2pQqIPpuxQlqBAT6a4sWHDeBbsEtVnzhBk30i&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&flow_id=oauth-login-e679b214-6454-4a9a-b19a-5ee40ee46d5a" line: 1}]
+[PAGE CONSOLE] [warning] [JavaScript Warning: "Loading failed for the <script> with source “https://auth-dev.civic.com/login/_next/static/chunks/792-9ebaeaa20145277c.js”." {file: "https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiYzE5NzIwNDAtOTg4OC00ZDZmLTk0YmQtMjEzMjg1NDQ3Yzk0IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&client_id=demo-client-1&source_system_id=ZQRx8V2pQqIPpuxQlqBAT6a4sWHDeBbsEtVnzhBk30i&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&flow_id=oauth-login-e679b214-6454-4a9a-b19a-5ee40ee46d5a" line: 1}]
+[PAGE CONSOLE] [warning] [JavaScript Warning: "Loading failed for the <script> with source “https://auth-dev.civic.com/login/_next/static/chunks/792-9ebaeaa20145277c.js”." {file: "https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiYzE5NzIwNDAtOTg4OC00ZDZmLTk0YmQtMjEzMjg1NDQ3Yzk0IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&client_id=demo-client-1&source_system_id=ZQRx8V2pQqIPpuxQlqBAT6a4sWHDeBbsEtVnzhBk30i&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&flow_id=oauth-login-e679b214-6454-4a9a-b19a-5ee40ee46d5a" line: 1}]
+[PAGE ERROR] URL constructor:  is not a valid URL.
+[ERROR STACK] TypeError: URL constructor:  is not a valid URL.
+    at 48352/T/</e< (https://auth-dev.civic.com/login/_next/static/chunks/app/page-10237c7229c737df.js:1:14208)
+    at r (https://auth-dev.civic.com/login/_next/static/chunks/311-b6de8cc1925500e5.js:2:84253)
+    at setInterval handler*93518/ek/< (https://auth-dev.civic.com/login/_next/static/chunks/311-b6de8cc1925500e5.js:19:12672)
+    at 48352/T/< (https://auth-dev.civic.com/login/_next/static/chunks/app/page-10237c7229c737df.js:1:13860)
+    at aW (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:73612)
+    at oe (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85055)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85691)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86019)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85714)
+    at id (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:109085)
+    at o (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:105287)
+    at T (https://auth-dev.civic.com/login/_next/static/chunks/311-b6de8cc1925500e5.js:1:109069)
+    at EventHandlerNonNull*47341 (https://auth-dev.civic.com/login/_next/static/chunks/311-b6de8cc1925500e5.js:1:109456)
+    at l (https://auth-dev.civic.com/login/_next/static/chunks/webpack-8ebd4c95ac061f00.js:1:535)
+    at 92814 (https://auth-dev.civic.com/login/_next/static/chunks/311-b6de8cc1925500e5.js:1:111224)
+    at l (https://auth-dev.civic.com/login/_next/static/chunks/webpack-8ebd4c95ac061f00.js:1:535)
+    at 69848 (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:487)
+    at l (https://auth-dev.civic.com/login/_next/static/chunks/webpack-8ebd4c95ac061f00.js:1:535)
+    at 36565 (https://auth-dev.civic.com/login/_next/static/chunks/311-b6de8cc1925500e5.js:2:62746)
+    at l (https://auth-dev.civic.com/login/_next/static/chunks/webpack-8ebd4c95ac061f00.js:1:535)
+    at 43329 (https://auth-dev.civic.com/login/_next/static/chunks/311-b6de8cc1925500e5.js:1:95894)
+    at l (https://auth-dev.civic.com/login/_next/static/chunks/webpack-8ebd4c95ac061f00.js:1:535)
+    at 50719 (https://auth-dev.civic.com/login/_next/static/chunks/311-b6de8cc1925500e5.js:2:10846)
+    at l (https://auth-dev.civic.com/login/_next/static/chunks/webpack-8ebd4c95ac061f00.js:1:535)
+    at 44471 (https://auth-dev.civic.com/login/_next/static/chunks/311-b6de8cc1925500e5.js:1:93443)
+    at l (https://auth-dev.civic.com/login/_next/static/chunks/webpack-8ebd4c95ac061f00.js:1:535)
+    at 93913 (https://auth-dev.civic.com/login/_next/static/chunks/311-b6de8cc1925500e5.js:11:22864)
+    at l (https://auth-dev.civic.com/login/_next/static/chunks/webpack-8ebd4c95ac061f00.js:1:535)
+    at 93518 (https://auth-dev.civic.com/login/_next/static/chunks/311-b6de8cc1925500e5.js:19:20486)
+    at l (https://auth-dev.civic.com/login/_next/static/chunks/webpack-8ebd4c95ac061f00.js:1:535)
+    at 529 (https://auth-dev.civic.com/login/_next/static/chunks/main-app-425e15fca7c7ae6c.js:1:763)
+[PAGE ERROR] URL constructor:  is not a valid URL.
+[ERROR STACK] TypeError: URL constructor:  is not a valid URL.
+    at 48352/T/</e< (https://auth-dev.civic.com/login/_next/static/chunks/app/page-10237c7229c737df.js:1:14208)
+    at r (https://auth-dev.civic.com/login/_next/static/chunks/311-b6de8cc1925500e5.js:2:84253)
+    at setInterval handler*93518/ek/< (https://auth-dev.civic.com/login/_next/static/chunks/311-b6de8cc1925500e5.js:19:12672)
+    at 48352/T/< (https://auth-dev.civic.com/login/_next/static/chunks/app/page-10237c7229c737df.js:1:13860)
+    at aW (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:73612)
+    at oe (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85055)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85691)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86019)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85714)
+    at id (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:109085)
+    at o (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:105287)
+    at T (https://auth-dev.civic.com/login/_next/static/chunks/311-b6de8cc1925500e5.js:1:109069)
+    at EventHandlerNonNull*47341 (https://auth-dev.civic.com/login/_next/static/chunks/311-b6de8cc1925500e5.js:1:109456)
+    at l (https://auth-dev.civic.com/login/_next/static/chunks/webpack-8ebd4c95ac061f00.js:1:535)
+    at 92814 (https://auth-dev.civic.com/login/_next/static/chunks/311-b6de8cc1925500e5.js:1:111224)
+    at l (https://auth-dev.civic.com/login/_next/static/chunks/webpack-8ebd4c95ac061f00.js:1:535)
+    at 69848 (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:487)
+    at l (https://auth-dev.civic.com/login/_next/static/chunks/webpack-8ebd4c95ac061f00.js:1:535)
+    at 36565 (https://auth-dev.civic.com/login/_next/static/chunks/311-b6de8cc1925500e5.js:2:62746)
+    at l (https://auth-dev.civic.com/login/_next/static/chunks/webpack-8ebd4c95ac061f00.js:1:535)
+    at 43329 (https://auth-dev.civic.com/login/_next/static/chunks/311-b6de8cc1925500e5.js:1:95894)
+    at l (https://auth-dev.civic.com/login/_next/static/chunks/webpack-8ebd4c95ac061f00.js:1:535)
+    at 50719 (https://auth-dev.civic.com/login/_next/static/chunks/311-b6de8cc1925500e5.js:2:10846)
+    at l (https://auth-dev.civic.com/login/_next/static/chunks/webpack-8ebd4c95ac061f00.js:1:535)
+    at 44471 (https://auth-dev.civic.com/login/_next/static/chunks/311-b6de8cc1925500e5.js:1:93443)
+    at l (https://auth-dev.civic.com/login/_next/static/chunks/webpack-8ebd4c95ac061f00.js:1:535)
+    at 93913 (https://auth-dev.civic.com/login/_next/static/chunks/311-b6de8cc1925500e5.js:11:22864)
+    at l (https://auth-dev.civic.com/login/_next/static/chunks/webpack-8ebd4c95ac061f00.js:1:535)
+    at 93518 (https://auth-dev.civic.com/login/_next/static/chunks/311-b6de8cc1925500e5.js:19:20486)
+    at l (https://auth-dev.civic.com/login/_next/static/chunks/webpack-8ebd4c95ac061f00.js:1:535)
+    at 529 (https://auth-dev.civic.com/login/_next/static/chunks/main-app-425e15fca7c7ae6c.js:1:763)
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/ZQRx8V2pQqIPpuxQlqBAT6a4sWHDeBbsEtVnzhBk30i/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjYzMzEwNGI2LWJkNzEtNGQ5NS1hMzQzLWJmMjg2MWI5Njg3OEBleGFtcGxlLmV4YW1wbGUiLCJzdWIiOiIwZmE5NWU3Mi1iNTBiLTQ3ZTctOWM3ZS0zYTAzY2M5M2U5OWIiLCJuYW1lIjoiR2hvc3QiLCJzY29wZXMiOlsib3BlbmlkIiwib2ZmbGluZV9hY2Nlc3MiLCJwcm9maWxlIiwiZW1haWwiLCJ3YWxsZXQiLCJmb3J3YXJkZWRUb2tlbnMiLCJwYXNza2V5Il0sImF1ZCI6ImRiN2U4OGMxLWQ5OTctNDA5OC04YzA1LTNjMjhjMDE3NzFmMyIsImlkVG9rZW5UVEwiOjM2MDAsImFjY2Vzc1Rva2VuVFRMIjozNjAwLCJyZWZyZXNoVG9rZW5UVEwiOjg2NDAwLCJjbGllbnRJZCI6ImRlbW8tY2xpZW50LTEiLCJwcm92aWRlciI6ImR1bW15IiwiZmxvd19pZCI6Im9hdXRoLWxvZ2luLWU2NzliMjE0LTY0NTQtNGE5YS1iMTlhLTVlZTQwZWU0NmQ1YSIsImxvZ2luX2Zsb3dfaWQiOiIyZjdiZmExOS0wNjFjLTQ0YTQtYjQzNS04OTUzMDU2NjMxZjkiLCJkaXNwbGF5X21vZGUiOiJwb3B1cCIsImZsb3dfdHlwZSI6Im9pZGMiLCJvcmlnaW4iOiJodHRwczovL2F1dGgtZGV2LmNpdmljLmNvbSIsImZvcndhcmRlZFRva2VucyI6eyJkdW1teSI6eyJpZF90b2tlbiI6ImV5SmhiR2NpT2lKU1V6STFOaUlzSW5SNWNDSTZJa3BYVkNJc0ltdHBaQ0k2SW1zeEluMC5leUpwYzNNaU9pSm9kSFJ3Y3pvdkwyaGxZV1JsY2kxd2NtOTRlUzVrWVc1cFpXeGlhMlZzYkdWb1pYSXpOems1TG5kdmNtdGxjbk11WkdWMklpd2lZWFZrSWpvaWRHVnVZVzUwTFRFdFlYQndMVEVpTENKemRXSWlPaUkyTXpNeE1EUmlOaTFpWkRjeExUUmtPVFV0WVRNME15MWlaakk0TmpGaU9UWTROemdpTENKbGJXRnBiQ0k2SWpZek16RXdOR0kyTFdKa056RXROR1E1TlMxaE16UXpMV0ptTWpnMk1XSTVOamczT0VCbGVHRnRjR3hsTG1WNFlXMXdiR1VpTENKdWIyNWpaU0k2SWpnd09EaGpNRFEzTFRFMFl6UXROREl4WVMxaFlUYzFMVGN4WW1SaFlqRTJZVFV6T0NJc0ltbGhkQ0k2TVRjMk1ERXlOVGsyTXl3aVpYaHdJam94TnpZd01USTVOVFl6TENKbWIzSjNZWEprWldSVWIydGxibk1pT25zaVpIVnRiWGtpT25zaWFXUmZkRzlyWlc0aU9pSmxlVXBvWWtkamFVOXBTbE5WZWtreFRtbEpjMGx1VWpWalEwazJTV3R3V0ZaRFNYTkpiWFJ3V2tOSk5rbHRjM2hKYmpBdVpYbEtjR016VFdsUGFVcHZaRWhTZDJONmIzWk1NbWhzV1ZkU2JHTnBNWGRqYlRrMFpWTTFhMWxYTlhCYVYzaHBZVEpXYzJKSFZtOWFXRWw2VG5wck5VeHVaSFpqYlhSc1kyNU5kVnBIVmpKSmFYZHBZek5XYVVscWIybE9hazE2VFZSQk1GbHFXWFJaYlZFelRWTXdNRnBFYXpGTVYwVjZUa1JOZEZsdFdYbFBSRmw0V1dwck1rOUVZelJKYVhkcFdsY3hhR0ZYZDJsUGFVa3lUWHBOZUUxRVVtbE9hVEZwV2tSamVFeFVVbXRQVkZWMFdWUk5NRTE1TVdsYWFrazBUbXBHYVU5VVdUUk9lbWhCV2xob2FHSllRbk5hVXpWc1pVZEdkR05IZUd4SmFYZHBZbTA1ZFZreVZXbFBhVWswVFVSbk5GbDZRVEJPZVRCNFRrZE5NRXhVVVhsTlYwVjBXVmRGTTA1VE1ETk5WMHByV1ZkSmVFNXRSVEZOZW1kcFRFTkthR1JYVVdsUGFVcHZaRWhTZDA5cE9IWmlSemxxV1ZkNGIySXpUakJQYWsxM1RVUkJhVXhEU25CWldGRnBUMnBGTTA1cVFYaE5hbFUxVG1wSmMwbHRWalJqUTBrMlRWUmpNazFFUlhsUFZGVXlUVzR3TG1aa1QxRjRhRlJNYVZSRlN6RXRRemRXV1ROWlpWaE5ObWxhT0hCUU16RjNRM2h3YkhsZlltaHdVRlJaVHpaM1JVcGhTWGN4VVRWNldUbG5OMlZ3UkZaSmVEUjRPVTVzU1VwcE1WSmZjRFZJWmxkS1lXeFFTelZGTjJzdE5HdDJiRWhWUlY5TWVqRlJZbVpFYTFsbGNXUTVOWGhRYjI5WVgxVnFVbGMwVUdzNGVIQTNPVjlxTUY5c1ZsbFJPVWd5WDB4ZlIydHZjWFpPT1ZvNFpreFhMV1ZCY2xabU5FUkRlV1phV1ZCNFMzcEtlRzh5WmxkRmFIbHRWakZ3Vmt0T1VYaERhbXBQYldoQ01ubEdSVVJtT0VsM1luUXhTM2xuTWpsT1dFbHdVRUUwTTFsRWIxUm9ZbGswV2sxVlJIRmpPRGxtVlVFNVJIbDJaVzV6WW1STFZXWTBTRE5tUm1wUlJFdEpRVWRKYUdWWFIxcG5hVFI1WDBVeGJqQTFTMloyUjJSWlFrazVjMDVrYzFGWVRrRkdaVlpuUldjeGVrbDJRMGxSWkRkTFF6bElZV1pCTlMxSE1uVnZaM0owWlU5cU1tMTFXVE5rUVNKOWZYMC5tWDF4TXc0blA4Y0gzVHBQNTd1Q1BYLTRLejI3T0ZHSm1NWEZ2TnhNUFkxdjVlU3lIQWM1U1pWTVhfbk5xcU9pcTh0TVNpRFU3T2F0MG1idU9kZnhGLUg4TU81d3BVbXNBdThlU0dVamRrNEt1blJOLUczb1JpRzN2bEw2SGUtZ1R5ZWc1Q05qSDdFLWVHUERjelJBRldxZkNlcnJxQ1cyWk9wTnFwZk1PcllGeHFnRi1hQUtWQjdvRmYtZEwxa1NXSUV4WXkxUzJmQ0RHenM5UklJSzliVUxQX1V6RFFHZXR6RUZJR3hUZWkzQm5OaEpkcXpyaVNmb0haY2FYb0NWRzAzNWdFOFZDbE1YMU5PRWVuY181ZDhFMU1xUmVyY1h6MGhQTFktenMxdC1rcG1BaE1qd25mUlB0VWgyZnF5bTItdHFhX2ZreW1pMlJ3SXRRZmFNWWciLCJhY2Nlc3NfdG9rZW4iOiIifX19.SH_slnL4-spO-y3oEzlw2U8vf4hNF7JxymjkzpCPUdY&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/ZQRx8V2pQqIPpuxQlqBAT6a4sWHDeBbsEtVnzhBk30i/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjYzMzEwNGI2LWJkNzEtNGQ5NS1hMzQzLWJmMjg2MWI5Njg3OEBleGFtcGxlLmV4YW1wbGUiLCJzdWIiOiIwZmE5NWU3Mi1iNTBiLTQ3ZTctOWM3ZS0zYTAzY2M5M2U5OWIiLCJuYW1lIjoiR2hvc3QiLCJzY29wZXMiOlsib3BlbmlkIiwib2ZmbGluZV9hY2Nlc3MiLCJwcm9maWxlIiwiZW1haWwiLCJ3YWxsZXQiLCJmb3J3YXJkZWRUb2tlbnMiLCJwYXNza2V5Il0sImF1ZCI6ImRiN2U4OGMxLWQ5OTctNDA5OC04YzA1LTNjMjhjMDE3NzFmMyIsImlkVG9rZW5UVEwiOjM2MDAsImFjY2Vzc1Rva2VuVFRMIjozNjAwLCJyZWZyZXNoVG9rZW5UVEwiOjg2NDAwLCJjbGllbnRJZCI6ImRlbW8tY2xpZW50LTEiLCJwcm92aWRlciI6ImR1bW15IiwiZmxvd19pZCI6Im9hdXRoLWxvZ2luLWU2NzliMjE0LTY0NTQtNGE5YS1iMTlhLTVlZTQwZWU0NmQ1YSIsImxvZ2luX2Zsb3dfaWQiOiIyZjdiZmExOS0wNjFjLTQ0YTQtYjQzNS04OTUzMDU2NjMxZjkiLCJkaXNwbGF5X21vZGUiOiJwb3B1cCIsImZsb3dfdHlwZSI6Im9pZGMiLCJvcmlnaW4iOiJodHRwczovL2F1dGgtZGV2LmNpdmljLmNvbSIsImZvcndhcmRlZFRva2VucyI6eyJkdW1teSI6eyJpZF90b2tlbiI6ImV5SmhiR2NpT2lKU1V6STFOaUlzSW5SNWNDSTZJa3BYVkNJc0ltdHBaQ0k2SW1zeEluMC5leUpwYzNNaU9pSm9kSFJ3Y3pvdkwyaGxZV1JsY2kxd2NtOTRlUzVrWVc1cFpXeGlhMlZzYkdWb1pYSXpOems1TG5kdmNtdGxjbk11WkdWMklpd2lZWFZrSWpvaWRHVnVZVzUwTFRFdFlYQndMVEVpTENKemRXSWlPaUkyTXpNeE1EUmlOaTFpWkRjeExUUmtPVFV0WVRNME15MWlaakk0TmpGaU9UWTROemdpTENKbGJXRnBiQ0k2SWpZek16RXdOR0kyTFdKa056RXROR1E1TlMxaE16UXpMV0ptTWpnMk1XSTVOamczT0VCbGVHRnRjR3hsTG1WNFlXMXdiR1VpTENKdWIyNWpaU0k2SWpnd09EaGpNRFEzTFRFMFl6UXROREl4WVMxaFlUYzFMVGN4WW1SaFlqRTJZVFV6T0NJc0ltbGhkQ0k2TVRjMk1ERXlOVGsyTXl3aVpYaHdJam94TnpZd01USTVOVFl6TENKbWIzSjNZWEprWldSVWIydGxibk1pT25zaVpIVnRiWGtpT25zaWFXUmZkRzlyWlc0aU9pSmxlVXBvWWtkamFVOXBTbE5WZWtreFRtbEpjMGx1VWpWalEwazJTV3R3V0ZaRFNYTkpiWFJ3V2tOSk5rbHRjM2hKYmpBdVpYbEtjR016VFdsUGFVcHZaRWhTZDJONmIzWk1NbWhzV1ZkU2JHTnBNWGRqYlRrMFpWTTFhMWxYTlhCYVYzaHBZVEpXYzJKSFZtOWFXRWw2VG5wck5VeHVaSFpqYlhSc1kyNU5kVnBIVmpKSmFYZHBZek5XYVVscWIybE9hazE2VFZSQk1GbHFXWFJaYlZFelRWTXdNRnBFYXpGTVYwVjZUa1JOZEZsdFdYbFBSRmw0V1dwck1rOUVZelJKYVhkcFdsY3hhR0ZYZDJsUGFVa3lUWHBOZUUxRVVtbE9hVEZwV2tSamVFeFVVbXRQVkZWMFdWUk5NRTE1TVdsYWFrazBUbXBHYVU5VVdUUk9lbWhCV2xob2FHSllRbk5hVXpWc1pVZEdkR05IZUd4SmFYZHBZbTA1ZFZreVZXbFBhVWswVFVSbk5GbDZRVEJPZVRCNFRrZE5NRXhVVVhsTlYwVjBXVmRGTTA1VE1ETk5WMHByV1ZkSmVFNXRSVEZOZW1kcFRFTkthR1JYVVdsUGFVcHZaRWhTZDA5cE9IWmlSemxxV1ZkNGIySXpUakJQYWsxM1RVUkJhVXhEU25CWldGRnBUMnBGTTA1cVFYaE5hbFUxVG1wSmMwbHRWalJqUTBrMlRWUmpNazFFUlhsUFZGVXlUVzR3TG1aa1QxRjRhRlJNYVZSRlN6RXRRemRXV1ROWlpWaE5ObWxhT0hCUU16RjNRM2h3YkhsZlltaHdVRlJaVHpaM1JVcGhTWGN4VVRWNldUbG5OMlZ3UkZaSmVEUjRPVTVzU1VwcE1WSmZjRFZJWmxkS1lXeFFTelZGTjJzdE5HdDJiRWhWUlY5TWVqRlJZbVpFYTFsbGNXUTVOWGhRYjI5WVgxVnFVbGMwVUdzNGVIQTNPVjlxTUY5c1ZsbFJPVWd5WDB4ZlIydHZjWFpPT1ZvNFpreFhMV1ZCY2xabU5FUkRlV1phV1ZCNFMzcEtlRzh5WmxkRmFIbHRWakZ3Vmt0T1VYaERhbXBQYldoQ01ubEdSVVJtT0VsM1luUXhTM2xuTWpsT1dFbHdVRUUwTTFsRWIxUm9ZbGswV2sxVlJIRmpPRGxtVlVFNVJIbDJaVzV6WW1STFZXWTBTRE5tUm1wUlJFdEpRVWRKYUdWWFIxcG5hVFI1WDBVeGJqQTFTMloyUjJSWlFrazVjMDVrYzFGWVRrRkdaVlpuUldjeGVrbDJRMGxSWkRkTFF6bElZV1pCTlMxSE1uVnZaM0owWlU5cU1tMTFXVE5rUVNKOWZYMC5tWDF4TXc0blA4Y0gzVHBQNTd1Q1BYLTRLejI3T0ZHSm1NWEZ2TnhNUFkxdjVlU3lIQWM1U1pWTVhfbk5xcU9pcTh0TVNpRFU3T2F0MG1idU9kZnhGLUg4TU81d3BVbXNBdThlU0dVamRrNEt1blJOLUczb1JpRzN2bEw2SGUtZ1R5ZWc1Q05qSDdFLWVHUERjelJBRldxZkNlcnJxQ1cyWk9wTnFwZk1PcllGeHFnRi1hQUtWQjdvRmYtZEwxa1NXSUV4WXkxUzJmQ0RHenM5UklJSzliVUxQX1V6RFFHZXR6RUZJR3hUZWkzQm5OaEpkcXpyaVNmb0haY2FYb0NWRzAzNWdFOFZDbE1YMU5PRWVuY181ZDhFMU1xUmVyY1h6MGhQTFktenMxdC1rcG1BaE1qd25mUlB0VWgyZnF5bTItdHFhX2ZreW1pMlJ3SXRRZmFNWWciLCJhY2Nlc3NfdG9rZW4iOiIifX19.SH_slnL4-spO-y3oEzlw2U8vf4hNF7JxymjkzpCPUdY&error_redirect_uri=http://localhost:3000
+[PAGE CONSOLE] [warning] [JavaScript Warning: "The resource at “https://auth-dev.civic.com/login/_next/static/media/4c33a6e82dbdb8e0-s.p.woff2” preloaded with link preload was not used within a few seconds. Make sure all attributes of the preload tag are set correctly." {file: "https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiYzE5NzIwNDAtOTg4OC00ZDZmLTk0YmQtMjEzMjg1NDQ3Yzk0IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&client_id=demo-client-1&source_system_id=ZQRx8V2pQqIPpuxQlqBAT6a4sWHDeBbsEtVnzhBk30i&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&flow_id=oauth-login-e679b214-6454-4a9a-b19a-5ee40ee46d5a" line: 0}]
+[PAGE CONSOLE] [warning] [JavaScript Warning: "The resource at “https://auth-dev.civic.com/login/_next/static/media/4c33a6e82dbdb8e0-s.p.woff2” preloaded with link preload was not used within a few seconds. Make sure all attributes of the preload tag are set correctly." {file: "https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiYzE5NzIwNDAtOTg4OC00ZDZmLTk0YmQtMjEzMjg1NDQ3Yzk0IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&client_id=demo-client-1&source_system_id=ZQRx8V2pQqIPpuxQlqBAT6a4sWHDeBbsEtVnzhBk30i&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&flow_id=oauth-login-e679b214-6454-4a9a-b19a-5ee40ee46d5a" line: 0}]
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/ZQRx8V2pQqIPpuxQlqBAT6a4sWHDeBbsEtVnzhBk30i
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/ZQRx8V2pQqIPpuxQlqBAT6a4sWHDeBbsEtVnzhBk30i
+[REQUEST FAILED] GET https://auth-dev.civic.com/oauth/session/end?client_id=demo-client-1&id_token_hint=eyJhbGciOiJSUzI1NiIsImtpZCI6ImNpdmljLWF1dGgtdG9rZW4tc2lnbmVyLWtleSJ9.eyJzdWIiOiIwZmE5NWU3Mi1iNTBiLTQ3ZTctOWM3ZS0zYTAzY2M5M2U5OWIiLCJuYW1lIjoiR2hvc3QiLCJlbWFpbCI6IjYzMzEwNGI2LWJkNzEtNGQ5NS1hMzQzLWJmMjg2MWI5Njg3OEBleGFtcGxlLmV4YW1wbGUiLCJzaWQiOiJ1c2F2dDRsV1g5RVduT2xJZUdJemkwcTVDclJJcFhidmVUQXFPN204bHRIIiwianRpIjoiREE3VUtPVm91eFJ0NlpTSmJfLXVBVThzcHRCTm9uVEFvX01hdzNmcEE3NSIsImF1ZCI6ImRlbW8tY2xpZW50LTEiLCJleHAiOjE3NjAxMjk1NjksImlhdCI6MTc2MDEyNTk2OSwiaXNzIjoiaHR0cHM6Ly9hdXRoLWRldi5jaXZpYy5jb20vb2F1dGgvIn0.V8Jzr6yWKAgKKL2Cl9SFuaI3fnmzpaH6MJGpEh3zfWNKJ5cupGPaSIagteU1087AhL_SIaovoqbrPNMbH2MQa0U5CazjTofx70t9L0peNtzgGKrXqkoD05ioqz7ge1k9wmsNZA7sBI9bKx8QnIcwdYZF7bhCGiRehfaelzZ0nF2epDt1LHrVDKV8tp5nBPHz7ohDkjDlXRejEwjAWXX1z8k87Vmz1U5SeAw-4ad7Z19Fv24TcOmXjpLCP5wjXohNW21OpFDUTPQxz4ouN1swaMZvwhc8Oa_C-Qqt7ckE8TaVNXDAj8P1U73HECi-IJ2nf4Rr8j9PUOCOu9LZltxTIhky_sdQExxqw7IDzme2z-HRxdZDWuuCdpuiUi0nD2-OCDkgrF9-cVjwMgRURuRfDLWVzLOtEns5lxRN_u_CpRnh6Xo127XnTQFp_O9NrsrWvaJP1fhZvZF-Q0Vuecs_6640eNBcUS0s7MaNIjYktVKonafO_tNlJchCcGdvIOHwaB4pENrKz-wtqZD9tdXtpdT5wZhdTZjh0dTEdEANsuuJd_mMgvo3LjyVaZK-7BZnj9PR_zQ-JG6qUWOQuGQg3YFHGBbdbkqSp04zAzvViXl8-unjB_NGanlPlkQJNTOYUX_DXqlMDV9PyoEO8n-MW2Cs2_OWN-XFyR4Tj8ui-zs&post_logout_redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F - NS_BINDING_ABORTED
+[REQUEST FAILED] GET https://auth-dev.civic.com/oauth/session/end?client_id=demo-client-1&id_token_hint=eyJhbGciOiJSUzI1NiIsImtpZCI6ImNpdmljLWF1dGgtdG9rZW4tc2lnbmVyLWtleSJ9.eyJzdWIiOiIwZmE5NWU3Mi1iNTBiLTQ3ZTctOWM3ZS0zYTAzY2M5M2U5OWIiLCJuYW1lIjoiR2hvc3QiLCJlbWFpbCI6IjYzMzEwNGI2LWJkNzEtNGQ5NS1hMzQzLWJmMjg2MWI5Njg3OEBleGFtcGxlLmV4YW1wbGUiLCJzaWQiOiJ1c2F2dDRsV1g5RVduT2xJZUdJemkwcTVDclJJcFhidmVUQXFPN204bHRIIiwianRpIjoiREE3VUtPVm91eFJ0NlpTSmJfLXVBVThzcHRCTm9uVEFvX01hdzNmcEE3NSIsImF1ZCI6ImRlbW8tY2xpZW50LTEiLCJleHAiOjE3NjAxMjk1NjksImlhdCI6MTc2MDEyNTk2OSwiaXNzIjoiaHR0cHM6Ly9hdXRoLWRldi5jaXZpYy5jb20vb2F1dGgvIn0.V8Jzr6yWKAgKKL2Cl9SFuaI3fnmzpaH6MJGpEh3zfWNKJ5cupGPaSIagteU1087AhL_SIaovoqbrPNMbH2MQa0U5CazjTofx70t9L0peNtzgGKrXqkoD05ioqz7ge1k9wmsNZA7sBI9bKx8QnIcwdYZF7bhCGiRehfaelzZ0nF2epDt1LHrVDKV8tp5nBPHz7ohDkjDlXRejEwjAWXX1z8k87Vmz1U5SeAw-4ad7Z19Fv24TcOmXjpLCP5wjXohNW21OpFDUTPQxz4ouN1swaMZvwhc8Oa_C-Qqt7ckE8TaVNXDAj8P1U73HECi-IJ2nf4Rr8j9PUOCOu9LZltxTIhky_sdQExxqw7IDzme2z-HRxdZDWuuCdpuiUi0nD2-OCDkgrF9-cVjwMgRURuRfDLWVzLOtEns5lxRN_u_CpRnh6Xo127XnTQFp_O9NrsrWvaJP1fhZvZF-Q0Vuecs_6640eNBcUS0s7MaNIjYktVKonafO_tNlJchCcGdvIOHwaB4pENrKz-wtqZD9tdXtpdT5wZhdTZjh0dTEdEANsuuJd_mMgvo3LjyVaZK-7BZnj9PR_zQ-JG6qUWOQuGQg3YFHGBbdbkqSp04zAzvViXl8-unjB_NGanlPlkQJNTOYUX_DXqlMDV9PyoEO8n-MW2Cs2_OWN-XFyR4Tj8ui-zs&post_logout_redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F - NS_BINDING_ABORTED
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?response_type=code&client_id=demo-client-1&state=eyJ1dWlkIjoiNjY3NmYzY2UtZDBkZS00YzEyLThmOWUtOGNkMmRjNjdjMDUzIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&code_challenge=XrMigVpwAmEnBPbbUSp788wJjAoeNSC2DFlI_B7kbcE&code_challenge_method=S256&prompt=consent
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?response_type=code&client_id=demo-client-1&state=eyJ1dWlkIjoiNjY3NmYzY2UtZDBkZS00YzEyLThmOWUtOGNkMmRjNjdjMDUzIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&code_challenge=XrMigVpwAmEnBPbbUSp788wJjAoeNSC2DFlI_B7kbcE&code_challenge_method=S256&prompt=consent
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[PAGE CONSOLE] [warning] [JavaScript Warning: "Loading failed for the <script> with source “https://auth-dev.civic.com/login/_next/static/chunks/338-6bc82a14ff0b426f.js”." {file: "https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiNjY3NmYzY2UtZDBkZS00YzEyLThmOWUtOGNkMmRjNjdjMDUzIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&client_id=demo-client-1&source_system_id=tCQI8klUWEe0sXyecf5gs45XIyaMcdupyLBaqyqdmuz&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&flow_id=oauth-login-36650a30-09ad-4cb9-8a7d-d9b5a189ded0" line: 1}]
+[PAGE CONSOLE] [warning] [JavaScript Warning: "Loading failed for the <script> with source “https://auth-dev.civic.com/login/_next/static/chunks/338-6bc82a14ff0b426f.js”." {file: "https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiNjY3NmYzY2UtZDBkZS00YzEyLThmOWUtOGNkMmRjNjdjMDUzIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&client_id=demo-client-1&source_system_id=tCQI8klUWEe0sXyecf5gs45XIyaMcdupyLBaqyqdmuz&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&flow_id=oauth-login-36650a30-09ad-4cb9-8a7d-d9b5a189ded0" line: 1}]
+[PAGE CONSOLE] [warning] [JavaScript Warning: "Loading failed for the <script> with source “https://auth-dev.civic.com/login/_next/static/chunks/792-9ebaeaa20145277c.js”." {file: "https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiNjY3NmYzY2UtZDBkZS00YzEyLThmOWUtOGNkMmRjNjdjMDUzIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&client_id=demo-client-1&source_system_id=tCQI8klUWEe0sXyecf5gs45XIyaMcdupyLBaqyqdmuz&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&flow_id=oauth-login-36650a30-09ad-4cb9-8a7d-d9b5a189ded0" line: 1}]
+[PAGE CONSOLE] [warning] [JavaScript Warning: "Loading failed for the <script> with source “https://auth-dev.civic.com/login/_next/static/chunks/792-9ebaeaa20145277c.js”." {file: "https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiNjY3NmYzY2UtZDBkZS00YzEyLThmOWUtOGNkMmRjNjdjMDUzIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&client_id=demo-client-1&source_system_id=tCQI8klUWEe0sXyecf5gs45XIyaMcdupyLBaqyqdmuz&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&flow_id=oauth-login-36650a30-09ad-4cb9-8a7d-d9b5a189ded0" line: 1}]
+[PAGE CONSOLE] [warning] [JavaScript Warning: "Loading failed for the <script> with source “https://auth-dev.civic.com/login/_next/static/chunks/629-4e887a9ed364399e.js”." {file: "https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiNjY3NmYzY2UtZDBkZS00YzEyLThmOWUtOGNkMmRjNjdjMDUzIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&client_id=demo-client-1&source_system_id=tCQI8klUWEe0sXyecf5gs45XIyaMcdupyLBaqyqdmuz&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&flow_id=oauth-login-36650a30-09ad-4cb9-8a7d-d9b5a189ded0" line: 1}]
+[PAGE CONSOLE] [warning] [JavaScript Warning: "Loading failed for the <script> with source “https://auth-dev.civic.com/login/_next/static/chunks/629-4e887a9ed364399e.js”." {file: "https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiNjY3NmYzY2UtZDBkZS00YzEyLThmOWUtOGNkMmRjNjdjMDUzIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&client_id=demo-client-1&source_system_id=tCQI8klUWEe0sXyecf5gs45XIyaMcdupyLBaqyqdmuz&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&flow_id=oauth-login-36650a30-09ad-4cb9-8a7d-d9b5a189ded0" line: 1}]
+[PAGE CONSOLE] [warning] [JavaScript Warning: "Loading failed for the <script> with source “https://auth-dev.civic.com/login/_next/static/chunks/568-b79f503f7c37cd6b.js”." {file: "https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiNjY3NmYzY2UtZDBkZS00YzEyLThmOWUtOGNkMmRjNjdjMDUzIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&client_id=demo-client-1&source_system_id=tCQI8klUWEe0sXyecf5gs45XIyaMcdupyLBaqyqdmuz&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&flow_id=oauth-login-36650a30-09ad-4cb9-8a7d-d9b5a189ded0" line: 1}]
+[PAGE CONSOLE] [warning] [JavaScript Warning: "Loading failed for the <script> with source “https://auth-dev.civic.com/login/_next/static/chunks/568-b79f503f7c37cd6b.js”." {file: "https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiNjY3NmYzY2UtZDBkZS00YzEyLThmOWUtOGNkMmRjNjdjMDUzIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&client_id=demo-client-1&source_system_id=tCQI8klUWEe0sXyecf5gs45XIyaMcdupyLBaqyqdmuz&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&flow_id=oauth-login-36650a30-09ad-4cb9-8a7d-d9b5a189ded0" line: 1}]
+[BAD RESPONSE] 304 https://auth-dev.civic.com/login/scripts/civic-iframe-resizer.child.js
+[BAD RESPONSE] 304 https://auth-dev.civic.com/login/scripts/civic-iframe-resizer.child.js
+[BAD RESPONSE] 304 https://auth-dev.civic.com/login/scripts/iframe-resizer.child.js
+[BAD RESPONSE] 304 https://auth-dev.civic.com/login/scripts/iframe-resizer.child.js
+[PAGE CONSOLE] [warning] [JavaScript Warning: "Loading failed for the <script> with source “https://auth-dev.civic.com/login/_next/static/chunks/513-8aabc48966b65da3.js”." {file: "https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiNjY3NmYzY2UtZDBkZS00YzEyLThmOWUtOGNkMmRjNjdjMDUzIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&client_id=demo-client-1&source_system_id=tCQI8klUWEe0sXyecf5gs45XIyaMcdupyLBaqyqdmuz&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&flow_id=oauth-login-36650a30-09ad-4cb9-8a7d-d9b5a189ded0" line: 1}]
+[PAGE CONSOLE] [warning] [JavaScript Warning: "Loading failed for the <script> with source “https://auth-dev.civic.com/login/_next/static/chunks/513-8aabc48966b65da3.js”." {file: "https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiNjY3NmYzY2UtZDBkZS00YzEyLThmOWUtOGNkMmRjNjdjMDUzIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&client_id=demo-client-1&source_system_id=tCQI8klUWEe0sXyecf5gs45XIyaMcdupyLBaqyqdmuz&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&flow_id=oauth-login-36650a30-09ad-4cb9-8a7d-d9b5a189ded0" line: 1}]
+[PAGE CONSOLE] [warning] [JavaScript Warning: "Loading failed for the <script> with source “https://auth-dev.civic.com/login/_next/static/chunks/app/page-10237c7229c737df.js”." {file: "https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiNjY3NmYzY2UtZDBkZS00YzEyLThmOWUtOGNkMmRjNjdjMDUzIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&client_id=demo-client-1&source_system_id=tCQI8klUWEe0sXyecf5gs45XIyaMcdupyLBaqyqdmuz&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&flow_id=oauth-login-36650a30-09ad-4cb9-8a7d-d9b5a189ded0" line: 1}]
+[PAGE CONSOLE] [warning] [JavaScript Warning: "Loading failed for the <script> with source “https://auth-dev.civic.com/login/_next/static/chunks/app/page-10237c7229c737df.js”." {file: "https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiNjY3NmYzY2UtZDBkZS00YzEyLThmOWUtOGNkMmRjNjdjMDUzIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&client_id=demo-client-1&source_system_id=tCQI8klUWEe0sXyecf5gs45XIyaMcdupyLBaqyqdmuz&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&flow_id=oauth-login-36650a30-09ad-4cb9-8a7d-d9b5a189ded0" line: 1}]
+[BAD RESPONSE] 304 https://auth-dev.civic.com/login/assets/facebook.svg
+[BAD RESPONSE] 304 https://auth-dev.civic.com/login/assets/facebook.svg
+[BAD RESPONSE] 304 https://auth-dev.civic.com/login/assets/google.svg
+[BAD RESPONSE] 304 https://auth-dev.civic.com/login/assets/google.svg
+[BAD RESPONSE] 304 https://auth-dev.civic.com/login/assets/dummy.svg
+[BAD RESPONSE] 304 https://auth-dev.civic.com/login/assets/dummy.svg
+[BAD RESPONSE] 304 https://auth-dev.civic.com/login/assets/x.svg
+[BAD RESPONSE] 304 https://auth-dev.civic.com/login/assets/x.svg
+[BAD RESPONSE] 304 https://auth-dev.civic.com/login/assets/discord.svg
+[BAD RESPONSE] 304 https://auth-dev.civic.com/login/assets/discord.svg
+[BAD RESPONSE] 304 https://auth-dev.civic.com/login/assets/github.svg
+[BAD RESPONSE] 304 https://auth-dev.civic.com/login/assets/github.svg

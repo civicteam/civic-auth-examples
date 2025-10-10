@@ -1,0 +1,98 @@
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [warning] Module "buffer" has been externalized for browser compatibility. Cannot access "buffer.Buffer" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[PAGE CONSOLE] [warning] Module "buffer" has been externalized for browser compatibility. Cannot access "buffer.Buffer" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?client_id=demo-client-1&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&response_type=code&scope=openid+profile+email+offline_access&state=eyJ1dWlkIjoiNWQzYjVkYmEtNDMzMS00ZjIxLWIyMWQtNDI3YTE3MmY1ZjI1IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjMifQ%3D%3D&code_challenge=DsEcFM5rlOjRuqfpOAkIiOAVFoV-RdplUIe-x7n6qSU&code_challenge_method=S256&prompt=consent
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?client_id=demo-client-1&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&response_type=code&scope=openid+profile+email+offline_access&state=eyJ1dWlkIjoiNWQzYjVkYmEtNDMzMS00ZjIxLWIyMWQtNDI3YTE3MmY1ZjI1IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjMifQ%3D%3D&code_challenge=DsEcFM5rlOjRuqfpOAkIiOAVFoV-RdplUIe-x7n6qSU&code_challenge_method=S256&prompt=consent
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[PAGE CONSOLE] [debug] Storage access not available - passkey discovery may be limited
+[PAGE CONSOLE] [debug] Storage access not available - passkey discovery may be limited
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at unknown (http://localhost:3000/node_modules/.vite/deps/@civic_auth-web3_react.js?v=e4908960:8721:28)
+    at forEach (:1:11)
+    at replayBlockedMessages (http://localhost:3000/node_modules/.vite/deps/@civic_auth-web3_react.js?v=e4908960:8719:41)
+    at unknown (http://localhost:3000/node_modules/.vite/deps/@civic_auth-web3_react.js?v=e4908960:9231:78)
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at unknown (http://localhost:3000/node_modules/.vite/deps/@civic_auth-web3_react.js?v=e4908960:8721:28)
+    at forEach (:1:11)
+    at replayBlockedMessages (http://localhost:3000/node_modules/.vite/deps/@civic_auth-web3_react.js?v=e4908960:8719:41)
+    at unknown (http://localhost:3000/node_modules/.vite/deps/@civic_auth-web3_react.js?v=e4908960:9231:78)
+[BAD RESPONSE] 429 https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us
+[BAD RESPONSE] 429 https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 429 (Unknown Error)
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 429 (Unknown Error)
+[RESPONSE BODY] {"detail":"Sentry dropped data due to a quota or internal rate limit being reached. This will not affect your application. See https://docs.sentry.io/product/accounts/quotas/ for more information."}
+[RESPONSE BODY] {"detail":"Sentry dropped data due to a quota or internal rate limit being reached. This will not affect your application. See https://docs.sentry.io/product/accounts/quotas/ for more information."}
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at handleMessage (http://localhost:3000/node_modules/.vite/deps/@civic_auth-web3_react.js?v=e4908960:8648:26)
+    at unknown (http://localhost:3000/node_modules/.vite/deps/@civic_auth-web3_react.js?v=e4908960:8620:25)
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at handleMessage (http://localhost:3000/node_modules/.vite/deps/@civic_auth-web3_react.js?v=e4908960:8648:26)
+    at unknown (http://localhost:3000/node_modules/.vite/deps/@civic_auth-web3_react.js?v=e4908960:8620:25)
+[PAGE CONSOLE] [debug] Storage access not available - passkey discovery may be limited
+[PAGE CONSOLE] [debug] Storage access not available - passkey discovery may be limited
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at handleMessage (http://localhost:3000/node_modules/.vite/deps/@civic_auth-web3_react.js?v=e4908960:8648:26)
+    at unknown (http://localhost:3000/node_modules/.vite/deps/@civic_auth-web3_react.js?v=e4908960:8620:25)
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at handleMessage (http://localhost:3000/node_modules/.vite/deps/@civic_auth-web3_react.js?v=e4908960:8648:26)
+    at unknown (http://localhost:3000/node_modules/.vite/deps/@civic_auth-web3_react.js?v=e4908960:8620:25)
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/b-FUnld4S_dX1672dp3KPb6E40uWgwehwpZkQS5098c/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiYzRmYTkxZi1lZWIyLTQxYzAtYTMyMC02NmExMTllZTA2MzUiLCJlbWFpbCI6IjQzYTdiN2FmLWU4ZWUtNGYzNy1hMjI1LTNjMzg0NTNiMzJkNUBleGFtcGxlLmV4YW1wbGUiLCJuYW1lIjoiR2hvc3QiLCJzY29wZXMiOlsib3BlbmlkIiwib2ZmbGluZV9hY2Nlc3MiLCJwcm9maWxlIiwiZW1haWwiLCJ3YWxsZXQiLCJmb3J3YXJkZWRUb2tlbnMiLCJwYXNza2V5Il0sImF1ZCI6ImRiN2U4OGMxLWQ5OTctNDA5OC04YzA1LTNjMjhjMDE3NzFmMyIsImlkVG9rZW5UVEwiOjM2MDAsImFjY2Vzc1Rva2VuVFRMIjozNjAwLCJyZWZyZXNoVG9rZW5UVEwiOjg2NDAwLCJjbGllbnRJZCI6ImRlbW8tY2xpZW50LTEiLCJwcm92aWRlciI6ImR1bW15IiwiZmxvd19pZCI6Im9hdXRoLWxvZ2luLWVkMTU1NzZhLTI3NTMtNDY5OS1hZDViLWYwZGY1NjFlMDBlYiIsImxvZ2luX2Zsb3dfaWQiOiIyMWU1Nzg1Zi01MDNmLTRjODEtYWY3MS01ODQ4Y2Q5ZTNmM2IiLCJkaXNwbGF5X21vZGUiOiJwb3B1cCIsImZsb3dfdHlwZSI6Im9pZGMiLCJvcmlnaW4iOiJodHRwczovL2F1dGgtZGV2LmNpdmljLmNvbSIsImZvcndhcmRlZFRva2VucyI6eyJkdW1teSI6eyJpZF90b2tlbiI6ImV5SmhiR2NpT2lKU1V6STFOaUlzSW5SNWNDSTZJa3BYVkNJc0ltdHBaQ0k2SW1zeEluMC5leUpwYzNNaU9pSm9kSFJ3Y3pvdkwyaGxZV1JsY2kxd2NtOTRlUzVrWVc1cFpXeGlhMlZzYkdWb1pYSXpOems1TG5kdmNtdGxjbk11WkdWMklpd2lZWFZrSWpvaWRHVnVZVzUwTFRFdFlYQndMVEVpTENKemRXSWlPaUkwTTJFM1lqZGhaaTFsT0dWbExUUm1NemN0WVRJeU5TMHpZek00TkRVellqTXlaRFVpTENKbGJXRnBiQ0k2SWpRellUZGlOMkZtTFdVNFpXVXROR1l6TnkxaE1qSTFMVE5qTXpnME5UTmlNekprTlVCbGVHRnRjR3hsTG1WNFlXMXdiR1VpTENKdWIyNWpaU0k2SWpobE9UZGtaVGcxTFdJd1pUTXROR1F6WlMwNE5ERmhMVGt6WlRObVltWTJNREF6T1NJc0ltbGhkQ0k2TVRjMk1ERXlOVGs0TWl3aVpYaHdJam94TnpZd01USTVOVGd5TENKbWIzSjNZWEprWldSVWIydGxibk1pT25zaVpIVnRiWGtpT25zaWFXUmZkRzlyWlc0aU9pSmxlVXBvWWtkamFVOXBTbE5WZWtreFRtbEpjMGx1VWpWalEwazJTV3R3V0ZaRFNYTkpiWFJ3V2tOSk5rbHRjM2hKYmpBdVpYbEtjR016VFdsUGFVcHZaRWhTZDJONmIzWk1NbWhzV1ZkU2JHTnBNWGRqYlRrMFpWTTFhMWxYTlhCYVYzaHBZVEpXYzJKSFZtOWFXRWw2VG5wck5VeHVaSFpqYlhSc1kyNU5kVnBIVmpKSmFYZHBZek5XYVVscWIybE9SRTVvVGpKSk0xbFhXWFJhVkdoc1dsTXdNRnBxVFROTVYwVjVUV3BWZEUweVRYcFBSRkV4VFRKSmVrMXRVVEZKYVhkcFdsY3hhR0ZYZDJsUGFVa3dUVEpGTTFscVpHaGFhVEZzVDBkV2JFeFVVbTFOZW1OMFdWUkplVTVUTUhwWmVrMDBUa1JWZWxscVRYbGFSRlpCV2xob2FHSllRbk5hVXpWc1pVZEdkR05IZUd4SmFYZHBZbTA1ZFZreVZXbFBhVWswV2xSck0xcEhWVFJPVXpGcFRVZFZla3hVVW10Tk1sVjBUMFJSZUZsVE1EVk5NbFY2V20xS2JVNXFRWGROZW10cFRFTkthR1JYVVdsUGFVcHZaRWhTZDA5cE9IWmlSemxxV1ZkNGIySXpUakJQYWsxM1RVUkJhVXhEU25CWldGRnBUMnBGTTA1cVFYaE5hbFUxVDBSSmMwbHRWalJqUTBrMlRWUmpNazFFUlhsUFZGVTBUVzR3TGtKTFowc3RZMmN4WTJKUU1VWkVaVVZVYmpGSFYweFVhbXh5WnpZeFRFWkZkMUZ2ZGxoSWRteHlkelJoZGpKMFZURlZlVmR2Tm01aExUbFRZbVpRZERSRVNuQkdVMFJrYWtocGRtUTBOMmxpTjJSU2FrRlFORU5MVkZaNGFsRXhlVmQxWlVGT2FGQmtla05VZHpWQ1YyWm9hSFY2WTNSYVYzVmxOa3B4ZG5nNVZ6TkhZV3RGZDA1V1NqUnhkbk5HZEc5cGRGbHpUMmh6VUZwT09XWmxVVTFVYm5wV2IzQnNZMk5OWVZweGN6SnRSbk41VDFWaExUQTJla1JHTTNkaVRFOVBkM0JDU2xwemNYZFVTa1ZuUVRSbVdEaEtZVXM0ZDFCNlFWVnlhemg1UnpOS1UxODNYeloxZUVveVJqQmhWR2gyU0cxSVQxOUJXRzlGWkRrM1ZYQjNkVFJDT0U1WmVrNVljMFI2UjNWWVlWRkhkMlZSZUcweGNuaENjMlV4TlZGeFltWmtiMGgwWnpOUFIxVk1abGd0ZFY5a09XTldXbFp0Vm05bmFuRlJiVkJqUXkxWlZWZGlXRFpCYjBwYU5qTkdVMEZ3UVNKOWZYMC5IV0k4bWkycEUzUzJTS2g0ekF4TXRPTjNsaTNmYVRIWnFmVTgyQnV6dDcwQ3ZEbk5qSEVJRVZSbTVRT0RjcUM4SXpoZk43Z2hjRHdaSTFBMnNTVmM5UjZpbEFISTRrcFVmSm9SS19aTGpOYi1sN1hHN25CemdJcDBtVnBXZElvZnZCQ2xqa05QV2NsR1Z4cWZpTjc1a3V6MTQ0U3pxQVlzajJqczRSOHExSWFyVlNvaFdRVnNPbWNpQ2xlTmJubWVpc3NmdlpKZXVWa1dKRnVaLXpXZk9JdGdscWJ0LVU0a2hTcGJZX3VxTEprbnQyVXQ0Y2xJa1g3VElHdlhUdUZuVXBLNXRSb2w1b3Bld0w1WG9nelFVT09IVHY1aWpXcjg2UlBEcGRTbHNDcUhwT1M1RDBTX3BkOTBHRlh0ckhhVkM3ckFtbGJ6dEoxWV9fTzg3N05Eb1EiLCJhY2Nlc3NfdG9rZW4iOiIifX19.feYH2nKuhjL3igbKtZyyEdWFPYd52X-ra7CbbGjXC58&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/b-FUnld4S_dX1672dp3KPb6E40uWgwehwpZkQS5098c/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiYzRmYTkxZi1lZWIyLTQxYzAtYTMyMC02NmExMTllZTA2MzUiLCJlbWFpbCI6IjQzYTdiN2FmLWU4ZWUtNGYzNy1hMjI1LTNjMzg0NTNiMzJkNUBleGFtcGxlLmV4YW1wbGUiLCJuYW1lIjoiR2hvc3QiLCJzY29wZXMiOlsib3BlbmlkIiwib2ZmbGluZV9hY2Nlc3MiLCJwcm9maWxlIiwiZW1haWwiLCJ3YWxsZXQiLCJmb3J3YXJkZWRUb2tlbnMiLCJwYXNza2V5Il0sImF1ZCI6ImRiN2U4OGMxLWQ5OTctNDA5OC04YzA1LTNjMjhjMDE3NzFmMyIsImlkVG9rZW5UVEwiOjM2MDAsImFjY2Vzc1Rva2VuVFRMIjozNjAwLCJyZWZyZXNoVG9rZW5UVEwiOjg2NDAwLCJjbGllbnRJZCI6ImRlbW8tY2xpZW50LTEiLCJwcm92aWRlciI6ImR1bW15IiwiZmxvd19pZCI6Im9hdXRoLWxvZ2luLWVkMTU1NzZhLTI3NTMtNDY5OS1hZDViLWYwZGY1NjFlMDBlYiIsImxvZ2luX2Zsb3dfaWQiOiIyMWU1Nzg1Zi01MDNmLTRjODEtYWY3MS01ODQ4Y2Q5ZTNmM2IiLCJkaXNwbGF5X21vZGUiOiJwb3B1cCIsImZsb3dfdHlwZSI6Im9pZGMiLCJvcmlnaW4iOiJodHRwczovL2F1dGgtZGV2LmNpdmljLmNvbSIsImZvcndhcmRlZFRva2VucyI6eyJkdW1teSI6eyJpZF90b2tlbiI6ImV5SmhiR2NpT2lKU1V6STFOaUlzSW5SNWNDSTZJa3BYVkNJc0ltdHBaQ0k2SW1zeEluMC5leUpwYzNNaU9pSm9kSFJ3Y3pvdkwyaGxZV1JsY2kxd2NtOTRlUzVrWVc1cFpXeGlhMlZzYkdWb1pYSXpOems1TG5kdmNtdGxjbk11WkdWMklpd2lZWFZrSWpvaWRHVnVZVzUwTFRFdFlYQndMVEVpTENKemRXSWlPaUkwTTJFM1lqZGhaaTFsT0dWbExUUm1NemN0WVRJeU5TMHpZek00TkRVellqTXlaRFVpTENKbGJXRnBiQ0k2SWpRellUZGlOMkZtTFdVNFpXVXROR1l6TnkxaE1qSTFMVE5qTXpnME5UTmlNekprTlVCbGVHRnRjR3hsTG1WNFlXMXdiR1VpTENKdWIyNWpaU0k2SWpobE9UZGtaVGcxTFdJd1pUTXROR1F6WlMwNE5ERmhMVGt6WlRObVltWTJNREF6T1NJc0ltbGhkQ0k2TVRjMk1ERXlOVGs0TWl3aVpYaHdJam94TnpZd01USTVOVGd5TENKbWIzSjNZWEprWldSVWIydGxibk1pT25zaVpIVnRiWGtpT25zaWFXUmZkRzlyWlc0aU9pSmxlVXBvWWtkamFVOXBTbE5WZWtreFRtbEpjMGx1VWpWalEwazJTV3R3V0ZaRFNYTkpiWFJ3V2tOSk5rbHRjM2hKYmpBdVpYbEtjR016VFdsUGFVcHZaRWhTZDJONmIzWk1NbWhzV1ZkU2JHTnBNWGRqYlRrMFpWTTFhMWxYTlhCYVYzaHBZVEpXYzJKSFZtOWFXRWw2VG5wck5VeHVaSFpqYlhSc1kyNU5kVnBIVmpKSmFYZHBZek5XYVVscWIybE9SRTVvVGpKSk0xbFhXWFJhVkdoc1dsTXdNRnBxVFROTVYwVjVUV3BWZEUweVRYcFBSRkV4VFRKSmVrMXRVVEZKYVhkcFdsY3hhR0ZYZDJsUGFVa3dUVEpGTTFscVpHaGFhVEZzVDBkV2JFeFVVbTFOZW1OMFdWUkplVTVUTUhwWmVrMDBUa1JWZWxscVRYbGFSRlpCV2xob2FHSllRbk5hVXpWc1pVZEdkR05IZUd4SmFYZHBZbTA1ZFZreVZXbFBhVWswV2xSck0xcEhWVFJPVXpGcFRVZFZla3hVVW10Tk1sVjBUMFJSZUZsVE1EVk5NbFY2V20xS2JVNXFRWGROZW10cFRFTkthR1JYVVdsUGFVcHZaRWhTZDA5cE9IWmlSemxxV1ZkNGIySXpUakJQYWsxM1RVUkJhVXhEU25CWldGRnBUMnBGTTA1cVFYaE5hbFUxVDBSSmMwbHRWalJqUTBrMlRWUmpNazFFUlhsUFZGVTBUVzR3TGtKTFowc3RZMmN4WTJKUU1VWkVaVVZVYmpGSFYweFVhbXh5WnpZeFRFWkZkMUZ2ZGxoSWRteHlkelJoZGpKMFZURlZlVmR2Tm01aExUbFRZbVpRZERSRVNuQkdVMFJrYWtocGRtUTBOMmxpTjJSU2FrRlFORU5MVkZaNGFsRXhlVmQxWlVGT2FGQmtla05VZHpWQ1YyWm9hSFY2WTNSYVYzVmxOa3B4ZG5nNVZ6TkhZV3RGZDA1V1NqUnhkbk5HZEc5cGRGbHpUMmh6VUZwT09XWmxVVTFVYm5wV2IzQnNZMk5OWVZweGN6SnRSbk41VDFWaExUQTJla1JHTTNkaVRFOVBkM0JDU2xwemNYZFVTa1ZuUVRSbVdEaEtZVXM0ZDFCNlFWVnlhemg1UnpOS1UxODNYeloxZUVveVJqQmhWR2gyU0cxSVQxOUJXRzlGWkRrM1ZYQjNkVFJDT0U1WmVrNVljMFI2UjNWWVlWRkhkMlZSZUcweGNuaENjMlV4TlZGeFltWmtiMGgwWnpOUFIxVk1abGd0ZFY5a09XTldXbFp0Vm05bmFuRlJiVkJqUXkxWlZWZGlXRFpCYjBwYU5qTkdVMEZ3UVNKOWZYMC5IV0k4bWkycEUzUzJTS2g0ekF4TXRPTjNsaTNmYVRIWnFmVTgyQnV6dDcwQ3ZEbk5qSEVJRVZSbTVRT0RjcUM4SXpoZk43Z2hjRHdaSTFBMnNTVmM5UjZpbEFISTRrcFVmSm9SS19aTGpOYi1sN1hHN25CemdJcDBtVnBXZElvZnZCQ2xqa05QV2NsR1Z4cWZpTjc1a3V6MTQ0U3pxQVlzajJqczRSOHExSWFyVlNvaFdRVnNPbWNpQ2xlTmJubWVpc3NmdlpKZXVWa1dKRnVaLXpXZk9JdGdscWJ0LVU0a2hTcGJZX3VxTEprbnQyVXQ0Y2xJa1g3VElHdlhUdUZuVXBLNXRSb2w1b3Bld0w1WG9nelFVT09IVHY1aWpXcjg2UlBEcGRTbHNDcUhwT1M1RDBTX3BkOTBHRlh0ckhhVkM3ckFtbGJ6dEoxWV9fTzg3N05Eb1EiLCJhY2Nlc3NfdG9rZW4iOiIifX19.feYH2nKuhjL3igbKtZyyEdWFPYd52X-ra7CbbGjXC58&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/b-FUnld4S_dX1672dp3KPb6E40uWgwehwpZkQS5098c
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/b-FUnld4S_dX1672dp3KPb6E40uWgwehwpZkQS5098c
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [warning] Module "buffer" has been externalized for browser compatibility. Cannot access "buffer.Buffer" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[PAGE CONSOLE] [warning] Module "buffer" has been externalized for browser compatibility. Cannot access "buffer.Buffer" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [error] Viewport argument key "interactive-widget" not recognized and ignored.
+[PAGE CONSOLE] [error] Viewport argument key "interactive-widget" not recognized and ignored.
+[PAGE CONSOLE] [error] Viewport argument key "interactive-widget" not recognized and ignored.
+[PAGE CONSOLE] [error] Viewport argument key "interactive-widget" not recognized and ignored.
+[PAGE CONSOLE] [info] Successfully preconnected to https://fonts.gstatic.com/
+[PAGE CONSOLE] [info] Successfully preconnected to https://fonts.gstatic.com/
+[PAGE CONSOLE] [error] Preflight response is not successful. Status code: 503
+[PAGE CONSOLE] [error] Preflight response is not successful. Status code: 503
+[PAGE ERROR] /sepolia-preconf.base.org/ due to access control checks.
+[ERROR STACK] 
+[PAGE ERROR] /sepolia-preconf.base.org/ due to access control checks.
+[ERROR STACK] 
+[REQUEST FAILED] POST https://sepolia-preconf.base.org/ - Preflight response is not successful. Status code: 503
+[REQUEST FAILED] POST https://sepolia-preconf.base.org/ - Preflight response is not successful. Status code: 503
+[PAGE CONSOLE] [error] Failed to load resource: Preflight response is not successful. Status code: 503
+[PAGE CONSOLE] [error] Failed to load resource: Preflight response is not successful. Status code: 503
+[PAGE CONSOLE] [error] Failed to build MetakeepWeb3Client TypeError: Load failed
+[PAGE CONSOLE] [error] Failed to build MetakeepWeb3Client TypeError: Load failed
+[PAGE CONSOLE] [info] Successfully preconnected to https://fonts.gstatic.com/
+[PAGE CONSOLE] [info] Successfully preconnected to https://fonts.gstatic.com/

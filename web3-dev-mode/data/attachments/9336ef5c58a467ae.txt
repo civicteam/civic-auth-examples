@@ -1,0 +1,95 @@
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [info] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold
+[PAGE CONSOLE] [info] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [warning] Module "buffer" has been externalized for browser compatibility. Cannot access "buffer.Buffer" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[PAGE CONSOLE] [warning] Module "buffer" has been externalized for browser compatibility. Cannot access "buffer.Buffer" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[REQUEST FAILED] HEAD http://localhost:3000/ - net::ERR_ABORTED
+[REQUEST FAILED] HEAD http://localhost:3000/ - net::ERR_ABORTED
+[PAGE CONSOLE] [warning] Lit is in dev mode. Not recommended for production! See https://lit.dev/msg/dev-mode for more information.
+[PAGE CONSOLE] [warning] Lit is in dev mode. Not recommended for production! See https://lit.dev/msg/dev-mode for more information.
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 401 ()
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 401 ()
+[PAGE CONSOLE] [error] TypeError: Cannot convert undefined or null to object
+    at Object.values (<anonymous>)
+    at Object.getRecomendedWallets (http://localhost:3000/node_modules/.vite/deps/chunk-7ULXA2BX.js?v=0930bb20:658:42)
+    at async WcmExplorerContext.preloadListings (http://localhost:3000/node_modules/.vite/deps/dist-AV3YAL4X.js?v=0930bb20:6462:7)
+    at async Promise.all (index 0)
+    at async WcmExplorerContext.preloadData (http://localhost:3000/node_modules/.vite/deps/dist-AV3YAL4X.js?v=0930bb20:6479:9)
+[PAGE CONSOLE] [error] TypeError: Cannot convert undefined or null to object
+    at Object.values (<anonymous>)
+    at Object.getRecomendedWallets (http://localhost:3000/node_modules/.vite/deps/chunk-7ULXA2BX.js?v=0930bb20:658:42)
+    at async WcmExplorerContext.preloadListings (http://localhost:3000/node_modules/.vite/deps/dist-AV3YAL4X.js?v=0930bb20:6462:7)
+    at async Promise.all (index 0)
+    at async WcmExplorerContext.preloadData (http://localhost:3000/node_modules/.vite/deps/dist-AV3YAL4X.js?v=0930bb20:6479:9)
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?client_id=demo-client-1&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&response_type=code&scope=openid+profile+email+offline_access&state=eyJ1dWlkIjoiMTM0MGQzNmItMDc3NC00OWI5LWIwNmUtZTE4NjIyM2VlNDAzIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjMifQ%3D%3D&code_challenge=U1PSJmhLgC2g4Zl20Bs8Jkb06gtl7zgnXB7OiZve3OY&code_challenge_method=S256&prompt=consent
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?client_id=demo-client-1&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&response_type=code&scope=openid+profile+email+offline_access&state=eyJ1dWlkIjoiMTM0MGQzNmItMDc3NC00OWI5LWIwNmUtZTE4NjIyM2VlNDAzIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjMifQ%3D%3D&code_challenge=U1PSJmhLgC2g4Zl20Bs8Jkb06gtl7zgnXB7OiZve3OY&code_challenge_method=S256&prompt=consent
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[BAD RESPONSE] 429 https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us
+[BAD RESPONSE] 429 https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 429 ()
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 429 ()
+[RESPONSE BODY] {"detail":"Sentry dropped data due to a quota or internal rate limit being reached. This will not affect your application. See https://docs.sentry.io/product/accounts/quotas/ for more information."}
+[RESPONSE BODY] {"detail":"Sentry dropped data due to a quota or internal rate limit being reached. This will not affect your application. See https://docs.sentry.io/product/accounts/quotas/ for more information."}
+Email slot count: 1
+Checking URL: https://auth-dev.civic.com/login/assets/email.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/activity-indicator.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiMTM0MGQzNmItMDc3NC00OWI5LWIwNmUtZTE4NjIyM2VlNDAzIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjMifQ%3D%3D&client_id=demo-client-1&source_system_id=liju8vrAYxVtYFvNnTo7Ip2BWHNrmxQ5gsZdBrTnEFe&scope=openid+profile+email+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&flow_id=oauth-login-5627d2fb-4b39-471c-b6f8-f2940a67f806, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/email?loginFlowId=a343bbe9-b7b0-44d8-945e-2e9b90aa1260&client_id=demo-client-1&source_system_id=liju8vrAYxVtYFvNnTo7Ip2BWHNrmxQ5gsZdBrTnEFe&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=323605%40simulator.amazonses.com&_rsc=1q2us, hasLoginFlowId: true, isEmailEndpoint: true, isVerifyEndpoint: false
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=a343bbe9-b7b0-44d8-945e-2e9b90aa1260&client_id=demo-client-1&source_system_id=liju8vrAYxVtYFvNnTo7Ip2BWHNrmxQ5gsZdBrTnEFe&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=323605%40simulator.amazonses.com&_rsc=1q2us
+Extracted loginFlowId: a343bbe9-b7b0-44d8-945e-2e9b90aa1260
+[REQUEST FAILED] GET https://auth-dev.civic.com/login/email?loginFlowId=a343bbe9-b7b0-44d8-945e-2e9b90aa1260&client_id=demo-client-1&source_system_id=liju8vrAYxVtYFvNnTo7Ip2BWHNrmxQ5gsZdBrTnEFe&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=323605%40simulator.amazonses.com&_rsc=1q2us - net::ERR_ABORTED
+[REQUEST FAILED] GET https://auth-dev.civic.com/login/email?loginFlowId=a343bbe9-b7b0-44d8-945e-2e9b90aa1260&client_id=demo-client-1&source_system_id=liju8vrAYxVtYFvNnTo7Ip2BWHNrmxQ5gsZdBrTnEFe&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=323605%40simulator.amazonses.com&_rsc=1q2us - net::ERR_ABORTED
+[REQUEST FAILED] GET https://auth-dev.civic.com/login/email?loginFlowId=a343bbe9-b7b0-44d8-945e-2e9b90aa1260&client_id=demo-client-1&source_system_id=liju8vrAYxVtYFvNnTo7Ip2BWHNrmxQ5gsZdBrTnEFe&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=323605%40simulator.amazonses.com&_rsc=rmp3f - net::ERR_ABORTED
+[REQUEST FAILED] GET https://auth-dev.civic.com/login/email?loginFlowId=a343bbe9-b7b0-44d8-945e-2e9b90aa1260&client_id=demo-client-1&source_system_id=liju8vrAYxVtYFvNnTo7Ip2BWHNrmxQ5gsZdBrTnEFe&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=323605%40simulator.amazonses.com&_rsc=rmp3f - net::ERR_ABORTED
+[PAGE CONSOLE] [log] Loading login flow data...
+[PAGE CONSOLE] [log] Loading login flow data...
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: a343bbe9-b7b0-44d8-945e-2e9b90aa1260
+Found verification code for loginFlowId a343bbe9-b7b0-44d8-945e-2e9b90aa1260: 565299
+Database disconnected
+Retrieved verification code: 565299 for loginFlowId: a343bbe9-b7b0-44d8-945e-2e9b90aa1260
+[BAD RESPONSE] 302 https://auth-dev.civic.com/login/api/callback/email?state=a343bbe9-b7b0-44d8-945e-2e9b90aa1260&code=565299
+[BAD RESPONSE] 302 https://auth-dev.civic.com/login/api/callback/email?state=a343bbe9-b7b0-44d8-945e-2e9b90aa1260&code=565299
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/liju8vrAYxVtYFvNnTo7Ip2BWHNrmxQ5gsZdBrTnEFe/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjMyMzYwNUBzaW11bGF0b3IuYW1hem9uc2VzLmNvbSIsInNjb3BlcyI6WyJvcGVuaWQiLCJvZmZsaW5lX2FjY2VzcyIsInByb2ZpbGUiLCJlbWFpbCIsIndhbGxldCIsImZvcndhcmRlZFRva2VucyIsInBhc3NrZXkiXSwiYXVkIjoiZGI3ZTg4YzEtZDk5Ny00MDk4LThjMDUtM2MyOGMwMTc3MWYzIiwic3ViIjoiZDRkOTZkZTctNjcyYS00ZTk1LTlhYjQtMmJjNWQxNTRkNTM0IiwiaWRUb2tlblRUTCI6MzYwMCwiYWNjZXNzVG9rZW5UVEwiOjM2MDAsInJlZnJlc2hUb2tlblRUTCI6ODY0MDAsImNsaWVudElkIjoiZGVtby1jbGllbnQtMSIsInByb3ZpZGVyIjoiZW1haWwiLCJmbG93X2lkIjoib2F1dGgtbG9naW4tNTYyN2QyZmItNGIzOS00NzFjLWI2ZjgtZjI5NDBhNjdmODA2IiwibG9naW5fZmxvd19pZCI6ImEzNDNiYmU5LWI3YjAtNDRkOC05NDVlLTJlOWI5MGFhMTI2MCIsImRpc3BsYXlfbW9kZSI6InJlZGlyZWN0IiwiZmxvd190eXBlIjoiZW1haWxDb2RlIiwib3JpZ2luIjoiaHR0cHM6Ly9hdXRoLWRldi5jaXZpYy5jb20iLCJmb3J3YXJkZWRUb2tlbnMiOnsiZW1haWwiOnt9fX0.sDPVFosieo_RpE6fdOYY8hCLU6NujZxhXvPHwG69r6E&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/liju8vrAYxVtYFvNnTo7Ip2BWHNrmxQ5gsZdBrTnEFe/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjMyMzYwNUBzaW11bGF0b3IuYW1hem9uc2VzLmNvbSIsInNjb3BlcyI6WyJvcGVuaWQiLCJvZmZsaW5lX2FjY2VzcyIsInByb2ZpbGUiLCJlbWFpbCIsIndhbGxldCIsImZvcndhcmRlZFRva2VucyIsInBhc3NrZXkiXSwiYXVkIjoiZGI3ZTg4YzEtZDk5Ny00MDk4LThjMDUtM2MyOGMwMTc3MWYzIiwic3ViIjoiZDRkOTZkZTctNjcyYS00ZTk1LTlhYjQtMmJjNWQxNTRkNTM0IiwiaWRUb2tlblRUTCI6MzYwMCwiYWNjZXNzVG9rZW5UVEwiOjM2MDAsInJlZnJlc2hUb2tlblRUTCI6ODY0MDAsImNsaWVudElkIjoiZGVtby1jbGllbnQtMSIsInByb3ZpZGVyIjoiZW1haWwiLCJmbG93X2lkIjoib2F1dGgtbG9naW4tNTYyN2QyZmItNGIzOS00NzFjLWI2ZjgtZjI5NDBhNjdmODA2IiwibG9naW5fZmxvd19pZCI6ImEzNDNiYmU5LWI3YjAtNDRkOC05NDVlLTJlOWI5MGFhMTI2MCIsImRpc3BsYXlfbW9kZSI6InJlZGlyZWN0IiwiZmxvd190eXBlIjoiZW1haWxDb2RlIiwib3JpZ2luIjoiaHR0cHM6Ly9hdXRoLWRldi5jaXZpYy5jb20iLCJmb3J3YXJkZWRUb2tlbnMiOnsiZW1haWwiOnt9fX0.sDPVFosieo_RpE6fdOYY8hCLU6NujZxhXvPHwG69r6E&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/liju8vrAYxVtYFvNnTo7Ip2BWHNrmxQ5gsZdBrTnEFe
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/liju8vrAYxVtYFvNnTo7Ip2BWHNrmxQ5gsZdBrTnEFe
+[REQUEST FAILED] POST https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us - net::ERR_ABORTED
+[REQUEST FAILED] POST https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us - net::ERR_ABORTED
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [warning] Module "buffer" has been externalized for browser compatibility. Cannot access "buffer.Buffer" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[PAGE CONSOLE] [warning] Module "buffer" has been externalized for browser compatibility. Cannot access "buffer.Buffer" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [debug] [vite] connected.
+[REQUEST FAILED] HEAD http://localhost:3000/ - net::ERR_ABORTED
+[REQUEST FAILED] HEAD http://localhost:3000/ - net::ERR_ABORTED
+[PAGE CONSOLE] [warning] Lit is in dev mode. Not recommended for production! See https://lit.dev/msg/dev-mode for more information.
+[PAGE CONSOLE] [warning] Lit is in dev mode. Not recommended for production! See https://lit.dev/msg/dev-mode for more information.
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 401 ()
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 401 ()
+[PAGE CONSOLE] [error] TypeError: Cannot convert undefined or null to object
+    at Object.values (<anonymous>)
+    at Object.getRecomendedWallets (http://localhost:3000/node_modules/.vite/deps/chunk-7ULXA2BX.js?v=0930bb20:658:42)
+    at async WcmExplorerContext.preloadListings (http://localhost:3000/node_modules/.vite/deps/dist-AV3YAL4X.js?v=0930bb20:6462:7)
+    at async Promise.all (index 0)
+    at async WcmExplorerContext.preloadData (http://localhost:3000/node_modules/.vite/deps/dist-AV3YAL4X.js?v=0930bb20:6479:9)
+[PAGE CONSOLE] [error] TypeError: Cannot convert undefined or null to object
+    at Object.values (<anonymous>)
+    at Object.getRecomendedWallets (http://localhost:3000/node_modules/.vite/deps/chunk-7ULXA2BX.js?v=0930bb20:658:42)
+    at async WcmExplorerContext.preloadListings (http://localhost:3000/node_modules/.vite/deps/dist-AV3YAL4X.js?v=0930bb20:6462:7)
+    at async Promise.all (index 0)
+    at async WcmExplorerContext.preloadData (http://localhost:3000/node_modules/.vite/deps/dist-AV3YAL4X.js?v=0930bb20:6479:9)

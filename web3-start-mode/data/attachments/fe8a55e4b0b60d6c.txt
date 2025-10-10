@@ -1,0 +1,45 @@
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?client_id=demo-client-1&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&response_type=code&scope=openid+profile+email+offline_access&state=eyJ1dWlkIjoiNjNkYzEyMzItYTAyYi00NzViLWIzYjEtY2NlMjk4NGE0Zjc0IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjMifQ%3D%3D&code_challenge=Wbie0h23BsrpzNL73sBOgR3FWyCC7cgBo8orQ0i5n3c&code_challenge_method=S256&prompt=consent
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?client_id=demo-client-1&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&response_type=code&scope=openid+profile+email+offline_access&state=eyJ1dWlkIjoiNjNkYzEyMzItYTAyYi00NzViLWIzYjEtY2NlMjk4NGE0Zjc0IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjMifQ%3D%3D&code_challenge=Wbie0h23BsrpzNL73sBOgR3FWyCC7cgBo8orQ0i5n3c&code_challenge_method=S256&prompt=consent
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+Email slot count: 1
+[BAD RESPONSE] 429 https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us
+[BAD RESPONSE] 429 https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 429 ()
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 429 ()
+[RESPONSE BODY] {"detail":"Sentry dropped data due to a quota or internal rate limit being reached. This will not affect your application. See https://docs.sentry.io/product/accounts/quotas/ for more information."}
+[RESPONSE BODY] {"detail":"Sentry dropped data due to a quota or internal rate limit being reached. This will not affect your application. See https://docs.sentry.io/product/accounts/quotas/ for more information."}
+Checking URL: https://auth-dev.civic.com/login/assets/email.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/activity-indicator.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiNjNkYzEyMzItYTAyYi00NzViLWIzYjEtY2NlMjk4NGE0Zjc0IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjMifQ%3D%3D&client_id=demo-client-1&source_system_id=0D29oWJWS0i2As-oZh6oO3s6V7ZgqxfRuaSru-Vrf44&scope=openid+profile+email+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&flow_id=oauth-login-515eb36b-3993-4a33-850e-cbf08cc8c735, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/email?loginFlowId=8112874b-1c45-4127-b97c-33d1a88a452e&client_id=demo-client-1&source_system_id=0D29oWJWS0i2As-oZh6oO3s6V7ZgqxfRuaSru-Vrf44&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=931626%40simulator.amazonses.com&_rsc=gf998, hasLoginFlowId: true, isEmailEndpoint: true, isVerifyEndpoint: false
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=8112874b-1c45-4127-b97c-33d1a88a452e&client_id=demo-client-1&source_system_id=0D29oWJWS0i2As-oZh6oO3s6V7ZgqxfRuaSru-Vrf44&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=931626%40simulator.amazonses.com&_rsc=gf998
+Extracted loginFlowId: 8112874b-1c45-4127-b97c-33d1a88a452e
+[REQUEST FAILED] GET https://auth-dev.civic.com/login/email?loginFlowId=8112874b-1c45-4127-b97c-33d1a88a452e&client_id=demo-client-1&source_system_id=0D29oWJWS0i2As-oZh6oO3s6V7ZgqxfRuaSru-Vrf44&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=931626%40simulator.amazonses.com&_rsc=gf998 - net::ERR_ABORTED
+[REQUEST FAILED] GET https://auth-dev.civic.com/login/email?loginFlowId=8112874b-1c45-4127-b97c-33d1a88a452e&client_id=demo-client-1&source_system_id=0D29oWJWS0i2As-oZh6oO3s6V7ZgqxfRuaSru-Vrf44&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=931626%40simulator.amazonses.com&_rsc=gf998 - net::ERR_ABORTED
+[REQUEST FAILED] GET https://auth-dev.civic.com/login/email?loginFlowId=8112874b-1c45-4127-b97c-33d1a88a452e&client_id=demo-client-1&source_system_id=0D29oWJWS0i2As-oZh6oO3s6V7ZgqxfRuaSru-Vrf44&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=931626%40simulator.amazonses.com&_rsc=o8t2t - net::ERR_ABORTED
+[REQUEST FAILED] GET https://auth-dev.civic.com/login/email?loginFlowId=8112874b-1c45-4127-b97c-33d1a88a452e&client_id=demo-client-1&source_system_id=0D29oWJWS0i2As-oZh6oO3s6V7ZgqxfRuaSru-Vrf44&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=931626%40simulator.amazonses.com&_rsc=o8t2t - net::ERR_ABORTED
+[PAGE CONSOLE] [log] Loading login flow data...
+[PAGE CONSOLE] [log] Loading login flow data...
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: 8112874b-1c45-4127-b97c-33d1a88a452e
+Found verification code for loginFlowId 8112874b-1c45-4127-b97c-33d1a88a452e: 212574
+Database disconnected
+Retrieved verification code: 212574 for loginFlowId: 8112874b-1c45-4127-b97c-33d1a88a452e
+[BAD RESPONSE] 302 https://auth-dev.civic.com/login/api/callback/email?state=8112874b-1c45-4127-b97c-33d1a88a452e&code=212574
+[BAD RESPONSE] 302 https://auth-dev.civic.com/login/api/callback/email?state=8112874b-1c45-4127-b97c-33d1a88a452e&code=212574
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/0D29oWJWS0i2As-oZh6oO3s6V7ZgqxfRuaSru-Vrf44/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjkzMTYyNkBzaW11bGF0b3IuYW1hem9uc2VzLmNvbSIsInNjb3BlcyI6WyJvcGVuaWQiLCJvZmZsaW5lX2FjY2VzcyIsInByb2ZpbGUiLCJlbWFpbCIsIndhbGxldCIsImZvcndhcmRlZFRva2VucyIsInBhc3NrZXkiXSwiYXVkIjoiZGI3ZTg4YzEtZDk5Ny00MDk4LThjMDUtM2MyOGMwMTc3MWYzIiwic3ViIjoiZjFhNzhkZTEtZjY4ZS00ZWU1LWJmODctMDZjMzEzMzM0ZTJkIiwiaWRUb2tlblRUTCI6MzYwMCwiYWNjZXNzVG9rZW5UVEwiOjM2MDAsInJlZnJlc2hUb2tlblRUTCI6ODY0MDAsImNsaWVudElkIjoiZGVtby1jbGllbnQtMSIsInByb3ZpZGVyIjoiZW1haWwiLCJmbG93X2lkIjoib2F1dGgtbG9naW4tNTE1ZWIzNmItMzk5My00YTMzLTg1MGUtY2JmMDhjYzhjNzM1IiwibG9naW5fZmxvd19pZCI6IjgxMTI4NzRiLTFjNDUtNDEyNy1iOTdjLTMzZDFhODhhNDUyZSIsImRpc3BsYXlfbW9kZSI6InJlZGlyZWN0IiwiZmxvd190eXBlIjoiZW1haWxDb2RlIiwib3JpZ2luIjoiaHR0cHM6Ly9hdXRoLWRldi5jaXZpYy5jb20iLCJmb3J3YXJkZWRUb2tlbnMiOnsiZW1haWwiOnt9fX0.JdRkEjIsWA4Q27Y0iN1uJXEg9PcI4oTMyDjkobqimjc&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/0D29oWJWS0i2As-oZh6oO3s6V7ZgqxfRuaSru-Vrf44/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjkzMTYyNkBzaW11bGF0b3IuYW1hem9uc2VzLmNvbSIsInNjb3BlcyI6WyJvcGVuaWQiLCJvZmZsaW5lX2FjY2VzcyIsInByb2ZpbGUiLCJlbWFpbCIsIndhbGxldCIsImZvcndhcmRlZFRva2VucyIsInBhc3NrZXkiXSwiYXVkIjoiZGI3ZTg4YzEtZDk5Ny00MDk4LThjMDUtM2MyOGMwMTc3MWYzIiwic3ViIjoiZjFhNzhkZTEtZjY4ZS00ZWU1LWJmODctMDZjMzEzMzM0ZTJkIiwiaWRUb2tlblRUTCI6MzYwMCwiYWNjZXNzVG9rZW5UVEwiOjM2MDAsInJlZnJlc2hUb2tlblRUTCI6ODY0MDAsImNsaWVudElkIjoiZGVtby1jbGllbnQtMSIsInByb3ZpZGVyIjoiZW1haWwiLCJmbG93X2lkIjoib2F1dGgtbG9naW4tNTE1ZWIzNmItMzk5My00YTMzLTg1MGUtY2JmMDhjYzhjNzM1IiwibG9naW5fZmxvd19pZCI6IjgxMTI4NzRiLTFjNDUtNDEyNy1iOTdjLTMzZDFhODhhNDUyZSIsImRpc3BsYXlfbW9kZSI6InJlZGlyZWN0IiwiZmxvd190eXBlIjoiZW1haWxDb2RlIiwib3JpZ2luIjoiaHR0cHM6Ly9hdXRoLWRldi5jaXZpYy5jb20iLCJmb3J3YXJkZWRUb2tlbnMiOnsiZW1haWwiOnt9fX0.JdRkEjIsWA4Q27Y0iN1uJXEg9PcI4oTMyDjkobqimjc&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/0D29oWJWS0i2As-oZh6oO3s6V7ZgqxfRuaSru-Vrf44
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/0D29oWJWS0i2As-oZh6oO3s6V7ZgqxfRuaSru-Vrf44
+[REQUEST FAILED] POST https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us - net::ERR_ABORTED
+[REQUEST FAILED] POST https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us - net::ERR_ABORTED
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1

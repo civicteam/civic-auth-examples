@@ -1,0 +1,103 @@
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [warning] Module "buffer" has been externalized for browser compatibility. Cannot access "buffer.Buffer" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[PAGE CONSOLE] [warning] Module "buffer" has been externalized for browser compatibility. Cannot access "buffer.Buffer" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [warning] Lit is in dev mode. Not recommended for production! See https://lit.dev/msg/dev-mode for more information.
+[PAGE CONSOLE] [warning] Lit is in dev mode. Not recommended for production! See https://lit.dev/msg/dev-mode for more information.
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 401 (Unauthorized)
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 401 (Unauthorized)
+[PAGE CONSOLE] [error] TypeError: Object.values requires that input parameter not be null or undefined
+[PAGE CONSOLE] [error] TypeError: Object.values requires that input parameter not be null or undefined
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?client_id=demo-client-1&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&response_type=code&scope=openid+profile+email+offline_access&state=eyJ1dWlkIjoiOGNlZDgxYzItZGVlYy00OWRhLWEwZmMtOTcyN2RiM2Q0N2JhIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjMifQ%3D%3D&code_challenge=S8XagRDByDu-aw_emTNIMdwRwuyP-wGNs9brkoC0xFg&code_challenge_method=S256&prompt=consent
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?client_id=demo-client-1&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&response_type=code&scope=openid+profile+email+offline_access&state=eyJ1dWlkIjoiOGNlZDgxYzItZGVlYy00OWRhLWEwZmMtOTcyN2RiM2Q0N2JhIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjMifQ%3D%3D&code_challenge=S8XagRDByDu-aw_emTNIMdwRwuyP-wGNs9brkoC0xFg&code_challenge_method=S256&prompt=consent
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[PAGE CONSOLE] [debug] Storage access not available - passkey discovery may be limited
+[PAGE CONSOLE] [debug] Storage access not available - passkey discovery may be limited
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at unknown (http://localhost:3000/node_modules/.vite/deps/chunk-JR5EZCGM.js?v=0930bb20:10444:28)
+    at forEach (:1:11)
+    at replayBlockedMessages (http://localhost:3000/node_modules/.vite/deps/chunk-JR5EZCGM.js?v=0930bb20:10442:41)
+    at unknown (http://localhost:3000/node_modules/.vite/deps/chunk-JR5EZCGM.js?v=0930bb20:10954:78)
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at unknown (http://localhost:3000/node_modules/.vite/deps/chunk-JR5EZCGM.js?v=0930bb20:10444:28)
+    at forEach (:1:11)
+    at replayBlockedMessages (http://localhost:3000/node_modules/.vite/deps/chunk-JR5EZCGM.js?v=0930bb20:10442:41)
+    at unknown (http://localhost:3000/node_modules/.vite/deps/chunk-JR5EZCGM.js?v=0930bb20:10954:78)
+[BAD RESPONSE] 429 https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us
+[BAD RESPONSE] 429 https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 429 (Unknown Error)
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 429 (Unknown Error)
+[RESPONSE BODY] {"detail":"Sentry dropped data due to a quota or internal rate limit being reached. This will not affect your application. See https://docs.sentry.io/product/accounts/quotas/ for more information."}
+[RESPONSE BODY] {"detail":"Sentry dropped data due to a quota or internal rate limit being reached. This will not affect your application. See https://docs.sentry.io/product/accounts/quotas/ for more information."}
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at handleMessage (http://localhost:3000/node_modules/.vite/deps/chunk-JR5EZCGM.js?v=0930bb20:10371:26)
+    at unknown (http://localhost:3000/node_modules/.vite/deps/chunk-JR5EZCGM.js?v=0930bb20:10343:25)
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at handleMessage (http://localhost:3000/node_modules/.vite/deps/chunk-JR5EZCGM.js?v=0930bb20:10371:26)
+    at unknown (http://localhost:3000/node_modules/.vite/deps/chunk-JR5EZCGM.js?v=0930bb20:10343:25)
+Email slot count: 1
+Checking URL: https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiOGNlZDgxYzItZGVlYy00OWRhLWEwZmMtOTcyN2RiM2Q0N2JhIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjMifQ%3D%3D&client_id=demo-client-1&source_system_id=shTnKw_ZKcD5Kf2LbWl5MPMJHT3C7IN0r2wjkxVrmgW&scope=openid+profile+email+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&flow_id=oauth-login-848d9fe6-caa1-40ea-aefc-3036113bc1ae, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/email?loginFlowId=888d9289-2571-4b05-8088-c5c8a0c5db67&client_id=demo-client-1&source_system_id=shTnKw_ZKcD5Kf2LbWl5MPMJHT3C7IN0r2wjkxVrmgW&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=215751%40simulator.amazonses.com&_rsc=725kn, hasLoginFlowId: true, isEmailEndpoint: true, isVerifyEndpoint: false
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=888d9289-2571-4b05-8088-c5c8a0c5db67&client_id=demo-client-1&source_system_id=shTnKw_ZKcD5Kf2LbWl5MPMJHT3C7IN0r2wjkxVrmgW&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=215751%40simulator.amazonses.com&_rsc=725kn
+Extracted loginFlowId: 888d9289-2571-4b05-8088-c5c8a0c5db67
+[PAGE CONSOLE] [log] Loading login flow data...
+[PAGE CONSOLE] [log] Loading login flow data...
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at handleMessage (http://localhost:3000/node_modules/.vite/deps/chunk-JR5EZCGM.js?v=0930bb20:10371:26)
+    at unknown (http://localhost:3000/node_modules/.vite/deps/chunk-JR5EZCGM.js?v=0930bb20:10343:25)
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at handleMessage (http://localhost:3000/node_modules/.vite/deps/chunk-JR5EZCGM.js?v=0930bb20:10371:26)
+    at unknown (http://localhost:3000/node_modules/.vite/deps/chunk-JR5EZCGM.js?v=0930bb20:10343:25)
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: 888d9289-2571-4b05-8088-c5c8a0c5db67
+Found verification code for loginFlowId 888d9289-2571-4b05-8088-c5c8a0c5db67: 346747
+Database disconnected
+Retrieved verification code: 346747 for loginFlowId: 888d9289-2571-4b05-8088-c5c8a0c5db67
+[BAD RESPONSE] 302 https://auth-dev.civic.com/login/api/callback/email?state=888d9289-2571-4b05-8088-c5c8a0c5db67&code=346747
+[BAD RESPONSE] 302 https://auth-dev.civic.com/login/api/callback/email?state=888d9289-2571-4b05-8088-c5c8a0c5db67&code=346747
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/shTnKw_ZKcD5Kf2LbWl5MPMJHT3C7IN0r2wjkxVrmgW/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjIxNTc1MUBzaW11bGF0b3IuYW1hem9uc2VzLmNvbSIsInNjb3BlcyI6WyJvcGVuaWQiLCJvZmZsaW5lX2FjY2VzcyIsInByb2ZpbGUiLCJlbWFpbCIsIndhbGxldCIsImZvcndhcmRlZFRva2VucyIsInBhc3NrZXkiXSwiYXVkIjoiZGI3ZTg4YzEtZDk5Ny00MDk4LThjMDUtM2MyOGMwMTc3MWYzIiwic3ViIjoiNTUyNmQ0ODEtNGQ5Ni00NWQzLTllZWMtMmI4MTYwZDYyOGU0IiwiaWRUb2tlblRUTCI6MzYwMCwiYWNjZXNzVG9rZW5UVEwiOjM2MDAsInJlZnJlc2hUb2tlblRUTCI6ODY0MDAsImNsaWVudElkIjoiZGVtby1jbGllbnQtMSIsInByb3ZpZGVyIjoiZW1haWwiLCJmbG93X2lkIjoib2F1dGgtbG9naW4tODQ4ZDlmZTYtY2FhMS00MGVhLWFlZmMtMzAzNjExM2JjMWFlIiwibG9naW5fZmxvd19pZCI6Ijg4OGQ5Mjg5LTI1NzEtNGIwNS04MDg4LWM1YzhhMGM1ZGI2NyIsImRpc3BsYXlfbW9kZSI6InJlZGlyZWN0IiwiZmxvd190eXBlIjoiZW1haWxDb2RlIiwib3JpZ2luIjoiaHR0cHM6Ly9hdXRoLWRldi5jaXZpYy5jb20iLCJmb3J3YXJkZWRUb2tlbnMiOnsiZW1haWwiOnt9fX0.fBOugHr3eoKK-hoAYL760PEUjzqq_HSJM2bhHbJhKpw&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/shTnKw_ZKcD5Kf2LbWl5MPMJHT3C7IN0r2wjkxVrmgW/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjIxNTc1MUBzaW11bGF0b3IuYW1hem9uc2VzLmNvbSIsInNjb3BlcyI6WyJvcGVuaWQiLCJvZmZsaW5lX2FjY2VzcyIsInByb2ZpbGUiLCJlbWFpbCIsIndhbGxldCIsImZvcndhcmRlZFRva2VucyIsInBhc3NrZXkiXSwiYXVkIjoiZGI3ZTg4YzEtZDk5Ny00MDk4LThjMDUtM2MyOGMwMTc3MWYzIiwic3ViIjoiNTUyNmQ0ODEtNGQ5Ni00NWQzLTllZWMtMmI4MTYwZDYyOGU0IiwiaWRUb2tlblRUTCI6MzYwMCwiYWNjZXNzVG9rZW5UVEwiOjM2MDAsInJlZnJlc2hUb2tlblRUTCI6ODY0MDAsImNsaWVudElkIjoiZGVtby1jbGllbnQtMSIsInByb3ZpZGVyIjoiZW1haWwiLCJmbG93X2lkIjoib2F1dGgtbG9naW4tODQ4ZDlmZTYtY2FhMS00MGVhLWFlZmMtMzAzNjExM2JjMWFlIiwibG9naW5fZmxvd19pZCI6Ijg4OGQ5Mjg5LTI1NzEtNGIwNS04MDg4LWM1YzhhMGM1ZGI2NyIsImRpc3BsYXlfbW9kZSI6InJlZGlyZWN0IiwiZmxvd190eXBlIjoiZW1haWxDb2RlIiwib3JpZ2luIjoiaHR0cHM6Ly9hdXRoLWRldi5jaXZpYy5jb20iLCJmb3J3YXJkZWRUb2tlbnMiOnsiZW1haWwiOnt9fX0.fBOugHr3eoKK-hoAYL760PEUjzqq_HSJM2bhHbJhKpw&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/shTnKw_ZKcD5Kf2LbWl5MPMJHT3C7IN0r2wjkxVrmgW
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/shTnKw_ZKcD5Kf2LbWl5MPMJHT3C7IN0r2wjkxVrmgW
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [warning] Module "buffer" has been externalized for browser compatibility. Cannot access "buffer.Buffer" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[PAGE CONSOLE] [warning] Module "buffer" has been externalized for browser compatibility. Cannot access "buffer.Buffer" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [warning] Lit is in dev mode. Not recommended for production! See https://lit.dev/msg/dev-mode for more information.
+[PAGE CONSOLE] [warning] Lit is in dev mode. Not recommended for production! See https://lit.dev/msg/dev-mode for more information.
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 401 (Unauthorized)
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 401 (Unauthorized)
+[PAGE CONSOLE] [error] TypeError: Object.values requires that input parameter not be null or undefined
+[PAGE CONSOLE] [error] TypeError: Object.values requires that input parameter not be null or undefined

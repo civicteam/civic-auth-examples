@@ -1,0 +1,54 @@
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[PAGE CONSOLE] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[REQUEST FAILED] GET https://auth-dev.civic.com/oauth/.well-known/openid-configuration - net::ERR_ABORTED
+[REQUEST FAILED] GET https://auth-dev.civic.com/oauth/.well-known/openid-configuration - net::ERR_ABORTED
+[PAGE CONSOLE] [log] onSignIn callback executed: {options: Object, timestamp: 2025-10-10T19:50:32.876Z}
+[PAGE CONSOLE] [log] onSignIn callback executed: {options: Object, timestamp: 2025-10-10T19:50:32.876Z}
+[PAGE CONSOLE] [error] Failed to initialize auth in CivicAuthProvider: CivicAuthError: Failed to fetch
+    at _CivicAuth.init (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=29a8d477:8439:13)
+    at async _CivicAuth.create (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=29a8d477:8335:5)
+    at async _GlobalAuthManager._doInitialize (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=29a8d477:9639:19)
+[PAGE CONSOLE] [error] Failed to initialize auth in CivicAuthProvider: CivicAuthError: Failed to fetch
+    at _CivicAuth.init (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=29a8d477:8439:13)
+    at async _CivicAuth.create (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=29a8d477:8335:5)
+    at async _GlobalAuthManager._doInitialize (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=29a8d477:9639:19)
+[PAGE CONSOLE] [error] Failed to initialize auth: CivicAuthError: Failed to fetch
+    at _CivicAuth.init (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=29a8d477:8439:13)
+    at async _CivicAuth.create (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=29a8d477:8335:5)
+    at async _GlobalAuthManager._doInitialize (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=29a8d477:9639:19)
+[PAGE CONSOLE] [error] Failed to initialize auth: CivicAuthError: Failed to fetch
+    at _CivicAuth.init (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=29a8d477:8439:13)
+    at async _CivicAuth.create (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=29a8d477:8335:5)
+    at async _GlobalAuthManager._doInitialize (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=29a8d477:9639:19)
+[PAGE CONSOLE] [error] Failed to initialize auth in CivicAuthProvider: CivicAuthError: Failed to fetch
+    at _CivicAuth.init (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=29a8d477:8439:13)
+    at async _CivicAuth.create (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=29a8d477:8335:5)
+    at async _GlobalAuthManager._doInitialize (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=29a8d477:9639:19)
+[PAGE CONSOLE] [error] Failed to initialize auth in CivicAuthProvider: CivicAuthError: Failed to fetch
+    at _CivicAuth.init (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=29a8d477:8439:13)
+    at async _CivicAuth.create (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=29a8d477:8335:5)
+    at async _GlobalAuthManager._doInitialize (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=29a8d477:9639:19)
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[PAGE CONSOLE] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?client_id=demo-client-1&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&response_type=code&scope=openid+profile+email+offline_access&state=eyJ1dWlkIjoiNjRlZWM3NzAtZTkzYy00ODU5LThlZmEtNDg0YTk5YWRlMTI4IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjMifQ%3D%3D&code_challenge=VMMNb0wGZQjpizasdeNa4-zS9s-t8ojhh6WJiR34IDM&code_challenge_method=S256&prompt=consent
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?client_id=demo-client-1&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&response_type=code&scope=openid+profile+email+offline_access&state=eyJ1dWlkIjoiNjRlZWM3NzAtZTkzYy00ODU5LThlZmEtNDg0YTk5YWRlMTI4IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjMifQ%3D%3D&code_challenge=VMMNb0wGZQjpizasdeNa4-zS9s-t8ojhh6WJiR34IDM&code_challenge_method=S256&prompt=consent
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[BAD RESPONSE] 429 https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us
+[BAD RESPONSE] 429 https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 429 ()
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 429 ()
+[RESPONSE BODY] {"detail":"Sentry dropped data due to a quota or internal rate limit being reached. This will not affect your application. See https://docs.sentry.io/product/accounts/quotas/ for more information."}
+[RESPONSE BODY] {"detail":"Sentry dropped data due to a quota or internal rate limit being reached. This will not affect your application. See https://docs.sentry.io/product/accounts/quotas/ for more information."}
