@@ -9,61 +9,61 @@ test.describe('Civic Auth Applications', () => {
     await allure.suite('Login');
     await allure.feature('Express Login');
   });
-  test('should complete login flow and redirect to hello page', async ({ page }) => {
+  
+  test('should complete login flow and redirect to hello page', async ({ page, browserName }) => {
     setupDiagnostics(page);
-    // Intercept the external Civic auth server and redirect back to your app
-    await page.route('**auth-dev.civic.com/**', async (route) => {
-      const url = new URL(route.request().url());
-      const redirectUri = url.searchParams.get('redirect_uri') || 'http://localhost:3000/auth/callback';
-      // Use JavaScript redirect instead of 302 status (Playwright limitation)
-      await route.fulfill({
-        status: 200,
-        contentType: 'text/html',
-        body: `<script>window.location.href = '${redirectUri}?code=mock-code&state=mock-state';</script>`
-      });
-    });
+    test.setTimeout(120000); // Increase timeout to 2 minutes
+    
+    // Go to the app home page - Express redirects to Civic auth
+    await page.goto('http://localhost:3000', { waitUntil: 'domcontentloaded' });
+    
+    // Wait for redirect to auth-dev.civic.com (full page redirect, not iframe)
+    await page.waitForURL(/.*auth-dev\.civic\.com.*/, { timeout: 30000 });
+ 
+    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
+    
+    // Wait for the login UI to fully load (no iframe - direct page)
+    try {
+      const loadingElement = page.locator('#civic-login-app-loading');
+      const isLoadingVisible = await loadingElement.isVisible({ timeout: 5000 }).catch(() => false);
+      
+      if (isLoadingVisible) {
+        await loadingElement.waitFor({ state: 'hidden', timeout: 45000 });
+      }
+    } catch (error) {
+      // Loading element might not exist, that's ok
+    }
+    
+    // Wait for login elements to appear
+    await page.locator('[data-testid*="civic-login"]').first().waitFor({ timeout: 30000 });
+    
+    // Look for the dummy button (directly on page, not in iframe)
+    const dummyButton = page.locator('[data-testid="civic-login-oidc-button-dummy"]');
+    await dummyButton.waitFor({ state: 'visible', timeout: 30000 });
+    
+    // Add a small delay to ensure button is fully interactive
+    await page.waitForTimeout(1000);
+    
+    // Click the dummy button
+    await dummyButton.click({ timeout: 20000 });
+    
+    // Wait for any loading to complete after click
+    try {
+      const loadingAfterClick = page.locator('#civic-login-app-loading');
+      const isLoadingVisibleAfterClick = await loadingAfterClick.isVisible({ timeout: 3000 }).catch(() => false);
+      
+      if (isLoadingVisibleAfterClick) {
+        await loadingAfterClick.waitFor({ state: 'hidden', timeout: 60000 });
+      }
+    } catch (error) {
+      // Loading handling - if it fails, continue
+    }
 
-    // Intercept your app's callback and set the cookie, then redirect to /admin/hello
-    await page.route('**/auth/callback*', async (route) => {
-      const nowInSeconds = Math.floor(Date.now() / 1000);
-      const expiresInSeconds = nowInSeconds + 60;
-      const expires = new Date(expiresInSeconds * 1000).toUTCString();
-
-      const mockJwt = {
-        alg: 'RS256',
-        typ: 'JWT',
-        kid: 'civic-auth-token-signer-key'
-      };
-
-      const mockPayload = {
-        sub: 'test-user',
-        exp: expiresInSeconds,
-        iat: nowInSeconds
-      };
-
-      const mockToken = `${Buffer.from(JSON.stringify(mockJwt)).toString('base64')}.${Buffer.from(JSON.stringify(mockPayload)).toString('base64')}.mocksignature`;
-
-      // Fulfill with a script that sets the cookie and redirects
-      await route.fulfill({
-        status: 200,
-        contentType: 'text/html',
-        body: `
-          <script>
-            document.cookie = "id_token=${mockToken}; Path=/; Expires=${expires}; SameSite=Lax";
-            window.location.href = '/admin/hello';
-          </script>
-        `
-      });
-    });
-
-    // Go to the app home page
-    await page.goto('http://localhost:3000');
-
-    // Click log in button
-    await page.locator('[data-testid="civic-login-oidc-button-dummy"]').click({ timeout: 20000 });
-
-    // Now you can immediately check the URL and page content
-    await expect(page).toHaveURL(/.*\/admin\/hello/, { timeout: 20000 });
-    await expect(page.locator('h1')).toContainText('Hello');
+    // Wait for redirect to /admin/hello
+    await expect(page).toHaveURL(/.*\/admin\/hello/, { timeout: 60000 });
+    
+    // Check the page content
+    await expect(page.locator('h1')).toContainText('Hello', { timeout: 10000 });
   });
 }); 
