@@ -1,0 +1,197 @@
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 50ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 50ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 108ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 108ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 34ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 34ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 46ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 46ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 45ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 45ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 62ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 62ms
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?response_type=code&client_id=demo-client-1&state=eyJ1dWlkIjoiYjBlYjA4MjktN2FlNC00OTI2LWFjM2EtNGYyNzI1NDMzYzQwIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&code_challenge=wAMXCUqvcOtA6IQEykbm81zDNDBWc9-Ah4Sj4TuNL4g&code_challenge_method=S256&prompt=consent
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?response_type=code&client_id=demo-client-1&state=eyJ1dWlkIjoiYjBlYjA4MjktN2FlNC00OTI2LWFjM2EtNGYyNzI1NDMzYzQwIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&code_challenge=wAMXCUqvcOtA6IQEykbm81zDNDBWc9-Ah4Sj4TuNL4g&code_challenge_method=S256&prompt=consent
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[PAGE CONSOLE] [debug] Storage access not available - passkey discovery may be limited
+[PAGE CONSOLE] [debug] Storage access not available - passkey discovery may be limited
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at unknown (http://localhost:3000/_next/static/chunks/node_modules_@civic_auth_dist_6e7b40ab._.js:5500:38)
+    at forEach (:1:11)
+    at replayBlockedMessages (http://localhost:3000/_next/static/chunks/node_modules_@civic_auth_dist_6e7b40ab._.js:5498:47)
+    at unknown (http://localhost:3000/_next/static/chunks/node_modules_@civic_auth_dist_6e7b40ab._.js:6224:60)
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at unknown (http://localhost:3000/_next/static/chunks/node_modules_@civic_auth_dist_6e7b40ab._.js:5500:38)
+    at forEach (:1:11)
+    at replayBlockedMessages (http://localhost:3000/_next/static/chunks/node_modules_@civic_auth_dist_6e7b40ab._.js:5498:47)
+    at unknown (http://localhost:3000/_next/static/chunks/node_modules_@civic_auth_dist_6e7b40ab._.js:6224:60)
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at handleMessage (http://localhost:3000/_next/static/chunks/node_modules_@civic_auth_dist_6e7b40ab._.js:5414:34)
+    at unknown (http://localhost:3000/_next/static/chunks/node_modules_@civic_auth_dist_6e7b40ab._.js:5375:31)
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at handleMessage (http://localhost:3000/_next/static/chunks/node_modules_@civic_auth_dist_6e7b40ab._.js:5414:34)
+    at unknown (http://localhost:3000/_next/static/chunks/node_modules_@civic_auth_dist_6e7b40ab._.js:5375:31)
+Email slot count: 1
+Checking URL: https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiYjBlYjA4MjktN2FlNC00OTI2LWFjM2EtNGYyNzI1NDMzYzQwIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&client_id=demo-client-1&source_system_id=H_Y9OiALZdJ0ucwd86PswvP6kljGhqRF3q-_fXDYu2J&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&flow_id=oauth-login-ad86b85f-328e-48fe-b31f-da39a8f539e3, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/email?loginFlowId=9d0741d3-d7fa-4a7f-8b8f-ee574d921beb&client_id=demo-client-1&source_system_id=H_Y9OiALZdJ0ucwd86PswvP6kljGhqRF3q-_fXDYu2J&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&emailAddress=266617%40simulator.amazonses.com&_rsc=l3qpt, hasLoginFlowId: true, isEmailEndpoint: true, isVerifyEndpoint: false
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=9d0741d3-d7fa-4a7f-8b8f-ee574d921beb&client_id=demo-client-1&source_system_id=H_Y9OiALZdJ0ucwd86PswvP6kljGhqRF3q-_fXDYu2J&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&emailAddress=266617%40simulator.amazonses.com&_rsc=l3qpt
+Extracted loginFlowId: 9d0741d3-d7fa-4a7f-8b8f-ee574d921beb
+[PAGE CONSOLE] [log] Loading login flow data...
+[PAGE CONSOLE] [log] Loading login flow data...
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at handleMessage (http://localhost:3000/_next/static/chunks/node_modules_@civic_auth_dist_6e7b40ab._.js:5414:34)
+    at unknown (http://localhost:3000/_next/static/chunks/node_modules_@civic_auth_dist_6e7b40ab._.js:5375:31)
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at handleMessage (http://localhost:3000/_next/static/chunks/node_modules_@civic_auth_dist_6e7b40ab._.js:5414:34)
+    at unknown (http://localhost:3000/_next/static/chunks/node_modules_@civic_auth_dist_6e7b40ab._.js:5375:31)
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: 9d0741d3-d7fa-4a7f-8b8f-ee574d921beb
+Found verification code for loginFlowId 9d0741d3-d7fa-4a7f-8b8f-ee574d921beb: 195957
+Database disconnected
+Retrieved verification code: 195957 for loginFlowId: 9d0741d3-d7fa-4a7f-8b8f-ee574d921beb
+[BAD RESPONSE] 302 https://auth-dev.civic.com/login/api/callback/email?state=9d0741d3-d7fa-4a7f-8b8f-ee574d921beb&code=195957
+[BAD RESPONSE] 302 https://auth-dev.civic.com/login/api/callback/email?state=9d0741d3-d7fa-4a7f-8b8f-ee574d921beb&code=195957
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/H_Y9OiALZdJ0ucwd86PswvP6kljGhqRF3q-_fXDYu2J/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjI2NjYxN0BzaW11bGF0b3IuYW1hem9uc2VzLmNvbSIsInNjb3BlcyI6WyJvcGVuaWQiLCJvZmZsaW5lX2FjY2VzcyIsInByb2ZpbGUiLCJlbWFpbCIsIndhbGxldCIsImZvcndhcmRlZFRva2VucyIsInBhc3NrZXkiXSwiYXVkIjoiZGI3ZTg4YzEtZDk5Ny00MDk4LThjMDUtM2MyOGMwMTc3MWYzIiwic3ViIjoiYjE2MjdhYzAtYjUyZS00NDg2LTk4NGUtY2U1MzIwYjQzMTM3IiwiaWRUb2tlblRUTCI6MzYwMCwiYWNjZXNzVG9rZW5UVEwiOjM2MDAsInJlZnJlc2hUb2tlblRUTCI6ODY0MDAsImNsaWVudElkIjoiZGVtby1jbGllbnQtMSIsInByb3ZpZGVyIjoiZW1haWwiLCJmbG93X2lkIjoib2F1dGgtbG9naW4tYWQ4NmI4NWYtMzI4ZS00OGZlLWIzMWYtZGEzOWE4ZjUzOWUzIiwibG9naW5fZmxvd19pZCI6IjlkMDc0MWQzLWQ3ZmEtNGE3Zi04YjhmLWVlNTc0ZDkyMWJlYiIsImRpc3BsYXlfbW9kZSI6InJlZGlyZWN0IiwiZmxvd190eXBlIjoiZW1haWxDb2RlIiwib3JpZ2luIjoiaHR0cHM6Ly9hdXRoLWRldi5jaXZpYy5jb20iLCJmb3J3YXJkZWRUb2tlbnMiOnsiZW1haWwiOnt9fX0.fWOelioaSFTbhZZVKlcYJTSAj1zd1g0zF0gQ5h6ef2U&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/H_Y9OiALZdJ0ucwd86PswvP6kljGhqRF3q-_fXDYu2J/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjI2NjYxN0BzaW11bGF0b3IuYW1hem9uc2VzLmNvbSIsInNjb3BlcyI6WyJvcGVuaWQiLCJvZmZsaW5lX2FjY2VzcyIsInByb2ZpbGUiLCJlbWFpbCIsIndhbGxldCIsImZvcndhcmRlZFRva2VucyIsInBhc3NrZXkiXSwiYXVkIjoiZGI3ZTg4YzEtZDk5Ny00MDk4LThjMDUtM2MyOGMwMTc3MWYzIiwic3ViIjoiYjE2MjdhYzAtYjUyZS00NDg2LTk4NGUtY2U1MzIwYjQzMTM3IiwiaWRUb2tlblRUTCI6MzYwMCwiYWNjZXNzVG9rZW5UVEwiOjM2MDAsInJlZnJlc2hUb2tlblRUTCI6ODY0MDAsImNsaWVudElkIjoiZGVtby1jbGllbnQtMSIsInByb3ZpZGVyIjoiZW1haWwiLCJmbG93X2lkIjoib2F1dGgtbG9naW4tYWQ4NmI4NWYtMzI4ZS00OGZlLWIzMWYtZGEzOWE4ZjUzOWUzIiwibG9naW5fZmxvd19pZCI6IjlkMDc0MWQzLWQ3ZmEtNGE3Zi04YjhmLWVlNTc0ZDkyMWJlYiIsImRpc3BsYXlfbW9kZSI6InJlZGlyZWN0IiwiZmxvd190eXBlIjoiZW1haWxDb2RlIiwib3JpZ2luIjoiaHR0cHM6Ly9hdXRoLWRldi5jaXZpYy5jb20iLCJmb3J3YXJkZWRUb2tlbnMiOnsiZW1haWwiOnt9fX0.fWOelioaSFTbhZZVKlcYJTSAj1zd1g0zF0gQ5h6ef2U&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/H_Y9OiALZdJ0ucwd86PswvP6kljGhqRF3q-_fXDYu2J
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/H_Y9OiALZdJ0ucwd86PswvP6kljGhqRF3q-_fXDYu2J
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 159ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 159ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 16ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 16ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 81ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 81ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 28ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 28ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 28ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 28ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 48ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 48ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 10ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 10ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 39ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 39ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 21ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 21ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 39ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 39ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 35ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 35ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 49ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 49ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 32ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 32ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 54ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 54ms
+[PAGE CONSOLE] [error] Viewport argument key "interactive-widget" not recognized and ignored.
+[PAGE CONSOLE] [error] Viewport argument key "interactive-widget" not recognized and ignored.
+[PAGE CONSOLE] [error] Viewport argument key "interactive-widget" not recognized and ignored.
+[PAGE CONSOLE] [error] Viewport argument key "interactive-widget" not recognized and ignored.
+[PAGE CONSOLE] [error] Preflight response is not successful. Status code: 503
+[PAGE CONSOLE] [error] Preflight response is not successful. Status code: 503
+[PAGE ERROR] /sepolia-preconf.base.org/ due to access control checks.
+[ERROR STACK] 
+[PAGE ERROR] /sepolia-preconf.base.org/ due to access control checks.
+[ERROR STACK] 
+[REQUEST FAILED] POST https://sepolia-preconf.base.org/ - Preflight response is not successful. Status code: 503
+[REQUEST FAILED] POST https://sepolia-preconf.base.org/ - Preflight response is not successful. Status code: 503
+[PAGE CONSOLE] [error] Failed to load resource: Preflight response is not successful. Status code: 503
+[PAGE CONSOLE] [error] Failed to load resource: Preflight response is not successful. Status code: 503
+[PAGE CONSOLE] [error] Failed to build MetakeepWeb3Client TypeError: Load failed
+[PAGE CONSOLE] [error] Failed to build MetakeepWeb3Client TypeError: Load failed
+[PAGE CONSOLE] [info] Successfully preconnected to https://fonts.gstatic.com/
+[PAGE CONSOLE] [info] Successfully preconnected to https://fonts.gstatic.com/
+[PAGE CONSOLE] [info] Successfully preconnected to https://fonts.gstatic.com/
+[PAGE CONSOLE] [info] Successfully preconnected to https://fonts.gstatic.com/
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 181ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 181ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 40ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 40ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 17ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 17ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 34ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 34ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 18ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 18ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 24ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 24ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 35ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 35ms

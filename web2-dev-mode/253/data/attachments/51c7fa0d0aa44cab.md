@@ -1,0 +1,50 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e3]:
+      - heading "Civic Auth (NextJS)" [level=1] [ref=e4]
+      - button [ref=e6]
+      - button "Sign in (Custom)" [ref=e7] [cursor=pointer]
+  - button "Open Next.js Dev Tools" [ref=e13] [cursor=pointer]:
+    - img [ref=e14]
+  - alert [ref=e19]
+  - generic [ref=e21]:
+    - iframe [active] [ref=e23]:
+      - generic [ref=f1e1]:
+        - main [ref=f1e2]:
+          - generic [ref=f1e7]:
+            - generic [ref=f1e9]:
+              - heading "Login" [level=2] [ref=f1e10]
+              - heading "Log in or create account" [level=2] [ref=f1e11]
+            - generic [ref=f1e12]:
+              - generic [ref=f1e15]:
+                - button "Google" [ref=f1e16] [cursor=pointer]:
+                  - img "Google" [ref=f1e17]
+                - button "Dummy" [ref=f1e18] [cursor=pointer]:
+                  - img "Dummy" [ref=f1e19]
+                - button "Github" [ref=f1e20] [cursor=pointer]:
+                  - img "Github" [ref=f1e21]
+                - button "Discord" [ref=f1e22] [cursor=pointer]:
+                  - img "Discord" [ref=f1e23]
+                - button "Facebook" [ref=f1e24] [cursor=pointer]:
+                  - img "Facebook" [ref=f1e25]
+                - button "X" [ref=f1e26] [cursor=pointer]:
+                  - img "X" [ref=f1e27]
+              - heading "OR" [level=2] [ref=f1e29]
+              - generic [ref=f1e31]:
+                - textbox "Email address" [active] [ref=f1e32]: 135876@simulator.amazonses.com
+                - button [ref=f1e34] [cursor=pointer]:
+                  - img [ref=f1e35]
+            - generic [ref=f1e37]:
+              - generic [ref=f1e38]: Powered by
+              - link [ref=f1e39]:
+                - /url: https://www.civic.com/
+                - img [ref=f1e40]
+        - region "Notifications (F8)":
+          - list
+        - alert [ref=f1e49]
+    - button "Close" [ref=e24] [cursor=pointer]:
+      - img [ref=e25]
+```

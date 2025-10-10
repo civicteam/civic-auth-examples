@@ -1,0 +1,99 @@
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [log] Web3Zone Debug Info: {user: null, isLoading: false, walletCreationInProgress: false}
+[PAGE CONSOLE] [log] Web3Zone Debug Info: {user: null, isLoading: false, walletCreationInProgress: false}
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?response_type=code&client_id=demo-client-1&state=eyJ1dWlkIjoiZDA1Yzg4OGQtMzgxZC00NjM0LWI1MmEtMWY5NTI4ODBlYTMxIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&code_challenge=I1fMwdDOVY0GvcGV2YpOmLy31Y_ooq-dDw_MiINH_zI&code_challenge_method=S256&prompt=consent
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?response_type=code&client_id=demo-client-1&state=eyJ1dWlkIjoiZDA1Yzg4OGQtMzgxZC00NjM0LWI1MmEtMWY5NTI4ODBlYTMxIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&code_challenge=I1fMwdDOVY0GvcGV2YpOmLy31Y_ooq-dDw_MiINH_zI&code_challenge_method=S256&prompt=consent
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[PAGE CONSOLE] [debug] Storage access not available - passkey discovery may be limited
+[PAGE CONSOLE] [debug] Storage access not available - passkey discovery may be limited
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at unknown (http://localhost:3000/_next/static/chunks/660-64bf869a34111962.js:49:123204)
+    at forEach (:1:11)
+    at replayBlockedMessages (http://localhost:3000/_next/static/chunks/660-64bf869a34111962.js:49:123136)
+    at unknown (http://localhost:3000/_next/static/chunks/660-64bf869a34111962.js:58:372)
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at unknown (http://localhost:3000/_next/static/chunks/660-64bf869a34111962.js:49:123204)
+    at forEach (:1:11)
+    at replayBlockedMessages (http://localhost:3000/_next/static/chunks/660-64bf869a34111962.js:49:123136)
+    at unknown (http://localhost:3000/_next/static/chunks/660-64bf869a34111962.js:58:372)
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at handleMessage (http://localhost:3000/_next/static/chunks/660-64bf869a34111962.js:49:121437)
+    at unknown (http://localhost:3000/_next/static/chunks/660-64bf869a34111962.js:49:120738)
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at handleMessage (http://localhost:3000/_next/static/chunks/660-64bf869a34111962.js:49:121437)
+    at unknown (http://localhost:3000/_next/static/chunks/660-64bf869a34111962.js:49:120738)
+Email slot count: 1
+Checking URL: https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiZDA1Yzg4OGQtMzgxZC00NjM0LWI1MmEtMWY5NTI4ODBlYTMxIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&client_id=demo-client-1&source_system_id=ASVBGaFL-bZ9PNQ7S8FHKVtbnMrRO2ty-9o8NowXwRp&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&flow_id=oauth-login-9a90765a-6cd4-4eb6-af8b-813911bdc79a, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/email?loginFlowId=ae8c5321-9cf4-4f52-9076-44f73450532a&client_id=demo-client-1&source_system_id=ASVBGaFL-bZ9PNQ7S8FHKVtbnMrRO2ty-9o8NowXwRp&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&emailAddress=727149%40simulator.amazonses.com&_rsc=11rwb, hasLoginFlowId: true, isEmailEndpoint: true, isVerifyEndpoint: false
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=ae8c5321-9cf4-4f52-9076-44f73450532a&client_id=demo-client-1&source_system_id=ASVBGaFL-bZ9PNQ7S8FHKVtbnMrRO2ty-9o8NowXwRp&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&emailAddress=727149%40simulator.amazonses.com&_rsc=11rwb
+Extracted loginFlowId: ae8c5321-9cf4-4f52-9076-44f73450532a
+[PAGE CONSOLE] [log] Loading login flow data...
+[PAGE CONSOLE] [log] Loading login flow data...
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at handleMessage (http://localhost:3000/_next/static/chunks/660-64bf869a34111962.js:49:121437)
+    at unknown (http://localhost:3000/_next/static/chunks/660-64bf869a34111962.js:49:120738)
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at handleMessage (http://localhost:3000/_next/static/chunks/660-64bf869a34111962.js:49:121437)
+    at unknown (http://localhost:3000/_next/static/chunks/660-64bf869a34111962.js:49:120738)
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: ae8c5321-9cf4-4f52-9076-44f73450532a
+Found verification code for loginFlowId ae8c5321-9cf4-4f52-9076-44f73450532a: 734380
+Database disconnected
+Retrieved verification code: 734380 for loginFlowId: ae8c5321-9cf4-4f52-9076-44f73450532a
+[BAD RESPONSE] 302 https://auth-dev.civic.com/login/api/callback/email?state=ae8c5321-9cf4-4f52-9076-44f73450532a&code=734380
+[BAD RESPONSE] 302 https://auth-dev.civic.com/login/api/callback/email?state=ae8c5321-9cf4-4f52-9076-44f73450532a&code=734380
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/ASVBGaFL-bZ9PNQ7S8FHKVtbnMrRO2ty-9o8NowXwRp/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjcyNzE0OUBzaW11bGF0b3IuYW1hem9uc2VzLmNvbSIsInNjb3BlcyI6WyJvcGVuaWQiLCJvZmZsaW5lX2FjY2VzcyIsInByb2ZpbGUiLCJlbWFpbCIsIndhbGxldCIsImZvcndhcmRlZFRva2VucyIsInBhc3NrZXkiXSwiYXVkIjoiZGI3ZTg4YzEtZDk5Ny00MDk4LThjMDUtM2MyOGMwMTc3MWYzIiwic3ViIjoiZmFiMDRkZmUtNzMzNC00OGFmLWI2ZjEtODU5MjA5NmNlZjZkIiwiaWRUb2tlblRUTCI6MzYwMCwiYWNjZXNzVG9rZW5UVEwiOjM2MDAsInJlZnJlc2hUb2tlblRUTCI6ODY0MDAsImNsaWVudElkIjoiZGVtby1jbGllbnQtMSIsInByb3ZpZGVyIjoiZW1haWwiLCJmbG93X2lkIjoib2F1dGgtbG9naW4tOWE5MDc2NWEtNmNkNC00ZWI2LWFmOGItODEzOTExYmRjNzlhIiwibG9naW5fZmxvd19pZCI6ImFlOGM1MzIxLTljZjQtNGY1Mi05MDc2LTQ0ZjczNDUwNTMyYSIsImRpc3BsYXlfbW9kZSI6InJlZGlyZWN0IiwiZmxvd190eXBlIjoiZW1haWxDb2RlIiwib3JpZ2luIjoiaHR0cHM6Ly9hdXRoLWRldi5jaXZpYy5jb20iLCJmb3J3YXJkZWRUb2tlbnMiOnsiZW1haWwiOnt9fX0.1WQeECZ2pcPbvsiiOF3_bq-qYXqTt2n6uqowfpL9xGI&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/ASVBGaFL-bZ9PNQ7S8FHKVtbnMrRO2ty-9o8NowXwRp/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjcyNzE0OUBzaW11bGF0b3IuYW1hem9uc2VzLmNvbSIsInNjb3BlcyI6WyJvcGVuaWQiLCJvZmZsaW5lX2FjY2VzcyIsInByb2ZpbGUiLCJlbWFpbCIsIndhbGxldCIsImZvcndhcmRlZFRva2VucyIsInBhc3NrZXkiXSwiYXVkIjoiZGI3ZTg4YzEtZDk5Ny00MDk4LThjMDUtM2MyOGMwMTc3MWYzIiwic3ViIjoiZmFiMDRkZmUtNzMzNC00OGFmLWI2ZjEtODU5MjA5NmNlZjZkIiwiaWRUb2tlblRUTCI6MzYwMCwiYWNjZXNzVG9rZW5UVEwiOjM2MDAsInJlZnJlc2hUb2tlblRUTCI6ODY0MDAsImNsaWVudElkIjoiZGVtby1jbGllbnQtMSIsInByb3ZpZGVyIjoiZW1haWwiLCJmbG93X2lkIjoib2F1dGgtbG9naW4tOWE5MDc2NWEtNmNkNC00ZWI2LWFmOGItODEzOTExYmRjNzlhIiwibG9naW5fZmxvd19pZCI6ImFlOGM1MzIxLTljZjQtNGY1Mi05MDc2LTQ0ZjczNDUwNTMyYSIsImRpc3BsYXlfbW9kZSI6InJlZGlyZWN0IiwiZmxvd190eXBlIjoiZW1haWxDb2RlIiwib3JpZ2luIjoiaHR0cHM6Ly9hdXRoLWRldi5jaXZpYy5jb20iLCJmb3J3YXJkZWRUb2tlbnMiOnsiZW1haWwiOnt9fX0.1WQeECZ2pcPbvsiiOF3_bq-qYXqTt2n6uqowfpL9xGI&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/ASVBGaFL-bZ9PNQ7S8FHKVtbnMrRO2ty-9o8NowXwRp
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/ASVBGaFL-bZ9PNQ7S8FHKVtbnMrRO2ty-9o8NowXwRp
+[PAGE CONSOLE] [log] Web3U Debug Info: {isConnected: false, address: undefined, chain: undefined, chainId: 1, effectiveChain: undefined}
+[PAGE CONSOLE] [log] Web3U Debug Info: {isConnected: false, address: undefined, chain: undefined, chainId: 1, effectiveChain: undefined}
+[PAGE CONSOLE] [log] Web3Zone Debug Info: {user: null, isLoading: true, walletCreationInProgress: false}
+[PAGE CONSOLE] [log] Web3Zone Debug Info: {user: null, isLoading: true, walletCreationInProgress: false}
+[PAGE CONSOLE] [log] Web3U Debug Info: {isConnected: false, address: undefined, chain: undefined, chainId: 1, effectiveChain: undefined}
+[PAGE CONSOLE] [log] Web3U Debug Info: {isConnected: false, address: undefined, chain: undefined, chainId: 1, effectiveChain: undefined}
+[PAGE CONSOLE] [log] Web3U Debug Info: {isConnected: false, address: undefined, chain: undefined, chainId: 1, effectiveChain: undefined}
+[PAGE CONSOLE] [log] Web3U Debug Info: {isConnected: false, address: undefined, chain: undefined, chainId: 1, effectiveChain: undefined}
+[PAGE CONSOLE] [error] Viewport argument key "interactive-widget" not recognized and ignored.
+[PAGE CONSOLE] [error] Viewport argument key "interactive-widget" not recognized and ignored.
+[PAGE CONSOLE] [error] Viewport argument key "interactive-widget" not recognized and ignored.
+[PAGE CONSOLE] [error] Viewport argument key "interactive-widget" not recognized and ignored.
+[PAGE CONSOLE] [info] Successfully preconnected to https://fonts.gstatic.com/
+[PAGE CONSOLE] [info] Successfully preconnected to https://fonts.gstatic.com/
+[PAGE CONSOLE] [error] Preflight response is not successful. Status code: 503
+[PAGE CONSOLE] [error] Preflight response is not successful. Status code: 503
+[PAGE ERROR] /sepolia-preconf.base.org/ due to access control checks.
+[ERROR STACK] 
+[PAGE ERROR] /sepolia-preconf.base.org/ due to access control checks.
+[ERROR STACK] 
+[REQUEST FAILED] POST https://sepolia-preconf.base.org/ - Preflight response is not successful. Status code: 503
+[REQUEST FAILED] POST https://sepolia-preconf.base.org/ - Preflight response is not successful. Status code: 503
+[PAGE CONSOLE] [error] Failed to load resource: Preflight response is not successful. Status code: 503
+[PAGE CONSOLE] [error] Failed to load resource: Preflight response is not successful. Status code: 503
+[PAGE CONSOLE] [error] Failed to build MetakeepWeb3Client TypeError: Load failed
+[PAGE CONSOLE] [error] Failed to build MetakeepWeb3Client TypeError: Load failed
+[PAGE CONSOLE] [info] Successfully preconnected to https://fonts.gstatic.com/
+[PAGE CONSOLE] [info] Successfully preconnected to https://fonts.gstatic.com/
