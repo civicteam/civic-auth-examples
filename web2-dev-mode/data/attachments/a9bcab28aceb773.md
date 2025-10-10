@@ -1,0 +1,63 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e3]:
+      - heading "Civic Auth - OnSignIn Callback Test (NextJS)" [level=1] [ref=e4]
+      - generic [ref=e5]:
+        - heading "Next.js onSignIn Implementation" [level=2] [ref=e6]
+        - paragraph [ref=e7]:
+          - strong [ref=e8]: "Approach:"
+          - text: Using
+          - code [ref=e9]: useUser
+          - text: hook with
+          - code [ref=e10]: onSignIn
+          - text: callback
+        - paragraph [ref=e11]:
+          - text: "Note: Provider-level"
+          - code [ref=e12]: onSignIn
+          - text: is not supported in Next.js due to SSR constraints. The recommended approach is to pass
+          - code [ref=e13]: onSignIn
+          - text: to the
+          - code [ref=e14]: useUser
+          - text: hook.
+      - button "Log in" [ref=e16] [cursor=pointer]:
+        - generic [ref=e18]: Log in
+      - generic [ref=e19]:
+        - heading "OnSignIn Callback Test Component" [level=3] [ref=e20]
+        - generic [ref=e21]:
+          - button "Test Sign In" [ref=e22] [cursor=pointer]
+          - button "Test Sign Out" [disabled] [ref=e23]
+          - button "Clear Log" [ref=e24] [cursor=pointer]
+        - generic [ref=e25]:
+          - strong [ref=e26]: "User Status:"
+          - text: Not logged in
+          - strong [ref=e27]: "Auth Status:"
+          - text: unauthenticated
+        - generic [ref=e28]:
+          - strong [ref=e29]: "Callback Log:"
+          - generic [ref=e30]:
+            - generic [ref=e31]: "[2025-10-10T16:11:58.973Z] Auth status changed to: unauthenticated"
+            - generic [ref=e32]: "[2025-10-10T16:11:59.839Z] Auth status changed to: error"
+            - generic [ref=e33]: "[2025-10-10T16:12:04.511Z] Auth status changed to: unauthenticated"
+            - generic [ref=e34]: "[2025-10-10T16:12:07.635Z] Starting sign-in attempt"
+            - generic [ref=e35]: "[2025-10-10T16:12:07.703Z] Auth status changed to: authenticating"
+            - generic [ref=e36]: "[2025-10-10T16:12:22.320Z] useUser onSignIn called with SUCCESS (no error)"
+            - generic [ref=e37]: "[2025-10-10T16:12:22.525Z] Auth status changed to: authenticated"
+            - generic [ref=e38]: "[2025-10-10T16:12:22.638Z] Sign-in completed successfully"
+            - generic [ref=e39]: "[2025-10-10T16:12:27.018Z] Starting sign-out attempt"
+            - generic [ref=e40]: "[2025-10-10T16:12:27.042Z] Auth status changed to: unauthenticated"
+            - generic [ref=e41]: "[2025-10-10T16:12:27.110Z] Sign-out completed successfully"
+      - generic [ref=e42]:
+        - heading "Test Instructions:" [level=3] [ref=e43]
+        - list [ref=e44]:
+          - listitem [ref=e45]: Click "Test Sign In" to test the useUser onSignIn callback
+          - listitem [ref=e46]: Try multiple sign-in attempts to verify callback is called each time
+          - listitem [ref=e47]: Check the component-level log for useUser callback events
+          - listitem [ref=e48]: Verify that onSignIn is called after each sign-in attempt
+          - listitem [ref=e49]: Test logout and sign-in again to verify callback behavior
+  - button "Open Next.js Dev Tools" [ref=e55] [cursor=pointer]:
+    - img [ref=e56]
+  - alert [ref=e61]
+```
