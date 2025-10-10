@@ -1,0 +1,109 @@
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [warning] Module "buffer" has been externalized for browser compatibility. Cannot access "buffer.Buffer" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[PAGE CONSOLE] [warning] Module "buffer" has been externalized for browser compatibility. Cannot access "buffer.Buffer" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?client_id=demo-client-1&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&response_type=code&scope=openid+profile+email+offline_access&state=eyJ1dWlkIjoiOTZiNmU5MjEtOTY1Mi00NzM4LTlkMzctOTk0OTc0MzVkMGRiIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjMifQ%3D%3D&code_challenge=41wcVQH24-Pjhv8R5gqBQHTMZVuSp_tXs3NNB92vFEQ&code_challenge_method=S256&prompt=consent
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?client_id=demo-client-1&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&response_type=code&scope=openid+profile+email+offline_access&state=eyJ1dWlkIjoiOTZiNmU5MjEtOTY1Mi00NzM4LTlkMzctOTk0OTc0MzVkMGRiIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjMifQ%3D%3D&code_challenge=41wcVQH24-Pjhv8R5gqBQHTMZVuSp_tXs3NNB92vFEQ&code_challenge_method=S256&prompt=consent
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[PAGE CONSOLE] [debug] Storage access not available - passkey discovery may be limited
+[PAGE CONSOLE] [debug] Storage access not available - passkey discovery may be limited
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at unknown (http://localhost:3000/node_modules/.vite/deps/@civic_auth-web3_react.js?v=4d5e60c9:8761:28)
+    at forEach (:1:11)
+    at replayBlockedMessages (http://localhost:3000/node_modules/.vite/deps/@civic_auth-web3_react.js?v=4d5e60c9:8759:41)
+    at unknown (http://localhost:3000/node_modules/.vite/deps/@civic_auth-web3_react.js?v=4d5e60c9:9271:78)
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at unknown (http://localhost:3000/node_modules/.vite/deps/@civic_auth-web3_react.js?v=4d5e60c9:8761:28)
+    at forEach (:1:11)
+    at replayBlockedMessages (http://localhost:3000/node_modules/.vite/deps/@civic_auth-web3_react.js?v=4d5e60c9:8759:41)
+    at unknown (http://localhost:3000/node_modules/.vite/deps/@civic_auth-web3_react.js?v=4d5e60c9:9271:78)
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at handleMessage (http://localhost:3000/node_modules/.vite/deps/@civic_auth-web3_react.js?v=4d5e60c9:8688:26)
+    at unknown (http://localhost:3000/node_modules/.vite/deps/@civic_auth-web3_react.js?v=4d5e60c9:8660:25)
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at handleMessage (http://localhost:3000/node_modules/.vite/deps/@civic_auth-web3_react.js?v=4d5e60c9:8688:26)
+    at unknown (http://localhost:3000/node_modules/.vite/deps/@civic_auth-web3_react.js?v=4d5e60c9:8660:25)
+Email slot count: 1
+Checking URL: https://auth-dev.civic.com/login/assets/email.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/activity-indicator.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiOTZiNmU5MjEtOTY1Mi00NzM4LTlkMzctOTk0OTc0MzVkMGRiIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjMifQ%3D%3D&client_id=demo-client-1&source_system_id=qiWpgkZ6k2qijh3AEIhNZkY-GbUw5QfFKF5HK2D1R2I&scope=openid+profile+email+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&flow_id=oauth-login-785daef7-d744-470a-80b1-26a8bf4fa882, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/email?loginFlowId=4534d26a-102b-4931-8752-7407f0e9dc3b&client_id=demo-client-1&source_system_id=qiWpgkZ6k2qijh3AEIhNZkY-GbUw5QfFKF5HK2D1R2I&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=562201%40simulator.amazonses.com&_rsc=d2pih, hasLoginFlowId: true, isEmailEndpoint: true, isVerifyEndpoint: false
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=4534d26a-102b-4931-8752-7407f0e9dc3b&client_id=demo-client-1&source_system_id=qiWpgkZ6k2qijh3AEIhNZkY-GbUw5QfFKF5HK2D1R2I&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=562201%40simulator.amazonses.com&_rsc=d2pih
+Extracted loginFlowId: 4534d26a-102b-4931-8752-7407f0e9dc3b
+[PAGE CONSOLE] [log] Loading login flow data...
+[PAGE CONSOLE] [log] Loading login flow data...
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at handleMessage (http://localhost:3000/node_modules/.vite/deps/@civic_auth-web3_react.js?v=4d5e60c9:8688:26)
+    at unknown (http://localhost:3000/node_modules/.vite/deps/@civic_auth-web3_react.js?v=4d5e60c9:8660:25)
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at handleMessage (http://localhost:3000/node_modules/.vite/deps/@civic_auth-web3_react.js?v=4d5e60c9:8688:26)
+    at unknown (http://localhost:3000/node_modules/.vite/deps/@civic_auth-web3_react.js?v=4d5e60c9:8660:25)
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: 4534d26a-102b-4931-8752-7407f0e9dc3b
+Found verification code for loginFlowId 4534d26a-102b-4931-8752-7407f0e9dc3b: 814070
+Database disconnected
+Retrieved verification code: 814070 for loginFlowId: 4534d26a-102b-4931-8752-7407f0e9dc3b
+[BAD RESPONSE] 302 https://auth-dev.civic.com/login/api/callback/email?state=4534d26a-102b-4931-8752-7407f0e9dc3b&code=814070
+[BAD RESPONSE] 302 https://auth-dev.civic.com/login/api/callback/email?state=4534d26a-102b-4931-8752-7407f0e9dc3b&code=814070
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/qiWpgkZ6k2qijh3AEIhNZkY-GbUw5QfFKF5HK2D1R2I/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjU2MjIwMUBzaW11bGF0b3IuYW1hem9uc2VzLmNvbSIsInNjb3BlcyI6WyJvcGVuaWQiLCJvZmZsaW5lX2FjY2VzcyIsInByb2ZpbGUiLCJlbWFpbCIsIndhbGxldCIsImZvcndhcmRlZFRva2VucyIsInBhc3NrZXkiXSwiYXVkIjoiZGI3ZTg4YzEtZDk5Ny00MDk4LThjMDUtM2MyOGMwMTc3MWYzIiwic3ViIjoiNWE3YmExZjYtNTY4ZS00ZmMzLWJhMzktYjM1ZmE4OTlmNGM1IiwiaWRUb2tlblRUTCI6MzYwMCwiYWNjZXNzVG9rZW5UVEwiOjM2MDAsInJlZnJlc2hUb2tlblRUTCI6ODY0MDAsImNsaWVudElkIjoiZGVtby1jbGllbnQtMSIsInByb3ZpZGVyIjoiZW1haWwiLCJmbG93X2lkIjoib2F1dGgtbG9naW4tNzg1ZGFlZjctZDc0NC00NzBhLTgwYjEtMjZhOGJmNGZhODgyIiwibG9naW5fZmxvd19pZCI6IjQ1MzRkMjZhLTEwMmItNDkzMS04NzUyLTc0MDdmMGU5ZGMzYiIsImRpc3BsYXlfbW9kZSI6InJlZGlyZWN0IiwiZmxvd190eXBlIjoiZW1haWxDb2RlIiwib3JpZ2luIjoiaHR0cHM6Ly9hdXRoLWRldi5jaXZpYy5jb20iLCJmb3J3YXJkZWRUb2tlbnMiOnsiZW1haWwiOnt9fX0.hv9TvTSId_nJ-b5VRcitDZb_k_U1XSK7RMvGqQT2V7U&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/qiWpgkZ6k2qijh3AEIhNZkY-GbUw5QfFKF5HK2D1R2I/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjU2MjIwMUBzaW11bGF0b3IuYW1hem9uc2VzLmNvbSIsInNjb3BlcyI6WyJvcGVuaWQiLCJvZmZsaW5lX2FjY2VzcyIsInByb2ZpbGUiLCJlbWFpbCIsIndhbGxldCIsImZvcndhcmRlZFRva2VucyIsInBhc3NrZXkiXSwiYXVkIjoiZGI3ZTg4YzEtZDk5Ny00MDk4LThjMDUtM2MyOGMwMTc3MWYzIiwic3ViIjoiNWE3YmExZjYtNTY4ZS00ZmMzLWJhMzktYjM1ZmE4OTlmNGM1IiwiaWRUb2tlblRUTCI6MzYwMCwiYWNjZXNzVG9rZW5UVEwiOjM2MDAsInJlZnJlc2hUb2tlblRUTCI6ODY0MDAsImNsaWVudElkIjoiZGVtby1jbGllbnQtMSIsInByb3ZpZGVyIjoiZW1haWwiLCJmbG93X2lkIjoib2F1dGgtbG9naW4tNzg1ZGFlZjctZDc0NC00NzBhLTgwYjEtMjZhOGJmNGZhODgyIiwibG9naW5fZmxvd19pZCI6IjQ1MzRkMjZhLTEwMmItNDkzMS04NzUyLTc0MDdmMGU5ZGMzYiIsImRpc3BsYXlfbW9kZSI6InJlZGlyZWN0IiwiZmxvd190eXBlIjoiZW1haWxDb2RlIiwib3JpZ2luIjoiaHR0cHM6Ly9hdXRoLWRldi5jaXZpYy5jb20iLCJmb3J3YXJkZWRUb2tlbnMiOnsiZW1haWwiOnt9fX0.hv9TvTSId_nJ-b5VRcitDZb_k_U1XSK7RMvGqQT2V7U&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/qiWpgkZ6k2qijh3AEIhNZkY-GbUw5QfFKF5HK2D1R2I
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/qiWpgkZ6k2qijh3AEIhNZkY-GbUw5QfFKF5HK2D1R2I
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [warning] Module "buffer" has been externalized for browser compatibility. Cannot access "buffer.Buffer" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[PAGE CONSOLE] [warning] Module "buffer" has been externalized for browser compatibility. Cannot access "buffer.Buffer" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [debug] Listener for 'accountChanged' registered, but will never be called because the account is immutable in this implementation.
+[PAGE CONSOLE] [debug] Listener for 'accountChanged' registered, but will never be called because the account is immutable in this implementation.
+[PAGE CONSOLE] [error] Viewport argument key "interactive-widget" not recognized and ignored.
+[PAGE CONSOLE] [error] Viewport argument key "interactive-widget" not recognized and ignored.
+[PAGE CONSOLE] [error] Viewport argument key "interactive-widget" not recognized and ignored.
+[PAGE CONSOLE] [error] Viewport argument key "interactive-widget" not recognized and ignored.
+[PAGE CONSOLE] [info] Successfully preconnected to https://fonts.gstatic.com/
+[PAGE CONSOLE] [info] Successfully preconnected to https://fonts.gstatic.com/
+[PAGE CONSOLE] [error] Preflight response is not successful. Status code: 503
+[PAGE CONSOLE] [error] Preflight response is not successful. Status code: 503
+[PAGE ERROR] /sepolia-preconf.base.org/ due to access control checks.
+[ERROR STACK] 
+[PAGE ERROR] /sepolia-preconf.base.org/ due to access control checks.
+[ERROR STACK] 
+[REQUEST FAILED] POST https://sepolia-preconf.base.org/ - Preflight response is not successful. Status code: 503
+[REQUEST FAILED] POST https://sepolia-preconf.base.org/ - Preflight response is not successful. Status code: 503
+[PAGE CONSOLE] [error] Failed to load resource: Preflight response is not successful. Status code: 503
+[PAGE CONSOLE] [error] Failed to load resource: Preflight response is not successful. Status code: 503
+[PAGE CONSOLE] [info] Successfully preconnected to https://fonts.gstatic.com/
+[PAGE CONSOLE] [info] Successfully preconnected to https://fonts.gstatic.com/
+[PAGE CONSOLE] [error] Failed to build MetakeepWeb3Client TypeError: Load failed
+[PAGE CONSOLE] [error] Failed to build MetakeepWeb3Client TypeError: Load failed
