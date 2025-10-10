@@ -16,17 +16,17 @@ jobs:
       id-token: write
       pages: write
     steps:
-      # Implementing 15 minute wait in order for the jobs to complete.  
+      # Implementing 10 minute wait in order for the jobs to complete.  
       # Unfortunately this is the cleanest solution I could find, and is much more readable in the github runs.
       # See https://github.com/orgs/community/discussions/16059 for more information.
       - name: Wait for test workflows to complete
         run: |
           echo "⏳ Waiting for test workflows to complete..."
-          echo "This workflow will wait up to 15 minutes for test workflows to finish"
+          echo "This workflow will wait up to 10 minutes for test workflows to finish"
           
           # Simple approach: just wait a reasonable amount of time
           # The download steps will handle missing artifacts gracefully
-          sleep 900  # Wait 15 minutes for workflows to start and make progress
+          sleep 600  # Wait 10 minutes for workflows to start and make progress
           
           echo "✅ Wait period completed, proceeding with artifact download"
 
@@ -43,6 +43,7 @@ jobs:
           name: web2-dev-mode-allure-report
           path: reports/web2-dev-mode/
           if_no_artifact_found: warn
+          workflow_conclusion: ""  # Download from any workflow conclusion (success, failure, cancelled)
 
       - name: Download Web2 Start Mode Report
         continue-on-error: true
@@ -53,6 +54,7 @@ jobs:
           name: web2-start-mode-allure-report
           path: reports/web2-start-mode/
           if_no_artifact_found: warn
+          workflow_conclusion: ""  # Download from any workflow conclusion (success, failure, cancelled)
 
       - name: Download Web3 Dev Mode Report
         continue-on-error: true
@@ -63,6 +65,7 @@ jobs:
           name: web3-dev-mode-allure-report
           path: reports/web3-dev-mode/
           if_no_artifact_found: warn
+          workflow_conclusion: ""  # Download from any workflow conclusion (success, failure, cancelled)
 
       - name: Download Web3 Start Mode Report
         continue-on-error: true
@@ -73,6 +76,7 @@ jobs:
           name: web3-start-mode-allure-report
           path: reports/web3-start-mode/
           if_no_artifact_found: warn
+          workflow_conclusion: ""  # Download from any workflow conclusion (success, failure, cancelled)
 
       - name: List downloaded reports
         run: |
