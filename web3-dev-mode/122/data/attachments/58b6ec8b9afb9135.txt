@@ -1,0 +1,53 @@
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [warning] Module "buffer" has been externalized for browser compatibility. Cannot access "buffer.Buffer" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[PAGE CONSOLE] [warning] Module "buffer" has been externalized for browser compatibility. Cannot access "buffer.Buffer" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [info] Download the React DevTools for a better development experience: https://reactjs.org/link/react-devtools
+[PAGE CONSOLE] [info] Download the React DevTools for a better development experience: https://reactjs.org/link/react-devtools
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?client_id=demo-client-1&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&response_type=code&scope=openid+profile+email+offline_access&state=eyJ1dWlkIjoiNGY0YzIyMmQtYmU4Ni00Y2M0LWFhYmEtOGMzOTIxOTc2OTA5IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjMifQ%3D%3D&code_challenge=3caiVZpc0nscTEkL6iY_RuhypU-olSPyz45i2vze23k&code_challenge_method=S256&prompt=consent
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?client_id=demo-client-1&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&response_type=code&scope=openid+profile+email+offline_access&state=eyJ1dWlkIjoiNGY0YzIyMmQtYmU4Ni00Y2M0LWFhYmEtOGMzOTIxOTc2OTA5IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjMifQ%3D%3D&code_challenge=3caiVZpc0nscTEkL6iY_RuhypU-olSPyz45i2vze23k&code_challenge_method=S256&prompt=consent
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[BAD RESPONSE] 429 https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us
+[BAD RESPONSE] 429 https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us
+[RESPONSE BODY] {"detail":"Sentry dropped data due to a quota or internal rate limit being reached. This will not affect your application. See https://docs.sentry.io/product/accounts/quotas/ for more information."}
+[RESPONSE BODY] {"detail":"Sentry dropped data due to a quota or internal rate limit being reached. This will not affect your application. See https://docs.sentry.io/product/accounts/quotas/ for more information."}
+Email slot count: 1
+Checking URL: https://auth-dev.civic.com/login/activity-indicator.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/assets/email.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiNGY0YzIyMmQtYmU4Ni00Y2M0LWFhYmEtOGMzOTIxOTc2OTA5IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjMifQ%3D%3D&client_id=demo-client-1&source_system_id=hcERvnl3eHItAkXZzVUxaabOSDE_qet0eHMfzYUh7Xo&scope=openid+profile+email+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&flow_id=oauth-login-3b9185ac-939e-439e-8da6-cbe84c64fd62, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/email?loginFlowId=1d67fb47-c4a8-4b45-a109-de0afd90529d&client_id=demo-client-1&source_system_id=hcERvnl3eHItAkXZzVUxaabOSDE_qet0eHMfzYUh7Xo&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=419361%40simulator.amazonses.com&_rsc=1wlul, hasLoginFlowId: true, isEmailEndpoint: true, isVerifyEndpoint: false
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=1d67fb47-c4a8-4b45-a109-de0afd90529d&client_id=demo-client-1&source_system_id=hcERvnl3eHItAkXZzVUxaabOSDE_qet0eHMfzYUh7Xo&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=419361%40simulator.amazonses.com&_rsc=1wlul
+Extracted loginFlowId: 1d67fb47-c4a8-4b45-a109-de0afd90529d
+[PAGE CONSOLE] [log] Loading login flow data...
+[PAGE CONSOLE] [log] Loading login flow data...
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: 1d67fb47-c4a8-4b45-a109-de0afd90529d
+Found verification code for loginFlowId 1d67fb47-c4a8-4b45-a109-de0afd90529d: 146240
+Database disconnected
+Retrieved verification code: 146240 for loginFlowId: 1d67fb47-c4a8-4b45-a109-de0afd90529d
+[BAD RESPONSE] 302 https://auth-dev.civic.com/login/api/callback/email?state=1d67fb47-c4a8-4b45-a109-de0afd90529d&code=146240
+[BAD RESPONSE] 302 https://auth-dev.civic.com/login/api/callback/email?state=1d67fb47-c4a8-4b45-a109-de0afd90529d&code=146240
+[PAGE CONSOLE] [warning] [JavaScript Warning: "The resource at “https://auth-dev.civic.com/login/_next/static/media/4c33a6e82dbdb8e0-s.p.woff2” preloaded with link preload was not used within a few seconds. Make sure all attributes of the preload tag are set correctly." {file: "https://auth-dev.civic.com/login/email?loginFlowId=1d67fb47-c4a8-4b45-a109-de0afd90529d&client_id=demo-client-1&source_system_id=hcERvnl3eHItAkXZzVUxaabOSDE_qet0eHMfzYUh7Xo&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=419361%40simulator.amazonses.com" line: 0}]
+[PAGE CONSOLE] [warning] [JavaScript Warning: "The resource at “https://auth-dev.civic.com/login/_next/static/media/4c33a6e82dbdb8e0-s.p.woff2” preloaded with link preload was not used within a few seconds. Make sure all attributes of the preload tag are set correctly." {file: "https://auth-dev.civic.com/login/email?loginFlowId=1d67fb47-c4a8-4b45-a109-de0afd90529d&client_id=demo-client-1&source_system_id=hcERvnl3eHItAkXZzVUxaabOSDE_qet0eHMfzYUh7Xo&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=419361%40simulator.amazonses.com" line: 0}]
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/hcERvnl3eHItAkXZzVUxaabOSDE_qet0eHMfzYUh7Xo/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjQxOTM2MUBzaW11bGF0b3IuYW1hem9uc2VzLmNvbSIsInNjb3BlcyI6WyJvcGVuaWQiLCJvZmZsaW5lX2FjY2VzcyIsInByb2ZpbGUiLCJlbWFpbCIsIndhbGxldCIsImZvcndhcmRlZFRva2VucyIsInBhc3NrZXkiXSwiYXVkIjoiZGI3ZTg4YzEtZDk5Ny00MDk4LThjMDUtM2MyOGMwMTc3MWYzIiwic3ViIjoiNmViMTBlMTMtMDhkYi00NzkwLWE4YzAtM2Q3ZDY1NDViMDgyIiwiaWRUb2tlblRUTCI6MzYwMCwiYWNjZXNzVG9rZW5UVEwiOjM2MDAsInJlZnJlc2hUb2tlblRUTCI6ODY0MDAsImNsaWVudElkIjoiZGVtby1jbGllbnQtMSIsInByb3ZpZGVyIjoiZW1haWwiLCJmbG93X2lkIjoib2F1dGgtbG9naW4tM2I5MTg1YWMtOTM5ZS00MzllLThkYTYtY2JlODRjNjRmZDYyIiwibG9naW5fZmxvd19pZCI6IjFkNjdmYjQ3LWM0YTgtNGI0NS1hMTA5LWRlMGFmZDkwNTI5ZCIsImRpc3BsYXlfbW9kZSI6InJlZGlyZWN0IiwiZmxvd190eXBlIjoiZW1haWxDb2RlIiwib3JpZ2luIjoiaHR0cHM6Ly9hdXRoLWRldi5jaXZpYy5jb20iLCJmb3J3YXJkZWRUb2tlbnMiOnsiZW1haWwiOnt9fX0.S8Drey-36gkLGiTJhQhSexkdzEDMLvgEPOAqo1n4lTo&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/hcERvnl3eHItAkXZzVUxaabOSDE_qet0eHMfzYUh7Xo/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjQxOTM2MUBzaW11bGF0b3IuYW1hem9uc2VzLmNvbSIsInNjb3BlcyI6WyJvcGVuaWQiLCJvZmZsaW5lX2FjY2VzcyIsInByb2ZpbGUiLCJlbWFpbCIsIndhbGxldCIsImZvcndhcmRlZFRva2VucyIsInBhc3NrZXkiXSwiYXVkIjoiZGI3ZTg4YzEtZDk5Ny00MDk4LThjMDUtM2MyOGMwMTc3MWYzIiwic3ViIjoiNmViMTBlMTMtMDhkYi00NzkwLWE4YzAtM2Q3ZDY1NDViMDgyIiwiaWRUb2tlblRUTCI6MzYwMCwiYWNjZXNzVG9rZW5UVEwiOjM2MDAsInJlZnJlc2hUb2tlblRUTCI6ODY0MDAsImNsaWVudElkIjoiZGVtby1jbGllbnQtMSIsInByb3ZpZGVyIjoiZW1haWwiLCJmbG93X2lkIjoib2F1dGgtbG9naW4tM2I5MTg1YWMtOTM5ZS00MzllLThkYTYtY2JlODRjNjRmZDYyIiwibG9naW5fZmxvd19pZCI6IjFkNjdmYjQ3LWM0YTgtNGI0NS1hMTA5LWRlMGFmZDkwNTI5ZCIsImRpc3BsYXlfbW9kZSI6InJlZGlyZWN0IiwiZmxvd190eXBlIjoiZW1haWxDb2RlIiwib3JpZ2luIjoiaHR0cHM6Ly9hdXRoLWRldi5jaXZpYy5jb20iLCJmb3J3YXJkZWRUb2tlbnMiOnsiZW1haWwiOnt9fX0.S8Drey-36gkLGiTJhQhSexkdzEDMLvgEPOAqo1n4lTo&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/hcERvnl3eHItAkXZzVUxaabOSDE_qet0eHMfzYUh7Xo
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/hcERvnl3eHItAkXZzVUxaabOSDE_qet0eHMfzYUh7Xo
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [warning] Module "buffer" has been externalized for browser compatibility. Cannot access "buffer.Buffer" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[PAGE CONSOLE] [warning] Module "buffer" has been externalized for browser compatibility. Cannot access "buffer.Buffer" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
