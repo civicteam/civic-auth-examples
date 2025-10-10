@@ -1,0 +1,85 @@
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[REQUEST FAILED] HEAD http://localhost:3000/ - net::ERR_ABORTED
+[REQUEST FAILED] HEAD http://localhost:3000/ - net::ERR_ABORTED
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?client_id=demo-client-1&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&response_type=code&scope=openid+profile+email+offline_access&state=eyJ1dWlkIjoiNmQxMTY0MjItYjEyMi00N2IxLTg3YjgtNmI1NTNhMDRmY2U5IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjMifQ%3D%3D&code_challenge=UhHWs-9teZrT0AdQFBPVL3xjmSOozxxQSYLFWE1NvjY&code_challenge_method=S256&prompt=consent
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?client_id=demo-client-1&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&response_type=code&scope=openid+profile+email+offline_access&state=eyJ1dWlkIjoiNmQxMTY0MjItYjEyMi00N2IxLTg3YjgtNmI1NTNhMDRmY2U5IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjMifQ%3D%3D&code_challenge=UhHWs-9teZrT0AdQFBPVL3xjmSOozxxQSYLFWE1NvjY&code_challenge_method=S256&prompt=consent
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 401 ()
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 401 ()
+[PAGE CONSOLE] [error] TypeError: Cannot convert undefined or null to object
+    at Object.values (<anonymous>)
+    at Object.getRecomendedWallets (http://localhost:3000/assets/index-UACAQj9x.js:2:10391)
+    at async rr.preloadListings (http://localhost:3000/assets/index-DMuDOm_4.js:54:53379)
+    at async Promise.all (index 0)
+    at async rr.preloadData (http://localhost:3000/assets/index-DMuDOm_4.js:54:53689)
+[PAGE CONSOLE] [error] TypeError: Cannot convert undefined or null to object
+    at Object.values (<anonymous>)
+    at Object.getRecomendedWallets (http://localhost:3000/assets/index-UACAQj9x.js:2:10391)
+    at async rr.preloadListings (http://localhost:3000/assets/index-DMuDOm_4.js:54:53379)
+    at async Promise.all (index 0)
+    at async rr.preloadData (http://localhost:3000/assets/index-DMuDOm_4.js:54:53689)
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[BAD RESPONSE] 429 https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us
+[BAD RESPONSE] 429 https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 429 ()
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 429 ()
+[RESPONSE BODY] {"detail":"Sentry dropped data due to a quota or internal rate limit being reached. This will not affect your application. See https://docs.sentry.io/product/accounts/quotas/ for more information."}
+[RESPONSE BODY] {"detail":"Sentry dropped data due to a quota or internal rate limit being reached. This will not affect your application. See https://docs.sentry.io/product/accounts/quotas/ for more information."}
+Email slot count: 1
+Checking URL: https://auth-dev.civic.com/login/activity-indicator.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/assets/email.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiNmQxMTY0MjItYjEyMi00N2IxLTg3YjgtNmI1NTNhMDRmY2U5IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjMifQ%3D%3D&client_id=demo-client-1&source_system_id=L8KPmiFgjIFyQVHgVr2rge4qMW-zFPIEx7NFULHJLxs&scope=openid+profile+email+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&flow_id=oauth-login-fc18bd6d-4516-41bb-9e43-1052dec29e5d, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+[REQUEST FAILED] POST https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiNmQxMTY0MjItYjEyMi00N2IxLTg3YjgtNmI1NTNhMDRmY2U5IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjMifQ%3D%3D&client_id=demo-client-1&source_system_id=L8KPmiFgjIFyQVHgVr2rge4qMW-zFPIEx7NFULHJLxs&scope=openid+profile+email+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&flow_id=oauth-login-fc18bd6d-4516-41bb-9e43-1052dec29e5d - net::ERR_ABORTED
+[REQUEST FAILED] POST https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiNmQxMTY0MjItYjEyMi00N2IxLTg3YjgtNmI1NTNhMDRmY2U5IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjMifQ%3D%3D&client_id=demo-client-1&source_system_id=L8KPmiFgjIFyQVHgVr2rge4qMW-zFPIEx7NFULHJLxs&scope=openid+profile+email+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&flow_id=oauth-login-fc18bd6d-4516-41bb-9e43-1052dec29e5d - net::ERR_ABORTED
+Checking URL: https://auth-dev.civic.com/login/email?loginFlowId=e3b1894d-fc07-4623-9db6-931436565084&client_id=demo-client-1&source_system_id=L8KPmiFgjIFyQVHgVr2rge4qMW-zFPIEx7NFULHJLxs&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=922344%40simulator.amazonses.com&_rsc=10oex, hasLoginFlowId: true, isEmailEndpoint: true, isVerifyEndpoint: false
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=e3b1894d-fc07-4623-9db6-931436565084&client_id=demo-client-1&source_system_id=L8KPmiFgjIFyQVHgVr2rge4qMW-zFPIEx7NFULHJLxs&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=922344%40simulator.amazonses.com&_rsc=10oex
+Extracted loginFlowId: e3b1894d-fc07-4623-9db6-931436565084
+[REQUEST FAILED] GET https://auth-dev.civic.com/login/email?loginFlowId=e3b1894d-fc07-4623-9db6-931436565084&client_id=demo-client-1&source_system_id=L8KPmiFgjIFyQVHgVr2rge4qMW-zFPIEx7NFULHJLxs&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=922344%40simulator.amazonses.com&_rsc=10oex - net::ERR_ABORTED
+[REQUEST FAILED] GET https://auth-dev.civic.com/login/email?loginFlowId=e3b1894d-fc07-4623-9db6-931436565084&client_id=demo-client-1&source_system_id=L8KPmiFgjIFyQVHgVr2rge4qMW-zFPIEx7NFULHJLxs&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=922344%40simulator.amazonses.com&_rsc=10oex - net::ERR_ABORTED
+[REQUEST FAILED] GET https://auth-dev.civic.com/login/email?loginFlowId=e3b1894d-fc07-4623-9db6-931436565084&client_id=demo-client-1&source_system_id=L8KPmiFgjIFyQVHgVr2rge4qMW-zFPIEx7NFULHJLxs&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=922344%40simulator.amazonses.com&_rsc=erbpn - net::ERR_ABORTED
+[REQUEST FAILED] GET https://auth-dev.civic.com/login/email?loginFlowId=e3b1894d-fc07-4623-9db6-931436565084&client_id=demo-client-1&source_system_id=L8KPmiFgjIFyQVHgVr2rge4qMW-zFPIEx7NFULHJLxs&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=922344%40simulator.amazonses.com&_rsc=erbpn - net::ERR_ABORTED
+[PAGE CONSOLE] [log] Loading login flow data...
+[PAGE CONSOLE] [log] Loading login flow data...
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: e3b1894d-fc07-4623-9db6-931436565084
+Found verification code for loginFlowId e3b1894d-fc07-4623-9db6-931436565084: 236315
+Database disconnected
+Retrieved verification code: 236315 for loginFlowId: e3b1894d-fc07-4623-9db6-931436565084
+[BAD RESPONSE] 302 https://auth-dev.civic.com/login/api/callback/email?state=e3b1894d-fc07-4623-9db6-931436565084&code=236315
+[BAD RESPONSE] 302 https://auth-dev.civic.com/login/api/callback/email?state=e3b1894d-fc07-4623-9db6-931436565084&code=236315
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/L8KPmiFgjIFyQVHgVr2rge4qMW-zFPIEx7NFULHJLxs/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjkyMjM0NEBzaW11bGF0b3IuYW1hem9uc2VzLmNvbSIsInNjb3BlcyI6WyJvcGVuaWQiLCJvZmZsaW5lX2FjY2VzcyIsInByb2ZpbGUiLCJlbWFpbCIsIndhbGxldCIsImZvcndhcmRlZFRva2VucyIsInBhc3NrZXkiXSwiYXVkIjoiZGI3ZTg4YzEtZDk5Ny00MDk4LThjMDUtM2MyOGMwMTc3MWYzIiwic3ViIjoiNmY2YmM1MmYtMWNjNC00MzNlLThkYTMtMzZmZWYyNDU4MmMwIiwiaWRUb2tlblRUTCI6MzYwMCwiYWNjZXNzVG9rZW5UVEwiOjM2MDAsInJlZnJlc2hUb2tlblRUTCI6ODY0MDAsImNsaWVudElkIjoiZGVtby1jbGllbnQtMSIsInByb3ZpZGVyIjoiZW1haWwiLCJmbG93X2lkIjoib2F1dGgtbG9naW4tZmMxOGJkNmQtNDUxNi00MWJiLTllNDMtMTA1MmRlYzI5ZTVkIiwibG9naW5fZmxvd19pZCI6ImUzYjE4OTRkLWZjMDctNDYyMy05ZGI2LTkzMTQzNjU2NTA4NCIsImRpc3BsYXlfbW9kZSI6InJlZGlyZWN0IiwiZmxvd190eXBlIjoiZW1haWxDb2RlIiwib3JpZ2luIjoiaHR0cHM6Ly9hdXRoLWRldi5jaXZpYy5jb20iLCJmb3J3YXJkZWRUb2tlbnMiOnsiZW1haWwiOnt9fX0.mYUNDXrbdDsuImlp5Odoy6FdGkz0LonPbMaEdg7G7Zo&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/L8KPmiFgjIFyQVHgVr2rge4qMW-zFPIEx7NFULHJLxs/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjkyMjM0NEBzaW11bGF0b3IuYW1hem9uc2VzLmNvbSIsInNjb3BlcyI6WyJvcGVuaWQiLCJvZmZsaW5lX2FjY2VzcyIsInByb2ZpbGUiLCJlbWFpbCIsIndhbGxldCIsImZvcndhcmRlZFRva2VucyIsInBhc3NrZXkiXSwiYXVkIjoiZGI3ZTg4YzEtZDk5Ny00MDk4LThjMDUtM2MyOGMwMTc3MWYzIiwic3ViIjoiNmY2YmM1MmYtMWNjNC00MzNlLThkYTMtMzZmZWYyNDU4MmMwIiwiaWRUb2tlblRUTCI6MzYwMCwiYWNjZXNzVG9rZW5UVEwiOjM2MDAsInJlZnJlc2hUb2tlblRUTCI6ODY0MDAsImNsaWVudElkIjoiZGVtby1jbGllbnQtMSIsInByb3ZpZGVyIjoiZW1haWwiLCJmbG93X2lkIjoib2F1dGgtbG9naW4tZmMxOGJkNmQtNDUxNi00MWJiLTllNDMtMTA1MmRlYzI5ZTVkIiwibG9naW5fZmxvd19pZCI6ImUzYjE4OTRkLWZjMDctNDYyMy05ZGI2LTkzMTQzNjU2NTA4NCIsImRpc3BsYXlfbW9kZSI6InJlZGlyZWN0IiwiZmxvd190eXBlIjoiZW1haWxDb2RlIiwib3JpZ2luIjoiaHR0cHM6Ly9hdXRoLWRldi5jaXZpYy5jb20iLCJmb3J3YXJkZWRUb2tlbnMiOnsiZW1haWwiOnt9fX0.mYUNDXrbdDsuImlp5Odoy6FdGkz0LonPbMaEdg7G7Zo&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/L8KPmiFgjIFyQVHgVr2rge4qMW-zFPIEx7NFULHJLxs
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/L8KPmiFgjIFyQVHgVr2rge4qMW-zFPIEx7NFULHJLxs
+[REQUEST FAILED] POST https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us - net::ERR_ABORTED
+[REQUEST FAILED] POST https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us - net::ERR_ABORTED
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[REQUEST FAILED] HEAD http://localhost:3000/ - net::ERR_ABORTED
+[REQUEST FAILED] HEAD http://localhost:3000/ - net::ERR_ABORTED
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 401 ()
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 401 ()
+[PAGE CONSOLE] [error] TypeError: Cannot convert undefined or null to object
+    at Object.values (<anonymous>)
+    at Object.getRecomendedWallets (http://localhost:3000/assets/index-UACAQj9x.js:2:10391)
+    at async rr.preloadListings (http://localhost:3000/assets/index-DMuDOm_4.js:54:53379)
+    at async Promise.all (index 0)
+    at async rr.preloadData (http://localhost:3000/assets/index-DMuDOm_4.js:54:53689)
+[PAGE CONSOLE] [error] TypeError: Cannot convert undefined or null to object
+    at Object.values (<anonymous>)
+    at Object.getRecomendedWallets (http://localhost:3000/assets/index-UACAQj9x.js:2:10391)
+    at async rr.preloadListings (http://localhost:3000/assets/index-DMuDOm_4.js:54:53379)
+    at async Promise.all (index 0)
+    at async rr.preloadData (http://localhost:3000/assets/index-DMuDOm_4.js:54:53689)
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 503 ()
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 503 ()
+[PAGE CONSOLE] [error] Failed to build MetakeepWeb3Client SyntaxError: Unexpected token '<', "<html>
+<h"... is not valid JSON
+[PAGE CONSOLE] [error] Failed to build MetakeepWeb3Client SyntaxError: Unexpected token '<', "<html>
+<h"... is not valid JSON
