@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
-import { setupDiagnostics } from '../../utils/test-helpers';
+import { setupDiagnostics } from '../../../utils/test-helpers';
 import { db } from '../../../../utils/database';
 import { generateUniqueEmail } from '../../../utils/email-generator';
 

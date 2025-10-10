@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
-import { setupDiagnostics } from '../../utils/test-helpers';
+import { setupDiagnostics } from '../../../utils/test-helpers';
 
 test.describe('Civic Auth Applications', () => {
   test.beforeEach(async ({ page, browserName }) => {
