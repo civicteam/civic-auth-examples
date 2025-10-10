@@ -1,0 +1,93 @@
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?response_type=code&client_id=demo-client-1&state=eyJ1dWlkIjoiZjEzNzc2ZDItZmQ4My00ZGUzLWI0ZTctNzg0MGJhNGM0M2ZmIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&code_challenge=EANLA6HbKXYQZxj76fDqBx6i6GlRZhrL49dXDzOapJA&code_challenge_method=S256&prompt=consent
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?response_type=code&client_id=demo-client-1&state=eyJ1dWlkIjoiZjEzNzc2ZDItZmQ4My00ZGUzLWI0ZTctNzg0MGJhNGM0M2ZmIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&code_challenge=EANLA6HbKXYQZxj76fDqBx6i6GlRZhrL49dXDzOapJA&code_challenge_method=S256&prompt=consent
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[PAGE CONSOLE] [debug] Storage access not available - passkey discovery may be limited
+[PAGE CONSOLE] [debug] Storage access not available - passkey discovery may be limited
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at handleMessage (http://localhost:3000/_next/static/chunks/7-e8bd0bca738c7b85.js:1:44221)
+    at unknown (http://localhost:3000/_next/static/chunks/7-e8bd0bca738c7b85.js:1:43522)
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at handleMessage (http://localhost:3000/_next/static/chunks/7-e8bd0bca738c7b85.js:1:44221)
+    at unknown (http://localhost:3000/_next/static/chunks/7-e8bd0bca738c7b85.js:1:43522)
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at unknown (http://localhost:3000/_next/static/chunks/7-e8bd0bca738c7b85.js:1:45988)
+    at forEach (:1:11)
+    at replayBlockedMessages (http://localhost:3000/_next/static/chunks/7-e8bd0bca738c7b85.js:1:45920)
+    at unknown (http://localhost:3000/_next/static/chunks/7-e8bd0bca738c7b85.js:10:372)
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at unknown (http://localhost:3000/_next/static/chunks/7-e8bd0bca738c7b85.js:1:45988)
+    at forEach (:1:11)
+    at replayBlockedMessages (http://localhost:3000/_next/static/chunks/7-e8bd0bca738c7b85.js:1:45920)
+    at unknown (http://localhost:3000/_next/static/chunks/7-e8bd0bca738c7b85.js:10:372)
+[BAD RESPONSE] 429 https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us
+[BAD RESPONSE] 429 https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 429 (Unknown Error)
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 429 (Unknown Error)
+[RESPONSE BODY] {"detail":"Sentry dropped data due to a quota or internal rate limit being reached. This will not affect your application. See https://docs.sentry.io/product/accounts/quotas/ for more information."}
+[RESPONSE BODY] {"detail":"Sentry dropped data due to a quota or internal rate limit being reached. This will not affect your application. See https://docs.sentry.io/product/accounts/quotas/ for more information."}
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at handleMessage (http://localhost:3000/_next/static/chunks/7-e8bd0bca738c7b85.js:1:44221)
+    at unknown (http://localhost:3000/_next/static/chunks/7-e8bd0bca738c7b85.js:1:43522)
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at handleMessage (http://localhost:3000/_next/static/chunks/7-e8bd0bca738c7b85.js:1:44221)
+    at unknown (http://localhost:3000/_next/static/chunks/7-e8bd0bca738c7b85.js:1:43522)
+[PAGE CONSOLE] [debug] Storage access not available - passkey discovery may be limited
+[PAGE CONSOLE] [debug] Storage access not available - passkey discovery may be limited
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at handleMessage (http://localhost:3000/_next/static/chunks/7-e8bd0bca738c7b85.js:1:44221)
+    at unknown (http://localhost:3000/_next/static/chunks/7-e8bd0bca738c7b85.js:1:43522)
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at handleMessage (http://localhost:3000/_next/static/chunks/7-e8bd0bca738c7b85.js:1:44221)
+    at unknown (http://localhost:3000/_next/static/chunks/7-e8bd0bca738c7b85.js:1:43522)
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/L-9zc5MSGZ-FVPCa0oMbbNTkK9IcgcL6FcwGK_qAQQl/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjQ5ZWVjMzQzLTg0ZWItNGZjMi1hZmQ5LTk5ZWI0MjhjZWQxNkBleGFtcGxlLmV4YW1wbGUiLCJuYW1lIjoiR2hvc3QiLCJzdWIiOiJmMDAyNTU2NS0yNjMxLTQxNDAtYTlhMi0xYTdkMTMyMjI2ZWYiLCJzY29wZXMiOlsib3BlbmlkIiwib2ZmbGluZV9hY2Nlc3MiLCJwcm9maWxlIiwiZW1haWwiLCJ3YWxsZXQiLCJmb3J3YXJkZWRUb2tlbnMiLCJwYXNza2V5Il0sImF1ZCI6ImRiN2U4OGMxLWQ5OTctNDA5OC04YzA1LTNjMjhjMDE3NzFmMyIsImlkVG9rZW5UVEwiOjM2MDAsImFjY2Vzc1Rva2VuVFRMIjozNjAwLCJyZWZyZXNoVG9rZW5UVEwiOjg2NDAwLCJjbGllbnRJZCI6ImRlbW8tY2xpZW50LTEiLCJwcm92aWRlciI6ImR1bW15IiwiZmxvd19pZCI6Im9hdXRoLWxvZ2luLWMwM2IyODliLTkwNDQtNGI0Ni04ZDRkLTg0MWI3NjNhZWY3ZiIsImxvZ2luX2Zsb3dfaWQiOiIyOWRhOTE2NC1hYzhlLTQyMDQtOTg2Ny1mZGEyZjQ2Y2Q4NmUiLCJkaXNwbGF5X21vZGUiOiJwb3B1cCIsImZsb3dfdHlwZSI6Im9pZGMiLCJvcmlnaW4iOiJodHRwczovL2F1dGgtZGV2LmNpdmljLmNvbSIsImZvcndhcmRlZFRva2VucyI6eyJkdW1teSI6eyJpZF90b2tlbiI6ImV5SmhiR2NpT2lKU1V6STFOaUlzSW5SNWNDSTZJa3BYVkNJc0ltdHBaQ0k2SW1zeEluMC5leUpwYzNNaU9pSm9kSFJ3Y3pvdkwyaGxZV1JsY2kxd2NtOTRlUzVrWVc1cFpXeGlhMlZzYkdWb1pYSXpOems1TG5kdmNtdGxjbk11WkdWMklpd2lZWFZrSWpvaWRHVnVZVzUwTFRFdFlYQndMVEVpTENKemRXSWlPaUkwT1dWbFl6TTBNeTA0TkdWaUxUUm1Zekl0WVdaa09TMDVPV1ZpTkRJNFkyVmtNVFlpTENKbGJXRnBiQ0k2SWpRNVpXVmpNelF6TFRnMFpXSXROR1pqTWkxaFptUTVMVGs1WldJME1qaGpaV1F4TmtCbGVHRnRjR3hsTG1WNFlXMXdiR1VpTENKdWIyNWpaU0k2SWpSbU1tSTNORGMxTFdGak5qTXRORE5qTUMxaU9UQmxMVFEyTkRVM1pEbG1abVE0TkNJc0ltbGhkQ0k2TVRjMk1EQTFOekl4Tml3aVpYaHdJam94TnpZd01EWXdPREUyTENKbWIzSjNZWEprWldSVWIydGxibk1pT25zaVpIVnRiWGtpT25zaWFXUmZkRzlyWlc0aU9pSmxlVXBvWWtkamFVOXBTbE5WZWtreFRtbEpjMGx1VWpWalEwazJTV3R3V0ZaRFNYTkpiWFJ3V2tOSk5rbHRjM2hKYmpBdVpYbEtjR016VFdsUGFVcHZaRWhTZDJONmIzWk1NbWhzV1ZkU2JHTnBNWGRqYlRrMFpWTTFhMWxYTlhCYVYzaHBZVEpXYzJKSFZtOWFXRWw2VG5wck5VeHVaSFpqYlhSc1kyNU5kVnBIVmpKSmFYZHBZek5XYVVscWIybE9SR3hzV2xkTmVrNUVUWFJQUkZKc1dXa3dNRnB0VFhsTVYwWnRXa1JyZEU5VWJHeFphbEY1VDBkT2JGcEVSVEpKYVhkcFdsY3hhR0ZYZDJsUGFVa3dUMWRXYkZsNlRUQk5lVEEwVGtkV2FVeFVVbTFaZWtsMFdWZGFhMDlUTURWUFYxWnBUa1JKTkZreVZtdE5WRnBCV2xob2FHSllRbk5hVXpWc1pVZEdkR05IZUd4SmFYZHBZbTA1ZFZreVZXbFBhVWt3V21wS2FVNTZVVE5PVXpGb1dYcFpla3hVVVhwWmVrRjBXV3ByZDFwVE1EQk9hbEV4VGpKUk5WcHRXbXRQUkZGcFRFTkthR1JYVVdsUGFVcHZaRWhTZDA5cE9IWmlSemxxV1ZkNGIySXpUakJQYWsxM1RVUkJhVXhEU25CWldGRnBUMnBGTTA1cVFYZE9WR041VFZSVmMwbHRWalJqUTBrMlRWUmpNazFFUVRKTlJHZDRUbGd3TGsxRFdFTnpaSEUxZFhaaE9GRktOMTloWVVnd01tRmZYMEY1VlhCclRrZ3hhMlV5VkZST01TMW5TMmxoYzBveVNHTkZibVpVVDNWbmNWVnBSbXhSTlc4MVJEY3RhMGt6VEc5T1kwaHZNa1JEUVU1MWRHcE1jbVJUY0RseWFqaEpTMk5EYzJWUU4zTkJWMjV1V21Sb1V6bHhSVGxMTmpOdVdsUXhWMlZXYTJ0bVFVZ3hOMHBGTkcxdE1WTnNaVTQxZUVjemIwNDNMVkZVTkhnNFgyaGhUUzFJVVc1S1QzWTVlV2cyTUdwdGNrbG5ValpSWDB0cE5scDJRVkJPYVdjMU1XNU1iMUZpT1c1bGFFbzFSME5XTFVSUWVHOVpZM050TjNOQlZWTjVjV1UzWm10dllsaHVSV2RFUTA4d05XWlVUVFpHTW5SRlZHa3RXRkZJZW1NM05WUk5XVk5vUTFwSVVUQkpZM2xUYVZSRlNXd3dXRXBHVEU5S1ltcGZNRWwxWVY4d1RGaFBiVGxaZG14NlQyTkRZM1ZQTmtrMWNUZHdZbTVvWTJKMFZFNXJNa055TFVOMmJIVmlPSFI0WWpoS1ZXMTNSMFZVUVNKOWZYMC5jREtoRXdxWkllLXJJcEVBc01QZlFrQnBsTXpNWGxuTl9aY2pzX3E3NjBtOEhqSWJnTHJVbDlLRTNFMVdUbGdha0EzdVRBbkFvSFp3aFp4MzNSU2ZXS3h2d285dHBFY0dyUDA2dWZ2ajg3cWxRcjZKNVYyTlJmN211MGJTczhWSUNiQnR6aHR0VGkwcE9WdTNtRzlxek42ejdpSlpId3dyZi03SUNmRVdOdzVWeXRJTlhtU29tMU1WVWxJOWxmMW9KRGJYLXV2OHIwdllxQ3FqRmVnOHRWSGhmNF9ZQjdhZk5VZGFnaW1HQnVGTGQxakFQY2hTZW50SFVUSmhNMTBwMjdWSERCeWt2SlVYdWZ4eS05cUdtQnEyTU1xekhqOTlXbWJpQjByYXdSbnFCTlNLUWdVWUhlVlZ2RWhCRlpHYWdhV2Vvc0VidXVYa2QyVUl3Umg0dHciLCJhY2Nlc3NfdG9rZW4iOiIifX19.G3pGFYIZhXwTmAhXNFHlQocRv_Cn12ZyotI2PURXjkE&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/L-9zc5MSGZ-FVPCa0oMbbNTkK9IcgcL6FcwGK_qAQQl/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjQ5ZWVjMzQzLTg0ZWItNGZjMi1hZmQ5LTk5ZWI0MjhjZWQxNkBleGFtcGxlLmV4YW1wbGUiLCJuYW1lIjoiR2hvc3QiLCJzdWIiOiJmMDAyNTU2NS0yNjMxLTQxNDAtYTlhMi0xYTdkMTMyMjI2ZWYiLCJzY29wZXMiOlsib3BlbmlkIiwib2ZmbGluZV9hY2Nlc3MiLCJwcm9maWxlIiwiZW1haWwiLCJ3YWxsZXQiLCJmb3J3YXJkZWRUb2tlbnMiLCJwYXNza2V5Il0sImF1ZCI6ImRiN2U4OGMxLWQ5OTctNDA5OC04YzA1LTNjMjhjMDE3NzFmMyIsImlkVG9rZW5UVEwiOjM2MDAsImFjY2Vzc1Rva2VuVFRMIjozNjAwLCJyZWZyZXNoVG9rZW5UVEwiOjg2NDAwLCJjbGllbnRJZCI6ImRlbW8tY2xpZW50LTEiLCJwcm92aWRlciI6ImR1bW15IiwiZmxvd19pZCI6Im9hdXRoLWxvZ2luLWMwM2IyODliLTkwNDQtNGI0Ni04ZDRkLTg0MWI3NjNhZWY3ZiIsImxvZ2luX2Zsb3dfaWQiOiIyOWRhOTE2NC1hYzhlLTQyMDQtOTg2Ny1mZGEyZjQ2Y2Q4NmUiLCJkaXNwbGF5X21vZGUiOiJwb3B1cCIsImZsb3dfdHlwZSI6Im9pZGMiLCJvcmlnaW4iOiJodHRwczovL2F1dGgtZGV2LmNpdmljLmNvbSIsImZvcndhcmRlZFRva2VucyI6eyJkdW1teSI6eyJpZF90b2tlbiI6ImV5SmhiR2NpT2lKU1V6STFOaUlzSW5SNWNDSTZJa3BYVkNJc0ltdHBaQ0k2SW1zeEluMC5leUpwYzNNaU9pSm9kSFJ3Y3pvdkwyaGxZV1JsY2kxd2NtOTRlUzVrWVc1cFpXeGlhMlZzYkdWb1pYSXpOems1TG5kdmNtdGxjbk11WkdWMklpd2lZWFZrSWpvaWRHVnVZVzUwTFRFdFlYQndMVEVpTENKemRXSWlPaUkwT1dWbFl6TTBNeTA0TkdWaUxUUm1Zekl0WVdaa09TMDVPV1ZpTkRJNFkyVmtNVFlpTENKbGJXRnBiQ0k2SWpRNVpXVmpNelF6TFRnMFpXSXROR1pqTWkxaFptUTVMVGs1WldJME1qaGpaV1F4TmtCbGVHRnRjR3hsTG1WNFlXMXdiR1VpTENKdWIyNWpaU0k2SWpSbU1tSTNORGMxTFdGak5qTXRORE5qTUMxaU9UQmxMVFEyTkRVM1pEbG1abVE0TkNJc0ltbGhkQ0k2TVRjMk1EQTFOekl4Tml3aVpYaHdJam94TnpZd01EWXdPREUyTENKbWIzSjNZWEprWldSVWIydGxibk1pT25zaVpIVnRiWGtpT25zaWFXUmZkRzlyWlc0aU9pSmxlVXBvWWtkamFVOXBTbE5WZWtreFRtbEpjMGx1VWpWalEwazJTV3R3V0ZaRFNYTkpiWFJ3V2tOSk5rbHRjM2hKYmpBdVpYbEtjR016VFdsUGFVcHZaRWhTZDJONmIzWk1NbWhzV1ZkU2JHTnBNWGRqYlRrMFpWTTFhMWxYTlhCYVYzaHBZVEpXYzJKSFZtOWFXRWw2VG5wck5VeHVaSFpqYlhSc1kyNU5kVnBIVmpKSmFYZHBZek5XYVVscWIybE9SR3hzV2xkTmVrNUVUWFJQUkZKc1dXa3dNRnB0VFhsTVYwWnRXa1JyZEU5VWJHeFphbEY1VDBkT2JGcEVSVEpKYVhkcFdsY3hhR0ZYZDJsUGFVa3dUMWRXYkZsNlRUQk5lVEEwVGtkV2FVeFVVbTFaZWtsMFdWZGFhMDlUTURWUFYxWnBUa1JKTkZreVZtdE5WRnBCV2xob2FHSllRbk5hVXpWc1pVZEdkR05IZUd4SmFYZHBZbTA1ZFZreVZXbFBhVWt3V21wS2FVNTZVVE5PVXpGb1dYcFpla3hVVVhwWmVrRjBXV3ByZDFwVE1EQk9hbEV4VGpKUk5WcHRXbXRQUkZGcFRFTkthR1JYVVdsUGFVcHZaRWhTZDA5cE9IWmlSemxxV1ZkNGIySXpUakJQYWsxM1RVUkJhVXhEU25CWldGRnBUMnBGTTA1cVFYZE9WR041VFZSVmMwbHRWalJqUTBrMlRWUmpNazFFUVRKTlJHZDRUbGd3TGsxRFdFTnpaSEUxZFhaaE9GRktOMTloWVVnd01tRmZYMEY1VlhCclRrZ3hhMlV5VkZST01TMW5TMmxoYzBveVNHTkZibVpVVDNWbmNWVnBSbXhSTlc4MVJEY3RhMGt6VEc5T1kwaHZNa1JEUVU1MWRHcE1jbVJUY0RseWFqaEpTMk5EYzJWUU4zTkJWMjV1V21Sb1V6bHhSVGxMTmpOdVdsUXhWMlZXYTJ0bVFVZ3hOMHBGTkcxdE1WTnNaVTQxZUVjemIwNDNMVkZVTkhnNFgyaGhUUzFJVVc1S1QzWTVlV2cyTUdwdGNrbG5ValpSWDB0cE5scDJRVkJPYVdjMU1XNU1iMUZpT1c1bGFFbzFSME5XTFVSUWVHOVpZM050TjNOQlZWTjVjV1UzWm10dllsaHVSV2RFUTA4d05XWlVUVFpHTW5SRlZHa3RXRkZJZW1NM05WUk5XVk5vUTFwSVVUQkpZM2xUYVZSRlNXd3dXRXBHVEU5S1ltcGZNRWwxWVY4d1RGaFBiVGxaZG14NlQyTkRZM1ZQTmtrMWNUZHdZbTVvWTJKMFZFNXJNa055TFVOMmJIVmlPSFI0WWpoS1ZXMTNSMFZVUVNKOWZYMC5jREtoRXdxWkllLXJJcEVBc01QZlFrQnBsTXpNWGxuTl9aY2pzX3E3NjBtOEhqSWJnTHJVbDlLRTNFMVdUbGdha0EzdVRBbkFvSFp3aFp4MzNSU2ZXS3h2d285dHBFY0dyUDA2dWZ2ajg3cWxRcjZKNVYyTlJmN211MGJTczhWSUNiQnR6aHR0VGkwcE9WdTNtRzlxek42ejdpSlpId3dyZi03SUNmRVdOdzVWeXRJTlhtU29tMU1WVWxJOWxmMW9KRGJYLXV2OHIwdllxQ3FqRmVnOHRWSGhmNF9ZQjdhZk5VZGFnaW1HQnVGTGQxakFQY2hTZW50SFVUSmhNMTBwMjdWSERCeWt2SlVYdWZ4eS05cUdtQnEyTU1xekhqOTlXbWJpQjByYXdSbnFCTlNLUWdVWUhlVlZ2RWhCRlpHYWdhV2Vvc0VidXVYa2QyVUl3Umg0dHciLCJhY2Nlc3NfdG9rZW4iOiIifX19.G3pGFYIZhXwTmAhXNFHlQocRv_Cn12ZyotI2PURXjkE&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/L-9zc5MSGZ-FVPCa0oMbbNTkK9IcgcL6FcwGK_qAQQl
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/L-9zc5MSGZ-FVPCa0oMbbNTkK9IcgcL6FcwGK_qAQQl
+Original tokens captured: {
+  user: '%7B%22name%22%3A%22G...',
+  access_token: 'eyJhbGciOiJSUzI1NiIs...',
+  id_token: 'eyJhbGciOiJSUzI1NiIs...',
+  refresh_token: 'arwfjxBVrHqresG-u2Op...',
+  oidc_session_expires_at: '1760060818'
+}
+Tokens manipulated: deleted user, access_token, id_token; kept refresh_token; set oidc_session_expires_at to past
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+Refreshed tokens: {
+  user: '%7B%22name%22%3A%22G...',
+  access_token: 'eyJhbGciOiJSUzI1NiIs...',
+  id_token: 'eyJhbGciOiJSUzI1NiIs...',
+  refresh_token: 'iIhAkWcuw-AjwnqkqaZk...',
+  oidc_session_expires_at: '1760060819'
+}
+✅ Refresh token has been renewed
+✅ oidc_session_expires_at has been set to future: 2025-10-10T01:46:59.000Z
+✅ user, access_token, and id_token tokens are present and renewed
+✅ User remains authenticated after token refresh

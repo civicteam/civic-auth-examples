@@ -1,0 +1,358 @@
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 634ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 634ms
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?response_type=code&client_id=demo-client-1&state=eyJ1dWlkIjoiNmQ2MjFiYTQtMGI2Ni00NzY4LTk1ZGQtNzI0YTM5MzExN2I1IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fdemo%2Fapi%2Fauth%2Fcallback&code_challenge=Y8aZVijwQF1ljTRS7di6-4a15vf9B6HYAeEmsB1e4MI&code_challenge_method=S256&prompt=consent
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?response_type=code&client_id=demo-client-1&state=eyJ1dWlkIjoiNmQ2MjFiYTQtMGI2Ni00NzY4LTk1ZGQtNzI0YTM5MzExN2I1IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fdemo%2Fapi%2Fauth%2Fcallback&code_challenge=Y8aZVijwQF1ljTRS7di6-4a15vf9B6HYAeEmsB1e4MI&code_challenge_method=S256&prompt=consent
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[PAGE CONSOLE] [debug] Storage access not available - passkey discovery may be limited
+[PAGE CONSOLE] [debug] Storage access not available - passkey discovery may be limited
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at unknown (:153:38)
+    at forEach (:1:11)
+    at replayBlockedMessages (:150:47)
+    at unknown (:334:60)
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at unknown (:153:38)
+    at forEach (:1:11)
+    at replayBlockedMessages (:150:47)
+    at unknown (:334:60)
+[BAD RESPONSE] 429 https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us
+[BAD RESPONSE] 429 https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 429 (Unknown Error)
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 429 (Unknown Error)
+[RESPONSE BODY] {"detail":"Sentry dropped data due to a quota or internal rate limit being reached. This will not affect your application. See https://docs.sentry.io/product/accounts/quotas/ for more information."}
+[RESPONSE BODY] {"detail":"Sentry dropped data due to a quota or internal rate limit being reached. This will not affect your application. See https://docs.sentry.io/product/accounts/quotas/ for more information."}
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at handleMessage (:67:34)
+    at unknown (:32:31)
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at handleMessage (:67:34)
+    at unknown (:32:31)
+[PAGE CONSOLE] [debug] Storage access not available - passkey discovery may be limited
+[PAGE CONSOLE] [debug] Storage access not available - passkey discovery may be limited
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at handleMessage (:67:34)
+    at unknown (:32:31)
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at handleMessage (:67:34)
+    at unknown (:32:31)
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/tT2AfFW2GlysiIvAmvdV503LUIVVP3WgZ8hajBKDS1H/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR2hvc3QiLCJlbWFpbCI6Ijc2ODYwMmU2LTZkNjEtNDQ4OC1hNmQ4LWMyOGZiY2I1ZTU0ZkBleGFtcGxlLmV4YW1wbGUiLCJzdWIiOiJjZTg3NWE1NC0zYWRmLTRjM2YtODY0My1hZGE5M2RlNzM1ZjAiLCJzY29wZXMiOlsib3BlbmlkIiwib2ZmbGluZV9hY2Nlc3MiLCJwcm9maWxlIiwiZW1haWwiLCJ3YWxsZXQiLCJmb3J3YXJkZWRUb2tlbnMiLCJwYXNza2V5Il0sImF1ZCI6ImRiN2U4OGMxLWQ5OTctNDA5OC04YzA1LTNjMjhjMDE3NzFmMyIsImlkVG9rZW5UVEwiOjM2MDAsImFjY2Vzc1Rva2VuVFRMIjozNjAwLCJyZWZyZXNoVG9rZW5UVEwiOjg2NDAwLCJjbGllbnRJZCI6ImRlbW8tY2xpZW50LTEiLCJwcm92aWRlciI6ImR1bW15IiwiZmxvd19pZCI6Im9hdXRoLWxvZ2luLWEyMDRhMzFmLWM4MjgtNDFkNC1iMDk5LTE5MTE3M2QxNTJmNSIsImxvZ2luX2Zsb3dfaWQiOiI3YTdkYjc0ZS02ODkzLTQyOWUtYmMzYy1iYTVjMjljOTg0N2QiLCJkaXNwbGF5X21vZGUiOiJwb3B1cCIsImZsb3dfdHlwZSI6Im9pZGMiLCJvcmlnaW4iOiJodHRwczovL2F1dGgtZGV2LmNpdmljLmNvbSIsImZvcndhcmRlZFRva2VucyI6eyJkdW1teSI6eyJpZF90b2tlbiI6ImV5SmhiR2NpT2lKU1V6STFOaUlzSW5SNWNDSTZJa3BYVkNJc0ltdHBaQ0k2SW1zeEluMC5leUpwYzNNaU9pSm9kSFJ3Y3pvdkwyaGxZV1JsY2kxd2NtOTRlUzVrWVc1cFpXeGlhMlZzYkdWb1pYSXpOems1TG5kdmNtdGxjbk11WkdWMklpd2lZWFZrSWpvaWRHVnVZVzUwTFRFdFlYQndMVEVpTENKemRXSWlPaUkzTmpnMk1ESmxOaTAyWkRZeExUUTBPRGd0WVRaa09DMWpNamhtWW1OaU5XVTFOR1lpTENKbGJXRnBiQ0k2SWpjMk9EWXdNbVUyTFRaa05qRXRORFE0T0MxaE5tUTRMV015T0daaVkySTFaVFUwWmtCbGVHRnRjR3hsTG1WNFlXMXdiR1VpTENKdWIyNWpaU0k2SW1Sak1XWm1NV0V6TFRBMk1qY3ROREF5TUMxaFl6Wm1MVEUzWmpreU9UTTVZek16TVNJc0ltbGhkQ0k2TVRjMk1EQTFOekl3TUN3aVpYaHdJam94TnpZd01EWXdPREF3TENKbWIzSjNZWEprWldSVWIydGxibk1pT25zaVpIVnRiWGtpT25zaWFXUmZkRzlyWlc0aU9pSmxlVXBvWWtkamFVOXBTbE5WZWtreFRtbEpjMGx1VWpWalEwazJTV3R3V0ZaRFNYTkpiWFJ3V2tOSk5rbHRjM2hKYmpBdVpYbEtjR016VFdsUGFVcHZaRWhTZDJONmIzWk1NbWhzV1ZkU2JHTnBNWGRqYlRrMFpWTTFhMWxYTlhCYVYzaHBZVEpXYzJKSFZtOWFXRWw2VG5wck5VeHVaSFpqYlhSc1kyNU5kVnBIVmpKSmFYZHBZek5XYVVscWIybE9lbGswVG1wQmVWcFVXWFJPYlZFeVRWTXdNRTVFWnpSTVYwVXlXa1JuZEZsNlNUUmFiVXBxV1dwV2JFNVVVbTFKYVhkcFdsY3hhR0ZYZDJsUGFVa3pUbXBuTWsxRVNteE9hVEF5V2tSWmVFeFVVVEJQUkdkMFdWUmFhMDlETVdwTmFtaHRXVzFPYVU1WFZURk9SMXBCV2xob2FHSllRbk5hVXpWc1pVZEdkR05IZUd4SmFYZHBZbTA1ZFZreVZXbFBhVXByV1hwR2JWcHFSbWhOZVRCM1RtcEpNMHhVVVhkTmFrRjBXVmROTWxwcE1IaE9NbGsxVFdwcmVrOVhUWHBOZWtWcFRFTkthR1JYVVdsUGFVcHZaRWhTZDA5cE9IWmlSemxxV1ZkNGIySXpUakJQYWsxM1RVUkJhVXhEU25CWldGRnBUMnBGTTA1cVFYZE9WR041VFVSQmMwbHRWalJqUTBrMlRWUmpNazFFUVRKTlJHZDNUVWd3TG10ZmRYUlpNRlZMWjB4cVIzTXpSM2xpZW5oWVdHMXRURGhOTTBWeVNtaFVka2xqU2tSZmFWSjZRbnBIYzI5UVpVVk1aek5sWVhsc1NGTmFiV1U1Ym1kbFpGbHpSM0V6Tmt0RVdWODFXakpFZFU5WVExTlFVekU0V0V0S2VtbFRlVWQ2V2xsdlNUUlVlR2MxTTJsNE0wNUhSbFZ3ZUdSeVJtZFlUekkwZFhsdFp6bFRhMkZGUjJ4M1QyaDJZa0UwWHpsSFNYRjVORXN5VUVOcWIyazRSM2R2V1dFM1RtRm9UMGRsZEZkU1Yxb3lWVkJ1Wkdkb1lXVkdjbVp2U0ZONVQxOHdMVWt6ZG1oclRIRjFRVVprU2pkWFRUbENRM1J4Ym5OaVMyUk1ja3BKU0RORWJHdHhTVWxzVnpWU2FVTldiRnBCV2t0eWVVNXdVazAxWldoYWRucFBWRWhJYURaM2EwNW1ORXhGZUZwcFRVeEJSSFJLVGxKcFpIaEZNVEpmVm5CdE1tMWtWR0ZuWDNwR2RreDVWbmhxYUdOcmJscE5aa05HVWxFM1dsRlROSFV6VFRaaGFUZzBXVUpQTmxCMFgzbE1VakE1WnlKOWZYMC5lSEI1aGpzX1pKTm1LeDN1XzRUcWl1Y0praVFzTDJ4TjVod01haWxRM3VuMjlmX1dGcTNtc3MwVXhidnMtUHhhVEpJLWxsZmhSZzkwekNlNThKZ3p2R2UyLUstaUoyQTZQY2tDSFlqWUFvYUZDcXY0VzF6Y3VrLU1lSXhYdWpWbjY1dHhBa2t6WGNWZ29zLU9wa1NudFNRYmJxSDZhSmFLaGVvdTRCUEdvaUtnX05fRE41WVctekt5SkJ3VjRqUk9hMW04X21aenp3NWpmZEI2M0dWMDRUQ09vbHZhTzgxSUxkYWd3VHpEQ2Q2dk5tMHpXZklaTFlQRGJ5N3A5Y3RUeE14dmNqQmE0Tzh1Ni0tX0pWWGdIdHBBVTRJemJDbmdCQmZhNU5SbkdlamYxTWEtdTM4V2NVRDRKVjZzS0NRZVhPT3VkUGR1ckE2YXljVEgzLU15QWciLCJhY2Nlc3NfdG9rZW4iOiIifX19.eec7QXaCOGwxwhO85mNpCRDw-hsA-CVKC5v7sYdBqsY&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/tT2AfFW2GlysiIvAmvdV503LUIVVP3WgZ8hajBKDS1H/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR2hvc3QiLCJlbWFpbCI6Ijc2ODYwMmU2LTZkNjEtNDQ4OC1hNmQ4LWMyOGZiY2I1ZTU0ZkBleGFtcGxlLmV4YW1wbGUiLCJzdWIiOiJjZTg3NWE1NC0zYWRmLTRjM2YtODY0My1hZGE5M2RlNzM1ZjAiLCJzY29wZXMiOlsib3BlbmlkIiwib2ZmbGluZV9hY2Nlc3MiLCJwcm9maWxlIiwiZW1haWwiLCJ3YWxsZXQiLCJmb3J3YXJkZWRUb2tlbnMiLCJwYXNza2V5Il0sImF1ZCI6ImRiN2U4OGMxLWQ5OTctNDA5OC04YzA1LTNjMjhjMDE3NzFmMyIsImlkVG9rZW5UVEwiOjM2MDAsImFjY2Vzc1Rva2VuVFRMIjozNjAwLCJyZWZyZXNoVG9rZW5UVEwiOjg2NDAwLCJjbGllbnRJZCI6ImRlbW8tY2xpZW50LTEiLCJwcm92aWRlciI6ImR1bW15IiwiZmxvd19pZCI6Im9hdXRoLWxvZ2luLWEyMDRhMzFmLWM4MjgtNDFkNC1iMDk5LTE5MTE3M2QxNTJmNSIsImxvZ2luX2Zsb3dfaWQiOiI3YTdkYjc0ZS02ODkzLTQyOWUtYmMzYy1iYTVjMjljOTg0N2QiLCJkaXNwbGF5X21vZGUiOiJwb3B1cCIsImZsb3dfdHlwZSI6Im9pZGMiLCJvcmlnaW4iOiJodHRwczovL2F1dGgtZGV2LmNpdmljLmNvbSIsImZvcndhcmRlZFRva2VucyI6eyJkdW1teSI6eyJpZF90b2tlbiI6ImV5SmhiR2NpT2lKU1V6STFOaUlzSW5SNWNDSTZJa3BYVkNJc0ltdHBaQ0k2SW1zeEluMC5leUpwYzNNaU9pSm9kSFJ3Y3pvdkwyaGxZV1JsY2kxd2NtOTRlUzVrWVc1cFpXeGlhMlZzYkdWb1pYSXpOems1TG5kdmNtdGxjbk11WkdWMklpd2lZWFZrSWpvaWRHVnVZVzUwTFRFdFlYQndMVEVpTENKemRXSWlPaUkzTmpnMk1ESmxOaTAyWkRZeExUUTBPRGd0WVRaa09DMWpNamhtWW1OaU5XVTFOR1lpTENKbGJXRnBiQ0k2SWpjMk9EWXdNbVUyTFRaa05qRXRORFE0T0MxaE5tUTRMV015T0daaVkySTFaVFUwWmtCbGVHRnRjR3hsTG1WNFlXMXdiR1VpTENKdWIyNWpaU0k2SW1Sak1XWm1NV0V6TFRBMk1qY3ROREF5TUMxaFl6Wm1MVEUzWmpreU9UTTVZek16TVNJc0ltbGhkQ0k2TVRjMk1EQTFOekl3TUN3aVpYaHdJam94TnpZd01EWXdPREF3TENKbWIzSjNZWEprWldSVWIydGxibk1pT25zaVpIVnRiWGtpT25zaWFXUmZkRzlyWlc0aU9pSmxlVXBvWWtkamFVOXBTbE5WZWtreFRtbEpjMGx1VWpWalEwazJTV3R3V0ZaRFNYTkpiWFJ3V2tOSk5rbHRjM2hKYmpBdVpYbEtjR016VFdsUGFVcHZaRWhTZDJONmIzWk1NbWhzV1ZkU2JHTnBNWGRqYlRrMFpWTTFhMWxYTlhCYVYzaHBZVEpXYzJKSFZtOWFXRWw2VG5wck5VeHVaSFpqYlhSc1kyNU5kVnBIVmpKSmFYZHBZek5XYVVscWIybE9lbGswVG1wQmVWcFVXWFJPYlZFeVRWTXdNRTVFWnpSTVYwVXlXa1JuZEZsNlNUUmFiVXBxV1dwV2JFNVVVbTFKYVhkcFdsY3hhR0ZYZDJsUGFVa3pUbXBuTWsxRVNteE9hVEF5V2tSWmVFeFVVVEJQUkdkMFdWUmFhMDlETVdwTmFtaHRXVzFPYVU1WFZURk9SMXBCV2xob2FHSllRbk5hVXpWc1pVZEdkR05IZUd4SmFYZHBZbTA1ZFZreVZXbFBhVXByV1hwR2JWcHFSbWhOZVRCM1RtcEpNMHhVVVhkTmFrRjBXVmROTWxwcE1IaE9NbGsxVFdwcmVrOVhUWHBOZWtWcFRFTkthR1JYVVdsUGFVcHZaRWhTZDA5cE9IWmlSemxxV1ZkNGIySXpUakJQYWsxM1RVUkJhVXhEU25CWldGRnBUMnBGTTA1cVFYZE9WR041VFVSQmMwbHRWalJqUTBrMlRWUmpNazFFUVRKTlJHZDNUVWd3TG10ZmRYUlpNRlZMWjB4cVIzTXpSM2xpZW5oWVdHMXRURGhOTTBWeVNtaFVka2xqU2tSZmFWSjZRbnBIYzI5UVpVVk1aek5sWVhsc1NGTmFiV1U1Ym1kbFpGbHpSM0V6Tmt0RVdWODFXakpFZFU5WVExTlFVekU0V0V0S2VtbFRlVWQ2V2xsdlNUUlVlR2MxTTJsNE0wNUhSbFZ3ZUdSeVJtZFlUekkwZFhsdFp6bFRhMkZGUjJ4M1QyaDJZa0UwWHpsSFNYRjVORXN5VUVOcWIyazRSM2R2V1dFM1RtRm9UMGRsZEZkU1Yxb3lWVkJ1Wkdkb1lXVkdjbVp2U0ZONVQxOHdMVWt6ZG1oclRIRjFRVVprU2pkWFRUbENRM1J4Ym5OaVMyUk1ja3BKU0RORWJHdHhTVWxzVnpWU2FVTldiRnBCV2t0eWVVNXdVazAxWldoYWRucFBWRWhJYURaM2EwNW1ORXhGZUZwcFRVeEJSSFJLVGxKcFpIaEZNVEpmVm5CdE1tMWtWR0ZuWDNwR2RreDVWbmhxYUdOcmJscE5aa05HVWxFM1dsRlROSFV6VFRaaGFUZzBXVUpQTmxCMFgzbE1VakE1WnlKOWZYMC5lSEI1aGpzX1pKTm1LeDN1XzRUcWl1Y0praVFzTDJ4TjVod01haWxRM3VuMjlmX1dGcTNtc3MwVXhidnMtUHhhVEpJLWxsZmhSZzkwekNlNThKZ3p2R2UyLUstaUoyQTZQY2tDSFlqWUFvYUZDcXY0VzF6Y3VrLU1lSXhYdWpWbjY1dHhBa2t6WGNWZ29zLU9wa1NudFNRYmJxSDZhSmFLaGVvdTRCUEdvaUtnX05fRE41WVctekt5SkJ3VjRqUk9hMW04X21aenp3NWpmZEI2M0dWMDRUQ09vbHZhTzgxSUxkYWd3VHpEQ2Q2dk5tMHpXZklaTFlQRGJ5N3A5Y3RUeE14dmNqQmE0Tzh1Ni0tX0pWWGdIdHBBVTRJemJDbmdCQmZhNU5SbkdlamYxTWEtdTM4V2NVRDRKVjZzS0NRZVhPT3VkUGR1ckE2YXljVEgzLU15QWciLCJhY2Nlc3NfdG9rZW4iOiIifX19.eec7QXaCOGwxwhO85mNpCRDw-hsA-CVKC5v7sYdBqsY&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/tT2AfFW2GlysiIvAmvdV503LUIVVP3WgZ8hajBKDS1H
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/tT2AfFW2GlysiIvAmvdV503LUIVVP3WgZ8hajBKDS1H
+[PAGE CONSOLE] [log] [NextAuthProvider] Authentication redirect: http://localhost:3000/api/auth/callback?code=dcI1gbFxA3jfcp83GIrpQeruT56hr0Yw__ZaEk-9slF&state=eyJ1dWlkIjoiNmQ2MjFiYTQtMGI2Ni00NzY4LTk1ZGQtNzI0YTM5MzExN2I1IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F
+[PAGE CONSOLE] [log] [NextAuthProvider] Authentication redirect: http://localhost:3000/api/auth/callback?code=dcI1gbFxA3jfcp83GIrpQeruT56hr0Yw__ZaEk-9slF&state=eyJ1dWlkIjoiNmQ2MjFiYTQtMGI2Ni00NzY4LTk1ZGQtNzI0YTM5MzExN2I1IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F
+[REQUEST FAILED] POST http://localhost:3000/demo - Load request cancelled
+[REQUEST FAILED] POST http://localhost:3000/demo - Load request cancelled
+[PAGE CONSOLE] [error] onSignIn: Revalidation failed: TypeError: Load failed
+[PAGE CONSOLE] [error] onSignIn: Revalidation failed: TypeError: Load failed
+[PAGE ERROR] /localhost:3000/demo?_rsc=1bgwz due to access control checks.
+[ERROR STACK] Fetch API cannot load http://localhost:3000/demo?_rsc=1bgwz due to access control checks.
+    at fetchServerResponse (:98:38)
+    at fetchServerResponse (:68:36)
+    at refreshReducer (:35:67)
+    at unknown (:141:55)
+    at action (:140:32)
+    at runAction (:51:44)
+    at runAction (:46:26)
+    at runRemainingActions (:29:22)
+    at handleResult (:58:28)
+[PAGE ERROR] /localhost:3000/demo?_rsc=1bgwz due to access control checks.
+[ERROR STACK] Fetch API cannot load http://localhost:3000/demo?_rsc=1bgwz due to access control checks.
+    at fetchServerResponse (:98:38)
+    at fetchServerResponse (:68:36)
+    at refreshReducer (:35:67)
+    at unknown (:141:55)
+    at action (:140:32)
+    at runAction (:51:44)
+    at runAction (:46:26)
+    at runRemainingActions (:29:22)
+    at handleResult (:58:28)
+[PAGE ERROR] /localhost:3000/__nextjs_original-stack-frames due to access control checks.
+[ERROR STACK] Fetch API cannot load http://localhost:3000/__nextjs_original-stack-frames due to access control checks.
+    at getOriginalStackFrames (:78:26)
+    at getOriginalStackFrames (:68:39)
+    at unknown (:63:81)
+    at unknown (:62:86)
+    at createMemoizedPromise (:96:41)
+    at getErrorByType (:62:54)
+    at getErrorByType (:47:31)
+    at unknown (:79:44)
+    at react-stack-bottom-frame (:24036:26)
+    at runWithFiberInDEV (:1514:21)
+    at commitHookEffectListMount (:10515:46)
+    at commitHookPassiveMountEffects (:10636:36)
+    at commitPassiveMountOnFiber (:12442:42)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12435:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12558:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12435:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12435:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12435:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12435:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12558:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12558:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12558:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12558:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12558:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12558:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12435:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12445:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12435:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12435:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12558:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12435:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12435:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12558:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12558:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12454:49)
+    at flushPassiveEffects (:15796:34)
+    at flushSpawnedWork (:15656:63)
+    at commitRoot (:15391:25)
+    at commitRootWhenReady (:14644:17)
+    at performWorkOnRoot (:14567:34)
+    at performSyncWorkOnRoot (:16290:24)
+    at flushSyncWorkAcrossRoots_impl (:16138:42)
+    at processRootScheduleInMicrotask (:16175:36)
+    at unknown (:16309:43)
+[PAGE ERROR] /localhost:3000/__nextjs_original-stack-frames due to access control checks.
+[ERROR STACK] Fetch API cannot load http://localhost:3000/__nextjs_original-stack-frames due to access control checks.
+    at getOriginalStackFrames (:78:26)
+    at getOriginalStackFrames (:68:39)
+    at unknown (:63:81)
+    at unknown (:62:86)
+    at createMemoizedPromise (:96:41)
+    at getErrorByType (:62:54)
+    at getErrorByType (:47:31)
+    at unknown (:79:44)
+    at react-stack-bottom-frame (:24036:26)
+    at runWithFiberInDEV (:1514:21)
+    at commitHookEffectListMount (:10515:46)
+    at commitHookPassiveMountEffects (:10636:36)
+    at commitPassiveMountOnFiber (:12442:42)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12435:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12558:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12435:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12435:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12435:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12435:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12558:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12558:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12558:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12558:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12558:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12558:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12435:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12445:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12435:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12435:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12558:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12435:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12435:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12558:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12558:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12454:49)
+    at flushPassiveEffects (:15796:34)
+    at flushSpawnedWork (:15656:63)
+    at commitRoot (:15391:25)
+    at commitRootWhenReady (:14644:17)
+    at performWorkOnRoot (:14567:34)
+    at performSyncWorkOnRoot (:16290:24)
+    at flushSyncWorkAcrossRoots_impl (:16138:42)
+    at processRootScheduleInMicrotask (:16175:36)
+    at unknown (:16309:43)
+[PAGE CONSOLE] [error] Failed to fetch RSC payload for http://localhost:3000/demo. Falling back to browser navigation. TypeError: Load failed
+[PAGE CONSOLE] [error] Failed to fetch RSC payload for http://localhost:3000/demo. Falling back to browser navigation. TypeError: Load failed
+[PAGE ERROR] /localhost:3000/__nextjs_original-stack-frames due to access control checks.
+[ERROR STACK] Fetch API cannot load http://localhost:3000/__nextjs_original-stack-frames due to access control checks.
+    at getOriginalStackFrames (:78:26)
+    at getOriginalStackFrames (:68:39)
+    at unknown (:63:81)
+    at unknown (:62:86)
+    at createMemoizedPromise (:96:41)
+    at getErrorByType (:62:54)
+    at getErrorByType (:47:31)
+    at unknown (:79:44)
+    at react-stack-bottom-frame (:24036:26)
+    at runWithFiberInDEV (:1514:21)
+    at commitHookEffectListMount (:10515:46)
+    at commitHookPassiveMountEffects (:10636:36)
+    at commitPassiveMountOnFiber (:12442:42)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12435:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12558:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12435:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12435:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12435:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12435:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12558:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12558:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12558:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12558:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12558:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12558:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12435:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12445:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12435:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12435:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12558:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12435:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12435:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12558:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12558:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12454:49)
+    at flushPassiveEffects (:15796:34)
+    at unknown (:15367:34)
+    at performWorkUntilDeadline (:45:56)
+[PAGE ERROR] /localhost:3000/__nextjs_original-stack-frames due to access control checks.
+[ERROR STACK] Fetch API cannot load http://localhost:3000/__nextjs_original-stack-frames due to access control checks.
+    at getOriginalStackFrames (:78:26)
+    at getOriginalStackFrames (:68:39)
+    at unknown (:63:81)
+    at unknown (:62:86)
+    at createMemoizedPromise (:96:41)
+    at getErrorByType (:62:54)
+    at getErrorByType (:47:31)
+    at unknown (:79:44)
+    at react-stack-bottom-frame (:24036:26)
+    at runWithFiberInDEV (:1514:21)
+    at commitHookEffectListMount (:10515:46)
+    at commitHookPassiveMountEffects (:10636:36)
+    at commitPassiveMountOnFiber (:12442:42)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12435:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12558:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12435:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12435:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12435:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12435:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12558:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12558:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12558:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12558:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12558:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12558:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12435:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12445:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12435:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12435:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12558:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12435:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12435:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12558:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12558:49)
+    at recursivelyTraversePassiveMountEffects (:12416:36)
+    at commitPassiveMountOnFiber (:12454:49)
+    at flushPassiveEffects (:15796:34)
+    at unknown (:15367:34)
+    at performWorkUntilDeadline (:45:56)
+[REQUEST FAILED] GET http://localhost:3000/demo/api/auth/callback?code=dcI1gbFxA3jfcp83GIrpQeruT56hr0Yw__ZaEk-9slF&state=eyJ1dWlkIjoiNmQ2MjFiYTQtMGI2Ni00NzY4LTk1ZGQtNzI0YTM5MzExN2I1IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F - Load request cancelled
+[REQUEST FAILED] GET http://localhost:3000/demo/api/auth/callback?code=dcI1gbFxA3jfcp83GIrpQeruT56hr0Yw__ZaEk-9slF&state=eyJ1dWlkIjoiNmQ2MjFiYTQtMGI2Ni00NzY4LTk1ZGQtNzI0YTM5MzExN2I1IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F - Load request cancelled
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
