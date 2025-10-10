@@ -1,0 +1,220 @@
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 34ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 34ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 33ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 33ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 120ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 120ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 44ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 44ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 43ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 43ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 88ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 88ms
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?response_type=code&client_id=demo-client-1&state=eyJ1dWlkIjoiZGYyZjVlMzItZjEwYi00NTM5LWI4ZjUtODc3NWIwMTU1NWUwIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&code_challenge=KB7ktICND1QSPRiKdcA9fHiOVxrfuGhd3LGQngKxzoM&code_challenge_method=S256&prompt=consent
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?response_type=code&client_id=demo-client-1&state=eyJ1dWlkIjoiZGYyZjVlMzItZjEwYi00NTM5LWI4ZjUtODc3NWIwMTU1NWUwIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&code_challenge=KB7ktICND1QSPRiKdcA9fHiOVxrfuGhd3LGQngKxzoM&code_challenge_method=S256&prompt=consent
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 32ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 32ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 9ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 9ms
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[PAGE CONSOLE] [debug] Storage access not available - passkey discovery may be limited
+[PAGE CONSOLE] [debug] Storage access not available - passkey discovery may be limited
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at unknown (http://localhost:3000/_next/static/chunks/node_modules_@civic_auth_dist_6e7b40ab._.js:5500:38)
+    at forEach (:1:11)
+    at replayBlockedMessages (http://localhost:3000/_next/static/chunks/node_modules_@civic_auth_dist_6e7b40ab._.js:5498:47)
+    at unknown (http://localhost:3000/_next/static/chunks/node_modules_@civic_auth_dist_6e7b40ab._.js:6224:60)
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at unknown (http://localhost:3000/_next/static/chunks/node_modules_@civic_auth_dist_6e7b40ab._.js:5500:38)
+    at forEach (:1:11)
+    at replayBlockedMessages (http://localhost:3000/_next/static/chunks/node_modules_@civic_auth_dist_6e7b40ab._.js:5498:47)
+    at unknown (http://localhost:3000/_next/static/chunks/node_modules_@civic_auth_dist_6e7b40ab._.js:6224:60)
+[PAGE CONSOLE] [debug] Storage access not available - passkey discovery may be limited
+[PAGE CONSOLE] [debug] Storage access not available - passkey discovery may be limited
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at handleMessage (http://localhost:3000/_next/static/chunks/node_modules_@civic_auth_dist_6e7b40ab._.js:5414:34)
+    at unknown (http://localhost:3000/_next/static/chunks/node_modules_@civic_auth_dist_6e7b40ab._.js:5375:31)
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at handleMessage (http://localhost:3000/_next/static/chunks/node_modules_@civic_auth_dist_6e7b40ab._.js:5414:34)
+    at unknown (http://localhost:3000/_next/static/chunks/node_modules_@civic_auth_dist_6e7b40ab._.js:5375:31)
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/hIokTBz3wIv5ah4r5OvCL7Y9GBwxMwZBo5IKUcNVaQ6/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxYmNjMjJiMy00NWM3LTRkOTQtOTFlYy1jNTg3ZGRmYzI5MWYiLCJuYW1lIjoiR2hvc3QiLCJlbWFpbCI6IjE3MDZjMzdlLWZiNDMtNDBhNi05NGI0LTUzMzA2ZjYzNzJmY0BleGFtcGxlLmV4YW1wbGUiLCJzY29wZXMiOlsib3BlbmlkIiwib2ZmbGluZV9hY2Nlc3MiLCJwcm9maWxlIiwiZW1haWwiLCJ3YWxsZXQiLCJmb3J3YXJkZWRUb2tlbnMiLCJwYXNza2V5Il0sImF1ZCI6ImRiN2U4OGMxLWQ5OTctNDA5OC04YzA1LTNjMjhjMDE3NzFmMyIsImlkVG9rZW5UVEwiOjM2MDAsImFjY2Vzc1Rva2VuVFRMIjozNjAwLCJyZWZyZXNoVG9rZW5UVEwiOjg2NDAwLCJjbGllbnRJZCI6ImRlbW8tY2xpZW50LTEiLCJwcm92aWRlciI6ImR1bW15IiwiZmxvd19pZCI6Im9hdXRoLWxvZ2luLWFlNWRhMmI1LWEyMjYtNDllMS1iZWY3LWUxYjYzNjgxNzI0ZiIsImxvZ2luX2Zsb3dfaWQiOiJkOGFiNDk3OC05ZWI1LTRmYzUtYjQ5OS0wNDEyYjhiZmRkZGYiLCJkaXNwbGF5X21vZGUiOiJwb3B1cCIsImZsb3dfdHlwZSI6Im9pZGMiLCJvcmlnaW4iOiJodHRwczovL2F1dGgtZGV2LmNpdmljLmNvbSIsImZvcndhcmRlZFRva2VucyI6eyJkdW1teSI6eyJpZF90b2tlbiI6ImV5SmhiR2NpT2lKU1V6STFOaUlzSW5SNWNDSTZJa3BYVkNJc0ltdHBaQ0k2SW1zeEluMC5leUpwYzNNaU9pSm9kSFJ3Y3pvdkwyaGxZV1JsY2kxd2NtOTRlUzVrWVc1cFpXeGlhMlZzYkdWb1pYSXpOems1TG5kdmNtdGxjbk11WkdWMklpd2lZWFZrSWpvaWRHVnVZVzUwTFRFdFlYQndMVEVpTENKemRXSWlPaUl4TnpBMll6TTNaUzFtWWpRekxUUXdZVFl0T1RSaU5DMDFNek13Tm1ZMk16Y3labU1pTENKbGJXRnBiQ0k2SWpFM01EWmpNemRsTFdaaU5ETXROREJoTmkwNU5HSTBMVFV6TXpBMlpqWXpOekptWTBCbGVHRnRjR3hsTG1WNFlXMXdiR1VpTENKdWIyNWpaU0k2SWpaaU1HVmpPVGs1TFdOaE0yRXROR1JtTnkxaU9HUTRMV0kzTnpjNU56YzFNbVkwWkNJc0ltbGhkQ0k2TVRjMk1ERXpORFEyTXl3aVpYaHdJam94TnpZd01UTTRNRFl6TENKbWIzSjNZWEprWldSVWIydGxibk1pT25zaVpIVnRiWGtpT25zaWFXUmZkRzlyWlc0aU9pSmxlVXBvWWtkamFVOXBTbE5WZWtreFRtbEpjMGx1VWpWalEwazJTV3R3V0ZaRFNYTkpiWFJ3V2tOSk5rbHRjM2hKYmpBdVpYbEtjR016VFdsUGFVcHZaRWhTZDJONmIzWk1NbWhzV1ZkU2JHTnBNWGRqYlRrMFpWTTFhMWxYTlhCYVYzaHBZVEpXYzJKSFZtOWFXRWw2VG5wck5VeHVaSFpqYlhSc1kyNU5kVnBIVmpKSmFYZHBZek5XYVVscWIybE5WR04zVG0xTmVrNHlWWFJhYlVrd1RYa3dNRTFIUlRKTVZHc3dXV3BSZEU1VVRYcE5SRnB0VG1wTk0wMXRXbXBKYVhkcFdsY3hhR0ZYZDJsUGFVbDRUbnBCTWxsNlRUTmFVekZ0V1dwUmVreFVVWGRaVkZsMFQxUlNhVTVETURGTmVrMTNUbTFaTWsxNlkzbGFiVTVCV2xob2FHSllRbk5hVXpWc1pVZEdkR05IZUd4SmFYZHBZbTA1ZFZreVZXbFBhVWt5V1dwQ2JGbDZhelZQVXpGcVdWUk9hRXhVVW10YWFtTjBXV3BvYTA5RE1XbE9lbU16VDFSak0wNVVTbTFPUjFGcFRFTkthR1JYVVdsUGFVcHZaRWhTZDA5cE9IWmlSemxxV1ZkNGIySXpUakJQYWsxM1RVUkJhVXhEU25CWldGRnBUMnBGTTA1cVFYaE5lbEV3VG1wTmMwbHRWalJqUTBrMlRWUmpNazFFUlhwUFJFRXlUVE13TGtweUxXcHhYMjEzU1c5RlJFWnllVFZ3WnpaVFUxUXhNMlExWDBwUFpHUXliRE5FZUVSaFkwdHNWakpGUjJRd1NXZzRPVEpqY25KNmRYWk9TV0ZVYW1KS1dHaG9ZWFpYUTNab1oxZHNiRUpSY0Mxa1gxZHRaelpXWmpkNE5rbFpOWGwxVldKRFVHMXFlakE0ZWt4WWREWmtlVTh6YkdGR0xXZDVhVUkxWVhwSGVGb3dSSFpPVGxnMlEzTlhVVFZrYnpKc01HTnhTMDV4VlROUFluaHpZa2hGZVV4V2NrbEZabWR2UlRjNGIySkZRV0ZTU2kxMVVWbG5aVzFNTm1oNVVubHpZbXhWZVdoVVp5MUpiMGw1Ym5GWU5reERiMDh3T1ZKcVdGYzJNSFZRY2xGemVtaDBNa2xvYldaeFZVdENOMWxMTjE5MlRuTkNRWEUxUTJaMlRrNHlZM2RaYTBJNGNuRnJhR1oyUTNZd2FqTkpaRkExYjJkRFFVNTVTMHBRTWt3MU1EVlZjMEp6VGxkS1FqSlhZMjkxVTFwdFFtNU9UVEEwUVV0d2VtMVVkVlZmTTFORllUZ3pSa1ZETlRWcE5YRjBRekJaVVNKOWZYMC5IdFZjU2Vtbmlhczl1Mk43M1dwbmc5UEhwQlJlUUlrTVFPRUpMQXQ1ZDFucjdkTGJfcG1fcUs4R3dWZWNoVW5qR01uYWxrYnh6Q0Fla1lSUjRJeERNR2c5RmhQenZPYTVLQXU4eXc3eDdDOHY4V19jcHlyckRyeXZtN25YN00zYVo3YUdWRHdUdGVEdENLVTJOODNzRUNwM3ViaDdaeGJ4Y2NrZEpadEE1MnVVYTFwN2JCM0tUYy0wN1BCdUppNllwR3JESDdjV21JLXNMcldROTZmUzVfZUZvWHNaek9EdjY4UlJ4QmZkSUhoUlVjRFV3VXN3REhwQWJYWXZxM2t5UmExSHBZcnFDVG9GM0hhcmtmTC1lSERQaTNyanhtd0pTbWtyMTc4MkkxY09qcHhybUtZaC1Mdi1LSm9pWTBJbng3VENlNUVydkFEakxfRUMxQmttWXciLCJhY2Nlc3NfdG9rZW4iOiIifX19.izU2g0xZVNIV5aF70VFX32TKBi83lSVN1UyuvuHn5Fg&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/hIokTBz3wIv5ah4r5OvCL7Y9GBwxMwZBo5IKUcNVaQ6/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxYmNjMjJiMy00NWM3LTRkOTQtOTFlYy1jNTg3ZGRmYzI5MWYiLCJuYW1lIjoiR2hvc3QiLCJlbWFpbCI6IjE3MDZjMzdlLWZiNDMtNDBhNi05NGI0LTUzMzA2ZjYzNzJmY0BleGFtcGxlLmV4YW1wbGUiLCJzY29wZXMiOlsib3BlbmlkIiwib2ZmbGluZV9hY2Nlc3MiLCJwcm9maWxlIiwiZW1haWwiLCJ3YWxsZXQiLCJmb3J3YXJkZWRUb2tlbnMiLCJwYXNza2V5Il0sImF1ZCI6ImRiN2U4OGMxLWQ5OTctNDA5OC04YzA1LTNjMjhjMDE3NzFmMyIsImlkVG9rZW5UVEwiOjM2MDAsImFjY2Vzc1Rva2VuVFRMIjozNjAwLCJyZWZyZXNoVG9rZW5UVEwiOjg2NDAwLCJjbGllbnRJZCI6ImRlbW8tY2xpZW50LTEiLCJwcm92aWRlciI6ImR1bW15IiwiZmxvd19pZCI6Im9hdXRoLWxvZ2luLWFlNWRhMmI1LWEyMjYtNDllMS1iZWY3LWUxYjYzNjgxNzI0ZiIsImxvZ2luX2Zsb3dfaWQiOiJkOGFiNDk3OC05ZWI1LTRmYzUtYjQ5OS0wNDEyYjhiZmRkZGYiLCJkaXNwbGF5X21vZGUiOiJwb3B1cCIsImZsb3dfdHlwZSI6Im9pZGMiLCJvcmlnaW4iOiJodHRwczovL2F1dGgtZGV2LmNpdmljLmNvbSIsImZvcndhcmRlZFRva2VucyI6eyJkdW1teSI6eyJpZF90b2tlbiI6ImV5SmhiR2NpT2lKU1V6STFOaUlzSW5SNWNDSTZJa3BYVkNJc0ltdHBaQ0k2SW1zeEluMC5leUpwYzNNaU9pSm9kSFJ3Y3pvdkwyaGxZV1JsY2kxd2NtOTRlUzVrWVc1cFpXeGlhMlZzYkdWb1pYSXpOems1TG5kdmNtdGxjbk11WkdWMklpd2lZWFZrSWpvaWRHVnVZVzUwTFRFdFlYQndMVEVpTENKemRXSWlPaUl4TnpBMll6TTNaUzFtWWpRekxUUXdZVFl0T1RSaU5DMDFNek13Tm1ZMk16Y3labU1pTENKbGJXRnBiQ0k2SWpFM01EWmpNemRsTFdaaU5ETXROREJoTmkwNU5HSTBMVFV6TXpBMlpqWXpOekptWTBCbGVHRnRjR3hsTG1WNFlXMXdiR1VpTENKdWIyNWpaU0k2SWpaaU1HVmpPVGs1TFdOaE0yRXROR1JtTnkxaU9HUTRMV0kzTnpjNU56YzFNbVkwWkNJc0ltbGhkQ0k2TVRjMk1ERXpORFEyTXl3aVpYaHdJam94TnpZd01UTTRNRFl6TENKbWIzSjNZWEprWldSVWIydGxibk1pT25zaVpIVnRiWGtpT25zaWFXUmZkRzlyWlc0aU9pSmxlVXBvWWtkamFVOXBTbE5WZWtreFRtbEpjMGx1VWpWalEwazJTV3R3V0ZaRFNYTkpiWFJ3V2tOSk5rbHRjM2hKYmpBdVpYbEtjR016VFdsUGFVcHZaRWhTZDJONmIzWk1NbWhzV1ZkU2JHTnBNWGRqYlRrMFpWTTFhMWxYTlhCYVYzaHBZVEpXYzJKSFZtOWFXRWw2VG5wck5VeHVaSFpqYlhSc1kyNU5kVnBIVmpKSmFYZHBZek5XYVVscWIybE5WR04zVG0xTmVrNHlWWFJhYlVrd1RYa3dNRTFIUlRKTVZHc3dXV3BSZEU1VVRYcE5SRnB0VG1wTk0wMXRXbXBKYVhkcFdsY3hhR0ZYZDJsUGFVbDRUbnBCTWxsNlRUTmFVekZ0V1dwUmVreFVVWGRaVkZsMFQxUlNhVTVETURGTmVrMTNUbTFaTWsxNlkzbGFiVTVCV2xob2FHSllRbk5hVXpWc1pVZEdkR05IZUd4SmFYZHBZbTA1ZFZreVZXbFBhVWt5V1dwQ2JGbDZhelZQVXpGcVdWUk9hRXhVVW10YWFtTjBXV3BvYTA5RE1XbE9lbU16VDFSak0wNVVTbTFPUjFGcFRFTkthR1JYVVdsUGFVcHZaRWhTZDA5cE9IWmlSemxxV1ZkNGIySXpUakJQYWsxM1RVUkJhVXhEU25CWldGRnBUMnBGTTA1cVFYaE5lbEV3VG1wTmMwbHRWalJqUTBrMlRWUmpNazFFUlhwUFJFRXlUVE13TGtweUxXcHhYMjEzU1c5RlJFWnllVFZ3WnpaVFUxUXhNMlExWDBwUFpHUXliRE5FZUVSaFkwdHNWakpGUjJRd1NXZzRPVEpqY25KNmRYWk9TV0ZVYW1KS1dHaG9ZWFpYUTNab1oxZHNiRUpSY0Mxa1gxZHRaelpXWmpkNE5rbFpOWGwxVldKRFVHMXFlakE0ZWt4WWREWmtlVTh6YkdGR0xXZDVhVUkxWVhwSGVGb3dSSFpPVGxnMlEzTlhVVFZrYnpKc01HTnhTMDV4VlROUFluaHpZa2hGZVV4V2NrbEZabWR2UlRjNGIySkZRV0ZTU2kxMVVWbG5aVzFNTm1oNVVubHpZbXhWZVdoVVp5MUpiMGw1Ym5GWU5reERiMDh3T1ZKcVdGYzJNSFZRY2xGemVtaDBNa2xvYldaeFZVdENOMWxMTjE5MlRuTkNRWEUxUTJaMlRrNHlZM2RaYTBJNGNuRnJhR1oyUTNZd2FqTkpaRkExYjJkRFFVNTVTMHBRTWt3MU1EVlZjMEp6VGxkS1FqSlhZMjkxVTFwdFFtNU9UVEEwUVV0d2VtMVVkVlZmTTFORllUZ3pSa1ZETlRWcE5YRjBRekJaVVNKOWZYMC5IdFZjU2Vtbmlhczl1Mk43M1dwbmc5UEhwQlJlUUlrTVFPRUpMQXQ1ZDFucjdkTGJfcG1fcUs4R3dWZWNoVW5qR01uYWxrYnh6Q0Fla1lSUjRJeERNR2c5RmhQenZPYTVLQXU4eXc3eDdDOHY4V19jcHlyckRyeXZtN25YN00zYVo3YUdWRHdUdGVEdENLVTJOODNzRUNwM3ViaDdaeGJ4Y2NrZEpadEE1MnVVYTFwN2JCM0tUYy0wN1BCdUppNllwR3JESDdjV21JLXNMcldROTZmUzVfZUZvWHNaek9EdjY4UlJ4QmZkSUhoUlVjRFV3VXN3REhwQWJYWXZxM2t5UmExSHBZcnFDVG9GM0hhcmtmTC1lSERQaTNyanhtd0pTbWtyMTc4MkkxY09qcHhybUtZaC1Mdi1LSm9pWTBJbng3VENlNUVydkFEakxfRUMxQmttWXciLCJhY2Nlc3NfdG9rZW4iOiIifX19.izU2g0xZVNIV5aF70VFX32TKBi83lSVN1UyuvuHn5Fg&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/hIokTBz3wIv5ah4r5OvCL7Y9GBwxMwZBo5IKUcNVaQ6
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/hIokTBz3wIv5ah4r5OvCL7Y9GBwxMwZBo5IKUcNVaQ6
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 37ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 37ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 24ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 24ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 43ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 43ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 26ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 26ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 41ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 41ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 18ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 18ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 5ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 5ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 56ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 56ms
+[PAGE CONSOLE] [error] Viewport argument key "interactive-widget" not recognized and ignored.
+[PAGE CONSOLE] [error] Viewport argument key "interactive-widget" not recognized and ignored.
+[PAGE CONSOLE] [error] Viewport argument key "interactive-widget" not recognized and ignored.
+[PAGE CONSOLE] [error] Viewport argument key "interactive-widget" not recognized and ignored.
+[PAGE CONSOLE] [error] Preflight response is not successful. Status code: 503
+[PAGE CONSOLE] [error] Preflight response is not successful. Status code: 503
+[PAGE ERROR] /sepolia-preconf.base.org/ due to access control checks.
+[ERROR STACK] 
+[PAGE ERROR] /sepolia-preconf.base.org/ due to access control checks.
+[ERROR STACK] 
+[REQUEST FAILED] POST https://sepolia-preconf.base.org/ - Preflight response is not successful. Status code: 503
+[REQUEST FAILED] POST https://sepolia-preconf.base.org/ - Preflight response is not successful. Status code: 503
+[PAGE CONSOLE] [error] Failed to load resource: Preflight response is not successful. Status code: 503
+[PAGE CONSOLE] [error] Failed to load resource: Preflight response is not successful. Status code: 503
+[PAGE CONSOLE] [error] Failed to build MetakeepWeb3Client TypeError: Load failed
+[PAGE CONSOLE] [error] Failed to build MetakeepWeb3Client TypeError: Load failed
+[PAGE CONSOLE] [info] Successfully preconnected to https://fonts.gstatic.com/
+[PAGE CONSOLE] [info] Successfully preconnected to https://fonts.gstatic.com/
+[PAGE CONSOLE] [info] Successfully preconnected to https://fonts.gstatic.com/
+[PAGE CONSOLE] [info] Successfully preconnected to https://fonts.gstatic.com/
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 103ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 103ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 13ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 13ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 89ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 89ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 9ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 9ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 36ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 36ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 31ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 31ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 34ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 34ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 42ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 42ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 75ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 75ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 67ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 67ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 165ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 165ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 31ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 31ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 70ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 70ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 84ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 84ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 89ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 89ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 124ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 124ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 40ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 40ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 35ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 35ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 34ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 34ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 34ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 34ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 34ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 34ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 35ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 35ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 19ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 19ms

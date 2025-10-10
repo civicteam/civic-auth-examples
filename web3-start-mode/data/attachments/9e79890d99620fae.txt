@@ -1,0 +1,59 @@
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [error] Error
+[PAGE CONSOLE] [error] Error
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?client_id=demo-client-1&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&response_type=code&scope=openid+profile+email+offline_access&state=eyJ1dWlkIjoiNDcyNThmOTYtYTI1Mi00ZTYwLTllN2QtMDA3MWI1MTkzYjllIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjMifQ%3D%3D&code_challenge=48pf2MvNsbDsnJTT67hwwhkYu8XvmqxDpdWkuF3S838&code_challenge_method=S256&prompt=consent
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?client_id=demo-client-1&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&response_type=code&scope=openid+profile+email+offline_access&state=eyJ1dWlkIjoiNDcyNThmOTYtYTI1Mi00ZTYwLTllN2QtMDA3MWI1MTkzYjllIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjMifQ%3D%3D&code_challenge=48pf2MvNsbDsnJTT67hwwhkYu8XvmqxDpdWkuF3S838&code_challenge_method=S256&prompt=consent
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+Email slot count: 1
+Checking URL: https://auth-dev.civic.com/login/activity-indicator.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/assets/email.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiNDcyNThmOTYtYTI1Mi00ZTYwLTllN2QtMDA3MWI1MTkzYjllIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjMifQ%3D%3D&client_id=demo-client-1&source_system_id=IBHjmurMvXH8NiirJOBi2cldG2hir4q95JPrxA7XUy3&scope=openid+profile+email+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&flow_id=oauth-login-e0fdf5d9-2410-4721-9ac7-56007df1978c, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/email?loginFlowId=69349b35-5404-47e0-8304-f9b5b435d800&client_id=demo-client-1&source_system_id=IBHjmurMvXH8NiirJOBi2cldG2hir4q95JPrxA7XUy3&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=723228%40simulator.amazonses.com&_rsc=131si, hasLoginFlowId: true, isEmailEndpoint: true, isVerifyEndpoint: false
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=69349b35-5404-47e0-8304-f9b5b435d800&client_id=demo-client-1&source_system_id=IBHjmurMvXH8NiirJOBi2cldG2hir4q95JPrxA7XUy3&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=723228%40simulator.amazonses.com&_rsc=131si
+Extracted loginFlowId: 69349b35-5404-47e0-8304-f9b5b435d800
+[PAGE CONSOLE] [log] Loading login flow data...
+[PAGE CONSOLE] [log] Loading login flow data...
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: 69349b35-5404-47e0-8304-f9b5b435d800
+Found verification code for loginFlowId 69349b35-5404-47e0-8304-f9b5b435d800: 308648
+Database disconnected
+Retrieved verification code: 308648 for loginFlowId: 69349b35-5404-47e0-8304-f9b5b435d800
+[BAD RESPONSE] 302 https://auth-dev.civic.com/login/api/callback/email?state=69349b35-5404-47e0-8304-f9b5b435d800&code=308648
+[BAD RESPONSE] 302 https://auth-dev.civic.com/login/api/callback/email?state=69349b35-5404-47e0-8304-f9b5b435d800&code=308648
+[PAGE CONSOLE] [warning] [JavaScript Warning: "The resource at “https://auth-dev.civic.com/login/_next/static/media/4c33a6e82dbdb8e0-s.p.woff2” preloaded with link preload was not used within a few seconds. Make sure all attributes of the preload tag are set correctly." {file: "https://auth-dev.civic.com/login/email?loginFlowId=69349b35-5404-47e0-8304-f9b5b435d800&client_id=demo-client-1&source_system_id=IBHjmurMvXH8NiirJOBi2cldG2hir4q95JPrxA7XUy3&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=723228%40simulator.amazonses.com" line: 0}]
+[PAGE CONSOLE] [warning] [JavaScript Warning: "The resource at “https://auth-dev.civic.com/login/_next/static/media/4c33a6e82dbdb8e0-s.p.woff2” preloaded with link preload was not used within a few seconds. Make sure all attributes of the preload tag are set correctly." {file: "https://auth-dev.civic.com/login/email?loginFlowId=69349b35-5404-47e0-8304-f9b5b435d800&client_id=demo-client-1&source_system_id=IBHjmurMvXH8NiirJOBi2cldG2hir4q95JPrxA7XUy3&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=723228%40simulator.amazonses.com" line: 0}]
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/IBHjmurMvXH8NiirJOBi2cldG2hir4q95JPrxA7XUy3/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjcyMzIyOEBzaW11bGF0b3IuYW1hem9uc2VzLmNvbSIsInNjb3BlcyI6WyJvcGVuaWQiLCJvZmZsaW5lX2FjY2VzcyIsInByb2ZpbGUiLCJlbWFpbCIsIndhbGxldCIsImZvcndhcmRlZFRva2VucyIsInBhc3NrZXkiXSwiYXVkIjoiZGI3ZTg4YzEtZDk5Ny00MDk4LThjMDUtM2MyOGMwMTc3MWYzIiwic3ViIjoiYTY0YmYyNWUtYzg3MC00ZTJlLWIwNmUtMDAyNzVhOGYxODkxIiwiaWRUb2tlblRUTCI6MzYwMCwiYWNjZXNzVG9rZW5UVEwiOjM2MDAsInJlZnJlc2hUb2tlblRUTCI6ODY0MDAsImNsaWVudElkIjoiZGVtby1jbGllbnQtMSIsInByb3ZpZGVyIjoiZW1haWwiLCJmbG93X2lkIjoib2F1dGgtbG9naW4tZTBmZGY1ZDktMjQxMC00NzIxLTlhYzctNTYwMDdkZjE5NzhjIiwibG9naW5fZmxvd19pZCI6IjY5MzQ5YjM1LTU0MDQtNDdlMC04MzA0LWY5YjViNDM1ZDgwMCIsImRpc3BsYXlfbW9kZSI6InJlZGlyZWN0IiwiZmxvd190eXBlIjoiZW1haWxDb2RlIiwib3JpZ2luIjoiaHR0cHM6Ly9hdXRoLWRldi5jaXZpYy5jb20iLCJmb3J3YXJkZWRUb2tlbnMiOnsiZW1haWwiOnt9fX0.qj33IqJ5cKrEuoDYxzXIHC5XuSFSSDfquOwaUrgOw88&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/IBHjmurMvXH8NiirJOBi2cldG2hir4q95JPrxA7XUy3/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjcyMzIyOEBzaW11bGF0b3IuYW1hem9uc2VzLmNvbSIsInNjb3BlcyI6WyJvcGVuaWQiLCJvZmZsaW5lX2FjY2VzcyIsInByb2ZpbGUiLCJlbWFpbCIsIndhbGxldCIsImZvcndhcmRlZFRva2VucyIsInBhc3NrZXkiXSwiYXVkIjoiZGI3ZTg4YzEtZDk5Ny00MDk4LThjMDUtM2MyOGMwMTc3MWYzIiwic3ViIjoiYTY0YmYyNWUtYzg3MC00ZTJlLWIwNmUtMDAyNzVhOGYxODkxIiwiaWRUb2tlblRUTCI6MzYwMCwiYWNjZXNzVG9rZW5UVEwiOjM2MDAsInJlZnJlc2hUb2tlblRUTCI6ODY0MDAsImNsaWVudElkIjoiZGVtby1jbGllbnQtMSIsInByb3ZpZGVyIjoiZW1haWwiLCJmbG93X2lkIjoib2F1dGgtbG9naW4tZTBmZGY1ZDktMjQxMC00NzIxLTlhYzctNTYwMDdkZjE5NzhjIiwibG9naW5fZmxvd19pZCI6IjY5MzQ5YjM1LTU0MDQtNDdlMC04MzA0LWY5YjViNDM1ZDgwMCIsImRpc3BsYXlfbW9kZSI6InJlZGlyZWN0IiwiZmxvd190eXBlIjoiZW1haWxDb2RlIiwib3JpZ2luIjoiaHR0cHM6Ly9hdXRoLWRldi5jaXZpYy5jb20iLCJmb3J3YXJkZWRUb2tlbnMiOnsiZW1haWwiOnt9fX0.qj33IqJ5cKrEuoDYxzXIHC5XuSFSSDfquOwaUrgOw88&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/IBHjmurMvXH8NiirJOBi2cldG2hir4q95JPrxA7XUy3
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/IBHjmurMvXH8NiirJOBi2cldG2hir4q95JPrxA7XUy3
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [error] Error
+[PAGE CONSOLE] [error] Error
+[PAGE CONSOLE] [warning] [JavaScript Warning: "Cross-Origin Request Warning: The Same Origin Policy will disallow reading the remote resource at https://dev.api.civic.com/metakeep-dev/permissions soon. (Reason: When the `Access-Control-Allow-Headers` is `*`, the `Authorization` header is not covered. To include the `Authorization` header, it must be explicitly listed in CORS header `Access-Control-Allow-Headers`)."]
+[PAGE CONSOLE] [warning] [JavaScript Warning: "Cross-Origin Request Warning: The Same Origin Policy will disallow reading the remote resource at https://dev.api.civic.com/metakeep-dev/permissions soon. (Reason: When the `Access-Control-Allow-Headers` is `*`, the `Authorization` header is not covered. To include the `Authorization` header, it must be explicitly listed in CORS header `Access-Control-Allow-Headers`)."]
+[PAGE CONSOLE] [warning] [JavaScript Warning: "Cross-Origin Request Warning: The Same Origin Policy will disallow reading the remote resource at https://dev.api.civic.com/metakeep-dev/wallet soon. (Reason: When the `Access-Control-Allow-Headers` is `*`, the `Authorization` header is not covered. To include the `Authorization` header, it must be explicitly listed in CORS header `Access-Control-Allow-Headers`)."]
+[PAGE CONSOLE] [warning] [JavaScript Warning: "Cross-Origin Request Warning: The Same Origin Policy will disallow reading the remote resource at https://dev.api.civic.com/metakeep-dev/wallet soon. (Reason: When the `Access-Control-Allow-Headers` is `*`, the `Authorization` header is not covered. To include the `Authorization` header, it must be explicitly listed in CORS header `Access-Control-Allow-Headers`)."]
+[PAGE CONSOLE] [warning] [JavaScript Warning: "Feature Policy: Skipping unsupported feature name “clipboard-write”." {file: "http://localhost:3000/assets/index-Dp3ZJFWL.js" line: 237}]
+[PAGE CONSOLE] [warning] [JavaScript Warning: "Feature Policy: Skipping unsupported feature name “clipboard-write”." {file: "http://localhost:3000/assets/index-Dp3ZJFWL.js" line: 237}]
+[PAGE CONSOLE] [warning] [JavaScript Warning: "Feature Policy: Skipping unsupported feature name “clipboard-write”." {file: "http://localhost:3000/assets/index-Dp3ZJFWL.js" line: 237}]
+[PAGE CONSOLE] [warning] [JavaScript Warning: "Feature Policy: Skipping unsupported feature name “clipboard-write”." {file: "http://localhost:3000/assets/index-Dp3ZJFWL.js" line: 237}]
+[PAGE CONSOLE] [warning] [JavaScript Warning: "Feature Policy: Skipping unsupported feature name “clipboard-write”." {file: "http://localhost:3000/assets/index-Dp3ZJFWL.js" line: 237}]
+[PAGE CONSOLE] [warning] [JavaScript Warning: "Feature Policy: Skipping unsupported feature name “clipboard-write”." {file: "http://localhost:3000/assets/index-Dp3ZJFWL.js" line: 237}]
+[PAGE CONSOLE] [warning] [JavaScript Warning: "Feature Policy: Skipping unsupported feature name “clipboard-write”." {file: "http://localhost:3000/assets/index-Dp3ZJFWL.js" line: 237}]
+[PAGE CONSOLE] [warning] [JavaScript Warning: "Feature Policy: Skipping unsupported feature name “clipboard-write”." {file: "http://localhost:3000/assets/index-Dp3ZJFWL.js" line: 237}]
+[REQUEST FAILED] POST https://sepolia-preconf.base.org/ - NS_ERROR_DOM_BAD_URI
+[REQUEST FAILED] POST https://sepolia-preconf.base.org/ - NS_ERROR_DOM_BAD_URI
+[PAGE CONSOLE] [error] [JavaScript Error: "Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at https://sepolia-preconf.base.org/. (Reason: CORS header ‘Access-Control-Allow-Origin’ missing). Status code: 503."]
+[PAGE CONSOLE] [error] [JavaScript Error: "Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at https://sepolia-preconf.base.org/. (Reason: CORS header ‘Access-Control-Allow-Origin’ missing). Status code: 503."]
+[PAGE CONSOLE] [error] Failed to build MetakeepWeb3Client Error
+[PAGE CONSOLE] [error] Failed to build MetakeepWeb3Client Error
+[PAGE CONSOLE] [error] [JavaScript Error: "Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at https://sepolia-preconf.base.org/. (Reason: CORS request did not succeed). Status code: (null)."]
+[PAGE CONSOLE] [error] [JavaScript Error: "Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at https://sepolia-preconf.base.org/. (Reason: CORS request did not succeed). Status code: (null)."]

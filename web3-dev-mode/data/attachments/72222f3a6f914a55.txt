@@ -1,0 +1,73 @@
+[PAGE CONSOLE] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[PAGE CONSOLE] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [warning] [Fast Refresh] performing full reload
+
+Fast Refresh will perform a full reload when you edit a file that's imported by modules outside of the React rendering tree.
+You might have a file which exports a React component but also exports a value that is imported by a non-React component file.
+Consider migrating the non-React component export to a separate file and importing it into both files.
+
+It is also possible the parent component of the component you edited is a class component, which disables Fast Refresh.
+Fast Refresh requires at least one parent function component in your React tree.
+[PAGE CONSOLE] [warning] [Fast Refresh] performing full reload
+
+Fast Refresh will perform a full reload when you edit a file that's imported by modules outside of the React rendering tree.
+You might have a file which exports a React component but also exports a value that is imported by a non-React component file.
+Consider migrating the non-React component export to a separate file and importing it into both files.
+
+It is also possible the parent component of the component you edited is a class component, which disables Fast Refresh.
+Fast Refresh requires at least one parent function component in your React tree.
+[REQUEST FAILED] GET http://localhost:3000/api/auth/login?state=eyJ1dWlkIjoiYWZlZTE4ZTctYzM2My00Mzk3LTlmMjAtNmQ1Y2Q2NzEzY2IwIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&appUrl=http%3A%2F%2Flocalhost%3A3000 - net::ERR_ABORTED
+[REQUEST FAILED] GET http://localhost:3000/api/auth/login?state=eyJ1dWlkIjoiYWZlZTE4ZTctYzM2My00Mzk3LTlmMjAtNmQ1Y2Q2NzEzY2IwIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&appUrl=http%3A%2F%2Flocalhost%3A3000 - net::ERR_ABORTED
+[REQUEST FAILED] GET http://localhost:3000/?_rsc=fsnpp - net::ERR_ABORTED
+[REQUEST FAILED] GET http://localhost:3000/?_rsc=fsnpp - net::ERR_ABORTED
+[PAGE CONSOLE] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[PAGE CONSOLE] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?response_type=code&client_id=demo-client-1&state=eyJ1dWlkIjoiZjQ1NDM0OTMtN2Y5MC00MDBlLTk4NTUtNzA5OGUwMjI0NThkIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&code_challenge=yEDwzsAOuu6AbWUfRgYRTl64qjEfbkcnJUcwQ8k-88A&code_challenge_method=S256&prompt=consent
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?response_type=code&client_id=demo-client-1&state=eyJ1dWlkIjoiZjQ1NDM0OTMtN2Y5MC00MDBlLTk4NTUtNzA5OGUwMjI0NThkIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&code_challenge=yEDwzsAOuu6AbWUfRgYRTl64qjEfbkcnJUcwQ8k-88A&code_challenge_method=S256&prompt=consent
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+Email slot count: 1
+Checking URL: https://auth-dev.civic.com/login/assets/email.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/activity-indicator.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiZjQ1NDM0OTMtN2Y5MC00MDBlLTk4NTUtNzA5OGUwMjI0NThkIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&client_id=demo-client-1&source_system_id=m5DBeXA_OelArDBkdUIMKg_hymcCMFL_0kUUwfkH6lj&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&flow_id=oauth-login-fbede0d9-a3c4-454d-b76c-158ec7760cd0, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/email?loginFlowId=3bc69fd7-db0d-4e61-8f8c-0c588e8f46a6&client_id=demo-client-1&source_system_id=m5DBeXA_OelArDBkdUIMKg_hymcCMFL_0kUUwfkH6lj&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&emailAddress=542689%40simulator.amazonses.com&_rsc=107hl, hasLoginFlowId: true, isEmailEndpoint: true, isVerifyEndpoint: false
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=3bc69fd7-db0d-4e61-8f8c-0c588e8f46a6&client_id=demo-client-1&source_system_id=m5DBeXA_OelArDBkdUIMKg_hymcCMFL_0kUUwfkH6lj&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&emailAddress=542689%40simulator.amazonses.com&_rsc=107hl
+Extracted loginFlowId: 3bc69fd7-db0d-4e61-8f8c-0c588e8f46a6
+[REQUEST FAILED] GET https://auth-dev.civic.com/login/email?loginFlowId=3bc69fd7-db0d-4e61-8f8c-0c588e8f46a6&client_id=demo-client-1&source_system_id=m5DBeXA_OelArDBkdUIMKg_hymcCMFL_0kUUwfkH6lj&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&emailAddress=542689%40simulator.amazonses.com&_rsc=107hl - net::ERR_ABORTED
+[REQUEST FAILED] GET https://auth-dev.civic.com/login/email?loginFlowId=3bc69fd7-db0d-4e61-8f8c-0c588e8f46a6&client_id=demo-client-1&source_system_id=m5DBeXA_OelArDBkdUIMKg_hymcCMFL_0kUUwfkH6lj&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&emailAddress=542689%40simulator.amazonses.com&_rsc=107hl - net::ERR_ABORTED
+[REQUEST FAILED] GET https://auth-dev.civic.com/login/email?loginFlowId=3bc69fd7-db0d-4e61-8f8c-0c588e8f46a6&client_id=demo-client-1&source_system_id=m5DBeXA_OelArDBkdUIMKg_hymcCMFL_0kUUwfkH6lj&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&emailAddress=542689%40simulator.amazonses.com&_rsc=1vw4h - net::ERR_ABORTED
+[REQUEST FAILED] GET https://auth-dev.civic.com/login/email?loginFlowId=3bc69fd7-db0d-4e61-8f8c-0c588e8f46a6&client_id=demo-client-1&source_system_id=m5DBeXA_OelArDBkdUIMKg_hymcCMFL_0kUUwfkH6lj&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&emailAddress=542689%40simulator.amazonses.com&_rsc=1vw4h - net::ERR_ABORTED
+[PAGE CONSOLE] [log] Loading login flow data...
+[PAGE CONSOLE] [log] Loading login flow data...
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: 3bc69fd7-db0d-4e61-8f8c-0c588e8f46a6
+Found verification code for loginFlowId 3bc69fd7-db0d-4e61-8f8c-0c588e8f46a6: 240562
+Database disconnected
+Retrieved verification code: 240562 for loginFlowId: 3bc69fd7-db0d-4e61-8f8c-0c588e8f46a6
+[BAD RESPONSE] 302 https://auth-dev.civic.com/login/api/callback/email?state=3bc69fd7-db0d-4e61-8f8c-0c588e8f46a6&code=240562
+[BAD RESPONSE] 302 https://auth-dev.civic.com/login/api/callback/email?state=3bc69fd7-db0d-4e61-8f8c-0c588e8f46a6&code=240562
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/m5DBeXA_OelArDBkdUIMKg_hymcCMFL_0kUUwfkH6lj/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjU0MjY4OUBzaW11bGF0b3IuYW1hem9uc2VzLmNvbSIsInNjb3BlcyI6WyJvcGVuaWQiLCJvZmZsaW5lX2FjY2VzcyIsInByb2ZpbGUiLCJlbWFpbCIsIndhbGxldCIsImZvcndhcmRlZFRva2VucyIsInBhc3NrZXkiXSwiYXVkIjoiZGI3ZTg4YzEtZDk5Ny00MDk4LThjMDUtM2MyOGMwMTc3MWYzIiwic3ViIjoiZGIxODMyOGYtNDhmMy00ZWYwLWI2NTMtMzNlZmQ0Mzc0OTczIiwiaWRUb2tlblRUTCI6MzYwMCwiYWNjZXNzVG9rZW5UVEwiOjM2MDAsInJlZnJlc2hUb2tlblRUTCI6ODY0MDAsImNsaWVudElkIjoiZGVtby1jbGllbnQtMSIsInByb3ZpZGVyIjoiZW1haWwiLCJmbG93X2lkIjoib2F1dGgtbG9naW4tZmJlZGUwZDktYTNjNC00NTRkLWI3NmMtMTU4ZWM3NzYwY2QwIiwibG9naW5fZmxvd19pZCI6IjNiYzY5ZmQ3LWRiMGQtNGU2MS04ZjhjLTBjNTg4ZThmNDZhNiIsImRpc3BsYXlfbW9kZSI6InJlZGlyZWN0IiwiZmxvd190eXBlIjoiZW1haWxDb2RlIiwib3JpZ2luIjoiaHR0cHM6Ly9hdXRoLWRldi5jaXZpYy5jb20iLCJmb3J3YXJkZWRUb2tlbnMiOnsiZW1haWwiOnt9fX0.KocmyCzdV598Dc2R7BlDS_sYZdKZTADH9qv8byvMb9o&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/m5DBeXA_OelArDBkdUIMKg_hymcCMFL_0kUUwfkH6lj/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjU0MjY4OUBzaW11bGF0b3IuYW1hem9uc2VzLmNvbSIsInNjb3BlcyI6WyJvcGVuaWQiLCJvZmZsaW5lX2FjY2VzcyIsInByb2ZpbGUiLCJlbWFpbCIsIndhbGxldCIsImZvcndhcmRlZFRva2VucyIsInBhc3NrZXkiXSwiYXVkIjoiZGI3ZTg4YzEtZDk5Ny00MDk4LThjMDUtM2MyOGMwMTc3MWYzIiwic3ViIjoiZGIxODMyOGYtNDhmMy00ZWYwLWI2NTMtMzNlZmQ0Mzc0OTczIiwiaWRUb2tlblRUTCI6MzYwMCwiYWNjZXNzVG9rZW5UVEwiOjM2MDAsInJlZnJlc2hUb2tlblRUTCI6ODY0MDAsImNsaWVudElkIjoiZGVtby1jbGllbnQtMSIsInByb3ZpZGVyIjoiZW1haWwiLCJmbG93X2lkIjoib2F1dGgtbG9naW4tZmJlZGUwZDktYTNjNC00NTRkLWI3NmMtMTU4ZWM3NzYwY2QwIiwibG9naW5fZmxvd19pZCI6IjNiYzY5ZmQ3LWRiMGQtNGU2MS04ZjhjLTBjNTg4ZThmNDZhNiIsImRpc3BsYXlfbW9kZSI6InJlZGlyZWN0IiwiZmxvd190eXBlIjoiZW1haWxDb2RlIiwib3JpZ2luIjoiaHR0cHM6Ly9hdXRoLWRldi5jaXZpYy5jb20iLCJmb3J3YXJkZWRUb2tlbnMiOnsiZW1haWwiOnt9fX0.KocmyCzdV598Dc2R7BlDS_sYZdKZTADH9qv8byvMb9o&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/m5DBeXA_OelArDBkdUIMKg_hymcCMFL_0kUUwfkH6lj
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/m5DBeXA_OelArDBkdUIMKg_hymcCMFL_0kUUwfkH6lj
+[REQUEST FAILED] POST https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us - net::ERR_ABORTED
+[REQUEST FAILED] POST https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us - net::ERR_ABORTED
+[PAGE CONSOLE] [debug] Listener for 'accountChanged' registered, but will never be called because the account is immutable in this implementation.
+[PAGE CONSOLE] [debug] Listener for 'accountChanged' registered, but will never be called because the account is immutable in this implementation.
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 503 ()
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 503 ()
+[PAGE CONSOLE] [error] Failed to build MetakeepWeb3Client SyntaxError: Unexpected token '<', "<html>
+<h"... is not valid JSON
+[PAGE CONSOLE] [error] Failed to build MetakeepWeb3Client SyntaxError: Unexpected token '<', "<html>
+<h"... is not valid JSON

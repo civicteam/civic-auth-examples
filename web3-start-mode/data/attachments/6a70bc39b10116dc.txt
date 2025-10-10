@@ -1,0 +1,45 @@
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?client_id=demo-client-1&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&response_type=code&scope=openid+profile+email+offline_access&state=eyJ1dWlkIjoiZDAwNzI5YjgtZmEzNC00NTI4LWJlMGItOTM5NzQwMTM0YTEyIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjMifQ%3D%3D&code_challenge=ARIeliIjJg5cs3J7_0P3yzC_TAOU3K-4F3JAKc3aIJQ&code_challenge_method=S256&prompt=consent
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?client_id=demo-client-1&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&response_type=code&scope=openid+profile+email+offline_access&state=eyJ1dWlkIjoiZDAwNzI5YjgtZmEzNC00NTI4LWJlMGItOTM5NzQwMTM0YTEyIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjMifQ%3D%3D&code_challenge=ARIeliIjJg5cs3J7_0P3yzC_TAOU3K-4F3JAKc3aIJQ&code_challenge_method=S256&prompt=consent
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+Email slot count: 1
+Checking URL: https://auth-dev.civic.com/login/activity-indicator.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/assets/email.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiZDAwNzI5YjgtZmEzNC00NTI4LWJlMGItOTM5NzQwMTM0YTEyIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjMifQ%3D%3D&client_id=demo-client-1&source_system_id=fa6PYD99svjHzGGqCIa11kVIgTmwiPzS5ZqpGoClB-L&scope=openid+profile+email+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&flow_id=oauth-login-7d0afc2a-f865-408e-98f4-049044ebf2be, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/email?loginFlowId=6393e1b8-875d-4248-8b82-b847b9a3b8ba&client_id=demo-client-1&source_system_id=fa6PYD99svjHzGGqCIa11kVIgTmwiPzS5ZqpGoClB-L&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=779922%40simulator.amazonses.com&_rsc=2vmyk, hasLoginFlowId: true, isEmailEndpoint: true, isVerifyEndpoint: false
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=6393e1b8-875d-4248-8b82-b847b9a3b8ba&client_id=demo-client-1&source_system_id=fa6PYD99svjHzGGqCIa11kVIgTmwiPzS5ZqpGoClB-L&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=779922%40simulator.amazonses.com&_rsc=2vmyk
+Extracted loginFlowId: 6393e1b8-875d-4248-8b82-b847b9a3b8ba
+[REQUEST FAILED] GET https://auth-dev.civic.com/login/email?loginFlowId=6393e1b8-875d-4248-8b82-b847b9a3b8ba&client_id=demo-client-1&source_system_id=fa6PYD99svjHzGGqCIa11kVIgTmwiPzS5ZqpGoClB-L&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=779922%40simulator.amazonses.com&_rsc=2vmyk - net::ERR_ABORTED
+[REQUEST FAILED] GET https://auth-dev.civic.com/login/email?loginFlowId=6393e1b8-875d-4248-8b82-b847b9a3b8ba&client_id=demo-client-1&source_system_id=fa6PYD99svjHzGGqCIa11kVIgTmwiPzS5ZqpGoClB-L&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=779922%40simulator.amazonses.com&_rsc=2vmyk - net::ERR_ABORTED
+[REQUEST FAILED] GET https://auth-dev.civic.com/login/email?loginFlowId=6393e1b8-875d-4248-8b82-b847b9a3b8ba&client_id=demo-client-1&source_system_id=fa6PYD99svjHzGGqCIa11kVIgTmwiPzS5ZqpGoClB-L&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=779922%40simulator.amazonses.com&_rsc=h7hka - net::ERR_ABORTED
+[REQUEST FAILED] GET https://auth-dev.civic.com/login/email?loginFlowId=6393e1b8-875d-4248-8b82-b847b9a3b8ba&client_id=demo-client-1&source_system_id=fa6PYD99svjHzGGqCIa11kVIgTmwiPzS5ZqpGoClB-L&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=779922%40simulator.amazonses.com&_rsc=h7hka - net::ERR_ABORTED
+[PAGE CONSOLE] [log] Loading login flow data...
+[PAGE CONSOLE] [log] Loading login flow data...
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: 6393e1b8-875d-4248-8b82-b847b9a3b8ba
+Found verification code for loginFlowId 6393e1b8-875d-4248-8b82-b847b9a3b8ba: 191463
+Database disconnected
+Retrieved verification code: 191463 for loginFlowId: 6393e1b8-875d-4248-8b82-b847b9a3b8ba
+[BAD RESPONSE] 302 https://auth-dev.civic.com/login/api/callback/email?state=6393e1b8-875d-4248-8b82-b847b9a3b8ba&code=191463
+[BAD RESPONSE] 302 https://auth-dev.civic.com/login/api/callback/email?state=6393e1b8-875d-4248-8b82-b847b9a3b8ba&code=191463
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/fa6PYD99svjHzGGqCIa11kVIgTmwiPzS5ZqpGoClB-L/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Ijc3OTkyMkBzaW11bGF0b3IuYW1hem9uc2VzLmNvbSIsInNjb3BlcyI6WyJvcGVuaWQiLCJvZmZsaW5lX2FjY2VzcyIsInByb2ZpbGUiLCJlbWFpbCIsIndhbGxldCIsImZvcndhcmRlZFRva2VucyIsInBhc3NrZXkiXSwiYXVkIjoiZGI3ZTg4YzEtZDk5Ny00MDk4LThjMDUtM2MyOGMwMTc3MWYzIiwic3ViIjoiMzEyYTcwMGEtMTY2OC00ODg5LTk1YjItMGRiMmFiOWYwZDJkIiwiaWRUb2tlblRUTCI6MzYwMCwiYWNjZXNzVG9rZW5UVEwiOjM2MDAsInJlZnJlc2hUb2tlblRUTCI6ODY0MDAsImNsaWVudElkIjoiZGVtby1jbGllbnQtMSIsInByb3ZpZGVyIjoiZW1haWwiLCJmbG93X2lkIjoib2F1dGgtbG9naW4tN2QwYWZjMmEtZjg2NS00MDhlLTk4ZjQtMDQ5MDQ0ZWJmMmJlIiwibG9naW5fZmxvd19pZCI6IjYzOTNlMWI4LTg3NWQtNDI0OC04YjgyLWI4NDdiOWEzYjhiYSIsImRpc3BsYXlfbW9kZSI6InJlZGlyZWN0IiwiZmxvd190eXBlIjoiZW1haWxDb2RlIiwib3JpZ2luIjoiaHR0cHM6Ly9hdXRoLWRldi5jaXZpYy5jb20iLCJmb3J3YXJkZWRUb2tlbnMiOnsiZW1haWwiOnt9fX0.PPEdJmksPew0UD8wYu86LoWXa2nBH771bvLyqFz7SZQ&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/fa6PYD99svjHzGGqCIa11kVIgTmwiPzS5ZqpGoClB-L/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Ijc3OTkyMkBzaW11bGF0b3IuYW1hem9uc2VzLmNvbSIsInNjb3BlcyI6WyJvcGVuaWQiLCJvZmZsaW5lX2FjY2VzcyIsInByb2ZpbGUiLCJlbWFpbCIsIndhbGxldCIsImZvcndhcmRlZFRva2VucyIsInBhc3NrZXkiXSwiYXVkIjoiZGI3ZTg4YzEtZDk5Ny00MDk4LThjMDUtM2MyOGMwMTc3MWYzIiwic3ViIjoiMzEyYTcwMGEtMTY2OC00ODg5LTk1YjItMGRiMmFiOWYwZDJkIiwiaWRUb2tlblRUTCI6MzYwMCwiYWNjZXNzVG9rZW5UVEwiOjM2MDAsInJlZnJlc2hUb2tlblRUTCI6ODY0MDAsImNsaWVudElkIjoiZGVtby1jbGllbnQtMSIsInByb3ZpZGVyIjoiZW1haWwiLCJmbG93X2lkIjoib2F1dGgtbG9naW4tN2QwYWZjMmEtZjg2NS00MDhlLTk4ZjQtMDQ5MDQ0ZWJmMmJlIiwibG9naW5fZmxvd19pZCI6IjYzOTNlMWI4LTg3NWQtNDI0OC04YjgyLWI4NDdiOWEzYjhiYSIsImRpc3BsYXlfbW9kZSI6InJlZGlyZWN0IiwiZmxvd190eXBlIjoiZW1haWxDb2RlIiwib3JpZ2luIjoiaHR0cHM6Ly9hdXRoLWRldi5jaXZpYy5jb20iLCJmb3J3YXJkZWRUb2tlbnMiOnsiZW1haWwiOnt9fX0.PPEdJmksPew0UD8wYu86LoWXa2nBH771bvLyqFz7SZQ&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/fa6PYD99svjHzGGqCIa11kVIgTmwiPzS5ZqpGoClB-L
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/fa6PYD99svjHzGGqCIa11kVIgTmwiPzS5ZqpGoClB-L
+[REQUEST FAILED] POST https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us - net::ERR_ABORTED
+[REQUEST FAILED] POST https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us - net::ERR_ABORTED
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 503 ()
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 503 ()
+[PAGE CONSOLE] [error] Failed to build MetakeepWeb3Client SyntaxError: Unexpected token '<', "<html>
+<h"... is not valid JSON
+[PAGE CONSOLE] [error] Failed to build MetakeepWeb3Client SyntaxError: Unexpected token '<', "<html>
+<h"... is not valid JSON

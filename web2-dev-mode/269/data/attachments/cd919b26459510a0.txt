@@ -1,0 +1,1120 @@
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [log] 🔍 Checking localStorage for active sessions...
+[PAGE CONSOLE] [log] 🔍 Checking localStorage for active sessions...
+[PAGE CONSOLE] [log] 🔍 localStorage check: {hasTokens: false, tokenCount: 0}
+[PAGE CONSOLE] [log] 🔍 localStorage check: {hasTokens: false, tokenCount: 0}
+[PAGE CONSOLE] [log] ❌ No tokens found in localStorage
+[PAGE CONSOLE] [log] ❌ No tokens found in localStorage
+[PAGE CONSOLE] [log] 🚀 Creating backend iframe client
+[PAGE CONSOLE] [log] 🚀 Creating backend iframe client
+[PAGE CONSOLE] [warning] ⚠️ Could not initialize backend iframe client: CivicAuthError: CivicAuth: clientId is required when loginUrl is not provided.
+    at validateRequiredConfig (http://localhost:3000/node_modules/.vite/deps/@civic_auth_vanillajs.js?v=e5a9da83:4765:11)
+    at processConfigWithDefaults (http://localhost:3000/node_modules/.vite/deps/@civic_auth_vanillajs.js?v=e5a9da83:4717:3)
+    at new _CivicAuth (http://localhost:3000/node_modules/.vite/deps/@civic_auth_vanillajs.js?v=e5a9da83:7638:19)
+    at _CivicAuth.create (http://localhost:3000/node_modules/.vite/deps/@civic_auth_vanillajs.js?v=e5a9da83:7697:22)
+    at initializeApp (http://localhost:3000/main.js:378:61)
+    at http://localhost:3000/main.js:964:1
+[PAGE CONSOLE] [warning] ⚠️ Could not initialize backend iframe client: CivicAuthError: CivicAuth: clientId is required when loginUrl is not provided.
+    at validateRequiredConfig (http://localhost:3000/node_modules/.vite/deps/@civic_auth_vanillajs.js?v=e5a9da83:4765:11)
+    at processConfigWithDefaults (http://localhost:3000/node_modules/.vite/deps/@civic_auth_vanillajs.js?v=e5a9da83:4717:3)
+    at new _CivicAuth (http://localhost:3000/node_modules/.vite/deps/@civic_auth_vanillajs.js?v=e5a9da83:7638:19)
+    at _CivicAuth.create (http://localhost:3000/node_modules/.vite/deps/@civic_auth_vanillajs.js?v=e5a9da83:7697:22)
+    at initializeApp (http://localhost:3000/main.js:378:61)
+    at http://localhost:3000/main.js:964:1
+[PAGE CONSOLE] [log] 🔍 Checking backend session...
+[PAGE CONSOLE] [log] 🔍 Checking backend session...
+[PAGE CONSOLE] [log] 🔄 Updating Backend Iframe Status: "Ready" (ready)
+[PAGE CONSOLE] [log] 🔄 Updating Backend Iframe Status: "Ready" (ready)
+[PAGE CONSOLE] [log] 🔍 DOM element exists: true
+[PAGE CONSOLE] [log] 🔍 DOM element exists: true
+[PAGE CONSOLE] [log] 🔍 Current element text: Backend Iframe: Ready
+[PAGE CONSOLE] [log] 🔍 Current element text: Backend Iframe: Ready
+[PAGE CONSOLE] [log] ✅ Status updated successfully
+[PAGE CONSOLE] [log] ✅ Status updated successfully
+[PAGE CONSOLE] [log] ✅ Initialization complete. Auth clients: []
+[PAGE CONSOLE] [log] ✅ Initialization complete. Auth clients: []
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [log] 🚀 Creating new modal client
+[PAGE CONSOLE] [log] 🚀 Creating new modal client
+[PAGE CONSOLE] [log] 🚀 Starting modal iframe authentication
+[PAGE CONSOLE] [log] 🚀 Starting modal iframe authentication
+[PAGE CONSOLE] [log] 🔧 Config for modal: {clientId: demo-client-1, oauthServerBaseUrl: https://auth-dev.civic.com/oauth, redirectUrl: http://localhost:3000/, displayMode: iframe, events: AuthenticationEvents}
+[PAGE CONSOLE] [log] 🔧 Config for modal: {clientId: demo-client-1, oauthServerBaseUrl: https://auth-dev.civic.com/oauth, redirectUrl: http://localhost:3000/, displayMode: iframe, events: AuthenticationEvents}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:session %cSessionManager initialized with shared lib token storage%c +0ms color: #FF3366 color: inherit color: #FF3366 {hasInitialUser: false}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:session %cSessionManager initialized with shared lib token storage%c +0ms color: #FF3366 color: inherit color: #FF3366 {hasInitialUser: false}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:session %cSessionManager initialized with shared lib token storage%c +0ms color: #FF3366 color: inherit color: #FF3366 {hasInitialUser: false}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:session %cSessionManager initialized with shared lib token storage%c +0ms color: #FF3366 color: inherit color: #FF3366 {hasInitialUser: false}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🚀 Initializing CivicAuth%c +0ms color: #CC9900 color: inherit color: #CC9900 {currentUrl: http://localhost:3000/, redirectUrl: http://localhost:3000/, oauthServerBaseUrl: https://auth-dev.civic.com/oauth, isCallbackUrl: true}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🚀 Initializing CivicAuth%c +0ms color: #CC9900 color: inherit color: #CC9900 {currentUrl: http://localhost:3000/, redirectUrl: http://localhost:3000/, oauthServerBaseUrl: https://auth-dev.civic.com/oauth, isCallbackUrl: true}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🚀 Initializing CivicAuth%c +0ms color: #CC9900 color: inherit color: #CC9900 {currentUrl: http://localhost:3000/, redirectUrl: http://localhost:3000/, oauthServerBaseUrl: https://auth-dev.civic.com/oauth, isCallbackUrl: true}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🚀 Initializing CivicAuth%c +0ms color: #CC9900 color: inherit color: #CC9900 {currentUrl: http://localhost:3000/, redirectUrl: http://localhost:3000/, oauthServerBaseUrl: https://auth-dev.civic.com/oauth, isCallbackUrl: true}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🔗 OAuth endpoints configured%c +175ms color: #CC9900 color: inherit color: #CC9900 {endpoints: Object}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🔗 OAuth endpoints configured%c +175ms color: #CC9900 color: inherit color: #CC9900 {endpoints: Object}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🔗 OAuth endpoints configured%c +175ms color: #CC9900 color: inherit color: #CC9900 {endpoints: Object}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🔗 OAuth endpoints configured%c +175ms color: #CC9900 color: inherit color: #CC9900 {endpoints: Object}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🔧 Initializing SessionManager%c +0ms color: #CC9900 color: inherit color: #CC9900 {authConfig: Object}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🔧 Initializing SessionManager%c +0ms color: #CC9900 color: inherit color: #CC9900 {authConfig: Object}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🔧 Initializing SessionManager%c +0ms color: #CC9900 color: inherit color: #CC9900 {authConfig: Object}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🔧 Initializing SessionManager%c +0ms color: #CC9900 color: inherit color: #CC9900 {authConfig: Object}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:token-refresh %cTokenRefresher initialized%c +0ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:token-refresh %cTokenRefresher initialized%c +0ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:token-refresh %cTokenRefresher initialized%c +0ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:token-refresh %cTokenRefresher initialized%c +0ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:token-refresh %cCleaning up TokenRefresher%c +0ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:token-refresh %cCleaning up TokenRefresher%c +0ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:token-refresh %cCleaning up TokenRefresher%c +0ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:token-refresh %cCleaning up TokenRefresher%c +0ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:token-refresh %cInitializing browser authentication refresher%c +1ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:token-refresh %cInitializing browser authentication refresher%c +1ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:token-refresh %cInitializing browser authentication refresher%c +1ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:token-refresh %cInitializing browser authentication refresher%c +1ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:token-refresh %cTokenRefresher initialized successfully%c +0ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:token-refresh %cTokenRefresher initialized successfully%c +0ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:token-refresh %cTokenRefresher initialized successfully%c +0ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:token-refresh %cTokenRefresher initialized successfully%c +0ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:token-refresh %cStopping automatic token refresh%c +6ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:token-refresh %cStopping automatic token refresh%c +6ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:token-refresh %cStopping automatic token refresh%c +6ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:token-refresh %cStopping automatic token refresh%c +6ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:session %cSessionManager initialized with token refresh capability%c +186ms color: #FF3366 color: inherit color: #FF3366 {isAuthenticated: false}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:session %cSessionManager initialized with token refresh capability%c +186ms color: #FF3366 color: inherit color: #FF3366 {isAuthenticated: false}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:session %cSessionManager initialized with token refresh capability%c +186ms color: #FF3366 color: inherit color: #FF3366 {isAuthenticated: false}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:session %cSessionManager initialized with token refresh capability%c +186ms color: #FF3366 color: inherit color: #FF3366 {isAuthenticated: false}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:token-refresh %cStopping automatic token refresh%c +2ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:token-refresh %cStopping automatic token refresh%c +2ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:token-refresh %cStopping automatic token refresh%c +2ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:token-refresh %cStopping automatic token refresh%c +2ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:session %cSession cleared using shared lib utilities%c +2ms color: #FF3366 color: inherit color: #FF3366
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:session %cSession cleared using shared lib utilities%c +2ms color: #FF3366 color: inherit color: #FF3366
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:session %cSession cleared using shared lib utilities%c +2ms color: #FF3366 color: inherit color: #FF3366
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:session %cSession cleared using shared lib utilities%c +2ms color: #FF3366 color: inherit color: #FF3366
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🔍 Callback page check%c +12ms color: #CC9900 color: inherit color: #CC9900 {isCallbackPage: true, currentUrl: http://localhost:3000/, redirectUrl: http://localhost:3000/}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🔍 Callback page check%c +12ms color: #CC9900 color: inherit color: #CC9900 {isCallbackPage: true, currentUrl: http://localhost:3000/, redirectUrl: http://localhost:3000/}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🔍 Callback page check%c +12ms color: #CC9900 color: inherit color: #CC9900 {isCallbackPage: true, currentUrl: http://localhost:3000/, redirectUrl: http://localhost:3000/}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🔍 Callback page check%c +12ms color: #CC9900 color: inherit color: #CC9900 {isCallbackPage: true, currentUrl: http://localhost:3000/, redirectUrl: http://localhost:3000/}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🔍 Checking for logout state cleanup%c +1ms color: #CC9900 color: inherit color: #CC9900 {currentUrl: http://localhost:3000/, hasStateParam: false, stateValue: null, rawSearch: }
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🔍 Checking for logout state cleanup%c +1ms color: #CC9900 color: inherit color: #CC9900 {currentUrl: http://localhost:3000/, hasStateParam: false, stateValue: null, rawSearch: }
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🔍 Checking for logout state cleanup%c +1ms color: #CC9900 color: inherit color: #CC9900 {currentUrl: http://localhost:3000/, hasStateParam: false, stateValue: null, rawSearch: }
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🔍 Checking for logout state cleanup%c +1ms color: #CC9900 color: inherit color: #CC9900 {currentUrl: http://localhost:3000/, hasStateParam: false, stateValue: null, rawSearch: }
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🔍 No state parameter found, skipping logout cleanup%c +1ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🔍 No state parameter found, skipping logout cleanup%c +1ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🔍 No state parameter found, skipping logout cleanup%c +1ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🔍 No state parameter found, skipping logout cleanup%c +1ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c📞 Processing callback page%c +1ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c📞 Processing callback page%c +1ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c📞 Processing callback page%c +1ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c📞 Processing callback page%c +1ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🔄 Handling OAuth callback%c +1ms color: #CC9900 color: inherit color: #CC9900 {currentUrl: http://localhost:3000/, redirectUrl: http://localhost:3000/}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🔄 Handling OAuth callback%c +1ms color: #CC9900 color: inherit color: #CC9900 {currentUrl: http://localhost:3000/, redirectUrl: http://localhost:3000/}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🔄 Handling OAuth callback%c +1ms color: #CC9900 color: inherit color: #CC9900 {currentUrl: http://localhost:3000/, redirectUrl: http://localhost:3000/}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🔄 Handling OAuth callback%c +1ms color: #CC9900 color: inherit color: #CC9900 {currentUrl: http://localhost:3000/, redirectUrl: http://localhost:3000/}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:oauth-callback %cCivicAuth: Callback page context%c +0ms color: #9900FF color: inherit color: #9900FF {isPopup: null, hasOpener: false, hasCode: false, hasError: false, currentUrl: http://localhost:3000/}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:oauth-callback %cCivicAuth: Callback page context%c +0ms color: #9900FF color: inherit color: #9900FF {isPopup: null, hasOpener: false, hasCode: false, hasError: false, currentUrl: http://localhost:3000/}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:oauth-callback %cCivicAuth: Callback page context%c +0ms color: #9900FF color: inherit color: #9900FF {isPopup: null, hasOpener: false, hasCode: false, hasError: false, currentUrl: http://localhost:3000/}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:oauth-callback %cCivicAuth: Callback page context%c +0ms color: #9900FF color: inherit color: #9900FF {isPopup: null, hasOpener: false, hasCode: false, hasError: false, currentUrl: http://localhost:3000/}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c📋 Callback processing result%c +5ms color: #CC9900 color: inherit color: #CC9900 {callbackHandled: false}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c📋 Callback processing result%c +5ms color: #CC9900 color: inherit color: #CC9900 {callbackHandled: false}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c📋 Callback processing result%c +5ms color: #CC9900 color: inherit color: #CC9900 {callbackHandled: false}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c📋 Callback processing result%c +5ms color: #CC9900 color: inherit color: #CC9900 {callbackHandled: false}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🔍 Checking display mode conditions%c +2ms color: #CC9900 color: inherit color: #CC9900 {displayMode: iframe, iframeDisplayMode: modal, isEmbeddedMode: false, preloadIframe: true}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🔍 Checking display mode conditions%c +2ms color: #CC9900 color: inherit color: #CC9900 {displayMode: iframe, iframeDisplayMode: modal, isEmbeddedMode: false, preloadIframe: true}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🔍 Checking display mode conditions%c +2ms color: #CC9900 color: inherit color: #CC9900 {displayMode: iframe, iframeDisplayMode: modal, isEmbeddedMode: false, preloadIframe: true}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🔍 Checking display mode conditions%c +2ms color: #CC9900 color: inherit color: #CC9900 {displayMode: iframe, iframeDisplayMode: modal, isEmbeddedMode: false, preloadIframe: true}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🔍 Authentication check for preload%c +1ms color: #CC9900 color: inherit color: #CC9900 {isAuthenticated: false}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🔍 Authentication check for preload%c +1ms color: #CC9900 color: inherit color: #CC9900 {isAuthenticated: false}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🔍 Authentication check for preload%c +1ms color: #CC9900 color: inherit color: #CC9900 {isAuthenticated: false}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🔍 Authentication check for preload%c +1ms color: #CC9900 color: inherit color: #CC9900 {isAuthenticated: false}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🔄 Auto-preloading iframe for instant sign-in...%c +1ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🔄 Auto-preloading iframe for instant sign-in...%c +1ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🔄 Auto-preloading iframe for instant sign-in...%c +1ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🔄 Auto-preloading iframe for instant sign-in...%c +1ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🎬 Preloading authentication for instant sign-in%c +0ms color: #CC9900 color: inherit color: #CC9900 {displayMode: iframe, userAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWeb…L, like Gecko) Chrome/141.0.7390.37 Safari/537.36, currentUrl: http://localhost:3000/}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🎬 Preloading authentication for instant sign-in%c +0ms color: #CC9900 color: inherit color: #CC9900 {displayMode: iframe, userAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWeb…L, like Gecko) Chrome/141.0.7390.37 Safari/537.36, currentUrl: http://localhost:3000/}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🎬 Preloading authentication for instant sign-in%c +0ms color: #CC9900 color: inherit color: #CC9900 {displayMode: iframe, userAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWeb…L, like Gecko) Chrome/141.0.7390.37 Safari/537.36, currentUrl: http://localhost:3000/}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🎬 Preloading authentication for instant sign-in%c +0ms color: #CC9900 color: inherit color: #CC9900 {displayMode: iframe, userAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWeb…L, like Gecko) Chrome/141.0.7390.37 Safari/537.36, currentUrl: http://localhost:3000/}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🔗 Built authentication URL for preload%c +1ms color: #CC9900 color: inherit color: #CC9900 {url: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890, displayMode: iframe}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🔗 Built authentication URL for preload%c +1ms color: #CC9900 color: inherit color: #CC9900 {url: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890, displayMode: iframe}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🔗 Built authentication URL for preload%c +1ms color: #CC9900 color: inherit color: #CC9900 {url: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890, displayMode: iframe}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🔗 Built authentication URL for preload%c +1ms color: #CC9900 color: inherit color: #CC9900 {url: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890, displayMode: iframe}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cAuthentication timestamp set%c +4ms color: #CC9900 color: inherit color: #CC9900 {timestamp: 1760134298}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cAuthentication timestamp set%c +4ms color: #CC9900 color: inherit color: #CC9900 {timestamp: 1760134298}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cAuthentication timestamp set%c +4ms color: #CC9900 color: inherit color: #CC9900 {timestamp: 1760134298}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cAuthentication timestamp set%c +4ms color: #CC9900 color: inherit color: #CC9900 {timestamp: 1760134298}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cPreloading iframe for instant sign-in%c +0ms color: #CC9900 color: inherit color: #CC9900 {url: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cPreloading iframe for instant sign-in%c +0ms color: #CC9900 color: inherit color: #CC9900 {url: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cPreloading iframe for instant sign-in%c +0ms color: #CC9900 color: inherit color: #CC9900 {url: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cPreloading iframe for instant sign-in%c +0ms color: #CC9900 color: inherit color: #CC9900 {url: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cUsing configured iframeDisplayMode: modal%c +1ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cUsing configured iframeDisplayMode: modal%c +1ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cUsing configured iframeDisplayMode: modal%c +1ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cUsing configured iframeDisplayMode: modal%c +1ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cCreated dynamic modal container%c +3ms color: #CC9900 color: inherit color: #CC9900 {containerId: civic-auth-iframe-modal-container}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cCreated dynamic modal container%c +3ms color: #CC9900 color: inherit color: #CC9900 {containerId: civic-auth-iframe-modal-container}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cCreated dynamic modal container%c +3ms color: #CC9900 color: inherit color: #CC9900 {containerId: civic-auth-iframe-modal-container}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cCreated dynamic modal container%c +3ms color: #CC9900 color: inherit color: #CC9900 {containerId: civic-auth-iframe-modal-container}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cCreating IframeManager for preloading%c +0ms color: #CC9900 color: inherit color: #CC9900 {url: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890, containerId: civic-auth-iframe-modal-container, iframeId: civic-auth-iframe, origin: http://localhost:3000, iframeDisplayMode: modal}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cCreating IframeManager for preloading%c +0ms color: #CC9900 color: inherit color: #CC9900 {url: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890, containerId: civic-auth-iframe-modal-container, iframeId: civic-auth-iframe, origin: http://localhost:3000, iframeDisplayMode: modal}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cCreating IframeManager for preloading%c +0ms color: #CC9900 color: inherit color: #CC9900 {url: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890, containerId: civic-auth-iframe-modal-container, iframeId: civic-auth-iframe, origin: http://localhost:3000, iframeDisplayMode: modal}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cCreating IframeManager for preloading%c +0ms color: #CC9900 color: inherit color: #CC9900 {url: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890, containerId: civic-auth-iframe-modal-container, iframeId: civic-auth-iframe, origin: http://localhost:3000, iframeDisplayMode: modal}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cPreloading iframe in background%c +0ms color: #3399CC color: inherit color: #3399CC {url: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cPreloading iframe in background%c +0ms color: #3399CC color: inherit color: #3399CC {url: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cPreloading iframe in background%c +0ms color: #3399CC color: inherit color: #3399CC {url: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cPreloading iframe in background%c +0ms color: #3399CC color: inherit color: #3399CC {url: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cInitializing Civic iframe resizer%c +0ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cInitializing Civic iframe resizer%c +0ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cInitializing Civic iframe resizer%c +0ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cInitializing Civic iframe resizer%c +0ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cIframe preloaded successfully%c +6ms color: #3399CC color: inherit color: #3399CC {url: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cIframe preloaded successfully%c +6ms color: #3399CC color: inherit color: #3399CC {url: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cIframe preloaded successfully%c +6ms color: #3399CC color: inherit color: #3399CC {url: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cIframe preloaded successfully%c +6ms color: #3399CC color: inherit color: #3399CC {url: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🔍 Iframe navigation detected%c +21ms color: #CC9900 color: inherit color: #CC9900 {newUrl: about:blank, redirectUrl: http://localhost:3000/, isCallbackUrl: false}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🔍 Iframe navigation detected%c +21ms color: #CC9900 color: inherit color: #CC9900 {newUrl: about:blank, redirectUrl: http://localhost:3000/, isCallbackUrl: false}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🔍 Iframe navigation detected%c +21ms color: #CC9900 color: inherit color: #CC9900 {newUrl: about:blank, redirectUrl: http://localhost:3000/, isCallbackUrl: false}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🔍 Iframe navigation detected%c +21ms color: #CC9900 color: inherit color: #CC9900 {newUrl: about:blank, redirectUrl: http://localhost:3000/, isCallbackUrl: false}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🙈 Hiding iframe completely - not login app or on callback URL%c +2ms color: #CC9900 color: inherit color: #CC9900 {currentUrl: about:blank, isOnAuthServer: false, isCallbackUrl: false, currentOrigin: null, expectedAuthServerOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🙈 Hiding iframe completely - not login app or on callback URL%c +2ms color: #CC9900 color: inherit color: #CC9900 {currentUrl: about:blank, isOnAuthServer: false, isCallbackUrl: false, currentOrigin: null, expectedAuthServerOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🙈 Hiding iframe completely - not login app or on callback URL%c +2ms color: #CC9900 color: inherit color: #CC9900 {currentUrl: about:blank, isOnAuthServer: false, isCallbackUrl: false, currentOrigin: null, expectedAuthServerOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🙈 Hiding iframe completely - not login app or on callback URL%c +2ms color: #CC9900 color: inherit color: #CC9900 {currentUrl: about:blank, isOnAuthServer: false, isCallbackUrl: false, currentOrigin: null, expectedAuthServerOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cIframe preloaded successfully%c +4ms color: #CC9900 color: inherit color: #CC9900 {url: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cIframe preloaded successfully%c +4ms color: #CC9900 color: inherit color: #CC9900 {url: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cIframe preloaded successfully%c +4ms color: #CC9900 color: inherit color: #CC9900 {url: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cIframe preloaded successfully%c +4ms color: #CC9900 color: inherit color: #CC9900 {url: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c✅ Authentication iframe preloaded successfully%c +2ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c✅ Authentication iframe preloaded successfully%c +2ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c✅ Authentication iframe preloaded successfully%c +2ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c✅ Authentication iframe preloaded successfully%c +2ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c✅ Iframe auto-preloaded successfully%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c✅ Iframe auto-preloaded successfully%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c✅ Iframe auto-preloaded successfully%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c✅ Iframe auto-preloaded successfully%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] 🚀 Starting modal authentication flow
+[PAGE CONSOLE] [log] 🚀 Starting modal authentication flow
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🎬 Starting authentication process%c +0ms color: #CC9900 color: inherit color: #CC9900 {displayMode: iframe, userAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWeb…L, like Gecko) Chrome/141.0.7390.37 Safari/537.36, currentUrl: http://localhost:3000/}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🎬 Starting authentication process%c +0ms color: #CC9900 color: inherit color: #CC9900 {displayMode: iframe, userAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWeb…L, like Gecko) Chrome/141.0.7390.37 Safari/537.36, currentUrl: http://localhost:3000/}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🎬 Starting authentication process%c +0ms color: #CC9900 color: inherit color: #CC9900 {displayMode: iframe, userAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWeb…L, like Gecko) Chrome/141.0.7390.37 Safari/537.36, currentUrl: http://localhost:3000/}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🎬 Starting authentication process%c +0ms color: #CC9900 color: inherit color: #CC9900 {displayMode: iframe, userAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWeb…L, like Gecko) Chrome/141.0.7390.37 Safari/537.36, currentUrl: http://localhost:3000/}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:session %cNo user found and not using browser cookie storage%c +56ms color: #FF3366 color: inherit color: #FF3366
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:session %cNo user found and not using browser cookie storage%c +56ms color: #FF3366 color: inherit color: #FF3366
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:session %cNo user found and not using browser cookie storage%c +56ms color: #FF3366 color: inherit color: #FF3366
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:session %cNo user found and not using browser cookie storage%c +56ms color: #FF3366 color: inherit color: #FF3366
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cAuthentication timestamp set%c +13ms color: #CC9900 color: inherit color: #CC9900 {timestamp: 1760134298}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cAuthentication timestamp set%c +13ms color: #CC9900 color: inherit color: #CC9900 {timestamp: 1760134298}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cAuthentication timestamp set%c +13ms color: #CC9900 color: inherit color: #CC9900 {timestamp: 1760134298}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cAuthentication timestamp set%c +13ms color: #CC9900 color: inherit color: #CC9900 {timestamp: 1760134298}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🔗 Built authentication URL%c +3ms color: #CC9900 color: inherit color: #CC9900 {url: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890, displayMode: iframe, authProcessTimeout: 600000}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🔗 Built authentication URL%c +3ms color: #CC9900 color: inherit color: #CC9900 {url: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890, displayMode: iframe, authProcessTimeout: 600000}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🔗 Built authentication URL%c +3ms color: #CC9900 color: inherit color: #CC9900 {url: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890, displayMode: iframe, authProcessTimeout: 600000}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🔗 Built authentication URL%c +3ms color: #CC9900 color: inherit color: #CC9900 {url: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890, displayMode: iframe, authProcessTimeout: 600000}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🎯 Handling authentication with display mode%c +2ms color: #CC9900 color: inherit color: #CC9900 {displayMode: iframe}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🎯 Handling authentication with display mode%c +2ms color: #CC9900 color: inherit color: #CC9900 {displayMode: iframe}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🎯 Handling authentication with display mode%c +2ms color: #CC9900 color: inherit color: #CC9900 {displayMode: iframe}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🎯 Handling authentication with display mode%c +2ms color: #CC9900 color: inherit color: #CC9900 {displayMode: iframe}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🖼️ Using iframe mode%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🖼️ Using iframe mode%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🖼️ Using iframe mode%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🖼️ Using iframe mode%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cUsing preloaded iframe for instant sign-in%c +0ms color: #CC9900 color: inherit color: #CC9900 {preloadedUrl: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890, requestedUrl: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890, urlsMatch: false}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cUsing preloaded iframe for instant sign-in%c +0ms color: #CC9900 color: inherit color: #CC9900 {preloadedUrl: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890, requestedUrl: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890, urlsMatch: false}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cUsing preloaded iframe for instant sign-in%c +0ms color: #CC9900 color: inherit color: #CC9900 {preloadedUrl: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890, requestedUrl: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890, urlsMatch: false}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cUsing preloaded iframe for instant sign-in%c +0ms color: #CC9900 color: inherit color: #CC9900 {preloadedUrl: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890, requestedUrl: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890, urlsMatch: false}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cUsing preloaded iframe without reload%c +5ms color: #CC9900 color: inherit color: #CC9900 {preloadedUrl: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890, requestedUrl: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890, action: skipping_url_change_to_prevent_reload}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cUsing preloaded iframe without reload%c +5ms color: #CC9900 color: inherit color: #CC9900 {preloadedUrl: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890, requestedUrl: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890, action: skipping_url_change_to_prevent_reload}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cUsing preloaded iframe without reload%c +5ms color: #CC9900 color: inherit color: #CC9900 {preloadedUrl: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890, requestedUrl: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890, action: skipping_url_change_to_prevent_reload}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cUsing preloaded iframe without reload%c +5ms color: #CC9900 color: inherit color: #CC9900 {preloadedUrl: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890, requestedUrl: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890, action: skipping_url_change_to_prevent_reload}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cUsing preloaded iframe for instant display%c +45ms color: #3399CC color: inherit color: #3399CC {preloadedUrl: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890, requestedUrl: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890, urlsMatch: false}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cUsing preloaded iframe for instant display%c +45ms color: #3399CC color: inherit color: #3399CC {preloadedUrl: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890, requestedUrl: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890, urlsMatch: false}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cUsing preloaded iframe for instant display%c +45ms color: #3399CC color: inherit color: #3399CC {preloadedUrl: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890, requestedUrl: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890, urlsMatch: false}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cUsing preloaded iframe for instant display%c +45ms color: #3399CC color: inherit color: #3399CC {preloadedUrl: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890, requestedUrl: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890, urlsMatch: false}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cUsing preloaded iframe without reload%c +0ms color: #3399CC color: inherit color: #3399CC {preloadedUrl: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890, requestedUrl: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890, action: skipping_url_change_to_prevent_reload}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cUsing preloaded iframe without reload%c +0ms color: #3399CC color: inherit color: #3399CC {preloadedUrl: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890, requestedUrl: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890, action: skipping_url_change_to_prevent_reload}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cUsing preloaded iframe without reload%c +0ms color: #3399CC color: inherit color: #3399CC {preloadedUrl: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890, requestedUrl: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890, action: skipping_url_change_to_prevent_reload}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cUsing preloaded iframe without reload%c +0ms color: #3399CC color: inherit color: #3399CC {preloadedUrl: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890, requestedUrl: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890, action: skipping_url_change_to_prevent_reload}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c⏰ Setting up authentication timeout%c +3ms color: #CC9900 color: inherit color: #CC9900 {timeout: 600000, displayMode: iframe, iframeDisplayMode: modal}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c⏰ Setting up authentication timeout%c +3ms color: #CC9900 color: inherit color: #CC9900 {timeout: 600000, displayMode: iframe, iframeDisplayMode: modal}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c⏰ Setting up authentication timeout%c +3ms color: #CC9900 color: inherit color: #CC9900 {timeout: 600000, displayMode: iframe, iframeDisplayMode: modal}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c⏰ Setting up authentication timeout%c +3ms color: #CC9900 color: inherit color: #CC9900 {timeout: 600000, displayMode: iframe, iframeDisplayMode: modal}
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?client_id=demo-client-1&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&response_type=code&scope=openid+profile+email+forwardedTokens+offline_access&state=eyJ1dWlkIjoiYzkxMWQxYjctNTQ0YS00MzYwLTg5MzQtOGEzYTU4MzU1YmVmIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoidmFuaWxsYWpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&code_challenge=4SCQyVYxd60fzjR0YNfkH0XH9owTyiKNGPGWyXuPyQM&code_challenge_method=S256&prompt=consent&nonce=1234567890
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?client_id=demo-client-1&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&response_type=code&scope=openid+profile+email+forwardedTokens+offline_access&state=eyJ1dWlkIjoiYzkxMWQxYjctNTQ0YS00MzYwLTg5MzQtOGEzYTU4MzU1YmVmIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoidmFuaWxsYWpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&code_challenge=4SCQyVYxd60fzjR0YNfkH0XH9owTyiKNGPGWyXuPyQM&code_challenge_method=S256&prompt=consent&nonce=1234567890
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🔍 Iframe navigation detected%c +273ms color: #CC9900 color: inherit color: #CC9900 {newUrl: https://auth-dev.civic.com/login?state=eyJ1dWlkIjo…=oauth-login-3f14c176-3524-47a4-b341-b2ae472e6a26, redirectUrl: http://localhost:3000/, isCallbackUrl: false}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🔍 Iframe navigation detected%c +273ms color: #CC9900 color: inherit color: #CC9900 {newUrl: https://auth-dev.civic.com/login?state=eyJ1dWlkIjo…=oauth-login-3f14c176-3524-47a4-b341-b2ae472e6a26, redirectUrl: http://localhost:3000/, isCallbackUrl: false}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🔍 Iframe navigation detected%c +273ms color: #CC9900 color: inherit color: #CC9900 {newUrl: https://auth-dev.civic.com/login?state=eyJ1dWlkIjo…=oauth-login-3f14c176-3524-47a4-b341-b2ae472e6a26, redirectUrl: http://localhost:3000/, isCallbackUrl: false}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🔍 Iframe navigation detected%c +273ms color: #CC9900 color: inherit color: #CC9900 {newUrl: https://auth-dev.civic.com/login?state=eyJ1dWlkIjo…=oauth-login-3f14c176-3524-47a4-b341-b2ae472e6a26, redirectUrl: http://localhost:3000/, isCallbackUrl: false}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c👀 Showing iframe content - confirmed login app on auth server origin%c +0ms color: #CC9900 color: inherit color: #CC9900 {currentUrl: https://auth-dev.civic.com/login?state=eyJ1dWlkIjo…=oauth-login-3f14c176-3524-47a4-b341-b2ae472e6a26, isOnAuthServer: true, isCallbackUrl: false, currentOrigin: https://auth-dev.civic.com, expectedAuthServerOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c👀 Showing iframe content - confirmed login app on auth server origin%c +0ms color: #CC9900 color: inherit color: #CC9900 {currentUrl: https://auth-dev.civic.com/login?state=eyJ1dWlkIjo…=oauth-login-3f14c176-3524-47a4-b341-b2ae472e6a26, isOnAuthServer: true, isCallbackUrl: false, currentOrigin: https://auth-dev.civic.com, expectedAuthServerOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c👀 Showing iframe content - confirmed login app on auth server origin%c +0ms color: #CC9900 color: inherit color: #CC9900 {currentUrl: https://auth-dev.civic.com/login?state=eyJ1dWlkIjo…=oauth-login-3f14c176-3524-47a4-b341-b2ae472e6a26, isOnAuthServer: true, isCallbackUrl: false, currentOrigin: https://auth-dev.civic.com, expectedAuthServerOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c👀 Showing iframe content - confirmed login app on auth server origin%c +0ms color: #CC9900 color: inherit color: #CC9900 {currentUrl: https://auth-dev.civic.com/login?state=eyJ1dWlkIjo…=oauth-login-3f14c176-3524-47a4-b341-b2ae472e6a26, isOnAuthServer: true, isCallbackUrl: false, currentOrigin: https://auth-dev.civic.com, expectedAuthServerOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cIframe loaded%c +683ms color: #CC9900 color: inherit color: #CC9900 {iframeSrc: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890, currentOrigin: http://localhost:3000, expectedAuthServerOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cIframe loaded%c +683ms color: #CC9900 color: inherit color: #CC9900 {iframeSrc: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890, currentOrigin: http://localhost:3000, expectedAuthServerOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cIframe loaded%c +683ms color: #CC9900 color: inherit color: #CC9900 {iframeSrc: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890, currentOrigin: http://localhost:3000, expectedAuthServerOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cIframe loaded%c +683ms color: #CC9900 color: inherit color: #CC9900 {iframeSrc: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890, currentOrigin: http://localhost:3000, expectedAuthServerOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cAdded cross-origin message event listener for auth server communication%c +0ms color: #CC9900 color: inherit color: #CC9900 {parentOrigin: http://localhost:3000, authServerOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cAdded cross-origin message event listener for auth server communication%c +0ms color: #CC9900 color: inherit color: #CC9900 {parentOrigin: http://localhost:3000, authServerOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cAdded cross-origin message event listener for auth server communication%c +0ms color: #CC9900 color: inherit color: #CC9900 {parentOrigin: http://localhost:3000, authServerOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cAdded cross-origin message event listener for auth server communication%c +0ms color: #CC9900 color: inherit color: #CC9900 {parentOrigin: http://localhost:3000, authServerOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c👀 Showing iframe content - confirmed login app on auth server origin%c +1ms color: #CC9900 color: inherit color: #CC9900 {currentUrl: https://auth-dev.civic.com/login?state=eyJ1dWlkIjo…=oauth-login-3f14c176-3524-47a4-b341-b2ae472e6a26, isOnAuthServer: true, isCallbackUrl: false, currentOrigin: https://auth-dev.civic.com, expectedAuthServerOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c👀 Showing iframe content - confirmed login app on auth server origin%c +1ms color: #CC9900 color: inherit color: #CC9900 {currentUrl: https://auth-dev.civic.com/login?state=eyJ1dWlkIjo…=oauth-login-3f14c176-3524-47a4-b341-b2ae472e6a26, isOnAuthServer: true, isCallbackUrl: false, currentOrigin: https://auth-dev.civic.com, expectedAuthServerOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c👀 Showing iframe content - confirmed login app on auth server origin%c +1ms color: #CC9900 color: inherit color: #CC9900 {currentUrl: https://auth-dev.civic.com/login?state=eyJ1dWlkIjo…=oauth-login-3f14c176-3524-47a4-b341-b2ae472e6a26, isOnAuthServer: true, isCallbackUrl: false, currentOrigin: https://auth-dev.civic.com, expectedAuthServerOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c👀 Showing iframe content - confirmed login app on auth server origin%c +1ms color: #CC9900 color: inherit color: #CC9900 {currentUrl: https://auth-dev.civic.com/login?state=eyJ1dWlkIjo…=oauth-login-3f14c176-3524-47a4-b341-b2ae472e6a26, isOnAuthServer: true, isCallbackUrl: false, currentOrigin: https://auth-dev.civic.com, expectedAuthServerOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cIframe current href accessible%c +1ms color: #CC9900 color: inherit color: #CC9900 {href: https://auth-dev.civic.com/login?state=eyJ1dWlkIjo…=oauth-login-3f14c176-3524-47a4-b341-b2ae472e6a26, redirectUrl: http://localhost:3000/, startsWithRedirect: false}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cIframe current href accessible%c +1ms color: #CC9900 color: inherit color: #CC9900 {href: https://auth-dev.civic.com/login?state=eyJ1dWlkIjo…=oauth-login-3f14c176-3524-47a4-b341-b2ae472e6a26, redirectUrl: http://localhost:3000/, startsWithRedirect: false}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cIframe current href accessible%c +1ms color: #CC9900 color: inherit color: #CC9900 {href: https://auth-dev.civic.com/login?state=eyJ1dWlkIjo…=oauth-login-3f14c176-3524-47a4-b341-b2ae472e6a26, redirectUrl: http://localhost:3000/, startsWithRedirect: false}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cIframe current href accessible%c +1ms color: #CC9900 color: inherit color: #CC9900 {href: https://auth-dev.civic.com/login?state=eyJ1dWlkIjo…=oauth-login-3f14c176-3524-47a4-b341-b2ae472e6a26, redirectUrl: http://localhost:3000/, startsWithRedirect: false}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cIframe loaded, requesting size from child%c +1s color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cIframe loaded, requesting size from child%c +1s color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cIframe loaded, requesting size from child%c +1s color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cIframe loaded, requesting size from child%c +1s color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cRequesting size from iframe child%c +0ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cRequesting size from iframe child%c +0ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cRequesting size from iframe child%c +0ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cRequesting size from iframe child%c +0ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cGlobal window received message:%c +0ms color: #3333CC color: inherit color: #3333CC {data: Object, origin: https://auth-dev.civic.com, sourceProvided: true, iframeContentWindow: Window, expectedIframeOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cGlobal window received message:%c +0ms color: #3333CC color: inherit color: #3333CC {data: Object, origin: https://auth-dev.civic.com, sourceProvided: true, iframeContentWindow: Window, expectedIframeOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cGlobal window received message:%c +0ms color: #3333CC color: inherit color: #3333CC {data: Object, origin: https://auth-dev.civic.com, sourceProvided: true, iframeContentWindow: Window, expectedIframeOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cGlobal window received message:%c +0ms color: #3333CC color: inherit color: #3333CC {data: Object, origin: https://auth-dev.civic.com, sourceProvided: true, iframeContentWindow: Window, expectedIframeOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cMessage from configured iframe source and origin received%c +2ms color: #3333CC color: inherit color: #3333CC {data: Object, iframeSrc: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cMessage from configured iframe source and origin received%c +2ms color: #3333CC color: inherit color: #3333CC {data: Object, iframeSrc: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cMessage from configured iframe source and origin received%c +2ms color: #3333CC color: inherit color: #3333CC {data: Object, iframeSrc: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cMessage from configured iframe source and origin received%c +2ms color: #3333CC color: inherit color: #3333CC {data: Object, iframeSrc: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cProcessing iframe message%c +2ms color: #3333CC color: inherit color: #3333CC {messageType: object, hasType: true, hasSource: true, messageKeys: Array(4), rawData: Object}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cProcessing iframe message%c +2ms color: #3333CC color: inherit color: #3333CC {messageType: object, hasType: true, hasSource: true, messageKeys: Array(4), rawData: Object}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cProcessing iframe message%c +2ms color: #3333CC color: inherit color: #3333CC {messageType: object, hasType: true, hasSource: true, messageKeys: Array(4), rawData: Object}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cProcessing iframe message%c +2ms color: #3333CC color: inherit color: #3333CC {messageType: object, hasType: true, hasSource: true, messageKeys: Array(4), rawData: Object}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cReceived civicloginApp message%c +0ms color: #3333CC color: inherit color: #3333CC {type: design, clientId: demo-client-1, data: Object}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cReceived civicloginApp message%c +0ms color: #3333CC color: inherit color: #3333CC {type: design, clientId: demo-client-1, data: Object}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cReceived civicloginApp message%c +0ms color: #3333CC color: inherit color: #3333CC {type: design, clientId: demo-client-1, data: Object}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cReceived civicloginApp message%c +0ms color: #3333CC color: inherit color: #3333CC {type: design, clientId: demo-client-1, data: Object}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %ccivicloginApp design message%c +1ms color: #3333CC color: inherit color: #3333CC {data: Object}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %ccivicloginApp design message%c +1ms color: #3333CC color: inherit color: #3333CC {data: Object}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %ccivicloginApp design message%c +1ms color: #3333CC color: inherit color: #3333CC {data: Object}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %ccivicloginApp design message%c +1ms color: #3333CC color: inherit color: #3333CC {data: Object}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cReceived message from iframe:%c +38ms color: #3399CC color: inherit color: #3399CC {source: civicloginApp, type: design, clientId: demo-client-1, data: Object}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cReceived message from iframe:%c +38ms color: #3399CC color: inherit color: #3399CC {source: civicloginApp, type: design, clientId: demo-client-1, data: Object}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cReceived message from iframe:%c +38ms color: #3399CC color: inherit color: #3399CC {source: civicloginApp, type: design, clientId: demo-client-1, data: Object}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cReceived message from iframe:%c +38ms color: #3399CC color: inherit color: #3399CC {source: civicloginApp, type: design, clientId: demo-client-1, data: Object}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cGlobal window received message:%c +14ms color: #3333CC color: inherit color: #3333CC {data: Object, origin: https://auth-dev.civic.com, sourceProvided: true, iframeContentWindow: Window, expectedIframeOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cGlobal window received message:%c +14ms color: #3333CC color: inherit color: #3333CC {data: Object, origin: https://auth-dev.civic.com, sourceProvided: true, iframeContentWindow: Window, expectedIframeOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cGlobal window received message:%c +14ms color: #3333CC color: inherit color: #3333CC {data: Object, origin: https://auth-dev.civic.com, sourceProvided: true, iframeContentWindow: Window, expectedIframeOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cGlobal window received message:%c +14ms color: #3333CC color: inherit color: #3333CC {data: Object, origin: https://auth-dev.civic.com, sourceProvided: true, iframeContentWindow: Window, expectedIframeOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cMessage from configured iframe source and origin received%c +1ms color: #3333CC color: inherit color: #3333CC {data: Object, iframeSrc: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cMessage from configured iframe source and origin received%c +1ms color: #3333CC color: inherit color: #3333CC {data: Object, iframeSrc: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cMessage from configured iframe source and origin received%c +1ms color: #3333CC color: inherit color: #3333CC {data: Object, iframeSrc: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cMessage from configured iframe source and origin received%c +1ms color: #3333CC color: inherit color: #3333CC {data: Object, iframeSrc: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cProcessing iframe message%c +0ms color: #3333CC color: inherit color: #3333CC {messageType: object, hasType: true, hasSource: false, messageKeys: Array(1), rawData: Object}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cProcessing iframe message%c +0ms color: #3333CC color: inherit color: #3333CC {messageType: object, hasType: true, hasSource: false, messageKeys: Array(1), rawData: Object}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cProcessing iframe message%c +0ms color: #3333CC color: inherit color: #3333CC {messageType: object, hasType: true, hasSource: false, messageKeys: Array(1), rawData: Object}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cProcessing iframe message%c +0ms color: #3333CC color: inherit color: #3333CC {messageType: object, hasType: true, hasSource: false, messageKeys: Array(1), rawData: Object}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cReceived iframe resizer message%c +1ms color: #3333CC color: inherit color: #3333CC {type: civic-iframe-ready, height: undefined}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cReceived iframe resizer message%c +1ms color: #3333CC color: inherit color: #3333CC {type: civic-iframe-ready, height: undefined}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cReceived iframe resizer message%c +1ms color: #3333CC color: inherit color: #3333CC {type: civic-iframe-ready, height: undefined}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cReceived iframe resizer message%c +1ms color: #3333CC color: inherit color: #3333CC {type: civic-iframe-ready, height: undefined}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cIframe content is ready - hiding shimmer loader%c +1s color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cIframe content is ready - hiding shimmer loader%c +1s color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cIframe content is ready - hiding shimmer loader%c +1s color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cIframe content is ready - hiding shimmer loader%c +1s color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cReceived message from iframe:%c +16ms color: #3399CC color: inherit color: #3399CC {type: civic-iframe-ready}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cReceived message from iframe:%c +16ms color: #3399CC color: inherit color: #3399CC {type: civic-iframe-ready}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cReceived message from iframe:%c +16ms color: #3399CC color: inherit color: #3399CC {type: civic-iframe-ready}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cReceived message from iframe:%c +16ms color: #3399CC color: inherit color: #3399CC {type: civic-iframe-ready}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cIframe child is ready%c +0ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cIframe child is ready%c +0ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cIframe child is ready%c +0ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cIframe child is ready%c +0ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cRequesting size from iframe child%c +0ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cRequesting size from iframe child%c +0ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cRequesting size from iframe child%c +0ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cRequesting size from iframe child%c +0ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cGlobal window received message:%c +3ms color: #3333CC color: inherit color: #3333CC {data: Object, origin: https://auth-dev.civic.com, sourceProvided: true, iframeContentWindow: Window, expectedIframeOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cGlobal window received message:%c +3ms color: #3333CC color: inherit color: #3333CC {data: Object, origin: https://auth-dev.civic.com, sourceProvided: true, iframeContentWindow: Window, expectedIframeOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cGlobal window received message:%c +3ms color: #3333CC color: inherit color: #3333CC {data: Object, origin: https://auth-dev.civic.com, sourceProvided: true, iframeContentWindow: Window, expectedIframeOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cGlobal window received message:%c +3ms color: #3333CC color: inherit color: #3333CC {data: Object, origin: https://auth-dev.civic.com, sourceProvided: true, iframeContentWindow: Window, expectedIframeOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cMessage from configured iframe source and origin received%c +1ms color: #3333CC color: inherit color: #3333CC {data: Object, iframeSrc: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cMessage from configured iframe source and origin received%c +1ms color: #3333CC color: inherit color: #3333CC {data: Object, iframeSrc: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cMessage from configured iframe source and origin received%c +1ms color: #3333CC color: inherit color: #3333CC {data: Object, iframeSrc: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cMessage from configured iframe source and origin received%c +1ms color: #3333CC color: inherit color: #3333CC {data: Object, iframeSrc: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cProcessing iframe message%c +0ms color: #3333CC color: inherit color: #3333CC {messageType: object, hasType: true, hasSource: false, messageKeys: Array(4), rawData: Object}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cProcessing iframe message%c +0ms color: #3333CC color: inherit color: #3333CC {messageType: object, hasType: true, hasSource: false, messageKeys: Array(4), rawData: Object}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cProcessing iframe message%c +0ms color: #3333CC color: inherit color: #3333CC {messageType: object, hasType: true, hasSource: false, messageKeys: Array(4), rawData: Object}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cProcessing iframe message%c +0ms color: #3333CC color: inherit color: #3333CC {messageType: object, hasType: true, hasSource: false, messageKeys: Array(4), rawData: Object}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cReceived iframe resizer message%c +0ms color: #3333CC color: inherit color: #3333CC {type: civic-iframe-resize, height: 250}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cReceived iframe resizer message%c +0ms color: #3333CC color: inherit color: #3333CC {type: civic-iframe-resize, height: 250}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cReceived iframe resizer message%c +0ms color: #3333CC color: inherit color: #3333CC {type: civic-iframe-resize, height: 250}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cReceived iframe resizer message%c +0ms color: #3333CC color: inherit color: #3333CC {type: civic-iframe-resize, height: 250}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cReceived message from iframe:%c +4ms color: #3399CC color: inherit color: #3399CC {type: civic-iframe-resize, height: 250, messageCount: 1, suggestedAnimationDuration: undefined}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cReceived message from iframe:%c +4ms color: #3399CC color: inherit color: #3399CC {type: civic-iframe-resize, height: 250, messageCount: 1, suggestedAnimationDuration: undefined}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cReceived message from iframe:%c +4ms color: #3399CC color: inherit color: #3399CC {type: civic-iframe-resize, height: 250, messageCount: 1, suggestedAnimationDuration: undefined}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cReceived message from iframe:%c +4ms color: #3399CC color: inherit color: #3399CC {type: civic-iframe-resize, height: 250, messageCount: 1, suggestedAnimationDuration: undefined}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cResizing iframe to height:%c +0ms color: #3399CC color: inherit color: #3399CC 250
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cResizing iframe to height:%c +0ms color: #3399CC color: inherit color: #3399CC 250
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cResizing iframe to height:%c +0ms color: #3399CC color: inherit color: #3399CC 250
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cResizing iframe to height:%c +0ms color: #3399CC color: inherit color: #3399CC 250
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cIframe resized to 250px%c +1ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cIframe resized to 250px%c +1ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cIframe resized to 250px%c +1ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cIframe resized to 250px%c +1ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cGlobal window received message:%c +3ms color: #3333CC color: inherit color: #3333CC {data: [iFrameResizerChild]Ready, origin: https://auth-dev.civic.com, sourceProvided: true, iframeContentWindow: Window, expectedIframeOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cGlobal window received message:%c +3ms color: #3333CC color: inherit color: #3333CC {data: [iFrameResizerChild]Ready, origin: https://auth-dev.civic.com, sourceProvided: true, iframeContentWindow: Window, expectedIframeOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cGlobal window received message:%c +3ms color: #3333CC color: inherit color: #3333CC {data: [iFrameResizerChild]Ready, origin: https://auth-dev.civic.com, sourceProvided: true, iframeContentWindow: Window, expectedIframeOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cGlobal window received message:%c +3ms color: #3333CC color: inherit color: #3333CC {data: [iFrameResizerChild]Ready, origin: https://auth-dev.civic.com, sourceProvided: true, iframeContentWindow: Window, expectedIframeOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cMessage from configured iframe source and origin received%c +0ms color: #3333CC color: inherit color: #3333CC {data: [iFrameResizerChild]Ready, iframeSrc: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cMessage from configured iframe source and origin received%c +0ms color: #3333CC color: inherit color: #3333CC {data: [iFrameResizerChild]Ready, iframeSrc: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cMessage from configured iframe source and origin received%c +0ms color: #3333CC color: inherit color: #3333CC {data: [iFrameResizerChild]Ready, iframeSrc: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cMessage from configured iframe source and origin received%c +0ms color: #3333CC color: inherit color: #3333CC {data: [iFrameResizerChild]Ready, iframeSrc: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cProcessing iframe message%c +1ms color: #3333CC color: inherit color: #3333CC {messageType: string, hasType: false, hasSource: false, messageKeys: Array(0), rawData: [iFrameResizerChild]Ready}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cProcessing iframe message%c +1ms color: #3333CC color: inherit color: #3333CC {messageType: string, hasType: false, hasSource: false, messageKeys: Array(0), rawData: [iFrameResizerChild]Ready}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cProcessing iframe message%c +1ms color: #3333CC color: inherit color: #3333CC {messageType: string, hasType: false, hasSource: false, messageKeys: Array(0), rawData: [iFrameResizerChild]Ready}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cProcessing iframe message%c +1ms color: #3333CC color: inherit color: #3333CC {messageType: string, hasType: false, hasSource: false, messageKeys: Array(0), rawData: [iFrameResizerChild]Ready}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cReceived iframe resizer child message%c +0ms color: #3333CC color: inherit color: #3333CC {message: [iFrameResizerChild]Ready}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cReceived iframe resizer child message%c +0ms color: #3333CC color: inherit color: #3333CC {message: [iFrameResizerChild]Ready}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cReceived iframe resizer child message%c +0ms color: #3333CC color: inherit color: #3333CC {message: [iFrameResizerChild]Ready}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cReceived iframe resizer child message%c +0ms color: #3333CC color: inherit color: #3333CC {message: [iFrameResizerChild]Ready}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cReceived message from iframe:%c +3ms color: #3399CC color: inherit color: #3399CC [iFrameResizerChild]Ready
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cReceived message from iframe:%c +3ms color: #3399CC color: inherit color: #3399CC [iFrameResizerChild]Ready
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cReceived message from iframe:%c +3ms color: #3399CC color: inherit color: #3399CC [iFrameResizerChild]Ready
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cReceived message from iframe:%c +3ms color: #3399CC color: inherit color: #3399CC [iFrameResizerChild]Ready
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cRequesting size from iframe child%c +56ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cRequesting size from iframe child%c +56ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cRequesting size from iframe child%c +56ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cRequesting size from iframe child%c +56ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cGlobal window received message:%c +87ms color: #3333CC color: inherit color: #3333CC {data: Object, origin: https://auth-dev.civic.com, sourceProvided: true, iframeContentWindow: Window, expectedIframeOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cGlobal window received message:%c +87ms color: #3333CC color: inherit color: #3333CC {data: Object, origin: https://auth-dev.civic.com, sourceProvided: true, iframeContentWindow: Window, expectedIframeOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cGlobal window received message:%c +87ms color: #3333CC color: inherit color: #3333CC {data: Object, origin: https://auth-dev.civic.com, sourceProvided: true, iframeContentWindow: Window, expectedIframeOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cGlobal window received message:%c +87ms color: #3333CC color: inherit color: #3333CC {data: Object, origin: https://auth-dev.civic.com, sourceProvided: true, iframeContentWindow: Window, expectedIframeOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cMessage from configured iframe source and origin received%c +1ms color: #3333CC color: inherit color: #3333CC {data: Object, iframeSrc: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cMessage from configured iframe source and origin received%c +1ms color: #3333CC color: inherit color: #3333CC {data: Object, iframeSrc: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cMessage from configured iframe source and origin received%c +1ms color: #3333CC color: inherit color: #3333CC {data: Object, iframeSrc: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cMessage from configured iframe source and origin received%c +1ms color: #3333CC color: inherit color: #3333CC {data: Object, iframeSrc: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cProcessing iframe message%c +0ms color: #3333CC color: inherit color: #3333CC {messageType: object, hasType: true, hasSource: false, messageKeys: Array(4), rawData: Object}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cProcessing iframe message%c +0ms color: #3333CC color: inherit color: #3333CC {messageType: object, hasType: true, hasSource: false, messageKeys: Array(4), rawData: Object}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cProcessing iframe message%c +0ms color: #3333CC color: inherit color: #3333CC {messageType: object, hasType: true, hasSource: false, messageKeys: Array(4), rawData: Object}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cProcessing iframe message%c +0ms color: #3333CC color: inherit color: #3333CC {messageType: object, hasType: true, hasSource: false, messageKeys: Array(4), rawData: Object}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cReceived iframe resizer message%c +0ms color: #3333CC color: inherit color: #3333CC {type: civic-iframe-resize, height: 390}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cReceived iframe resizer message%c +0ms color: #3333CC color: inherit color: #3333CC {type: civic-iframe-resize, height: 390}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cReceived iframe resizer message%c +0ms color: #3333CC color: inherit color: #3333CC {type: civic-iframe-resize, height: 390}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cReceived iframe resizer message%c +0ms color: #3333CC color: inherit color: #3333CC {type: civic-iframe-resize, height: 390}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cReceived message from iframe:%c +33ms color: #3399CC color: inherit color: #3399CC {type: civic-iframe-resize, height: 390, messageCount: 2, suggestedAnimationDuration: undefined}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cReceived message from iframe:%c +33ms color: #3399CC color: inherit color: #3399CC {type: civic-iframe-resize, height: 390, messageCount: 2, suggestedAnimationDuration: undefined}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cReceived message from iframe:%c +33ms color: #3399CC color: inherit color: #3399CC {type: civic-iframe-resize, height: 390, messageCount: 2, suggestedAnimationDuration: undefined}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cReceived message from iframe:%c +33ms color: #3399CC color: inherit color: #3399CC {type: civic-iframe-resize, height: 390, messageCount: 2, suggestedAnimationDuration: undefined}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cResizing iframe to height:%c +1ms color: #3399CC color: inherit color: #3399CC 390
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cResizing iframe to height:%c +1ms color: #3399CC color: inherit color: #3399CC 390
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cResizing iframe to height:%c +1ms color: #3399CC color: inherit color: #3399CC 390
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cResizing iframe to height:%c +1ms color: #3399CC color: inherit color: #3399CC 390
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cIframe resized to 390px%c +0ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cIframe resized to 390px%c +0ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cIframe resized to 390px%c +0ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cIframe resized to 390px%c +0ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cRequesting size from iframe child%c +434ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cRequesting size from iframe child%c +434ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cRequesting size from iframe child%c +434ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cRequesting size from iframe child%c +434ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cRequesting size from iframe child%c +11ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cRequesting size from iframe child%c +11ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cRequesting size from iframe child%c +11ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cRequesting size from iframe child%c +11ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cRequesting size from iframe child%c +403ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cRequesting size from iframe child%c +403ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cRequesting size from iframe child%c +403ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cRequesting size from iframe child%c +403ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cRequesting size from iframe child%c +1s color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cRequesting size from iframe child%c +1s color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cRequesting size from iframe child%c +1s color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cRequesting size from iframe child%c +1s color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cGlobal window received message:%c +2s color: #3333CC color: inherit color: #3333CC {data: Object, origin: https://auth-dev.civic.com, sourceProvided: true, iframeContentWindow: Window, expectedIframeOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cGlobal window received message:%c +2s color: #3333CC color: inherit color: #3333CC {data: Object, origin: https://auth-dev.civic.com, sourceProvided: true, iframeContentWindow: Window, expectedIframeOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cGlobal window received message:%c +2s color: #3333CC color: inherit color: #3333CC {data: Object, origin: https://auth-dev.civic.com, sourceProvided: true, iframeContentWindow: Window, expectedIframeOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cGlobal window received message:%c +2s color: #3333CC color: inherit color: #3333CC {data: Object, origin: https://auth-dev.civic.com, sourceProvided: true, iframeContentWindow: Window, expectedIframeOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cMessage from configured iframe source and origin received%c +0ms color: #3333CC color: inherit color: #3333CC {data: Object, iframeSrc: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cMessage from configured iframe source and origin received%c +0ms color: #3333CC color: inherit color: #3333CC {data: Object, iframeSrc: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cMessage from configured iframe source and origin received%c +0ms color: #3333CC color: inherit color: #3333CC {data: Object, iframeSrc: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cMessage from configured iframe source and origin received%c +0ms color: #3333CC color: inherit color: #3333CC {data: Object, iframeSrc: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cProcessing iframe message%c +0ms color: #3333CC color: inherit color: #3333CC {messageType: object, hasType: true, hasSource: false, messageKeys: Array(4), rawData: Object}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cProcessing iframe message%c +0ms color: #3333CC color: inherit color: #3333CC {messageType: object, hasType: true, hasSource: false, messageKeys: Array(4), rawData: Object}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cProcessing iframe message%c +0ms color: #3333CC color: inherit color: #3333CC {messageType: object, hasType: true, hasSource: false, messageKeys: Array(4), rawData: Object}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cProcessing iframe message%c +0ms color: #3333CC color: inherit color: #3333CC {messageType: object, hasType: true, hasSource: false, messageKeys: Array(4), rawData: Object}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cReceived iframe resizer message%c +3ms color: #3333CC color: inherit color: #3333CC {type: civic-iframe-resize, height: 250}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cReceived iframe resizer message%c +3ms color: #3333CC color: inherit color: #3333CC {type: civic-iframe-resize, height: 250}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cReceived iframe resizer message%c +3ms color: #3333CC color: inherit color: #3333CC {type: civic-iframe-resize, height: 250}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cReceived iframe resizer message%c +3ms color: #3333CC color: inherit color: #3333CC {type: civic-iframe-resize, height: 250}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cReceived message from iframe:%c +383ms color: #3399CC color: inherit color: #3399CC {type: civic-iframe-resize, height: 250, messageCount: 3, suggestedAnimationDuration: undefined}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cReceived message from iframe:%c +383ms color: #3399CC color: inherit color: #3399CC {type: civic-iframe-resize, height: 250, messageCount: 3, suggestedAnimationDuration: undefined}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cReceived message from iframe:%c +383ms color: #3399CC color: inherit color: #3399CC {type: civic-iframe-resize, height: 250, messageCount: 3, suggestedAnimationDuration: undefined}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cReceived message from iframe:%c +383ms color: #3399CC color: inherit color: #3399CC {type: civic-iframe-resize, height: 250, messageCount: 3, suggestedAnimationDuration: undefined}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cResizing iframe to height:%c +1ms color: #3399CC color: inherit color: #3399CC 250
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cResizing iframe to height:%c +1ms color: #3399CC color: inherit color: #3399CC 250
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cResizing iframe to height:%c +1ms color: #3399CC color: inherit color: #3399CC 250
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cResizing iframe to height:%c +1ms color: #3399CC color: inherit color: #3399CC 250
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cIframe resized to 250px%c +1ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cIframe resized to 250px%c +1ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cIframe resized to 250px%c +1ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cIframe resized to 250px%c +1ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cGlobal window received message:%c +14ms color: #3333CC color: inherit color: #3333CC {data: Object, origin: https://auth-dev.civic.com, sourceProvided: true, iframeContentWindow: Window, expectedIframeOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cGlobal window received message:%c +14ms color: #3333CC color: inherit color: #3333CC {data: Object, origin: https://auth-dev.civic.com, sourceProvided: true, iframeContentWindow: Window, expectedIframeOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cGlobal window received message:%c +14ms color: #3333CC color: inherit color: #3333CC {data: Object, origin: https://auth-dev.civic.com, sourceProvided: true, iframeContentWindow: Window, expectedIframeOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cGlobal window received message:%c +14ms color: #3333CC color: inherit color: #3333CC {data: Object, origin: https://auth-dev.civic.com, sourceProvided: true, iframeContentWindow: Window, expectedIframeOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cMessage from configured iframe source and origin received%c +3ms color: #3333CC color: inherit color: #3333CC {data: Object, iframeSrc: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cMessage from configured iframe source and origin received%c +3ms color: #3333CC color: inherit color: #3333CC {data: Object, iframeSrc: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cMessage from configured iframe source and origin received%c +3ms color: #3333CC color: inherit color: #3333CC {data: Object, iframeSrc: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cMessage from configured iframe source and origin received%c +3ms color: #3333CC color: inherit color: #3333CC {data: Object, iframeSrc: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cProcessing iframe message%c +0ms color: #3333CC color: inherit color: #3333CC {messageType: object, hasType: true, hasSource: false, messageKeys: Array(4), rawData: Object}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cProcessing iframe message%c +0ms color: #3333CC color: inherit color: #3333CC {messageType: object, hasType: true, hasSource: false, messageKeys: Array(4), rawData: Object}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cProcessing iframe message%c +0ms color: #3333CC color: inherit color: #3333CC {messageType: object, hasType: true, hasSource: false, messageKeys: Array(4), rawData: Object}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cProcessing iframe message%c +0ms color: #3333CC color: inherit color: #3333CC {messageType: object, hasType: true, hasSource: false, messageKeys: Array(4), rawData: Object}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cReceived iframe resizer message%c +0ms color: #3333CC color: inherit color: #3333CC {type: civic-iframe-resize, height: 273}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cReceived iframe resizer message%c +0ms color: #3333CC color: inherit color: #3333CC {type: civic-iframe-resize, height: 273}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cReceived iframe resizer message%c +0ms color: #3333CC color: inherit color: #3333CC {type: civic-iframe-resize, height: 273}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cReceived iframe resizer message%c +0ms color: #3333CC color: inherit color: #3333CC {type: civic-iframe-resize, height: 273}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cReceived message from iframe:%c +15ms color: #3399CC color: inherit color: #3399CC {type: civic-iframe-resize, height: 273, messageCount: 4, suggestedAnimationDuration: undefined}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cReceived message from iframe:%c +15ms color: #3399CC color: inherit color: #3399CC {type: civic-iframe-resize, height: 273, messageCount: 4, suggestedAnimationDuration: undefined}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cReceived message from iframe:%c +15ms color: #3399CC color: inherit color: #3399CC {type: civic-iframe-resize, height: 273, messageCount: 4, suggestedAnimationDuration: undefined}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cReceived message from iframe:%c +15ms color: #3399CC color: inherit color: #3399CC {type: civic-iframe-resize, height: 273, messageCount: 4, suggestedAnimationDuration: undefined}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cResizing iframe to height:%c +0ms color: #3399CC color: inherit color: #3399CC 273
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cResizing iframe to height:%c +0ms color: #3399CC color: inherit color: #3399CC 273
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cResizing iframe to height:%c +0ms color: #3399CC color: inherit color: #3399CC 273
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cResizing iframe to height:%c +0ms color: #3399CC color: inherit color: #3399CC 273
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cIframe resized to 273px%c +0ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cIframe resized to 273px%c +0ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cIframe resized to 273px%c +0ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cIframe resized to 273px%c +0ms color: #3399CC color: inherit color: #3399CC
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/RbLm45C57CZ_uRp8k4oO3NJtEvZunEHXbAuoLtHnShI/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlZDc1NDg5OC03MDAwLTQyODUtYjM3MS01YjVhMjI0YzNhMGIiLCJlbWFpbCI6IjBlZGRiM2EzLTFlMTktNGM0ZS1iNzZlLTFlZjc3NDgxYTQ4NkBleGFtcGxlLmV4YW1wbGUiLCJuYW1lIjoiR2hvc3QiLCJzY29wZXMiOlsib3BlbmlkIiwib2ZmbGluZV9hY2Nlc3MiLCJwcm9maWxlIiwiZW1haWwiLCJ3YWxsZXQiLCJmb3J3YXJkZWRUb2tlbnMiLCJwYXNza2V5Il0sImF1ZCI6ImRiN2U4OGMxLWQ5OTctNDA5OC04YzA1LTNjMjhjMDE3NzFmMyIsImlkVG9rZW5UVEwiOjM2MDAsImFjY2Vzc1Rva2VuVFRMIjozNjAwLCJyZWZyZXNoVG9rZW5UVEwiOjg2NDAwLCJjbGllbnRJZCI6ImRlbW8tY2xpZW50LTEiLCJwcm92aWRlciI6ImR1bW15IiwiZmxvd19pZCI6Im9hdXRoLWxvZ2luLTNmMTRjMTc2LTM1MjQtNDdhNC1iMzQxLWIyYWU0NzJlNmEyNiIsImxvZ2luX2Zsb3dfaWQiOiIwMTg0Nzg4Ni03MTNiLTRlZGUtYjYwOS05Y2EyMzU4MWFjMWEiLCJkaXNwbGF5X21vZGUiOiJwb3B1cCIsImZsb3dfdHlwZSI6Im9pZGMiLCJvcmlnaW4iOiJodHRwczovL2F1dGgtZGV2LmNpdmljLmNvbSIsImZvcndhcmRlZFRva2VucyI6eyJkdW1teSI6eyJpZF90b2tlbiI6ImV5SmhiR2NpT2lKU1V6STFOaUlzSW5SNWNDSTZJa3BYVkNJc0ltdHBaQ0k2SW1zeEluMC5leUpwYzNNaU9pSm9kSFJ3Y3pvdkwyaGxZV1JsY2kxd2NtOTRlUzVrWVc1cFpXeGlhMlZzYkdWb1pYSXpOems1TG5kdmNtdGxjbk11WkdWMklpd2lZWFZrSWpvaWRHVnVZVzUwTFRFdFlYQndMVEVpTENKemRXSWlPaUl3WldSa1lqTmhNeTB4WlRFNUxUUmpOR1V0WWpjMlpTMHhaV1kzTnpRNE1XRTBPRFlpTENKbGJXRnBiQ0k2SWpCbFpHUmlNMkV6TFRGbE1Ua3ROR00wWlMxaU56WmxMVEZsWmpjM05EZ3hZVFE0TmtCbGVHRnRjR3hsTG1WNFlXMXdiR1VpTENKdWIyNWpaU0k2SWpFeU16UTFOamM0T1RBaUxDSnBZWFFpT2pFM05qQXhNelF6TURFc0ltVjRjQ0k2TVRjMk1ERXpOemt3TVN3aVptOXlkMkZ5WkdWa1ZHOXJaVzV6SWpwN0ltUjFiVzE1SWpwN0ltbGtYM1J2YTJWdUlqb2laWGxLYUdKSFkybFBhVXBUVlhwSk1VNXBTWE5KYmxJMVkwTkpOa2xyY0ZoV1EwbHpTVzEwY0ZwRFNUWkpiWE40U1c0d0xtVjVTbkJqTTAxcFQybEtiMlJJVW5kamVtOTJUREpvYkZsWFVteGphVEYzWTIwNU5HVlROV3RaVnpWd1dsZDRhV0V5Vm5OaVIxWnZXbGhKZWs1NmF6Vk1ibVIyWTIxMGJHTnVUWFZhUjFZeVNXbDNhV016Vm1sSmFtOXBUVWRXYTFwSFNYcFpWRTEwVFZkVmVFOVRNREJaZWxKc1RGZEpNMDV0VlhSTlYxWnRUbnBqTUU5RVJtaE9SR2N5U1dsM2FWcFhNV2hoVjNkcFQybEpkMXBYVW10WmFrNW9UWGt3ZUZwVVJUVk1WRkpxVGtkVmRGbHFZekphVXpCNFdsZFpNMDU2VVRSTlYwVXdUMFJhUVZwWWFHaGlXRUp6V2xNMWJHVkhSblJqUjNoc1NXbDNhV0p0T1hWWk1sVnBUMmxKZUUxcVRUQk9WRmt6VDBScmQwbHBkMmxaV0ZaclNXcHZhV0ZJVWpCalJHOTJUREo0ZGxreVJuTmhSemw2WkVSdmVrMUVRWGRKYVhkcFlWZEdNRWxxYjNoT2VsbDNUVlJOTUUxNlFYaE1RMHBzWlVoQmFVOXFSVE5PYWtGNFRYcGpOVTFFUmprdVNESktjVmRqTm14bVJFbDViME5EWkhoWlZWY3hlV2hJUjNOYVlVVm1YMHRYYVVjNVJGOXdjM0l5TTJjeGNWRjBhMkZwTkZRdE4xRlJVV3A0UVVob01EQmhaa1pLWkZCaE0wZDFaVUpxZDFsUGVUTnZlVzFTYUZocU1Wb3RjWFI0UjJ0dmFIcExjMW90VVVsSE1EZ3RUMGhNZEhjMGFuQkJabGhhZUZGMVVYcE9WRzVCVjNCd09UUmFYMnhwZVhjMWNVNXdMVzF3WVRGUFprdDRTbTFzTVRCUmVsbFZSakk0YlZGQ05EUnBTRmszTVhSR2MyMVJVVXRWVEdwV1JHWnRNMFp5WWxFNGJGWjZhelU1VEhCSVFrSkNPRFJZY1Y5SkxUaFFXV2xMVFRKd1p6YzBRek0zUVhoU0xXeHdORXhYTXprMVltZFRVRlJyT0ZaeGNHdDBUMWxSTlhoUllVMUhOakJFYld4WlpIZE5hbkpwVkRoV1ZWaG1jR3d6ZWpBeVkwRkZiQzB5Y1daS1kzVmZWa1o0V0hKWmNFWjJTVlF6WlU1eFFVNVlRVk5hY0dkRVZrbHFaekJoUjA5YVN6VjZiR1JHTVRCM0luMTlmUS5oeEQ5VUVTb0k3aS1PMTA1NE5Ca2ZkM2FsNGNKME96TW5vVENKRFl0Q0JfSzFhSDhscjZDUExCaTVEV3d2UUVacXphZ3I0cnV2UnNxd05NYlFIZWRTRVhsVW1jd3JUNjNsVWFrMmoxZjg3dzFJZTU3bGtZeWFCZ1FvUGFraDIyeEh5cTcyOURhaktQSEZKd3lIdmRTNDdyX3QtUXlrUEh1U0hmVmJHZWczMnlpN0xwN0I4SVVkdmZPNlJKOXVTMjJhMzRieE9zT3RVVjFORzVNOE9uUU1FTF80bFdZU0xZNXpERWNRNjhIZFlmMWRfMTVBOFU1NVJwLVVnWE1CSzhWTWo2N3pZNFZuVkp5T1NVUkVxVHlRZ2h4LWEyX1dfaGZ4aURyWUxJZUdsMWFaay1NbnNISXowZWMzbEEyQlppTHBGTlR0eU13clg1MVY3UFZCVEVOQ1EiLCJhY2Nlc3NfdG9rZW4iOiIifX19.9uS9VwAXHoRvrHWbWcwVlYVf8MXRoOBthv0nw2uW0FQ&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/RbLm45C57CZ_uRp8k4oO3NJtEvZunEHXbAuoLtHnShI/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlZDc1NDg5OC03MDAwLTQyODUtYjM3MS01YjVhMjI0YzNhMGIiLCJlbWFpbCI6IjBlZGRiM2EzLTFlMTktNGM0ZS1iNzZlLTFlZjc3NDgxYTQ4NkBleGFtcGxlLmV4YW1wbGUiLCJuYW1lIjoiR2hvc3QiLCJzY29wZXMiOlsib3BlbmlkIiwib2ZmbGluZV9hY2Nlc3MiLCJwcm9maWxlIiwiZW1haWwiLCJ3YWxsZXQiLCJmb3J3YXJkZWRUb2tlbnMiLCJwYXNza2V5Il0sImF1ZCI6ImRiN2U4OGMxLWQ5OTctNDA5OC04YzA1LTNjMjhjMDE3NzFmMyIsImlkVG9rZW5UVEwiOjM2MDAsImFjY2Vzc1Rva2VuVFRMIjozNjAwLCJyZWZyZXNoVG9rZW5UVEwiOjg2NDAwLCJjbGllbnRJZCI6ImRlbW8tY2xpZW50LTEiLCJwcm92aWRlciI6ImR1bW15IiwiZmxvd19pZCI6Im9hdXRoLWxvZ2luLTNmMTRjMTc2LTM1MjQtNDdhNC1iMzQxLWIyYWU0NzJlNmEyNiIsImxvZ2luX2Zsb3dfaWQiOiIwMTg0Nzg4Ni03MTNiLTRlZGUtYjYwOS05Y2EyMzU4MWFjMWEiLCJkaXNwbGF5X21vZGUiOiJwb3B1cCIsImZsb3dfdHlwZSI6Im9pZGMiLCJvcmlnaW4iOiJodHRwczovL2F1dGgtZGV2LmNpdmljLmNvbSIsImZvcndhcmRlZFRva2VucyI6eyJkdW1teSI6eyJpZF90b2tlbiI6ImV5SmhiR2NpT2lKU1V6STFOaUlzSW5SNWNDSTZJa3BYVkNJc0ltdHBaQ0k2SW1zeEluMC5leUpwYzNNaU9pSm9kSFJ3Y3pvdkwyaGxZV1JsY2kxd2NtOTRlUzVrWVc1cFpXeGlhMlZzYkdWb1pYSXpOems1TG5kdmNtdGxjbk11WkdWMklpd2lZWFZrSWpvaWRHVnVZVzUwTFRFdFlYQndMVEVpTENKemRXSWlPaUl3WldSa1lqTmhNeTB4WlRFNUxUUmpOR1V0WWpjMlpTMHhaV1kzTnpRNE1XRTBPRFlpTENKbGJXRnBiQ0k2SWpCbFpHUmlNMkV6TFRGbE1Ua3ROR00wWlMxaU56WmxMVEZsWmpjM05EZ3hZVFE0TmtCbGVHRnRjR3hsTG1WNFlXMXdiR1VpTENKdWIyNWpaU0k2SWpFeU16UTFOamM0T1RBaUxDSnBZWFFpT2pFM05qQXhNelF6TURFc0ltVjRjQ0k2TVRjMk1ERXpOemt3TVN3aVptOXlkMkZ5WkdWa1ZHOXJaVzV6SWpwN0ltUjFiVzE1SWpwN0ltbGtYM1J2YTJWdUlqb2laWGxLYUdKSFkybFBhVXBUVlhwSk1VNXBTWE5KYmxJMVkwTkpOa2xyY0ZoV1EwbHpTVzEwY0ZwRFNUWkpiWE40U1c0d0xtVjVTbkJqTTAxcFQybEtiMlJJVW5kamVtOTJUREpvYkZsWFVteGphVEYzWTIwNU5HVlROV3RaVnpWd1dsZDRhV0V5Vm5OaVIxWnZXbGhKZWs1NmF6Vk1ibVIyWTIxMGJHTnVUWFZhUjFZeVNXbDNhV016Vm1sSmFtOXBUVWRXYTFwSFNYcFpWRTEwVFZkVmVFOVRNREJaZWxKc1RGZEpNMDV0VlhSTlYxWnRUbnBqTUU5RVJtaE9SR2N5U1dsM2FWcFhNV2hoVjNkcFQybEpkMXBYVW10WmFrNW9UWGt3ZUZwVVJUVk1WRkpxVGtkVmRGbHFZekphVXpCNFdsZFpNMDU2VVRSTlYwVXdUMFJhUVZwWWFHaGlXRUp6V2xNMWJHVkhSblJqUjNoc1NXbDNhV0p0T1hWWk1sVnBUMmxKZUUxcVRUQk9WRmt6VDBScmQwbHBkMmxaV0ZaclNXcHZhV0ZJVWpCalJHOTJUREo0ZGxreVJuTmhSemw2WkVSdmVrMUVRWGRKYVhkcFlWZEdNRWxxYjNoT2VsbDNUVlJOTUUxNlFYaE1RMHBzWlVoQmFVOXFSVE5PYWtGNFRYcGpOVTFFUmprdVNESktjVmRqTm14bVJFbDViME5EWkhoWlZWY3hlV2hJUjNOYVlVVm1YMHRYYVVjNVJGOXdjM0l5TTJjeGNWRjBhMkZwTkZRdE4xRlJVV3A0UVVob01EQmhaa1pLWkZCaE0wZDFaVUpxZDFsUGVUTnZlVzFTYUZocU1Wb3RjWFI0UjJ0dmFIcExjMW90VVVsSE1EZ3RUMGhNZEhjMGFuQkJabGhhZUZGMVVYcE9WRzVCVjNCd09UUmFYMnhwZVhjMWNVNXdMVzF3WVRGUFprdDRTbTFzTVRCUmVsbFZSakk0YlZGQ05EUnBTRmszTVhSR2MyMVJVVXRWVEdwV1JHWnRNMFp5WWxFNGJGWjZhelU1VEhCSVFrSkNPRFJZY1Y5SkxUaFFXV2xMVFRKd1p6YzBRek0zUVhoU0xXeHdORXhYTXprMVltZFRVRlJyT0ZaeGNHdDBUMWxSTlhoUllVMUhOakJFYld4WlpIZE5hbkpwVkRoV1ZWaG1jR3d6ZWpBeVkwRkZiQzB5Y1daS1kzVmZWa1o0V0hKWmNFWjJTVlF6WlU1eFFVNVlRVk5hY0dkRVZrbHFaekJoUjA5YVN6VjZiR1JHTVRCM0luMTlmUS5oeEQ5VUVTb0k3aS1PMTA1NE5Ca2ZkM2FsNGNKME96TW5vVENKRFl0Q0JfSzFhSDhscjZDUExCaTVEV3d2UUVacXphZ3I0cnV2UnNxd05NYlFIZWRTRVhsVW1jd3JUNjNsVWFrMmoxZjg3dzFJZTU3bGtZeWFCZ1FvUGFraDIyeEh5cTcyOURhaktQSEZKd3lIdmRTNDdyX3QtUXlrUEh1U0hmVmJHZWczMnlpN0xwN0I4SVVkdmZPNlJKOXVTMjJhMzRieE9zT3RVVjFORzVNOE9uUU1FTF80bFdZU0xZNXpERWNRNjhIZFlmMWRfMTVBOFU1NVJwLVVnWE1CSzhWTWo2N3pZNFZuVkp5T1NVUkVxVHlRZ2h4LWEyX1dfaGZ4aURyWUxJZUdsMWFaay1NbnNISXowZWMzbEEyQlppTHBGTlR0eU13clg1MVY3UFZCVEVOQ1EiLCJhY2Nlc3NfdG9rZW4iOiIifX19.9uS9VwAXHoRvrHWbWcwVlYVf8MXRoOBthv0nw2uW0FQ&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/RbLm45C57CZ_uRp8k4oO3NJtEvZunEHXbAuoLtHnShI
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/RbLm45C57CZ_uRp8k4oO3NJtEvZunEHXbAuoLtHnShI
+[REQUEST FAILED] POST https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us - net::ERR_ABORTED
+[REQUEST FAILED] POST https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us - net::ERR_ABORTED
+[REQUEST FAILED] POST https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us - net::ERR_ABORTED
+[REQUEST FAILED] POST https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us - net::ERR_ABORTED
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cRequesting size from iframe child%c +658ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cRequesting size from iframe child%c +658ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cRequesting size from iframe child%c +658ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cRequesting size from iframe child%c +658ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🔍 Iframe navigation detected%c +3s color: #CC9900 color: inherit color: #CC9900 {newUrl: http://localhost:3000/?code=A8Enu7yMSb4Y7dCinCRHjt…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F, redirectUrl: http://localhost:3000/, isCallbackUrl: true}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🔍 Iframe navigation detected%c +3s color: #CC9900 color: inherit color: #CC9900 {newUrl: http://localhost:3000/?code=A8Enu7yMSb4Y7dCinCRHjt…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F, redirectUrl: http://localhost:3000/, isCallbackUrl: true}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🔍 Iframe navigation detected%c +3s color: #CC9900 color: inherit color: #CC9900 {newUrl: http://localhost:3000/?code=A8Enu7yMSb4Y7dCinCRHjt…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F, redirectUrl: http://localhost:3000/, isCallbackUrl: true}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🔍 Iframe navigation detected%c +3s color: #CC9900 color: inherit color: #CC9900 {newUrl: http://localhost:3000/?code=A8Enu7yMSb4Y7dCinCRHjt…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F, redirectUrl: http://localhost:3000/, isCallbackUrl: true}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🎯 Iframe navigated to callback URL - setting up signal observer%c +1ms color: #CC9900 color: inherit color: #CC9900 {callbackUrl: http://localhost:3000/?code=A8Enu7yMSb4Y7dCinCRHjt…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F, hasContentDocument: true, hasBody: true}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🎯 Iframe navigated to callback URL - setting up signal observer%c +1ms color: #CC9900 color: inherit color: #CC9900 {callbackUrl: http://localhost:3000/?code=A8Enu7yMSb4Y7dCinCRHjt…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F, hasContentDocument: true, hasBody: true}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🎯 Iframe navigated to callback URL - setting up signal observer%c +1ms color: #CC9900 color: inherit color: #CC9900 {callbackUrl: http://localhost:3000/?code=A8Enu7yMSb4Y7dCinCRHjt…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F, hasContentDocument: true, hasBody: true}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🎯 Iframe navigated to callback URL - setting up signal observer%c +1ms color: #CC9900 color: inherit color: #CC9900 {callbackUrl: http://localhost:3000/?code=A8Enu7yMSb4Y7dCinCRHjt…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F, hasContentDocument: true, hasBody: true}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c✅ Setting up SignalObserver for callback page%c +5ms color: #CC9900 color: inherit color: #CC9900 {documentReady: true, bodyReady: true, documentURL: http://localhost:3000/?code=A8Enu7yMSb4Y7dCinCRHjt…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c✅ Setting up SignalObserver for callback page%c +5ms color: #CC9900 color: inherit color: #CC9900 {documentReady: true, bodyReady: true, documentURL: http://localhost:3000/?code=A8Enu7yMSb4Y7dCinCRHjt…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c✅ Setting up SignalObserver for callback page%c +5ms color: #CC9900 color: inherit color: #CC9900 {documentReady: true, bodyReady: true, documentURL: http://localhost:3000/?code=A8Enu7yMSb4Y7dCinCRHjt…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c✅ Setting up SignalObserver for callback page%c +5ms color: #CC9900 color: inherit color: #CC9900 {documentReady: true, bodyReady: true, documentURL: http://localhost:3000/?code=A8Enu7yMSb4Y7dCinCRHjt…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c📝 Setting up SignalObserver%c +0ms color: #CC9900 color: inherit color: #CC9900 {documentURL: http://localhost:3000/?code=A8Enu7yMSb4Y7dCinCRHjt…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F, documentTitle: Civic Auth VanillaJS SPA Example, bodyExists: true, textSignals: Object, hasEvents: true}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c📝 Setting up SignalObserver%c +0ms color: #CC9900 color: inherit color: #CC9900 {documentURL: http://localhost:3000/?code=A8Enu7yMSb4Y7dCinCRHjt…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F, documentTitle: Civic Auth VanillaJS SPA Example, bodyExists: true, textSignals: Object, hasEvents: true}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c📝 Setting up SignalObserver%c +0ms color: #CC9900 color: inherit color: #CC9900 {documentURL: http://localhost:3000/?code=A8Enu7yMSb4Y7dCinCRHjt…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F, documentTitle: Civic Auth VanillaJS SPA Example, bodyExists: true, textSignals: Object, hasEvents: true}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c📝 Setting up SignalObserver%c +0ms color: #CC9900 color: inherit color: #CC9900 {documentURL: http://localhost:3000/?code=A8Enu7yMSb4Y7dCinCRHjt…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F, documentTitle: Civic Auth VanillaJS SPA Example, bodyExists: true, textSignals: Object, hasEvents: true}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cSetting up signal observer for iframe document%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cSetting up signal observer for iframe document%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cSetting up signal observer for iframe document%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cSetting up signal observer for iframe document%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cStarting observation of iframe body%c +1ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cStarting observation of iframe body%c +1ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cStarting observation of iframe body%c +1ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cStarting observation of iframe body%c +1ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cPerforming initial signal check by text (fallback)%c +7ms color: #CC9900 color: inherit color: #CC9900 {initialBodyText: 
+    Civic Auth VanillaJS SPA Example
+    
+    
+  … Status: Initializing...
+    
+
+    
+
+    
+    
+
+ }
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cPerforming initial signal check by text (fallback)%c +7ms color: #CC9900 color: inherit color: #CC9900 {initialBodyText: 
+    Civic Auth VanillaJS SPA Example
+    
+    
+  … Status: Initializing...
+    
+
+    
+
+    
+    
+
+ }
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cPerforming initial signal check by text (fallback)%c +7ms color: #CC9900 color: inherit color: #CC9900 {initialBodyText: 
+    Civic Auth VanillaJS SPA Example
+    
+    
+  … Status: Initializing...
+    
+
+    
+
+    
+    
+
+ }
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cPerforming initial signal check by text (fallback)%c +7ms color: #CC9900 color: inherit color: #CC9900 {initialBodyText: 
+    Civic Auth VanillaJS SPA Example
+    
+    
+  … Status: Initializing...
+    
+
+    
+
+    
+    
+
+ }
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c✅ SignalObserver setup completed successfully%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c✅ SignalObserver setup completed successfully%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c✅ SignalObserver setup completed successfully%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c✅ SignalObserver setup completed successfully%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cAuthorization code detected in iframe URL%c +1ms color: #CC9900 color: inherit color: #CC9900 {code: A8Enu7yMSb..., hasState: true}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cAuthorization code detected in iframe URL%c +1ms color: #CC9900 color: inherit color: #CC9900 {code: A8Enu7yMSb..., hasState: true}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cAuthorization code detected in iframe URL%c +1ms color: #CC9900 color: inherit color: #CC9900 {code: A8Enu7yMSb..., hasState: true}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cAuthorization code detected in iframe URL%c +1ms color: #CC9900 color: inherit color: #CC9900 {code: A8Enu7yMSb..., hasState: true}
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:session %cSessionManager initialized with shared lib token storage%c +0ms color: #FF3366 color: inherit color: #FF3366 {hasInitialUser: false}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:session %cSessionManager initialized with shared lib token storage%c +0ms color: #FF3366 color: inherit color: #FF3366 {hasInitialUser: false}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:session %cSessionManager initialized with shared lib token storage%c +0ms color: #FF3366 color: inherit color: #FF3366 {hasInitialUser: false}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:session %cSessionManager initialized with shared lib token storage%c +0ms color: #FF3366 color: inherit color: #FF3366 {hasInitialUser: false}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🚀 Initializing CivicAuth%c +0ms color: #CC9900 color: inherit color: #CC9900 {currentUrl: http://localhost:3000/?code=A8Enu7yMSb4Y7dCinCRHjt…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F, redirectUrl: http://localhost:3000/, oauthServerBaseUrl: https://auth-dev.civic.com/oauth, isCallbackUrl: true}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🚀 Initializing CivicAuth%c +0ms color: #CC9900 color: inherit color: #CC9900 {currentUrl: http://localhost:3000/?code=A8Enu7yMSb4Y7dCinCRHjt…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F, redirectUrl: http://localhost:3000/, oauthServerBaseUrl: https://auth-dev.civic.com/oauth, isCallbackUrl: true}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🚀 Initializing CivicAuth%c +0ms color: #CC9900 color: inherit color: #CC9900 {currentUrl: http://localhost:3000/?code=A8Enu7yMSb4Y7dCinCRHjt…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F, redirectUrl: http://localhost:3000/, oauthServerBaseUrl: https://auth-dev.civic.com/oauth, isCallbackUrl: true}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🚀 Initializing CivicAuth%c +0ms color: #CC9900 color: inherit color: #CC9900 {currentUrl: http://localhost:3000/?code=A8Enu7yMSb4Y7dCinCRHjt…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F, redirectUrl: http://localhost:3000/, oauthServerBaseUrl: https://auth-dev.civic.com/oauth, isCallbackUrl: true}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cChecking iframe body text for signals (fallback)%c +88ms color: #CC9900 color: inherit color: #CC9900 {bodyText: 
+    Civic Auth VanillaJS SPA Example
+    
+    
+  …essing authentication...
+    
+
+    
+
+    
+    
+
+ }
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cChecking iframe body text for signals (fallback)%c +88ms color: #CC9900 color: inherit color: #CC9900 {bodyText: 
+    Civic Auth VanillaJS SPA Example
+    
+    
+  …essing authentication...
+    
+
+    
+
+    
+    
+
+ }
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cChecking iframe body text for signals (fallback)%c +88ms color: #CC9900 color: inherit color: #CC9900 {bodyText: 
+    Civic Auth VanillaJS SPA Example
+    
+    
+  …essing authentication...
+    
+
+    
+
+    
+    
+
+ }
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cChecking iframe body text for signals (fallback)%c +88ms color: #CC9900 color: inherit color: #CC9900 {bodyText: 
+    Civic Auth VanillaJS SPA Example
+    
+    
+  …essing authentication...
+    
+
+    
+
+    
+    
+
+ }
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cIframe loaded%c +4ms color: #CC9900 color: inherit color: #CC9900 {iframeSrc: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890, currentOrigin: http://localhost:3000, expectedAuthServerOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cIframe loaded%c +4ms color: #CC9900 color: inherit color: #CC9900 {iframeSrc: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890, currentOrigin: http://localhost:3000, expectedAuthServerOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cIframe loaded%c +4ms color: #CC9900 color: inherit color: #CC9900 {iframeSrc: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890, currentOrigin: http://localhost:3000, expectedAuthServerOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cIframe loaded%c +4ms color: #CC9900 color: inherit color: #CC9900 {iframeSrc: https://auth-dev.civic.com/oauth/auth?client_id=de…lenge_method=S256&prompt=consent&nonce=1234567890, currentOrigin: http://localhost:3000, expectedAuthServerOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cAdded cross-origin message event listener for auth server communication%c +1ms color: #CC9900 color: inherit color: #CC9900 {parentOrigin: http://localhost:3000, authServerOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cAdded cross-origin message event listener for auth server communication%c +1ms color: #CC9900 color: inherit color: #CC9900 {parentOrigin: http://localhost:3000, authServerOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cAdded cross-origin message event listener for auth server communication%c +1ms color: #CC9900 color: inherit color: #CC9900 {parentOrigin: http://localhost:3000, authServerOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cAdded cross-origin message event listener for auth server communication%c +1ms color: #CC9900 color: inherit color: #CC9900 {parentOrigin: http://localhost:3000, authServerOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🙈 Hiding iframe completely - not login app or on callback URL%c +2ms color: #CC9900 color: inherit color: #CC9900 {currentUrl: http://localhost:3000/?code=A8Enu7yMSb4Y7dCinCRHjt…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F, isOnAuthServer: false, isCallbackUrl: true, currentOrigin: http://localhost:3000, expectedAuthServerOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🙈 Hiding iframe completely - not login app or on callback URL%c +2ms color: #CC9900 color: inherit color: #CC9900 {currentUrl: http://localhost:3000/?code=A8Enu7yMSb4Y7dCinCRHjt…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F, isOnAuthServer: false, isCallbackUrl: true, currentOrigin: http://localhost:3000, expectedAuthServerOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🙈 Hiding iframe completely - not login app or on callback URL%c +2ms color: #CC9900 color: inherit color: #CC9900 {currentUrl: http://localhost:3000/?code=A8Enu7yMSb4Y7dCinCRHjt…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F, isOnAuthServer: false, isCallbackUrl: true, currentOrigin: http://localhost:3000, expectedAuthServerOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🙈 Hiding iframe completely - not login app or on callback URL%c +2ms color: #CC9900 color: inherit color: #CC9900 {currentUrl: http://localhost:3000/?code=A8Enu7yMSb4Y7dCinCRHjt…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F, isOnAuthServer: false, isCallbackUrl: true, currentOrigin: http://localhost:3000, expectedAuthServerOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cIframe current href accessible%c +0ms color: #CC9900 color: inherit color: #CC9900 {href: http://localhost:3000/?code=A8Enu7yMSb4Y7dCinCRHjt…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F, redirectUrl: http://localhost:3000/, startsWithRedirect: true}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cIframe current href accessible%c +0ms color: #CC9900 color: inherit color: #CC9900 {href: http://localhost:3000/?code=A8Enu7yMSb4Y7dCinCRHjt…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F, redirectUrl: http://localhost:3000/, startsWithRedirect: true}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cIframe current href accessible%c +0ms color: #CC9900 color: inherit color: #CC9900 {href: http://localhost:3000/?code=A8Enu7yMSb4Y7dCinCRHjt…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F, redirectUrl: http://localhost:3000/, startsWithRedirect: true}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cIframe current href accessible%c +0ms color: #CC9900 color: inherit color: #CC9900 {href: http://localhost:3000/?code=A8Enu7yMSb4Y7dCinCRHjt…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F, redirectUrl: http://localhost:3000/, startsWithRedirect: true}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cIframe has navigated to redirectUrl (same-origin). Setting up DOM observer.%c +3ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cIframe has navigated to redirectUrl (same-origin). Setting up DOM observer.%c +3ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cIframe has navigated to redirectUrl (same-origin). Setting up DOM observer.%c +3ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cIframe has navigated to redirectUrl (same-origin). Setting up DOM observer.%c +3ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🙈 Hiding iframe completely - not login app or on callback URL%c +0ms color: #CC9900 color: inherit color: #CC9900 {currentUrl: http://localhost:3000/?code=A8Enu7yMSb4Y7dCinCRHjt…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F, isOnAuthServer: false, isCallbackUrl: true, currentOrigin: http://localhost:3000, expectedAuthServerOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🙈 Hiding iframe completely - not login app or on callback URL%c +0ms color: #CC9900 color: inherit color: #CC9900 {currentUrl: http://localhost:3000/?code=A8Enu7yMSb4Y7dCinCRHjt…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F, isOnAuthServer: false, isCallbackUrl: true, currentOrigin: http://localhost:3000, expectedAuthServerOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🙈 Hiding iframe completely - not login app or on callback URL%c +0ms color: #CC9900 color: inherit color: #CC9900 {currentUrl: http://localhost:3000/?code=A8Enu7yMSb4Y7dCinCRHjt…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F, isOnAuthServer: false, isCallbackUrl: true, currentOrigin: http://localhost:3000, expectedAuthServerOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🙈 Hiding iframe completely - not login app or on callback URL%c +0ms color: #CC9900 color: inherit color: #CC9900 {currentUrl: http://localhost:3000/?code=A8Enu7yMSb4Y7dCinCRHjt…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F, isOnAuthServer: false, isCallbackUrl: true, currentOrigin: http://localhost:3000, expectedAuthServerOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c📝 Setting up SignalObserver%c +0ms color: #CC9900 color: inherit color: #CC9900 {documentURL: http://localhost:3000/?code=A8Enu7yMSb4Y7dCinCRHjt…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F, documentTitle: Civic Auth VanillaJS SPA Example, bodyExists: true, textSignals: Object, hasEvents: true}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c📝 Setting up SignalObserver%c +0ms color: #CC9900 color: inherit color: #CC9900 {documentURL: http://localhost:3000/?code=A8Enu7yMSb4Y7dCinCRHjt…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F, documentTitle: Civic Auth VanillaJS SPA Example, bodyExists: true, textSignals: Object, hasEvents: true}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c📝 Setting up SignalObserver%c +0ms color: #CC9900 color: inherit color: #CC9900 {documentURL: http://localhost:3000/?code=A8Enu7yMSb4Y7dCinCRHjt…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F, documentTitle: Civic Auth VanillaJS SPA Example, bodyExists: true, textSignals: Object, hasEvents: true}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c📝 Setting up SignalObserver%c +0ms color: #CC9900 color: inherit color: #CC9900 {documentURL: http://localhost:3000/?code=A8Enu7yMSb4Y7dCinCRHjt…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F, documentTitle: Civic Auth VanillaJS SPA Example, bodyExists: true, textSignals: Object, hasEvents: true}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cSetting up signal observer for iframe document%c +1ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cSetting up signal observer for iframe document%c +1ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cSetting up signal observer for iframe document%c +1ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cSetting up signal observer for iframe document%c +1ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cStarting observation of iframe body%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cStarting observation of iframe body%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cStarting observation of iframe body%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cStarting observation of iframe body%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cPerforming initial signal check by text (fallback)%c +0ms color: #CC9900 color: inherit color: #CC9900 {initialBodyText: 
+    Civic Auth VanillaJS SPA Example
+    
+    
+  …essing authentication...
+    
+
+    
+
+    
+    
+
+ }
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cPerforming initial signal check by text (fallback)%c +0ms color: #CC9900 color: inherit color: #CC9900 {initialBodyText: 
+    Civic Auth VanillaJS SPA Example
+    
+    
+  …essing authentication...
+    
+
+    
+
+    
+    
+
+ }
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cPerforming initial signal check by text (fallback)%c +0ms color: #CC9900 color: inherit color: #CC9900 {initialBodyText: 
+    Civic Auth VanillaJS SPA Example
+    
+    
+  …essing authentication...
+    
+
+    
+
+    
+    
+
+ }
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cPerforming initial signal check by text (fallback)%c +0ms color: #CC9900 color: inherit color: #CC9900 {initialBodyText: 
+    Civic Auth VanillaJS SPA Example
+    
+    
+  …essing authentication...
+    
+
+    
+
+    
+    
+
+ }
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c✅ SignalObserver setup completed successfully%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c✅ SignalObserver setup completed successfully%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c✅ SignalObserver setup completed successfully%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c✅ SignalObserver setup completed successfully%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cIframe loaded, requesting size from child%c +114ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cIframe loaded, requesting size from child%c +114ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cIframe loaded, requesting size from child%c +114ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cIframe loaded, requesting size from child%c +114ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cRequesting size from iframe child%c +0ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cRequesting size from iframe child%c +0ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cRequesting size from iframe child%c +0ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cRequesting size from iframe child%c +0ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cGlobal window received message:%c +0ms color: #3333CC color: inherit color: #3333CC {data: Object, origin: http://localhost:3000, sourceProvided: true, iframeContentWindow: undefined, expectedIframeOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cGlobal window received message:%c +0ms color: #3333CC color: inherit color: #3333CC {data: Object, origin: http://localhost:3000, sourceProvided: true, iframeContentWindow: undefined, expectedIframeOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cGlobal window received message:%c +0ms color: #3333CC color: inherit color: #3333CC {data: Object, origin: http://localhost:3000, sourceProvided: true, iframeContentWindow: undefined, expectedIframeOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cGlobal window received message:%c +0ms color: #3333CC color: inherit color: #3333CC {data: Object, origin: http://localhost:3000, sourceProvided: true, iframeContentWindow: undefined, expectedIframeOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cIgnored message from unexpected source.%c +1ms color: #3333CC color: inherit color: #3333CC {isSourceProvided: true, isIframeContentWindowAvailable: false, iframeSrc: undefined}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cIgnored message from unexpected source.%c +1ms color: #3333CC color: inherit color: #3333CC {isSourceProvided: true, isIframeContentWindowAvailable: false, iframeSrc: undefined}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cIgnored message from unexpected source.%c +1ms color: #3333CC color: inherit color: #3333CC {isSourceProvided: true, isIframeContentWindowAvailable: false, iframeSrc: undefined}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cIgnored message from unexpected source.%c +1ms color: #3333CC color: inherit color: #3333CC {isSourceProvided: true, isIframeContentWindowAvailable: false, iframeSrc: undefined}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cRequesting size from iframe child%c +101ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cRequesting size from iframe child%c +101ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cRequesting size from iframe child%c +101ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cRequesting size from iframe child%c +101ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cGlobal window received message:%c +34ms color: #3333CC color: inherit color: #3333CC {data: Object, origin: http://localhost:3000, sourceProvided: true, iframeContentWindow: undefined, expectedIframeOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cGlobal window received message:%c +34ms color: #3333CC color: inherit color: #3333CC {data: Object, origin: http://localhost:3000, sourceProvided: true, iframeContentWindow: undefined, expectedIframeOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cGlobal window received message:%c +34ms color: #3333CC color: inherit color: #3333CC {data: Object, origin: http://localhost:3000, sourceProvided: true, iframeContentWindow: undefined, expectedIframeOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cGlobal window received message:%c +34ms color: #3333CC color: inherit color: #3333CC {data: Object, origin: http://localhost:3000, sourceProvided: true, iframeContentWindow: undefined, expectedIframeOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cIgnored message from unexpected source.%c +0ms color: #3333CC color: inherit color: #3333CC {isSourceProvided: true, isIframeContentWindowAvailable: false, iframeSrc: undefined}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cIgnored message from unexpected source.%c +0ms color: #3333CC color: inherit color: #3333CC {isSourceProvided: true, isIframeContentWindowAvailable: false, iframeSrc: undefined}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cIgnored message from unexpected source.%c +0ms color: #3333CC color: inherit color: #3333CC {isSourceProvided: true, isIframeContentWindowAvailable: false, iframeSrc: undefined}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cIgnored message from unexpected source.%c +0ms color: #3333CC color: inherit color: #3333CC {isSourceProvided: true, isIframeContentWindowAvailable: false, iframeSrc: undefined}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🔗 OAuth endpoints configured%c +215ms color: #CC9900 color: inherit color: #CC9900 {endpoints: Object}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🔗 OAuth endpoints configured%c +215ms color: #CC9900 color: inherit color: #CC9900 {endpoints: Object}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🔗 OAuth endpoints configured%c +215ms color: #CC9900 color: inherit color: #CC9900 {endpoints: Object}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🔗 OAuth endpoints configured%c +215ms color: #CC9900 color: inherit color: #CC9900 {endpoints: Object}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🔧 Initializing SessionManager%c +0ms color: #CC9900 color: inherit color: #CC9900 {authConfig: Object}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🔧 Initializing SessionManager%c +0ms color: #CC9900 color: inherit color: #CC9900 {authConfig: Object}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🔧 Initializing SessionManager%c +0ms color: #CC9900 color: inherit color: #CC9900 {authConfig: Object}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🔧 Initializing SessionManager%c +0ms color: #CC9900 color: inherit color: #CC9900 {authConfig: Object}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:token-refresh %cTokenRefresher initialized%c +0ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:token-refresh %cTokenRefresher initialized%c +0ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:token-refresh %cTokenRefresher initialized%c +0ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:token-refresh %cTokenRefresher initialized%c +0ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:token-refresh %cCleaning up TokenRefresher%c +1ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:token-refresh %cCleaning up TokenRefresher%c +1ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:token-refresh %cCleaning up TokenRefresher%c +1ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:token-refresh %cCleaning up TokenRefresher%c +1ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:token-refresh %cInitializing browser authentication refresher%c +0ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:token-refresh %cInitializing browser authentication refresher%c +0ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:token-refresh %cInitializing browser authentication refresher%c +0ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:token-refresh %cInitializing browser authentication refresher%c +0ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:token-refresh %cTokenRefresher initialized successfully%c +0ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:token-refresh %cTokenRefresher initialized successfully%c +0ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:token-refresh %cTokenRefresher initialized successfully%c +0ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:token-refresh %cTokenRefresher initialized successfully%c +0ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:token-refresh %cStopping automatic token refresh%c +0ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:token-refresh %cStopping automatic token refresh%c +0ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:token-refresh %cStopping automatic token refresh%c +0ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:token-refresh %cStopping automatic token refresh%c +0ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:session %cSessionManager initialized with token refresh capability%c +216ms color: #FF3366 color: inherit color: #FF3366 {isAuthenticated: false}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:session %cSessionManager initialized with token refresh capability%c +216ms color: #FF3366 color: inherit color: #FF3366 {isAuthenticated: false}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:session %cSessionManager initialized with token refresh capability%c +216ms color: #FF3366 color: inherit color: #FF3366 {isAuthenticated: false}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:session %cSessionManager initialized with token refresh capability%c +216ms color: #FF3366 color: inherit color: #FF3366 {isAuthenticated: false}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:token-refresh %cStopping automatic token refresh%c +0ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:token-refresh %cStopping automatic token refresh%c +0ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:token-refresh %cStopping automatic token refresh%c +0ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:token-refresh %cStopping automatic token refresh%c +0ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:session %cSession cleared using shared lib utilities%c +0ms color: #FF3366 color: inherit color: #FF3366
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:session %cSession cleared using shared lib utilities%c +0ms color: #FF3366 color: inherit color: #FF3366
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:session %cSession cleared using shared lib utilities%c +0ms color: #FF3366 color: inherit color: #FF3366
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:session %cSession cleared using shared lib utilities%c +0ms color: #FF3366 color: inherit color: #FF3366
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🔍 Callback page check%c +2ms color: #CC9900 color: inherit color: #CC9900 {isCallbackPage: true, currentUrl: http://localhost:3000/?code=A8Enu7yMSb4Y7dCinCRHjt…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F, redirectUrl: http://localhost:3000/}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🔍 Callback page check%c +2ms color: #CC9900 color: inherit color: #CC9900 {isCallbackPage: true, currentUrl: http://localhost:3000/?code=A8Enu7yMSb4Y7dCinCRHjt…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F, redirectUrl: http://localhost:3000/}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🔍 Callback page check%c +2ms color: #CC9900 color: inherit color: #CC9900 {isCallbackPage: true, currentUrl: http://localhost:3000/?code=A8Enu7yMSb4Y7dCinCRHjt…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F, redirectUrl: http://localhost:3000/}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🔍 Callback page check%c +2ms color: #CC9900 color: inherit color: #CC9900 {isCallbackPage: true, currentUrl: http://localhost:3000/?code=A8Enu7yMSb4Y7dCinCRHjt…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F, redirectUrl: http://localhost:3000/}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🔍 Checking for logout state cleanup%c +0ms color: #CC9900 color: inherit color: #CC9900 {currentUrl: http://localhost:3000/?code=A8Enu7yMSb4Y7dCinCRHjt…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F, hasStateParam: true, stateValue: eyJ1dWlkIjoiYzkxMWQxYjctNTQ0YS00MzYwLTg5MzQtOGEzYT…zIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9, rawSearch: ?code=A8Enu7yMSb4Y7dCinCRHjtLVDLNzwCkZF2cDtMYtmmg&…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🔍 Checking for logout state cleanup%c +0ms color: #CC9900 color: inherit color: #CC9900 {currentUrl: http://localhost:3000/?code=A8Enu7yMSb4Y7dCinCRHjt…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F, hasStateParam: true, stateValue: eyJ1dWlkIjoiYzkxMWQxYjctNTQ0YS00MzYwLTg5MzQtOGEzYT…zIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9, rawSearch: ?code=A8Enu7yMSb4Y7dCinCRHjtLVDLNzwCkZF2cDtMYtmmg&…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🔍 Checking for logout state cleanup%c +0ms color: #CC9900 color: inherit color: #CC9900 {currentUrl: http://localhost:3000/?code=A8Enu7yMSb4Y7dCinCRHjt…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F, hasStateParam: true, stateValue: eyJ1dWlkIjoiYzkxMWQxYjctNTQ0YS00MzYwLTg5MzQtOGEzYT…zIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9, rawSearch: ?code=A8Enu7yMSb4Y7dCinCRHjtLVDLNzwCkZF2cDtMYtmmg&…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🔍 Checking for logout state cleanup%c +0ms color: #CC9900 color: inherit color: #CC9900 {currentUrl: http://localhost:3000/?code=A8Enu7yMSb4Y7dCinCRHjt…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F, hasStateParam: true, stateValue: eyJ1dWlkIjoiYzkxMWQxYjctNTQ0YS00MzYwLTg5MzQtOGEzYT…zIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9, rawSearch: ?code=A8Enu7yMSb4Y7dCinCRHjtLVDLNzwCkZF2cDtMYtmmg&…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🔍 Comparing logout states%c +0ms color: #CC9900 color: inherit color: #CC9900 {urlState: eyJ1dWlkIjoiYzkxMWQxYjctNTQ0YS00MzYwLTg5MzQtOGEzYT…zIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9, decodedState: eyJ1dWlkIjoiYzkxMWQxYjctNTQ0YS00MzYwLTg5MzQtOGEzYT…zIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9, storedLogoutState: , directMatch: false, decodedMatch: false}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🔍 Comparing logout states%c +0ms color: #CC9900 color: inherit color: #CC9900 {urlState: eyJ1dWlkIjoiYzkxMWQxYjctNTQ0YS00MzYwLTg5MzQtOGEzYT…zIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9, decodedState: eyJ1dWlkIjoiYzkxMWQxYjctNTQ0YS00MzYwLTg5MzQtOGEzYT…zIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9, storedLogoutState: , directMatch: false, decodedMatch: false}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🔍 Comparing logout states%c +0ms color: #CC9900 color: inherit color: #CC9900 {urlState: eyJ1dWlkIjoiYzkxMWQxYjctNTQ0YS00MzYwLTg5MzQtOGEzYT…zIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9, decodedState: eyJ1dWlkIjoiYzkxMWQxYjctNTQ0YS00MzYwLTg5MzQtOGEzYT…zIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9, storedLogoutState: , directMatch: false, decodedMatch: false}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🔍 Comparing logout states%c +0ms color: #CC9900 color: inherit color: #CC9900 {urlState: eyJ1dWlkIjoiYzkxMWQxYjctNTQ0YS00MzYwLTg5MzQtOGEzYT…zIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9, decodedState: eyJ1dWlkIjoiYzkxMWQxYjctNTQ0YS00MzYwLTg5MzQtOGEzYT…zIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9, storedLogoutState: , directMatch: false, decodedMatch: false}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🔍 Logout states don't match, skipping cleanup%c +0ms color: #CC9900 color: inherit color: #CC9900 {urlState: eyJ1dWlkIjoiYzkxMWQxYjctNTQ0YS00MzYwLTg5MzQtOGEzYT…zIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9, storedLogoutState: }
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🔍 Logout states don't match, skipping cleanup%c +0ms color: #CC9900 color: inherit color: #CC9900 {urlState: eyJ1dWlkIjoiYzkxMWQxYjctNTQ0YS00MzYwLTg5MzQtOGEzYT…zIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9, storedLogoutState: }
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🔍 Logout states don't match, skipping cleanup%c +0ms color: #CC9900 color: inherit color: #CC9900 {urlState: eyJ1dWlkIjoiYzkxMWQxYjctNTQ0YS00MzYwLTg5MzQtOGEzYT…zIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9, storedLogoutState: }
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🔍 Logout states don't match, skipping cleanup%c +0ms color: #CC9900 color: inherit color: #CC9900 {urlState: eyJ1dWlkIjoiYzkxMWQxYjctNTQ0YS00MzYwLTg5MzQtOGEzYT…zIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9, storedLogoutState: }
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c📞 Processing callback page%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c📞 Processing callback page%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c📞 Processing callback page%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c📞 Processing callback page%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🔄 Handling OAuth callback%c +0ms color: #CC9900 color: inherit color: #CC9900 {currentUrl: http://localhost:3000/?code=A8Enu7yMSb4Y7dCinCRHjt…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F, redirectUrl: http://localhost:3000/}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🔄 Handling OAuth callback%c +0ms color: #CC9900 color: inherit color: #CC9900 {currentUrl: http://localhost:3000/?code=A8Enu7yMSb4Y7dCinCRHjt…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F, redirectUrl: http://localhost:3000/}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🔄 Handling OAuth callback%c +0ms color: #CC9900 color: inherit color: #CC9900 {currentUrl: http://localhost:3000/?code=A8Enu7yMSb4Y7dCinCRHjt…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F, redirectUrl: http://localhost:3000/}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🔄 Handling OAuth callback%c +0ms color: #CC9900 color: inherit color: #CC9900 {currentUrl: http://localhost:3000/?code=A8Enu7yMSb4Y7dCinCRHjt…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F, redirectUrl: http://localhost:3000/}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:oauth-callback %cCivicAuth: Callback page context%c +0ms color: #9900FF color: inherit color: #9900FF {isPopup: null, hasOpener: false, hasCode: true, hasError: false, currentUrl: http://localhost:3000/?code=A8Enu7yMSb4Y7dCinCRHjt…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:oauth-callback %cCivicAuth: Callback page context%c +0ms color: #9900FF color: inherit color: #9900FF {isPopup: null, hasOpener: false, hasCode: true, hasError: false, currentUrl: http://localhost:3000/?code=A8Enu7yMSb4Y7dCinCRHjt…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:oauth-callback %cCivicAuth: Callback page context%c +0ms color: #9900FF color: inherit color: #9900FF {isPopup: null, hasOpener: false, hasCode: true, hasError: false, currentUrl: http://localhost:3000/?code=A8Enu7yMSb4Y7dCinCRHjt…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:oauth-callback %cCivicAuth: Callback page context%c +0ms color: #9900FF color: inherit color: #9900FF {isPopup: null, hasOpener: false, hasCode: true, hasError: false, currentUrl: http://localhost:3000/?code=A8Enu7yMSb4Y7dCinCRHjt…9&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:oauth-callback %cCivicAuth: OAuth callback detected with code:%c +1ms color: #9900FF color: inherit color: #9900FF A8Enu7yMSb4Y7dCinCRHjtLVDLNzwCkZF2cDtMYtmmg
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:oauth-callback %cCivicAuth: OAuth callback detected with code:%c +1ms color: #9900FF color: inherit color: #9900FF A8Enu7yMSb4Y7dCinCRHjtLVDLNzwCkZF2cDtMYtmmg
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:oauth-callback %cCivicAuth: OAuth callback detected with code:%c +1ms color: #9900FF color: inherit color: #9900FF A8Enu7yMSb4Y7dCinCRHjtLVDLNzwCkZF2cDtMYtmmg
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:oauth-callback %cCivicAuth: OAuth callback detected with code:%c +1ms color: #9900FF color: inherit color: #9900FF A8Enu7yMSb4Y7dCinCRHjtLVDLNzwCkZF2cDtMYtmmg
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cRequesting size from iframe child%c +400ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cRequesting size from iframe child%c +400ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cRequesting size from iframe child%c +400ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cRequesting size from iframe child%c +400ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cGlobal window received message:%c +400ms color: #3333CC color: inherit color: #3333CC {data: Object, origin: http://localhost:3000, sourceProvided: true, iframeContentWindow: undefined, expectedIframeOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cGlobal window received message:%c +400ms color: #3333CC color: inherit color: #3333CC {data: Object, origin: http://localhost:3000, sourceProvided: true, iframeContentWindow: undefined, expectedIframeOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cGlobal window received message:%c +400ms color: #3333CC color: inherit color: #3333CC {data: Object, origin: http://localhost:3000, sourceProvided: true, iframeContentWindow: undefined, expectedIframeOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cGlobal window received message:%c +400ms color: #3333CC color: inherit color: #3333CC {data: Object, origin: http://localhost:3000, sourceProvided: true, iframeContentWindow: undefined, expectedIframeOrigin: https://auth-dev.civic.com}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cIgnored message from unexpected source.%c +0ms color: #3333CC color: inherit color: #3333CC {isSourceProvided: true, isIframeContentWindowAvailable: false, iframeSrc: undefined}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:message-handler %cIgnored message from unexpected source.%c +0ms color: #3333CC color: inherit color: #3333CC {isSourceProvided: true, isIframeContentWindowAvailable: false, iframeSrc: undefined}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cIgnored message from unexpected source.%c +0ms color: #3333CC color: inherit color: #3333CC {isSourceProvided: true, isIframeContentWindowAvailable: false, iframeSrc: undefined}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:message-handler %cIgnored message from unexpected source.%c +0ms color: #3333CC color: inherit color: #3333CC {isSourceProvided: true, isIframeContentWindowAvailable: false, iframeSrc: undefined}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:oauth-callback %cCivicAuth: Tokens and user info stored successfully using shared utilities.%c +532ms color: #9900FF color: inherit color: #9900FF
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:oauth-callback %cCivicAuth: Tokens and user info stored successfully using shared utilities.%c +532ms color: #9900FF color: inherit color: #9900FF
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:oauth-callback %cCivicAuth: Tokens and user info stored successfully using shared utilities.%c +532ms color: #9900FF color: inherit color: #9900FF
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:oauth-callback %cCivicAuth: Tokens and user info stored successfully using shared utilities.%c +532ms color: #9900FF color: inherit color: #9900FF
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:oauth-callback %cCivicAuth: Tokens stored successfully using shared utilities.%c +1ms color: #9900FF color: inherit color: #9900FF
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:oauth-callback %cCivicAuth: Tokens stored successfully using shared utilities.%c +1ms color: #9900FF color: inherit color: #9900FF
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:oauth-callback %cCivicAuth: Tokens stored successfully using shared utilities.%c +1ms color: #9900FF color: inherit color: #9900FF
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:oauth-callback %cCivicAuth: Tokens stored successfully using shared utilities.%c +1ms color: #9900FF color: inherit color: #9900FF
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:oauth-callback %cCivicAuth: Appended success signal to body.%c +0ms color: #9900FF color: inherit color: #9900FF
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:oauth-callback %cCivicAuth: Appended success signal to body.%c +0ms color: #9900FF color: inherit color: #9900FF
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:oauth-callback %cCivicAuth: Appended success signal to body.%c +0ms color: #9900FF color: inherit color: #9900FF
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:oauth-callback %cCivicAuth: Appended success signal to body.%c +0ms color: #9900FF color: inherit color: #9900FF
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:oauth-callback %cCivicAuth: Cleaned up OAuth parameters from URL.%c +3ms color: #9900FF color: inherit color: #9900FF
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:oauth-callback %cCivicAuth: Cleaned up OAuth parameters from URL.%c +3ms color: #9900FF color: inherit color: #9900FF
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:oauth-callback %cCivicAuth: Cleaned up OAuth parameters from URL.%c +3ms color: #9900FF color: inherit color: #9900FF
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:oauth-callback %cCivicAuth: Cleaned up OAuth parameters from URL.%c +3ms color: #9900FF color: inherit color: #9900FF
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:oauth-callback %cCivicAuth: Not in popup mode or no opener%c +0ms color: #9900FF color: inherit color: #9900FF {isPopup: null, hasOpener: false}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:oauth-callback %cCivicAuth: Not in popup mode or no opener%c +0ms color: #9900FF color: inherit color: #9900FF {isPopup: null, hasOpener: false}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:oauth-callback %cCivicAuth: Not in popup mode or no opener%c +0ms color: #9900FF color: inherit color: #9900FF {isPopup: null, hasOpener: false}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:oauth-callback %cCivicAuth: Not in popup mode or no opener%c +0ms color: #9900FF color: inherit color: #9900FF {isPopup: null, hasOpener: false}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cSuccess signal detected in iframe by ID%c +750ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cSuccess signal detected in iframe by ID%c +750ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cSuccess signal detected in iframe by ID%c +750ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cSuccess signal detected in iframe by ID%c +750ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:token-refresh %cStarting automatic token refresh%c +5s color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:token-refresh %cStarting automatic token refresh%c +5s color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:token-refresh %cStarting automatic token refresh%c +5s color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:token-refresh %cStarting automatic token refresh%c +5s color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c✅ Authentication successful%c +2ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c✅ Authentication successful%c +2ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c✅ Authentication successful%c +2ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c✅ Authentication successful%c +2ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cAuthentication timestamp cleared%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cAuthentication timestamp cleared%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cAuthentication timestamp cleared%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cAuthentication timestamp cleared%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cCleaning up authentication client%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cCleaning up authentication client%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cCleaning up authentication client%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cCleaning up authentication client%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cCleaning up iframe manager%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cCleaning up iframe manager%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cCleaning up iframe manager%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cCleaning up iframe manager%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cCleaning up iframe resizer%c +251ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:iframe %cCleaning up iframe resizer%c +251ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cCleaning up iframe resizer%c +251ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:iframe %cCleaning up iframe resizer%c +251ms color: #3399CC color: inherit color: #3399CC
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cRemoving dynamic modal container%c +6ms color: #CC9900 color: inherit color: #CC9900 {containerId: civic-auth-iframe-modal-container}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cRemoving dynamic modal container%c +6ms color: #CC9900 color: inherit color: #CC9900 {containerId: civic-auth-iframe-modal-container}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cRemoving dynamic modal container%c +6ms color: #CC9900 color: inherit color: #CC9900 {containerId: civic-auth-iframe-modal-container}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cRemoving dynamic modal container%c +6ms color: #CC9900 color: inherit color: #CC9900 {containerId: civic-auth-iframe-modal-container}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cDisconnecting mutation observer%c +2ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cDisconnecting mutation observer%c +2ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cDisconnecting mutation observer%c +2ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cDisconnecting mutation observer%c +2ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cCleaning up authentication client%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cCleaning up authentication client%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cCleaning up authentication client%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cCleaning up authentication client%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cCleaning up iframe manager%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cCleaning up iframe manager%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cCleaning up iframe manager%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cCleaning up iframe manager%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cSuccess signal detected in iframe by ID%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cSuccess signal detected in iframe by ID%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cSuccess signal detected in iframe by ID%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cSuccess signal detected in iframe by ID%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:token-refresh %cStarting automatic token refresh%c +9ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:token-refresh %cStarting automatic token refresh%c +9ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:token-refresh %cStarting automatic token refresh%c +9ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:token-refresh %cStarting automatic token refresh%c +9ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c✅ Authentication successful%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c✅ Authentication successful%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c✅ Authentication successful%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c✅ Authentication successful%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cAuthentication timestamp cleared%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cAuthentication timestamp cleared%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cAuthentication timestamp cleared%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cAuthentication timestamp cleared%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cCleaning up authentication client%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cCleaning up authentication client%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cCleaning up authentication client%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cCleaning up authentication client%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cCleaning up iframe manager%c +1ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cCleaning up iframe manager%c +1ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cCleaning up iframe manager%c +1ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cCleaning up iframe manager%c +1ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cDisconnecting mutation observer%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cDisconnecting mutation observer%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cDisconnecting mutation observer%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cDisconnecting mutation observer%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cCleaning up authentication client%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cCleaning up authentication client%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cCleaning up authentication client%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cCleaning up authentication client%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cCleaning up iframe manager%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cCleaning up iframe manager%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cCleaning up iframe manager%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cCleaning up iframe manager%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] ✅ modal authentication successful: {name: Ghost, email: 0eddb3a3-1e19-4c4e-b76e-1ef77481a486@example.example, nonce: 1234567890, sid: TWPTth8E8gnRtmTTDk-yIqMPIXyWfNb1G_c37gLoEpY, jti: A8Enu7yMSb4Y7dCinCRHjtLVDLNzwCkZF2cDtMYtmmg} Authentication successful!
+[PAGE CONSOLE] [log] ✅ modal authentication successful: {name: Ghost, email: 0eddb3a3-1e19-4c4e-b76e-1ef77481a486@example.example, nonce: 1234567890, sid: TWPTth8E8gnRtmTTDk-yIqMPIXyWfNb1G_c37gLoEpY, jti: A8Enu7yMSb4Y7dCinCRHjtLVDLNzwCkZF2cDtMYtmmg} Authentication successful!
+[PAGE CONSOLE] [log] 🔍 New authentication user object structure for modal: {name: Ghost, email: 0eddb3a3-1e19-4c4e-b76e-1ef77481a486@example.example, sub: undefined, allProperties: Array(6)}
+[PAGE CONSOLE] [log] 🔍 New authentication user object structure for modal: {name: Ghost, email: 0eddb3a3-1e19-4c4e-b76e-1ef77481a486@example.example, sub: undefined, allProperties: Array(6)}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:token-refresh %cNext token refresh scheduled for: 2025-10-10T23:11:13.000Z (in 3570 seconds)%c +6ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:token-refresh %cNext token refresh scheduled for: 2025-10-10T23:11:13.000Z (in 3570 seconds)%c +6ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:token-refresh %cNext token refresh scheduled for: 2025-10-10T23:11:13.000Z (in 3570 seconds)%c +6ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:token-refresh %cNext token refresh scheduled for: 2025-10-10T23:11:13.000Z (in 3570 seconds)%c +6ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:token-refresh %cAdded visibility change listener for auto-refresh management%c +1ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:token-refresh %cAdded visibility change listener for auto-refresh management%c +1ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:token-refresh %cAdded visibility change listener for auto-refresh management%c +1ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:token-refresh %cAdded visibility change listener for auto-refresh management%c +1ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:token-refresh %cNext token refresh scheduled for: 2025-10-10T23:11:13.000Z (in 3570 seconds)%c +1ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:token-refresh %cNext token refresh scheduled for: 2025-10-10T23:11:13.000Z (in 3570 seconds)%c +1ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:token-refresh %cNext token refresh scheduled for: 2025-10-10T23:11:13.000Z (in 3570 seconds)%c +1ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:token-refresh %cNext token refresh scheduled for: 2025-10-10T23:11:13.000Z (in 3570 seconds)%c +1ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:token-refresh %cWindow focused, scheduling debounced refresh check%c +149ms color: #CC9933 color: inherit color: #CC9933 Fri Oct 10 2025 22:11:43 GMT+0000 (Coordinated Universal Time)
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:token-refresh %cWindow focused, scheduling debounced refresh check%c +149ms color: #CC9933 color: inherit color: #CC9933 Fri Oct 10 2025 22:11:43 GMT+0000 (Coordinated Universal Time)
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:token-refresh %cWindow focused, scheduling debounced refresh check%c +149ms color: #CC9933 color: inherit color: #CC9933 Fri Oct 10 2025 22:11:43 GMT+0000 (Coordinated Universal Time)
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:token-refresh %cWindow focused, scheduling debounced refresh check%c +149ms color: #CC9933 color: inherit color: #CC9933 Fri Oct 10 2025 22:11:43 GMT+0000 (Coordinated Universal Time)
+[PAGE CONSOLE] [log] 🚪 Starting logout all process
+[PAGE CONSOLE] [log] 🚪 Starting logout all process
+[PAGE CONSOLE] [log] 🔍 Found auth clients for logout: [modal]
+[PAGE CONSOLE] [log] 🔍 Found auth clients for logout: [modal]
+[PAGE CONSOLE] [log] 🔍 Primary client key: modal
+[PAGE CONSOLE] [log] 🔍 Primary client key: modal
+[PAGE CONSOLE] [log] 🚪 Using client 'modal' to log out.
+[PAGE CONSOLE] [log] 🚪 Using client 'modal' to log out.
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:session %cVerifying id_token with options:%c +5s color: #FF3366 color: inherit color: #FF3366 {issuer: https://auth-dev.civic.com/oauth/, aud: demo-client-1}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:session %cVerifying id_token with options:%c +5s color: #FF3366 color: inherit color: #FF3366 {issuer: https://auth-dev.civic.com/oauth/, aud: demo-client-1}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:session %cVerifying id_token with options:%c +5s color: #FF3366 color: inherit color: #FF3366 {issuer: https://auth-dev.civic.com/oauth/, aud: demo-client-1}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:session %cVerifying id_token with options:%c +5s color: #FF3366 color: inherit color: #FF3366 {issuer: https://auth-dev.civic.com/oauth/, aud: demo-client-1}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:session %cid_token cryptographically verified and valid%c +184ms color: #FF3366 color: inherit color: #FF3366
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:session %cid_token cryptographically verified and valid%c +184ms color: #FF3366 color: inherit color: #FF3366
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:session %cid_token cryptographically verified and valid%c +184ms color: #FF3366 color: inherit color: #FF3366
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:session %cid_token cryptographically verified and valid%c +184ms color: #FF3366 color: inherit color: #FF3366
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:session %cVerifying access_token with options:%c +0ms color: #FF3366 color: inherit color: #FF3366 {issuer: https://auth-dev.civic.com/oauth/, aud: civic, clientId: demo-client-1}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:session %cVerifying access_token with options:%c +0ms color: #FF3366 color: inherit color: #FF3366 {issuer: https://auth-dev.civic.com/oauth/, aud: civic, clientId: demo-client-1}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:session %cVerifying access_token with options:%c +0ms color: #FF3366 color: inherit color: #FF3366 {issuer: https://auth-dev.civic.com/oauth/, aud: civic, clientId: demo-client-1}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:session %cVerifying access_token with options:%c +0ms color: #FF3366 color: inherit color: #FF3366 {issuer: https://auth-dev.civic.com/oauth/, aud: civic, clientId: demo-client-1}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:session %caccess_token cryptographically verified and valid%c +1ms color: #FF3366 color: inherit color: #FF3366
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:session %caccess_token cryptographically verified and valid%c +1ms color: #FF3366 color: inherit color: #FF3366
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:session %caccess_token cryptographically verified and valid%c +1ms color: #FF3366 color: inherit color: #FF3366
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:session %caccess_token cryptographically verified and valid%c +1ms color: #FF3366 color: inherit color: #FF3366
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:session %cAll available tokens are valid, user is authenticated%c +0ms color: #FF3366 color: inherit color: #FF3366
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:session %cAll available tokens are valid, user is authenticated%c +0ms color: #FF3366 color: inherit color: #FF3366
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:session %cAll available tokens are valid, user is authenticated%c +0ms color: #FF3366 color: inherit color: #FF3366
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:session %cAll available tokens are valid, user is authenticated%c +0ms color: #FF3366 color: inherit color: #FF3366
+[PAGE CONSOLE] [log] 🔍 Logout All: Checking client 'modal' for logout. isAuthenticated: true
+[PAGE CONSOLE] [log] 🔍 Logout All: Checking client 'modal' for logout. isAuthenticated: true
+[PAGE CONSOLE] [log] 🔍 Logout All: Current object: modal _LocalStorageAdapter
+[PAGE CONSOLE] [log] 🔍 Logout All: Current object: modal _LocalStorageAdapter
+[PAGE CONSOLE] [log] 🚪 Logging out client 'modal'.
+[PAGE CONSOLE] [log] 🚪 Logging out client 'modal'.
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🔄 Starting logout process%c +343ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🔄 Starting logout process%c +343ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🔄 Starting logout process%c +343ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🔄 Starting logout process%c +343ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:token-refresh %cStopping automatic token refresh%c +187ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:token-refresh %cStopping automatic token refresh%c +187ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:token-refresh %cStopping automatic token refresh%c +187ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:token-refresh %cStopping automatic token refresh%c +187ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🚪 Using redirect-based logout for SPA flow%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🚪 Using redirect-based logout for SPA flow%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🚪 Using redirect-based logout for SPA flow%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🚪 Using redirect-based logout for SPA flow%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🔄 Generated logout state for OAuth provider%c +1ms color: #CC9900 color: inherit color: #CC9900 {generatedState: eyJ1dWlkIjoiNjNkZTVmODUtMDdkOC00YWQ2LWFjZWMtOWM0M2…iLCJzZGtWZXJzaW9uIjoiQGNpdmljL2F1dGg6MC4xMS4zIn0=, displayMode: iframe}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🔄 Generated logout state for OAuth provider%c +1ms color: #CC9900 color: inherit color: #CC9900 {generatedState: eyJ1dWlkIjoiNjNkZTVmODUtMDdkOC00YWQ2LWFjZWMtOWM0M2…iLCJzZGtWZXJzaW9uIjoiQGNpdmljL2F1dGg6MC4xMS4zIn0=, displayMode: iframe}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🔄 Generated logout state for OAuth provider%c +1ms color: #CC9900 color: inherit color: #CC9900 {generatedState: eyJ1dWlkIjoiNjNkZTVmODUtMDdkOC00YWQ2LWFjZWMtOWM0M2…iLCJzZGtWZXJzaW9uIjoiQGNpdmljL2F1dGg6MC4xMS4zIn0=, displayMode: iframe}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🔄 Generated logout state for OAuth provider%c +1ms color: #CC9900 color: inherit color: #CC9900 {generatedState: eyJ1dWlkIjoiNjNkZTVmODUtMDdkOC00YWQ2LWFjZWMtOWM0M2…iLCJzZGtWZXJzaW9uIjoiQGNpdmljL2F1dGg6MC4xMS4zIn0=, displayMode: iframe}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🔗 Generated logout URL%c +1ms color: #CC9900 color: inherit color: #CC9900 {logoutUrl: https://auth-dev.civic.com/oauth/session/end?clien…out_redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🔗 Generated logout URL%c +1ms color: #CC9900 color: inherit color: #CC9900 {logoutUrl: https://auth-dev.civic.com/oauth/session/end?clien…out_redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🔗 Generated logout URL%c +1ms color: #CC9900 color: inherit color: #CC9900 {logoutUrl: https://auth-dev.civic.com/oauth/session/end?clien…out_redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🔗 Generated logout URL%c +1ms color: #CC9900 color: inherit color: #CC9900 {logoutUrl: https://auth-dev.civic.com/oauth/session/end?clien…out_redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:token-refresh %cStopping automatic token refresh%c +2ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:token-refresh %cStopping automatic token refresh%c +2ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:token-refresh %cStopping automatic token refresh%c +2ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:token-refresh %cStopping automatic token refresh%c +2ms color: #CC9933 color: inherit color: #CC9933
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:session %cSession cleared using shared lib utilities%c +4ms color: #FF3366 color: inherit color: #FF3366
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs:session %cSession cleared using shared lib utilities%c +4ms color: #FF3366 color: inherit color: #FF3366
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:session %cSession cleared using shared lib utilities%c +4ms color: #FF3366 color: inherit color: #FF3366
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs:session %cSession cleared using shared lib utilities%c +4ms color: #FF3366 color: inherit color: #FF3366
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🌐 Loading logout URL in hidden iframe%c +1ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🌐 Loading logout URL in hidden iframe%c +1ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🌐 Loading logout URL in hidden iframe%c +1ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🌐 Loading logout URL in hidden iframe%c +1ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cCleaning up authentication client%c +2ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cCleaning up authentication client%c +2ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cCleaning up authentication client%c +2ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cCleaning up authentication client%c +2ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cCleaning up iframe manager%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %cCleaning up iframe manager%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cCleaning up iframe manager%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %cCleaning up iframe manager%c +0ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] 🔍 Checking localStorage for active sessions...
+[PAGE CONSOLE] [log] 🔍 Checking localStorage for active sessions...
+[PAGE CONSOLE] [log] 🔍 localStorage check: {hasTokens: false, tokenCount: 0}
+[PAGE CONSOLE] [log] 🔍 localStorage check: {hasTokens: false, tokenCount: 0}
+[PAGE CONSOLE] [log] ❌ No tokens found in localStorage
+[PAGE CONSOLE] [log] ❌ No tokens found in localStorage
+[PAGE CONSOLE] [log] 🚀 Creating backend iframe client
+[PAGE CONSOLE] [log] 🚀 Creating backend iframe client
+[PAGE CONSOLE] [warning] ⚠️ Could not initialize backend iframe client: CivicAuthError: CivicAuth: clientId is required when loginUrl is not provided.
+    at validateRequiredConfig (http://localhost:3000/node_modules/.vite/deps/@civic_auth_vanillajs.js?v=e5a9da83:4765:11)
+    at processConfigWithDefaults (http://localhost:3000/node_modules/.vite/deps/@civic_auth_vanillajs.js?v=e5a9da83:4717:3)
+    at new _CivicAuth (http://localhost:3000/node_modules/.vite/deps/@civic_auth_vanillajs.js?v=e5a9da83:7638:19)
+    at _CivicAuth.create (http://localhost:3000/node_modules/.vite/deps/@civic_auth_vanillajs.js?v=e5a9da83:7697:22)
+    at initializeApp (http://localhost:3000/main.js:378:61)
+    at HTMLButtonElement.logoutAll (http://localhost:3000/main.js:818:9)
+[PAGE CONSOLE] [warning] ⚠️ Could not initialize backend iframe client: CivicAuthError: CivicAuth: clientId is required when loginUrl is not provided.
+    at validateRequiredConfig (http://localhost:3000/node_modules/.vite/deps/@civic_auth_vanillajs.js?v=e5a9da83:4765:11)
+    at processConfigWithDefaults (http://localhost:3000/node_modules/.vite/deps/@civic_auth_vanillajs.js?v=e5a9da83:4717:3)
+    at new _CivicAuth (http://localhost:3000/node_modules/.vite/deps/@civic_auth_vanillajs.js?v=e5a9da83:7638:19)
+    at _CivicAuth.create (http://localhost:3000/node_modules/.vite/deps/@civic_auth_vanillajs.js?v=e5a9da83:7697:22)
+    at initializeApp (http://localhost:3000/main.js:378:61)
+    at HTMLButtonElement.logoutAll (http://localhost:3000/main.js:818:9)
+[PAGE CONSOLE] [log] 🔍 Checking backend session...
+[PAGE CONSOLE] [log] 🔍 Checking backend session...
+[PAGE CONSOLE] [log] 🔄 Updating Backend Iframe Status: "Ready" (ready)
+[PAGE CONSOLE] [log] 🔄 Updating Backend Iframe Status: "Ready" (ready)
+[PAGE CONSOLE] [log] 🔍 DOM element exists: true
+[PAGE CONSOLE] [log] 🔍 DOM element exists: true
+[PAGE CONSOLE] [log] 🔍 Current element text: Backend Iframe: Ready
+[PAGE CONSOLE] [log] 🔍 Current element text: Backend Iframe: Ready
+[PAGE CONSOLE] [log] ✅ Status updated successfully
+[PAGE CONSOLE] [log] ✅ Status updated successfully
+[PAGE CONSOLE] [log] ✅ Initialization complete. Auth clients: [modal]
+[PAGE CONSOLE] [log] ✅ Initialization complete. Auth clients: [modal]
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/session/end/confirm
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/session/end/confirm
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [log] 🔍 Checking localStorage for active sessions...
+[PAGE CONSOLE] [log] 🔍 Checking localStorage for active sessions...
+[PAGE CONSOLE] [log] 🔍 localStorage check: {hasTokens: false, tokenCount: 0}
+[PAGE CONSOLE] [log] 🔍 localStorage check: {hasTokens: false, tokenCount: 0}
+[PAGE CONSOLE] [log] ❌ No tokens found in localStorage
+[PAGE CONSOLE] [log] ❌ No tokens found in localStorage
+[PAGE CONSOLE] [log] 🚀 Creating backend iframe client
+[PAGE CONSOLE] [log] 🚀 Creating backend iframe client
+[PAGE CONSOLE] [warning] ⚠️ Could not initialize backend iframe client: CivicAuthError: CivicAuth: clientId is required when loginUrl is not provided.
+    at validateRequiredConfig (http://localhost:3000/node_modules/.vite/deps/@civic_auth_vanillajs.js?v=e5a9da83:4765:11)
+    at processConfigWithDefaults (http://localhost:3000/node_modules/.vite/deps/@civic_auth_vanillajs.js?v=e5a9da83:4717:3)
+    at new _CivicAuth (http://localhost:3000/node_modules/.vite/deps/@civic_auth_vanillajs.js?v=e5a9da83:7638:19)
+    at _CivicAuth.create (http://localhost:3000/node_modules/.vite/deps/@civic_auth_vanillajs.js?v=e5a9da83:7697:22)
+    at initializeApp (http://localhost:3000/main.js:378:61)
+    at http://localhost:3000/main.js:964:1
+[PAGE CONSOLE] [warning] ⚠️ Could not initialize backend iframe client: CivicAuthError: CivicAuth: clientId is required when loginUrl is not provided.
+    at validateRequiredConfig (http://localhost:3000/node_modules/.vite/deps/@civic_auth_vanillajs.js?v=e5a9da83:4765:11)
+    at processConfigWithDefaults (http://localhost:3000/node_modules/.vite/deps/@civic_auth_vanillajs.js?v=e5a9da83:4717:3)
+    at new _CivicAuth (http://localhost:3000/node_modules/.vite/deps/@civic_auth_vanillajs.js?v=e5a9da83:7638:19)
+    at _CivicAuth.create (http://localhost:3000/node_modules/.vite/deps/@civic_auth_vanillajs.js?v=e5a9da83:7697:22)
+    at initializeApp (http://localhost:3000/main.js:378:61)
+    at http://localhost:3000/main.js:964:1
+[PAGE CONSOLE] [log] 🔍 Checking backend session...
+[PAGE CONSOLE] [log] 🔍 Checking backend session...
+[PAGE CONSOLE] [log] 🔄 Updating Backend Iframe Status: "Ready" (ready)
+[PAGE CONSOLE] [log] 🔄 Updating Backend Iframe Status: "Ready" (ready)
+[PAGE CONSOLE] [log] 🔍 DOM element exists: true
+[PAGE CONSOLE] [log] 🔍 DOM element exists: true
+[PAGE CONSOLE] [log] 🔍 Current element text: Backend Iframe: Ready
+[PAGE CONSOLE] [log] 🔍 Current element text: Backend Iframe: Ready
+[PAGE CONSOLE] [log] ✅ Status updated successfully
+[PAGE CONSOLE] [log] ✅ Status updated successfully
+[PAGE CONSOLE] [log] ✅ Initialization complete. Auth clients: []
+[PAGE CONSOLE] [log] ✅ Initialization complete. Auth clients: []
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🧹 Cleaning up logout iframe%c +519ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🧹 Cleaning up logout iframe%c +519ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🧹 Cleaning up logout iframe%c +519ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🧹 Cleaning up logout iframe%c +519ms color: #CC9900 color: inherit color: #CC9900
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🌐 Redirecting to logoutRedirectUrl after logout iframe cleanup%c +3ms color: #CC9900 color: inherit color: #CC9900 {logoutRedirectUrl: http://localhost:3000/}
+[PAGE CONSOLE] [log] %ccivic:auth:vanillajs %c🌐 Redirecting to logoutRedirectUrl after logout iframe cleanup%c +3ms color: #CC9900 color: inherit color: #CC9900 {logoutRedirectUrl: http://localhost:3000/}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🌐 Redirecting to logoutRedirectUrl after logout iframe cleanup%c +3ms color: #CC9900 color: inherit color: #CC9900 {logoutRedirectUrl: http://localhost:3000/}
+[PAGE CONSOLE] [debug] %ccivic:auth:vanillajs %c🌐 Redirecting to logoutRedirectUrl after logout iframe cleanup%c +3ms color: #CC9900 color: inherit color: #CC9900 {logoutRedirectUrl: http://localhost:3000/}

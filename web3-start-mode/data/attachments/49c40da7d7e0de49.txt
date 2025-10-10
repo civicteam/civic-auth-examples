@@ -1,0 +1,63 @@
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [log] Web3Zone Debug Info: JSHandle@object
+[PAGE CONSOLE] [log] Web3Zone Debug Info: JSHandle@object
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?response_type=code&client_id=demo-client-1&state=eyJ1dWlkIjoiNDc3OTE3NjQtYzI2Yy00MTE4LTkyZTktYzFmODA5Y2NiM2FmIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&code_challenge=FbfccchqgwBdgYwHjoDkhyD0tU-zF1Z1aqxhJK0oggc&code_challenge_method=S256&prompt=consent
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?response_type=code&client_id=demo-client-1&state=eyJ1dWlkIjoiNDc3OTE3NjQtYzI2Yy00MTE4LTkyZTktYzFmODA5Y2NiM2FmIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&code_challenge=FbfccchqgwBdgYwHjoDkhyD0tU-zF1Z1aqxhJK0oggc&code_challenge_method=S256&prompt=consent
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+Email slot count: 1
+Checking URL: https://auth-dev.civic.com/login/assets/email.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/activity-indicator.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiNDc3OTE3NjQtYzI2Yy00MTE4LTkyZTktYzFmODA5Y2NiM2FmIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&client_id=demo-client-1&source_system_id=VDGBDaqchNegnRQhl7UiPBTkoLFTsX63h32ZUZfelaZ&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&flow_id=oauth-login-6be889b0-58ee-49c6-8b29-41061b2fbbd8, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/email?loginFlowId=1625d09f-e5cc-4c6c-b49b-17e3407eb0db&client_id=demo-client-1&source_system_id=VDGBDaqchNegnRQhl7UiPBTkoLFTsX63h32ZUZfelaZ&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&emailAddress=989096%40simulator.amazonses.com&_rsc=1tkwt, hasLoginFlowId: true, isEmailEndpoint: true, isVerifyEndpoint: false
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=1625d09f-e5cc-4c6c-b49b-17e3407eb0db&client_id=demo-client-1&source_system_id=VDGBDaqchNegnRQhl7UiPBTkoLFTsX63h32ZUZfelaZ&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&emailAddress=989096%40simulator.amazonses.com&_rsc=1tkwt
+Extracted loginFlowId: 1625d09f-e5cc-4c6c-b49b-17e3407eb0db
+[PAGE CONSOLE] [log] Loading login flow data...
+[PAGE CONSOLE] [log] Loading login flow data...
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: 1625d09f-e5cc-4c6c-b49b-17e3407eb0db
+Found verification code for loginFlowId 1625d09f-e5cc-4c6c-b49b-17e3407eb0db: 888824
+Database disconnected
+Retrieved verification code: 888824 for loginFlowId: 1625d09f-e5cc-4c6c-b49b-17e3407eb0db
+[BAD RESPONSE] 302 https://auth-dev.civic.com/login/api/callback/email?state=1625d09f-e5cc-4c6c-b49b-17e3407eb0db&code=888824
+[BAD RESPONSE] 302 https://auth-dev.civic.com/login/api/callback/email?state=1625d09f-e5cc-4c6c-b49b-17e3407eb0db&code=888824
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/VDGBDaqchNegnRQhl7UiPBTkoLFTsX63h32ZUZfelaZ/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Ijk4OTA5NkBzaW11bGF0b3IuYW1hem9uc2VzLmNvbSIsInNjb3BlcyI6WyJvcGVuaWQiLCJvZmZsaW5lX2FjY2VzcyIsInByb2ZpbGUiLCJlbWFpbCIsIndhbGxldCIsImZvcndhcmRlZFRva2VucyIsInBhc3NrZXkiXSwiYXVkIjoiZGI3ZTg4YzEtZDk5Ny00MDk4LThjMDUtM2MyOGMwMTc3MWYzIiwic3ViIjoiY2RmOWQxYTAtNzhlMC00YzAzLTg2ZWEtMzA2MDJlMDk3MGZmIiwiaWRUb2tlblRUTCI6MzYwMCwiYWNjZXNzVG9rZW5UVEwiOjM2MDAsInJlZnJlc2hUb2tlblRUTCI6ODY0MDAsImNsaWVudElkIjoiZGVtby1jbGllbnQtMSIsInByb3ZpZGVyIjoiZW1haWwiLCJmbG93X2lkIjoib2F1dGgtbG9naW4tNmJlODg5YjAtNThlZS00OWM2LThiMjktNDEwNjFiMmZiYmQ4IiwibG9naW5fZmxvd19pZCI6IjE2MjVkMDlmLWU1Y2MtNGM2Yy1iNDliLTE3ZTM0MDdlYjBkYiIsImRpc3BsYXlfbW9kZSI6InJlZGlyZWN0IiwiZmxvd190eXBlIjoiZW1haWxDb2RlIiwib3JpZ2luIjoiaHR0cHM6Ly9hdXRoLWRldi5jaXZpYy5jb20iLCJmb3J3YXJkZWRUb2tlbnMiOnsiZW1haWwiOnt9fX0.AuwaKklesyIWUpmbB3kruNsB-mcbdDfBhNqOSQpEsqI&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/VDGBDaqchNegnRQhl7UiPBTkoLFTsX63h32ZUZfelaZ/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Ijk4OTA5NkBzaW11bGF0b3IuYW1hem9uc2VzLmNvbSIsInNjb3BlcyI6WyJvcGVuaWQiLCJvZmZsaW5lX2FjY2VzcyIsInByb2ZpbGUiLCJlbWFpbCIsIndhbGxldCIsImZvcndhcmRlZFRva2VucyIsInBhc3NrZXkiXSwiYXVkIjoiZGI3ZTg4YzEtZDk5Ny00MDk4LThjMDUtM2MyOGMwMTc3MWYzIiwic3ViIjoiY2RmOWQxYTAtNzhlMC00YzAzLTg2ZWEtMzA2MDJlMDk3MGZmIiwiaWRUb2tlblRUTCI6MzYwMCwiYWNjZXNzVG9rZW5UVEwiOjM2MDAsInJlZnJlc2hUb2tlblRUTCI6ODY0MDAsImNsaWVudElkIjoiZGVtby1jbGllbnQtMSIsInByb3ZpZGVyIjoiZW1haWwiLCJmbG93X2lkIjoib2F1dGgtbG9naW4tNmJlODg5YjAtNThlZS00OWM2LThiMjktNDEwNjFiMmZiYmQ4IiwibG9naW5fZmxvd19pZCI6IjE2MjVkMDlmLWU1Y2MtNGM2Yy1iNDliLTE3ZTM0MDdlYjBkYiIsImRpc3BsYXlfbW9kZSI6InJlZGlyZWN0IiwiZmxvd190eXBlIjoiZW1haWxDb2RlIiwib3JpZ2luIjoiaHR0cHM6Ly9hdXRoLWRldi5jaXZpYy5jb20iLCJmb3J3YXJkZWRUb2tlbnMiOnsiZW1haWwiOnt9fX0.AuwaKklesyIWUpmbB3kruNsB-mcbdDfBhNqOSQpEsqI&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/VDGBDaqchNegnRQhl7UiPBTkoLFTsX63h32ZUZfelaZ
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/VDGBDaqchNegnRQhl7UiPBTkoLFTsX63h32ZUZfelaZ
+[PAGE CONSOLE] [log] Web3U Debug Info: JSHandle@object
+[PAGE CONSOLE] [log] Web3U Debug Info: JSHandle@object
+[PAGE CONSOLE] [log] Web3Zone Debug Info: JSHandle@object
+[PAGE CONSOLE] [log] Web3Zone Debug Info: JSHandle@object
+[PAGE CONSOLE] [log] Web3U Debug Info: JSHandle@object
+[PAGE CONSOLE] [log] Web3U Debug Info: JSHandle@object
+[PAGE CONSOLE] [log] Web3U Debug Info: JSHandle@object
+[PAGE CONSOLE] [log] Web3U Debug Info: JSHandle@object
+[PAGE CONSOLE] [warning] [JavaScript Warning: "Cross-Origin Request Warning: The Same Origin Policy will disallow reading the remote resource at https://dev.api.civic.com/metakeep-dev/permissions soon. (Reason: When the `Access-Control-Allow-Headers` is `*`, the `Authorization` header is not covered. To include the `Authorization` header, it must be explicitly listed in CORS header `Access-Control-Allow-Headers`)."]
+[PAGE CONSOLE] [warning] [JavaScript Warning: "Cross-Origin Request Warning: The Same Origin Policy will disallow reading the remote resource at https://dev.api.civic.com/metakeep-dev/permissions soon. (Reason: When the `Access-Control-Allow-Headers` is `*`, the `Authorization` header is not covered. To include the `Authorization` header, it must be explicitly listed in CORS header `Access-Control-Allow-Headers`)."]
+[PAGE CONSOLE] [warning] [JavaScript Warning: "The resource at “http://localhost:3000/_next/static/media/4cf2300e9c8272f7-s.p.woff2” preloaded with link preload was not used within a few seconds. Make sure all attributes of the preload tag are set correctly." {file: "http://localhost:3000/" line: 0}]
+[PAGE CONSOLE] [warning] [JavaScript Warning: "The resource at “http://localhost:3000/_next/static/media/4cf2300e9c8272f7-s.p.woff2” preloaded with link preload was not used within a few seconds. Make sure all attributes of the preload tag are set correctly." {file: "http://localhost:3000/" line: 0}]
+[PAGE CONSOLE] [warning] [JavaScript Warning: "The resource at “http://localhost:3000/_next/static/media/93f479601ee12b01-s.p.woff2” preloaded with link preload was not used within a few seconds. Make sure all attributes of the preload tag are set correctly." {file: "http://localhost:3000/" line: 0}]
+[PAGE CONSOLE] [warning] [JavaScript Warning: "The resource at “http://localhost:3000/_next/static/media/93f479601ee12b01-s.p.woff2” preloaded with link preload was not used within a few seconds. Make sure all attributes of the preload tag are set correctly." {file: "http://localhost:3000/" line: 0}]
+[PAGE CONSOLE] [warning] [JavaScript Warning: "Cross-Origin Request Warning: The Same Origin Policy will disallow reading the remote resource at https://dev.api.civic.com/metakeep-dev/wallet soon. (Reason: When the `Access-Control-Allow-Headers` is `*`, the `Authorization` header is not covered. To include the `Authorization` header, it must be explicitly listed in CORS header `Access-Control-Allow-Headers`)."]
+[PAGE CONSOLE] [warning] [JavaScript Warning: "Cross-Origin Request Warning: The Same Origin Policy will disallow reading the remote resource at https://dev.api.civic.com/metakeep-dev/wallet soon. (Reason: When the `Access-Control-Allow-Headers` is `*`, the `Authorization` header is not covered. To include the `Authorization` header, it must be explicitly listed in CORS header `Access-Control-Allow-Headers`)."]
+[PAGE CONSOLE] [warning] [JavaScript Warning: "Feature Policy: Skipping unsupported feature name “clipboard-write”." {file: "http://localhost:3000/_next/static/chunks/791724bf-9a73c192b212fd98.js" line: 1}]
+[PAGE CONSOLE] [warning] [JavaScript Warning: "Feature Policy: Skipping unsupported feature name “clipboard-write”." {file: "http://localhost:3000/_next/static/chunks/791724bf-9a73c192b212fd98.js" line: 1}]
+[PAGE CONSOLE] [warning] [JavaScript Warning: "Feature Policy: Skipping unsupported feature name “clipboard-write”." {file: "http://localhost:3000/_next/static/chunks/791724bf-9a73c192b212fd98.js" line: 1}]
+[PAGE CONSOLE] [warning] [JavaScript Warning: "Feature Policy: Skipping unsupported feature name “clipboard-write”." {file: "http://localhost:3000/_next/static/chunks/791724bf-9a73c192b212fd98.js" line: 1}]
+[PAGE CONSOLE] [warning] [JavaScript Warning: "Feature Policy: Skipping unsupported feature name “clipboard-write”." {file: "http://localhost:3000/_next/static/chunks/791724bf-9a73c192b212fd98.js" line: 1}]
+[PAGE CONSOLE] [warning] [JavaScript Warning: "Feature Policy: Skipping unsupported feature name “clipboard-write”." {file: "http://localhost:3000/_next/static/chunks/791724bf-9a73c192b212fd98.js" line: 1}]
+[PAGE CONSOLE] [warning] [JavaScript Warning: "Feature Policy: Skipping unsupported feature name “clipboard-write”." {file: "http://localhost:3000/_next/static/chunks/791724bf-9a73c192b212fd98.js" line: 1}]
+[PAGE CONSOLE] [warning] [JavaScript Warning: "Feature Policy: Skipping unsupported feature name “clipboard-write”." {file: "http://localhost:3000/_next/static/chunks/791724bf-9a73c192b212fd98.js" line: 1}]
+[REQUEST FAILED] POST https://sepolia-preconf.base.org/ - NS_ERROR_DOM_BAD_URI
+[REQUEST FAILED] POST https://sepolia-preconf.base.org/ - NS_ERROR_DOM_BAD_URI
+[PAGE CONSOLE] [error] [JavaScript Error: "Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at https://sepolia-preconf.base.org/. (Reason: CORS header ‘Access-Control-Allow-Origin’ missing). Status code: 503."]
+[PAGE CONSOLE] [error] [JavaScript Error: "Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at https://sepolia-preconf.base.org/. (Reason: CORS header ‘Access-Control-Allow-Origin’ missing). Status code: 503."]
+[PAGE CONSOLE] [error] Failed to build MetakeepWeb3Client Error
+[PAGE CONSOLE] [error] Failed to build MetakeepWeb3Client Error
+[PAGE CONSOLE] [error] [JavaScript Error: "Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at https://sepolia-preconf.base.org/. (Reason: CORS request did not succeed). Status code: (null)."]
+[PAGE CONSOLE] [error] [JavaScript Error: "Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at https://sepolia-preconf.base.org/. (Reason: CORS request did not succeed). Status code: (null)."]
