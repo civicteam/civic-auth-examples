@@ -15,14 +15,11 @@ test.describe('Civic Auth Applications', () => {
     await page.route('**auth-dev.civic.com/**', async (route) => {
       const url = new URL(route.request().url());
       const redirectUri = url.searchParams.get('redirect_uri') || 'http://localhost:3000/auth/callback';
+      // Use JavaScript redirect instead of 302 status (Playwright limitation)
       await route.fulfill({
-        status: 302,
-        headers: {
-          'location': `${redirectUri}?code=mock-code&state=mock-state`,
-          'content-length': '0',
-          'date': new Date().toUTCString()
-        },
-        body: ''
+        status: 200,
+        contentType: 'text/html',
+        body: `<script>window.location.href = '${redirectUri}?code=mock-code&state=mock-state';</script>`
       });
     });
 
@@ -47,6 +44,7 @@ test.describe('Civic Auth Applications', () => {
       const mockToken = `${Buffer.from(JSON.stringify(mockJwt)).toString('base64')}.${Buffer.from(JSON.stringify(mockPayload)).toString('base64')}.mocksignature`;
 
       // Fulfill with a script that sets the cookie and redirects to customSuccessRoute
+      // Use JavaScript redirect instead of 302 status (Playwright limitation)
       await route.fulfill({
         status: 200,
         contentType: 'text/html',
