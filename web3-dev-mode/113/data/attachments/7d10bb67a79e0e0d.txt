@@ -1,0 +1,51 @@
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [warning] Module "buffer" has been externalized for browser compatibility. Cannot access "buffer.Buffer" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[PAGE CONSOLE] [warning] Module "buffer" has been externalized for browser compatibility. Cannot access "buffer.Buffer" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [info] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold
+[PAGE CONSOLE] [info] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?client_id=demo-client-1&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&response_type=code&scope=openid+profile+email+offline_access&state=eyJ1dWlkIjoiYTdiZDRmNmItOTIxYy00NzBjLTg4Y2EtMzUwYjNkYzk1OTQ3IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjMifQ%3D%3D&code_challenge=cJL7QoB2I_DdAeqM3fNng7335xZSZa7VVHt3hV0l7n8&code_challenge_method=S256&prompt=consent
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?client_id=demo-client-1&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&response_type=code&scope=openid+profile+email+offline_access&state=eyJ1dWlkIjoiYTdiZDRmNmItOTIxYy00NzBjLTg4Y2EtMzUwYjNkYzk1OTQ3IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjMifQ%3D%3D&code_challenge=cJL7QoB2I_DdAeqM3fNng7335xZSZa7VVHt3hV0l7n8&code_challenge_method=S256&prompt=consent
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[BAD RESPONSE] 429 https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us
+[BAD RESPONSE] 429 https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 429 ()
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 429 ()
+[RESPONSE BODY] {"detail":"Sentry dropped data due to a quota or internal rate limit being reached. This will not affect your application. See https://docs.sentry.io/product/accounts/quotas/ for more information."}
+[RESPONSE BODY] {"detail":"Sentry dropped data due to a quota or internal rate limit being reached. This will not affect your application. See https://docs.sentry.io/product/accounts/quotas/ for more information."}
+Email slot count: 1
+Checking URL: https://auth-dev.civic.com/login/assets/email.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/activity-indicator.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiYTdiZDRmNmItOTIxYy00NzBjLTg4Y2EtMzUwYjNkYzk1OTQ3IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjMifQ%3D%3D&client_id=demo-client-1&source_system_id=RP9e23c8I4mG85N7oZLJQ5fhEpXnDbZg7fC1Xz4uJOf&scope=openid+profile+email+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&flow_id=oauth-login-e896cffa-8d51-460a-b493-83574d708787, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/email?loginFlowId=0db811b3-774f-43f4-b691-1411f1e3ddda&client_id=demo-client-1&source_system_id=RP9e23c8I4mG85N7oZLJQ5fhEpXnDbZg7fC1Xz4uJOf&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=161164%40simulator.amazonses.com&_rsc=u7ktb, hasLoginFlowId: true, isEmailEndpoint: true, isVerifyEndpoint: false
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=0db811b3-774f-43f4-b691-1411f1e3ddda&client_id=demo-client-1&source_system_id=RP9e23c8I4mG85N7oZLJQ5fhEpXnDbZg7fC1Xz4uJOf&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=161164%40simulator.amazonses.com&_rsc=u7ktb
+Extracted loginFlowId: 0db811b3-774f-43f4-b691-1411f1e3ddda
+[REQUEST FAILED] GET https://auth-dev.civic.com/login/email?loginFlowId=0db811b3-774f-43f4-b691-1411f1e3ddda&client_id=demo-client-1&source_system_id=RP9e23c8I4mG85N7oZLJQ5fhEpXnDbZg7fC1Xz4uJOf&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=161164%40simulator.amazonses.com&_rsc=u7ktb - net::ERR_ABORTED
+[REQUEST FAILED] GET https://auth-dev.civic.com/login/email?loginFlowId=0db811b3-774f-43f4-b691-1411f1e3ddda&client_id=demo-client-1&source_system_id=RP9e23c8I4mG85N7oZLJQ5fhEpXnDbZg7fC1Xz4uJOf&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=161164%40simulator.amazonses.com&_rsc=u7ktb - net::ERR_ABORTED
+[REQUEST FAILED] GET https://auth-dev.civic.com/login/email?loginFlowId=0db811b3-774f-43f4-b691-1411f1e3ddda&client_id=demo-client-1&source_system_id=RP9e23c8I4mG85N7oZLJQ5fhEpXnDbZg7fC1Xz4uJOf&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=161164%40simulator.amazonses.com&_rsc=bxl7l - net::ERR_ABORTED
+[REQUEST FAILED] GET https://auth-dev.civic.com/login/email?loginFlowId=0db811b3-774f-43f4-b691-1411f1e3ddda&client_id=demo-client-1&source_system_id=RP9e23c8I4mG85N7oZLJQ5fhEpXnDbZg7fC1Xz4uJOf&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=161164%40simulator.amazonses.com&_rsc=bxl7l - net::ERR_ABORTED
+[PAGE CONSOLE] [log] Loading login flow data...
+[PAGE CONSOLE] [log] Loading login flow data...
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: 0db811b3-774f-43f4-b691-1411f1e3ddda
+Found verification code for loginFlowId 0db811b3-774f-43f4-b691-1411f1e3ddda: 431601
+Database disconnected
+Retrieved verification code: 431601 for loginFlowId: 0db811b3-774f-43f4-b691-1411f1e3ddda
+[BAD RESPONSE] 302 https://auth-dev.civic.com/login/api/callback/email?state=0db811b3-774f-43f4-b691-1411f1e3ddda&code=431601
+[BAD RESPONSE] 302 https://auth-dev.civic.com/login/api/callback/email?state=0db811b3-774f-43f4-b691-1411f1e3ddda&code=431601
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/RP9e23c8I4mG85N7oZLJQ5fhEpXnDbZg7fC1Xz4uJOf/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjE2MTE2NEBzaW11bGF0b3IuYW1hem9uc2VzLmNvbSIsInNvdXJjZSI6Im1ldGFrZWVwIiwid2FsbGV0VHlwZSI6ImV0aGVyZXVtIiwid2FsbGV0QWRkcmVzcyI6IkRRUjR1TDdwc25SWkQxcEI4Zzd5OTF5MUdEM21paEJHd1VDMktCRXdpVlhzIiwic2NvcGVzIjpbIm9wZW5pZCIsIm9mZmxpbmVfYWNjZXNzIiwicHJvZmlsZSIsImVtYWlsIiwid2FsbGV0IiwiZm9yd2FyZGVkVG9rZW5zIiwicGFzc2tleSJdLCJhdWQiOiJkYjdlODhjMS1kOTk3LTQwOTgtOGMwNS0zYzI4YzAxNzcxZjMiLCJzdWIiOiIyNTY3YTI1Yi0yNjBkLTQ5ZjMtODIzNy1iNjZhMzUzNzk1ODgiLCJpZFRva2VuVFRMIjozNjAwLCJhY2Nlc3NUb2tlblRUTCI6MzYwMCwicmVmcmVzaFRva2VuVFRMIjo4NjQwMCwiY2xpZW50SWQiOiJkZW1vLWNsaWVudC0xIiwicHJvdmlkZXIiOiJlbWFpbCIsImZsb3dfaWQiOiJvYXV0aC1sb2dpbi1lODk2Y2ZmYS04ZDUxLTQ2MGEtYjQ5My04MzU3NGQ3MDg3ODciLCJsb2dpbl9mbG93X2lkIjoiMGRiODExYjMtNzc0Zi00M2Y0LWI2OTEtMTQxMWYxZTNkZGRhIiwiZGlzcGxheV9tb2RlIjoicmVkaXJlY3QiLCJmbG93X3R5cGUiOiJlbWFpbENvZGUiLCJvcmlnaW4iOiJodHRwczovL2F1dGgtZGV2LmNpdmljLmNvbSIsImZvcndhcmRlZFRva2VucyI6eyJlbWFpbCI6e319fQ.JBWJgZ9DiAuaB5hvwp3YDdQr034yzyCRK0AZYKtsGXs&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/RP9e23c8I4mG85N7oZLJQ5fhEpXnDbZg7fC1Xz4uJOf/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjE2MTE2NEBzaW11bGF0b3IuYW1hem9uc2VzLmNvbSIsInNvdXJjZSI6Im1ldGFrZWVwIiwid2FsbGV0VHlwZSI6ImV0aGVyZXVtIiwid2FsbGV0QWRkcmVzcyI6IkRRUjR1TDdwc25SWkQxcEI4Zzd5OTF5MUdEM21paEJHd1VDMktCRXdpVlhzIiwic2NvcGVzIjpbIm9wZW5pZCIsIm9mZmxpbmVfYWNjZXNzIiwicHJvZmlsZSIsImVtYWlsIiwid2FsbGV0IiwiZm9yd2FyZGVkVG9rZW5zIiwicGFzc2tleSJdLCJhdWQiOiJkYjdlODhjMS1kOTk3LTQwOTgtOGMwNS0zYzI4YzAxNzcxZjMiLCJzdWIiOiIyNTY3YTI1Yi0yNjBkLTQ5ZjMtODIzNy1iNjZhMzUzNzk1ODgiLCJpZFRva2VuVFRMIjozNjAwLCJhY2Nlc3NUb2tlblRUTCI6MzYwMCwicmVmcmVzaFRva2VuVFRMIjo4NjQwMCwiY2xpZW50SWQiOiJkZW1vLWNsaWVudC0xIiwicHJvdmlkZXIiOiJlbWFpbCIsImZsb3dfaWQiOiJvYXV0aC1sb2dpbi1lODk2Y2ZmYS04ZDUxLTQ2MGEtYjQ5My04MzU3NGQ3MDg3ODciLCJsb2dpbl9mbG93X2lkIjoiMGRiODExYjMtNzc0Zi00M2Y0LWI2OTEtMTQxMWYxZTNkZGRhIiwiZGlzcGxheV9tb2RlIjoicmVkaXJlY3QiLCJmbG93X3R5cGUiOiJlbWFpbENvZGUiLCJvcmlnaW4iOiJodHRwczovL2F1dGgtZGV2LmNpdmljLmNvbSIsImZvcndhcmRlZFRva2VucyI6eyJlbWFpbCI6e319fQ.JBWJgZ9DiAuaB5hvwp3YDdQr034yzyCRK0AZYKtsGXs&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/RP9e23c8I4mG85N7oZLJQ5fhEpXnDbZg7fC1Xz4uJOf
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/RP9e23c8I4mG85N7oZLJQ5fhEpXnDbZg7fC1Xz4uJOf
+[REQUEST FAILED] GET http://localhost:3000/?code=GtBrYSuH8Ryxzjgo05Nutske5gh8OOPUf_V5FoGsjT6&state=eyJ1dWlkIjoiYTdiZDRmNmItOTIxYy00NzBjLTg4Y2EtMzUwYjNkYzk1OTQ3IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjMifQ%3D%3D&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F - net::ERR_BLOCKED_BY_PRIVATE_NETWORK_ACCESS_CHECKS
+[REQUEST FAILED] GET http://localhost:3000/?code=GtBrYSuH8Ryxzjgo05Nutske5gh8OOPUf_V5FoGsjT6&state=eyJ1dWlkIjoiYTdiZDRmNmItOTIxYy00NzBjLTg4Y2EtMzUwYjNkYzk1OTQ3IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjMifQ%3D%3D&iss=https%3A%2F%2Fauth-dev.civic.com%2Foauth%2F - net::ERR_BLOCKED_BY_PRIVATE_NETWORK_ACCESS_CHECKS
+[REQUEST FAILED] POST https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us - net::ERR_ABORTED
+[REQUEST FAILED] POST https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us - net::ERR_ABORTED

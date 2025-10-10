@@ -1,0 +1,79 @@
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?client_id=demo-client-1&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&response_type=code&scope=openid+profile+email+offline_access&state=eyJ1dWlkIjoiYmNlMTQ1NTMtMjI3Mi00YWZmLThlY2QtNzVlNGM5NWVlODBjIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjMifQ%3D%3D&code_challenge=dhY2Pyx2eBNZB7TJwYZloJmhvYCkIwYtdU_h2Tl0NWI&code_challenge_method=S256&prompt=consent
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?client_id=demo-client-1&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&response_type=code&scope=openid+profile+email+offline_access&state=eyJ1dWlkIjoiYmNlMTQ1NTMtMjI3Mi00YWZmLThlY2QtNzVlNGM5NWVlODBjIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjMifQ%3D%3D&code_challenge=dhY2Pyx2eBNZB7TJwYZloJmhvYCkIwYtdU_h2Tl0NWI&code_challenge_method=S256&prompt=consent
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[PAGE CONSOLE] [debug] Storage access not available - passkey discovery may be limited
+[PAGE CONSOLE] [debug] Storage access not available - passkey discovery may be limited
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at unknown (http://localhost:3000/assets/index-CVhetmoh.js:22:106942)
+    at forEach (:1:11)
+    at replayBlockedMessages (http://localhost:3000/assets/index-CVhetmoh.js:22:106873)
+    at unknown (http://localhost:3000/assets/index-CVhetmoh.js:60:404)
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at unknown (http://localhost:3000/assets/index-CVhetmoh.js:22:106942)
+    at forEach (:1:11)
+    at replayBlockedMessages (http://localhost:3000/assets/index-CVhetmoh.js:22:106873)
+    at unknown (http://localhost:3000/assets/index-CVhetmoh.js:60:404)
+[BAD RESPONSE] 429 https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us
+[BAD RESPONSE] 429 https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 429 (Unknown Error)
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 429 (Unknown Error)
+[RESPONSE BODY] {"detail":"Sentry dropped data due to a quota or internal rate limit being reached. This will not affect your application. See https://docs.sentry.io/product/accounts/quotas/ for more information."}
+[RESPONSE BODY] {"detail":"Sentry dropped data due to a quota or internal rate limit being reached. This will not affect your application. See https://docs.sentry.io/product/accounts/quotas/ for more information."}
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at handleMessage (http://localhost:3000/assets/index-CVhetmoh.js:22:105119)
+    at unknown (http://localhost:3000/assets/index-CVhetmoh.js:22:104414)
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at handleMessage (http://localhost:3000/assets/index-CVhetmoh.js:22:105119)
+    at unknown (http://localhost:3000/assets/index-CVhetmoh.js:22:104414)
+Email slot count: 1
+Checking URL: https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiYmNlMTQ1NTMtMjI3Mi00YWZmLThlY2QtNzVlNGM5NWVlODBjIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjMifQ%3D%3D&client_id=demo-client-1&source_system_id=hG66KEKY-aETGWahjfgDWT8UDtPn4fc9VABp7HOaVI7&scope=openid+profile+email+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&flow_id=oauth-login-24d384cf-790d-40ae-9598-1903cb04ccf1, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/email?loginFlowId=c61d19ce-7aac-4bc8-a8aa-7a1190a9179c&client_id=demo-client-1&source_system_id=hG66KEKY-aETGWahjfgDWT8UDtPn4fc9VABp7HOaVI7&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=199077%40simulator.amazonses.com&_rsc=xwwlx, hasLoginFlowId: true, isEmailEndpoint: true, isVerifyEndpoint: false
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=c61d19ce-7aac-4bc8-a8aa-7a1190a9179c&client_id=demo-client-1&source_system_id=hG66KEKY-aETGWahjfgDWT8UDtPn4fc9VABp7HOaVI7&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=199077%40simulator.amazonses.com&_rsc=xwwlx
+Extracted loginFlowId: c61d19ce-7aac-4bc8-a8aa-7a1190a9179c
+[PAGE CONSOLE] [log] Loading login flow data...
+[PAGE CONSOLE] [log] Loading login flow data...
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at handleMessage (http://localhost:3000/assets/index-CVhetmoh.js:22:105119)
+    at unknown (http://localhost:3000/assets/index-CVhetmoh.js:22:104414)
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at handleMessage (http://localhost:3000/assets/index-CVhetmoh.js:22:105119)
+    at unknown (http://localhost:3000/assets/index-CVhetmoh.js:22:104414)
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: c61d19ce-7aac-4bc8-a8aa-7a1190a9179c
+Found verification code for loginFlowId c61d19ce-7aac-4bc8-a8aa-7a1190a9179c: 200298
+Database disconnected
+Retrieved verification code: 200298 for loginFlowId: c61d19ce-7aac-4bc8-a8aa-7a1190a9179c
+[BAD RESPONSE] 302 https://auth-dev.civic.com/login/api/callback/email?state=c61d19ce-7aac-4bc8-a8aa-7a1190a9179c&code=200298
+[BAD RESPONSE] 302 https://auth-dev.civic.com/login/api/callback/email?state=c61d19ce-7aac-4bc8-a8aa-7a1190a9179c&code=200298
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/hG66KEKY-aETGWahjfgDWT8UDtPn4fc9VABp7HOaVI7/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjE5OTA3N0BzaW11bGF0b3IuYW1hem9uc2VzLmNvbSIsInNjb3BlcyI6WyJvcGVuaWQiLCJvZmZsaW5lX2FjY2VzcyIsInByb2ZpbGUiLCJlbWFpbCIsIndhbGxldCIsImZvcndhcmRlZFRva2VucyIsInBhc3NrZXkiXSwiYXVkIjoiZGI3ZTg4YzEtZDk5Ny00MDk4LThjMDUtM2MyOGMwMTc3MWYzIiwic3ViIjoiZTdlY2U3NjEtMzM5ZS00M2U5LWFmYWUtZjE4ZDcyMTU0ODk3IiwiaWRUb2tlblRUTCI6MzYwMCwiYWNjZXNzVG9rZW5UVEwiOjM2MDAsInJlZnJlc2hUb2tlblRUTCI6ODY0MDAsImNsaWVudElkIjoiZGVtby1jbGllbnQtMSIsInByb3ZpZGVyIjoiZW1haWwiLCJmbG93X2lkIjoib2F1dGgtbG9naW4tMjRkMzg0Y2YtNzkwZC00MGFlLTk1OTgtMTkwM2NiMDRjY2YxIiwibG9naW5fZmxvd19pZCI6ImM2MWQxOWNlLTdhYWMtNGJjOC1hOGFhLTdhMTE5MGE5MTc5YyIsImRpc3BsYXlfbW9kZSI6InJlZGlyZWN0IiwiZmxvd190eXBlIjoiZW1haWxDb2RlIiwib3JpZ2luIjoiaHR0cHM6Ly9hdXRoLWRldi5jaXZpYy5jb20iLCJmb3J3YXJkZWRUb2tlbnMiOnsiZW1haWwiOnt9fX0.bRxt1A6jEuANG3QivbyLmNBZrem5eLF-0JCEcs7Ryg4&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/hG66KEKY-aETGWahjfgDWT8UDtPn4fc9VABp7HOaVI7/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjE5OTA3N0BzaW11bGF0b3IuYW1hem9uc2VzLmNvbSIsInNjb3BlcyI6WyJvcGVuaWQiLCJvZmZsaW5lX2FjY2VzcyIsInByb2ZpbGUiLCJlbWFpbCIsIndhbGxldCIsImZvcndhcmRlZFRva2VucyIsInBhc3NrZXkiXSwiYXVkIjoiZGI3ZTg4YzEtZDk5Ny00MDk4LThjMDUtM2MyOGMwMTc3MWYzIiwic3ViIjoiZTdlY2U3NjEtMzM5ZS00M2U5LWFmYWUtZjE4ZDcyMTU0ODk3IiwiaWRUb2tlblRUTCI6MzYwMCwiYWNjZXNzVG9rZW5UVEwiOjM2MDAsInJlZnJlc2hUb2tlblRUTCI6ODY0MDAsImNsaWVudElkIjoiZGVtby1jbGllbnQtMSIsInByb3ZpZGVyIjoiZW1haWwiLCJmbG93X2lkIjoib2F1dGgtbG9naW4tMjRkMzg0Y2YtNzkwZC00MGFlLTk1OTgtMTkwM2NiMDRjY2YxIiwibG9naW5fZmxvd19pZCI6ImM2MWQxOWNlLTdhYWMtNGJjOC1hOGFhLTdhMTE5MGE5MTc5YyIsImRpc3BsYXlfbW9kZSI6InJlZGlyZWN0IiwiZmxvd190eXBlIjoiZW1haWxDb2RlIiwib3JpZ2luIjoiaHR0cHM6Ly9hdXRoLWRldi5jaXZpYy5jb20iLCJmb3J3YXJkZWRUb2tlbnMiOnsiZW1haWwiOnt9fX0.bRxt1A6jEuANG3QivbyLmNBZrem5eLF-0JCEcs7Ryg4&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/hG66KEKY-aETGWahjfgDWT8UDtPn4fc9VABp7HOaVI7
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/hG66KEKY-aETGWahjfgDWT8UDtPn4fc9VABp7HOaVI7
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
