@@ -103,7 +103,18 @@ export default defineConfig({
   projects: [
     {
       name: 'Chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: { 
+        ...devices['Desktop Chrome'],
+        // Chrome needs special flags for cross-origin iframe communication with localhost
+        // This is required because the auth server (public network) communicates with localhost (private network)
+        launchOptions: {
+          args: [
+            '--disable-web-security',
+            '--disable-features=IsolateOrigins,site-per-process,BlockInsecurePrivateNetworkRequests',
+            '--disable-site-isolation-trials',
+          ],
+        },
+      },
     },
 
     {
