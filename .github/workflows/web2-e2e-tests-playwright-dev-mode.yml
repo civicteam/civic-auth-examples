@@ -17,9 +17,12 @@ jobs:
   check-version:
     uses: ./.github/workflows/check-versions.yml
 
+  typecheck:
+    uses: ./.github/workflows/typecheck.yml
+
   job-nextjs-example-app:
     name: "NextJS example app"
-    needs: check-version
+    needs: [check-version, typecheck]
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth/nextjs
@@ -31,7 +34,7 @@ jobs:
 
   job-nextjs-basepath-example-app:
     name: "NextJS basepath example app"
-    needs: check-version
+    needs: [check-version, typecheck]
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth/nextjs
@@ -45,7 +48,7 @@ jobs:
 
   job-nextjs-loginsuccessurl-example-app:
     name: "NextJS loginSuccessUrl example app"
-    needs: check-version
+    needs: [check-version, typecheck]
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth/nextjs
@@ -59,7 +62,7 @@ jobs:
 
   job-express-loginsuccessurl-example-app:
     name: "Express loginSuccessUrl example app"
-    needs: check-version
+    needs: [check-version, typecheck]
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth/server/express
@@ -73,7 +76,7 @@ jobs:
 
   job-fastify-loginsuccessurl-example-app:
     name: "Fastify loginSuccessUrl example app"
-    needs: check-version
+    needs: [check-version, typecheck]
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth/server/fastify
@@ -87,7 +90,7 @@ jobs:
 
   job-hono-loginsuccessurl-example-app:
     name: "Hono loginSuccessUrl example app"
-    needs: check-version
+    needs: [check-version, typecheck]
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth/server/hono
@@ -101,7 +104,7 @@ jobs:
 
   job-reactjs-example-app:
     name: "ReactJS example app"
-    needs: check-version
+    needs: [check-version, typecheck]
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth/reactjs
@@ -113,7 +116,7 @@ jobs:
 
   job-express-example-app:
     name: "Express example app"
-    needs: check-version
+    needs: [check-version, typecheck]
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth/server/express
@@ -125,7 +128,7 @@ jobs:
 
   job-fastify-example-app:
     name: "Fastify example app"
-    needs: check-version
+    needs: [check-version, typecheck]
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth/server/fastify
@@ -137,7 +140,7 @@ jobs:
 
   job-hono-example-app:
     name: "Hono example app"
-    needs: check-version
+    needs: [check-version, typecheck]
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth/server/hono
@@ -149,7 +152,7 @@ jobs:
 
   job-vanillajs-example-app:
     name: "VanillaJS example app"
-    needs: check-version
+    needs: [check-version, typecheck]
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth/vanillajs
@@ -161,7 +164,7 @@ jobs:
 
   job-vanillajs-modal-example-app:
     name: "VanillaJS Modal example app"
-    needs: check-version
+    needs: [check-version, typecheck]
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth/vanillajs

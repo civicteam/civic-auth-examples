@@ -1,4 +1,3 @@
-import { env } from 'bun';
 import {
   CookieStorage,
   CivicAuth
@@ -12,7 +11,7 @@ dotenv.config();
 // Extend Fastify types to include our storage and civicAuth properties
 declare module 'fastify' {
   export interface FastifyRequest {
-    storage: CookieStorage;
+    storage: FastifyCookieStorage;
     civicAuth: CivicAuth;
   }
 }
@@ -22,21 +21,27 @@ const fastify = Fastify({
   disableRequestLogging: false
 });
 
-const PORT = env.PORT ? parseInt(env.PORT) : 3000;
+const PORT = process.env.PORT ? parseInt(process.env.PORT) : 3000;
 
 const config = {
   clientId: process.env.CLIENT_ID!,
   // oauthServer is not necessary for production.
   oauthServer: process.env.AUTH_SERVER || 'https://auth.civic.com/oauth',
-  loginSuccessUrl: process.env.LOGIN_SUCCESS_URL,
+  loginSuccessUrl: process.env.LOGIN_SUCCESS_URL || `http://localhost:${PORT}/admin/hello`,
   redirectUrl: `http://localhost:${PORT}/auth/callback`,
   postLogoutRedirectUrl: `http://localhost:${PORT}/`,
 };
 
 class FastifyCookieStorage extends CookieStorage {
   constructor(private request: FastifyRequest, private reply: FastifyReply) {
+    // Detect if we're running on HTTPS (production) or HTTP (localhost)
+    const isHttps = request.protocol === 'https' || request.headers['x-forwarded-proto'] === 'https';
+
     super({
-      secure: process.env.NODE_ENV === "production",
+      secure: isHttps, // Use secure cookies for HTTPS
+      sameSite: isHttps ? "none" : "lax", // none for HTTPS cross-origin, lax for localhost
+      httpOnly: false, // Allow frontend JavaScript to access cookies
+      path: "/", // Ensure cookies are available for all paths
     });
   }
 
@@ -75,12 +80,8 @@ class FastifyCookieStorage extends CookieStorage {
 }
 
 await fastify.register(fastifyCookie, {
-  secret: env.COOKIE_SECRET || "my-secret"
+  secret: process.env.COOKIE_SECRET || "my-secret"
 });
-
-// Decorate request with storage and civicAuth
-fastify.decorateRequest('storage', null);
-fastify.decorateRequest('civicAuth', null);
 
 // Add storage and civicAuth to each request
 fastify.addHook('preHandler', async (request, reply) => {
@@ -92,13 +93,25 @@ fastify.addHook('preHandler', async (request, reply) => {
 fastify.addHook('preHandler', async (request, reply) => {
   if (!request.url.includes('/admin') && !request.url.includes('/customSuccessRoute')) return;
 
-  if (!request.civicAuth.isLoggedIn()) {
+  if (!(await request.civicAuth.isLoggedIn())) {
     return reply.status(401).send({ error: 'Unauthorized' });
   }
 });
 
 fastify.get('/', async (request, reply) => {
   const url = await request.civicAuth.buildLoginUrl();
+  return reply.redirect(url.toString());
+});
+
+fastify.get<{
+  Querystring: { state?: string };
+}>('/auth/login-url', async (request, reply) => {
+  const frontendState = request.query.state;
+
+  const url = await request.civicAuth.buildLoginUrl({
+    state: frontendState,
+  });
+  
   return reply.redirect(url.toString());
 });
 
@@ -110,17 +123,24 @@ fastify.get<{
     const { code, state } = request.query;
     fastify.log.info(`Processing OAuth callback - Code: ${code}, State: ${state}`);
 
-    await request.civicAuth.resolveOAuthAccessCode(code, state);
-    fastify.log.info('OAuth code resolved successfully');
+    const result = await request.civicAuth.handleCallback({
+      code,
+      state,
+      req: request.raw as any,
+    });
 
-    const redirectUrl = config.loginSuccessUrl || '/admin/hello';
-    return reply.redirect(redirectUrl);
+    if (result.redirectTo) {
+      return reply.redirect(result.redirectTo);
+    }
+
+    if (result.content) {
+      return reply.type('text/html').send(result.content as string);
+    }
+
+    return reply.status(500).send({ error: 'Internal server error' });
   } catch (error) {
     fastify.log.error('Callback error:', error);
-    return reply.status(500).send({ 
-      error: 'Authentication failed', 
-      details: error instanceof Error ? error.message : 'Unknown error' 
-    });
+    return reply.redirect('/?error=auth_failed');
   }
 });
 
@@ -161,11 +181,20 @@ fastify.get('/customSuccessRoute', async (request, reply) => {
 
 fastify.get('/auth/logout', async (request, reply) => {
   try {
-    const url = await request.civicAuth.buildLogoutRedirectUrl();
+    const urlString = await request.civicAuth.buildLogoutRedirectUrl();
+    await request.civicAuth.clearTokens();
+
+    // Convert to URL object to modify parameters
+    const url = new URL(urlString);
+    // Remove the state parameter to avoid it showing up in the frontend URL
+    url.searchParams.delete('state');
+
     return reply.redirect(url.toString());
   } catch (error) {
     fastify.log.error('Logout error:', error);
-    throw error;
+    // If logout URL generation fails, clear tokens and redirect to home
+    await request.civicAuth.clearTokens();
+    return reply.redirect('/');
   }
 });
 
@@ -175,7 +204,10 @@ fastify.get<{
   try {
     const { state } = request.query;
     fastify.log.info(`Logout callback - state: ${state}`);
-    await request.storage.clear();
+    const cookies = request.cookies;
+    for (const key in cookies) {
+      reply.clearCookie(key, { path: '/' });
+    }
     return reply.redirect('/');
   } catch (error) {
     fastify.log.error('Logout callback error:', error);
