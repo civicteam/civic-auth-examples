@@ -1,0 +1,86 @@
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[PAGE CONSOLE] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[REQUEST FAILED] GET https://auth-dev.civic.com/oauth/.well-known/openid-configuration - net::ERR_ABORTED
+[REQUEST FAILED] GET https://auth-dev.civic.com/oauth/.well-known/openid-configuration - net::ERR_ABORTED
+[PAGE CONSOLE] [log] onSignIn callback executed: {options: Object, timestamp: 2025-10-10T22:30:08.407Z}
+[PAGE CONSOLE] [log] onSignIn callback executed: {options: Object, timestamp: 2025-10-10T22:30:08.407Z}
+[PAGE CONSOLE] [error] Failed to initialize auth in CivicAuthProvider: CivicAuthError: Failed to fetch
+    at _CivicAuth.init (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=29a8d477:8439:13)
+    at async _CivicAuth.create (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=29a8d477:8335:5)
+    at async _GlobalAuthManager._doInitialize (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=29a8d477:9639:19)
+[PAGE CONSOLE] [error] Failed to initialize auth in CivicAuthProvider: CivicAuthError: Failed to fetch
+    at _CivicAuth.init (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=29a8d477:8439:13)
+    at async _CivicAuth.create (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=29a8d477:8335:5)
+    at async _GlobalAuthManager._doInitialize (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=29a8d477:9639:19)
+[PAGE CONSOLE] [error] Failed to initialize auth: CivicAuthError: Failed to fetch
+    at _CivicAuth.init (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=29a8d477:8439:13)
+    at async _CivicAuth.create (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=29a8d477:8335:5)
+    at async _GlobalAuthManager._doInitialize (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=29a8d477:9639:19)
+[PAGE CONSOLE] [error] Failed to initialize auth: CivicAuthError: Failed to fetch
+    at _CivicAuth.init (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=29a8d477:8439:13)
+    at async _CivicAuth.create (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=29a8d477:8335:5)
+    at async _GlobalAuthManager._doInitialize (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=29a8d477:9639:19)
+[PAGE CONSOLE] [error] Failed to initialize auth in CivicAuthProvider: CivicAuthError: Failed to fetch
+    at _CivicAuth.init (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=29a8d477:8439:13)
+    at async _CivicAuth.create (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=29a8d477:8335:5)
+    at async _GlobalAuthManager._doInitialize (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=29a8d477:9639:19)
+[PAGE CONSOLE] [error] Failed to initialize auth in CivicAuthProvider: CivicAuthError: Failed to fetch
+    at _CivicAuth.init (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=29a8d477:8439:13)
+    at async _CivicAuth.create (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=29a8d477:8335:5)
+    at async _GlobalAuthManager._doInitialize (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=29a8d477:9639:19)
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[PAGE CONSOLE] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?client_id=demo-client-1&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&response_type=code&scope=openid+profile+email+offline_access&state=eyJ1dWlkIjoiNjEwNWIyYmMtYzhmMi00ODViLWExNDUtYjE4NzdlZGJjNDQ2IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjMifQ%3D%3D&code_challenge=Gy8euh09a0lLNsmiNTKGBp074tVZejyvxa0zVAfQqoc&code_challenge_method=S256&prompt=consent
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?client_id=demo-client-1&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&response_type=code&scope=openid+profile+email+offline_access&state=eyJ1dWlkIjoiNjEwNWIyYmMtYzhmMi00ODViLWExNDUtYjE4NzdlZGJjNDQ2IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjMifQ%3D%3D&code_challenge=Gy8euh09a0lLNsmiNTKGBp074tVZejyvxa0zVAfQqoc&code_challenge_method=S256&prompt=consent
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/bJ9E1npXshDe4oB2x7pFtGhFTGO1RV6bVVruyzfLBrm/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiMDVjZmUwLWIzZDctNGZhMi1iNmY5LTYzNTIwMjM4OTVjM0BleGFtcGxlLmV4YW1wbGUiLCJzdWIiOiJmOTc1M2FmMy05MmU3LTQ0NTctODAzZS00YTkxNTBmYTExMDciLCJuYW1lIjoiR2hvc3QiLCJzY29wZXMiOlsib3BlbmlkIiwib2ZmbGluZV9hY2Nlc3MiLCJwcm9maWxlIiwiZW1haWwiLCJ3YWxsZXQiLCJmb3J3YXJkZWRUb2tlbnMiLCJwYXNza2V5Il0sImF1ZCI6ImRiN2U4OGMxLWQ5OTctNDA5OC04YzA1LTNjMjhjMDE3NzFmMyIsImlkVG9rZW5UVEwiOjM2MDAsImFjY2Vzc1Rva2VuVFRMIjozNjAwLCJyZWZyZXNoVG9rZW5UVEwiOjg2NDAwLCJjbGllbnRJZCI6ImRlbW8tY2xpZW50LTEiLCJwcm92aWRlciI6ImR1bW15IiwiZmxvd19pZCI6Im9hdXRoLWxvZ2luLTEwNmM4M2RiLTg3M2MtNGY3YS1hYmNiLTRjNmU3MGNiNWY5NCIsImxvZ2luX2Zsb3dfaWQiOiI1Nzg0MzNjZS02NzMxLTQ4YjMtODBiZS0zYjQzNGViNzEzZTYiLCJkaXNwbGF5X21vZGUiOiJwb3B1cCIsImZsb3dfdHlwZSI6Im9pZGMiLCJvcmlnaW4iOiJodHRwczovL2F1dGgtZGV2LmNpdmljLmNvbSIsImZvcndhcmRlZFRva2VucyI6eyJkdW1teSI6eyJpZF90b2tlbiI6ImV5SmhiR2NpT2lKU1V6STFOaUlzSW5SNWNDSTZJa3BYVkNJc0ltdHBaQ0k2SW1zeEluMC5leUpwYzNNaU9pSm9kSFJ3Y3pvdkwyaGxZV1JsY2kxd2NtOTRlUzVrWVc1cFpXeGlhMlZzYkdWb1pYSXpOems1TG5kdmNtdGxjbk11WkdWMklpd2lZWFZrSWpvaWRHVnVZVzUwTFRFdFlYQndMVEVpTENKemRXSWlPaUpoWWpBMVkyWmxNQzFpTTJRM0xUUm1ZVEl0WWpabU9TMDJNelV5TURJek9EazFZek1pTENKbGJXRnBiQ0k2SW1GaU1EVmpabVV3TFdJelpEY3ROR1poTWkxaU5tWTVMVFl6TlRJd01qTTRPVFZqTTBCbGVHRnRjR3hsTG1WNFlXMXdiR1VpTENKdWIyNWpaU0k2SWpGaE56TXlOR1ppTFRabE9HRXROREF6TnkxaVltSmtMVGMzTXpZNVptVTFNekkwWlNJc0ltbGhkQ0k2TVRjMk1ERXpOVFF4TUN3aVpYaHdJam94TnpZd01UTTVNREV3TENKbWIzSjNZWEprWldSVWIydGxibk1pT25zaVpIVnRiWGtpT25zaWFXUmZkRzlyWlc0aU9pSmxlVXBvWWtkamFVOXBTbE5WZWtreFRtbEpjMGx1VWpWalEwazJTV3R3V0ZaRFNYTkpiWFJ3V2tOSk5rbHRjM2hKYmpBdVpYbEtjR016VFdsUGFVcHZaRWhTZDJONmIzWk1NbWhzV1ZkU2JHTnBNWGRqYlRrMFpWTTFhMWxYTlhCYVYzaHBZVEpXYzJKSFZtOWFXRWw2VG5wck5VeHVaSFpqYlhSc1kyNU5kVnBIVmpKSmFYZHBZek5XYVVscWIybFpWMGwzVGxkT2JWcFVRWFJaYWs1clRua3dNRnB0UlhsTVYwa3lXbXByZEU1cVRURk5ha0Y1VFhwbk5VNVhUWHBKYVhkcFdsY3hhR0ZYZDJsUGFVcG9XV3BCTVZreVdteE5RekZwVFRKUk0weFVVbTFaVkVsMFdXcGFiVTlUTURKTmVsVjVUVVJKZWs5RWF6RlplazVCV2xob2FHSllRbk5hVXpWc1pVZEdkR05IZUd4SmFYZHBZbTA1ZFZreVZXbFBhVWw0V1ZSamVrMXFVbTFaYVRBeVdsUm9hRXhVVVhkTmVtTjBXVzFLYVZwRE1ETk9lazB5VDFkYWJFNVVUWGxPUjFWcFRFTkthR1JYVVdsUGFVcHZaRWhTZDA5cE9IWmlSemxxV1ZkNGIySXpUakJQYWsxM1RVUkJhVXhEU25CWldGRnBUMnBGTTA1cVFYaE5lbFV3VFZSQmMwbHRWalJqUTBrMlRWUmpNazFFUlhwUFZFRjRUVWd3TG1GeWVXNWFRVFpvTlVJd1JHcHROM3AxUzIxdGQwa3diVTFCU1VSU2JEQjJjVGhUWVd4NFJrbGxYM3BCU25aTU0wOWpTRmhSV25KSVRuZFhURWREVFRaMFZ6VkdOR1kxYlRkaU5VaHdRMEo1UkZwRVkwNXRVRzg0VkZCSExXRlZXbXhtVkc5UlZFdDRlVWg0T1U5dGFEWTViR05uVDJsNk5rcFZVMmRyUzNSdmJWOUZObFpMZURkcFpGRjNTbXRoUTFCalJtaHpNMjE0WDBsNU1TMVZWazlrYlZCd2RHZHNkM0pDTjNabWFIcEpWbk4xWjFKRGNFZDNXVFJWWkROc2QyZDVURTE0WnpOMlpWZ3dWSFJ4ZVhodFFWSkNZbDkwYjNoNlFYZFlRVEpoVm1kT1RYSnFjRXN5Wm05UGNXZHRXR2sxWXpWbGRqazVNa1Z2TUZWc09EUXdkVlE1WVdwWWJTMUNVM2RyT1hKeVpYVnZja2RtWTJkRVFYa3laMEUxTkVoVFJWTjZWMEZLWjFsWWVEVnZXbGx5VG5KUE9VRjBXRmt6TVVnNU9HcFpibkZQVWxwVmFEQnVkVkpWYTNWTlRWaEVPRmR4UVNKOWZYMC5oT3dkZm0wdnJKOUtFVHlkS2YwRjd6Y0ZDN3loRjk0RDgyS0F5LXdGY2NfOWtLNzVSZjlOdENSYnJQVDJHeUlnSHEwRVE5LWxiWTNmS1dmb2FtdGRxTHBqMnZQSXc3UzJWcWNQYkNESnFuckF6djk2UU0zUHViX21XdnZMLU50bzBIWE5DM3hnMzNCSVF1cmtIMURmU1k1dllDTUpiaUpaWWpITU1FN18xQTV1OXdWT2NyXzV1dWNxM1RDdFJ3NmhRTkdsWlZfY0ZVa0FmLUxzVTlha0VIWEhWRWpmZ1ZLenp3MU1zRy14THItMzI3QUFpMFpHc2pzR3NJR3JJc1VrTm9xN2hYZTB3TE9PaE1iVjMyNk1OZ2dFcUo4UVpqOUxEVThoTnpFZkFUeDV3QXFfQ1JYZGFBcnhlOXhOcnVRMjJlT3c5UDlyWmRsTG93d2g5Y2V0SXciLCJhY2Nlc3NfdG9rZW4iOiIifX19.ki_KpJTxg7Im2DDmE5GKWL2WJEMBwMeuk3dtFe1JMWY&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/bJ9E1npXshDe4oB2x7pFtGhFTGO1RV6bVVruyzfLBrm/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiMDVjZmUwLWIzZDctNGZhMi1iNmY5LTYzNTIwMjM4OTVjM0BleGFtcGxlLmV4YW1wbGUiLCJzdWIiOiJmOTc1M2FmMy05MmU3LTQ0NTctODAzZS00YTkxNTBmYTExMDciLCJuYW1lIjoiR2hvc3QiLCJzY29wZXMiOlsib3BlbmlkIiwib2ZmbGluZV9hY2Nlc3MiLCJwcm9maWxlIiwiZW1haWwiLCJ3YWxsZXQiLCJmb3J3YXJkZWRUb2tlbnMiLCJwYXNza2V5Il0sImF1ZCI6ImRiN2U4OGMxLWQ5OTctNDA5OC04YzA1LTNjMjhjMDE3NzFmMyIsImlkVG9rZW5UVEwiOjM2MDAsImFjY2Vzc1Rva2VuVFRMIjozNjAwLCJyZWZyZXNoVG9rZW5UVEwiOjg2NDAwLCJjbGllbnRJZCI6ImRlbW8tY2xpZW50LTEiLCJwcm92aWRlciI6ImR1bW15IiwiZmxvd19pZCI6Im9hdXRoLWxvZ2luLTEwNmM4M2RiLTg3M2MtNGY3YS1hYmNiLTRjNmU3MGNiNWY5NCIsImxvZ2luX2Zsb3dfaWQiOiI1Nzg0MzNjZS02NzMxLTQ4YjMtODBiZS0zYjQzNGViNzEzZTYiLCJkaXNwbGF5X21vZGUiOiJwb3B1cCIsImZsb3dfdHlwZSI6Im9pZGMiLCJvcmlnaW4iOiJodHRwczovL2F1dGgtZGV2LmNpdmljLmNvbSIsImZvcndhcmRlZFRva2VucyI6eyJkdW1teSI6eyJpZF90b2tlbiI6ImV5SmhiR2NpT2lKU1V6STFOaUlzSW5SNWNDSTZJa3BYVkNJc0ltdHBaQ0k2SW1zeEluMC5leUpwYzNNaU9pSm9kSFJ3Y3pvdkwyaGxZV1JsY2kxd2NtOTRlUzVrWVc1cFpXeGlhMlZzYkdWb1pYSXpOems1TG5kdmNtdGxjbk11WkdWMklpd2lZWFZrSWpvaWRHVnVZVzUwTFRFdFlYQndMVEVpTENKemRXSWlPaUpoWWpBMVkyWmxNQzFpTTJRM0xUUm1ZVEl0WWpabU9TMDJNelV5TURJek9EazFZek1pTENKbGJXRnBiQ0k2SW1GaU1EVmpabVV3TFdJelpEY3ROR1poTWkxaU5tWTVMVFl6TlRJd01qTTRPVFZqTTBCbGVHRnRjR3hsTG1WNFlXMXdiR1VpTENKdWIyNWpaU0k2SWpGaE56TXlOR1ppTFRabE9HRXROREF6TnkxaVltSmtMVGMzTXpZNVptVTFNekkwWlNJc0ltbGhkQ0k2TVRjMk1ERXpOVFF4TUN3aVpYaHdJam94TnpZd01UTTVNREV3TENKbWIzSjNZWEprWldSVWIydGxibk1pT25zaVpIVnRiWGtpT25zaWFXUmZkRzlyWlc0aU9pSmxlVXBvWWtkamFVOXBTbE5WZWtreFRtbEpjMGx1VWpWalEwazJTV3R3V0ZaRFNYTkpiWFJ3V2tOSk5rbHRjM2hKYmpBdVpYbEtjR016VFdsUGFVcHZaRWhTZDJONmIzWk1NbWhzV1ZkU2JHTnBNWGRqYlRrMFpWTTFhMWxYTlhCYVYzaHBZVEpXYzJKSFZtOWFXRWw2VG5wck5VeHVaSFpqYlhSc1kyNU5kVnBIVmpKSmFYZHBZek5XYVVscWIybFpWMGwzVGxkT2JWcFVRWFJaYWs1clRua3dNRnB0UlhsTVYwa3lXbXByZEU1cVRURk5ha0Y1VFhwbk5VNVhUWHBKYVhkcFdsY3hhR0ZYZDJsUGFVcG9XV3BCTVZreVdteE5RekZwVFRKUk0weFVVbTFaVkVsMFdXcGFiVTlUTURKTmVsVjVUVVJKZWs5RWF6RlplazVCV2xob2FHSllRbk5hVXpWc1pVZEdkR05IZUd4SmFYZHBZbTA1ZFZreVZXbFBhVWw0V1ZSamVrMXFVbTFaYVRBeVdsUm9hRXhVVVhkTmVtTjBXVzFLYVZwRE1ETk9lazB5VDFkYWJFNVVUWGxPUjFWcFRFTkthR1JYVVdsUGFVcHZaRWhTZDA5cE9IWmlSemxxV1ZkNGIySXpUakJQYWsxM1RVUkJhVXhEU25CWldGRnBUMnBGTTA1cVFYaE5lbFV3VFZSQmMwbHRWalJqUTBrMlRWUmpNazFFUlhwUFZFRjRUVWd3TG1GeWVXNWFRVFpvTlVJd1JHcHROM3AxUzIxdGQwa3diVTFCU1VSU2JEQjJjVGhUWVd4NFJrbGxYM3BCU25aTU0wOWpTRmhSV25KSVRuZFhURWREVFRaMFZ6VkdOR1kxYlRkaU5VaHdRMEo1UkZwRVkwNXRVRzg0VkZCSExXRlZXbXhtVkc5UlZFdDRlVWg0T1U5dGFEWTViR05uVDJsNk5rcFZVMmRyUzNSdmJWOUZObFpMZURkcFpGRjNTbXRoUTFCalJtaHpNMjE0WDBsNU1TMVZWazlrYlZCd2RHZHNkM0pDTjNabWFIcEpWbk4xWjFKRGNFZDNXVFJWWkROc2QyZDVURTE0WnpOMlpWZ3dWSFJ4ZVhodFFWSkNZbDkwYjNoNlFYZFlRVEpoVm1kT1RYSnFjRXN5Wm05UGNXZHRXR2sxWXpWbGRqazVNa1Z2TUZWc09EUXdkVlE1WVdwWWJTMUNVM2RyT1hKeVpYVnZja2RtWTJkRVFYa3laMEUxTkVoVFJWTjZWMEZLWjFsWWVEVnZXbGx5VG5KUE9VRjBXRmt6TVVnNU9HcFpibkZQVWxwVmFEQnVkVkpWYTNWTlRWaEVPRmR4UVNKOWZYMC5oT3dkZm0wdnJKOUtFVHlkS2YwRjd6Y0ZDN3loRjk0RDgyS0F5LXdGY2NfOWtLNzVSZjlOdENSYnJQVDJHeUlnSHEwRVE5LWxiWTNmS1dmb2FtdGRxTHBqMnZQSXc3UzJWcWNQYkNESnFuckF6djk2UU0zUHViX21XdnZMLU50bzBIWE5DM3hnMzNCSVF1cmtIMURmU1k1dllDTUpiaUpaWWpITU1FN18xQTV1OXdWT2NyXzV1dWNxM1RDdFJ3NmhRTkdsWlZfY0ZVa0FmLUxzVTlha0VIWEhWRWpmZ1ZLenp3MU1zRy14THItMzI3QUFpMFpHc2pzR3NJR3JJc1VrTm9xN2hYZTB3TE9PaE1iVjMyNk1OZ2dFcUo4UVpqOUxEVThoTnpFZkFUeDV3QXFfQ1JYZGFBcnhlOXhOcnVRMjJlT3c5UDlyWmRsTG93d2g5Y2V0SXciLCJhY2Nlc3NfdG9rZW4iOiIifX19.ki_KpJTxg7Im2DDmE5GKWL2WJEMBwMeuk3dtFe1JMWY&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/bJ9E1npXshDe4oB2x7pFtGhFTGO1RV6bVVruyzfLBrm
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/bJ9E1npXshDe4oB2x7pFtGhFTGO1RV6bVVruyzfLBrm
+[REQUEST FAILED] POST https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us - net::ERR_ABORTED
+[REQUEST FAILED] POST https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us - net::ERR_ABORTED
+[REQUEST FAILED] POST https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us - net::ERR_ABORTED
+[REQUEST FAILED] POST https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us - net::ERR_ABORTED
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] onSignIn callback executed: {options: Object, timestamp: 2025-10-10T22:30:12.821Z}
+[PAGE CONSOLE] [log] onSignIn callback executed: {options: Object, timestamp: 2025-10-10T22:30:12.821Z}
+[PAGE CONSOLE] [log] onSignIn callback executed: {options: Object, timestamp: 2025-10-10T22:30:12.821Z}
+[PAGE CONSOLE] [log] onSignIn callback executed: {options: Object, timestamp: 2025-10-10T22:30:12.821Z}
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/session/end/confirm
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/session/end/confirm
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[PAGE CONSOLE] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?client_id=demo-client-1&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&response_type=code&scope=openid+profile+email+offline_access&state=eyJ1dWlkIjoiZDg1YTMyYzItZDJkOC00NDU4LTkxMWUtMTYzOGYwY2QxZDQ2IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjMifQ%3D%3D&code_challenge=7Kn5aJXw1z0T1Cf7bl2Og7CvpD3isYAdUWwkcrntJ4I&code_challenge_method=S256&prompt=consent
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?client_id=demo-client-1&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&response_type=code&scope=openid+profile+email+offline_access&state=eyJ1dWlkIjoiZDg1YTMyYzItZDJkOC00NDU4LTkxMWUtMTYzOGYwY2QxZDQ2IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjMifQ%3D%3D&code_challenge=7Kn5aJXw1z0T1Cf7bl2Og7CvpD3isYAdUWwkcrntJ4I&code_challenge_method=S256&prompt=consent
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.

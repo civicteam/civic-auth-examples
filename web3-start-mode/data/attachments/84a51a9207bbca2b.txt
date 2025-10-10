@@ -1,0 +1,109 @@
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 401 (Unauthorized)
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 401 (Unauthorized)
+[PAGE CONSOLE] [error] TypeError: Object.values requires that input parameter not be null or undefined
+[PAGE CONSOLE] [error] TypeError: Object.values requires that input parameter not be null or undefined
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?client_id=demo-client-1&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&response_type=code&scope=openid+profile+email+offline_access&state=eyJ1dWlkIjoiYzdjNDA4MjEtNDEwMi00ZmU2LThlNjMtNTVhMzA3YTMyNTM1IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjMifQ%3D%3D&code_challenge=eO0MCv4uQugrHeXm5j7ccVhzB2SjheEoXca9Q8VYouM&code_challenge_method=S256&prompt=consent
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?client_id=demo-client-1&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&response_type=code&scope=openid+profile+email+offline_access&state=eyJ1dWlkIjoiYzdjNDA4MjEtNDEwMi00ZmU2LThlNjMtNTVhMzA3YTMyNTM1IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjMifQ%3D%3D&code_challenge=eO0MCv4uQugrHeXm5j7ccVhzB2SjheEoXca9Q8VYouM&code_challenge_method=S256&prompt=consent
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[PAGE CONSOLE] [debug] Storage access not available - passkey discovery may be limited
+[PAGE CONSOLE] [debug] Storage access not available - passkey discovery may be limited
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at unknown (http://localhost:3000/assets/index-Dp3ZJFWL.js:126:319568)
+    at forEach (:1:11)
+    at replayBlockedMessages (http://localhost:3000/assets/index-Dp3ZJFWL.js:126:319499)
+    at unknown (http://localhost:3000/assets/index-Dp3ZJFWL.js:164:404)
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at unknown (http://localhost:3000/assets/index-Dp3ZJFWL.js:126:319568)
+    at forEach (:1:11)
+    at replayBlockedMessages (http://localhost:3000/assets/index-Dp3ZJFWL.js:126:319499)
+    at unknown (http://localhost:3000/assets/index-Dp3ZJFWL.js:164:404)
+[PAGE CONSOLE] [warning] The resource http://localhost:3000/assets/index-Dp3ZJFWL.js was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it wasn't preloaded for nothing.
+[PAGE CONSOLE] [warning] The resource http://localhost:3000/assets/index-Dp3ZJFWL.js was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it wasn't preloaded for nothing.
+[BAD RESPONSE] 429 https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us
+[BAD RESPONSE] 429 https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 429 (Unknown Error)
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 429 (Unknown Error)
+[RESPONSE BODY] {"detail":"Sentry dropped data due to a quota or internal rate limit being reached. This will not affect your application. See https://docs.sentry.io/product/accounts/quotas/ for more information."}
+[RESPONSE BODY] {"detail":"Sentry dropped data due to a quota or internal rate limit being reached. This will not affect your application. See https://docs.sentry.io/product/accounts/quotas/ for more information."}
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at handleMessage (http://localhost:3000/assets/index-Dp3ZJFWL.js:126:317745)
+    at unknown (http://localhost:3000/assets/index-Dp3ZJFWL.js:126:317040)
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at handleMessage (http://localhost:3000/assets/index-Dp3ZJFWL.js:126:317745)
+    at unknown (http://localhost:3000/assets/index-Dp3ZJFWL.js:126:317040)
+Email slot count: 1
+Checking URL: https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiYzdjNDA4MjEtNDEwMi00ZmU2LThlNjMtNTVhMzA3YTMyNTM1IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjMifQ%3D%3D&client_id=demo-client-1&source_system_id=hxt7BfJhJb969vCepKIzmt6_2WqmaLloH_rP3Haml7C&scope=openid+profile+email+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&flow_id=oauth-login-d44a4792-965d-4708-b5f0-d34129e67853, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/email?loginFlowId=9877decd-4d65-4a9b-af39-b53916ff8be9&client_id=demo-client-1&source_system_id=hxt7BfJhJb969vCepKIzmt6_2WqmaLloH_rP3Haml7C&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=293294%40simulator.amazonses.com&_rsc=1kco5, hasLoginFlowId: true, isEmailEndpoint: true, isVerifyEndpoint: false
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=9877decd-4d65-4a9b-af39-b53916ff8be9&client_id=demo-client-1&source_system_id=hxt7BfJhJb969vCepKIzmt6_2WqmaLloH_rP3Haml7C&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=293294%40simulator.amazonses.com&_rsc=1kco5
+Extracted loginFlowId: 9877decd-4d65-4a9b-af39-b53916ff8be9
+[PAGE CONSOLE] [log] Loading login flow data...
+[PAGE CONSOLE] [log] Loading login flow data...
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at handleMessage (http://localhost:3000/assets/index-Dp3ZJFWL.js:126:317745)
+    at unknown (http://localhost:3000/assets/index-Dp3ZJFWL.js:126:317040)
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at handleMessage (http://localhost:3000/assets/index-Dp3ZJFWL.js:126:317745)
+    at unknown (http://localhost:3000/assets/index-Dp3ZJFWL.js:126:317040)
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: 9877decd-4d65-4a9b-af39-b53916ff8be9
+Found verification code for loginFlowId 9877decd-4d65-4a9b-af39-b53916ff8be9: 162233
+Database disconnected
+Retrieved verification code: 162233 for loginFlowId: 9877decd-4d65-4a9b-af39-b53916ff8be9
+[BAD RESPONSE] 302 https://auth-dev.civic.com/login/api/callback/email?state=9877decd-4d65-4a9b-af39-b53916ff8be9&code=162233
+[BAD RESPONSE] 302 https://auth-dev.civic.com/login/api/callback/email?state=9877decd-4d65-4a9b-af39-b53916ff8be9&code=162233
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/hxt7BfJhJb969vCepKIzmt6_2WqmaLloH_rP3Haml7C/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjI5MzI5NEBzaW11bGF0b3IuYW1hem9uc2VzLmNvbSIsInNjb3BlcyI6WyJvcGVuaWQiLCJvZmZsaW5lX2FjY2VzcyIsInByb2ZpbGUiLCJlbWFpbCIsIndhbGxldCIsImZvcndhcmRlZFRva2VucyIsInBhc3NrZXkiXSwiYXVkIjoiZGI3ZTg4YzEtZDk5Ny00MDk4LThjMDUtM2MyOGMwMTc3MWYzIiwic3ViIjoiYWI4YjY3MzgtMjQwMC00ZTRjLTk5Y2UtZjViOTZmZWI1ZGI3IiwiaWRUb2tlblRUTCI6MzYwMCwiYWNjZXNzVG9rZW5UVEwiOjM2MDAsInJlZnJlc2hUb2tlblRUTCI6ODY0MDAsImNsaWVudElkIjoiZGVtby1jbGllbnQtMSIsInByb3ZpZGVyIjoiZW1haWwiLCJmbG93X2lkIjoib2F1dGgtbG9naW4tZDQ0YTQ3OTItOTY1ZC00NzA4LWI1ZjAtZDM0MTI5ZTY3ODUzIiwibG9naW5fZmxvd19pZCI6Ijk4NzdkZWNkLTRkNjUtNGE5Yi1hZjM5LWI1MzkxNmZmOGJlOSIsImRpc3BsYXlfbW9kZSI6InJlZGlyZWN0IiwiZmxvd190eXBlIjoiZW1haWxDb2RlIiwib3JpZ2luIjoiaHR0cHM6Ly9hdXRoLWRldi5jaXZpYy5jb20iLCJmb3J3YXJkZWRUb2tlbnMiOnsiZW1haWwiOnt9fX0.XeXYTMr-pyfo-uRlkF5s7-6mV2PsXR1d0nhaS7ruy-E&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/hxt7BfJhJb969vCepKIzmt6_2WqmaLloH_rP3Haml7C/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjI5MzI5NEBzaW11bGF0b3IuYW1hem9uc2VzLmNvbSIsInNjb3BlcyI6WyJvcGVuaWQiLCJvZmZsaW5lX2FjY2VzcyIsInByb2ZpbGUiLCJlbWFpbCIsIndhbGxldCIsImZvcndhcmRlZFRva2VucyIsInBhc3NrZXkiXSwiYXVkIjoiZGI3ZTg4YzEtZDk5Ny00MDk4LThjMDUtM2MyOGMwMTc3MWYzIiwic3ViIjoiYWI4YjY3MzgtMjQwMC00ZTRjLTk5Y2UtZjViOTZmZWI1ZGI3IiwiaWRUb2tlblRUTCI6MzYwMCwiYWNjZXNzVG9rZW5UVEwiOjM2MDAsInJlZnJlc2hUb2tlblRUTCI6ODY0MDAsImNsaWVudElkIjoiZGVtby1jbGllbnQtMSIsInByb3ZpZGVyIjoiZW1haWwiLCJmbG93X2lkIjoib2F1dGgtbG9naW4tZDQ0YTQ3OTItOTY1ZC00NzA4LWI1ZjAtZDM0MTI5ZTY3ODUzIiwibG9naW5fZmxvd19pZCI6Ijk4NzdkZWNkLTRkNjUtNGE5Yi1hZjM5LWI1MzkxNmZmOGJlOSIsImRpc3BsYXlfbW9kZSI6InJlZGlyZWN0IiwiZmxvd190eXBlIjoiZW1haWxDb2RlIiwib3JpZ2luIjoiaHR0cHM6Ly9hdXRoLWRldi5jaXZpYy5jb20iLCJmb3J3YXJkZWRUb2tlbnMiOnsiZW1haWwiOnt9fX0.XeXYTMr-pyfo-uRlkF5s7-6mV2PsXR1d0nhaS7ruy-E&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/hxt7BfJhJb969vCepKIzmt6_2WqmaLloH_rP3Haml7C
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/hxt7BfJhJb969vCepKIzmt6_2WqmaLloH_rP3Haml7C
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 401 (Unauthorized)
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 401 (Unauthorized)
+[PAGE CONSOLE] [error] TypeError: Object.values requires that input parameter not be null or undefined
+[PAGE CONSOLE] [error] TypeError: Object.values requires that input parameter not be null or undefined
+[PAGE CONSOLE] [error] Preflight response is not successful. Status code: 503
+[PAGE CONSOLE] [error] Preflight response is not successful. Status code: 503
+[PAGE ERROR] /sepolia-preconf.base.org/ due to access control checks.
+[ERROR STACK] 
+[PAGE ERROR] /sepolia-preconf.base.org/ due to access control checks.
+[ERROR STACK] 
+[REQUEST FAILED] POST https://sepolia-preconf.base.org/ - Preflight response is not successful. Status code: 503
+[REQUEST FAILED] POST https://sepolia-preconf.base.org/ - Preflight response is not successful. Status code: 503
+[PAGE CONSOLE] [error] Failed to load resource: Preflight response is not successful. Status code: 503
+[PAGE CONSOLE] [error] Failed to load resource: Preflight response is not successful. Status code: 503
+[PAGE CONSOLE] [error] Failed to build MetakeepWeb3Client TypeError: Load failed
+[PAGE CONSOLE] [error] Failed to build MetakeepWeb3Client TypeError: Load failed
+[PAGE CONSOLE] [error] Viewport argument key "interactive-widget" not recognized and ignored.
+[PAGE CONSOLE] [error] Viewport argument key "interactive-widget" not recognized and ignored.
+[PAGE CONSOLE] [error] Viewport argument key "interactive-widget" not recognized and ignored.
+[PAGE CONSOLE] [error] Viewport argument key "interactive-widget" not recognized and ignored.
+[PAGE CONSOLE] [info] Successfully preconnected to https://fonts.gstatic.com/
+[PAGE CONSOLE] [info] Successfully preconnected to https://fonts.gstatic.com/
+[PAGE CONSOLE] [info] Successfully preconnected to https://fonts.gstatic.com/
+[PAGE CONSOLE] [info] Successfully preconnected to https://fonts.gstatic.com/

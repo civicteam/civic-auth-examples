@@ -1,0 +1,74 @@
+[PAGE CONSOLE] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[PAGE CONSOLE] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 15ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 15ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 41ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 41ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 79ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 79ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 57ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 57ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 59ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 59ms
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?response_type=code&client_id=demo-client-1&state=eyJ1dWlkIjoiODg4YjNkMjYtOWU4ZS00NGM0LTg5ODktMDRjNGI0ZjRlNDhhIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&code_challenge=CyTaYbTDvDTUjmy2z1wdR24UH6rtDooY4G-qz-MqoRg&code_challenge_method=S256&prompt=consent
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?response_type=code&client_id=demo-client-1&state=eyJ1dWlkIjoiODg4YjNkMjYtOWU4ZS00NGM0LTg5ODktMDRjNGI0ZjRlNDhhIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&code_challenge=CyTaYbTDvDTUjmy2z1wdR24UH6rtDooY4G-qz-MqoRg&code_challenge_method=S256&prompt=consent
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[BAD RESPONSE] 429 https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us
+[BAD RESPONSE] 429 https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 429 ()
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 429 ()
+[RESPONSE BODY] {"detail":"Sentry dropped data due to a quota or internal rate limit being reached. This will not affect your application. See https://docs.sentry.io/product/accounts/quotas/ for more information."}
+[RESPONSE BODY] {"detail":"Sentry dropped data due to a quota or internal rate limit being reached. This will not affect your application. See https://docs.sentry.io/product/accounts/quotas/ for more information."}
+[REQUEST FAILED] POST https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiODg4YjNkMjYtOWU4ZS00NGM0LTg5ODktMDRjNGI0ZjRlNDhhIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&client_id=demo-client-1&source_system_id=VP2ljU8r3JM996RQAxFb9peL4XWGkp6KNOFV0EqT6hd&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&flow_id=oauth-login-d8868890-6d08-4389-b269-cc78964dbb31 - net::ERR_ABORTED
+[REQUEST FAILED] POST https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiODg4YjNkMjYtOWU4ZS00NGM0LTg5ODktMDRjNGI0ZjRlNDhhIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuMyJ9&client_id=demo-client-1&source_system_id=VP2ljU8r3JM996RQAxFb9peL4XWGkp6KNOFV0EqT6hd&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&flow_id=oauth-login-d8868890-6d08-4389-b269-cc78964dbb31 - net::ERR_ABORTED
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/VP2ljU8r3JM996RQAxFb9peL4XWGkp6KNOFV0EqT6hd/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiNDA1YWE5OS02M2E4LTQxYjEtYTNkZS1kZDgwYjMzOTcwYTEiLCJlbWFpbCI6IjM5YThmMTQ0LTc4NjYtNDI4ZC04MmI1LTgwYTBiYTE0ZTJiM0BleGFtcGxlLmV4YW1wbGUiLCJuYW1lIjoiR2hvc3QiLCJzY29wZXMiOlsib3BlbmlkIiwib2ZmbGluZV9hY2Nlc3MiLCJwcm9maWxlIiwiZW1haWwiLCJ3YWxsZXQiLCJmb3J3YXJkZWRUb2tlbnMiLCJwYXNza2V5Il0sImF1ZCI6ImRiN2U4OGMxLWQ5OTctNDA5OC04YzA1LTNjMjhjMDE3NzFmMyIsImlkVG9rZW5UVEwiOjM2MDAsImFjY2Vzc1Rva2VuVFRMIjozNjAwLCJyZWZyZXNoVG9rZW5UVEwiOjg2NDAwLCJjbGllbnRJZCI6ImRlbW8tY2xpZW50LTEiLCJwcm92aWRlciI6ImR1bW15IiwiZmxvd19pZCI6Im9hdXRoLWxvZ2luLWQ4ODY4ODkwLTZkMDgtNDM4OS1iMjY5LWNjNzg5NjRkYmIzMSIsImxvZ2luX2Zsb3dfaWQiOiI5ODM3YjE0NC1iMzNkLTQzYjAtOTFjZC05NzI3MTZhMjkzNzMiLCJkaXNwbGF5X21vZGUiOiJwb3B1cCIsImZsb3dfdHlwZSI6Im9pZGMiLCJvcmlnaW4iOiJodHRwczovL2F1dGgtZGV2LmNpdmljLmNvbSIsImZvcndhcmRlZFRva2VucyI6eyJkdW1teSI6eyJpZF90b2tlbiI6ImV5SmhiR2NpT2lKU1V6STFOaUlzSW5SNWNDSTZJa3BYVkNJc0ltdHBaQ0k2SW1zeEluMC5leUpwYzNNaU9pSm9kSFJ3Y3pvdkwyaGxZV1JsY2kxd2NtOTRlUzVrWVc1cFpXeGlhMlZzYkdWb1pYSXpOems1TG5kdmNtdGxjbk11WkdWMklpd2lZWFZrSWpvaWRHVnVZVzUwTFRFdFlYQndMVEVpTENKemRXSWlPaUl6T1dFNFpqRTBOQzAzT0RZMkxUUXlPR1F0T0RKaU5TMDRNR0V3WW1FeE5HVXlZak1pTENKbGJXRnBiQ0k2SWpNNVlUaG1NVFEwTFRjNE5qWXROREk0WkMwNE1tSTFMVGd3WVRCaVlURTBaVEppTTBCbGVHRnRjR3hsTG1WNFlXMXdiR1VpTENKdWIyNWpaU0k2SWpJM1pqSTBZek01TFRWak5qWXRORGs0TnkwNU1tSTFMVGt3TWpVMVpqVXpNR1ZsTWlJc0ltbGhkQ0k2TVRjMk1ERXpOVFE0TUN3aVpYaHdJam94TnpZd01UTTVNRGd3TENKbWIzSjNZWEprWldSVWIydGxibk1pT25zaVpIVnRiWGtpT25zaWFXUmZkRzlyWlc0aU9pSmxlVXBvWWtkamFVOXBTbE5WZWtreFRtbEpjMGx1VWpWalEwazJTV3R3V0ZaRFNYTkpiWFJ3V2tOSk5rbHRjM2hKYmpBdVpYbEtjR016VFdsUGFVcHZaRWhTZDJONmIzWk1NbWhzV1ZkU2JHTnBNWGRqYlRrMFpWTTFhMWxYTlhCYVYzaHBZVEpXYzJKSFZtOWFXRWw2VG5wck5VeHVaSFpqYlhSc1kyNU5kVnBIVmpKSmFYZHBZek5XYVVscWIybE5lbXhvVDBkWmVFNUVVWFJPZW1jeVRta3dNRTFxYUd0TVZHZDVXV3BWZEU5RVFtaE5SMHBvVFZSU2JFMXRTWHBKYVhkcFdsY3hhR0ZYZDJsUGFVbDZUMWRGTkZwcVJUQk9RekF6VDBSWk1reFVVWGxQUjFGMFQwUkthVTVUTURSTlIwVjNXVzFGZUU1SFZYbFphazVCV2xob2FHSllRbk5hVXpWc1pVZEdkR05IZUd4SmFYZHBZbTA1ZFZreVZXbFBhVWw1VGpKWmVVNUhUWHBQVXpBeFdYcFpNa3hVVVRWUFJHTjBUMVJLYVU1VE1EVk5SRWt4VGxkWk1VMTZRbXhhVkVscFRFTkthR1JYVVdsUGFVcHZaRWhTZDA5cE9IWmlSemxxV1ZkNGIySXpUakJQYWsxM1RVUkJhVXhEU25CWldGRnBUMnBGTTA1cVFYaE5lbFV3VDBSQmMwbHRWalJqUTBrMlRWUmpNazFFUlhwUFZFRTBUVWd3TG1WU1dFVklMWGhaU1V4U2FYb3dZV3BwU1cxWmQwa3hOMmRpYWtFNWQzbE9PUzFOZVZWT1ZrRkNMVmszY1V0RGQyUjNhM0JJU1RKYVJqSkljVU40VGtKdmEzWkVZMTh0VGpaWU9WUlZaMmhrYVhNME1IRmFSbFF4ZWpZMFdHTm5RVVZpZEMxQ2FWUjFlbFZmWkhkalEyMWhSRWRIUWtsSGFuVjJlVGQyZUhWSVJXSmtSMFJQY2xReFYwaFJUMGd3YmtwUldUWnJZMGRoU2pKVlpqSnFRazQwT0ZoQmEyWTVZVEo2TWtSVk5WVnBVVU5LVlhZeGJUQjNZV2hzVkMxcmIxVXdkVEkzZUdaV00zazBUa2RGWDB4QmJWUlBPVVZQYmxwYU1EVlpaVUl6Vms1SU5HRmhhRE5YV2s4emEzVnJNamhVYUZSM1pXdEZWQzFQYzBRMk5XOHlObnB0WWpsNVpXMUNUWE52T0hwWVFUQjBhVTVHVEVSRmFURTFjMGwxUzBGRVRXTm9UMnRDTFhwMWREZHFabkJ6WTBoaU0zTnZlbGQwUW5jNGNVVnJUMU5QUW5jd0xYZEVNbWRNUWpZdFJtOUxVVGd5VVNKOWZYMC5YT2FLeXkzMjB3Nzk4ZVFEVS1mZ3A4VXZtM1BSNFRNaDlJSFM5UlVKcVhvMXBTUWstNm13dmZGUnB2TGRWNE9TNV9ZekI3QjRzeF9qaW5RYmtWT3hlOThJdDFLSkg3WC1WU1NhclRmemtMTlRhWVd6WUpPdzBJUjdTWkoxUFdobDBTVmRuVzNyeWtoODFPZHFMY0Noc3MyY3NXZ2hVNjFFWkJ0VjZIcWFBdkNRS2sxTXJWcXBmbkpyNWNBTDZ1TTRvQklkeTA2d2VNQUZhNnFsQk9RaWZCalpDXzZXcHRteTBEcmhKdHFJcTVQWEdFeEo3UHBTQVZDZWJXa1FXRG4tSF9ITFo3SXFkUnViUG9JT0p5MEhtcmxuZEk5RFJZdU1GTzktUUFtQVVKcXA0X0VuTk45OXJIOFp1TndGYjJLcG1OcC1mdjlQLTlYaEdINURhVENoLVEiLCJhY2Nlc3NfdG9rZW4iOiIifX19.xap6Mow21dBGEPtbS71V9vxa-zu1v66__ed8ktTRliY&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/VP2ljU8r3JM996RQAxFb9peL4XWGkp6KNOFV0EqT6hd/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiNDA1YWE5OS02M2E4LTQxYjEtYTNkZS1kZDgwYjMzOTcwYTEiLCJlbWFpbCI6IjM5YThmMTQ0LTc4NjYtNDI4ZC04MmI1LTgwYTBiYTE0ZTJiM0BleGFtcGxlLmV4YW1wbGUiLCJuYW1lIjoiR2hvc3QiLCJzY29wZXMiOlsib3BlbmlkIiwib2ZmbGluZV9hY2Nlc3MiLCJwcm9maWxlIiwiZW1haWwiLCJ3YWxsZXQiLCJmb3J3YXJkZWRUb2tlbnMiLCJwYXNza2V5Il0sImF1ZCI6ImRiN2U4OGMxLWQ5OTctNDA5OC04YzA1LTNjMjhjMDE3NzFmMyIsImlkVG9rZW5UVEwiOjM2MDAsImFjY2Vzc1Rva2VuVFRMIjozNjAwLCJyZWZyZXNoVG9rZW5UVEwiOjg2NDAwLCJjbGllbnRJZCI6ImRlbW8tY2xpZW50LTEiLCJwcm92aWRlciI6ImR1bW15IiwiZmxvd19pZCI6Im9hdXRoLWxvZ2luLWQ4ODY4ODkwLTZkMDgtNDM4OS1iMjY5LWNjNzg5NjRkYmIzMSIsImxvZ2luX2Zsb3dfaWQiOiI5ODM3YjE0NC1iMzNkLTQzYjAtOTFjZC05NzI3MTZhMjkzNzMiLCJkaXNwbGF5X21vZGUiOiJwb3B1cCIsImZsb3dfdHlwZSI6Im9pZGMiLCJvcmlnaW4iOiJodHRwczovL2F1dGgtZGV2LmNpdmljLmNvbSIsImZvcndhcmRlZFRva2VucyI6eyJkdW1teSI6eyJpZF90b2tlbiI6ImV5SmhiR2NpT2lKU1V6STFOaUlzSW5SNWNDSTZJa3BYVkNJc0ltdHBaQ0k2SW1zeEluMC5leUpwYzNNaU9pSm9kSFJ3Y3pvdkwyaGxZV1JsY2kxd2NtOTRlUzVrWVc1cFpXeGlhMlZzYkdWb1pYSXpOems1TG5kdmNtdGxjbk11WkdWMklpd2lZWFZrSWpvaWRHVnVZVzUwTFRFdFlYQndMVEVpTENKemRXSWlPaUl6T1dFNFpqRTBOQzAzT0RZMkxUUXlPR1F0T0RKaU5TMDRNR0V3WW1FeE5HVXlZak1pTENKbGJXRnBiQ0k2SWpNNVlUaG1NVFEwTFRjNE5qWXROREk0WkMwNE1tSTFMVGd3WVRCaVlURTBaVEppTTBCbGVHRnRjR3hsTG1WNFlXMXdiR1VpTENKdWIyNWpaU0k2SWpJM1pqSTBZek01TFRWak5qWXRORGs0TnkwNU1tSTFMVGt3TWpVMVpqVXpNR1ZsTWlJc0ltbGhkQ0k2TVRjMk1ERXpOVFE0TUN3aVpYaHdJam94TnpZd01UTTVNRGd3TENKbWIzSjNZWEprWldSVWIydGxibk1pT25zaVpIVnRiWGtpT25zaWFXUmZkRzlyWlc0aU9pSmxlVXBvWWtkamFVOXBTbE5WZWtreFRtbEpjMGx1VWpWalEwazJTV3R3V0ZaRFNYTkpiWFJ3V2tOSk5rbHRjM2hKYmpBdVpYbEtjR016VFdsUGFVcHZaRWhTZDJONmIzWk1NbWhzV1ZkU2JHTnBNWGRqYlRrMFpWTTFhMWxYTlhCYVYzaHBZVEpXYzJKSFZtOWFXRWw2VG5wck5VeHVaSFpqYlhSc1kyNU5kVnBIVmpKSmFYZHBZek5XYVVscWIybE5lbXhvVDBkWmVFNUVVWFJPZW1jeVRta3dNRTFxYUd0TVZHZDVXV3BWZEU5RVFtaE5SMHBvVFZSU2JFMXRTWHBKYVhkcFdsY3hhR0ZYZDJsUGFVbDZUMWRGTkZwcVJUQk9RekF6VDBSWk1reFVVWGxQUjFGMFQwUkthVTVUTURSTlIwVjNXVzFGZUU1SFZYbFphazVCV2xob2FHSllRbk5hVXpWc1pVZEdkR05IZUd4SmFYZHBZbTA1ZFZreVZXbFBhVWw1VGpKWmVVNUhUWHBQVXpBeFdYcFpNa3hVVVRWUFJHTjBUMVJLYVU1VE1EVk5SRWt4VGxkWk1VMTZRbXhhVkVscFRFTkthR1JYVVdsUGFVcHZaRWhTZDA5cE9IWmlSemxxV1ZkNGIySXpUakJQYWsxM1RVUkJhVXhEU25CWldGRnBUMnBGTTA1cVFYaE5lbFV3VDBSQmMwbHRWalJqUTBrMlRWUmpNazFFUlhwUFZFRTBUVWd3TG1WU1dFVklMWGhaU1V4U2FYb3dZV3BwU1cxWmQwa3hOMmRpYWtFNWQzbE9PUzFOZVZWT1ZrRkNMVmszY1V0RGQyUjNhM0JJU1RKYVJqSkljVU40VGtKdmEzWkVZMTh0VGpaWU9WUlZaMmhrYVhNME1IRmFSbFF4ZWpZMFdHTm5RVVZpZEMxQ2FWUjFlbFZmWkhkalEyMWhSRWRIUWtsSGFuVjJlVGQyZUhWSVJXSmtSMFJQY2xReFYwaFJUMGd3YmtwUldUWnJZMGRoU2pKVlpqSnFRazQwT0ZoQmEyWTVZVEo2TWtSVk5WVnBVVU5LVlhZeGJUQjNZV2hzVkMxcmIxVXdkVEkzZUdaV00zazBUa2RGWDB4QmJWUlBPVVZQYmxwYU1EVlpaVUl6Vms1SU5HRmhhRE5YV2s4emEzVnJNamhVYUZSM1pXdEZWQzFQYzBRMk5XOHlObnB0WWpsNVpXMUNUWE52T0hwWVFUQjBhVTVHVEVSRmFURTFjMGwxUzBGRVRXTm9UMnRDTFhwMWREZHFabkJ6WTBoaU0zTnZlbGQwUW5jNGNVVnJUMU5QUW5jd0xYZEVNbWRNUWpZdFJtOUxVVGd5VVNKOWZYMC5YT2FLeXkzMjB3Nzk4ZVFEVS1mZ3A4VXZtM1BSNFRNaDlJSFM5UlVKcVhvMXBTUWstNm13dmZGUnB2TGRWNE9TNV9ZekI3QjRzeF9qaW5RYmtWT3hlOThJdDFLSkg3WC1WU1NhclRmemtMTlRhWVd6WUpPdzBJUjdTWkoxUFdobDBTVmRuVzNyeWtoODFPZHFMY0Noc3MyY3NXZ2hVNjFFWkJ0VjZIcWFBdkNRS2sxTXJWcXBmbkpyNWNBTDZ1TTRvQklkeTA2d2VNQUZhNnFsQk9RaWZCalpDXzZXcHRteTBEcmhKdHFJcTVQWEdFeEo3UHBTQVZDZWJXa1FXRG4tSF9ITFo3SXFkUnViUG9JT0p5MEhtcmxuZEk5RFJZdU1GTzktUUFtQVVKcXA0X0VuTk45OXJIOFp1TndGYjJLcG1OcC1mdjlQLTlYaEdINURhVENoLVEiLCJhY2Nlc3NfdG9rZW4iOiIifX19.xap6Mow21dBGEPtbS71V9vxa-zu1v66__ed8ktTRliY&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/VP2ljU8r3JM996RQAxFb9peL4XWGkp6KNOFV0EqT6hd
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/VP2ljU8r3JM996RQAxFb9peL4XWGkp6KNOFV0EqT6hd
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 29ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 29ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 86ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 86ms
+[REQUEST FAILED] POST https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us - net::ERR_ABORTED
+[REQUEST FAILED] POST https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us - net::ERR_ABORTED
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 39ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 39ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 127ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 127ms
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 503 ()
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 503 ()
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [error] Failed to build MetakeepWeb3Client SyntaxError: Unexpected token '<', "<html>
+<h"... is not valid JSON
+[PAGE CONSOLE] [error] Failed to build MetakeepWeb3Client SyntaxError: Unexpected token '<', "<html>
+<h"... is not valid JSON
+[PAGE CONSOLE] [log] [Fast Refresh] done in 59ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 59ms
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 5ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 5ms

@@ -1,0 +1,65 @@
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [warning] Module "buffer" has been externalized for browser compatibility. Cannot access "buffer.Buffer" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[PAGE CONSOLE] [warning] Module "buffer" has been externalized for browser compatibility. Cannot access "buffer.Buffer" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [info] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold
+[PAGE CONSOLE] [info] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?client_id=demo-client-1&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&response_type=code&scope=openid+profile+email+offline_access&state=eyJ1dWlkIjoiOGNmMjQwNGQtZTUwYi00ZDE5LTgyOGMtYjU2OTM4MGVkNmRjIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjMifQ%3D%3D&code_challenge=mFWuB9Tyamb2pXhCJSPf2x0DWLs6aRw0pS7_4f790Fw&code_challenge_method=S256&prompt=consent
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?client_id=demo-client-1&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&response_type=code&scope=openid+profile+email+offline_access&state=eyJ1dWlkIjoiOGNmMjQwNGQtZTUwYi00ZDE5LTgyOGMtYjU2OTM4MGVkNmRjIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjMifQ%3D%3D&code_challenge=mFWuB9Tyamb2pXhCJSPf2x0DWLs6aRw0pS7_4f790Fw&code_challenge_method=S256&prompt=consent
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+Email slot count: 1
+[BAD RESPONSE] 429 https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us
+[BAD RESPONSE] 429 https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 429 ()
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 429 ()
+[RESPONSE BODY] {"detail":"Sentry dropped data due to a quota or internal rate limit being reached. This will not affect your application. See https://docs.sentry.io/product/accounts/quotas/ for more information."}
+[RESPONSE BODY] {"detail":"Sentry dropped data due to a quota or internal rate limit being reached. This will not affect your application. See https://docs.sentry.io/product/accounts/quotas/ for more information."}
+Checking URL: https://auth-dev.civic.com/login/activity-indicator.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/assets/email.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiOGNmMjQwNGQtZTUwYi00ZDE5LTgyOGMtYjU2OTM4MGVkNmRjIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjMifQ%3D%3D&client_id=demo-client-1&source_system_id=iu4o3Hybt6o6pNgSpupaWCHTLLMXxyRb31opTmxg4nt&scope=openid+profile+email+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&flow_id=oauth-login-de668aa8-6eef-4752-9908-eba45d265be2, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/email?loginFlowId=0cf175c9-7385-4ba6-a3e2-4b10cd123b58&client_id=demo-client-1&source_system_id=iu4o3Hybt6o6pNgSpupaWCHTLLMXxyRb31opTmxg4nt&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=393166%40simulator.amazonses.com&_rsc=pw29c, hasLoginFlowId: true, isEmailEndpoint: true, isVerifyEndpoint: false
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=0cf175c9-7385-4ba6-a3e2-4b10cd123b58&client_id=demo-client-1&source_system_id=iu4o3Hybt6o6pNgSpupaWCHTLLMXxyRb31opTmxg4nt&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=393166%40simulator.amazonses.com&_rsc=pw29c
+Extracted loginFlowId: 0cf175c9-7385-4ba6-a3e2-4b10cd123b58
+[REQUEST FAILED] GET https://auth-dev.civic.com/login/email?loginFlowId=0cf175c9-7385-4ba6-a3e2-4b10cd123b58&client_id=demo-client-1&source_system_id=iu4o3Hybt6o6pNgSpupaWCHTLLMXxyRb31opTmxg4nt&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=393166%40simulator.amazonses.com&_rsc=pw29c - net::ERR_ABORTED
+[REQUEST FAILED] GET https://auth-dev.civic.com/login/email?loginFlowId=0cf175c9-7385-4ba6-a3e2-4b10cd123b58&client_id=demo-client-1&source_system_id=iu4o3Hybt6o6pNgSpupaWCHTLLMXxyRb31opTmxg4nt&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=393166%40simulator.amazonses.com&_rsc=pw29c - net::ERR_ABORTED
+[REQUEST FAILED] GET https://auth-dev.civic.com/login/email?loginFlowId=0cf175c9-7385-4ba6-a3e2-4b10cd123b58&client_id=demo-client-1&source_system_id=iu4o3Hybt6o6pNgSpupaWCHTLLMXxyRb31opTmxg4nt&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=393166%40simulator.amazonses.com&_rsc=1a9ar - net::ERR_ABORTED
+[REQUEST FAILED] GET https://auth-dev.civic.com/login/email?loginFlowId=0cf175c9-7385-4ba6-a3e2-4b10cd123b58&client_id=demo-client-1&source_system_id=iu4o3Hybt6o6pNgSpupaWCHTLLMXxyRb31opTmxg4nt&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=393166%40simulator.amazonses.com&_rsc=1a9ar - net::ERR_ABORTED
+[PAGE CONSOLE] [log] Loading login flow data...
+[PAGE CONSOLE] [log] Loading login flow data...
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: 0cf175c9-7385-4ba6-a3e2-4b10cd123b58
+Found verification code for loginFlowId 0cf175c9-7385-4ba6-a3e2-4b10cd123b58: 154781
+Database disconnected
+Retrieved verification code: 154781 for loginFlowId: 0cf175c9-7385-4ba6-a3e2-4b10cd123b58
+[BAD RESPONSE] 302 https://auth-dev.civic.com/login/api/callback/email?state=0cf175c9-7385-4ba6-a3e2-4b10cd123b58&code=154781
+[BAD RESPONSE] 302 https://auth-dev.civic.com/login/api/callback/email?state=0cf175c9-7385-4ba6-a3e2-4b10cd123b58&code=154781
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/iu4o3Hybt6o6pNgSpupaWCHTLLMXxyRb31opTmxg4nt/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjM5MzE2NkBzaW11bGF0b3IuYW1hem9uc2VzLmNvbSIsInNjb3BlcyI6WyJvcGVuaWQiLCJvZmZsaW5lX2FjY2VzcyIsInByb2ZpbGUiLCJlbWFpbCIsIndhbGxldCIsImZvcndhcmRlZFRva2VucyIsInBhc3NrZXkiXSwiYXVkIjoiZGI3ZTg4YzEtZDk5Ny00MDk4LThjMDUtM2MyOGMwMTc3MWYzIiwic3ViIjoiZWRkOGUzMTYtZGMyNy00MDViLWJjN2YtOTQwZmYyMjY2MjU0IiwiaWRUb2tlblRUTCI6MzYwMCwiYWNjZXNzVG9rZW5UVEwiOjM2MDAsInJlZnJlc2hUb2tlblRUTCI6ODY0MDAsImNsaWVudElkIjoiZGVtby1jbGllbnQtMSIsInByb3ZpZGVyIjoiZW1haWwiLCJmbG93X2lkIjoib2F1dGgtbG9naW4tZGU2NjhhYTgtNmVlZi00NzUyLTk5MDgtZWJhNDVkMjY1YmUyIiwibG9naW5fZmxvd19pZCI6IjBjZjE3NWM5LTczODUtNGJhNi1hM2UyLTRiMTBjZDEyM2I1OCIsImRpc3BsYXlfbW9kZSI6InJlZGlyZWN0IiwiZmxvd190eXBlIjoiZW1haWxDb2RlIiwib3JpZ2luIjoiaHR0cHM6Ly9hdXRoLWRldi5jaXZpYy5jb20iLCJmb3J3YXJkZWRUb2tlbnMiOnsiZW1haWwiOnt9fX0.zh0nlGVnhglSjtlTgvnTJJb4zRVh7xUevDzbDDjB4Uc&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/iu4o3Hybt6o6pNgSpupaWCHTLLMXxyRb31opTmxg4nt/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjM5MzE2NkBzaW11bGF0b3IuYW1hem9uc2VzLmNvbSIsInNjb3BlcyI6WyJvcGVuaWQiLCJvZmZsaW5lX2FjY2VzcyIsInByb2ZpbGUiLCJlbWFpbCIsIndhbGxldCIsImZvcndhcmRlZFRva2VucyIsInBhc3NrZXkiXSwiYXVkIjoiZGI3ZTg4YzEtZDk5Ny00MDk4LThjMDUtM2MyOGMwMTc3MWYzIiwic3ViIjoiZWRkOGUzMTYtZGMyNy00MDViLWJjN2YtOTQwZmYyMjY2MjU0IiwiaWRUb2tlblRUTCI6MzYwMCwiYWNjZXNzVG9rZW5UVEwiOjM2MDAsInJlZnJlc2hUb2tlblRUTCI6ODY0MDAsImNsaWVudElkIjoiZGVtby1jbGllbnQtMSIsInByb3ZpZGVyIjoiZW1haWwiLCJmbG93X2lkIjoib2F1dGgtbG9naW4tZGU2NjhhYTgtNmVlZi00NzUyLTk5MDgtZWJhNDVkMjY1YmUyIiwibG9naW5fZmxvd19pZCI6IjBjZjE3NWM5LTczODUtNGJhNi1hM2UyLTRiMTBjZDEyM2I1OCIsImRpc3BsYXlfbW9kZSI6InJlZGlyZWN0IiwiZmxvd190eXBlIjoiZW1haWxDb2RlIiwib3JpZ2luIjoiaHR0cHM6Ly9hdXRoLWRldi5jaXZpYy5jb20iLCJmb3J3YXJkZWRUb2tlbnMiOnsiZW1haWwiOnt9fX0.zh0nlGVnhglSjtlTgvnTJJb4zRVh7xUevDzbDDjB4Uc&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/iu4o3Hybt6o6pNgSpupaWCHTLLMXxyRb31opTmxg4nt
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/iu4o3Hybt6o6pNgSpupaWCHTLLMXxyRb31opTmxg4nt
+[REQUEST FAILED] POST https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us - net::ERR_ABORTED
+[REQUEST FAILED] POST https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us - net::ERR_ABORTED
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [warning] Module "buffer" has been externalized for browser compatibility. Cannot access "buffer.Buffer" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[PAGE CONSOLE] [warning] Module "buffer" has been externalized for browser compatibility. Cannot access "buffer.Buffer" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth:0.11.3
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [log] @civic/auth-web3:0.8.1
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 503 ()
+[PAGE CONSOLE] [error] Failed to load resource: the server responded with a status of 503 ()
+[PAGE CONSOLE] [error] Failed to build MetakeepWeb3Client SyntaxError: Unexpected token '<', "<html>
+<h"... is not valid JSON
+[PAGE CONSOLE] [error] Failed to build MetakeepWeb3Client SyntaxError: Unexpected token '<', "<html>
+<h"... is not valid JSON
