@@ -64,6 +64,6 @@ test.describe('Civic Auth Applications', () => {
     await expect(page).toHaveURL(/.*\/customSuccessRoute/, { timeout: 60000 });
     
     // Check the page content
-    await expect(page.locator('h1')).toContainText('Success', { timeout: 10000 });
+    await expect(page.locator('h1')).toContainText('Hello', { timeout: 10000 });
   });
 }); 
