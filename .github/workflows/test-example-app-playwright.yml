@@ -222,9 +222,9 @@ jobs:
           GITHUB_JOB_NAME: ${{ inputs.job-name }}
         run: |
           # Capitalize browser name to match Playwright project names (Chromium, WebKit, Firefox)
-          BROWSER_NAME=$(echo "${{ inputs.browser }}" | awk '{print toupper(substr($0,1,1)) tolower(substr($0,2))}')
-          echo "Running tests on browser: $BROWSER_NAME"
-          yarn playwright test ${{ inputs.playwright-spec }}
+          # BROWSER_NAME=$(echo "${{ inputs.browser }}" | awk '{print toupper(substr($0,1,1)) tolower(substr($0,2))}')
+          # echo "Running tests on browser: $BROWSER_NAME"
+          yarn playwright test ${{ inputs.playwright-spec }} --project="chromium"
 
       - name: Generate Allure Report
         if: always()
