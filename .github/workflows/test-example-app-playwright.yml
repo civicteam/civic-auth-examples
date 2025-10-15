@@ -110,6 +110,7 @@ jobs:
       # Skipping browser cache since we're using Playwright container with pre-installed browsers
 
       - name: Yarn install with latest Civic packages
+        shell: bash
         run: |
           # Function to get latest version (beta or prod) - adapted from check-versions workflow
           get_latest_version() {
