@@ -1,0 +1,44 @@
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [info] Download the React DevTools for a better development experience: https://react.dev/link/react-devtools
+[PAGE CONSOLE] [info] Download the React DevTools for a better development experience: https://react.dev/link/react-devtools
+[PAGE CONSOLE] [log] @civic/auth:0.11.4-beta.0
+[PAGE CONSOLE] [log] @civic/auth:0.11.4-beta.0
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?client_id=demo-client-1&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&response_type=code&scope=openid+profile+email+offline_access&state=eyJ1dWlkIjoiODJjZTViN2YtYTcyZC00YmI2LWIyMmMtNWFkMGVmYWJjZjU5IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjQtYmV0YS4wIn0%3D&code_challenge=tHk99J-aFedlfDmXMyGc9aL8tZSs5d0aX_uO4g6fak8&code_challenge_method=S256&prompt=consent
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?client_id=demo-client-1&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&response_type=code&scope=openid+profile+email+offline_access&state=eyJ1dWlkIjoiODJjZTViN2YtYTcyZC00YmI2LWIyMmMtNWFkMGVmYWJjZjU5IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjQtYmV0YS4wIn0%3D&code_challenge=tHk99J-aFedlfDmXMyGc9aL8tZSs5d0aX_uO4g6fak8&code_challenge_method=S256&prompt=consent
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+Email slot count: 1
+Checking URL: https://auth-dev.civic.com/login/activity-indicator.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/assets/email.svg, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiODJjZTViN2YtYTcyZC00YmI2LWIyMmMtNWFkMGVmYWJjZjU5IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjQtYmV0YS4wIn0%3D&client_id=demo-client-1&source_system_id=Irdywg9Mfd8IDyn_WrHBRPQgrgQyrYf6ONTnh_vjh8c&scope=openid+profile+email+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&flow_id=oauth-login-32928d14-b6a5-4d7e-a573-a1fb7de07fd9, hasLoginFlowId: false, isEmailEndpoint: false, isVerifyEndpoint: false
+Checking URL: https://auth-dev.civic.com/login/email?loginFlowId=99dc1191-141d-4e46-83f6-63b6bb6b78e1&client_id=demo-client-1&source_system_id=Irdywg9Mfd8IDyn_WrHBRPQgrgQyrYf6ONTnh_vjh8c&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=415478%40simulator.amazonses.com&_rsc=1fbjo, hasLoginFlowId: true, isEmailEndpoint: true, isVerifyEndpoint: false
+Email verification URL: https://auth-dev.civic.com/login/email?loginFlowId=99dc1191-141d-4e46-83f6-63b6bb6b78e1&client_id=demo-client-1&source_system_id=Irdywg9Mfd8IDyn_WrHBRPQgrgQyrYf6ONTnh_vjh8c&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&emailAddress=415478%40simulator.amazonses.com&_rsc=1fbjo
+Extracted loginFlowId: 99dc1191-141d-4e46-83f6-63b6bb6b78e1
+[PAGE CONSOLE] [log] Loading login flow data...
+[PAGE CONSOLE] [log] Loading login flow data...
+Database connected successfully
+Attempting to retrieve email code (attempt 1/15)
+Querying EmailCode table for loginFlowId: 99dc1191-141d-4e46-83f6-63b6bb6b78e1
+Found verification code for loginFlowId 99dc1191-141d-4e46-83f6-63b6bb6b78e1: 539542
+Database disconnected
+Retrieved verification code: 539542 for loginFlowId: 99dc1191-141d-4e46-83f6-63b6bb6b78e1
+[BAD RESPONSE] 302 https://auth-dev.civic.com/login/api/callback/email?state=99dc1191-141d-4e46-83f6-63b6bb6b78e1&code=539542
+[BAD RESPONSE] 302 https://auth-dev.civic.com/login/api/callback/email?state=99dc1191-141d-4e46-83f6-63b6bb6b78e1&code=539542
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/Irdywg9Mfd8IDyn_WrHBRPQgrgQyrYf6ONTnh_vjh8c/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjQxNTQ3OEBzaW11bGF0b3IuYW1hem9uc2VzLmNvbSIsInNjb3BlcyI6WyJvcGVuaWQiLCJvZmZsaW5lX2FjY2VzcyIsInByb2ZpbGUiLCJlbWFpbCIsIndhbGxldCIsImZvcndhcmRlZFRva2VucyIsInBhc3NrZXkiXSwiYXVkIjoiZGI3ZTg4YzEtZDk5Ny00MDk4LThjMDUtM2MyOGMwMTc3MWYzIiwic3ViIjoiZWZmNzBjYjUtNzA5ZC00ZDY4LWFlZGEtYjNlMjg5NjJjNDg3IiwiaWRUb2tlblRUTCI6MzYwMCwiYWNjZXNzVG9rZW5UVEwiOjM2MDAsInJlZnJlc2hUb2tlblRUTCI6ODY0MDAsImNsaWVudElkIjoiZGVtby1jbGllbnQtMSIsInByb3ZpZGVyIjoiZW1haWwiLCJmbG93X2lkIjoib2F1dGgtbG9naW4tMzI5MjhkMTQtYjZhNS00ZDdlLWE1NzMtYTFmYjdkZTA3ZmQ5IiwibG9naW5fZmxvd19pZCI6Ijk5ZGMxMTkxLTE0MWQtNGU0Ni04M2Y2LTYzYjZiYjZiNzhlMSIsImRpc3BsYXlfbW9kZSI6InJlZGlyZWN0IiwiZmxvd190eXBlIjoiZW1haWxDb2RlIiwib3JpZ2luIjoiaHR0cHM6Ly9hdXRoLWRldi5jaXZpYy5jb20iLCJmb3J3YXJkZWRUb2tlbnMiOnsiZW1haWwiOnt9fX0.CJN5JAcXRsekLCw07SWDO5x4_4OX3rLNTj9siQ8L48c&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/Irdywg9Mfd8IDyn_WrHBRPQgrgQyrYf6ONTnh_vjh8c/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjQxNTQ3OEBzaW11bGF0b3IuYW1hem9uc2VzLmNvbSIsInNjb3BlcyI6WyJvcGVuaWQiLCJvZmZsaW5lX2FjY2VzcyIsInByb2ZpbGUiLCJlbWFpbCIsIndhbGxldCIsImZvcndhcmRlZFRva2VucyIsInBhc3NrZXkiXSwiYXVkIjoiZGI3ZTg4YzEtZDk5Ny00MDk4LThjMDUtM2MyOGMwMTc3MWYzIiwic3ViIjoiZWZmNzBjYjUtNzA5ZC00ZDY4LWFlZGEtYjNlMjg5NjJjNDg3IiwiaWRUb2tlblRUTCI6MzYwMCwiYWNjZXNzVG9rZW5UVEwiOjM2MDAsInJlZnJlc2hUb2tlblRUTCI6ODY0MDAsImNsaWVudElkIjoiZGVtby1jbGllbnQtMSIsInByb3ZpZGVyIjoiZW1haWwiLCJmbG93X2lkIjoib2F1dGgtbG9naW4tMzI5MjhkMTQtYjZhNS00ZDdlLWE1NzMtYTFmYjdkZTA3ZmQ5IiwibG9naW5fZmxvd19pZCI6Ijk5ZGMxMTkxLTE0MWQtNGU0Ni04M2Y2LTYzYjZiYjZiNzhlMSIsImRpc3BsYXlfbW9kZSI6InJlZGlyZWN0IiwiZmxvd190eXBlIjoiZW1haWxDb2RlIiwib3JpZ2luIjoiaHR0cHM6Ly9hdXRoLWRldi5jaXZpYy5jb20iLCJmb3J3YXJkZWRUb2tlbnMiOnsiZW1haWwiOnt9fX0.CJN5JAcXRsekLCw07SWDO5x4_4OX3rLNTj9siQ8L48c&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/Irdywg9Mfd8IDyn_WrHBRPQgrgQyrYf6ONTnh_vjh8c
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/Irdywg9Mfd8IDyn_WrHBRPQgrgQyrYf6ONTnh_vjh8c
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [log] @civic/auth:0.11.4-beta.0
+[PAGE CONSOLE] [log] @civic/auth:0.11.4-beta.0
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/session/end/confirm
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/session/end/confirm
+[PAGE CONSOLE] [error] [JavaScript Error: "Cookie “_session” has been rejected because it is in a cross-site context and its “SameSite” is “Lax” or “Strict”." {file: "https://auth-dev.civic.com/oauth/session/end/confirm" line: 0}]
+[PAGE CONSOLE] [error] [JavaScript Error: "Cookie “_session” has been rejected because it is in a cross-site context and its “SameSite” is “Lax” or “Strict”." {file: "https://auth-dev.civic.com/oauth/session/end/confirm" line: 0}]

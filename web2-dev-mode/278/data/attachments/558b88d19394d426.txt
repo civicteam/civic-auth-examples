@@ -1,0 +1,48 @@
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[PAGE CONSOLE] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[PAGE CONSOLE] [log] @civic/auth:0.11.4-beta.0
+[PAGE CONSOLE] [log] @civic/auth:0.11.4-beta.0
+[REQUEST FAILED] GET https://auth-dev.civic.com/oauth/.well-known/openid-configuration - net::ERR_ABORTED
+[REQUEST FAILED] GET https://auth-dev.civic.com/oauth/.well-known/openid-configuration - net::ERR_ABORTED
+[PAGE CONSOLE] [log] onSignIn callback executed: {options: Object, timestamp: 2025-10-15T15:59:13.477Z}
+[PAGE CONSOLE] [log] onSignIn callback executed: {options: Object, timestamp: 2025-10-15T15:59:13.477Z}
+[PAGE CONSOLE] [error] Failed to initialize auth in CivicAuthProvider: CivicAuthError: Failed to fetch
+    at _CivicAuth.init (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=19bcc7e2:8439:13)
+    at async _CivicAuth.create (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=19bcc7e2:8335:5)
+    at async _GlobalAuthManager._doInitialize (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=19bcc7e2:9639:19)
+[PAGE CONSOLE] [error] Failed to initialize auth in CivicAuthProvider: CivicAuthError: Failed to fetch
+    at _CivicAuth.init (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=19bcc7e2:8439:13)
+    at async _CivicAuth.create (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=19bcc7e2:8335:5)
+    at async _GlobalAuthManager._doInitialize (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=19bcc7e2:9639:19)
+[PAGE CONSOLE] [error] Failed to initialize auth: CivicAuthError: Failed to fetch
+    at _CivicAuth.init (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=19bcc7e2:8439:13)
+    at async _CivicAuth.create (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=19bcc7e2:8335:5)
+    at async _GlobalAuthManager._doInitialize (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=19bcc7e2:9639:19)
+[PAGE CONSOLE] [error] Failed to initialize auth: CivicAuthError: Failed to fetch
+    at _CivicAuth.init (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=19bcc7e2:8439:13)
+    at async _CivicAuth.create (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=19bcc7e2:8335:5)
+    at async _GlobalAuthManager._doInitialize (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=19bcc7e2:9639:19)
+[PAGE CONSOLE] [error] Failed to initialize auth in CivicAuthProvider: CivicAuthError: Failed to fetch
+    at _CivicAuth.init (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=19bcc7e2:8439:13)
+    at async _CivicAuth.create (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=19bcc7e2:8335:5)
+    at async _GlobalAuthManager._doInitialize (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=19bcc7e2:9639:19)
+[PAGE CONSOLE] [error] Failed to initialize auth in CivicAuthProvider: CivicAuthError: Failed to fetch
+    at _CivicAuth.init (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=19bcc7e2:8439:13)
+    at async _CivicAuth.create (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=19bcc7e2:8335:5)
+    at async _GlobalAuthManager._doInitialize (http://localhost:3000/node_modules/.vite/deps/@civic_auth_react.js?v=19bcc7e2:9639:19)
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connecting...
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [debug] [vite] connected.
+[PAGE CONSOLE] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[PAGE CONSOLE] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[PAGE CONSOLE] [log] @civic/auth:0.11.4-beta.0
+[PAGE CONSOLE] [log] @civic/auth:0.11.4-beta.0
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?client_id=demo-client-1&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&response_type=code&scope=openid+profile+email+offline_access&state=eyJ1dWlkIjoiNzJkOGYwMjEtNGFjOS00MjlkLWI3NWEtZWE4NzJjZjY0NGE2IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjQtYmV0YS4wIn0%3D&code_challenge=aCeCrA19wU6cmN0BBtRqIvrnOgjapM3bc6_2kBFycu4&code_challenge_method=S256&prompt=consent
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?client_id=demo-client-1&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&response_type=code&scope=openid+profile+email+offline_access&state=eyJ1dWlkIjoiNzJkOGYwMjEtNGFjOS00MjlkLWI3NWEtZWE4NzJjZjY0NGE2IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjQtYmV0YS4wIn0%3D&code_challenge=aCeCrA19wU6cmN0BBtRqIvrnOgjapM3bc6_2kBFycu4&code_challenge_method=S256&prompt=consent
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
