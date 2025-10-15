@@ -1,0 +1,20 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - button "Login via Civic icon Connecting ..." [ref=e3] [cursor=pointer]:
+    - img "Login via Civic icon" [ref=e5]
+    - text: Connecting ...
+  - main [ref=e7]:
+    - heading "Civic Auth + Solana Wallet Example" [level=1] [ref=e8]
+    - paragraph [ref=e9]: Next.js 15 with Wallet Adapter integration
+    - generic [ref=e10]: User not logged in.
+  - button "Open Next.js Dev Tools" [ref=e16] [cursor=pointer]:
+    - img [ref=e17]
+  - alert [ref=e20]
+  - generic [ref=e22]:
+    - iframe [active] [ref=e24]:
+      
+    - button "Close" [ref=e25] [cursor=pointer]:
+      - img [ref=e26]
+```
