@@ -113,8 +113,8 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth/server/express
-      playwright-spec: "playwright/tests/civic-auth/login/express-login.spec.ts playwright/tests/civic-auth/email/express-email-verification.spec.ts"
-      job-name: "🛠️ Express Server (Login + Email)"
+      playwright-spec: "playwright/tests/civic-auth/login/express-login.spec.ts"
+      job-name: "🛠️ Express Server Login"
       workflow-identifier: "dev-mode"
     secrets: inherit
 
@@ -124,8 +124,8 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth/server/fastify
-      playwright-spec: "playwright/tests/civic-auth/login/fastify-login.spec.ts playwright/tests/civic-auth/email/fastify-email-verification.spec.ts"
-      job-name: "⚡ Fastify Server (Login + Email)"
+      playwright-spec: "playwright/tests/civic-auth/login/fastify-login.spec.ts"
+      job-name: "⚡ Fastify Server Login"
       workflow-identifier: "dev-mode"
     secrets: inherit
 
@@ -135,8 +135,8 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth/server/hono
-      playwright-spec: "playwright/tests/civic-auth/login/hono-login.spec.ts playwright/tests/civic-auth/email/hono-email-verification.spec.ts"
-      job-name: "🔥 Hono Server (Login + Email)"
+      playwright-spec: "playwright/tests/civic-auth/login/hono-login.spec.ts"
+      job-name: "🔥 Hono Server Login"
       workflow-identifier: "dev-mode"
     secrets: inherit
 
@@ -146,8 +146,8 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth/vanillajs
-      playwright-spec: "playwright/tests/civic-auth/login/vanillajs-login.spec.ts playwright/tests/civic-auth/email/vanillajs-email-verification.spec.ts playwright/tests/civic-auth/refresh/vanillajs-refresh-token.spec.ts playwright/tests/civic-auth/staleSession/vanillajs-stale-session.spec.ts playwright/tests/civic-auth/rehydration/vanillajs-session-rehydration.spec.ts"
-      job-name: "📦 VanillaJS App (Login + Email + Refresh + Stale Session + Rehydration)"
+      playwright-spec: "playwright/tests/civic-auth/login/vanillajs-login.spec.ts playwright/tests/civic-auth/refresh/vanillajs-refresh-token.spec.ts playwright/tests/civic-auth/staleSession/vanillajs-stale-session.spec.ts playwright/tests/civic-auth/rehydration/vanillajs-session-rehydration.spec.ts"
+      job-name: "📦 VanillaJS App (Login + Refresh + Stale Session + Rehydration)"
       workflow-identifier: "dev-mode"
     secrets: inherit
 

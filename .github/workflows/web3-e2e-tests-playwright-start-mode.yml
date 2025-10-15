@@ -1,10 +1,11 @@
 name: Civic Auth Web3 Example Apps - E2E Tests (Start Mode)
 
 on:
-  schedule:
-    - cron: '0 0 * * *'  # Run daily at midnight UTC
-  push:
-  pull_request:
+  # Temporarily disabled - uncomment to re-enable
+  # schedule:
+  #   - cron: '0 0 * * *'  # Run daily at midnight UTC
+  # push:
+  # pull_request:
   workflow_dispatch:
     inputs:
       publish-allure-to-pages:

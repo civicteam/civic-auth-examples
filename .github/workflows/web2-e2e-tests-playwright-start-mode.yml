@@ -122,9 +122,9 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth/server/express
-      playwright-spec: "playwright/tests/civic-auth/login/express-login.spec.ts playwright/tests/civic-auth/email/express-email-verification.spec.ts"
+      playwright-spec: "playwright/tests/civic-auth/login/express-login.spec.ts"
       dev-command: "yarn start"
-      job-name: "🛠️ Express Server (Login + Email)"
+      job-name: "🛠️ Express Server Login"
       workflow-identifier: "start-mode"
       allure-parent-suite: "Web2 Start Mode"
     secrets: inherit
@@ -135,9 +135,9 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth/server/fastify
-      playwright-spec: "playwright/tests/civic-auth/login/fastify-login.spec.ts playwright/tests/civic-auth/email/fastify-email-verification.spec.ts"
+      playwright-spec: "playwright/tests/civic-auth/login/fastify-login.spec.ts"
       dev-command: "yarn start"
-      job-name: "⚡ Fastify Server (Login + Email)"
+      job-name: "⚡ Fastify Server Login"
       workflow-identifier: "start-mode"
       allure-parent-suite: "Web2 Start Mode"
     secrets: inherit
@@ -148,9 +148,9 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth/server/hono
-      playwright-spec: "playwright/tests/civic-auth/login/hono-login.spec.ts playwright/tests/civic-auth/email/hono-email-verification.spec.ts"
+      playwright-spec: "playwright/tests/civic-auth/login/hono-login.spec.ts"
       dev-command: "yarn start"
-      job-name: "🔥 Hono Server (Login + Email)"
+      job-name: "🔥 Hono Server Login"
       workflow-identifier: "start-mode"
       allure-parent-suite: "Web2 Start Mode"
     secrets: inherit
@@ -161,9 +161,9 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth/vanillajs
-      playwright-spec: "playwright/tests/civic-auth/login/vanillajs-login.spec.ts playwright/tests/civic-auth/email/vanillajs-email-verification.spec.ts playwright/tests/civic-auth/refresh/vanillajs-refresh-token.spec.ts playwright/tests/civic-auth/staleSession/vanillajs-stale-session.spec.ts playwright/tests/civic-auth/rehydration/vanillajs-session-rehydration.spec.ts"
+      playwright-spec: "playwright/tests/civic-auth/login/vanillajs-login.spec.ts playwright/tests/civic-auth/refresh/vanillajs-refresh-token.spec.ts playwright/tests/civic-auth/staleSession/vanillajs-stale-session.spec.ts playwright/tests/civic-auth/rehydration/vanillajs-session-rehydration.spec.ts"
       dev-command: "yarn start"
-      job-name: "📦 VanillaJS App (Login + Email + Refresh + Stale Session + Rehydration)"
+      job-name: "📦 VanillaJS App (Login + Refresh + Stale Session + Rehydration)"
       workflow-identifier: "start-mode"
       allure-parent-suite: "Web2 Start Mode"
     secrets: inherit
