@@ -1,0 +1,112 @@
+[PAGE CONSOLE] [log] @civic/auth:0.11.4
+[PAGE CONSOLE] [log] @civic/auth:0.11.4
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?response_type=code&client_id=demo-client-1&state=eyJ1dWlkIjoiODg2MmEwOGEtN2NmZC00YTM2LWJiNTgtNjYzN2QyYzJlOWM0IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwibG9naW5TdWNjZXNzVXJsIjoiL2N1c3RvbVN1Y2Nlc3NSb3V0ZSIsImZyYW1ld29yayI6Im5leHRqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjQifQ%3D%3D&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&code_challenge=A7dQN5UALPuwVWnaz_zgGLcmM2kmdW0m_jP3j5crAWU&code_challenge_method=S256&prompt=consent
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?response_type=code&client_id=demo-client-1&state=eyJ1dWlkIjoiODg2MmEwOGEtN2NmZC00YTM2LWJiNTgtNjYzN2QyYzJlOWM0IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwibG9naW5TdWNjZXNzVXJsIjoiL2N1c3RvbVN1Y2Nlc3NSb3V0ZSIsImZyYW1ld29yayI6Im5leHRqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjQifQ%3D%3D&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&code_challenge=A7dQN5UALPuwVWnaz_zgGLcmM2kmdW0m_jP3j5crAWU&code_challenge_method=S256&prompt=consent
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[PAGE CONSOLE] [debug] Storage access not available - passkey discovery may be limited
+[PAGE CONSOLE] [debug] Storage access not available - passkey discovery may be limited
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at unknown (:153:38)
+    at forEach (:1:11)
+    at replayBlockedMessages (:150:47)
+    at unknown (:334:60)
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at unknown (:153:38)
+    at forEach (:1:11)
+    at replayBlockedMessages (:150:47)
+    at unknown (:334:60)
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at handleMessage (:67:34)
+    at unknown (:32:31)
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at handleMessage (:67:34)
+    at unknown (:32:31)
+[PAGE CONSOLE] [debug] Storage access not available - passkey discovery may be limited
+[PAGE CONSOLE] [debug] Storage access not available - passkey discovery may be limited
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at handleMessage (:67:34)
+    at unknown (:32:31)
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at handleMessage (:67:34)
+    at unknown (:32:31)
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/si1dn8CM8TYVgxbnMTLBqPlaMvZxmYD4l100tgvrOW_/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzOWNkOGRhZS0wMGFjLTRhMjMtOTZiYi02NzVhZTdmNDE4NjEiLCJuYW1lIjoiR2hvc3QiLCJlbWFpbCI6Ijk1NmM4NjUxLTFlZWQtNDVjMy1hOGRlLWUwODlhODQ0OTBlN0BleGFtcGxlLmV4YW1wbGUiLCJzY29wZXMiOlsib3BlbmlkIiwib2ZmbGluZV9hY2Nlc3MiLCJwcm9maWxlIiwiZW1haWwiLCJ3YWxsZXQiLCJmb3J3YXJkZWRUb2tlbnMiLCJwYXNza2V5Il0sImF1ZCI6ImRiN2U4OGMxLWQ5OTctNDA5OC04YzA1LTNjMjhjMDE3NzFmMyIsImlkVG9rZW5UVEwiOjM2MDAsImFjY2Vzc1Rva2VuVFRMIjozNjAwLCJyZWZyZXNoVG9rZW5UVEwiOjg2NDAwLCJjbGllbnRJZCI6ImRlbW8tY2xpZW50LTEiLCJwcm92aWRlciI6ImR1bW15IiwiZmxvd19pZCI6Im9hdXRoLWxvZ2luLWRjODViZjMzLWRhOWUtNDI4Ni1hMTViLTU2NmNkODJmZGJlNCIsImxvZ2luX2Zsb3dfaWQiOiI1YTE0ZGJiMC1kYzQzLTQyZDMtYWJiZi1iNzA5NGJlYzRjN2MiLCJkaXNwbGF5X21vZGUiOiJwb3B1cCIsImZsb3dfdHlwZSI6Im9pZGMiLCJvcmlnaW4iOiJodHRwczovL2F1dGgtZGV2LmNpdmljLmNvbSIsImZvcndhcmRlZFRva2VucyI6eyJkdW1teSI6eyJpZF90b2tlbiI6ImV5SmhiR2NpT2lKU1V6STFOaUlzSW5SNWNDSTZJa3BYVkNJc0ltdHBaQ0k2SW1zeEluMC5leUpwYzNNaU9pSm9kSFJ3Y3pvdkwyaGxZV1JsY2kxd2NtOTRlUzVrWVc1cFpXeGlhMlZzYkdWb1pYSXpOems1TG5kdmNtdGxjbk11WkdWMklpd2lZWFZrSWpvaWRHVnVZVzUwTFRFdFlYQndMVEVpTENKemRXSWlPaUk1TlRaak9EWTFNUzB4WldWa0xUUTFZek10WVRoa1pTMWxNRGc1WVRnME5Ea3daVGNpTENKbGJXRnBiQ0k2SWprMU5tTTROalV4TFRGbFpXUXRORFZqTXkxaE9HUmxMV1V3T0RsaE9EUTBPVEJsTjBCbGVHRnRjR3hsTG1WNFlXMXdiR1VpTENKdWIyNWpaU0k2SWpBeFpUQTNNemd3TFRNNE9HSXROR0kxTkMwNVpHTTRMVFl5WWpCak5EazBNVFl3T0NJc0ltbGhkQ0k2TVRjMk1EVTNOVGc1TXl3aVpYaHdJam94TnpZd05UYzVORGt6TENKbWIzSjNZWEprWldSVWIydGxibk1pT25zaVpIVnRiWGtpT25zaWFXUmZkRzlyWlc0aU9pSmxlVXBvWWtkamFVOXBTbE5WZWtreFRtbEpjMGx1VWpWalEwazJTV3R3V0ZaRFNYTkpiWFJ3V2tOSk5rbHRjM2hKYmpBdVpYbEtjR016VFdsUGFVcHZaRWhTZDJONmIzWk1NbWhzV1ZkU2JHTnBNWGRqYlRrMFpWTTFhMWxYTlhCYVYzaHBZVEpXYzJKSFZtOWFXRWw2VG5wck5VeHVaSFpqYlhSc1kyNU5kVnBIVmpKSmFYZHBZek5XYVVscWIybFBWRlV5V1hwbk1rNVVSWFJOVjFac1drTXdNRTVYVFhwTVYwVTBXa2RWZEZwVVFUUlBWMFUwVGtSUk5VMUhWVE5KYVhkcFdsY3hhR0ZYZDJsUGFVazFUbFJhYWs5RVdURk5VekI0V2xkV2EweFVVVEZaZWsxMFdWUm9hMXBUTVd4TlJHYzFXVlJuTUU1RWEzZGFWR1JCV2xob2FHSllRbk5hVXpWc1pVZEdkR05IZUd4SmFYZHBZbTA1ZFZreVZXbFBhVWwzVFZkVmQwNTZUVFJOUXpCNlQwUm9hVXhVVW1sT1ZGRjBUMWRTYWs5RE1ESk5iVWwzV1hwUk5VNUVSVEpOUkdkcFRFTkthR1JYVVdsUGFVcHZaRWhTZDA5cE9IWmlSemxxV1ZkNGIySXpUakJQYWsxM1RVUkJhVXhEU25CWldGRnBUMnBGTTA1cVFURk9lbFUwVDFSSmMwbHRWalJqUTBrMlRWUmpNazFFVlROUFZGRTFUVzR3TG1KbVEzSlpNazk0VnpGa04zSlhTWGcwUjBVNExTMXBWRWxzTWtReGRFZFBjVEZTVWxSTFUyNXlTVVZxWmpoTmVYSndaVzluVWxkUmQzUlJOMWs0WVhKWlVVaFhSVEZNTkZoRFh6ZGpkMDVrWWsxbllVTXpVbXh3VkdjNFpIRkRRVmRqVTBGNFZGaERWMnQ1U0dkWk0yNXRWa1ZpZEU5amFHNXJlRlV3ZVd4M1pYTm1ZWFJXWjNGSVJraDBPWGxVVTFjdE9YRklVVkUxTTNGS1YxTmpaVXBMYzBRMWEwOVBUVk01V2sxSGRVRjJVRTlaWmpRNVYxQjRkVTF3WVdWWFJGbDFVRkZxVjNGa0xXMDRPRVp6YTBNNGJWWjRORXRHYlcxc2JVWk9OVGhCU0hwV2FVTlJjSEU1TTBwalh6SXRTbW93ZFdsUllteFViM1JNZERONGRXRnJVbFZ6UkRoT1dtMXVZVFZYU2tKWmFqRlhjbUpVU0UxU1VFMURNVzFIZUhkdk1sOW5ZVmRzUWswelVFUnVXbGRqY1hKMFJFVTRTM1poZUZwR1QxSTJOVk5uTUdsM0xVOVpSblJQWVVKbVpYVm5iMEoyUVNKOWZYMC5nd2lPTnJpc19wdUtSU21rcjd0ajN2dnE4SjFqLVpnckw0ZHJtRDlkR2doSUpxY09jQzdKMGxEYnVaOFNiZmV0ZE5pWEZ5dEhtVlk2Wl9EU1EyaGxEMU9jNFk5eWFveWJSM0FnckRXd1lnV3Q2RFI1VU1GODR0cTVwRkxnQ2JSbW83MGROMUFLSWx2aWVSd3VwM0ViWW5pbnN2VEhlaENNZlZwckdKT2hlQUEwSWU0NmNwREJLTVg4UHgydkZEQmhGaHRNWFpWZWhfd18xbXJ5QTh4NEoxVDU2VXhYakFqdXB2bDltUnREODgwY21qWEo0V2QwdUpMMGl6SWp5bl8ydDdpc1U0a3dJY3R1bW5kZjJrYzNXN1R3SllJTHBTUzZjM2trbW9tWTkxdHZYWXNUUnZPZ0tibzk4XzNCWHBSRkRCNW1xU0pYRGx1WWxhd3lBS1B3NkEiLCJhY2Nlc3NfdG9rZW4iOiIifX19.EOZtGdCxLzUNJngEOl-YbarmaRxIZONlUItAkMf6ZXI&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/si1dn8CM8TYVgxbnMTLBqPlaMvZxmYD4l100tgvrOW_/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzOWNkOGRhZS0wMGFjLTRhMjMtOTZiYi02NzVhZTdmNDE4NjEiLCJuYW1lIjoiR2hvc3QiLCJlbWFpbCI6Ijk1NmM4NjUxLTFlZWQtNDVjMy1hOGRlLWUwODlhODQ0OTBlN0BleGFtcGxlLmV4YW1wbGUiLCJzY29wZXMiOlsib3BlbmlkIiwib2ZmbGluZV9hY2Nlc3MiLCJwcm9maWxlIiwiZW1haWwiLCJ3YWxsZXQiLCJmb3J3YXJkZWRUb2tlbnMiLCJwYXNza2V5Il0sImF1ZCI6ImRiN2U4OGMxLWQ5OTctNDA5OC04YzA1LTNjMjhjMDE3NzFmMyIsImlkVG9rZW5UVEwiOjM2MDAsImFjY2Vzc1Rva2VuVFRMIjozNjAwLCJyZWZyZXNoVG9rZW5UVEwiOjg2NDAwLCJjbGllbnRJZCI6ImRlbW8tY2xpZW50LTEiLCJwcm92aWRlciI6ImR1bW15IiwiZmxvd19pZCI6Im9hdXRoLWxvZ2luLWRjODViZjMzLWRhOWUtNDI4Ni1hMTViLTU2NmNkODJmZGJlNCIsImxvZ2luX2Zsb3dfaWQiOiI1YTE0ZGJiMC1kYzQzLTQyZDMtYWJiZi1iNzA5NGJlYzRjN2MiLCJkaXNwbGF5X21vZGUiOiJwb3B1cCIsImZsb3dfdHlwZSI6Im9pZGMiLCJvcmlnaW4iOiJodHRwczovL2F1dGgtZGV2LmNpdmljLmNvbSIsImZvcndhcmRlZFRva2VucyI6eyJkdW1teSI6eyJpZF90b2tlbiI6ImV5SmhiR2NpT2lKU1V6STFOaUlzSW5SNWNDSTZJa3BYVkNJc0ltdHBaQ0k2SW1zeEluMC5leUpwYzNNaU9pSm9kSFJ3Y3pvdkwyaGxZV1JsY2kxd2NtOTRlUzVrWVc1cFpXeGlhMlZzYkdWb1pYSXpOems1TG5kdmNtdGxjbk11WkdWMklpd2lZWFZrSWpvaWRHVnVZVzUwTFRFdFlYQndMVEVpTENKemRXSWlPaUk1TlRaak9EWTFNUzB4WldWa0xUUTFZek10WVRoa1pTMWxNRGc1WVRnME5Ea3daVGNpTENKbGJXRnBiQ0k2SWprMU5tTTROalV4TFRGbFpXUXRORFZqTXkxaE9HUmxMV1V3T0RsaE9EUTBPVEJsTjBCbGVHRnRjR3hsTG1WNFlXMXdiR1VpTENKdWIyNWpaU0k2SWpBeFpUQTNNemd3TFRNNE9HSXROR0kxTkMwNVpHTTRMVFl5WWpCak5EazBNVFl3T0NJc0ltbGhkQ0k2TVRjMk1EVTNOVGc1TXl3aVpYaHdJam94TnpZd05UYzVORGt6TENKbWIzSjNZWEprWldSVWIydGxibk1pT25zaVpIVnRiWGtpT25zaWFXUmZkRzlyWlc0aU9pSmxlVXBvWWtkamFVOXBTbE5WZWtreFRtbEpjMGx1VWpWalEwazJTV3R3V0ZaRFNYTkpiWFJ3V2tOSk5rbHRjM2hKYmpBdVpYbEtjR016VFdsUGFVcHZaRWhTZDJONmIzWk1NbWhzV1ZkU2JHTnBNWGRqYlRrMFpWTTFhMWxYTlhCYVYzaHBZVEpXYzJKSFZtOWFXRWw2VG5wck5VeHVaSFpqYlhSc1kyNU5kVnBIVmpKSmFYZHBZek5XYVVscWIybFBWRlV5V1hwbk1rNVVSWFJOVjFac1drTXdNRTVYVFhwTVYwVTBXa2RWZEZwVVFUUlBWMFUwVGtSUk5VMUhWVE5KYVhkcFdsY3hhR0ZYZDJsUGFVazFUbFJhYWs5RVdURk5VekI0V2xkV2EweFVVVEZaZWsxMFdWUm9hMXBUTVd4TlJHYzFXVlJuTUU1RWEzZGFWR1JCV2xob2FHSllRbk5hVXpWc1pVZEdkR05IZUd4SmFYZHBZbTA1ZFZreVZXbFBhVWwzVFZkVmQwNTZUVFJOUXpCNlQwUm9hVXhVVW1sT1ZGRjBUMWRTYWs5RE1ESk5iVWwzV1hwUk5VNUVSVEpOUkdkcFRFTkthR1JYVVdsUGFVcHZaRWhTZDA5cE9IWmlSemxxV1ZkNGIySXpUakJQYWsxM1RVUkJhVXhEU25CWldGRnBUMnBGTTA1cVFURk9lbFUwVDFSSmMwbHRWalJqUTBrMlRWUmpNazFFVlROUFZGRTFUVzR3TG1KbVEzSlpNazk0VnpGa04zSlhTWGcwUjBVNExTMXBWRWxzTWtReGRFZFBjVEZTVWxSTFUyNXlTVVZxWmpoTmVYSndaVzluVWxkUmQzUlJOMWs0WVhKWlVVaFhSVEZNTkZoRFh6ZGpkMDVrWWsxbllVTXpVbXh3VkdjNFpIRkRRVmRqVTBGNFZGaERWMnQ1U0dkWk0yNXRWa1ZpZEU5amFHNXJlRlV3ZVd4M1pYTm1ZWFJXWjNGSVJraDBPWGxVVTFjdE9YRklVVkUxTTNGS1YxTmpaVXBMYzBRMWEwOVBUVk01V2sxSGRVRjJVRTlaWmpRNVYxQjRkVTF3WVdWWFJGbDFVRkZxVjNGa0xXMDRPRVp6YTBNNGJWWjRORXRHYlcxc2JVWk9OVGhCU0hwV2FVTlJjSEU1TTBwalh6SXRTbW93ZFdsUllteFViM1JNZERONGRXRnJVbFZ6UkRoT1dtMXVZVFZYU2tKWmFqRlhjbUpVU0UxU1VFMURNVzFIZUhkdk1sOW5ZVmRzUWswelVFUnVXbGRqY1hKMFJFVTRTM1poZUZwR1QxSTJOVk5uTUdsM0xVOVpSblJQWVVKbVpYVm5iMEoyUVNKOWZYMC5nd2lPTnJpc19wdUtSU21rcjd0ajN2dnE4SjFqLVpnckw0ZHJtRDlkR2doSUpxY09jQzdKMGxEYnVaOFNiZmV0ZE5pWEZ5dEhtVlk2Wl9EU1EyaGxEMU9jNFk5eWFveWJSM0FnckRXd1lnV3Q2RFI1VU1GODR0cTVwRkxnQ2JSbW83MGROMUFLSWx2aWVSd3VwM0ViWW5pbnN2VEhlaENNZlZwckdKT2hlQUEwSWU0NmNwREJLTVg4UHgydkZEQmhGaHRNWFpWZWhfd18xbXJ5QTh4NEoxVDU2VXhYakFqdXB2bDltUnREODgwY21qWEo0V2QwdUpMMGl6SWp5bl8ydDdpc1U0a3dJY3R1bW5kZjJrYzNXN1R3SllJTHBTUzZjM2trbW9tWTkxdHZYWXNUUnZPZ0tibzk4XzNCWHBSRkRCNW1xU0pYRGx1WWxhd3lBS1B3NkEiLCJhY2Nlc3NfdG9rZW4iOiIifX19.EOZtGdCxLzUNJngEOl-YbarmaRxIZONlUItAkMf6ZXI&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/si1dn8CM8TYVgxbnMTLBqPlaMvZxmYD4l100tgvrOW_
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/si1dn8CM8TYVgxbnMTLBqPlaMvZxmYD4l100tgvrOW_
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] rebuilding
+[PAGE CONSOLE] [log] [Fast Refresh] done in 928ms
+[PAGE CONSOLE] [log] [Fast Refresh] done in 928ms
+[REQUEST FAILED] POST https://auth-dev.civic.com/oauth/session/end/confirm - Load request cancelled
+[REQUEST FAILED] POST https://auth-dev.civic.com/oauth/session/end/confirm - Load request cancelled
+[PAGE CONSOLE] [log] @civic/auth:0.11.4
+[PAGE CONSOLE] [log] @civic/auth:0.11.4
+[REQUEST FAILED] GET http://localhost:3000/api/auth/user?optimisticRehydration=true - Load request cancelled
+[REQUEST FAILED] GET http://localhost:3000/api/auth/user?optimisticRehydration=true - Load request cancelled
+[PAGE ERROR] /localhost:3000/api/auth/user?optimisticRehydration=true due to access control checks.
+[ERROR STACK] Fetch API cannot load http://localhost:3000/api/auth/user?optimisticRehydration=true due to access control checks.
+    at checkBackendSession (:310:41)
+    at checkBackendSession (:295:35)
+    at isAuthenticated (:138:70)
+[PAGE ERROR] /localhost:3000/api/auth/user?optimisticRehydration=true due to access control checks.
+[ERROR STACK] Fetch API cannot load http://localhost:3000/api/auth/user?optimisticRehydration=true due to access control checks.
+    at checkBackendSession (:310:41)
+    at checkBackendSession (:295:35)
+    at isAuthenticated (:138:70)
+[REQUEST FAILED] GET http://localhost:3000/api/auth/login?state=eyJ1dWlkIjoiMjllNTFlYmMtZGZhNC00MTZkLTk1NjYtNTEyMGM0YjEyYmI2IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwibG9naW5TdWNjZXNzVXJsIjoiL2N1c3RvbVN1Y2Nlc3NSb3V0ZSIsImZyYW1ld29yayI6Im5leHRqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjQifQ%3D%3D&appUrl=http%3A%2F%2Flocalhost%3A3000 - Frame load interrupted
+[REQUEST FAILED] GET http://localhost:3000/api/auth/login?state=eyJ1dWlkIjoiMjllNTFlYmMtZGZhNC00MTZkLTk1NjYtNTEyMGM0YjEyYmI2IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwibG9naW5TdWNjZXNzVXJsIjoiL2N1c3RvbVN1Y2Nlc3NSb3V0ZSIsImZyYW1ld29yayI6Im5leHRqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjQifQ%3D%3D&appUrl=http%3A%2F%2Flocalhost%3A3000 - Frame load interrupted
+[PAGE CONSOLE] [log] @civic/auth:0.11.4
+[PAGE CONSOLE] [log] @civic/auth:0.11.4
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?response_type=code&client_id=demo-client-1&state=eyJ1dWlkIjoiODBkMjliMzYtYmYxOC00MTUyLWI4YmMtNjI4Mjk3MGE0Y2M4IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwibG9naW5TdWNjZXNzVXJsIjoiL2N1c3RvbVN1Y2Nlc3NSb3V0ZSIsImZyYW1ld29yayI6Im5leHRqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjQifQ%3D%3D&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&code_challenge=1xF-B6Ic0HilWCdN-kBA_d0N5vPv3uitIYTr0Nm0XyA&code_challenge_method=S256&prompt=consent
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?response_type=code&client_id=demo-client-1&state=eyJ1dWlkIjoiODBkMjliMzYtYmYxOC00MTUyLWI4YmMtNjI4Mjk3MGE0Y2M4IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwibG9naW5TdWNjZXNzVXJsIjoiL2N1c3RvbVN1Y2Nlc3NSb3V0ZSIsImZyYW1ld29yayI6Im5leHRqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjQifQ%3D%3D&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&code_challenge=1xF-B6Ic0HilWCdN-kBA_d0N5vPv3uitIYTr0Nm0XyA&code_challenge_method=S256&prompt=consent
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[PAGE CONSOLE] [debug] Storage access not available - passkey discovery may be limited
+[PAGE CONSOLE] [debug] Storage access not available - passkey discovery may be limited
+[BAD RESPONSE] 304 https://auth-dev.civic.com/login/assets/google.svg
+[BAD RESPONSE] 304 https://auth-dev.civic.com/login/assets/google.svg
+[BAD RESPONSE] 304 https://auth-dev.civic.com/login/assets/dummy.svg
+[BAD RESPONSE] 304 https://auth-dev.civic.com/login/assets/dummy.svg
+[BAD RESPONSE] 304 https://auth-dev.civic.com/login/assets/discord.svg
+[BAD RESPONSE] 304 https://auth-dev.civic.com/login/assets/discord.svg
+[BAD RESPONSE] 304 https://auth-dev.civic.com/login/assets/github.svg
+[BAD RESPONSE] 304 https://auth-dev.civic.com/login/assets/github.svg
+[BAD RESPONSE] 304 https://auth-dev.civic.com/login/assets/facebook.svg
+[BAD RESPONSE] 304 https://auth-dev.civic.com/login/assets/facebook.svg
+[BAD RESPONSE] 304 https://auth-dev.civic.com/login/assets/x.svg
+[BAD RESPONSE] 304 https://auth-dev.civic.com/login/assets/x.svg
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at unknown (:153:38)
+    at forEach (:1:11)
+    at replayBlockedMessages (:150:47)
+    at unknown (:334:60)
+[PAGE ERROR] /localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+[ERROR STACK] Blocked a frame with origin "http://localhost:3000" from accessing a frame with origin "https://auth-dev.civic.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+
+    at unknown (:153:38)
+    at forEach (:1:11)
+    at replayBlockedMessages (:150:47)
+    at unknown (:334:60)

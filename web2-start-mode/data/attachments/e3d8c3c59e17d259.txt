@@ -1,0 +1,114 @@
+[PAGE CONSOLE] [log] @civic/auth:0.11.4
+[PAGE CONSOLE] [log] @civic/auth:0.11.4
+[PAGE CONSOLE] [error] Failed to initialize auth in CivicAuthProvider: CivicAuthError: CivicAuth: clientId is required when loginUrl is not provided.
+    at http://localhost:3000/_next/static/chunks/7-7aac2745fbbe08e9.js:70:29461
+    at http://localhost:3000/_next/static/chunks/7-7aac2745fbbe08e9.js:70:29552
+    at new J (http://localhost:3000/_next/static/chunks/7-7aac2745fbbe08e9.js:70:30569)
+    at J.create (http://localhost:3000/_next/static/chunks/7-7aac2745fbbe08e9.js:70:31025)
+    at V._doInitialize (http://localhost:3000/_next/static/chunks/7-7aac2745fbbe08e9.js:70:61649)
+    at V.initialize (http://localhost:3000/_next/static/chunks/7-7aac2745fbbe08e9.js:70:60263)
+    at http://localhost:3000/_next/static/chunks/111-249cab767ca3b136.js:33:3195
+    at http://localhost:3000/_next/static/chunks/111-249cab767ca3b136.js:33:3287
+    at ob (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:80060)
+    at oG (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95806)
+    at oX (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95690)
+    at oG (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95786)
+    at oX (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95690)
+    at oG (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95786)
+    at oX (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95690)
+    at oG (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95843)
+    at oX (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95690)
+    at oG (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95843)
+    at oX (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95690)
+    at oG (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95786)
+    at oX (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95690)
+    at oG (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95843)
+    at oX (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95690)
+    at oG (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95786)
+    at oX (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95690)
+    at oG (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95786)
+    at oX (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95690)
+    at oG (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95786)
+    at oX (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95690)
+    at oG (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95786)
+    at oX (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95690)
+    at oG (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95843)
+    at oX (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95690)
+    at oG (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95786)
+    at oX (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95690)
+    at oG (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95786)
+    at oX (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95690)
+    at oG (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95843)
+    at oX (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95690)
+    at oG (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95786)
+    at oX (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95690)
+    at oG (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95843)
+    at oX (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95690)
+    at oG (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95843)
+    at oX (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95690)
+    at oG (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95786)
+    at oX (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95690)
+    at oG (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95843)
+    at oX (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95690)
+    at oG (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95786)
+[PAGE CONSOLE] [error] Failed to initialize auth in CivicAuthProvider: CivicAuthError: CivicAuth: clientId is required when loginUrl is not provided.
+    at http://localhost:3000/_next/static/chunks/7-7aac2745fbbe08e9.js:70:29461
+    at http://localhost:3000/_next/static/chunks/7-7aac2745fbbe08e9.js:70:29552
+    at new J (http://localhost:3000/_next/static/chunks/7-7aac2745fbbe08e9.js:70:30569)
+    at J.create (http://localhost:3000/_next/static/chunks/7-7aac2745fbbe08e9.js:70:31025)
+    at V._doInitialize (http://localhost:3000/_next/static/chunks/7-7aac2745fbbe08e9.js:70:61649)
+    at V.initialize (http://localhost:3000/_next/static/chunks/7-7aac2745fbbe08e9.js:70:60263)
+    at http://localhost:3000/_next/static/chunks/111-249cab767ca3b136.js:33:3195
+    at http://localhost:3000/_next/static/chunks/111-249cab767ca3b136.js:33:3287
+    at ob (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:80060)
+    at oG (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95806)
+    at oX (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95690)
+    at oG (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95786)
+    at oX (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95690)
+    at oG (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95786)
+    at oX (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95690)
+    at oG (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95843)
+    at oX (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95690)
+    at oG (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95843)
+    at oX (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95690)
+    at oG (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95786)
+    at oX (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95690)
+    at oG (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95843)
+    at oX (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95690)
+    at oG (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95786)
+    at oX (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95690)
+    at oG (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95786)
+    at oX (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95690)
+    at oG (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95786)
+    at oX (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95690)
+    at oG (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95786)
+    at oX (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95690)
+    at oG (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95843)
+    at oX (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95690)
+    at oG (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95786)
+    at oX (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95690)
+    at oG (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95786)
+    at oX (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95690)
+    at oG (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95843)
+    at oX (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95690)
+    at oG (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95786)
+    at oX (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95690)
+    at oG (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95843)
+    at oX (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95690)
+    at oG (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95843)
+    at oX (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95690)
+    at oG (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95786)
+    at oX (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95690)
+    at oG (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95843)
+    at oX (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95690)
+    at oG (http://localhost:3000/_next/static/chunks/4bd1b696-70e1434464ecbcdb.js:1:95786)
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?response_type=code&client_id=demo-client-1&state=eyJ1dWlkIjoiZmMxYjBjMmYtZGFiOC00MjIxLTg0NzktYWNlODAxMzlkODM4IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuNCJ9&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&code_challenge=H6UPHxokkEEjWwfGs4qGjDpmF5kihbXBsBrqUaxsNmY&code_challenge_method=S256&prompt=consent
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?response_type=code&client_id=demo-client-1&state=eyJ1dWlkIjoiZmMxYjBjMmYtZGFiOC00MjIxLTg0NzktYWNlODAxMzlkODM4IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoibmV4dGpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuNCJ9&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback&code_challenge=H6UPHxokkEEjWwfGs4qGjDpmF5kihbXBsBrqUaxsNmY&code_challenge_method=S256&prompt=consent
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/0oFrZhMZlHM0rJ6-dQc2SWBc6Ds-lGpS0klO_E9xlpB/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjNjFlNjc4Yi1hMzIxLTRkNWQtYjc1NS1jZWRlMzE0MzIwZjgiLCJlbWFpbCI6ImZlOWJkODM1LTIxYjktNDVmYy1hZjFlLTRiNWJmMDY0MDQxZUBleGFtcGxlLmV4YW1wbGUiLCJuYW1lIjoiR2hvc3QiLCJzY29wZXMiOlsib3BlbmlkIiwib2ZmbGluZV9hY2Nlc3MiLCJwcm9maWxlIiwiZW1haWwiLCJ3YWxsZXQiLCJmb3J3YXJkZWRUb2tlbnMiLCJwYXNza2V5Il0sImF1ZCI6ImRiN2U4OGMxLWQ5OTctNDA5OC04YzA1LTNjMjhjMDE3NzFmMyIsImlkVG9rZW5UVEwiOjM2MDAsImFjY2Vzc1Rva2VuVFRMIjozNjAwLCJyZWZyZXNoVG9rZW5UVEwiOjg2NDAwLCJjbGllbnRJZCI6ImRlbW8tY2xpZW50LTEiLCJwcm92aWRlciI6ImR1bW15IiwiZmxvd19pZCI6Im9hdXRoLWxvZ2luLTY0MWM5ODg4LWRlYWYtNDYyYS04Y2IwLTJjYTU4NDhjNDIxNCIsImxvZ2luX2Zsb3dfaWQiOiJmMTk0MTk5MS1iYWEwLTRlYTEtYjNiMC0yYmNkMTVlZTBiY2UiLCJkaXNwbGF5X21vZGUiOiJwb3B1cCIsImZsb3dfdHlwZSI6Im9pZGMiLCJvcmlnaW4iOiJodHRwczovL2F1dGgtZGV2LmNpdmljLmNvbSIsImZvcndhcmRlZFRva2VucyI6eyJkdW1teSI6eyJpZF90b2tlbiI6ImV5SmhiR2NpT2lKU1V6STFOaUlzSW5SNWNDSTZJa3BYVkNJc0ltdHBaQ0k2SW1zeEluMC5leUpwYzNNaU9pSm9kSFJ3Y3pvdkwyaGxZV1JsY2kxd2NtOTRlUzVrWVc1cFpXeGlhMlZzYkdWb1pYSXpOems1TG5kdmNtdGxjbk11WkdWMklpd2lZWFZrSWpvaWRHVnVZVzUwTFRFdFlYQndMVEVpTENKemRXSWlPaUptWlRsaVpEZ3pOUzB5TVdJNUxUUTFabU10WVdZeFpTMDBZalZpWmpBMk5EQTBNV1VpTENKbGJXRnBiQ0k2SW1abE9XSmtPRE0xTFRJeFlqa3RORFZtWXkxaFpqRmxMVFJpTldKbU1EWTBNRFF4WlVCbGVHRnRjR3hsTG1WNFlXMXdiR1VpTENKdWIyNWpaU0k2SW1ObVpqUXpPV0UzTFRJell6Y3ROREUxTmkxaVkyTmtMVGN4TlRZME9XWm1PV001WmlJc0ltbGhkQ0k2TVRjMk1EVTNOVGczTlN3aVpYaHdJam94TnpZd05UYzVORGMxTENKbWIzSjNZWEprWldSVWIydGxibk1pT25zaVpIVnRiWGtpT25zaWFXUmZkRzlyWlc0aU9pSmxlVXBvWWtkamFVOXBTbE5WZWtreFRtbEpjMGx1VWpWalEwazJTV3R3V0ZaRFNYTkpiWFJ3V2tOSk5rbHRjM2hKYmpBdVpYbEtjR016VFdsUGFVcHZaRWhTZDJONmIzWk1NbWhzV1ZkU2JHTnBNWGRqYlRrMFpWTTFhMWxYTlhCYVYzaHBZVEpXYzJKSFZtOWFXRWw2VG5wck5VeHVaSFpqYlhSc1kyNU5kVnBIVmpKSmFYZHBZek5XYVVscWIybGFiVlUxV1cxUk5FMTZWWFJOYWtacFQxTXdNRTVYV21wTVYwWnRUVmRWZEU1SFNURlpiVmwzVG1wUmQwNUVSbXhKYVhkcFdsY3hhR0ZYZDJsUGFVcHRXbFJzYVZwRVozcE9VekI1VFZkSk5VeFVVVEZhYlUxMFdWZFplRnBUTURCWmFsWnBXbXBCTWs1RVFUQk5WMVpCV2xob2FHSllRbk5hVXpWc1pVZEdkR05IZUd4SmFYZHBZbTA1ZFZreVZXbFBhVXBxV20xWk1FMTZiR2hPZVRCNVRUSk5NMHhVVVhoT1ZGbDBXVzFPYWxwRE1ETk5WRlV5VGtSc2JWcHFiR3BQVjFscFRFTkthR1JYVVdsUGFVcHZaRWhTZDA5cE9IWmlSemxxV1ZkNGIySXpUakJQYWsxM1RVUkJhVXhEU25CWldGRnBUMnBGTTA1cVFURk9lbFUwVG5wVmMwbHRWalJqUTBrMlRWUmpNazFFVlROUFZGRXpUbGd3TGtZdFduaEdSbkJ5YzBGT1RXOXhTbEpCVTFKQ2VrbzBTbWhLU3pjd1VtOUNjRzQ1VURCMlFUVkRWVzlMUWtwbVRXNU9jazlVT1dKNk9VMXNkVk5qYlZCa1J6SnRUbGROU2tORGNtMDFUa28wVlZGNE5rTnFWR1pxWjFjMVZWZHFhelZoWW5ocVdGbDJaVVpPVmxoMFkyRXRUV3RzVlVoRFMzRXljekZGYVY5SllqQmhORlZSVW5sV1ZEZ3pSVVJrVkVSdVEwY3lMVkZFZDFkS2NYbHBVVGRWY1ZOaVdWTXlTMWhVYzJoMmRUWlFaM05qU25OTE5FY3dhazF5YnpGTGJEZFFWMGhOWDBzelNpMXRhVWxFY2tkbFoxWnlaRFpqZUhwR2NXTXhXWFJmWW14RmJuSndRamhwYlVORFZEUjRhMlpOVmpGbVVVZENkamwwZUdRM2FWbHljSGxPWDAxcE1UTkdOSGw1T1ZSWmRXc3RSMk50Ym5WRGVuWXRWRXBGVmtOUFNDMVpSbVYyYW1WWWFIVndiMDluU0hSbWJFbFlja0ZNT1d4NFNIaHJZV1pJU1ZsdmJHaDBZbmgyVFZjMGExQkZlVXBtWnlKOWZYMC5IQ2dkZXBtZm1leEJZTWYwYXR4azBxYXZhR0Y0Ql85SHo4QU93NFEzV2p2VnRNNmVwa01sb2dQb0RBX1FnLVRZY1BGU2wtU0NtRXpNR3ozLUNDNDEyMkJabWVrRUplV2hGTnNmMmNOUlFuT2haUlRhbFB6c2hnSUlQZm1VM0V1WWFIVThmcXUydkhBVGVuVFM2NERmUVhFSjFldGx4N3dBajhmdEZveGVxdW9OMFNyS0JRbTZpamxhaGluR2lsOG10QzRKZVpKN0NJQldKTHRMMkVMRjY4Yk83YWxzRnI3YnpLclpvMFZaSDNlS1NHNml3Rmoyd0JabENKMGxoZjRkNGJKcVFtSzlLX2JMY3FwWjloeU9EWk92clRfMGNXRC1EcjVmVi1Uamd1N3NaS3J0Q0VtdGdzOEpTeGNEa3NuSXBZdW5oeTU4YWpCclVBTzhpNmZSWWciLCJhY2Nlc3NfdG9rZW4iOiIifX19.KS4RRIAxvQ4P9d57CDjL4555vdJWLYNyXJhC9o1gbt0&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/interaction/0oFrZhMZlHM0rJ6-dQc2SWBc6Ds-lGpS0klO_E9xlpB/loginComplete?login_result=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjNjFlNjc4Yi1hMzIxLTRkNWQtYjc1NS1jZWRlMzE0MzIwZjgiLCJlbWFpbCI6ImZlOWJkODM1LTIxYjktNDVmYy1hZjFlLTRiNWJmMDY0MDQxZUBleGFtcGxlLmV4YW1wbGUiLCJuYW1lIjoiR2hvc3QiLCJzY29wZXMiOlsib3BlbmlkIiwib2ZmbGluZV9hY2Nlc3MiLCJwcm9maWxlIiwiZW1haWwiLCJ3YWxsZXQiLCJmb3J3YXJkZWRUb2tlbnMiLCJwYXNza2V5Il0sImF1ZCI6ImRiN2U4OGMxLWQ5OTctNDA5OC04YzA1LTNjMjhjMDE3NzFmMyIsImlkVG9rZW5UVEwiOjM2MDAsImFjY2Vzc1Rva2VuVFRMIjozNjAwLCJyZWZyZXNoVG9rZW5UVEwiOjg2NDAwLCJjbGllbnRJZCI6ImRlbW8tY2xpZW50LTEiLCJwcm92aWRlciI6ImR1bW15IiwiZmxvd19pZCI6Im9hdXRoLWxvZ2luLTY0MWM5ODg4LWRlYWYtNDYyYS04Y2IwLTJjYTU4NDhjNDIxNCIsImxvZ2luX2Zsb3dfaWQiOiJmMTk0MTk5MS1iYWEwLTRlYTEtYjNiMC0yYmNkMTVlZTBiY2UiLCJkaXNwbGF5X21vZGUiOiJwb3B1cCIsImZsb3dfdHlwZSI6Im9pZGMiLCJvcmlnaW4iOiJodHRwczovL2F1dGgtZGV2LmNpdmljLmNvbSIsImZvcndhcmRlZFRva2VucyI6eyJkdW1teSI6eyJpZF90b2tlbiI6ImV5SmhiR2NpT2lKU1V6STFOaUlzSW5SNWNDSTZJa3BYVkNJc0ltdHBaQ0k2SW1zeEluMC5leUpwYzNNaU9pSm9kSFJ3Y3pvdkwyaGxZV1JsY2kxd2NtOTRlUzVrWVc1cFpXeGlhMlZzYkdWb1pYSXpOems1TG5kdmNtdGxjbk11WkdWMklpd2lZWFZrSWpvaWRHVnVZVzUwTFRFdFlYQndMVEVpTENKemRXSWlPaUptWlRsaVpEZ3pOUzB5TVdJNUxUUTFabU10WVdZeFpTMDBZalZpWmpBMk5EQTBNV1VpTENKbGJXRnBiQ0k2SW1abE9XSmtPRE0xTFRJeFlqa3RORFZtWXkxaFpqRmxMVFJpTldKbU1EWTBNRFF4WlVCbGVHRnRjR3hsTG1WNFlXMXdiR1VpTENKdWIyNWpaU0k2SW1ObVpqUXpPV0UzTFRJell6Y3ROREUxTmkxaVkyTmtMVGN4TlRZME9XWm1PV001WmlJc0ltbGhkQ0k2TVRjMk1EVTNOVGczTlN3aVpYaHdJam94TnpZd05UYzVORGMxTENKbWIzSjNZWEprWldSVWIydGxibk1pT25zaVpIVnRiWGtpT25zaWFXUmZkRzlyWlc0aU9pSmxlVXBvWWtkamFVOXBTbE5WZWtreFRtbEpjMGx1VWpWalEwazJTV3R3V0ZaRFNYTkpiWFJ3V2tOSk5rbHRjM2hKYmpBdVpYbEtjR016VFdsUGFVcHZaRWhTZDJONmIzWk1NbWhzV1ZkU2JHTnBNWGRqYlRrMFpWTTFhMWxYTlhCYVYzaHBZVEpXYzJKSFZtOWFXRWw2VG5wck5VeHVaSFpqYlhSc1kyNU5kVnBIVmpKSmFYZHBZek5XYVVscWIybGFiVlUxV1cxUk5FMTZWWFJOYWtacFQxTXdNRTVYV21wTVYwWnRUVmRWZEU1SFNURlpiVmwzVG1wUmQwNUVSbXhKYVhkcFdsY3hhR0ZYZDJsUGFVcHRXbFJzYVZwRVozcE9VekI1VFZkSk5VeFVVVEZhYlUxMFdWZFplRnBUTURCWmFsWnBXbXBCTWs1RVFUQk5WMVpCV2xob2FHSllRbk5hVXpWc1pVZEdkR05IZUd4SmFYZHBZbTA1ZFZreVZXbFBhVXBxV20xWk1FMTZiR2hPZVRCNVRUSk5NMHhVVVhoT1ZGbDBXVzFPYWxwRE1ETk5WRlV5VGtSc2JWcHFiR3BQVjFscFRFTkthR1JYVVdsUGFVcHZaRWhTZDA5cE9IWmlSemxxV1ZkNGIySXpUakJQYWsxM1RVUkJhVXhEU25CWldGRnBUMnBGTTA1cVFURk9lbFUwVG5wVmMwbHRWalJqUTBrMlRWUmpNazFFVlROUFZGRXpUbGd3TGtZdFduaEdSbkJ5YzBGT1RXOXhTbEpCVTFKQ2VrbzBTbWhLU3pjd1VtOUNjRzQ1VURCMlFUVkRWVzlMUWtwbVRXNU9jazlVT1dKNk9VMXNkVk5qYlZCa1J6SnRUbGROU2tORGNtMDFUa28wVlZGNE5rTnFWR1pxWjFjMVZWZHFhelZoWW5ocVdGbDJaVVpPVmxoMFkyRXRUV3RzVlVoRFMzRXljekZGYVY5SllqQmhORlZSVW5sV1ZEZ3pSVVJrVkVSdVEwY3lMVkZFZDFkS2NYbHBVVGRWY1ZOaVdWTXlTMWhVYzJoMmRUWlFaM05qU25OTE5FY3dhazF5YnpGTGJEZFFWMGhOWDBzelNpMXRhVWxFY2tkbFoxWnlaRFpqZUhwR2NXTXhXWFJmWW14RmJuSndRamhwYlVORFZEUjRhMlpOVmpGbVVVZENkamwwZUdRM2FWbHljSGxPWDAxcE1UTkdOSGw1T1ZSWmRXc3RSMk50Ym5WRGVuWXRWRXBGVmtOUFNDMVpSbVYyYW1WWWFIVndiMDluU0hSbWJFbFlja0ZNT1d4NFNIaHJZV1pJU1ZsdmJHaDBZbmgyVFZjMGExQkZlVXBtWnlKOWZYMC5IQ2dkZXBtZm1leEJZTWYwYXR4azBxYXZhR0Y0Ql85SHo4QU93NFEzV2p2VnRNNmVwa01sb2dQb0RBX1FnLVRZY1BGU2wtU0NtRXpNR3ozLUNDNDEyMkJabWVrRUplV2hGTnNmMmNOUlFuT2haUlRhbFB6c2hnSUlQZm1VM0V1WWFIVThmcXUydkhBVGVuVFM2NERmUVhFSjFldGx4N3dBajhmdEZveGVxdW9OMFNyS0JRbTZpamxhaGluR2lsOG10QzRKZVpKN0NJQldKTHRMMkVMRjY4Yk83YWxzRnI3YnpLclpvMFZaSDNlS1NHNml3Rmoyd0JabENKMGxoZjRkNGJKcVFtSzlLX2JMY3FwWjloeU9EWk92clRfMGNXRC1EcjVmVi1Uamd1N3NaS3J0Q0VtdGdzOEpTeGNEa3NuSXBZdW5oeTU4YWpCclVBTzhpNmZSWWciLCJhY2Nlc3NfdG9rZW4iOiIifX19.KS4RRIAxvQ4P9d57CDjL4555vdJWLYNyXJhC9o1gbt0&error_redirect_uri=http://localhost:3000
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/0oFrZhMZlHM0rJ6-dQc2SWBc6Ds-lGpS0klO_E9xlpB
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth/0oFrZhMZlHM0rJ6-dQc2SWBc6Ds-lGpS0klO_E9xlpB
+[REQUEST FAILED] POST https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us - net::ERR_ABORTED
+[REQUEST FAILED] POST https://auth-dev.civic.com/login/monitoring?o=266805&p=4508796338438144&r=us - net::ERR_ABORTED
