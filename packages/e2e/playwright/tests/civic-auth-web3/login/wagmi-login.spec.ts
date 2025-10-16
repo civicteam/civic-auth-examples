@@ -2,6 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Wagmi Login Tests', () => {
   test('should complete login flow and show balance', async ({ page, browserName }) => {
+    setupDiagnostics(page);
     // Open the app home page
     await page.goto('http://localhost:3000');
 
@@ -32,7 +33,7 @@ test.describe('Wagmi Login Tests', () => {
     await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 40000 });
 
     // Verify Ghost button is visible in dropdown
-    await expect(page.locator('#civic-dropdown-container').locator('button:has-text("Ghost")')).toBeVisible({ timeout: 60000 });
+    await expect(page.locator('#civic-dropdown-container').locator('button:has-text("Ghost")')).toBeVisible({ timeout: 30000 });
     
     // Verify wallet address is displayed
     await expect(page.locator('text=/Wallet address: [A-Za-z0-9]{32,44}/')).toBeVisible({ timeout: 20000 });

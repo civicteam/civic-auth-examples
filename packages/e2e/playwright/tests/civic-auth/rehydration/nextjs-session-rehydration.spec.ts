@@ -1,14 +1,17 @@
 import { test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
+import { setupDiagnostics } from '../../../utils/test-helpers';
 
 test.describe('Session Rehydration - NextJS', () => {
   test.beforeEach(async ({ page }) => {
+    setupDiagnostics(page);
     await allure.epic('Civic Auth Applications');
     await allure.suite('Session Rehydration');
     await allure.feature('NextJS Session Rehydration');
   });
 
   test('should rehydrate session via middleware on page reload', async ({ page }) => {
+    setupDiagnostics(page);
     // Configure test to be more resilient
     test.setTimeout(120000); // Increase timeout to 2 minutes
 
@@ -69,14 +72,14 @@ test.describe('Session Rehydration - NextJS', () => {
       
       if (isLoadingVisibleAfterClick) {
         // Wait longer for the auth flow to complete
-        await loadingAfterClick.waitFor({ state: 'hidden', timeout: 60000 });
+        await loadingAfterClick.waitFor({ state: 'hidden', timeout: 30000 });
       }
     } catch (error) {
       // Loading handling - if it fails, continue
     }
 
     // Wait for the iframe to be gone (indicating login is complete)
-    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 60000 });
+    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 30000 });
   
     // Confirm logged in state by checking for Ghost button in dropdown
     const ghostButtonLocator = page.locator('#civic-dropdown-container').locator('button:has-text("Ghost")');
@@ -146,6 +149,7 @@ test.describe('Session Rehydration - NextJS', () => {
   });
 
   test('should rehydrate session via API call', async ({ page }) => {
+    setupDiagnostics(page);
     // Configure test to be more resilient
     test.setTimeout(120000); // Increase timeout to 2 minutes
 
@@ -206,14 +210,14 @@ test.describe('Session Rehydration - NextJS', () => {
       
       if (isLoadingVisibleAfterClick) {
         // Wait longer for the auth flow to complete
-        await loadingAfterClick.waitFor({ state: 'hidden', timeout: 60000 });
+        await loadingAfterClick.waitFor({ state: 'hidden', timeout: 30000 });
       }
     } catch (error) {
       // Loading handling - if it fails, continue
     }
 
     // Wait for the iframe to be gone (indicating login is complete)
-    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 60000 });
+    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 30000 });
   
     // Confirm logged in state by checking for Ghost button in dropdown
     const ghostButtonLocator = page.locator('#civic-dropdown-container').locator('button:has-text("Ghost")');

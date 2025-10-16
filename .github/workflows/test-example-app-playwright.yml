@@ -48,6 +48,8 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.56.0-jammy
     permissions:
       contents: write
       actions: read
@@ -62,23 +64,33 @@ jobs:
       VITE_WALLET_API_BASE_URL: ${{ secrets.VITE_WALLET_API_BASE_URL }}
       DATABASE_URL: ${{ secrets.DATABASE_URL }}
       ALLURE_PARENT_SUITE: ${{ inputs.allure-parent-suite }}
+      HOME: /root
     defaults:
       run:
         working-directory: ${{ inputs.project-path }}
     steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ github.token }}
+
       - name: Create unique identifier
         id: project-id
         working-directory: .
         run: |
-          # Use timestamp and random number for guaranteed uniqueness
-          timestamp=$(date +%s)
+          # Use timestamp, random number, and run attempt for guaranteed uniqueness
+          timestamp=$(date +%s%N)
           random_id=$((RANDOM % 90000 + 10000))
-          unique_id="${timestamp}-${random_id}"
+          unique_id="${timestamp}-${random_id}-${{ github.run_attempt }}"
           echo "project-id=$unique_id" >> $GITHUB_OUTPUT
           echo "Project ID: $unique_id"
-      - uses: actions/checkout@v4
-        with:
-          token: ${{ github.token }}
+
+      - name: Install system dependencies
+        working-directory: .
+        run: |
+          apt-get update
+          apt-get install -y default-jre-headless fontconfig unzip
+          java -version
+          echo "System dependencies installed successfully"
 
       - name: Install Bun
         if: contains(inputs.project-path, 'hono')
@@ -95,16 +107,10 @@ jobs:
             packages/e2e/node_modules
           key: node-modules-${{ runner.os }}-${{ hashFiles(format('{0}/yarn.lock', inputs.project-path)) }}-${{ hashFiles(format('{0}/package.json', inputs.project-path)) }}-${{ hashFiles('packages/e2e/package.json') }}
 
-      - name: Cache Playwright browsers
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.cache/ms-playwright
-          key: playwright-browsers-${{ runner.os }}-${{ hashFiles('packages/e2e/package.json') }}
-          restore-keys: |
-            playwright-browsers-${{ runner.os }}-
+      # Skipping browser cache since we're using Playwright container with pre-installed browsers
 
       - name: Yarn install with latest Civic packages
+        shell: bash
         run: |
           # Function to get latest version (beta or prod) - adapted from check-versions workflow
           get_latest_version() {
@@ -173,36 +179,53 @@ jobs:
           npx allure --version
           echo "Allure command-line tool is available"
 
-      - name: Install Playwright browsers
-        working-directory: packages/e2e
-        run: yarn playwright install --with-deps
-        # The cache step above will restore browsers if available, so this will be fast on subsequent runs
+      # Skipping browser installation - using Playwright container with pre-installed browsers
 
       - name: Yarn build
         run: ${{ inputs.build-command }}
 
       - name: Start App
-        run: ${{ inputs.dev-command }} &
-
+        run: |
+          echo "Starting app with command: ${{ inputs.dev-command }}"
+          nohup ${{ inputs.dev-command }} > /tmp/app.log 2>&1 &
+          APP_PID=$!
+          echo "App started with PID: $APP_PID"
+          echo "APP_PID=$APP_PID" >> $GITHUB_ENV
+          sleep 5
+          echo "=== First 50 lines of app log ==="
+          head -50 /tmp/app.log || echo "No log output yet"
+          
       - name: Wait for app to start
         run: |
             if echo "${{ inputs.dev-command }}" | grep -q "subpath"; then
-              echo "Waiting for app with basepath at http://localhost:3000/demo"
-              npx wait-on http-get://localhost:3000/demo --timeout 300000
+              TARGET_URL="localhost:3000/demo"
             elif echo "${{ inputs.dev-command }}" | grep -q "loginSuccessUrl"; then
-              echo "Waiting for app with loginSuccessUrl at http://localhost:3000"
-              npx wait-on http-get://localhost:3000 --timeout 300000
+              TARGET_URL="localhost:3000"
             else
-              echo "Waiting for app at http://localhost:3000"
-              npx wait-on http-get://localhost:3000 --timeout 300000
+              TARGET_URL="localhost:3000"
             fi
+            
+            echo "Waiting for app at http://$TARGET_URL"
+            npx wait-on http-get://$TARGET_URL --timeout 300000 --interval 2000 --verbose || {
+              echo "=== App failed to start. Full app log: ==="
+              cat /tmp/app.log
+              echo "=== Checking if process is still running ==="
+              ps aux | grep -E "node|yarn|npm" | grep -v grep
+              echo "=== Port 3000 status ==="
+              netstat -tulpn | grep 3000 || lsof -i :3000 || echo "Port 3000 not in use"
+              exit 1
+            }
 
       - name: Run Playwright Tests
         working-directory: packages/e2e
         env:
           ALLURE_RESULTS_DIR: allure-results
           GITHUB_JOB_NAME: ${{ inputs.job-name }}
-        run: yarn playwright test ${{ inputs.playwright-spec }}
+        run: |
+          # Capitalize browser name to match Playwright project names (Chromium, WebKit, Firefox)
+          # BROWSER_NAME=$(echo "${{ inputs.browser }}" | awk '{print toupper(substr($0,1,1)) tolower(substr($0,2))}')
+          # echo "Running tests on browser: $BROWSER_NAME"
+          yarn playwright test ${{ inputs.playwright-spec }}
 
       - name: Generate Allure Report
         if: always()
@@ -219,7 +242,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: allure-report-${{ steps.project-id.outputs.project-id }}-${{ inputs.browser }}-${{ github.run_number }}
+          name: allure-report-${{ steps.project-id.outputs.project-id }}-${{ inputs.browser }}
           path: packages/e2e/allure-report
           retention-days: 5
 
@@ -227,7 +250,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: allure-results-${{ steps.project-id.outputs.project-id }}-${{ inputs.browser }}-${{ github.run_number }}
+          name: allure-results-${{ steps.project-id.outputs.project-id }}-${{ inputs.browser }}
           path: packages/e2e/allure-results/
           retention-days: 5
 
@@ -235,7 +258,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: test-results-${{ steps.project-id.outputs.project-id }}-${{ inputs.browser }}-${{ github.run_number }}
+          name: test-results-${{ steps.project-id.outputs.project-id }}-${{ inputs.browser }}
           path: packages/e2e/test-results/
           retention-days: 5
 
@@ -250,6 +273,6 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: allure-results-${{ steps.project-id.outputs.project-id }}-${{ inputs.browser }}-${{ github.run_number }}-${{ github.job }}-${{ github.run_attempt }}
+          name: allure-results-publish-${{ steps.project-id.outputs.project-id }}-${{ inputs.browser }}
           path: packages/e2e/allure-results/
           retention-days: 5 

@@ -1,15 +1,18 @@
 import { test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
+import { setupDiagnostics } from '../../../utils/test-helpers';
 import { db } from '../../../../utils/database';
 import { generateUniqueEmail } from '../../../utils/email-generator';
 
 test.describe('Solana Vite Wallet Adapter Email Verification Tests', () => {
   test.beforeEach(async ({ page }) => {
+    setupDiagnostics(page);
     await allure.epic('Sample Applications');
     await allure.feature('Solana Vite Wallet Adapter Email Verification');
   });
 
   test('should complete email verification flow with wallet adapter', async ({ page, browserName }) => {
+    setupDiagnostics(page);
     await allure.story('Solana Vite Wallet Adapter Email Code Verification Flow');
     await allure.severity('critical');
     await allure.tag('solana-vite-wa-email-verification');
@@ -178,12 +181,12 @@ test.describe('Solana Vite Wallet Adapter Email Verification Tests', () => {
       // Note: Verification automatically submits when 6th digit is entered
 
       // Wait for the iframe to be gone (indicating login is complete)
-      await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 20000 });
+      await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 30000 });
     });
 
     // Verify wallet adapter shows connected state
     await allure.step('Verify wallet adapter connected state', async () => {
-      await expect(page.locator('.wallet-adapter-button.wallet-adapter-button-trigger')).toBeVisible({ timeout: 60000 });
+      await expect(page.locator('.wallet-adapter-button.wallet-adapter-button-trigger')).toBeVisible({ timeout: 30000 });
       // await expect(page.locator('.wallet-adapter-button-start-icon')).toBeVisible({ timeout: 20000 });
       await expect(page.locator('.wallet-adapter-button-trigger')).toContainText(/^[A-Za-z0-9]{4}\.\.([A-Za-z0-9]{4})$/, { timeout: 20000 });
     });

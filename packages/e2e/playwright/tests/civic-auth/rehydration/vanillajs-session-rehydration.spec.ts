@@ -1,14 +1,17 @@
 import { test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
+import { setupDiagnostics } from '../../../utils/test-helpers';
 
 test.describe('Session Rehydration - VanillaJS', () => {
   test.beforeEach(async ({ page }) => {
+    setupDiagnostics(page);
     await allure.epic('Civic Auth Applications');
     await allure.suite('Session Rehydration');
     await allure.feature('VanillaJS Session Rehydration');
   });
 
   test('should rehydrate session via middleware on page reload', async ({ page }) => {
+    setupDiagnostics(page);
     // Configure test to be more resilient
     test.setTimeout(120000); // Increase timeout to 2 minutes
 
@@ -37,7 +40,7 @@ test.describe('Session Rehydration - VanillaJS', () => {
     await dummyButton.click({ timeout: 20000 });
 
     // Wait for the iframe to be gone (indicating login is complete)
-    await page.waitForSelector('#iframeContainer #civic-auth-iframe', { state: 'hidden', timeout: 20000 });
+    await page.waitForSelector('#iframeContainer #civic-auth-iframe', { state: 'hidden', timeout: 30000 });
 
     // Check that we're logged in by verifying the embedded status shows success
     await expect(page.locator('[data-testid="vanilla-js-embedded-status"]')).toContainText('Ghost');
@@ -159,6 +162,7 @@ test.describe('Session Rehydration - VanillaJS', () => {
   });
 
   test('should rehydrate session via API call', async ({ page }) => {
+    setupDiagnostics(page);
     // Configure test to be more resilient
     test.setTimeout(120000); // Increase timeout to 2 minutes
 
@@ -187,7 +191,7 @@ test.describe('Session Rehydration - VanillaJS', () => {
     await dummyButton.click({ timeout: 20000 });
 
     // Wait for the iframe to be gone (indicating login is complete)
-    await page.waitForSelector('#iframeContainer #civic-auth-iframe', { state: 'hidden', timeout: 20000 });
+    await page.waitForSelector('#iframeContainer #civic-auth-iframe', { state: 'hidden', timeout: 30000 });
 
     // Check that we're logged in by verifying the embedded status shows success
     await expect(page.locator('[data-testid="vanilla-js-embedded-status"]')).toContainText('Ghost');

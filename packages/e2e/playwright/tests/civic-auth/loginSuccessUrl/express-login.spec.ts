@@ -1,14 +1,17 @@
 import { test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
+import { setupDiagnostics } from '../../../utils/test-helpers';
 
 test.describe('Civic Auth Applications', () => {
   test.beforeEach(async ({ page }) => {
+    setupDiagnostics(page);
     await allure.epic('Civic Auth Applications');
     await allure.suite('Login SuccessUrl');
     await allure.feature('Express Login (LoginSuccessUrl)');
   });
   
   test('should complete login flow and redirect to customSuccessRoute', async ({ page, browserName }) => {
+    setupDiagnostics(page);
     test.setTimeout(120000); // Increase timeout to 2 minutes
     
     // Go to the app home page - Express redirects to Civic auth
@@ -51,16 +54,16 @@ test.describe('Civic Auth Applications', () => {
       const isLoadingVisibleAfterClick = await loadingAfterClick.isVisible({ timeout: 3000 }).catch(() => false);
       
       if (isLoadingVisibleAfterClick) {
-        await loadingAfterClick.waitFor({ state: 'hidden', timeout: 60000 });
+        await loadingAfterClick.waitFor({ state: 'hidden', timeout: 30000 });
       }
     } catch (error) {
       // Loading handling - if it fails, continue
     }
 
     // Wait for redirect to /customSuccessRoute
-    await expect(page).toHaveURL(/.*\/customSuccessRoute/, { timeout: 60000 });
+    await expect(page).toHaveURL(/.*\/customSuccessRoute/, { timeout: 30000 });
     
     // Check the page content
     await expect(page.locator('h1')).toContainText('Hello', { timeout: 10000 });
   });
-});
+}); 

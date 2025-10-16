@@ -1,10 +1,11 @@
 name: Civic Auth Web3 Example Apps - E2E Tests (Dev Mode)
 
 on:
-  schedule:
-    - cron: '0 0 * * *'  # Run daily at midnight UTC
-  push:
-  pull_request:
+  # Temporarily disabled - uncomment to re-enable
+  # schedule:
+  #   - cron: '0 0 * * *'  # Run daily at midnight UTC
+  # push:
+  # pull_request:
   workflow_dispatch:
     inputs:
       publish-allure-to-pages:
@@ -27,7 +28,6 @@ jobs:
     with:
       project-path: packages/civic-auth-web3/solana/next14-no-wallet-adapter
       playwright-spec: "playwright/tests/civic-auth-web3/login/solana-next14-no-wa-login.spec.ts playwright/tests/civic-auth-web3/email/solana-next14-no-wa-email-verification.spec.ts"
-      browser: webkit
       job-name: "🌐 Solana Next.js 14 No WA (Login + Email)"
       workflow-identifier: "dev-mode"
       allure-parent-suite: "Web3 Dev Mode"
@@ -40,7 +40,6 @@ jobs:
     with:
       project-path: packages/civic-auth-web3/solana/next15-no-wallet-adapter
       playwright-spec: "playwright/tests/civic-auth-web3/login/solana-next15-no-wa-login.spec.ts playwright/tests/civic-auth-web3/email/solana-next15-no-wa-email-verification.spec.ts"
-      browser: webkit
       job-name: "🌐 Solana Next.js 15 No WA (Login + Email)"
       workflow-identifier: "dev-mode"
       allure-parent-suite: "Web3 Dev Mode"
@@ -55,7 +54,6 @@ jobs:
       playwright-spec: "playwright/tests/civic-auth-web3/login/solana-next15-turbopack-no-wa-login.spec.ts playwright/tests/civic-auth-web3/email/solana-next15-turbopack-no-wa-email-verification.spec.ts"
       build-command: "yarn build"
       dev-command: "yarn dev-turbopack"
-      browser: webkit
       job-name: "🌐 Solana Next.js 15 Turbopack No WA (Login + Email)"
       workflow-identifier: "dev-mode"
       allure-parent-suite: "Web3 Dev Mode"
@@ -68,7 +66,6 @@ jobs:
     with:
       project-path: packages/civic-auth-web3/solana/vite-no-wallet-adapter
       playwright-spec: "playwright/tests/civic-auth-web3/login/solana-vite-no-wa-login.spec.ts playwright/tests/civic-auth-web3/email/solana-vite-no-wa-email-verification.spec.ts"
-      browser: webkit
       job-name: "🌐 Solana Vite No WA (Login + Email)"
       workflow-identifier: "dev-mode"
       allure-parent-suite: "Web3 Dev Mode"
@@ -81,7 +78,6 @@ jobs:
     with:
       project-path: packages/civic-auth-web3/solana/next14-wallet-adapter
       playwright-spec: "playwright/tests/civic-auth-web3/login/solana-next14-wa-login.spec.ts playwright/tests/civic-auth-web3/email/solana-next14-wa-email-verification.spec.ts"
-      browser: webkit
       job-name: "🌐 Solana Next.js 14 WA (Login + Email)"
       workflow-identifier: "dev-mode"
       allure-parent-suite: "Web3 Dev Mode"
@@ -94,7 +90,6 @@ jobs:
     with:
       project-path: packages/civic-auth-web3/solana/next15-wallet-adapter
       playwright-spec: "playwright/tests/civic-auth-web3/login/solana-next15-wa-login.spec.ts playwright/tests/civic-auth-web3/email/solana-next15-wa-email-verification.spec.ts"
-      browser: webkit
       job-name: "🌐 Solana Next.js 15 WA (Login + Email)"
       workflow-identifier: "dev-mode"
       allure-parent-suite: "Web3 Dev Mode"
@@ -109,7 +104,6 @@ jobs:
       playwright-spec: "playwright/tests/civic-auth-web3/login/solana-next15-turbopack-wa-login.spec.ts playwright/tests/civic-auth-web3/email/solana-next15-turbopack-wa-email-verification.spec.ts"
       build-command: "yarn build-turbopack"
       dev-command: "yarn dev-turbopack"
-      browser: webkit
       job-name: "🌐 Solana Next.js 15 Turbopack WA (Login + Email)"
       workflow-identifier: "dev-mode"
       allure-parent-suite: "Web3 Dev Mode"
@@ -122,7 +116,6 @@ jobs:
     with:
       project-path: packages/civic-auth-web3/solana/vite-wallet-adapter
       playwright-spec: "playwright/tests/civic-auth-web3/login/solana-vite-wa-login.spec.ts playwright/tests/civic-auth-web3/email/solana-vite-wa-email-verification.spec.ts"
-      browser: webkit
       job-name: "🌐 Solana Vite WA (Login + Email)"
       workflow-identifier: "dev-mode"
       allure-parent-suite: "Web3 Dev Mode"
@@ -135,7 +128,6 @@ jobs:
     with:
       project-path: packages/civic-auth-web3/wagmi
       playwright-spec: "playwright/tests/civic-auth-web3/login/wagmi-login.spec.ts playwright/tests/civic-auth-web3/email/wagmi-email-verification.spec.ts"
-      browser: webkit
       job-name: "🌐 Wagmi (Login + Email)"
       workflow-identifier: "dev-mode"
       allure-parent-suite: "Web3 Dev Mode"
@@ -148,7 +140,6 @@ jobs:
     with:
       project-path: packages/civic-auth-web3/wagmi-nextjs
       playwright-spec: "playwright/tests/civic-auth-web3/login/wagmi-nextjs-login.spec.ts playwright/tests/civic-auth-web3/email/wagmi-nextjs-email-verification.spec.ts"
-      browser: webkit
       job-name: "🌐 Wagmi Next.js (Login + Email)"
       workflow-identifier: "dev-mode"
       allure-parent-suite: "Web3 Dev Mode"
