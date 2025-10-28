@@ -1,0 +1,412 @@
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] [vite] connecting...
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] [vite] connected.
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] 🔍 Checking localStorage for active sessions...
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] 🔍 localStorage check: JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] ❌ No tokens found in localStorage
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] 🚀 Creating backend iframe client
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [warning] ⚠️ Could not initialize backend iframe client: Error
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] 🔍 Checking backend session...
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] 🔄 Updating Backend Iframe Status: "Ready" (ready)
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] 🔍 DOM element exists: true
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] 🔍 Current element text: Backend Iframe: Ready
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] ✅ Status updated successfully
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] ✅ Initialization complete. Auth clients: Array
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] 🚀 Creating new modal client
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] 🚀 Starting modal iframe authentication
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] 🔧 Config for modal: JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:session  SessionManager initialized with shared lib token storage  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:session  SessionManager initialized with shared lib token storage  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs  🚀 Initializing CivicAuth  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs  🚀 Initializing CivicAuth  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs  🔗 OAuth endpoints configured  +108ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs  🔗 OAuth endpoints configured  +108ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs  🔧 Initializing SessionManager  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs  🔧 Initializing SessionManager  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:token-refresh  TokenRefresher initialized  +0ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:token-refresh  TokenRefresher initialized  +0ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:token-refresh  Cleaning up TokenRefresher  +0ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:token-refresh  Cleaning up TokenRefresher  +0ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:token-refresh  Initializing browser authentication refresher  +1ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:token-refresh  Initializing browser authentication refresher  +1ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:token-refresh  TokenRefresher initialized successfully  +0ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:token-refresh  TokenRefresher initialized successfully  +0ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:token-refresh  Stopping automatic token refresh  +1ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:token-refresh  Stopping automatic token refresh  +1ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:session  SessionManager initialized with token refresh capability  +113ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:session  SessionManager initialized with token refresh capability  +113ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:token-refresh  Stopping automatic token refresh  +1ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:token-refresh  Stopping automatic token refresh  +1ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:session  Session cleared using shared lib utilities  +1ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:session  Session cleared using shared lib utilities  +1ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs  🔍 Callback page check  +5ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs  🔍 Callback page check  +5ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs  🔍 Checking for logout state cleanup  +1ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs  🔍 Checking for logout state cleanup  +1ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs  🔍 No state parameter found, skipping logout cleanup  +0ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs  🔍 No state parameter found, skipping logout cleanup  +0ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs  📞 Processing callback page  +1ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs  📞 Processing callback page  +1ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs  🔄 Handling OAuth callback  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs  🔄 Handling OAuth callback  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:oauth-callback  CivicAuth: Callback page context  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:oauth-callback  CivicAuth: Callback page context  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs  📋 Callback processing result  +1ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs  📋 Callback processing result  +1ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs  🔍 Checking display mode conditions  +1ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs  🔍 Checking display mode conditions  +1ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs  🔍 Authentication check for preload  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs  🔍 Authentication check for preload  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs  🔄 Auto-preloading iframe for instant sign-in...  +1ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs  🔄 Auto-preloading iframe for instant sign-in...  +1ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs  🎬 Preloading authentication for instant sign-in  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs  🎬 Preloading authentication for instant sign-in  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs  🔗 Built authentication URL for preload  +5ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs  🔗 Built authentication URL for preload  +5ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs  Authentication timestamp set  +1ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs  Authentication timestamp set  +1ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs  Preloading iframe for instant sign-in  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs  Preloading iframe for instant sign-in  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs  Using configured iframeDisplayMode: modal  +1ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs  Using configured iframeDisplayMode: modal  +1ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs  Created dynamic modal container  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs  Created dynamic modal container  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs  Creating IframeManager for preloading  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs  Creating IframeManager for preloading  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:iframe  Preloading iframe in background  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:iframe  Preloading iframe in background  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:iframe  Initializing Civic iframe resizer  +0ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:iframe  Initializing Civic iframe resizer  +0ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:iframe  Iframe preloaded successfully  +8ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:iframe  Iframe preloaded successfully  +8ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs  🔍 Iframe navigation detected  +9ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs  🔍 Iframe navigation detected  +9ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs  🙈 Hiding iframe completely - not login app or on callback URL  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs  🙈 Hiding iframe completely - not login app or on callback URL  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs  Iframe preloaded successfully  +2ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs  Iframe preloaded successfully  +2ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs  ✅ Authentication iframe preloaded successfully  +0ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs  ✅ Authentication iframe preloaded successfully  +0ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs  ✅ Iframe auto-preloaded successfully  +1ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs  ✅ Iframe auto-preloaded successfully  +1ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] 🚀 Starting modal authentication flow
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs  🎬 Starting authentication process  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs  🎬 Starting authentication process  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:session  No user found and not using browser cookie storage  +25ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:session  No user found and not using browser cookie storage  +25ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs  Authentication timestamp set  +2ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs  Authentication timestamp set  +2ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs  🔗 Built authentication URL  +6ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs  🔗 Built authentication URL  +6ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs  🎯 Handling authentication with display mode  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs  🎯 Handling authentication with display mode  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs  🖼️ Using iframe mode  +1ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs  🖼️ Using iframe mode  +1ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs  Using preloaded iframe for instant sign-in  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs  Using preloaded iframe for instant sign-in  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs  Using preloaded iframe without reload  +1ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs  Using preloaded iframe without reload  +1ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:iframe  Using preloaded iframe for instant display  +14ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:iframe  Using preloaded iframe for instant display  +14ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:iframe  Using preloaded iframe without reload  +1ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:iframe  Using preloaded iframe without reload  +1ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs  ⏰ Setting up authentication timeout  +2ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs  ⏰ Setting up authentication timeout  +2ms JSHandle@object
+[vanillajs-modal-refresh-token][BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?client_id=demo-client-1&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&response_type=code&scope=openid+profile+email+forwardedTokens+offline_access&state=eyJ1dWlkIjoiZmFiZGU1ZTQtYjdiNy00NTllLTk1MzUtOTZmYmQ4NDdkYTk5IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoidmFuaWxsYWpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuNS1iZXRhLjAifQ%3D%3D&code_challenge=vavkf1x9OZZkEelXqDsi74fJMo_E4h7lWHky1VaLYlU&code_challenge_method=S256&prompt=consent&nonce=1234567890
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs  Iframe on cross-origin domain (expected during auth flow)  +514ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs  Iframe on cross-origin domain (expected during auth flow)  +514ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [warning] [JavaScript Warning: "Loading failed for the <script> with source “https://auth-dev.civic.com/login/_next/static/chunks/792-9ebaeaa20145277c.js”." {file: "https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiZmFiZGU1ZTQtYjdiNy00NTllLTk1MzUtOTZmYmQ4NDdkYTk5IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoidmFuaWxsYWpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuNS1iZXRhLjAifQ%3D%3D&nonce=1234567890&client_id=demo-client-1&source_system_id=juYcyb6BkTm9T6Q84kBt5PWHnaBhabtHGMtI7qFKcRA&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&flow_id=oauth-login-2411c446-a8e3-42ee-83f" line: 1}]
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [warning] [JavaScript Warning: "Loading failed for the <script> with source “https://auth-dev.civic.com/login/_next/static/chunks/513-bd2b3549ec678186.js”." {file: "https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiZmFiZGU1ZTQtYjdiNy00NTllLTk1MzUtOTZmYmQ4NDdkYTk5IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoidmFuaWxsYWpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuNS1iZXRhLjAifQ%3D%3D&nonce=1234567890&client_id=demo-client-1&source_system_id=juYcyb6BkTm9T6Q84kBt5PWHnaBhabtHGMtI7qFKcRA&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&flow_id=oauth-login-2411c446-a8e3-42ee-83f" line: 1}]
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [warning] [JavaScript Warning: "Loading failed for the <script> with source “https://auth-dev.civic.com/login/_next/static/chunks/app/page-10237c7229c737df.js”." {file: "https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiZmFiZGU1ZTQtYjdiNy00NTllLTk1MzUtOTZmYmQ4NDdkYTk5IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoidmFuaWxsYWpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuNS1iZXRhLjAifQ%3D%3D&nonce=1234567890&client_id=demo-client-1&source_system_id=juYcyb6BkTm9T6Q84kBt5PWHnaBhabtHGMtI7qFKcRA&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&flow_id=oauth-login-2411c446-a8e3-42ee-83f" line: 1}]
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [warning] [JavaScript Warning: "Loading failed for the <script> with source “https://auth-dev.civic.com/login/_next/static/chunks/568-b79f503f7c37cd6b.js”." {file: "https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiZmFiZGU1ZTQtYjdiNy00NTllLTk1MzUtOTZmYmQ4NDdkYTk5IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoidmFuaWxsYWpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuNS1iZXRhLjAifQ%3D%3D&nonce=1234567890&client_id=demo-client-1&source_system_id=juYcyb6BkTm9T6Q84kBt5PWHnaBhabtHGMtI7qFKcRA&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&flow_id=oauth-login-2411c446-a8e3-42ee-83f" line: 1}]
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [warning] [JavaScript Warning: "Loading failed for the <script> with source “https://auth-dev.civic.com/login/_next/static/chunks/338-6bc82a14ff0b426f.js”." {file: "https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiZmFiZGU1ZTQtYjdiNy00NTllLTk1MzUtOTZmYmQ4NDdkYTk5IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoidmFuaWxsYWpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuNS1iZXRhLjAifQ%3D%3D&nonce=1234567890&client_id=demo-client-1&source_system_id=juYcyb6BkTm9T6Q84kBt5PWHnaBhabtHGMtI7qFKcRA&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&flow_id=oauth-login-2411c446-a8e3-42ee-83f" line: 1}]
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [warning] [JavaScript Warning: "Loading failed for the <script> with source “https://auth-dev.civic.com/login/_next/static/chunks/629-4e887a9ed364399e.js”." {file: "https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiZmFiZGU1ZTQtYjdiNy00NTllLTk1MzUtOTZmYmQ4NDdkYTk5IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoidmFuaWxsYWpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuNS1iZXRhLjAifQ%3D%3D&nonce=1234567890&client_id=demo-client-1&source_system_id=juYcyb6BkTm9T6Q84kBt5PWHnaBhabtHGMtI7qFKcRA&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&flow_id=oauth-login-2411c446-a8e3-42ee-83f" line: 1}]
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:message-handler  Global window received message:  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:message-handler  Global window received message:  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:message-handler  Message from configured iframe source and origin received  +3ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:message-handler  Message from configured iframe source and origin received  +3ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:message-handler  Processing iframe message  +1ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:message-handler  Processing iframe message  +1ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:message-handler  Received civicloginApp message  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:message-handler  Received civicloginApp message  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:message-handler  civicloginApp design message  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:message-handler  civicloginApp design message  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:iframe  Received message from iframe:  +891ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:iframe  Received message from iframe:  +891ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:message-handler  Global window received message:  +12ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:message-handler  Global window received message:  +12ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:message-handler  Message from configured iframe source and origin received  +1ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:message-handler  Message from configured iframe source and origin received  +1ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:message-handler  Processing iframe message  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:message-handler  Processing iframe message  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:message-handler  Received iframe resizer message  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:message-handler  Received iframe resizer message  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:iframe  Iframe content is ready - hiding shimmer loader  +889ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:iframe  Iframe content is ready - hiding shimmer loader  +889ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:iframe  Received message from iframe:  +13ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:iframe  Received message from iframe:  +13ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:iframe  Iframe child is ready  +0ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:iframe  Iframe child is ready  +0ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:iframe  Requesting size from iframe child  +1ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:iframe  Requesting size from iframe child  +1ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:message-handler  Global window received message:  +2ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:message-handler  Global window received message:  +2ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:message-handler  Message from configured iframe source and origin received  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:message-handler  Message from configured iframe source and origin received  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:message-handler  Processing iframe message  +1ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:message-handler  Processing iframe message  +1ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:message-handler  Received iframe resizer child message  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:message-handler  Received iframe resizer child message  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:iframe  Received message from iframe:  +1ms [iFrameResizerChild]Ready
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:iframe  Received message from iframe:  +1ms [iFrameResizerChild]Ready
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:message-handler  Global window received message:  +10ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:message-handler  Global window received message:  +10ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:message-handler  Message from configured iframe source and origin received  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:message-handler  Message from configured iframe source and origin received  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:message-handler  Processing iframe message  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:message-handler  Processing iframe message  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:message-handler  Received iframe resizer message  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:message-handler  Received iframe resizer message  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:iframe  Received message from iframe:  +12ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:iframe  Received message from iframe:  +12ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:iframe  Resizing iframe to height:  +0ms 390
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:iframe  Resizing iframe to height:  +0ms 390
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:iframe  Skipping iframe resize - shimmer is active  +0ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:iframe  Skipping iframe resize - shimmer is active  +0ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs  Iframe loaded  +419ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs  Iframe loaded  +419ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs  Added cross-origin message event listener for auth server communication  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs  Added cross-origin message event listener for auth server communication  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs  Cannot access iframe URL (likely cross-origin) - assuming login app, showing content.  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs  Cannot access iframe URL (likely cross-origin) - assuming login app, showing content.  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs  Error checking iframe href (expected for cross-origin)  +1ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs  Error checking iframe href (expected for cross-origin)  +1ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs  Iframe is on auth server domain - using postMessage for communication  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs  Iframe is on auth server domain - using postMessage for communication  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:iframe  Iframe loaded, requesting size from child  +32ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:iframe  Iframe loaded, requesting size from child  +32ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:iframe  Requesting size from iframe child  +1ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:iframe  Requesting size from iframe child  +1ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:iframe  Requesting size from iframe child  +104ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:iframe  Requesting size from iframe child  +104ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:message-handler  Global window received message:  +233ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:message-handler  Global window received message:  +233ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:message-handler  Message from configured iframe source and origin received  +1ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:message-handler  Message from configured iframe source and origin received  +1ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:message-handler  Processing iframe message  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:message-handler  Processing iframe message  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:message-handler  Received iframe resizer message  +1ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:message-handler  Received iframe resizer message  +1ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:iframe  Received message from iframe:  +96ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:iframe  Received message from iframe:  +96ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:iframe  Resizing iframe to height:  +1ms 267
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:iframe  Resizing iframe to height:  +1ms 267
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:iframe  Skipping iframe resize - shimmer is active  +1ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:iframe  Skipping iframe resize - shimmer is active  +1ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:message-handler  Global window received message:  +67ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:message-handler  Global window received message:  +67ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:message-handler  Message from configured iframe source and origin received  +1ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:message-handler  Message from configured iframe source and origin received  +1ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:message-handler  Processing iframe message  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:message-handler  Processing iframe message  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:message-handler  Received iframe resizer message  +1ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:message-handler  Received iframe resizer message  +1ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:iframe  Received message from iframe:  +67ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:iframe  Received message from iframe:  +67ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:iframe  Resizing iframe to height:  +1ms 258
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:iframe  Resizing iframe to height:  +1ms 258
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:iframe  Skipping iframe resize - shimmer is active  +0ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:iframe  Skipping iframe resize - shimmer is active  +0ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:message-handler  Global window received message:  +129ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:message-handler  Global window received message:  +129ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:message-handler  Message from configured iframe source and origin received  +1ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:message-handler  Message from configured iframe source and origin received  +1ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:message-handler  Processing iframe message  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:message-handler  Processing iframe message  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:message-handler  Received iframe resizer message  +1ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:message-handler  Received iframe resizer message  +1ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:iframe  Received message from iframe:  +130ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:iframe  Received message from iframe:  +130ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:iframe  Resizing iframe to height:  +0ms 267
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:iframe  Resizing iframe to height:  +0ms 267
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:iframe  Skipping iframe resize - shimmer is active  +1ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:iframe  Skipping iframe resize - shimmer is active  +1ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:iframe  Could not apply overflow styles to iframe content (likely cross-origin):  +52ms Error
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:iframe  Could not apply overflow styles to iframe content (likely cross-origin):  +52ms Error
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:iframe  Iframe resized to 267px  +0ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:iframe  Iframe resized to 267px  +0ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:iframe  Requesting size from iframe child  +1ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:iframe  Requesting size from iframe child  +1ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:message-handler  Global window received message:  +98ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:message-handler  Global window received message:  +98ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:message-handler  Message from configured iframe source and origin received  +1ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:message-handler  Message from configured iframe source and origin received  +1ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:message-handler  Processing iframe message  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:message-handler  Processing iframe message  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:message-handler  Received iframe resizer message  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:message-handler  Received iframe resizer message  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:iframe  Received message from iframe:  +46ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:iframe  Received message from iframe:  +46ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:iframe  Resizing iframe to height:  +0ms 276
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:iframe  Resizing iframe to height:  +0ms 276
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:iframe  Could not apply overflow styles to iframe content (likely cross-origin):  +0ms Error
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:iframe  Could not apply overflow styles to iframe content (likely cross-origin):  +0ms Error
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:iframe  Iframe resized to 276px  +0ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:iframe  Iframe resized to 276px  +0ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:iframe  Requesting size from iframe child  +2ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:iframe  Requesting size from iframe child  +2ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:iframe  Requesting size from iframe child  +514ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:iframe  Requesting size from iframe child  +514ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:message-handler  Global window received message:  +718ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:message-handler  Global window received message:  +718ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:message-handler  Message from configured iframe source and origin received  +1ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:message-handler  Message from configured iframe source and origin received  +1ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:message-handler  Processing iframe message  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:message-handler  Processing iframe message  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:message-handler  Received iframe resizer message  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:message-handler  Received iframe resizer message  +0ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:iframe  Received message from iframe:  +203ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:iframe  Received message from iframe:  +203ms JSHandle@object
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:iframe  Resizing iframe to height:  +0ms 390
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:iframe  Resizing iframe to height:  +0ms 390
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:iframe  Could not apply overflow styles to iframe content (likely cross-origin):  +0ms Error
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:iframe  Could not apply overflow styles to iframe content (likely cross-origin):  +0ms Error
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:iframe  Iframe resized to 390px  +1ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:iframe  Iframe resized to 390px  +1ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:iframe  Requesting size from iframe child  +780ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:iframe  Requesting size from iframe child  +780ms
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [log] civic:auth:vanillajs:iframe  Requesting size from iframe child  +1s
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [debug] civic:auth:vanillajs:iframe  Requesting size from iframe child  +1s
+[vanillajs-modal-refresh-token][PAGE ERROR] URL constructor:  is not a valid URL.
+[vanillajs-modal-refresh-token][ERROR STACK] TypeError: URL constructor:  is not a valid URL.
+    at 48352/T/</e< (https://auth-dev.civic.com/login/_next/static/chunks/app/page-10237c7229c737df.js:1:14208)
+    at r (https://auth-dev.civic.com/login/_next/static/chunks/311-07f3da228ca02d9a.js:2:84291)
+    at setInterval handler*93518/ek/< (https://auth-dev.civic.com/login/_next/static/chunks/311-07f3da228ca02d9a.js:19:12672)
+    at 48352/T/< (https://auth-dev.civic.com/login/_next/static/chunks/app/page-10237c7229c737df.js:1:13860)
+    at aW (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:73612)
+    at oe (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85055)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85691)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86019)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85673)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:86638)
+    at or (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85577)
+    at ol (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:85714)
+    at id (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:109085)
+    at o (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:105287)
+    at T (https://auth-dev.civic.com/login/_next/static/chunks/311-07f3da228ca02d9a.js:1:109069)
+    at EventHandlerNonNull*47341 (https://auth-dev.civic.com/login/_next/static/chunks/311-07f3da228ca02d9a.js:1:109456)
+    at l (https://auth-dev.civic.com/login/_next/static/chunks/webpack-8ebd4c95ac061f00.js:1:535)
+    at 92814 (https://auth-dev.civic.com/login/_next/static/chunks/311-07f3da228ca02d9a.js:1:111224)
+    at l (https://auth-dev.civic.com/login/_next/static/chunks/webpack-8ebd4c95ac061f00.js:1:535)
+    at 69848 (https://auth-dev.civic.com/login/_next/static/chunks/989aa577-9c492ab3eabae204.js:1:487)
+    at l (https://auth-dev.civic.com/login/_next/static/chunks/webpack-8ebd4c95ac061f00.js:1:535)
+    at 36565 (https://auth-dev.civic.com/login/_next/static/chunks/311-07f3da228ca02d9a.js:2:62784)
+    at l (https://auth-dev.civic.com/login/_next/static/chunks/webpack-8ebd4c95ac061f00.js:1:535)
+    at 43329 (https://auth-dev.civic.com/login/_next/static/chunks/311-07f3da228ca02d9a.js:1:95894)
+    at l (https://auth-dev.civic.com/login/_next/static/chunks/webpack-8ebd4c95ac061f00.js:1:535)
+    at 50719 (https://auth-dev.civic.com/login/_next/static/chunks/311-07f3da228ca02d9a.js:2:10846)
+    at l (https://auth-dev.civic.com/login/_next/static/chunks/webpack-8ebd4c95ac061f00.js:1:535)
+    at 44471 (https://auth-dev.civic.com/login/_next/static/chunks/311-07f3da228ca02d9a.js:1:93443)
+    at l (https://auth-dev.civic.com/login/_next/static/chunks/webpack-8ebd4c95ac061f00.js:1:535)
+    at 93913 (https://auth-dev.civic.com/login/_next/static/chunks/311-07f3da228ca02d9a.js:11:22864)
+    at l (https://auth-dev.civic.com/login/_next/static/chunks/webpack-8ebd4c95ac061f00.js:1:535)
+    at 93518 (https://auth-dev.civic.com/login/_next/static/chunks/311-07f3da228ca02d9a.js:19:20486)
+    at l (https://auth-dev.civic.com/login/_next/static/chunks/webpack-8ebd4c95ac061f00.js:1:535)
+    at 529 (https://auth-dev.civic.com/login/_next/static/chunks/main-app-eb5939414f8f92cb.js:1:763)
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [warning] [JavaScript Warning: "The resource at “https://auth-dev.civic.com/login/_next/static/media/4c33a6e82dbdb8e0-s.p.woff2” preloaded with link preload was not used within a few seconds. Make sure all attributes of the preload tag are set correctly." {file: "https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiZmFiZGU1ZTQtYjdiNy00NTllLTk1MzUtOTZmYmQ4NDdkYTk5IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoidmFuaWxsYWpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuNS1iZXRhLjAifQ%3D%3D&nonce=1234567890&client_id=demo-client-1&source_system_id=juYcyb6BkTm9T6Q84kBt5PWHnaBhabtHGMtI7qFKcRA&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&flow_id=oauth-login-2411c446-a8e3-42ee-83f" line: 0}]
+[vanillajs-modal-refresh-token][PAGE CONSOLE] [warning] [JavaScript Warning: "The resource at “https://auth-dev.civic.com/login/_next/static/media/13ee043737a8bb36-s.p.woff2” preloaded with link preload was not used within a few seconds. Make sure all attributes of the preload tag are set correctly." {file: "https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiZmFiZGU1ZTQtYjdiNy00NTllLTk1MzUtOTZmYmQ4NDdkYTk5IiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoidmFuaWxsYWpzIiwic2RrVmVyc2lvbiI6IkBjaXZpYy9hdXRoOjAuMTEuNS1iZXRhLjAifQ%3D%3D&nonce=1234567890&client_id=demo-client-1&source_system_id=juYcyb6BkTm9T6Q84kBt5PWHnaBhabtHGMtI7qFKcRA&scope=openid+profile+email+forwardedTokens+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&flow_id=oauth-login-2411c446-a8e3-42ee-83f" line: 0}]

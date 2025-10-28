@@ -1,0 +1,24 @@
+[PAGE CONSOLE] [log] @civic/auth:0.11.5-beta.0
+[PAGE CONSOLE] [log] @civic/auth:0.11.5-beta.0
+[REQUEST FAILED] GET https://auth-dev.civic.com/oauth/.well-known/openid-configuration - net::ERR_ABORTED
+[REQUEST FAILED] GET https://auth-dev.civic.com/oauth/.well-known/openid-configuration - net::ERR_ABORTED
+[PAGE CONSOLE] [log] onSignIn callback executed: {options: Object, timestamp: 2025-10-28T16:34:11.827Z}
+[PAGE CONSOLE] [log] onSignIn callback executed: {options: Object, timestamp: 2025-10-28T16:34:11.827Z}
+[PAGE CONSOLE] [error] Failed to initialize auth in CivicAuthProvider: CivicAuthError: Failed to fetch
+    at pu.init (http://localhost:3000/assets/index-C1I8M13f.js:118:35159)
+    at async pu.create (http://localhost:3000/assets/index-C1I8M13f.js:118:32121)
+    at async Tn._doInitialize (http://localhost:3000/assets/index-C1I8M13f.js:118:62461)
+    at async http://localhost:3000/assets/index-C1I8M13f.js:125:8478
+[PAGE CONSOLE] [error] Failed to initialize auth in CivicAuthProvider: CivicAuthError: Failed to fetch
+    at pu.init (http://localhost:3000/assets/index-C1I8M13f.js:118:35159)
+    at async pu.create (http://localhost:3000/assets/index-C1I8M13f.js:118:32121)
+    at async Tn._doInitialize (http://localhost:3000/assets/index-C1I8M13f.js:118:62461)
+    at async http://localhost:3000/assets/index-C1I8M13f.js:125:8478
+[PAGE CONSOLE] [log] @civic/auth:0.11.5-beta.0
+[PAGE CONSOLE] [log] @civic/auth:0.11.5-beta.0
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?client_id=demo-client-1&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&response_type=code&scope=openid+profile+email+offline_access&state=eyJ1dWlkIjoiYTI0NWZlZGItOTFjZi00ODY5LWFhZjktNDgxYzkwNWNhNGFlIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjUtYmV0YS4wIn0%3D&code_challenge=uEe6lwv1hAOLqUZIYQbTdPTr0U4hvDovw28WdleH7wc&code_challenge_method=S256&prompt=consent
+[BAD RESPONSE] 303 https://auth-dev.civic.com/oauth/auth?client_id=demo-client-1&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&response_type=code&scope=openid+profile+email+offline_access&state=eyJ1dWlkIjoiYTI0NWZlZGItOTFjZi00ODY5LWFhZjktNDgxYzkwNWNhNGFlIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjUtYmV0YS4wIn0%3D&code_challenge=uEe6lwv1hAOLqUZIYQbTdPTr0U4hvDovw28WdleH7wc&code_challenge_method=S256&prompt=consent
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[PAGE CONSOLE] [warning] [Sentry] Cannot initialize SDK with `debug` option using a non-debug bundle.
+[REQUEST FAILED] POST https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiYTI0NWZlZGItOTFjZi00ODY5LWFhZjktNDgxYzkwNWNhNGFlIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjUtYmV0YS4wIn0%3D&client_id=demo-client-1&source_system_id=YLgty9fWJXRm9WMNSmSOKHx_ViNlykiIn7N_Lim9T5c&scope=openid+profile+email+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&flow_id=oauth-login-412ee619-6b43-479e-8a08-6ef207335b92 - net::ERR_ABORTED
+[REQUEST FAILED] POST https://auth-dev.civic.com/login?state=eyJ1dWlkIjoiYTI0NWZlZGItOTFjZi00ODY5LWFhZjktNDgxYzkwNWNhNGFlIiwiZGlzcGxheU1vZGUiOiJpZnJhbWUiLCJpZnJhbWVEaXNwbGF5TW9kZSI6Im1vZGFsIiwiZnJhbWV3b3JrIjoicmVhY3RqcyIsInNka1ZlcnNpb24iOiJAY2l2aWMvYXV0aDowLjExLjUtYmV0YS4wIn0%3D&client_id=demo-client-1&source_system_id=YLgty9fWJXRm9WMNSmSOKHx_ViNlykiIn7N_Lim9T5c&scope=openid+profile+email+offline_access&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&flow_id=oauth-login-412ee619-6b43-479e-8a08-6ef207335b92 - net::ERR_ABORTED

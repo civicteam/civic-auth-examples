@@ -1,0 +1,47 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - heading "Civic Auth (ReactJS)" [level=1] [ref=e4]
+    - button [ref=e6]
+    - button "Sign in (Custom)" [ref=e7] [cursor=pointer]
+    - button "Test onSignIn Callback" [ref=e8] [cursor=pointer]
+  - generic [ref=e10]:
+    - iframe [active] [ref=e12]:
+      - generic [active] [ref=f1e1]:
+        - main [ref=f1e2]:
+          - generic [ref=f1e7]:
+            - generic [ref=f1e9]:
+              - heading "Login" [level=2] [ref=f1e10]
+              - heading "Log in or create account" [level=2] [ref=f1e11]
+            - generic [ref=f1e12]:
+              - generic [ref=f1e15]:
+                - button "Google" [ref=f1e16] [cursor=pointer]:
+                  - img "Google" [ref=f1e17]
+                - button "Dummy" [ref=f1e18] [cursor=pointer]:
+                  - img "Dummy" [ref=f1e19]
+                - button "Github" [ref=f1e20] [cursor=pointer]:
+                  - img "Github" [ref=f1e21]
+                - button "Discord" [ref=f1e22] [cursor=pointer]:
+                  - img "Discord" [ref=f1e23]
+                - button "Facebook" [ref=f1e24] [cursor=pointer]:
+                  - img "Facebook" [ref=f1e25]
+                - button "X" [ref=f1e26] [cursor=pointer]:
+                  - img "X" [ref=f1e27]
+              - heading "OR" [level=2] [ref=f1e29]
+              - generic [ref=f1e31]:
+                - textbox "Email address" [ref=f1e32]
+                - button [ref=f1e34] [cursor=pointer]:
+                  - img [ref=f1e35]
+            - generic [ref=f1e38]:
+              - generic [ref=f1e39]: Powered by
+              - link [ref=f1e40] [cursor=pointer]:
+                - /url: https://www.civic.com/
+                - img [ref=f1e41]
+        - region "Notifications (F8)":
+          - list
+        - alert [ref=f1e50]
+    - button "Close" [ref=e13] [cursor=pointer]:
+      - img [ref=e14]
+```
