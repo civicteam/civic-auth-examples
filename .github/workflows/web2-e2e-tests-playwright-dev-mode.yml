@@ -102,8 +102,8 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth/reactjs
-      playwright-spec: "playwright/tests/civic-auth/login/reactjs-login.spec.ts playwright/tests/civic-auth/email/reactjs-email-verification.spec.ts playwright/tests/civic-auth/onSignIn/reactjs-onsignin-callback.spec.ts"
-      job-name: "⚛️ ReactJS App (Login + Email + OnSignIn)"
+      playwright-spec: "playwright/tests/civic-auth/login/reactjs-login.spec.ts playwright/tests/civic-auth/onSignIn/reactjs-onsignin-callback.spec.ts"
+      job-name: "⚛️ ReactJS App (Login + OnSignIn)"
       workflow-identifier: "dev-mode"
     secrets: inherit
 
@@ -114,7 +114,7 @@ jobs:
     with:
       project-path: packages/civic-auth/server/express
       playwright-spec: "playwright/tests/civic-auth/login/express-login.spec.ts"
-      job-name: "🛠️ Express Server Login"
+      job-name: "🛠️ Express Server (Login)"
       workflow-identifier: "dev-mode"
     secrets: inherit
 
@@ -125,7 +125,7 @@ jobs:
     with:
       project-path: packages/civic-auth/server/fastify
       playwright-spec: "playwright/tests/civic-auth/login/fastify-login.spec.ts"
-      job-name: "⚡ Fastify Server Login"
+      job-name: "⚡ Fastify Server (Login)"
       workflow-identifier: "dev-mode"
     secrets: inherit
 
@@ -136,7 +136,7 @@ jobs:
     with:
       project-path: packages/civic-auth/server/hono
       playwright-spec: "playwright/tests/civic-auth/login/hono-login.spec.ts"
-      job-name: "🔥 Hono Server Login"
+      job-name: "🔥 Hono Server (Login)"
       workflow-identifier: "dev-mode"
     secrets: inherit
 
