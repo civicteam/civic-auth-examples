@@ -1,17 +1,13 @@
 import { test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
-import { setupDiagnostics } from '../../../utils/test-helpers';
-
 test.describe('Civic Auth onSignIn Callback Tests', () => {
   test.beforeEach(async ({ page }) => {
-    setupDiagnostics(page);
     await allure.epic('Civic Auth Applications');
     await allure.suite('onSignIn Callback');
     await allure.feature('React.js onSignIn Callback');
   });
 
   test('should call onSignIn callback on successful sign-in', async ({ page }) => {
-    setupDiagnostics(page);
     // Clear any existing auth state to ensure clean test
     await page.context().clearCookies();
     
@@ -89,7 +85,6 @@ test.describe('Civic Auth onSignIn Callback Tests', () => {
   });
 
   test('should call onSignIn callback and handle sign-out correctly', async ({ page }) => {
-    setupDiagnostics(page);
     // Clear any existing auth state to ensure clean test
     await page.context().clearCookies();
     
@@ -173,7 +168,6 @@ test.describe('Civic Auth onSignIn Callback Tests', () => {
   });
 
   test('should call onSignIn callback with error on failed sign-in', async ({ page }) => {
-    setupDiagnostics(page);
     // This test would require simulating a failed sign-in scenario
     // For now, we'll test the callback structure and timing
     
@@ -202,7 +196,6 @@ test.describe('Civic Auth onSignIn Callback Tests', () => {
   });
 
   test('should maintain callback state across page interactions', async ({ page }) => {
-    setupDiagnostics(page);
     // Navigate to the main React app
     await page.goto('http://localhost:3000?view=onSignInTest');
     

@@ -1,17 +1,13 @@
 import { test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
-import { setupDiagnostics } from '../../../utils/test-helpers';
-
 test.describe('Civic Auth Applications', () => {
   test.beforeEach(async ({ page }) => {
-    setupDiagnostics(page);
     await allure.epic('Civic Auth Applications');
     await allure.suite('Refresh Token');
     await allure.feature('Next.js Refresh Token Flow');
   });
 
   test('should handle refresh token flow correctly', async ({ page, browserName }) => {
-    setupDiagnostics(page);
     // Configure test to be more resilient
     test.setTimeout(120000); // Increase timeout to 2 minutes
 
