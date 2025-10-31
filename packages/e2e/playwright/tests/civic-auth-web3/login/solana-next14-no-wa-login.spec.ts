@@ -1,10 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
-import { setupDiagnostics } from '../../../utils/test-helpers';
-
 test.describe('Civic Auth Applications', () => {
   test.beforeEach(async ({ page, browserName }) => {
-    setupDiagnostics(page);
     await allure.parentSuite(process.env.ALLURE_PARENT_SUITE || 'Web3 Applications');
     await allure.suite('Solana Applications');
     await allure.subSuite('Next.js 14 No Wallet Adapter');
@@ -13,7 +10,6 @@ test.describe('Civic Auth Applications', () => {
     await allure.label('browser', browserName);
   });
   test('should complete full login and logout flow', async ({ page, browserName }) => {
-    setupDiagnostics(page);
     // Configure test to be more resilient
     test.setTimeout(120000); // Increase timeout to 2 minutes
 

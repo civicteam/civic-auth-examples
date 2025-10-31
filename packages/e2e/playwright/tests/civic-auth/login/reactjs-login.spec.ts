@@ -1,16 +1,12 @@
 import { test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
-import { setupDiagnostics } from '../../../utils/test-helpers';
-
 test.describe('Civic Auth Applications', () => {
   test.beforeEach(async ({ page }) => {
-    setupDiagnostics(page);
     await allure.epic('Civic Auth Applications');
     await allure.suite('Login');
     await allure.feature('React.js Login');
   });
   test('should complete full login and logout flow', async ({ page, browserName }) => {
-    setupDiagnostics(page);
     
     // Open the app home page
     await page.goto('http://localhost:3000');

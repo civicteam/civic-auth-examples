@@ -1,17 +1,14 @@
 import { test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
-import { setupDiagnostics } from '../../../utils/test-helpers';
 
 test.describe('Civic Auth Applications', () => {
   test.beforeEach(async ({ page }) => {
-    setupDiagnostics(page);
     await allure.epic('Civic Auth Applications');
     await allure.suite('Stale Session Handling');
     await allure.feature('VanillaJS Stale Session Reinitialization');
   });
 
   test('should reinitialize authentication when session is stale (>30 minutes)', async ({ page, browserName }) => {
-    setupDiagnostics(page);
     // Open the app home page
     await page.goto('http://localhost:3000');
 

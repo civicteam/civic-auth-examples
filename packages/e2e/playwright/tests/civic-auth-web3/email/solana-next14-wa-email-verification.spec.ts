@@ -1,18 +1,15 @@
 import { test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
-import { setupDiagnostics } from '../../../utils/test-helpers';
 import { db } from '../../../../utils/database';
 import { generateUniqueEmail } from '../../../utils/email-generator';
 
 test.describe('Solana Next.js 14 Wallet Adapter Email Verification Tests', () => {
   test.beforeEach(async ({ page }) => {
-    setupDiagnostics(page);
     await allure.epic('Sample Applications');
     await allure.feature('Solana Next.js 14 Wallet Adapter Email Verification');
   });
 
   test('should complete email verification flow with wallet adapter', async ({ page, browserName }) => {
-    setupDiagnostics(page);
     await allure.story('Solana Next.js 14 Wallet Adapter Email Code Verification Flow');
     await allure.severity('critical');
     await allure.tag('solana-nextjs14-wa-email-verification');

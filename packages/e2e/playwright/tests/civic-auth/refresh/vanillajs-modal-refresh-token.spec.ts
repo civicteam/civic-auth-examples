@@ -1,7 +1,5 @@
 import { test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
-import { setupDiagnostics } from '../../../utils/test-helpers';
-
 test.describe('Civic Auth Applications', () => {
   test.beforeEach(async ({ page }) => {
     await allure.epic('Civic Auth Applications');
@@ -11,7 +9,6 @@ test.describe('Civic Auth Applications', () => {
 
   test('should handle refresh token flow correctly in modal mode', async ({ page, browserName }) => {
     // Setup diagnostic monitoring for CI debugging
-    setupDiagnostics(page, 'vanillajs-modal-refresh-token');
     
     // Configure test to be more resilient
     test.setTimeout(120000); // Increase timeout to 2 minutes

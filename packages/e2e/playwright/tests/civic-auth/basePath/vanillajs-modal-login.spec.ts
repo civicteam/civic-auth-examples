@@ -1,16 +1,12 @@
 import { test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
-import { setupDiagnostics } from '../../../utils/test-helpers';
-
 test.describe('Civic Auth Applications', () => {
   test.beforeEach(async ({ page }) => {
-    setupDiagnostics(page);
     await allure.epic('Civic Auth Applications');
     await allure.suite('Login Basepath');
     await allure.feature('VanillaJS Modal Login (BasePath)');
   });
   test('should complete full modal login and logout flow with basepath', async ({ page }) => {
-    setupDiagnostics(page);
     // Open the app home page with basepath
     await page.goto('http://localhost:3000/demo');
 

@@ -1,17 +1,13 @@
 import { test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
-import { setupDiagnostics } from '../../../utils/test-helpers';
-
 test.describe('Session Rehydration - VanillaJS', () => {
   test.beforeEach(async ({ page }) => {
-    setupDiagnostics(page);
     await allure.epic('Civic Auth Applications');
     await allure.suite('Session Rehydration');
     await allure.feature('VanillaJS Session Rehydration');
   });
 
   test('should rehydrate session via middleware on page reload', async ({ page }) => {
-    setupDiagnostics(page);
     // Configure test to be more resilient
     test.setTimeout(120000); // Increase timeout to 2 minutes
 
@@ -162,7 +158,6 @@ test.describe('Session Rehydration - VanillaJS', () => {
   });
 
   test('should rehydrate session via API call', async ({ page }) => {
-    setupDiagnostics(page);
     // Configure test to be more resilient
     test.setTimeout(120000); // Increase timeout to 2 minutes
 
