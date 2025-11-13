@@ -196,9 +196,16 @@ jobs:
           allure-token: ${{ secrets.ALLURE_TESTOPS_TOKEN }}
           allure-project-id: ${{ secrets.ALLURE_TESTOPS_PROJECT_ID }}
       
-      - name: Upload test results
+      - name: Upload and close launch
         if: always()
         run: |
-          allurectl upload allure-results \
+          LAUNCH_ID=$(allurectl upload allure-results \
             --launch-name "Web2 Dev Mode - Run #${{ github.run_number }}" \
-            --launch-tags "web2" "dev-mode" "github-actions"
+            --launch-tags "web2" "dev-mode" "github-actions" | grep -oP 'launch/\K[0-9]+' || echo "")
+          
+          if [ -n "$LAUNCH_ID" ]; then
+            echo "Closing launch ID: $LAUNCH_ID"
+            allurectl launch close $LAUNCH_ID
+          else
+            echo "Warning: Could not extract launch ID"
+          fi
