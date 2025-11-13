@@ -1,9 +1,12 @@
-name: Publish Combined Allure Reports
+name: Publish Combined Allure Reports (DISABLED - Using Allure TestOps)
 
-on:
-  push:
-  pull_request:
-  workflow_dispatch:
+# DISABLED: This workflow is no longer needed as we're uploading directly to Allure TestOps
+# The individual test workflows now upload results directly to TestOps instead of creating artifacts
+# Re-enable by uncommenting the 'on:' section below if needed
+# on:
+#   push:
+#   pull_request:
+#   workflow_dispatch:
 
 jobs:
   publish-combined-reports:

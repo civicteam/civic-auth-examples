@@ -6,12 +6,6 @@ on:
   push:
   pull_request:
   workflow_dispatch:
-    inputs:
-      publish-allure-to-pages:
-        description: 'Publish Allure reports to GitHub Pages'
-        required: false
-        default: false
-        type: boolean
     
 jobs:
   check-version:
@@ -150,8 +144,8 @@ jobs:
       allure-parent-suite: "Web3 Dev Mode"
     secrets: inherit
 
-  build-allure-report:
-    name: "Build Web3 Dev Mode Allure Report"
+  upload-to-allure-testops:
+    name: "Upload Web3 Dev Mode Results to Allure TestOps"
     needs: [
       job-solana-next14-no-wa-example-app,
       job-solana-next15-no-wa-example-app,
@@ -178,39 +172,17 @@ jobs:
           merge-multiple: true
           path: allure-results
 
-      - name: Load test report history
+      - name: Upload to Allure TestOps
         if: always()
-        continue-on-error: true
-        uses: actions/checkout@v4
+        uses: allure-framework/setup-allurectl@v1
         with:
-          ref: gh-pages
-          path: gh-pages
-
-      - name: Copy existing history to test results
+          allure-endpoint: ${{ secrets.ALLURE_TESTOPS_ENDPOINT }}
+          allure-token: ${{ secrets.ALLURE_TESTOPS_TOKEN }}
+          allure-project-id: ${{ secrets.ALLURE_TESTOPS_PROJECT_ID }}
+      
+      - name: Upload test results
         if: always()
         run: |
-          echo "Copying existing history to test results directory..."
-          if [ -d "gh-pages/history" ]; then
-            echo "Found history in gh-pages/history"
-            cp -r gh-pages/history allure-results/
-            echo "History copied successfully"
-          else
-            echo "No existing history found, will create new"
-            mkdir -p allure-results/history
-          fi
-
-      - name: Build test report (but don't publish)
-        if: always()
-        uses: simple-elf/allure-report-action@v1.13
-        with:
-          allure_results: allure-results
-          allure_history: allure-history
-          keep_reports: 5
-
-      - name: Upload built report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: web3-dev-mode-allure-report
-          path: allure-history
-          retention-days: 5
+          allurectl upload allure-results \
+            --launch-name "Web3 Dev Mode - Run #${{ github.run_number }}" \
+            --launch-tags "web3" "dev-mode" "github-actions"
