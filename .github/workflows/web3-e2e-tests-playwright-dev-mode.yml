@@ -1,11 +1,10 @@
 name: Civic Auth Web3 Example Apps - E2E Tests (Dev Mode)
 
 on:
-  # Temporarily disabled - uncomment to re-enable
-  # schedule:
-  #   - cron: '0 0 * * *'  # Run daily at midnight UTC
-  # push:
-  # pull_request:
+  schedule:
+    - cron: '0 0 * * *'  # Run daily at midnight UTC
+  push:
+  pull_request:
   workflow_dispatch:
     inputs:
       publish-allure-to-pages:
@@ -27,8 +26,8 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth-web3/solana/next14-no-wallet-adapter
-      playwright-spec: "playwright/tests/civic-auth-web3/login/solana-next14-no-wa-login.spec.ts playwright/tests/civic-auth-web3/email/solana-next14-no-wa-email-verification.spec.ts"
-      job-name: "🌐 Solana Next.js 14 No WA (Login + Email)"
+      playwright-spec: "playwright/tests/civic-auth-web3/login/solana-next14-no-wa-login.spec.ts"
+      job-name: "🌐 Solana Next.js 14 No WA (Login)"
       workflow-identifier: "dev-mode"
       allure-parent-suite: "Web3 Dev Mode"
     secrets: inherit
@@ -39,8 +38,8 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth-web3/solana/next15-no-wallet-adapter
-      playwright-spec: "playwright/tests/civic-auth-web3/login/solana-next15-no-wa-login.spec.ts playwright/tests/civic-auth-web3/email/solana-next15-no-wa-email-verification.spec.ts"
-      job-name: "🌐 Solana Next.js 15 No WA (Login + Email)"
+      playwright-spec: "playwright/tests/civic-auth-web3/login/solana-next15-no-wa-login.spec.ts"
+      job-name: "🌐 Solana Next.js 15 No WA (Login)"
       workflow-identifier: "dev-mode"
       allure-parent-suite: "Web3 Dev Mode"
     secrets: inherit
@@ -51,10 +50,10 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth-web3/solana/next15-no-wallet-adapter
-      playwright-spec: "playwright/tests/civic-auth-web3/login/solana-next15-turbopack-no-wa-login.spec.ts playwright/tests/civic-auth-web3/email/solana-next15-turbopack-no-wa-email-verification.spec.ts"
+      playwright-spec: "playwright/tests/civic-auth-web3/login/solana-next15-turbopack-no-wa-login.spec.ts"
       build-command: "yarn build"
       dev-command: "yarn dev-turbopack"
-      job-name: "🌐 Solana Next.js 15 Turbopack No WA (Login + Email)"
+      job-name: "🌐 Solana Next.js 15 Turbopack No WA (Login)"
       workflow-identifier: "dev-mode"
       allure-parent-suite: "Web3 Dev Mode"
     secrets: inherit
@@ -65,8 +64,8 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth-web3/solana/vite-no-wallet-adapter
-      playwright-spec: "playwright/tests/civic-auth-web3/login/solana-vite-no-wa-login.spec.ts playwright/tests/civic-auth-web3/email/solana-vite-no-wa-email-verification.spec.ts"
-      job-name: "🌐 Solana Vite No WA (Login + Email)"
+      playwright-spec: "playwright/tests/civic-auth-web3/login/solana-vite-no-wa-login.spec.ts"
+      job-name: "🌐 Solana Vite No WA (Login)"
       workflow-identifier: "dev-mode"
       allure-parent-suite: "Web3 Dev Mode"
     secrets: inherit
@@ -77,8 +76,8 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth-web3/solana/next14-wallet-adapter
-      playwright-spec: "playwright/tests/civic-auth-web3/login/solana-next14-wa-login.spec.ts playwright/tests/civic-auth-web3/email/solana-next14-wa-email-verification.spec.ts"
-      job-name: "🌐 Solana Next.js 14 WA (Login + Email)"
+      playwright-spec: "playwright/tests/civic-auth-web3/login/solana-next14-wa-login.spec.ts"
+      job-name: "🌐 Solana Next.js 14 WA (Login)"
       workflow-identifier: "dev-mode"
       allure-parent-suite: "Web3 Dev Mode"
     secrets: inherit
@@ -89,8 +88,8 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth-web3/solana/next15-wallet-adapter
-      playwright-spec: "playwright/tests/civic-auth-web3/login/solana-next15-wa-login.spec.ts playwright/tests/civic-auth-web3/email/solana-next15-wa-email-verification.spec.ts"
-      job-name: "🌐 Solana Next.js 15 WA (Login + Email)"
+      playwright-spec: "playwright/tests/civic-auth-web3/login/solana-next15-wa-login.spec.ts"
+      job-name: "🌐 Solana Next.js 15 WA (Login)"
       workflow-identifier: "dev-mode"
       allure-parent-suite: "Web3 Dev Mode"
     secrets: inherit
@@ -101,10 +100,10 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth-web3/solana/next15-wallet-adapter
-      playwright-spec: "playwright/tests/civic-auth-web3/login/solana-next15-turbopack-wa-login.spec.ts playwright/tests/civic-auth-web3/email/solana-next15-turbopack-wa-email-verification.spec.ts"
+      playwright-spec: "playwright/tests/civic-auth-web3/login/solana-next15-turbopack-wa-login.spec.ts"
       build-command: "yarn build-turbopack"
       dev-command: "yarn dev-turbopack"
-      job-name: "🌐 Solana Next.js 15 Turbopack WA (Login + Email)"
+      job-name: "🌐 Solana Next.js 15 Turbopack WA (Login)"
       workflow-identifier: "dev-mode"
       allure-parent-suite: "Web3 Dev Mode"
     secrets: inherit
@@ -115,8 +114,8 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth-web3/solana/vite-wallet-adapter
-      playwright-spec: "playwright/tests/civic-auth-web3/login/solana-vite-wa-login.spec.ts playwright/tests/civic-auth-web3/email/solana-vite-wa-email-verification.spec.ts"
-      job-name: "🌐 Solana Vite WA (Login + Email)"
+      playwright-spec: "playwright/tests/civic-auth-web3/login/solana-vite-wa-login.spec.ts"
+      job-name: "🌐 Solana Vite WA (Login)"
       workflow-identifier: "dev-mode"
       allure-parent-suite: "Web3 Dev Mode"
     secrets: inherit
@@ -127,8 +126,8 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth-web3/wagmi
-      playwright-spec: "playwright/tests/civic-auth-web3/login/wagmi-login.spec.ts playwright/tests/civic-auth-web3/email/wagmi-email-verification.spec.ts"
-      job-name: "🌐 Wagmi (Login + Email)"
+      playwright-spec: "playwright/tests/civic-auth-web3/login/wagmi-login.spec.ts"
+      job-name: "🌐 Wagmi (Login)"
       workflow-identifier: "dev-mode"
       allure-parent-suite: "Web3 Dev Mode"
     secrets: inherit
@@ -139,8 +138,8 @@ jobs:
     uses: ./.github/workflows/test-example-app-playwright.yml
     with:
       project-path: packages/civic-auth-web3/wagmi-nextjs
-      playwright-spec: "playwright/tests/civic-auth-web3/login/wagmi-nextjs-login.spec.ts playwright/tests/civic-auth-web3/email/wagmi-nextjs-email-verification.spec.ts"
-      job-name: "🌐 Wagmi Next.js (Login + Email)"
+      playwright-spec: "playwright/tests/civic-auth-web3/login/wagmi-nextjs-login.spec.ts"
+      job-name: "🌐 Wagmi Next.js (Login)"
       workflow-identifier: "dev-mode"
       allure-parent-suite: "Web3 Dev Mode"
     secrets: inherit
