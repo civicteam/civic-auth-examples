@@ -24,19 +24,26 @@ jobs:
       - name: Check Versions
         id: check-version
         run: |
-          # Get current versions
-          AUTH_BETA_VERSION=$(npm view @civic/auth@beta version)
+          # Get current versions (return empty string if tag doesn't exist)
+          AUTH_BETA_VERSION=$(npm view @civic/auth@beta version 2>/dev/null || echo "")
           AUTH_PROD_VERSION=$(npm view @civic/auth version)
-          WEB3_BETA_VERSION=$(npm view @civic/auth-web3@beta version)
+          WEB3_BETA_VERSION=$(npm view @civic/auth-web3@beta version 2>/dev/null || echo "")
           WEB3_PROD_VERSION=$(npm view @civic/auth-web3 version)
           
           # Function to get latest version (beta or prod)
           get_latest_version() {
             local beta=$1
             local prod=$2
+
+            # If beta doesn't exist, return prod
+            if [ -z "$beta" ]; then
+              echo $prod
+              return
+            fi
+
             local beta_base=$(echo $beta | sed 's/-beta.*//')
             local prod_base=$prod
-            
+
             if [[ $(echo -e "$beta_base\n$prod_base" | sort -V | tail -n 1) == "$beta_base" && "$beta_base" != "$prod_base" ]]; then
               echo $beta
             else

@@ -63,6 +63,10 @@ for dir in "${PROJECT_DIRS[@]}"; do
   # Capture current spec (so we can preserve "*" if that's the chosen policy)
   CURRENT_SPEC=$(node -e "const p=require('./package.json'); const k='${PKG_NAME}'; const s=(p.dependencies&&p.dependencies[k])||(p.devDependencies&&p.devDependencies[k])||''; process.stdout.write(s);")
 
+  # Ensure lockfile is up to date before upgrading
+  echo "yarn install"
+  yarn install
+
   if [[ "$VERSION" == "latest" ]]; then
     echo "yarn upgrade $PKG_NAME"
     yarn upgrade "$PKG_NAME"
