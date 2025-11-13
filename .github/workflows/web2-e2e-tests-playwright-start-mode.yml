@@ -235,15 +235,15 @@ jobs:
 
       - name: Setup Allure
         if: always()
-        uses: allure-framework/setup-allurectl@v1
-        with:
-          allure-version: 2.24.0
+        run: |
+          npm install -g allure-commandline --save-dev
+          allure --version
 
       - name: Build test report (but don't publish)
         if: always()
         run: |
           # Generate the Allure report
-          allurectl report generate allure-results --output allure-report
+          allure generate allure-results --output allure-report --clean
           
           # Create allure-history directory structure
           mkdir -p allure-history
