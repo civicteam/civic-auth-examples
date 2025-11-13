@@ -233,13 +233,39 @@ jobs:
             mkdir -p allure-results/history
           fi
 
+      - name: Setup Allure
+        if: always()
+        uses: allure-framework/setup-allurectl@v1
+        with:
+          allure-version: 2.24.0
+
       - name: Build test report (but don't publish)
         if: always()
-        uses: simple-elf/allure-report-action@v1.7
-        with:
-          allure_results: allure-results
-          allure_history: allure-history
-          keep_reports: 5
+        run: |
+          # Generate the Allure report
+          allurectl report generate allure-results --output allure-report
+          
+          # Create allure-history directory structure
+          mkdir -p allure-history
+          
+          # Get the current run number
+          RUN_NUMBER="${{ github.run_number }}"
+          
+          # Copy the report to a numbered directory
+          mkdir -p "allure-history/$RUN_NUMBER"
+          cp -r allure-report/* "allure-history/$RUN_NUMBER/"
+          
+          # Copy history data if it exists
+          if [ -d "allure-report/history" ]; then
+            cp -r allure-report/history allure-history/
+          fi
+          
+          # Keep only the last 5 reports
+          cd allure-history
+          ls -t | grep -E '^[0-9]+$' | tail -n +6 | xargs -r rm -rf
+          cd ..
+          
+          echo "Report generated in allure-history/$RUN_NUMBER"
 
       - name: Upload built report
         if: always()
