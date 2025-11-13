@@ -45,6 +45,10 @@ function getCivicAuthVersion(): string {
  */
 export default defineConfig({
   testDir: './playwright/tests',
+  /* Global teardown */
+  globalTeardown: require.resolve('./playwright/global-teardown.ts'),
+  /* Setup file to attach videos on failure */
+  setupMatch: '**/test-hooks.ts',
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
