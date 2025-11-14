@@ -16,7 +16,7 @@ test.describe('Solana Next15 Wallet Adapter Login Tests', () => {
     await selectWalletButton.click();
     
     // Wait for and click the civic wallet button
-    const civicWalletButton = page.locator('button:has-text("Civic")');
+    const civicWalletButton = page.locator('button:has-text("Login via Civic")');
     await civicWalletButton.waitFor({ state: 'visible', timeout: 30000 });
     await expect(civicWalletButton).toBeEnabled({ timeout: 10000 });
     await civicWalletButton.click();
