@@ -196,7 +196,6 @@ jobs:
           merge-multiple: true
           path: allure-results
 
-      # upload to allure testops
       - name: Upload to Allure TestOps
         if: always()
         uses: allure-framework/setup-allurectl@v1
