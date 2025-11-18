@@ -47,8 +47,6 @@ export default defineConfig({
   testDir: './playwright/tests',
   /* Global teardown */
   globalTeardown: require.resolve('./playwright/global-teardown.ts'),
-  /* Setup file to attach videos on failure */
-  // setupMatch: '**/test-hooks.ts',
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -59,12 +57,12 @@ export default defineConfig({
   workers: process.env.CI ? 3 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
-    ["html", { open: "never" }], // Don't auto-open in CI
-    ["json", { outputFile: "test-results/results.json" }],
-    ["junit", { outputFile: "test-results/results.xml" }],
-    ["list"], // Console output for debugging
-    ["allure-playwright", { 
-      outputFolder: "allure-results",
+    ['html', { open: 'never' }],
+    ['json', { outputFile: 'test-results/results.json' }],
+    ['junit', { outputFile: 'test-results/results.xml' }],
+    ['list'],
+    ['allure-playwright', { 
+      outputFolder: 'allure-results',
       detail: true,
       suiteTitle: true,
     }],
@@ -74,9 +72,14 @@ export default defineConfig({
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://localhost:3000',
 
-    trace: "on-first-retry",
-    screenshot: "only-on-failure",
-    video: "retain-on-failure",
+    /* Record video for failed tests */
+    video: 'retain-on-failure',
+    
+    /* Take screenshots on failure */
+    screenshot: 'only-on-failure',
+
+    /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
+    trace: 'retain-on-failure',
     
     /* Set default timeout for all actions to 30 seconds */
     actionTimeout: 30000,

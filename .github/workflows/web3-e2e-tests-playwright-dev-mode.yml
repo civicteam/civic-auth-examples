@@ -172,21 +172,6 @@ jobs:
           merge-multiple: true
           path: allure-results
 
-      - name: Download Test Results (screenshots/videos)
-        uses: actions/download-artifact@v4
-        continue-on-error: true
-        with:
-          pattern: test-results-*
-          merge-multiple: true
-          path: test-results
-
-      - name: Merge test-results into allure-results
-        if: always()
-        run: |
-          if [ -d "test-results" ]; then
-            cp -r test-results/* allure-results/ 2>/dev/null || true
-          fi
-
       - name: Upload to Allure TestOps
         if: always()
         uses: allure-framework/setup-allurectl@v1
