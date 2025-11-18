@@ -59,45 +59,24 @@ export default defineConfig({
   workers: process.env.CI ? 3 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
-    ['html'],
-    ['allure-playwright', { 
-      outputFolder: process.env.ALLURE_RESULTS_DIR || 'allure-results',
+    ["html", { open: "never" }], // Don't auto-open in CI
+    ["json", { outputFile: "test-results/results.json" }],
+    ["junit", { outputFile: "test-results/results.xml" }],
+    ["list"], // Console output for debugging
+    ["allure-playwright", { 
+      outputFolder: "allure-results",
       detail: true,
-      suiteTitle: false,
-      links: [
-        {
-          type: 'issue',
-          urlTemplate: 'https://github.com/civicteam/civic-auth-examples/issues/%s'
-        },
-        {
-          type: 'tms', 
-          urlTemplate: 'https://github.com/civicteam/civic-auth-examples/tree/main/%s'
-        }
-      ],
-      environmentInfo: {
-        'Test Environment': process.env.ALLURE_PARENT_SUITE || 'Development',
-        'Civic Auth Version': getCivicAuthVersion(),
-        'Report URL': 'https://civicteam.github.io/civic-auth-examples/',
-        'GitHub Workflow': process.env.GITHUB_WORKFLOW || 'Local Run',
-        'Run ID': process.env.GITHUB_RUN_ID || 'N/A',
-        'Browser': process.env.BROWSER || 'All Browsers'
-      },
-      categoriesPath: './allure-categories.json'
-    }]
+      suiteTitle: true,
+    }],
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://localhost:3000',
 
-    /* Record video for failed tests */
-    video: 'retain-on-failure',
-    
-    /* Take screenshots on failure */
-    screenshot: 'only-on-failure',
-
-    /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'retain-on-failure',
+    trace: "on-first-retry",
+    screenshot: "only-on-failure",
+    video: "retain-on-failure",
     
     /* Set default timeout for all actions to 30 seconds */
     actionTimeout: 30000,
