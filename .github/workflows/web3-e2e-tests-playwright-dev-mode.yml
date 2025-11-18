@@ -178,7 +178,14 @@ jobs:
         with:
           pattern: test-results-*
           merge-multiple: true
-          path: allure-results
+          path: test-results
+
+      - name: Merge test-results into allure-results
+        if: always()
+        run: |
+          if [ -d "test-results" ]; then
+            cp -r test-results/* allure-results/ 2>/dev/null || true
+          fi
 
       - name: Upload to Allure TestOps
         if: always()
