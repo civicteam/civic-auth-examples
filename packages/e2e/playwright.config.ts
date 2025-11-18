@@ -47,8 +47,6 @@ export default defineConfig({
   testDir: './playwright/tests',
   /* Global teardown */
   globalTeardown: require.resolve('./playwright/global-teardown.ts'),
-  /* Setup file to attach videos on failure */
-  setupMatch: '**/test-hooks.ts',
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -59,31 +57,15 @@ export default defineConfig({
   workers: process.env.CI ? 3 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
-    ['html'],
+    ['html', { open: 'never' }],
+    ['json', { outputFile: 'test-results/results.json' }],
+    ['junit', { outputFile: 'test-results/results.xml' }],
+    ['list'],
     ['allure-playwright', { 
-      outputFolder: process.env.ALLURE_RESULTS_DIR || 'allure-results',
+      outputFolder: 'allure-results',
       detail: true,
-      suiteTitle: false,
-      links: [
-        {
-          type: 'issue',
-          urlTemplate: 'https://github.com/civicteam/civic-auth-examples/issues/%s'
-        },
-        {
-          type: 'tms', 
-          urlTemplate: 'https://github.com/civicteam/civic-auth-examples/tree/main/%s'
-        }
-      ],
-      environmentInfo: {
-        'Test Environment': process.env.ALLURE_PARENT_SUITE || 'Development',
-        'Civic Auth Version': getCivicAuthVersion(),
-        'Report URL': 'https://civicteam.github.io/civic-auth-examples/',
-        'GitHub Workflow': process.env.GITHUB_WORKFLOW || 'Local Run',
-        'Run ID': process.env.GITHUB_RUN_ID || 'N/A',
-        'Browser': process.env.BROWSER || 'All Browsers'
-      },
-      categoriesPath: './allure-categories.json'
-    }]
+      suiteTitle: true,
+    }],
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
@@ -97,7 +79,7 @@ export default defineConfig({
     screenshot: 'only-on-failure',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'retain-on-failure',
+    trace: 'on-first-retry',
     
     /* Set default timeout for all actions to 30 seconds */
     actionTimeout: 30000,
