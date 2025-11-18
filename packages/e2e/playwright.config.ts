@@ -48,7 +48,7 @@ export default defineConfig({
   /* Global teardown */
   globalTeardown: require.resolve('./playwright/global-teardown.ts'),
   /* Setup file to attach videos on failure */
-  setupMatch: '**/test-hooks.ts',
+  // setupMatch: '**/test-hooks.ts',
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
