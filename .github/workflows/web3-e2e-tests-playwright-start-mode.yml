@@ -179,6 +179,14 @@ jobs:
           merge-multiple: true
           path: allure-results
 
+      - name: Download Test Results (screenshots/videos)
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          pattern: test-results-*
+          merge-multiple: true
+          path: allure-results
+
       - name: Upload to Allure TestOps
         if: always()
         uses: allure-framework/setup-allurectl@v1
