@@ -155,8 +155,5 @@ test.describe('Civic Auth Applications', () => {
     // Should be back to logged-out state (Sign In button visible, Ghost button not visible)
     await expect(page.getByTestId('sign-in-button')).toBeVisible({ timeout: 10000 });
     await expect(page.locator('#civic-dropdown-container').locator('button:has-text("Ghost")')).not.toBeVisible();
-    
-    // 🔴 INTENTIONAL FAILURE FOR TESTING - Remove this after verifying screenshots/videos work! 🔴
-    expect(true).toBe(false); // This will always fail to test screenshot/video capture
   });
 }); 
