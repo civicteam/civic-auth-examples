@@ -53,6 +53,19 @@ jobs:
   #     job-name: "🚀 NextJS App (LoginSuccessUrl)"
   #   secrets: inherit
 
+  job-nextjs-embedded-iframe-example-app:
+    name: "NextJS embedded iframe example app"
+    needs: [check-version, typecheck]
+    uses: ./.github/workflows/test-example-app-playwright.yml
+    with:
+      project-path: packages/civic-auth/nextjs-embedded-iframe
+      playwright-spec: "playwright/tests/civic-auth/login/nextjs-embedded-iframe-login.spec.ts"
+      dev-command: "yarn start"
+      job-name: "🚀 NextJS Embedded Iframe App (Login)"
+      workflow-identifier: "start-mode"
+      allure-parent-suite: "Web2 Start Mode"
+    secrets: inherit
+
   job-express-loginsuccessurl-example-app:
     name: "Express loginSuccessUrl example app"
     needs: [check-version, typecheck]
@@ -180,6 +193,7 @@ jobs:
       job-nextjs-example-app,
       # job-nextjs-basepath-example-app,
       # job-nextjs-loginsuccessurl-example-app,
+      job-nextjs-embedded-iframe-example-app,
       job-express-loginsuccessurl-example-app,
       job-fastify-loginsuccessurl-example-app,
       job-hono-loginsuccessurl-example-app,
