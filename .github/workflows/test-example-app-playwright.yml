@@ -25,14 +25,6 @@ on:
         required: false
         type: string
         default: "Test Job"
-      workflow-identifier:
-        required: false
-        type: string
-        default: "Test Workflow"
-      allure-parent-suite:
-        required: false
-        type: string
-        default: "Civic Auth Applications"
     secrets:
       CLIENT_ID:
         required: true
@@ -63,7 +55,6 @@ jobs:
       NEXT_PUBLIC_WALLET_API_BASE_URL: ${{ secrets.NEXT_PUBLIC_WALLET_API_BASE_URL }}
       VITE_WALLET_API_BASE_URL: ${{ secrets.VITE_WALLET_API_BASE_URL }}
       DATABASE_URL: ${{ secrets.DATABASE_URL }}
-      ALLURE_PARENT_SUITE: ${{ inputs.allure-parent-suite }}
       HOME: /root
     defaults:
       run:
@@ -168,16 +159,10 @@ jobs:
           # Install remaining dependencies
           yarn install
 
-      - name: Install Playwright CLI and Allure
+      - name: Install Playwright CLI
         working-directory: packages/e2e
         run: |
-          yarn add -D @playwright/test allure-commandline allure-playwright
-          
-      - name: Verify Allure Installation
-        working-directory: packages/e2e
-        run: |
-          npx allure --version
-          echo "Allure command-line tool is available"
+          yarn add -D @playwright/test
 
       # Skipping browser installation - using Playwright container with pre-installed browsers
 
@@ -219,40 +204,10 @@ jobs:
       - name: Run Playwright Tests
         working-directory: packages/e2e
         env:
-          ALLURE_RESULTS_DIR: allure-results
           GITHUB_JOB_NAME: ${{ inputs.job-name }}
         run: |
-          # Capitalize browser name to match Playwright project names (Chromium, WebKit, Firefox)
-          # BROWSER_NAME=$(echo "${{ inputs.browser }}" | awk '{print toupper(substr($0,1,1)) tolower(substr($0,2))}')
-          # echo "Running tests on browser: $BROWSER_NAME"
-          yarn playwright test ${{ inputs.playwright-spec }}
-
-      - name: Generate Allure Report
-        if: always()
-        working-directory: packages/e2e
-        run: |
-          echo "Checking if allure-results directory exists..."
-          ls -la allure-results/ || echo "No allure-results directory found"
-          echo "Generating Allure report..."
-          yarn allure:generate || echo "Failed to generate Allure report"
-          echo "Checking if allure-report directory was created..."
-          ls -la allure-report/ || echo "No allure-report directory found"
-
-      - name: Upload Allure Report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: allure-report-${{ steps.project-id.outputs.project-id }}-${{ inputs.browser }}
-          path: packages/e2e/allure-report
-          retention-days: 5
-
-      - name: Upload Allure Results
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: allure-results-${{ steps.project-id.outputs.project-id }}-${{ inputs.browser }}
-          path: packages/e2e/allure-results/
-          retention-days: 5
+          # Using GitHub reporter for annotations and dot reporter for concise output
+          yarn playwright test ${{ inputs.playwright-spec }} --reporter=github,dot
 
       - name: Upload Test Results (Videos, Screenshots, Traces)
         if: always()
@@ -260,19 +215,4 @@ jobs:
         with:
           name: test-results-${{ steps.project-id.outputs.project-id }}-${{ inputs.browser }}
           path: packages/e2e/test-results/
-          retention-days: 5
-
-      - name: Comment with Allure Reports URL
-        if: always()
-        run: |
-          echo "## 📊 Allure Test Reports" >> $GITHUB_STEP_SUMMARY
-          echo "View detailed test reports with screenshots, videos, and traces at:" >> $GITHUB_STEP_SUMMARY
-          echo "**https://civicteam.github.io/civic-auth-examples/${{ github.run_number }}**" >> $GITHUB_STEP_SUMMARY
-
-      - name: Upload Allure Results for Publishing
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: allure-results-publish-${{ steps.project-id.outputs.project-id }}-${{ inputs.browser }}
-          path: packages/e2e/allure-results/
           retention-days: 5 
