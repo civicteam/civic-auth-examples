@@ -22,8 +22,6 @@ jobs:
       project-path: packages/civic-auth-web3/solana/next14-no-wallet-adapter
       playwright-spec: "playwright/tests/civic-auth-web3/login/solana-next14-no-wa-login.spec.ts"
       job-name: "🌐 Solana Next.js 14 No WA (Login)"
-      workflow-identifier: "dev-mode"
-      allure-parent-suite: "Web3 Dev Mode"
     secrets: inherit
 
   job-solana-next15-no-wa-example-app:
@@ -34,8 +32,6 @@ jobs:
       project-path: packages/civic-auth-web3/solana/next15-no-wallet-adapter
       playwright-spec: "playwright/tests/civic-auth-web3/login/solana-next15-no-wa-login.spec.ts"
       job-name: "🌐 Solana Next.js 15 No WA (Login)"
-      workflow-identifier: "dev-mode"
-      allure-parent-suite: "Web3 Dev Mode"
     secrets: inherit
 
   # SKIPPED: Turbopack wallet adapter test - Civic wallet not appearing in wallet selection modal
@@ -63,8 +59,6 @@ jobs:
       project-path: packages/civic-auth-web3/solana/vite-no-wallet-adapter
       playwright-spec: "playwright/tests/civic-auth-web3/login/solana-vite-no-wa-login.spec.ts"
       job-name: "🌐 Solana Vite No WA (Login)"
-      workflow-identifier: "dev-mode"
-      allure-parent-suite: "Web3 Dev Mode"
     secrets: inherit
 
   job-solana-next14-wa-example-app:
@@ -75,8 +69,6 @@ jobs:
       project-path: packages/civic-auth-web3/solana/next14-wallet-adapter
       playwright-spec: "playwright/tests/civic-auth-web3/login/solana-next14-wa-login.spec.ts"
       job-name: "🌐 Solana Next.js 14 WA (Login)"
-      workflow-identifier: "dev-mode"
-      allure-parent-suite: "Web3 Dev Mode"
     secrets: inherit
 
   job-solana-next15-wa-example-app:
@@ -87,8 +79,6 @@ jobs:
       project-path: packages/civic-auth-web3/solana/next15-wallet-adapter
       playwright-spec: "playwright/tests/civic-auth-web3/login/solana-next15-wa-login.spec.ts"
       job-name: "🌐 Solana Next.js 15 WA (Login)"
-      workflow-identifier: "dev-mode"
-      allure-parent-suite: "Web3 Dev Mode"
     secrets: inherit
 
   # SKIPPED: Turbopack wallet adapter test - Civic wallet not appearing in wallet selection modal
@@ -116,8 +106,6 @@ jobs:
       project-path: packages/civic-auth-web3/solana/vite-wallet-adapter
       playwright-spec: "playwright/tests/civic-auth-web3/login/solana-vite-wa-login.spec.ts"
       job-name: "🌐 Solana Vite WA (Login)"
-      workflow-identifier: "dev-mode"
-      allure-parent-suite: "Web3 Dev Mode"
     secrets: inherit
 
   job-wagmi-example-app:
@@ -128,8 +116,6 @@ jobs:
       project-path: packages/civic-auth-web3/wagmi
       playwright-spec: "playwright/tests/civic-auth-web3/login/wagmi-login.spec.ts"
       job-name: "🌐 Wagmi (Login)"
-      workflow-identifier: "dev-mode"
-      allure-parent-suite: "Web3 Dev Mode"
     secrets: inherit
 
   job-wagmi-nextjs-example-app:
@@ -140,57 +126,4 @@ jobs:
       project-path: packages/civic-auth-web3/wagmi-nextjs
       playwright-spec: "playwright/tests/civic-auth-web3/login/wagmi-nextjs-login.spec.ts"
       job-name: "🌐 Wagmi Next.js (Login)"
-      workflow-identifier: "dev-mode"
-      allure-parent-suite: "Web3 Dev Mode"
     secrets: inherit
-
-  upload-to-allure-testops:
-    name: "Upload Web3 Dev Mode Results to Allure TestOps"
-    needs: [
-      job-solana-next14-no-wa-example-app,
-      job-solana-next15-no-wa-example-app,
-      # job-solana-next15-turbopack-no-wa-example-app,
-      job-solana-vite-no-wa-example-app,
-      job-solana-next14-wa-example-app,
-      job-solana-next15-wa-example-app,
-      # job-solana-next15-turbopack-wa-example-app, # Skipped - see comment above
-      job-solana-vite-wa-example-app,
-      job-wagmi-example-app,
-      job-wagmi-nextjs-example-app,
-    ]
-    
-    runs-on: ubuntu-latest
-    if: always()
-    permissions:
-      contents: read
-      actions: read
-    steps:
-      - name: Download Allure Results
-        uses: actions/download-artifact@v4
-        with:
-          pattern: allure-results-*
-          merge-multiple: true
-          path: allure-results
-
-      - name: Download Test Results (screenshots/videos)
-        uses: actions/download-artifact@v4
-        continue-on-error: true
-        with:
-          pattern: test-results-*
-          merge-multiple: true
-          path: allure-results
-
-      - name: Upload to Allure TestOps
-        if: always()
-        uses: allure-framework/setup-allurectl@v1
-        with:
-          allure-endpoint: ${{ secrets.ALLURE_TESTOPS_ENDPOINT }}
-          allure-token: ${{ secrets.ALLURE_TESTOPS_TOKEN }}
-          allure-project-id: ${{ secrets.ALLURE_TESTOPS_PROJECT_ID }}
-      
-      - name: Upload test results
-        if: always()
-        run: |
-          allurectl upload allure-results \
-            --launch-name "Web3 Dev Mode - Run #${{ github.run_number }}" \
-            --launch-tags "web3" "dev-mode" "github-actions"

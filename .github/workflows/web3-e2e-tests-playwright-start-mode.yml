@@ -21,8 +21,6 @@ jobs:
       playwright-spec: "playwright/tests/civic-auth-web3/login/solana-next14-no-wa-login.spec.ts"
       dev-command: "yarn start"
       job-name: "🌐 Solana Next.js 14 No WA (Login)"
-      workflow-identifier: "start-mode"
-      allure-parent-suite: "Web3 Start Mode"
     secrets: inherit
 
   job-solana-next15-no-wa-example-app:
@@ -34,8 +32,6 @@ jobs:
       playwright-spec: "playwright/tests/civic-auth-web3/login/solana-next15-no-wa-login.spec.ts"
       dev-command: "yarn start"
       job-name: "🌐 Solana Next.js 15 No WA (Login)"
-      workflow-identifier: "start-mode"
-      allure-parent-suite: "Web3 Start Mode"
     secrets: inherit
 
   # SKIPPED: Turbopack wallet adapter test - Civic wallet not appearing in wallet selection modal
@@ -64,8 +60,6 @@ jobs:
       playwright-spec: "playwright/tests/civic-auth-web3/login/solana-vite-no-wa-login.spec.ts"
       dev-command: "yarn start"
       job-name: "🌐 Solana Vite No WA (Login)"
-      workflow-identifier: "start-mode"
-      allure-parent-suite: "Web3 Start Mode"
     secrets: inherit
 
   job-solana-next14-wa-example-app:
@@ -77,8 +71,6 @@ jobs:
       playwright-spec: "playwright/tests/civic-auth-web3/login/solana-next14-wa-login.spec.ts"
       dev-command: "yarn start"
       job-name: "🌐 Solana Next.js 14 WA (Login)"
-      workflow-identifier: "start-mode"
-      allure-parent-suite: "Web3 Start Mode"
     secrets: inherit
 
   job-solana-next15-wa-example-app:
@@ -90,8 +82,6 @@ jobs:
       playwright-spec: "playwright/tests/civic-auth-web3/login/solana-next15-wa-login.spec.ts"
       dev-command: "yarn start"
       job-name: "🌐 Solana Next.js 15 WA (Login)"
-      workflow-identifier: "start-mode"
-      allure-parent-suite: "Web3 Start Mode"
     secrets: inherit
 
   # SKIPPED: Turbopack wallet adapter test - Civic wallet not appearing in wallet selection modal
@@ -121,8 +111,6 @@ jobs:
       playwright-spec: "playwright/tests/civic-auth-web3/login/solana-vite-wa-login.spec.ts"
       dev-command: "yarn start"
       job-name: "🌐 Solana Vite WA (Login)"
-      workflow-identifier: "start-mode"
-      allure-parent-suite: "Web3 Start Mode"
     secrets: inherit
 
   job-wagmi-example-app:
@@ -134,8 +122,6 @@ jobs:
       playwright-spec: "playwright/tests/civic-auth-web3/login/wagmi-login.spec.ts"
       dev-command: "yarn start"
       job-name: "🌐 Wagmi (Login)"
-      workflow-identifier: "start-mode"
-      allure-parent-suite: "Web3 Start Mode"
     secrets: inherit
 
   job-wagmi-nextjs-example-app:
@@ -147,57 +133,4 @@ jobs:
       playwright-spec: "playwright/tests/civic-auth-web3/login/wagmi-nextjs-login.spec.ts"
       dev-command: "yarn start"
       job-name: "🌐 Wagmi Next.js (Login)"
-      workflow-identifier: "start-mode"
-      allure-parent-suite: "Web3 Start Mode"
     secrets: inherit
-
-  upload-to-allure-testops:
-    name: "Upload Web3 Start Mode Results to Allure TestOps"
-    needs: [
-      job-solana-next14-no-wa-example-app,
-      job-solana-next15-no-wa-example-app,
-      # job-solana-next15-turbopack-no-wa-example-app, # Skipped - see comment above
-      job-solana-vite-no-wa-example-app,
-      job-solana-next14-wa-example-app,
-      job-solana-next15-wa-example-app,
-      # job-solana-next15-turbopack-wa-example-app, # Skipped - see comment above
-      job-solana-vite-wa-example-app,
-      job-wagmi-example-app,
-      job-wagmi-nextjs-example-app,
-    ]
-    
-    runs-on: ubuntu-latest
-    if: always()
-    permissions:
-      contents: read
-      actions: read
-    steps:
-      - name: Download Allure Results
-        uses: actions/download-artifact@v4
-        with:
-          pattern: allure-results-*
-          merge-multiple: true
-          path: allure-results
-
-      - name: Download Test Results (screenshots/videos)
-        uses: actions/download-artifact@v4
-        continue-on-error: true
-        with:
-          pattern: test-results-*
-          merge-multiple: true
-          path: allure-results
-
-      - name: Upload to Allure TestOps
-        if: always()
-        uses: allure-framework/setup-allurectl@v1
-        with:
-          allure-endpoint: ${{ secrets.ALLURE_TESTOPS_ENDPOINT }}
-          allure-token: ${{ secrets.ALLURE_TESTOPS_TOKEN }}
-          allure-project-id: ${{ secrets.ALLURE_TESTOPS_PROJECT_ID }}
-      
-      - name: Upload test results
-        if: always()
-        run: |
-          allurectl upload allure-results \
-            --launch-name "Web3 Start Mode - Run #${{ github.run_number }}" \
-            --launch-tags "web3" "start-mode" "github-actions"
