@@ -215,4 +215,4 @@ jobs:
         with:
           name: test-results-${{ steps.project-id.outputs.project-id }}-${{ inputs.browser }}
           path: packages/e2e/test-results/
-          retention-days: 5 
+          retention-days: 5
