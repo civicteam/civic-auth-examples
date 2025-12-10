@@ -94,10 +94,10 @@
   dependencies:
     jose "^5.9.4"
 
-"@civic/auth@0.11.8":
-  version "0.11.8"
-  resolved "https://registry.yarnpkg.com/@civic/auth/-/auth-0.11.8.tgz#c08f713ce42ce58ef5b3b76df05ae5b85b843d98"
-  integrity sha512-15a59c+0Cs2mlZRHZXtQms2nhgP2Ut8iAQYU8Q1+EUYOIUuRbfNG+bcZcJqIOPc6BoLD2y0Wqc/4TQsWJluntA==
+"@civic/auth@*":
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/@civic/auth/-/auth-0.12.0.tgz#d164f7aa68b27293b34d32414fabf1d88c236a1b"
+  integrity sha512-Yq6on065PgWnY6RXimpddGY0q0ZYdk78WafEaCK/Fg8dCptfXCTR9N0KJ6O3V7jRIJJjfqPfvi4qjY5ghkwwAQ==
   dependencies:
     "@civic/auth-verify" "0.0.4"
     "@civic/iframe-resizer" "0.1.2"
@@ -293,9 +293,9 @@
   integrity sha512-t70+e4EgnzTbU4MrUWXzqWN2A6RJrlSSvwwuBv6E0Ap6/nsIXrjsdRWeTcSvvXTcC6fi0YdWaqEWLipcEm2Cgw==
 
 "@react-router/node@^7.0.0":
-  version "7.9.6"
-  resolved "https://registry.yarnpkg.com/@react-router/node/-/node-7.9.6.tgz#c45bea46cb73a477576c097ad08c19c645f18348"
-  integrity sha512-XzU8gPHwSl2Qh8/bOV30npbpH2fWOO3sFg+SwhX3+IddD1a/0C2KQzRiW/qAngkvZTJVdbca5Qp+FJjCCE7sNw==
+  version "7.10.1"
+  resolved "https://registry.yarnpkg.com/@react-router/node/-/node-7.10.1.tgz#e5e9422c780d5fb913ea322333235990a3e82407"
+  integrity sha512-RLmjlR1zQu+ve8ibI0lu91pJrXGcmfkvsrQl7z/eTc5V5FZgl0OvQVWL5JDWBlBZyzdLMQQekUOX5WcPhCP1FQ==
   dependencies:
     "@mjackson/node-fetch-server" "^0.2.0"
 
@@ -374,9 +374,9 @@ convert-source-map@^1.5.0:
   integrity sha512-ASFBup0Mz1uyiIjANan1jzLQami9z1PoYSZCiiYW2FczPbenXc45FZdBZLzOT+r6+iciuEModtmCti+hjaAk0A==
 
 cookie@^1.0.1:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/cookie/-/cookie-1.0.2.tgz#27360701532116bd3f1f9416929d176afe1e4610"
-  integrity sha512-9Kr/j4O16ISv8zBBhJoi4bXOYNTkFLOqSL3UDB0njXxCXNezjeyVrJyGOWtgfs/q2km1gwBcfH8q1yEGoMYunA==
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/cookie/-/cookie-1.1.1.tgz#3bb9bdfc82369db9c2f69c93c9c3ceb310c88b3c"
+  integrity sha512-ei8Aos7ja0weRpFzJnEA9UHJ/7XQmqglbRwnf2ATjcB9Wq874VKH9kfjjirM6UhU2/E5fFYadylyhFldcqSidQ==
 
 cosmiconfig@^7.0.0:
   version "7.1.0"
@@ -597,9 +597,9 @@ react-is@^16.7.0:
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
 react-router@^7.0.0:
-  version "7.9.6"
-  resolved "https://registry.yarnpkg.com/react-router/-/react-router-7.9.6.tgz#003c8de335fdd7390286a478dcfd9579c1826137"
-  integrity sha512-Y1tUp8clYRXpfPITyuifmSoE2vncSME18uVLgaqyxh9H35JWpIfzHo+9y3Fzh5odk/jxPW29IgLgzcdwxGqyNA==
+  version "7.10.1"
+  resolved "https://registry.yarnpkg.com/react-router/-/react-router-7.10.1.tgz#e973146ed5f10a80783fdb3f27dbe37679557a7c"
+  integrity sha512-gHL89dRa3kwlUYtRQ+m8NmxGI6CgqN+k4XyGjwcFoQwwCWF6xXpOCUlDovkXClS0d0XJN/5q7kc5W3kiFEd0Yw==
   dependencies:
     cookie "^1.0.1"
     set-cookie-parser "^2.6.0"
