@@ -6,12 +6,6 @@ on:
   push:
   pull_request:
   workflow_dispatch:
-    inputs:
-      publish-allure-to-pages:
-        description: 'Publish Allure reports to GitHub Pages'
-        required: false
-        default: false
-        type: boolean
     
 jobs:
   check-version:
@@ -28,7 +22,6 @@ jobs:
       project-path: packages/civic-auth/nextjs
       playwright-spec: "playwright/tests/civic-auth/login/nextjs-login.spec.ts playwright/tests/civic-auth/email/nextjs-email-verification.spec.ts playwright/tests/civic-auth/refresh/nextjs-refresh-token.spec.ts playwright/tests/civic-auth/staleSession/nextjs-stale-session.spec.ts playwright/tests/civic-auth/rehydration/nextjs-session-rehydration.spec.ts playwright/tests/civic-auth/onSignIn/nextjs-onsignin-callback.spec.ts"
       job-name: "🚀 NextJS App (Login + Email + Refresh + Stale Session + Rehydration + OnSignIn)"
-      workflow-identifier: "dev-mode"
     secrets: inherit
 
   job-nextjs-basepath-example-app:
@@ -41,7 +34,6 @@ jobs:
       build-command: "yarn build"
       dev-command: "yarn dev:subpath"
       job-name: "🚀 NextJS App (Basepath)"
-      workflow-identifier: "dev-mode"
     secrets: inherit
 
   job-nextjs-loginsuccessurl-example-app:
@@ -54,7 +46,16 @@ jobs:
       build-command: "yarn build"
       dev-command: "yarn dev:loginSuccessUrl"
       job-name: "🚀 NextJS App (LoginSuccessUrl)"
-      workflow-identifier: "dev-mode"
+    secrets: inherit
+
+  job-nextjs-embedded-iframe-example-app:
+    name: "NextJS embedded iframe example app"
+    needs: [check-version, typecheck]
+    uses: ./.github/workflows/test-example-app-playwright.yml
+    with:
+      project-path: packages/civic-auth/nextjs-embedded-iframe
+      playwright-spec: "playwright/tests/civic-auth/login/nextjs-embedded-iframe-login.spec.ts"
+      job-name: "🚀 NextJS Embedded Iframe App (Login)"
     secrets: inherit
 
   job-express-loginsuccessurl-example-app:
@@ -67,7 +68,6 @@ jobs:
       build-command: "yarn build"
       dev-command: "yarn dev:loginSuccessUrl"
       job-name: "🛠️ Express Server (LoginSuccessUrl)"
-      workflow-identifier: "dev-mode"
     secrets: inherit
 
   job-fastify-loginsuccessurl-example-app:
@@ -80,7 +80,6 @@ jobs:
       build-command: "yarn build"
       dev-command: "yarn dev:loginSuccessUrl"
       job-name: "⚡ Fastify Server (LoginSuccessUrl)"
-      workflow-identifier: "dev-mode"
     secrets: inherit
 
   job-hono-loginsuccessurl-example-app:
@@ -93,7 +92,6 @@ jobs:
       build-command: "yarn build"
       dev-command: "yarn dev:loginSuccessUrl"
       job-name: "🔥 Hono Server (LoginSuccessUrl)"
-      workflow-identifier: "dev-mode"
     secrets: inherit
 
   job-reactjs-example-app:
@@ -104,7 +102,6 @@ jobs:
       project-path: packages/civic-auth/reactjs
       playwright-spec: "playwright/tests/civic-auth/login/reactjs-login.spec.ts playwright/tests/civic-auth/onSignIn/reactjs-onsignin-callback.spec.ts"
       job-name: "⚛️ ReactJS App (Login + OnSignIn)"
-      workflow-identifier: "dev-mode"
     secrets: inherit
 
   job-express-example-app:
@@ -115,7 +112,6 @@ jobs:
       project-path: packages/civic-auth/server/express
       playwright-spec: "playwright/tests/civic-auth/login/express-login.spec.ts"
       job-name: "🛠️ Express Server (Login)"
-      workflow-identifier: "dev-mode"
     secrets: inherit
 
   job-fastify-example-app:
@@ -126,7 +122,6 @@ jobs:
       project-path: packages/civic-auth/server/fastify
       playwright-spec: "playwright/tests/civic-auth/login/fastify-login.spec.ts"
       job-name: "⚡ Fastify Server (Login)"
-      workflow-identifier: "dev-mode"
     secrets: inherit
 
   job-hono-example-app:
@@ -137,7 +132,6 @@ jobs:
       project-path: packages/civic-auth/server/hono
       playwright-spec: "playwright/tests/civic-auth/login/hono-login.spec.ts"
       job-name: "🔥 Hono Server (Login)"
-      workflow-identifier: "dev-mode"
     secrets: inherit
 
   job-vanillajs-example-app:
@@ -148,7 +142,6 @@ jobs:
       project-path: packages/civic-auth/vanillajs
       playwright-spec: "playwright/tests/civic-auth/login/vanillajs-login.spec.ts playwright/tests/civic-auth/refresh/vanillajs-refresh-token.spec.ts playwright/tests/civic-auth/staleSession/vanillajs-stale-session.spec.ts playwright/tests/civic-auth/rehydration/vanillajs-session-rehydration.spec.ts"
       job-name: "📦 VanillaJS App (Login + Refresh + Stale Session + Rehydration)"
-      workflow-identifier: "dev-mode"
     secrets: inherit
 
   job-vanillajs-modal-example-app:
@@ -159,76 +152,4 @@ jobs:
       project-path: packages/civic-auth/vanillajs
       playwright-spec: "playwright/tests/civic-auth/login/vanillajs-modal-login.spec.ts playwright/tests/civic-auth/refresh/vanillajs-modal-refresh-token.spec.ts"
       job-name: "📦 VanillaJS Modal App (Login + Refresh)"
-      workflow-identifier: "dev-mode"
     secrets: inherit
-
-
-
-  publish-allure-reports:
-    name: "Publish Web2 Allure Reports"
-    needs: [
-      job-nextjs-example-app,
-      job-nextjs-basepath-example-app,
-      job-nextjs-loginsuccessurl-example-app,
-      job-express-loginsuccessurl-example-app,
-      job-fastify-loginsuccessurl-example-app,
-      job-hono-loginsuccessurl-example-app,
-      job-reactjs-example-app,
-      job-express-example-app,
-      job-fastify-example-app,
-      job-hono-example-app,
-      job-vanillajs-example-app,
-      job-vanillajs-modal-example-app,
-    ]
-    
-    runs-on: ubuntu-latest
-    if: always()
-    permissions:
-      contents: write
-      actions: read
-      id-token: write
-      pages: write
-    steps:
-      - name: Download Allure Results
-        uses: actions/download-artifact@v4
-        with:
-          pattern: allure-results-*
-          merge-multiple: true
-          path: allure-results
-
-      - name: Load test report history
-        if: always()
-        continue-on-error: true
-        uses: actions/checkout@v4
-        with:
-          ref: gh-pages
-          path: gh-pages
-
-      - name: Copy existing history to test results
-        if: always()
-        run: |
-          echo "Copying existing history to test results directory..."
-          if [ -d "gh-pages/history" ]; then
-            echo "Found history in gh-pages/history"
-            cp -r gh-pages/history allure-results/
-            echo "History copied successfully"
-          else
-            echo "No existing history found, will create new"
-            mkdir -p allure-results/history
-          fi
-
-      - name: Build test report
-        if: always()
-        uses: simple-elf/allure-report-action@v1.13
-        with:
-          allure_results: allure-results
-          allure_history: allure-history
-          keep_reports: 5
-
-      - name: Upload built report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: web2-dev-mode-allure-report
-          path: allure-history
-          retention-days: 5

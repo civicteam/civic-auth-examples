@@ -16,7 +16,7 @@ test.describe('Solana Next15 Turbopack Wallet Adapter Login Tests', () => {
     await selectWalletButton.click();
     
     // Wait for and click the civic wallet button
-    const civicWalletButton = page.locator('button:has-text("Civic")');
+    const civicWalletButton = page.locator('button:has-text("Login via Civic")');
     await civicWalletButton.waitFor({ state: 'visible', timeout: 30000 });
     await expect(civicWalletButton).toBeEnabled({ timeout: 10000 });
     await civicWalletButton.click();
@@ -27,8 +27,8 @@ test.describe('Solana Next15 Turbopack Wallet Adapter Login Tests', () => {
     // Click log in with dummy in the iframe
     const frame = page.frameLocator('#civic-auth-iframe');
     
-    // Try to wait for the frame to load completely first
-    await frame.locator('body').waitFor({ timeout: 30000 });
+    // Skip body wait for turbopack - it stays hidden
+    // Go straight to waiting for login elements
     
     // Wait for the login UI to fully load (not just the loading spinner)
     try {
