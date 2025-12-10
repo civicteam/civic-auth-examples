@@ -80,11 +80,32 @@ test.describe('Solana Vite Wallet Adapter Login Tests', () => {
 
     // Wait for the iframe to be gone (indicating login is complete)
     await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 30000 });
+    
+    // Wait for the page to update after login (React state update and re-render)
+    await page.waitForTimeout(3000);
 
     // Verify wallet adapter button shows connected state
     await expect(page.locator('.wallet-adapter-button.wallet-adapter-button-trigger')).toBeVisible({ timeout: 30000 });
     await expect(page.locator('.wallet-adapter-button-start-icon')).toBeVisible({ timeout: 30000 });
-    await expect(page.locator('.wallet-adapter-button-trigger')).toContainText(/^[A-Za-z0-9]{4}\.\.([A-Za-z0-9]{4})$/, { timeout: 30000 });
+    
+    // Wait for "Connecting ..." or "Select Wallet" to disappear before checking for wallet address format
+    const walletButton = page.locator('.wallet-adapter-button-trigger');
+    
+    // Wait for the button text to change from connecting/select states to wallet address
+    await page.waitForFunction(
+      (buttonSelector) => {
+        const button = document.querySelector(buttonSelector);
+        if (!button) return false;
+        const text = button.textContent || '';
+        // Check if it's NOT in connecting or select wallet state
+        return !text.includes('Connecting') && !text.includes('Select Wallet') && text.length > 0;
+      },
+      '.wallet-adapter-button-trigger',
+      { timeout: 30000 }
+    );
+    
+    // Now check for the wallet address format
+    await expect(walletButton).toContainText(/^[A-Za-z0-9]{4}\.\.([A-Za-z0-9]{4})$/, { timeout: 30000 });
     
     // Verify wallet address is displayed
     await expect(page.locator('text=/Wallet address: [A-Za-z0-9]{32,44}/')).toBeVisible({ timeout: 20000 });

@@ -85,6 +85,9 @@ test.describe('Civic Auth Applications', () => {
     // Wait for the iframe to be gone (indicating login is complete)
     await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 30000 });
     
+    // Wait for the page to update after login (React state update and re-render)
+    await page.waitForTimeout(3000);
+    
     // Confirm logged in state by checking for Ghost button in dropdown
     await expect(page.locator('#civic-dropdown-container').locator('button:has-text("Ghost")')).toBeVisible({ timeout: 20000 });
     
