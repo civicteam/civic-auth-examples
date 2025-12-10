@@ -16,7 +16,7 @@ test.describe('Civic Auth Applications', () => {
     // Wait for redirect to auth-dev.civic.com (full page redirect, not iframe)
     await page.waitForURL(/.*auth-dev\.civic\.com.*/, { timeout: 30000 });
  
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('load');
     await page.waitForLoadState('domcontentloaded');
     
     // Wait for the login UI to fully load (no iframe - direct page)
@@ -55,9 +55,19 @@ test.describe('Civic Auth Applications', () => {
     } catch (error) {
       // Loading handling - if it fails, continue
     }
+    
+    // Wait for load state to ensure callback is processed
+    try {
+      await page.waitForLoadState('load', { timeout: 10000 }).catch(() => {
+        // Load might not be reached, continue anyway
+      });
+    } catch (error) {
+      // Continue if load wait fails
+    }
 
     // Wait for redirect to /customSuccessRoute
-    await expect(page).toHaveURL(/.*\/customSuccessRoute/, { timeout: 30000 });
+    // The page should navigate away from auth-dev.civic.com to localhost:3000/customSuccessRoute
+    await page.waitForURL(/.*\/customSuccessRoute/, { timeout: 30000 });
     
     // Check the page content
     await expect(page.locator('h1')).toContainText('Hello', { timeout: 10000 });

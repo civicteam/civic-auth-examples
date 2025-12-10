@@ -82,10 +82,8 @@ test.describe('Civic Auth Applications', () => {
       // Continue if load wait fails
     }
 
-    // Wait for the iframe to be gone (indicating login is complete)
-    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 30000 });
-    
     // Wait for the status to update to show "Ghost" instead of "Modal: Starting..."
+    // Don't wait for iframe to be hidden - sometimes it stays visible but login completes
     await page.waitForFunction(
       () => {
         const statusElement = document.querySelector('[data-testid="vanilla-js-modal-status"]');

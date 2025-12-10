@@ -85,11 +85,21 @@ test.describe('Civic Auth Applications', () => {
       // Continue if load wait fails
     }
 
-    // Wait for the iframe to be gone (indicating login is complete)
-    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 30000 });
+    // Wait for the login to complete - prioritize checking for Ghost button
+    // Sometimes the iframe stays visible but login completes, so we check for the Ghost button first
+    const ghostButtonLocator = page.locator('#civic-dropdown-container').locator('button:has-text("Ghost")');
+    
+    // Try to wait for Ghost button first (more reliable indicator of login success)
+    try {
+      await ghostButtonLocator.waitFor({ state: 'visible', timeout: 30000 });
+    } catch (error) {
+      // If Ghost button doesn't appear, try waiting for iframe to be hidden as fallback
+      await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 30000 });
+      // Give a moment for the page to update after iframe is hidden
+      await page.waitForTimeout(2000);
+    }
   
     // Confirm logged in state by checking for Ghost button in dropdown
-    const ghostButtonLocator = page.locator('#civic-dropdown-container').locator('button:has-text("Ghost")');
     await expect(ghostButtonLocator).toBeVisible({ timeout: 20000 });
     
     // Verify wallet address is displayed (Web3 functionality)

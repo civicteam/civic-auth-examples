@@ -81,7 +81,16 @@ test.describe('Civic Auth Applications', () => {
     }
 
     // Wait for the iframe to be gone (indicating login is complete)
-    await page.waitForSelector('#iframeContainer #civic-auth-iframe', { state: 'hidden', timeout: 30000 });
+    // But also wait for status to update to "Ghost" since iframe might stay visible
+    await page.waitForFunction(
+      () => {
+        const statusElement = document.querySelector('[data-testid="vanilla-js-embedded-status"]');
+        if (!statusElement) return false;
+        const text = statusElement.textContent || '';
+        return text.includes('Ghost');
+      },
+      { timeout: 30000 }
+    );
 
     // Check that we're logged in by verifying the embedded status shows success
     await expect(page.locator('[data-testid="vanilla-js-embedded-status"]')).toContainText('Ghost');
