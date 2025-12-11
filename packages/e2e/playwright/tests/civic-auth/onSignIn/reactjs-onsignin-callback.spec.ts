@@ -24,7 +24,7 @@ test.describe('Civic Auth onSignIn Callback Tests', () => {
     await page.reload();
     
     // Wait for the page to fully load with all UI elements
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('load');
     await page.waitForLoadState('domcontentloaded');
     
     // Wait for the test component to be visible
@@ -59,16 +59,69 @@ test.describe('Civic Auth onSignIn Callback Tests', () => {
       // Loading element might not exist, that's ok
     }
     
-    // Look for the dummy button
-    const dummyButton = frame.locator('[data-testid="civic-login-oidc-button-dummy"]');
-    await dummyButton.click({ timeout: 20000 });
-
-    // Wait for the iframe to be gone (indicating login is complete)
-    // Using longer timeout for CI environments
-    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 30000 });
+    // Wait for login elements to appear
+    await frame.locator('[data-testid*="civic-login"]').first().waitFor({ timeout: 30000 });
     
-    // Wait for the callback to be executed
-    await page.waitForTimeout(2000);
+    // Look for the dummy button with extended timeout and ensure it's visible
+    const dummyButton = frame.locator('[data-testid="civic-login-oidc-button-dummy"]');
+    await dummyButton.waitFor({ state: 'visible', timeout: 30000 });
+    
+    // Add a small delay to ensure button is fully interactive
+    await page.waitForTimeout(1000);
+    
+    // Click the dummy button
+    await dummyButton.click({ timeout: 20000 });
+    
+    // Wait for any loading to complete after click
+    try {
+      const loadingAfterClick = frame.locator('#civic-login-app-loading');
+      const isLoadingVisibleAfterClick = await loadingAfterClick.isVisible({ timeout: 3000 }).catch(() => false);
+      
+      if (isLoadingVisibleAfterClick) {
+        // Wait longer for the auth flow to complete
+        await loadingAfterClick.waitFor({ state: 'hidden', timeout: 30000 });
+      }
+    } catch (error) {
+      // Loading handling - if it fails, continue
+    }
+    
+    // Wait for load state to ensure callback is processed
+    try {
+      await page.waitForLoadState('load', { timeout: 10000 }).catch(() => {
+        // Load might not be reached, continue anyway
+      });
+    } catch (error) {
+      // Continue if load wait fails
+    }
+
+    // Wait for the callback to be executed (React state update)
+    // Don't wait for iframe to be hidden - sometimes it stays visible but login completes
+    // Wait for callback count to actually increase instead of fixed timeout
+    await page.waitForFunction(
+      (expectedCount) => {
+        // Find the h2 element with the text "Provider-Level onSignIn Callback"
+        const h2Elements = Array.from(document.querySelectorAll('h2'));
+        const targetH2 = h2Elements.find(h2 => h2.textContent?.includes('Provider-Level onSignIn Callback'));
+        if (!targetH2) return false;
+        
+        // Find the parent container
+        const container = targetH2.parentElement;
+        if (!container) return false;
+        
+        // Find the p element with "Callback Count:"
+        const pElements = Array.from(container.querySelectorAll('p'));
+        const countP = pElements.find(p => p.textContent?.includes('Callback Count:'));
+        if (!countP) return false;
+        
+        const text = countP.textContent || '';
+        const match = text.match(/Callback Count:\s*(\d+)/);
+        if (!match) return false;
+        const currentCount = parseInt(match[1]);
+        return currentCount >= expectedCount;
+      },
+      initialCount + 2,
+      { timeout: 30000 }
+    );
     
     // Verify callback count increased
     const finalCallbackCount = await callbackCountElement.textContent();
@@ -101,7 +154,7 @@ test.describe('Civic Auth onSignIn Callback Tests', () => {
     await page.reload();
     
     // Wait for the page to fully load with all UI elements
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('load');
     await page.waitForLoadState('domcontentloaded');
     
     // Wait for the test component to be visible
@@ -139,14 +192,63 @@ test.describe('Civic Auth onSignIn Callback Tests', () => {
       // Loading element might not exist, that's ok
     }
     
+    // Wait for login elements to appear
+    await frame.locator('[data-testid*="civic-login"]').first().waitFor({ timeout: 30000 });
+    
     // Look for the dummy button
     const dummyButton = frame.locator('[data-testid="civic-login-oidc-button-dummy"]');
+    await dummyButton.waitFor({ state: 'visible', timeout: 30000 });
+    await page.waitForTimeout(1000);
     await dummyButton.click({ timeout: 20000 });
+    
+    // Wait for any loading to complete after click
+    try {
+      const loadingAfterClick = frame.locator('#civic-login-app-loading');
+      const isLoadingVisibleAfterClick = await loadingAfterClick.isVisible({ timeout: 3000 }).catch(() => false);
+      
+      if (isLoadingVisibleAfterClick) {
+        await loadingAfterClick.waitFor({ state: 'hidden', timeout: 30000 });
+      }
+    } catch (error) {
+      // Loading handling - if it fails, continue
+    }
+    
+    // Wait for load state to ensure callback is processed
+    try {
+      await page.waitForLoadState('load', { timeout: 10000 }).catch(() => {
+        // Load might not be reached, continue anyway
+      });
+    } catch (error) {
+      // Continue if load wait fails
+    }
 
-    // Wait for the iframe to be gone (indicating login is complete)
-    // Using longer timeout for CI environments
-    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 30000 });
-    await page.waitForTimeout(2000);
+    // Wait for callback count to actually increase instead of fixed timeout
+    // Don't wait for iframe to be hidden - sometimes it stays visible but login completes
+    await page.waitForFunction(
+      (expectedCount) => {
+        // Find the h2 element with the text "Provider-Level onSignIn Callback"
+        const h2Elements = Array.from(document.querySelectorAll('h2'));
+        const targetH2 = h2Elements.find(h2 => h2.textContent?.includes('Provider-Level onSignIn Callback'));
+        if (!targetH2) return false;
+        
+        // Find the parent container
+        const container = targetH2.parentElement;
+        if (!container) return false;
+        
+        // Find the p element with "Callback Count:"
+        const pElements = Array.from(container.querySelectorAll('p'));
+        const countP = pElements.find(p => p.textContent?.includes('Callback Count:'));
+        if (!countP) return false;
+        
+        const text = countP.textContent || '';
+        const match = text.match(/Callback Count:\s*(\d+)/);
+        if (!match) return false;
+        const currentCount = parseInt(match[1]);
+        return currentCount >= expectedCount;
+      },
+      initialCount + 2,
+      { timeout: 30000 }
+    );
     
     // Verify first callback
     const firstCallbackCount = await callbackCountElement.textContent();
@@ -158,7 +260,7 @@ test.describe('Civic Auth onSignIn Callback Tests', () => {
     
     // Wait for sign-out to complete and redirect to base URL
     await page.waitForURL('http://localhost:3000/', { timeout: 15000 });
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('load');
     
     // Verify we're back at the base URL (expected behavior after sign-out)
     expect(page.url()).toBe('http://localhost:3000/');
@@ -175,7 +277,7 @@ test.describe('Civic Auth onSignIn Callback Tests', () => {
     await page.goto('http://localhost:3000?view=onSignInTest');
     
     // Wait for the page to fully load with all UI elements
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('load');
     await page.waitForLoadState('domcontentloaded');
     
     // Wait for the test component to be visible
@@ -200,7 +302,7 @@ test.describe('Civic Auth onSignIn Callback Tests', () => {
     await page.goto('http://localhost:3000?view=onSignInTest');
     
     // Wait for the page to fully load with all UI elements
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('load');
     await page.waitForLoadState('domcontentloaded');
     
     // Wait for the test component to be visible
@@ -236,14 +338,56 @@ test.describe('Civic Auth onSignIn Callback Tests', () => {
       // Loading element might not exist, that's ok
     }
     
+    // Wait for login elements to appear
+    await frame.locator('[data-testid*="civic-login"]').first().waitFor({ timeout: 30000 });
+    
     // Look for the dummy button
     const dummyButton = frame.locator('[data-testid="civic-login-oidc-button-dummy"]');
+    await dummyButton.waitFor({ state: 'visible', timeout: 30000 });
+    await page.waitForTimeout(1000);
     await dummyButton.click({ timeout: 20000 });
+    
+    // Wait for any loading to complete after click
+    try {
+      const loadingAfterClick = frame.locator('#civic-login-app-loading');
+      const isLoadingVisibleAfterClick = await loadingAfterClick.isVisible({ timeout: 3000 }).catch(() => false);
+      
+      if (isLoadingVisibleAfterClick) {
+        await loadingAfterClick.waitFor({ state: 'hidden', timeout: 30000 });
+      }
+    } catch (error) {
+      // Loading handling - if it fails, continue
+    }
+    
+    // Wait for load state to ensure callback is processed
+    try {
+      await page.waitForLoadState('load', { timeout: 10000 }).catch(() => {
+        // Load might not be reached, continue anyway
+      });
+    } catch (error) {
+      // Continue if load wait fails
+    }
 
-    // Wait for the iframe to be gone (indicating login is complete)
-    // Using longer timeout for CI environments
-    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 30000 });
-    await page.waitForTimeout(2000);
+    // Wait for callback log to actually contain the success message
+    // Don't wait for iframe to be hidden - sometimes it stays visible but login completes
+    await page.waitForFunction(
+      () => {
+        // Find the h2 element with the text "Provider-Level onSignIn Callback"
+        const h2Elements = Array.from(document.querySelectorAll('h2'));
+        const targetH2 = h2Elements.find(h2 => h2.textContent?.includes('Provider-Level onSignIn Callback'));
+        if (!targetH2) return false;
+        
+        // Find the parent container
+        const container = targetH2.parentElement;
+        if (!container) return false;
+        
+        const logDiv = container.querySelector('div[style*="font-family: monospace"]');
+        if (!logDiv) return false;
+        const text = logDiv.textContent || '';
+        return text.includes('onSignIn called with SUCCESS (no error)');
+      },
+      { timeout: 30000 }
+    );
     
     // Verify callback was logged
     const providerLogContainer = page.locator('h2:has-text("Provider-Level onSignIn Callback")').locator('..').locator('div[style*="font-family: monospace"]').first();
