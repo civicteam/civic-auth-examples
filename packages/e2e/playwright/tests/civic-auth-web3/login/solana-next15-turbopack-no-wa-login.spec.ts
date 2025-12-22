@@ -14,7 +14,7 @@ test.describe('Civic Auth Applications', () => {
     await page.goto('http://localhost:3000');
 
     // Wait for the page to fully load with all UI elements
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('load');
     await page.waitForLoadState('domcontentloaded');
     
     // Wait for the sign in button to be visible and enabled/clickable
@@ -74,6 +74,15 @@ test.describe('Civic Auth Applications', () => {
       }
     } catch (error) {
       // Loading handling - if it fails, continue
+    }
+    
+    // Wait for load state to ensure callback is processed
+    try {
+      await page.waitForLoadState('load', { timeout: 10000 }).catch(() => {
+        // Load might not be reached, continue anyway
+      });
+    } catch (error) {
+      // Continue if load wait fails
     }
 
     // Wait for the iframe to be gone (indicating login is complete)

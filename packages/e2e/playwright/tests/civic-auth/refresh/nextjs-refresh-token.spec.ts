@@ -75,6 +75,15 @@ test.describe('Civic Auth Applications', () => {
     } catch (error) {
       // Loading handling - if it fails, continue
     }
+    
+    // Wait for load state to ensure callback is processed
+    try {
+      await page.waitForLoadState('load', { timeout: 10000 }).catch(() => {
+        // Load might not be reached, continue anyway
+      });
+    } catch (error) {
+      // Continue if load wait fails
+    }
 
     // Wait for the iframe to be gone (indicating login is complete)
     await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 30000 });

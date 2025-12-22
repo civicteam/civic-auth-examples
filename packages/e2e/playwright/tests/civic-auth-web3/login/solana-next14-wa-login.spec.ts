@@ -6,7 +6,7 @@ test.describe('Solana Next14 Wallet Adapter Login Tests', () => {
     await page.goto('http://localhost:3000');
 
     // Wait for the page to fully load with all UI elements
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('load');
     await page.waitForLoadState('domcontentloaded');
     
     // Wait for and click the select wallet button
@@ -55,6 +55,28 @@ test.describe('Solana Next14 Wallet Adapter Login Tests', () => {
     
     // Click the dummy button
     await dummyButton.click({ timeout: 20000 });
+    
+    // Wait for any loading to complete after click
+    try {
+      const loadingAfterClick = frame.locator('#civic-login-app-loading');
+      const isLoadingVisibleAfterClick = await loadingAfterClick.isVisible({ timeout: 3000 }).catch(() => false);
+      
+      if (isLoadingVisibleAfterClick) {
+        // Wait longer for the auth flow to complete
+        await loadingAfterClick.waitFor({ state: 'hidden', timeout: 30000 });
+      }
+    } catch (error) {
+      // Loading handling - if it fails, continue
+    }
+    
+    // Wait for load state to ensure callback is processed
+    try {
+      await page.waitForLoadState('load', { timeout: 10000 }).catch(() => {
+        // Load might not be reached, continue anyway
+      });
+    } catch (error) {
+      // Continue if load wait fails
+    }
 
     // Wait for the iframe to be gone (indicating login is complete)
     await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 30000 });

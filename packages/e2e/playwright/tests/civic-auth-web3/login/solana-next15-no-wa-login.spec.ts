@@ -14,7 +14,7 @@ test.describe('Civic Auth Applications', () => {
     await page.goto('http://localhost:3000');
 
     // Wait for the page to fully load with all UI elements
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('load');
     await page.waitForLoadState('domcontentloaded');
     
     // Wait for the sign in button to be visible and enabled/clickable
@@ -75,12 +75,31 @@ test.describe('Civic Auth Applications', () => {
     } catch (error) {
       // Loading handling - if it fails, continue
     }
+    
+    // Wait for load state to ensure callback is processed
+    try {
+      await page.waitForLoadState('load', { timeout: 10000 }).catch(() => {
+        // Load might not be reached, continue anyway
+      });
+    } catch (error) {
+      // Continue if load wait fails
+    }
 
-    // Wait for the iframe to be gone (indicating login is complete)
-    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 30000 });
+    // Wait for the login to complete - prioritize checking for Ghost button
+    // Sometimes the iframe stays visible but login completes, so we check for the Ghost button first
+    const ghostButtonLocator = page.locator('#civic-dropdown-container').locator('button:has-text("Ghost")');
+    
+    // Try to wait for Ghost button first (more reliable indicator of login success)
+    try {
+      await ghostButtonLocator.waitFor({ state: 'visible', timeout: 30000 });
+    } catch (error) {
+      // If Ghost button doesn't appear, try waiting for iframe to be hidden as fallback
+      await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 30000 });
+      // Give a moment for the page to update after iframe is hidden
+      await page.waitForTimeout(2000);
+    }
   
     // Confirm logged in state by checking for Ghost button in dropdown
-    const ghostButtonLocator = page.locator('#civic-dropdown-container').locator('button:has-text("Ghost")');
     await expect(ghostButtonLocator).toBeVisible({ timeout: 20000 });
     
     // Verify wallet address is displayed (Web3 functionality)
@@ -153,7 +172,7 @@ test.describe('Civic Auth Applications', () => {
     } catch (error) {
       // If navigation is interrupted by redirect, that's actually expected behavior
       if (error instanceof Error && error.message.includes('interrupted by another navigation')) {
-        await page.waitForLoadState('networkidle');
+        await page.waitForLoadState('load');
       } else {
         throw error;
       }

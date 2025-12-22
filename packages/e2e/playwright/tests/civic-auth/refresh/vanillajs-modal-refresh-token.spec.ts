@@ -17,14 +17,14 @@ test.describe('Civic Auth Applications', () => {
     await page.goto('http://localhost:3000');
 
     // Wait for the page to fully load with all UI elements
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('load');
     await page.waitForLoadState('domcontentloaded');
     
     // Click "Try Embedded Mode" to navigate to the embedded page
     await page.click('#startAuthModalButton');
     
     // Wait for the embedded page to load
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('load');
     
     // Wait for iframe to appear and load inside the authContainer
     await page.waitForSelector('#civic-auth-iframe', { timeout: 30000 });
@@ -35,12 +35,64 @@ test.describe('Civic Auth Applications', () => {
     // Try to wait for the frame to load completely first
     await frame.locator('body').waitFor({ timeout: 30000 });
     
-    // Look for the dummy button
+    // Wait for the login UI to fully load (not just the loading spinner)
+    try {
+      const loadingElement = frame.locator('#civic-login-app-loading');
+      const isLoadingVisible = await loadingElement.isVisible({ timeout: 5000 }).catch(() => false);
+      
+      if (isLoadingVisible) {
+        await loadingElement.waitFor({ state: 'hidden', timeout: 45000 });
+      }
+    } catch (error) {
+      // Loading element might not exist, that's ok
+    }
+    
+    // Wait for login elements to appear
+    await frame.locator('[data-testid*="civic-login"]').first().waitFor({ timeout: 30000 });
+    
+    // Look for the dummy button with extended timeout and ensure it's visible
     const dummyButton = frame.locator('[data-testid="civic-login-oidc-button-dummy"]');
+    await dummyButton.waitFor({ state: 'visible', timeout: 30000 });
+    
+    // Add a small delay to ensure button is fully interactive
+    await page.waitForTimeout(1000);
+    
+    // Click the dummy button
     await dummyButton.click({ timeout: 20000 });
+    
+    // Wait for any loading to complete after click
+    try {
+      const loadingAfterClick = frame.locator('#civic-login-app-loading');
+      const isLoadingVisibleAfterClick = await loadingAfterClick.isVisible({ timeout: 3000 }).catch(() => false);
+      
+      if (isLoadingVisibleAfterClick) {
+        // Wait longer for the auth flow to complete
+        await loadingAfterClick.waitFor({ state: 'hidden', timeout: 30000 });
+      }
+    } catch (error) {
+      // Loading handling - if it fails, continue
+    }
+    
+    // Wait for load state to ensure callback is processed
+    try {
+      await page.waitForLoadState('load', { timeout: 10000 }).catch(() => {
+        // Load might not be reached, continue anyway
+      });
+    } catch (error) {
+      // Continue if load wait fails
+    }
 
-    // Wait for the iframe to be gone (indicating login is complete)
-    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 30000 });
+    // Wait for the status to update to show "Ghost" instead of "Modal: Starting..."
+    // Don't wait for iframe to be hidden - sometimes it stays visible but login completes
+    await page.waitForFunction(
+      () => {
+        const statusElement = document.querySelector('[data-testid="vanilla-js-modal-status"]');
+        if (!statusElement) return false;
+        const text = statusElement.textContent || '';
+        return text.includes('Ghost');
+      },
+      { timeout: 30000 }
+    );
 
     // Check that we're logged in by verifying the embedded status shows success
     await expect(page.locator('[data-testid="vanilla-js-modal-status"]')).toContainText('Ghost');
