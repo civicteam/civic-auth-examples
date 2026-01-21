@@ -126,28 +126,34 @@ test.describe('Civic Auth Applications - Embedded Iframe', () => {
     await page.waitForTimeout(1000);
     
     // Verify essential cookies are deleted after logout
-    const cookiesAfterLogout = await page.context().cookies();
-    const remainingAuthCookies = cookiesAfterLogout.filter(cookie => 
-      cookie.name.includes('civic-auth') || 
-      cookie.name.includes('access_token') || 
-      cookie.name.includes('refresh_token') ||
-      cookie.name.includes('id_token') ||
-      cookie.name.includes('session')
-    );
+    // In dev mode, cookie clearing can take longer due to React Strict Mode and HMR
+    // Use polling with retries instead of a single check
+    const maxRetries = 5;
+    const retryDelay = 1000;
+    let authCookiesCleared = false;
     
-    // Assert that essential auth cookies have been deleted
-    if (remainingAuthCookies.length > 0) {
-      await page.waitForTimeout(2000);
-      const finalCookies = await page.context().cookies();
-      const finalAuthCookies = finalCookies.filter(cookie => 
+    for (let attempt = 0; attempt < maxRetries; attempt++) {
+      const cookies = await page.context().cookies();
+      const remainingAuthCookies = cookies.filter(cookie => 
         cookie.name.includes('civic-auth') || 
         cookie.name.includes('access_token') || 
         cookie.name.includes('refresh_token') ||
         cookie.name.includes('id_token') ||
         cookie.name.includes('session')
       );
-      expect(finalAuthCookies.length).toBe(0);
+      
+      if (remainingAuthCookies.length === 0) {
+        authCookiesCleared = true;
+        break;
+      }
+      
+      // Wait before next attempt (in dev mode cookie clearing can be slower)
+      if (attempt < maxRetries - 1) {
+        await page.waitForTimeout(retryDelay);
+      }
     }
+    
+    expect(authCookiesCleared).toBe(true);
     
     // Additional verification: reload page to ensure session is cleared
     await page.reload({ waitUntil: 'networkidle', timeout: 10000 });

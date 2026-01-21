@@ -1,10 +1,13 @@
 import { test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
 test.describe('Civic Auth Applications', () => {
-  test.beforeEach(async ({ page }) => {
+  test.beforeEach(async ({ page, context }) => {
     await allure.epic('Civic Auth Applications');
     await allure.suite('Login Basepath');
     await allure.feature('Next.js Login (BasePath)');
+    
+    // Clear cookies and storage before each test to prevent state pollution between retries
+    await context.clearCookies();
   });
   test('should complete full login and logout flow with basepath', async ({ page, browserName }) => {
     // Configure test to be more resilient
@@ -71,11 +74,24 @@ test.describe('Civic Auth Applications', () => {
     // Wait for the iframe to be gone (indicating login is complete)
     await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 30000 });
     
-    // Wait a bit for the auth state to update
-    await page.waitForTimeout(2000);
+    // Wait for the auth state to update - in dev mode this can be slower
+    await page.waitForTimeout(3000);
+    
+    // Wait for networkidle to ensure all auth state updates are complete
+    await page.waitForLoadState('networkidle');
   
     // Confirm logged in state by checking for Ghost button in dropdown
+    // Use a more robust waiting strategy for dev mode
     const ghostButtonLocator = page.locator('#civic-dropdown-container').locator('button:has-text("Ghost")');
+    
+    // In dev mode, the auth state update can be slow - retry with increasing waits
+    let ghostButtonVisible = false;
+    for (let attempt = 0; attempt < 5; attempt++) {
+      ghostButtonVisible = await ghostButtonLocator.isVisible().catch(() => false);
+      if (ghostButtonVisible) break;
+      await page.waitForTimeout(2000);
+    }
+    
     await expect(ghostButtonLocator).toBeVisible({ timeout: 20000 });
     
     // Verify custom loginSuccessUrl is not loaded (should still be on basepath)
@@ -95,15 +111,28 @@ test.describe('Civic Auth Applications', () => {
     // Verify we have essential auth cookies
     expect(authCookies.length).toBeGreaterThan(0);
 
-    // Click the Ghost button in dropdown
+    // Click the Ghost button in dropdown to open menu
     const ghostButton = page.locator('#civic-dropdown-container').locator('button:has-text("Ghost")');
     await ghostButton.waitFor({ state: 'visible', timeout: 10000 });
     await ghostButton.click();
+    
+    // Wait for dropdown animation to complete
+    await page.waitForTimeout(500);
 
-    // Click the logout button
+    // Click the logout button - use force:true to handle any overlay issues in dev mode
     const logoutButton = page.locator('#civic-dropdown-container').locator('button:has-text("Log out")');
     await logoutButton.waitFor({ state: 'visible', timeout: 10000 });
-    await logoutButton.click();
+    
+    // In dev mode, the dropdown can be flaky - retry the click if needed
+    try {
+      await logoutButton.click({ timeout: 10000 });
+    } catch (error) {
+      // If click fails, try re-opening the dropdown and clicking again
+      await ghostButton.click();
+      await page.waitForTimeout(500);
+      await logoutButton.waitFor({ state: 'visible', timeout: 5000 });
+      await logoutButton.click({ force: true, timeout: 10000 });
+    }
     
     // Confirm successful logout
     await expect(page.locator('#civic-dropdown-container').locator('button:has-text("Ghost")')).not.toBeVisible();

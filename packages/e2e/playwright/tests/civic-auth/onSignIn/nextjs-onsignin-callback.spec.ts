@@ -83,9 +83,11 @@ test.describe('Civic Auth onSignIn Callback Tests', () => {
     // Wait for the callback to be executed (sign-in process takes several seconds)
     await page.waitForTimeout(5000);
     
-    // Verify success callback was logged in component - get the entire callback log container
-    // The structure is: <strong>Callback Log:</strong> followed by a <div> that contains all the log entries
-    const callbackLogContainer = page.locator('strong:has-text("Callback Log:")').locator('+ div');
+    // Verify success callback was logged in component - get the callback log container by data-testid
+    const callbackLogContainer = page.locator('[data-testid="callback-log-container"]');
+    
+    // Wait for the callback log to contain the success message (with timeout for dev mode)
+    await expect(callbackLogContainer).toContainText('useUser onSignIn called with SUCCESS (no error)', { timeout: 10000 });
     const callbackLog = await callbackLogContainer.textContent();
     
     // Verify that the useUser onSignIn callback was triggered
@@ -157,8 +159,11 @@ test.describe('Civic Auth onSignIn Callback Tests', () => {
     await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 30000 });
     await page.waitForTimeout(5000);
     
-    // Verify callback was logged
-    const callbackLogContainer = page.locator('strong:has-text("Callback Log:")').locator('+ div');
+    // Verify callback was logged - use data-testid for reliable selection
+    const callbackLogContainer = page.locator('[data-testid="callback-log-container"]');
+    
+    // Wait for the callback log to contain the success message (with timeout for dev mode)
+    await expect(callbackLogContainer).toContainText('useUser onSignIn called with SUCCESS (no error)', { timeout: 10000 });
     const callbackLog = await callbackLogContainer.textContent();
     expect(callbackLog).toContain('useUser onSignIn called with SUCCESS (no error)');
     
@@ -189,9 +194,12 @@ test.describe('Civic Auth onSignIn Callback Tests', () => {
     // Wait for the test component to be visible
     await page.waitForSelector('h1:has-text("Civic Auth - OnSignIn Callback Test (NextJS)")', { timeout: 10000 });
     
-    // Verify the callback log container exists and is ready
-    const callbackLogContainer = page.locator('strong:has-text("Callback Log:")').locator('+ div');
+    // Verify the callback log container exists and is ready - use data-testid for reliable selection
+    const callbackLogContainer = page.locator('[data-testid="callback-log-container"]');
     await expect(callbackLogContainer).toBeVisible();
+    
+    // Wait for auth status to appear in the log (React Strict Mode may delay effects in dev mode)
+    await expect(callbackLogContainer).toContainText('Auth status changed to:', { timeout: 10000 });
     
     // Verify initial state shows auth status changes (component logs these on mount)
     const initialLog = await callbackLogContainer.textContent();
@@ -259,8 +267,11 @@ test.describe('Civic Auth onSignIn Callback Tests', () => {
     await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 30000 });
     await page.waitForTimeout(5000);
     
-    // Verify callback was logged
-    const callbackLogContainer = page.locator('strong:has-text("Callback Log:")').locator('+ div');
+    // Verify callback was logged - use data-testid for reliable selection
+    const callbackLogContainer = page.locator('[data-testid="callback-log-container"]');
+    
+    // Wait for the callback log to contain the success message (with timeout for dev mode)
+    await expect(callbackLogContainer).toContainText('useUser onSignIn called with SUCCESS (no error)', { timeout: 10000 });
     const callbackLog = await callbackLogContainer.textContent();
     expect(callbackLog).toContain('useUser onSignIn called with SUCCESS (no error)');
     
@@ -286,9 +297,12 @@ test.describe('Civic Auth onSignIn Callback Tests', () => {
     // Verify the page loaded successfully (middleware didn't interfere)
     await expect(page.locator('h1:has-text("Civic Auth - OnSignIn Callback Test (NextJS)")')).toBeVisible();
     
-    // Verify the callback system is ready
-    const callbackLogContainer = page.locator('strong:has-text("Callback Log:")').locator('+ div');
+    // Verify the callback system is ready - use data-testid for reliable selection
+    const callbackLogContainer = page.locator('[data-testid="callback-log-container"]');
     await expect(callbackLogContainer).toBeVisible();
+    
+    // Wait for auth status to appear in the log (React Strict Mode may delay effects in dev mode)
+    await expect(callbackLogContainer).toContainText('Auth status changed to:', { timeout: 10000 });
     
     // Verify initial state shows auth status changes (component logs these on mount)
     const initialLog = await callbackLogContainer.textContent();

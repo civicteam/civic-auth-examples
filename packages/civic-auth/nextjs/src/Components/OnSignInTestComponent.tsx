@@ -132,16 +132,19 @@ export default function OnSignInTestComponent({ onSignInCallback }: OnSignInTest
 
       <div>
         <strong>Callback Log:</strong>
-        <div style={{ 
-          backgroundColor: '#fff', 
-          border: '1px solid #ddd', 
-          padding: '0.5rem', 
-          marginTop: '0.5rem',
-          maxHeight: '200px',
-          overflowY: 'auto',
-          fontFamily: 'monospace',
-          fontSize: '0.8rem'
-        }}>
+        <div 
+          data-testid="callback-log-container"
+          style={{ 
+            backgroundColor: '#fff', 
+            border: '1px solid #ddd', 
+            padding: '0.5rem', 
+            marginTop: '0.5rem',
+            maxHeight: '200px',
+            overflowY: 'auto',
+            fontFamily: 'monospace',
+            fontSize: '0.8rem'
+          }}
+        >
           {callbackLog.length === 0 ? (
             <div style={{ color: '#666', fontStyle: 'italic' }}>No callbacks logged yet</div>
           ) : (
