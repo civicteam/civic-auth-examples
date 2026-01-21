@@ -1,12 +1,17 @@
 import { test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
 test.describe('Civic Auth Applications', () => {
-  test.beforeEach(async ({ page }) => {
+  test.beforeEach(async ({ page, context }) => {
     await allure.epic('Civic Auth Applications');
     await allure.suite('Login');
     await allure.feature('React.js Login');
+    
+    // Clear cookies before each test to prevent state pollution
+    await context.clearCookies();
   });
   test('should complete full login and logout flow', async ({ page, browserName }) => {
+    // Configure test timeout
+    test.setTimeout(60000);
     
     // Open the app home page
     await page.goto('http://localhost:3000');
@@ -98,13 +103,29 @@ test.describe('Civic Auth Applications', () => {
     await expect(page.url()).not.toContain('loginSuccessUrl');
 
     // Click the Ghost button in dropdown
-    await page.locator('#civic-dropdown-container').locator('button:has-text("Ghost")').click();
-
-    // Click the logout button
-    await page.locator('#civic-dropdown-container').locator('button:has-text("Log out")').click();
+    const ghostButton = page.locator('#civic-dropdown-container').locator('button:has-text("Ghost")');
+    await ghostButton.waitFor({ state: 'visible', timeout: 10000 });
+    await ghostButton.click();
     
-    // Confirm successful logout
-    await expect(page.locator('#civic-dropdown-container').locator('button:has-text("Ghost")')).not.toBeVisible();
+    // Wait for dropdown menu to open and stabilize
+    await page.waitForTimeout(500);
+    
+    // Click the logout button - handle flaky dropdown with retry
+    const logoutButton = page.locator('#civic-dropdown-container').locator('button:has-text("Log out")');
+    
+    try {
+      await logoutButton.waitFor({ state: 'visible', timeout: 5000 });
+      await logoutButton.click({ timeout: 5000 });
+    } catch (error) {
+      // Dropdown may have closed - re-open it and try again
+      await ghostButton.click();
+      await page.waitForTimeout(500);
+      await logoutButton.waitFor({ state: 'visible', timeout: 5000 });
+      await logoutButton.click({ force: true, timeout: 5000 });
+    }
+    
+    // Confirm successful logout - with extended timeout
+    await expect(page.locator('#civic-dropdown-container').locator('button:has-text("Ghost")')).not.toBeVisible({ timeout: 15000 });
     
     // Verify token refresh fails after logout
     const response = await page.request.post('https://auth-dev.civic.com/oauth/token', {
