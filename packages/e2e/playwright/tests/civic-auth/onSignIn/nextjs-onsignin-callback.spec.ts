@@ -83,8 +83,23 @@ test.describe('Civic Auth onSignIn Callback Tests', () => {
     // Wait for the callback to be executed (sign-in process takes several seconds)
     await page.waitForTimeout(5000);
     
+    // After OAuth login, the app may redirect away from /onSignInTest
+    // Check if we're still on the test page, if not navigate back
+    const currentUrl = page.url();
+    if (!currentUrl.includes('/onSignInTest')) {
+      await page.goto('http://localhost:3000/onSignInTest');
+      await page.waitForLoadState('networkidle');
+      await page.waitForTimeout(2000); // Wait for component to initialize
+    }
+    
+    // Wait for the test component to be visible
+    await page.waitForSelector('h1:has-text("Civic Auth - OnSignIn Callback Test (NextJS)")', { timeout: 10000 });
+    
     // Verify success callback was logged in component - get the callback log container by data-testid
     const callbackLogContainer = page.locator('[data-testid="callback-log-container"]');
+    
+    // First wait for the element to exist
+    await expect(callbackLogContainer).toBeVisible({ timeout: 10000 });
     
     // Wait for the callback log to contain the success message (with timeout for dev mode)
     await expect(callbackLogContainer).toContainText('useUser onSignIn called with SUCCESS (no error)', { timeout: 10000 });
@@ -159,8 +174,23 @@ test.describe('Civic Auth onSignIn Callback Tests', () => {
     await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 30000 });
     await page.waitForTimeout(5000);
     
+    // After OAuth login, the app may redirect away from /onSignInTest
+    // Check if we're still on the test page, if not navigate back
+    const currentUrl = page.url();
+    if (!currentUrl.includes('/onSignInTest')) {
+      await page.goto('http://localhost:3000/onSignInTest');
+      await page.waitForLoadState('networkidle');
+      await page.waitForTimeout(2000); // Wait for component to initialize
+    }
+    
+    // Wait for the test component to be visible
+    await page.waitForSelector('h1:has-text("Civic Auth - OnSignIn Callback Test (NextJS)")', { timeout: 10000 });
+    
     // Verify callback was logged - use data-testid for reliable selection
     const callbackLogContainer = page.locator('[data-testid="callback-log-container"]');
+    
+    // First wait for the element to exist
+    await expect(callbackLogContainer).toBeVisible({ timeout: 10000 });
     
     // Wait for the callback log to contain the success message (with timeout for dev mode)
     await expect(callbackLogContainer).toContainText('useUser onSignIn called with SUCCESS (no error)', { timeout: 10000 });
@@ -267,8 +297,23 @@ test.describe('Civic Auth onSignIn Callback Tests', () => {
     await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 30000 });
     await page.waitForTimeout(5000);
     
+    // After OAuth login, the app may redirect away from /onSignInTest
+    // Check if we're still on the test page, if not navigate back
+    const currentUrl2 = page.url();
+    if (!currentUrl2.includes('/onSignInTest')) {
+      await page.goto('http://localhost:3000/onSignInTest');
+      await page.waitForLoadState('networkidle');
+      await page.waitForTimeout(2000); // Wait for component to initialize
+    }
+    
+    // Wait for the test component to be visible
+    await page.waitForSelector('h1:has-text("Civic Auth - OnSignIn Callback Test (NextJS)")', { timeout: 10000 });
+    
     // Verify callback was logged - use data-testid for reliable selection
     const callbackLogContainer = page.locator('[data-testid="callback-log-container"]');
+    
+    // First wait for the element to exist
+    await expect(callbackLogContainer).toBeVisible({ timeout: 10000 });
     
     // Wait for the callback log to contain the success message (with timeout for dev mode)
     await expect(callbackLogContainer).toContainText('useUser onSignIn called with SUCCESS (no error)', { timeout: 10000 });
