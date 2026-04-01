@@ -73,13 +73,14 @@ for dir in "${PROJECT_DIRS[@]}"; do
   else
     echo "yarn add $PKG_NAME@$VERSION"
     yarn add "$PKG_NAME@$VERSION"
-    # If the project previously used '*' keep it that way in package.json while retaining the new lockfile resolution
-    if [[ "$CURRENT_SPEC" == "*" ]]; then
-      ESCAPED_NAME=${PKG_NAME//\//\\/}
-      perl -0777 -i -pe "s/(\"${ESCAPED_NAME}\"\s*:\s*)\"[^\"]+\"/
+  fi
+
+  # If the project previously used '*' keep it that way in package.json while retaining the new lockfile resolution
+  if [[ "$CURRENT_SPEC" == "*" ]]; then
+    ESCAPED_NAME=${PKG_NAME//\//\\/}
+    perl -0777 -i -pe "s/(\"${ESCAPED_NAME}\"\s*:\s*)\"[^\"]+\"/
 \${1}\"*\"/g" package.json
-      echo "Restored ${PKG_NAME} spec to '*' in package.json"
-    fi
+    echo "Restored ${PKG_NAME} spec to '*' in package.json"
   fi
   popd >/dev/null
 done
