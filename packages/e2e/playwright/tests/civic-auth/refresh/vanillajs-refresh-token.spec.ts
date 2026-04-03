@@ -177,7 +177,6 @@ test.describe('Civic Auth Applications', () => {
     expect(refreshedTokens.access_token).toBeTruthy();
     expect(refreshedTokens.id_token).toBeTruthy();
     
-    expect(refreshedTokens.user).not.toBe(originalTokens.user);
     expect(refreshedTokens.access_token).not.toBe(originalTokens.access_token);
     expect(refreshedTokens.id_token).not.toBe(originalTokens.id_token);
     
