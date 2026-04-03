@@ -43,10 +43,7 @@ jobs:
     container:
       image: mcr.microsoft.com/playwright:v1.58.0-jammy
     permissions:
-      contents: write
-      actions: read
-      id-token: write
-      pages: write
+      contents: read
     env:
       CLIENT_ID: ${{ secrets.CLIENT_ID }}
       VITE_CLIENT_ID: ${{ secrets.CLIENT_ID }}
@@ -62,7 +59,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          token: ${{ github.token }}
+          persist-credentials: false
 
       - name: Create unique identifier
         id: project-id

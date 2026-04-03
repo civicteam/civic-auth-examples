@@ -49,7 +49,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          token: ${{ github.token }}
+          persist-credentials: false
 
       - name: Install Bun
         if: contains(inputs.project-path, 'hono')
