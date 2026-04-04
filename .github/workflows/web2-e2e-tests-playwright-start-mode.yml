@@ -21,7 +21,11 @@ jobs:
       playwright-spec: "playwright/tests/civic-auth/login/nextjs-login.spec.ts playwright/tests/civic-auth/email/nextjs-email-verification.spec.ts playwright/tests/civic-auth/refresh/nextjs-refresh-token.spec.ts playwright/tests/civic-auth/staleSession/nextjs-stale-session.spec.ts playwright/tests/civic-auth/rehydration/nextjs-session-rehydration.spec.ts playwright/tests/civic-auth/onSignIn/nextjs-onsignin-callback.spec.ts"
       dev-command: "yarn start"
       job-name: "🚀 NextJS App (Login + Email + Refresh + Stale Session + Rehydration + OnSignIn)"
-    secrets: inherit
+    secrets:
+      CLIENT_ID: ${{ secrets.CLIENT_ID }}
+      AUTH_SERVER: ${{ secrets.AUTH_SERVER }}
+      NEXT_PUBLIC_WALLET_API_BASE_URL: ${{ secrets.NEXT_PUBLIC_WALLET_API_BASE_URL }}
+      VITE_WALLET_API_BASE_URL: ${{ secrets.VITE_WALLET_API_BASE_URL }}
 
   # disabled because of basepath bug https://civicteam.atlassian.net/browse/TECH-2609
   # job-nextjs-basepath-example-app:
@@ -60,7 +64,11 @@ jobs:
       playwright-spec: "playwright/tests/civic-auth/login/nextjs-embedded-iframe-login.spec.ts"
       dev-command: "yarn start"
       job-name: "🚀 NextJS Embedded Iframe App (Login)"
-    secrets: inherit
+    secrets:
+      CLIENT_ID: ${{ secrets.CLIENT_ID }}
+      AUTH_SERVER: ${{ secrets.AUTH_SERVER }}
+      NEXT_PUBLIC_WALLET_API_BASE_URL: ${{ secrets.NEXT_PUBLIC_WALLET_API_BASE_URL }}
+      VITE_WALLET_API_BASE_URL: ${{ secrets.VITE_WALLET_API_BASE_URL }}
 
   job-express-loginsuccessurl-example-app:
     name: "Express loginSuccessUrl example app"
@@ -72,7 +80,11 @@ jobs:
       build-command: "yarn build"
       dev-command: "yarn start:loginSuccessUrl"
       job-name: "🛠️ Express Server (LoginSuccessUrl)"
-    secrets: inherit
+    secrets:
+      CLIENT_ID: ${{ secrets.CLIENT_ID }}
+      AUTH_SERVER: ${{ secrets.AUTH_SERVER }}
+      NEXT_PUBLIC_WALLET_API_BASE_URL: ${{ secrets.NEXT_PUBLIC_WALLET_API_BASE_URL }}
+      VITE_WALLET_API_BASE_URL: ${{ secrets.VITE_WALLET_API_BASE_URL }}
 
   job-fastify-loginsuccessurl-example-app:
     name: "Fastify loginSuccessUrl example app"
@@ -84,7 +96,11 @@ jobs:
       build-command: "yarn build"
       dev-command: "yarn start:loginSuccessUrl"
       job-name: "⚡ Fastify Server (LoginSuccessUrl)"
-    secrets: inherit
+    secrets:
+      CLIENT_ID: ${{ secrets.CLIENT_ID }}
+      AUTH_SERVER: ${{ secrets.AUTH_SERVER }}
+      NEXT_PUBLIC_WALLET_API_BASE_URL: ${{ secrets.NEXT_PUBLIC_WALLET_API_BASE_URL }}
+      VITE_WALLET_API_BASE_URL: ${{ secrets.VITE_WALLET_API_BASE_URL }}
 
   job-hono-loginsuccessurl-example-app:
     name: "Hono loginSuccessUrl example app"
@@ -96,7 +112,11 @@ jobs:
       build-command: "yarn build"
       dev-command: "yarn start:loginSuccessUrl"
       job-name: "🔥 Hono Server (LoginSuccessUrl)"
-    secrets: inherit
+    secrets:
+      CLIENT_ID: ${{ secrets.CLIENT_ID }}
+      AUTH_SERVER: ${{ secrets.AUTH_SERVER }}
+      NEXT_PUBLIC_WALLET_API_BASE_URL: ${{ secrets.NEXT_PUBLIC_WALLET_API_BASE_URL }}
+      VITE_WALLET_API_BASE_URL: ${{ secrets.VITE_WALLET_API_BASE_URL }}
 
   job-reactjs-example-app:
     name: "ReactJS example app"
@@ -107,7 +127,11 @@ jobs:
       playwright-spec: "playwright/tests/civic-auth/login/reactjs-login.spec.ts playwright/tests/civic-auth/onSignIn/reactjs-onsignin-callback.spec.ts"
       dev-command: "yarn start"
       job-name: "⚛️ ReactJS App (Login + OnSignIn)"
-    secrets: inherit
+    secrets:
+      CLIENT_ID: ${{ secrets.CLIENT_ID }}
+      AUTH_SERVER: ${{ secrets.AUTH_SERVER }}
+      NEXT_PUBLIC_WALLET_API_BASE_URL: ${{ secrets.NEXT_PUBLIC_WALLET_API_BASE_URL }}
+      VITE_WALLET_API_BASE_URL: ${{ secrets.VITE_WALLET_API_BASE_URL }}
 
   job-express-example-app:
     name: "Express example app"
@@ -118,7 +142,11 @@ jobs:
       playwright-spec: "playwright/tests/civic-auth/login/express-login.spec.ts"
       dev-command: "yarn start"
       job-name: "🛠️ Express Server (Login)"
-    secrets: inherit
+    secrets:
+      CLIENT_ID: ${{ secrets.CLIENT_ID }}
+      AUTH_SERVER: ${{ secrets.AUTH_SERVER }}
+      NEXT_PUBLIC_WALLET_API_BASE_URL: ${{ secrets.NEXT_PUBLIC_WALLET_API_BASE_URL }}
+      VITE_WALLET_API_BASE_URL: ${{ secrets.VITE_WALLET_API_BASE_URL }}
 
   job-fastify-example-app:
     name: "Fastify example app"
@@ -129,7 +157,11 @@ jobs:
       playwright-spec: "playwright/tests/civic-auth/login/fastify-login.spec.ts"
       dev-command: "yarn start"
       job-name: "⚡ Fastify Server (Login)"
-    secrets: inherit
+    secrets:
+      CLIENT_ID: ${{ secrets.CLIENT_ID }}
+      AUTH_SERVER: ${{ secrets.AUTH_SERVER }}
+      NEXT_PUBLIC_WALLET_API_BASE_URL: ${{ secrets.NEXT_PUBLIC_WALLET_API_BASE_URL }}
+      VITE_WALLET_API_BASE_URL: ${{ secrets.VITE_WALLET_API_BASE_URL }}
 
   job-hono-example-app:
     name: "Hono example app"
@@ -140,7 +172,11 @@ jobs:
       playwright-spec: "playwright/tests/civic-auth/login/hono-login.spec.ts"
       dev-command: "yarn start"
       job-name: "🔥 Hono Server (Login)"
-    secrets: inherit
+    secrets:
+      CLIENT_ID: ${{ secrets.CLIENT_ID }}
+      AUTH_SERVER: ${{ secrets.AUTH_SERVER }}
+      NEXT_PUBLIC_WALLET_API_BASE_URL: ${{ secrets.NEXT_PUBLIC_WALLET_API_BASE_URL }}
+      VITE_WALLET_API_BASE_URL: ${{ secrets.VITE_WALLET_API_BASE_URL }}
 
   job-vanillajs-example-app:
     name: "VanillaJS example app"
@@ -151,7 +187,11 @@ jobs:
       playwright-spec: "playwright/tests/civic-auth/login/vanillajs-login.spec.ts playwright/tests/civic-auth/refresh/vanillajs-refresh-token.spec.ts playwright/tests/civic-auth/staleSession/vanillajs-stale-session.spec.ts playwright/tests/civic-auth/rehydration/vanillajs-session-rehydration.spec.ts"
       dev-command: "yarn start"
       job-name: "📦 VanillaJS App (Login + Refresh + Stale Session + Rehydration)"
-    secrets: inherit
+    secrets:
+      CLIENT_ID: ${{ secrets.CLIENT_ID }}
+      AUTH_SERVER: ${{ secrets.AUTH_SERVER }}
+      NEXT_PUBLIC_WALLET_API_BASE_URL: ${{ secrets.NEXT_PUBLIC_WALLET_API_BASE_URL }}
+      VITE_WALLET_API_BASE_URL: ${{ secrets.VITE_WALLET_API_BASE_URL }}
 
   job-vanillajs-modal-example-app:
     name: "VanillaJS Modal example app"
@@ -161,5 +201,9 @@ jobs:
       project-path: packages/civic-auth/vanillajs
       playwright-spec: "playwright/tests/civic-auth/login/vanillajs-modal-login.spec.ts playwright/tests/civic-auth/refresh/vanillajs-modal-refresh-token.spec.ts"
       job-name: "📦 VanillaJS Modal App (Login + Refresh)"
-    secrets: inherit
+    secrets:
+      CLIENT_ID: ${{ secrets.CLIENT_ID }}
+      AUTH_SERVER: ${{ secrets.AUTH_SERVER }}
+      NEXT_PUBLIC_WALLET_API_BASE_URL: ${{ secrets.NEXT_PUBLIC_WALLET_API_BASE_URL }}
+      VITE_WALLET_API_BASE_URL: ${{ secrets.VITE_WALLET_API_BASE_URL }}
 
