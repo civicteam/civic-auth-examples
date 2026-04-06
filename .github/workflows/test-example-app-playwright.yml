@@ -35,18 +35,15 @@ on:
       VITE_WALLET_API_BASE_URL:
         required: true
       DATABASE_URL:
-        required: true
+        required: false
 
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
     container:
-      image: mcr.microsoft.com/playwright:v1.58.0-jammy
+      image: mcr.microsoft.com/playwright:v1.59.1-jammy
     permissions:
-      contents: write
-      actions: read
-      id-token: write
-      pages: write
+      contents: read
     env:
       CLIENT_ID: ${{ secrets.CLIENT_ID }}
       VITE_CLIENT_ID: ${{ secrets.CLIENT_ID }}
@@ -54,7 +51,6 @@ jobs:
       VITE_AUTH_SERVER: ${{ secrets.AUTH_SERVER }}
       NEXT_PUBLIC_WALLET_API_BASE_URL: ${{ secrets.NEXT_PUBLIC_WALLET_API_BASE_URL }}
       VITE_WALLET_API_BASE_URL: ${{ secrets.VITE_WALLET_API_BASE_URL }}
-      DATABASE_URL: ${{ secrets.DATABASE_URL }}
       HOME: /root
     defaults:
       run:
@@ -62,7 +58,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          token: ${{ github.token }}
+          persist-credentials: false
 
       - name: Create unique identifier
         id: project-id

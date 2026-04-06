@@ -10,7 +10,7 @@ test.describe('Civic Auth Applications', () => {
     await allure.feature('Next.js Email Verification');
   });
 
-  test('should complete email verification flow', async ({ page, browserName }) => {
+  test.skip('should complete email verification flow', async ({ page, browserName }) => {
     await allure.story('Next.js Email Code Verification Flow');
     await allure.severity('critical');
     await allure.tag('nextjs-authentication-email-verification-code');

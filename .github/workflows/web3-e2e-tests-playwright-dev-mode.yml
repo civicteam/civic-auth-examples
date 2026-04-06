@@ -22,7 +22,11 @@ jobs:
       project-path: packages/civic-auth-web3/solana/next14-no-wallet-adapter
       playwright-spec: "playwright/tests/civic-auth-web3/login/solana-next14-no-wa-login.spec.ts"
       job-name: "🌐 Solana Next.js 14 No WA (Login)"
-    secrets: inherit
+    secrets:
+      CLIENT_ID: ${{ secrets.CLIENT_ID }}
+      AUTH_SERVER: ${{ secrets.AUTH_SERVER }}
+      NEXT_PUBLIC_WALLET_API_BASE_URL: ${{ secrets.NEXT_PUBLIC_WALLET_API_BASE_URL }}
+      VITE_WALLET_API_BASE_URL: ${{ secrets.VITE_WALLET_API_BASE_URL }}
 
   job-solana-next15-no-wa-example-app:
     name: "Solana Next.js 15 No Wallet Adapter example app"
@@ -32,7 +36,11 @@ jobs:
       project-path: packages/civic-auth-web3/solana/next15-no-wallet-adapter
       playwright-spec: "playwright/tests/civic-auth-web3/login/solana-next15-no-wa-login.spec.ts"
       job-name: "🌐 Solana Next.js 15 No WA (Login)"
-    secrets: inherit
+    secrets:
+      CLIENT_ID: ${{ secrets.CLIENT_ID }}
+      AUTH_SERVER: ${{ secrets.AUTH_SERVER }}
+      NEXT_PUBLIC_WALLET_API_BASE_URL: ${{ secrets.NEXT_PUBLIC_WALLET_API_BASE_URL }}
+      VITE_WALLET_API_BASE_URL: ${{ secrets.VITE_WALLET_API_BASE_URL }}
 
   # SKIPPED: Turbopack wallet adapter test - Civic wallet not appearing in wallet selection modal
   # Issue: The Solana Wallet Adapter auto-discovery mechanism for Civic wallet is not working with Turbopack
@@ -59,7 +67,11 @@ jobs:
       project-path: packages/civic-auth-web3/solana/vite-no-wallet-adapter
       playwright-spec: "playwright/tests/civic-auth-web3/login/solana-vite-no-wa-login.spec.ts"
       job-name: "🌐 Solana Vite No WA (Login)"
-    secrets: inherit
+    secrets:
+      CLIENT_ID: ${{ secrets.CLIENT_ID }}
+      AUTH_SERVER: ${{ secrets.AUTH_SERVER }}
+      NEXT_PUBLIC_WALLET_API_BASE_URL: ${{ secrets.NEXT_PUBLIC_WALLET_API_BASE_URL }}
+      VITE_WALLET_API_BASE_URL: ${{ secrets.VITE_WALLET_API_BASE_URL }}
 
   job-solana-next14-wa-example-app:
     name: "Solana Next.js 14 Wallet Adapter example app"
@@ -69,7 +81,11 @@ jobs:
       project-path: packages/civic-auth-web3/solana/next14-wallet-adapter
       playwright-spec: "playwright/tests/civic-auth-web3/login/solana-next14-wa-login.spec.ts"
       job-name: "🌐 Solana Next.js 14 WA (Login)"
-    secrets: inherit
+    secrets:
+      CLIENT_ID: ${{ secrets.CLIENT_ID }}
+      AUTH_SERVER: ${{ secrets.AUTH_SERVER }}
+      NEXT_PUBLIC_WALLET_API_BASE_URL: ${{ secrets.NEXT_PUBLIC_WALLET_API_BASE_URL }}
+      VITE_WALLET_API_BASE_URL: ${{ secrets.VITE_WALLET_API_BASE_URL }}
 
   job-solana-next15-wa-example-app:
     name: "Solana Next.js 15 Wallet Adapter example app"
@@ -79,7 +95,11 @@ jobs:
       project-path: packages/civic-auth-web3/solana/next15-wallet-adapter
       playwright-spec: "playwright/tests/civic-auth-web3/login/solana-next15-wa-login.spec.ts"
       job-name: "🌐 Solana Next.js 15 WA (Login)"
-    secrets: inherit
+    secrets:
+      CLIENT_ID: ${{ secrets.CLIENT_ID }}
+      AUTH_SERVER: ${{ secrets.AUTH_SERVER }}
+      NEXT_PUBLIC_WALLET_API_BASE_URL: ${{ secrets.NEXT_PUBLIC_WALLET_API_BASE_URL }}
+      VITE_WALLET_API_BASE_URL: ${{ secrets.VITE_WALLET_API_BASE_URL }}
 
   # SKIPPED: Turbopack wallet adapter test - Civic wallet not appearing in wallet selection modal
   # Issue: The Solana Wallet Adapter auto-discovery mechanism for Civic wallet is not working with Turbopack
@@ -106,7 +126,11 @@ jobs:
       project-path: packages/civic-auth-web3/solana/vite-wallet-adapter
       playwright-spec: "playwright/tests/civic-auth-web3/login/solana-vite-wa-login.spec.ts"
       job-name: "🌐 Solana Vite WA (Login)"
-    secrets: inherit
+    secrets:
+      CLIENT_ID: ${{ secrets.CLIENT_ID }}
+      AUTH_SERVER: ${{ secrets.AUTH_SERVER }}
+      NEXT_PUBLIC_WALLET_API_BASE_URL: ${{ secrets.NEXT_PUBLIC_WALLET_API_BASE_URL }}
+      VITE_WALLET_API_BASE_URL: ${{ secrets.VITE_WALLET_API_BASE_URL }}
 
   job-wagmi-example-app:
     name: "Wagmi example app"
@@ -116,7 +140,11 @@ jobs:
       project-path: packages/civic-auth-web3/wagmi
       playwright-spec: "playwright/tests/civic-auth-web3/login/wagmi-login.spec.ts"
       job-name: "🌐 Wagmi (Login)"
-    secrets: inherit
+    secrets:
+      CLIENT_ID: ${{ secrets.CLIENT_ID }}
+      AUTH_SERVER: ${{ secrets.AUTH_SERVER }}
+      NEXT_PUBLIC_WALLET_API_BASE_URL: ${{ secrets.NEXT_PUBLIC_WALLET_API_BASE_URL }}
+      VITE_WALLET_API_BASE_URL: ${{ secrets.VITE_WALLET_API_BASE_URL }}
 
   job-wagmi-nextjs-example-app:
     name: "Wagmi Next.js example app"
@@ -126,4 +154,8 @@ jobs:
       project-path: packages/civic-auth-web3/wagmi-nextjs
       playwright-spec: "playwright/tests/civic-auth-web3/login/wagmi-nextjs-login.spec.ts"
       job-name: "🌐 Wagmi Next.js (Login)"
-    secrets: inherit
+    secrets:
+      CLIENT_ID: ${{ secrets.CLIENT_ID }}
+      AUTH_SERVER: ${{ secrets.AUTH_SERVER }}
+      NEXT_PUBLIC_WALLET_API_BASE_URL: ${{ secrets.NEXT_PUBLIC_WALLET_API_BASE_URL }}
+      VITE_WALLET_API_BASE_URL: ${{ secrets.VITE_WALLET_API_BASE_URL }}

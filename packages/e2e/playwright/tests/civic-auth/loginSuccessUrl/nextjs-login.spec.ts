@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
+import { loginWithDummy } from '../../../utils/login-helper';
 test.describe('Civic Auth Applications', () => {
   test.beforeEach(async ({ page, context }) => {
     await allure.epic('Civic Auth Applications');
@@ -20,52 +21,7 @@ test.describe('Civic Auth Applications', () => {
     await page.waitForLoadState('networkidle');
     await page.waitForLoadState('domcontentloaded');
     
-    // Wait for the sign in button to be visible and enabled/clickable
-    const signInButton = page.getByTestId('sign-in-button');
-    await signInButton.waitFor({ state: 'visible', timeout: 30000 });
-    await expect(signInButton).toBeEnabled({ timeout: 10000 });
-    
-    // Add a small delay to ensure the button is fully interactive
-    await page.waitForTimeout(1000);
-    
-    // Click the sign in button using test ID
-    await signInButton.click();
-    
-    // Wait for iframe to be present in DOM (don't care if it's visible or hidden)
-    await page.waitForSelector('#civic-auth-iframe', { state: 'attached', timeout: 30000 });
-    
-    // Click log in with dummy in the iframe
-    const frame = page.frameLocator('#civic-auth-iframe');
-    
-    // Try to wait for the frame to load completely first
-    await frame.locator('body').waitFor({ timeout: 30000 });
-    
-    // Wait for the login UI to fully load (not just the loading spinner)
-    try {
-      const loadingElement = frame.locator('#civic-login-app-loading');
-      const isLoadingVisible = await loadingElement.isVisible({ timeout: 5000 }).catch(() => false);
-      
-      if (isLoadingVisible) {
-        await loadingElement.waitFor({ state: 'hidden', timeout: 45000 });
-      }
-    } catch (error) {
-      // Loading element might not exist, that's ok
-    }
-    
-    // Wait for login elements to appear
-    await frame.locator('[data-testid*="civic-login"]').first().waitFor({ timeout: 30000 });
-    
-    // Look for the dummy button with extended timeout
-    const dummyButton = frame.locator('[data-testid="civic-login-oidc-button-dummy"]');
-    await dummyButton.waitFor({ state: 'visible', timeout: 30000 });
-    
-    // Add a small delay to ensure button is fully interactive
-    await page.waitForTimeout(1000);
-    
-    await dummyButton.click({ timeout: 20000 });
-
-    // Wait for the iframe to be gone (indicating login is complete)
-    await page.waitForSelector('#civic-auth-iframe', { state: 'hidden', timeout: 30000 });
+    await loginWithDummy(page);
   
     // Wait for the custom success route to load (indicating redirect happened)
     await expect(page.getByTestId('loginSuccessUrlHeader')).toBeVisible({ timeout: 20000 });
